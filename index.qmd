@@ -1,6 +1,6 @@
 ---
-title: "Index"
-author: "Peter Ho"
+title: "教學用網站"
+author: "Peter Ho 何明信"
 format: html
 editor: visual
 ---
