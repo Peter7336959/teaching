@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大專院校實驗室化學有害物意外防止策略 - 研習教材</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+            line-height: 1.8;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+
+        /* 針對列印與投影的大字體設計 */
+        .content-text {
+            font-size: 1.25rem; /* text-xl */
+            color: #334155;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            border-bottom: 4px solid #3b82f6;
+            display: inline-block;
+        }
+
+        @media print {
+            .no-print { display: none; }
+            .print-break { page-break-before: always; }
+            .content-text { font-size: 1.1rem; }
+            body { background-color: white; }
+            .shadow-lg { box-shadow: none; border: 1px solid #e5e7eb; }
+            section { padding-top: 2rem; padding-bottom: 2rem; }
+        }
+
+        .step-circle {
+            width: 50px;
+            height: 50px;
+            background: #1e40af;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20 px-6 shadow-xl no-print">
+        <div class="max-w-6xl mx-auto text-center">
+            <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-lg font-bold mb-6 inline-block">教育部 8 月研習營正式教材</span>
+            <h1 class="text-5xl md:text-6xl font-black leading-tight mb-8">大專院校實驗室<br>化學有害物意外防止策略</h1>
+            
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 mt-10">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white/20 p-4 rounded-full">
+                        <i class="fas fa-user-tie fa-2x"></i>
+                    </div>
+                    <div class="text-left">
+                        <p class="text-blue-200 text-sm">主講人</p>
+                        <p class="text-2xl font-bold">劉宏信 理事長/教授</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-6">
+            <ul class="flex overflow-x-auto space-x-10 py-5 text-base font-bold whitespace-nowrap scrollbar-hide">
+                <li><a href="#preface" class="hover:text-blue-600 transition">前言</a></li>
+                <li><a href="#intro" class="hover:text-blue-600 transition">校安分析</a></li>
+                <li><a href="#cases" class="hover:text-blue-600 transition">案例解構</a></li>
+                <li><a href="#laws" class="hover:text-blue-600 transition">法規核心</a></li>
+                <li><a href="#hierarchy" class="hover:text-blue-600 transition">控制階層</a></li>
+                <li><a href="#qa" class="hover:text-blue-600 transition">實務Q&A</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6 md:p-12 space-y-24">
+
+        <!-- Section: Preface -->
+        <section id="preface" class="scroll-mt-24">
+            <h2 class="section-title">課程前言</h2>
+            <div class="bg-white p-10 rounded-3xl shadow-lg border-l-8 border-blue-600">
+                <div class="content-text space-y-6">
+                    <p>
+                        實驗室是學術研究與科技發展的搖籃，然而化學有害物質的潛在威脅，卻是實驗室中最不容忽視的隱形殺手。從具備腐蝕性的強酸強鹼，到具有毒性的揮發性有機溶劑，一旦發生意外噴濺或誤食，往往會造成不可逆的生理傷害，甚至危及生命安全。
+                    </p>
+                    <p>
+                        <strong>教育部的關懷：</strong> 教育部高度重視大專院校師生的工作與學習環境安全。我們深知，每一位學生都是國家的棟樑，每一位教授都是知識的傳承者。安排此次課程，旨在落實校園安全衛生的自主管理，透過專業案例的分析與法規的宣導，協助各位建立正確的預防意識與應變能力。
+                    </p>
+                    <p class="font-bold text-blue-800">
+                        安全不是負擔，而是對生命最基本的尊重。讓我們攜手建立一個「零災害」的實驗室環境。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Data Analysis (2 Pages) -->
+        <section id="intro" class="scroll-mt-24 print-break">
+            <h2 class="section-title">114年第四季校安通報事故分析</h2>
+            
+            <!-- Page 1: Stats Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                    <p class="text-slate-500 font-bold text-xl mb-4">校安事故總量統計</p>
+                    <div class="flex items-baseline space-x-2">
+                        <span class="text-7xl font-black text-blue-600">280</span>
+                        <span class="text-2xl font-bold">件</span>
+                    </div>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex justify-between items-center bg-blue-50 p-4 rounded-xl">
+                            <span class="font-bold">實驗/實習場所</span>
+                            <span class="text-blue-700 font-black">87 件 (31%)</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-50 p-4 rounded-xl">
+                            <span class="font-bold">校內一般場所</span>
+                            <span class="text-slate-600 font-black">193 件 (69%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-200">
+                    <p class="text-slate-500 font-bold text-xl mb-4">學制分布分析</p>
+                    <div class="space-y-4 content-text">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-24 font-bold">高職</div>
+                            <div class="flex-1 bg-slate-100 rounded-full h-4 overflow-hidden">
+                                <div class="bg-orange-500 w-[31%] h-full"></div>
+                            </div>
+                            <div class="w-12 text-right font-bold text-orange-600">31%</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-24 font-bold">國中</div>
+                            <div class="flex-1 bg-slate-100 rounded-full h-4 overflow-hidden">
+                                <div class="bg-yellow-500 w-[29%] h-full"></div>
+                            </div>
+                            <div class="w-12 text-right font-bold text-yellow-600">29%</div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-24 font-bold">大專院校</div>
+                            <div class="flex-1 bg-slate-100 rounded-full h-4 overflow-hidden">
+                                <div class="bg-blue-500 w-[18%] h-full"></div>
+                            </div>
+                            <div class="w-12 text-right font-bold text-blue-600">18%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 2: Hazard Type -->
+            <div class="print-break pt-12">
+                <div class="bg-blue-900 text-white p-12 rounded-3xl">
+                    <h3 class="text-3xl font-bold mb-8">危害類型透視：有害物接觸佔比高</h3>
+                    <div class="content-text text-blue-50 leading-loose">
+                        在所有的實驗室意外中，<strong>「有害物接觸」</strong>與<strong>「與高低溫接觸」</strong>並列第二大殺手，各佔 <strong>20%</strong>。
+                        <br><br>
+                        大專院校的案件雖然總數排名第三，但其處理的化學品種類（如氫氟酸、各類強氧化劑、未標明之實驗產物）複雜程度遠高於國中小。數據揭示了一個關鍵問題：大專院校的災害往往具有較高的「技術性」與「傷害深度」。
+                    </div>
+                    <div class="mt-8 p-6 bg-white/10 rounded-2xl border border-white/20">
+                        <p class="text-xl font-bold"><i class="fas fa-lightbulb mr-2 text-yellow-400"></i>數據洞察：</p>
+                        <p class="mt-2">多數接觸意外發生在「清洗器皿時」或「分裝藥劑過程中」，顯示基礎訓練與 PPE 的落實率在大專研究端仍有缺口。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Case Studies -->
+        <section id="cases" class="scroll-mt-24">
+            <h2 class="section-title">真實案例深度解構</h2>
+
+            <!-- Case 1: HF -->
+            <div class="bg-white p-12 rounded-3xl shadow-lg border border-red-100 mb-16">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-3xl font-bold text-red-700">【案例一】氫氟酸(HF)化學灼傷事故</h3>
+                    <span class="bg-red-100 text-red-700 px-4 py-2 rounded-lg font-bold">新竹某頂大</span>
+                </div>
+                <div class="content-text space-y-6">
+                    <p class="bg-slate-50 p-6 rounded-xl italic"><strong>情境回顧：</strong> 應化所學生在進行實驗時，氫氟酸意外噴濺至右手。雖有配戴乳膠手套與實驗衣，但化學品透過手套縫隙滲入。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-red-600 mb-4 text-2xl">事故根因</h4>
+                            <ul class="list-disc list-inside space-y-3">
+                                <li><strong>防護手套選用錯誤：</strong> 一般乳膠手套(Latex)對 HF 無法提供有效防護。</li>
+                                <li><strong>沖洗程序不確實：</strong> 未能即刻使用專屬中和藥劑。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-green-700 mb-4 text-2xl">改善策略</h4>
+                            <ul class="list-disc list-inside space-y-3">
+                                <li>強制配戴丁基橡膠(Butyl)手套。</li>
+                                <li>實驗室備妥並教育使用<strong>葡萄糖酸鈣軟膏</strong>。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 2: H2O2 -->
+            <div class="print-break bg-white p-12 rounded-3xl shadow-lg border border-orange-100 mb-16 pt-12">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-3xl font-bold text-orange-700">【案例二】強氧化劑(雙氧水)噴濺事件</h3>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-lg font-bold">桃園某校</span>
+                </div>
+                <div class="content-text space-y-6">
+                    <p class="bg-slate-50 p-6 rounded-xl italic"><strong>情境回顧：</strong> 學生在收拾剩餘雙氧水時，因操作不慎晃動瓶身，導致液體噴濺至多名同學手部，部分學生未立即通報。</p>
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-orange-600 text-2xl">關鍵危害：隱性灼傷</h4>
+                        <p>雙氧水接觸皮膚初時可能僅有發白現象，但若未徹底沖洗，後續會引發劇烈刺痛與組織壞死。此案暴露出學生對「低危害化學品」的警覺性不足。</p>
+                        <p class="font-bold text-blue-700">預防點：所有液體化學品傾倒均需在通風櫃內進行，且必須全程配戴護目鏡。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case 3: Mixed Acid -->
+            <div class="print-break bg-white p-12 rounded-3xl shadow-lg border border-slate-100 mb-16 pt-12">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-3xl font-bold text-slate-700">【案例三】高職化學藥劑接觸意外</h3>
+                    <span class="bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-bold">彰化某校</span>
+                </div>
+                <div class="content-text space-y-6">
+                    <p class="bg-slate-50 p-6 rounded-xl italic"><strong>情境回顧：</strong> 114年12月，一名學生上課時不慎沾上強效清潔用化學藥劑，事發當下未立即送醫，兩天後右手呈現「貳度化學性灼傷」。</p>
+                    <h4 class="font-bold text-blue-800 text-2xl">教學啟示：即時處理的必要性</h4>
+                    <p>化學藥劑的反應往往具有持續性。當日若未由師長陪同確實沖洗並就醫，組織損傷將持續擴大。大專院校之管理人應強化學生之「事故通報義務教育」。</p>
+                </div>
+            </div>
+
+            <!-- Case 4: GHS Missing -->
+            <div class="print-break bg-white p-12 rounded-3xl shadow-lg border border-blue-100 mb-16 pt-12">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-3xl font-bold text-blue-700">【案例四】容器標示不明導致誤食</h3>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg font-bold">通用案例分析</span>
+                </div>
+                <div class="content-text space-y-6">
+                    <p class="bg-slate-50 p-6 rounded-xl italic"><strong>情境回顧：</strong> 實驗室內因容器標示不明（重複使用飲料瓶裝藥劑），導致學生誤以為是純水而發生誤食或眼部噴濺。</p>
+                    <h4 class="font-bold text-red-600 text-2xl">違規重點：GHS標示缺失</h4>
+                    <p>根據《危害性化學品標示及通識規則》，所有容器必須標示名稱及危害符號。<strong>嚴禁在實驗室內放置與實驗無關之容器（如咖啡杯、寶特瓶）。</strong></p>
+                </div>
+            </div>
+
+            <!-- Case 5: Vapor Inhalation -->
+            <div class="print-break bg-white p-12 rounded-3xl shadow-lg border border-yellow-100 pt-12">
+                <div class="flex items-center justify-between mb-8">
+                    <h3 class="text-3xl font-bold text-yellow-700">【案例五】揮發性有機溶劑吸入危害</h3>
+                    <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-lg font-bold">研討重點</span>
+                </div>
+                <div class="content-text space-y-6">
+                    <p class="bg-slate-50 p-6 rounded-xl italic"><strong>情境回顧：</strong> 研究生在密閉空間內長時間使用正己烷(Hexane)或苯類溶劑，且通風櫃故障未修，造成集體頭暈與慢性周邊神經損傷。</p>
+                    <h4 class="font-bold text-green-700 text-2xl">關鍵控制：工程抽風</h4>
+                    <p>化學危害不只是噴濺。吸入性中毒是大專院校最常見的慢性職業病。實驗室管理員必須定期執行「排氣櫃風速檢測」並留存紀錄三年。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Law -->
+        <section id="laws" class="scroll-mt-24 print-break">
+            <h2 class="section-title">職安相關法規與具體條款</h2>
+            
+            <div class="space-y-12 content-text">
+                <div class="bg-white p-10 rounded-3xl border-t-8 border-slate-800 shadow-sm">
+                    <h3 class="text-3xl font-bold mb-6">重點法規一：《職業安全衛生法》第10條</h3>
+                    <div class="p-6 bg-slate-50 rounded-xl mb-6">
+                        「雇主對於具有危害性之化學品，應予標示、製備清單及提供安全資料表(SDS)，並採取必要之通識措施。」
+                    </div>
+                    <ul class="list-disc list-inside space-y-4">
+                        <li><strong>落實細節：</strong> 實驗室門口需貼有危害告知單。</li>
+                        <li><strong>落實細節：</strong> SDS 安全資料表必須可隨時取閱（紙本或電子檔）。</li>
+                        <li><strong>罰則警示：</strong> 違反者可處新臺幣三萬元以上十五萬元以下罰鍰。</li>
+                    </ul>
+                </div>
+
+                <div class="print-break pt-12 bg-white p-10 rounded-3xl border-t-8 border-blue-800 shadow-sm">
+                    <h3 class="text-3xl font-bold mb-6">重點法規二：《職業安全衛生設施規則》</h3>
+                    <div class="space-y-8">
+                        <div class="border-b pb-6">
+                            <span class="text-blue-700 font-bold">第 287 條：</span> 雇主使勞工從事對皮膚有侵蝕性之作業，應供給不滲透性防護衣、手套、防護鞋等。
+                        </div>
+                        <div class="border-b pb-6">
+                            <span class="text-blue-700 font-bold">第 310 條：</span> 對於發散有害氣體之場所，應視其性質設置整體換氣裝置或局部排氣裝置。
+                        </div>
+                        <div class="border-b pb-6">
+                            <span class="text-blue-700 font-bold">第 169 條：</span> 洗眼器與緊急沖淋設備應設於「十秒內可到達」之處，且路徑障礙物應清除。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Hierarchy of Controls -->
+        <section id="hierarchy" class="scroll-mt-24 print-break">
+            <h2 class="section-title">危害控制階層 (HOC) 與管理策略</h2>
+            
+            <div class="space-y-12 content-text">
+                <div class="flex items-start space-x-8">
+                    <div class="step-circle">1</div>
+                    <div class="bg-white p-8 rounded-2xl flex-1 shadow-sm border-l-8 border-red-600">
+                        <h4 class="text-2xl font-bold text-red-600 mb-2">消除 (Elimination)</h4>
+                        <p><strong>定義：</strong> 將危害源完全移除。這是最有效的方式。</p>
+                        <p class="mt-4 text-blue-700 font-bold">● 實務舉例：</p>
+                        <p>停止不必要的演示實驗，或統一清理儲存多年的不明化學廢液。將實驗改為「數位模擬」。</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-8">
+                    <div class="step-circle">2</div>
+                    <div class="bg-white p-8 rounded-2xl flex-1 shadow-sm border-l-8 border-orange-500">
+                        <h4 class="text-2xl font-bold text-orange-500 mb-2">取代 (Substitution)</h4>
+                        <p><strong>定義：</strong> 用低危害的物質取代高危害物質。</p>
+                        <p class="mt-4 text-blue-700 font-bold">● 實務舉例：</p>
+                        <p>使用「無苯」溶劑取代「苯」；使用二甲苯取代毒性更高溶劑。用中性清潔劑取代強酸強鹼洗液。</p>
+                    </div>
+                </div>
+
+                <div class="print-break pt-12 flex items-start space-x-8">
+                    <div class="step-circle">3</div>
+                    <div class="bg-white p-8 rounded-2xl flex-1 shadow-sm border-l-8 border-yellow-500">
+                        <h4 class="text-2xl font-bold text-yellow-600 mb-2">工程控制 (Engineering Controls)</h4>
+                        <p><strong>定義：</strong> 透過隔絕或改善設備，使人員與危害源分離。</p>
+                        <p class="mt-4 text-blue-700 font-bold">● 實務舉例：</p>
+                        <p>設置抽風櫃(Fume Hood)、使用防爆電氣設施。工程控制優於管理控制，因為不依賴人的自律。</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start space-x-8">
+                    <div class="step-circle">4</div>
+                    <div class="bg-white p-8 rounded-2xl flex-1 shadow-sm border-l-8 border-blue-400">
+                        <h4 class="text-2xl font-bold text-blue-500 mb-2">行政管理 (Administrative Controls)</h4>
+                        <p><strong>定義：</strong> 建立守則、標示與教育訓練。</p>
+                        <p class="mt-4 text-blue-700 font-bold">● 實務舉例：</p>
+                        <p>實施「實驗室分級管理(CCB)」、每日自動檢查紀錄、張貼化學品危害標示。</p>
+                    </div>
+                </div>
+
+                <div class="print-break pt-12 flex items-start space-x-8">
+                    <div class="step-circle">5</div>
+                    <div class="bg-white p-8 rounded-2xl flex-1 shadow-sm border-l-8 border-slate-400">
+                        <h4 class="text-2xl font-bold text-slate-500 mb-2">個人防護具 (PPE)</h4>
+                        <p><strong>定義：</strong> 最後一道防線，阻斷暴露路徑。</p>
+                        <p class="mt-4 text-blue-700 font-bold">● 實務舉例：</p>
+                        <p>強制穿著實驗衣、護目鏡、防毒面具。<strong>切記：一旦穿錯或沒穿，保護即歸零。</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Q&A -->
+        <section id="qa" class="scroll-mt-24 print-break">
+            <h2 class="section-title">實務 Q&A (問答集)</h2>
+
+            <div class="space-y-12 content-text">
+                <div class="bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q1：若化學藥劑噴濺到眼睛，沖洗時眼球要睜開嗎？</p>
+                    <p class="text-slate-700">A1：<strong>必須撐開！</strong> 應以手指撥開上下眼瞼，讓水流能徹底洗刷結膜與角膜，並持續至少 15 分鐘。</p>
+                </div>
+
+                <div class="bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q2：化學品 SDS 必須提供紙本嗎？電子檔可以嗎？</p>
+                    <p class="text-slate-700">A2：法令規定應「置於工作場所易取得之處」。雖然可儲存於雲端，但必須確保<strong>操作人員均有存取權限並具備查詢設備</strong>。</p>
+                </div>
+
+                <div class="print-break pt-12 bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q3：為什麼不能用乳膠手套做所有的化學實驗？</p>
+                    <p class="text-slate-700">A3：乳膠手套主要防止生物危害。對於強酸、強氧化劑，乳膠手套會產生「滲透」現象。應根據 SDS 第八節查詢正確材質。</p>
+                </div>
+
+                <div class="bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q4：實驗室內可以飲水嗎？</p>
+                    <p class="text-slate-700">A4：<strong>絕對禁止！</strong> 化學有害物會透過揮發或手部接觸污染食物與飲水。場所應劃定專屬休息、飲食區。</p>
+                </div>
+
+                <div class="print-break pt-12 bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q5：若打翻化學藥劑，第一時間可以拿抹布處理嗎？</p>
+                    <p class="text-slate-700">A5：不可以。應先判斷其性質，一般應使用專屬<strong>「吸附棉、中和劑」</strong>處理。抹布可能導致起火或產生有毒氣體。</p>
+                </div>
+
+                <div class="bg-blue-50 p-10 rounded-3xl">
+                    <p class="font-bold text-2xl text-blue-800 mb-4">Q6：洗眼器每週都一定要放水測試嗎？</p>
+                    <p class="text-slate-700">A6：是的。每週放水可確保出水潔淨，避免發生意外時，噴向眼睛的是帶鏽的汙水造成二次傷害。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Conclusion -->
+        <footer class="text-center py-20 border-t mt-20">
+            <h3 class="text-4xl font-extrabold mb-8 text-blue-900">結語：安全，是設計與落實執行出來的</h3>
+            <div class="content-text text-slate-500 max-w-3xl mx-auto mb-12">
+                <p>化學有害物質的預防，關鍵不在於事後的補救，而在於事前對「細節」的堅持。從正確的容器標示、定期的風速量測，到每一位師生都能朗朗上口的緊急應變流程。</p>
+                <p class="mt-4 font-bold text-slate-800">「多一份警覺，少一場遺憾。」這是我們對實驗室安全的終極目標。</p>
+            </div>
+            
+            <p class="mt-16 text-slate-400 font-medium italic">講師：劉宏信 理事長/教授</p>
+            <p class="mt-4 text-xs text-slate-300">© 教育部大專院校實驗室安全衛生研習營專用教材</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
