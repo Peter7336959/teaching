@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>營造工程施工風險評估完整數位指引</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .sidebar-active {
+            background-color: #ebf5ff;
+            color: #1e40af;
+            border-right: 4px solid #1e40af;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .risk-table td, .risk-table th {
+            border: 1px solid #e5e7eb;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .pyramid-level {
+            clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .pyramid-level:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+<div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="hidden lg:flex flex-col w-72 bg-white border-r sticky top-0 h-screen shadow-sm z-30">
+        <div class="p-6 bg-blue-900 text-white">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shield-alt text-2xl text-blue-400"></i>
+                <span class="text-xl font-bold tracking-tighter">營造風險管理</span>
+            </div>
+            <p class="text-[10px] mt-2 opacity-60 uppercase tracking-widest font-bold">Construction Risk Guide</p>
+        </div>
+        
+        <nav class="flex-1 overflow-y-auto py-4">
+            <ul id="nav-list">
+                <li><button onclick="showTab('intro')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50 sidebar-active" data-tab="intro"><i class="fas fa-book-open w-6"></i> 課程導論與核心精神</button></li>
+                <li><button onclick="showTab('legal')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="legal"><i class="fas fa-balance-scale w-6"></i> 法規體系與權責劃分</button></li>
+                <li><button onclick="showTab('system')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="system"><i class="fas fa-project-diagram w-6"></i> 風險管理制度程序</button></li>
+                <li><button onclick="showTab('hazard')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="hazard"><i class="fas fa-exclamation-triangle w-6"></i> 危害辨識技術實務</button></li>
+                <li><button onclick="showTab('matrix')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="matrix"><i class="fas fa-th w-6"></i> 風險評估工具與計算</button></li>
+                <li><button onclick="showTab('hierarchy')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="hierarchy"><i class="fas fa-layer-group w-6"></i> 控制階層與對策研擬</button></li>
+                <li><button onclick="showTab('ptd')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="ptd"><i class="fas fa-drafting-compass w-6"></i> 規劃設計階段指引</button></li>
+                <li><button onclick="showTab('dynamic')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="dynamic"><i class="fas fa-sync w-6"></i> 施工階段動態管理</button></li>
+                <li><button onclick="showTab('type-d')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="type-d"><i class="fas fa-building w-6"></i> 丁類危險性工作場所</button></li>
+                <li><button onclick="showTab('records')" class="nav-btn w-full flex items-center px-6 py-3 text-sm font-medium transition-all hover:bg-slate-50" data-tab="records"><i class="fas fa-clipboard-list w-6"></i> 紀錄保存與案例分析</button></li>
+            </ul>
+        </nav>
+        
+        <div class="p-4 border-t bg-slate-50">
+            <div class="flex items-center space-x-2 text-[10px] font-bold text-slate-400">
+                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>營造甲級數位教材 2024 更新版</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto">
+        <!-- Mobile Header -->
+        <header class="lg:hidden bg-blue-900 text-white p-4 flex justify-between items-center sticky top-0 z-50">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-shield-alt"></i>
+                <span class="font-bold">營造風險管理教材</span>
+            </div>
+            <button id="mobile-menu-toggle" class="p-2"><i class="fas fa-bars"></i></button>
+        </header>
+
+        <div class="max-w-5xl mx-auto p-4 md:p-12">
+            
+            <!-- Section: Introduction -->
+            <section id="intro" class="tab-content active">
+                <div class="bg-gradient-to-br from-blue-700 to-blue-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl mb-12 relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">營造工程施工風險評估<br><span class="text-blue-300">完整數位指引</span></h1>
+                        <p class="text-lg opacity-90 max-w-2xl leading-relaxed">
+                            本教材依據「營造工程風險評估技術指引」與「ISO 31000 風險管理標準」編撰，旨在透過系統化的評估流程，從源頭消除危害，達成零職災之終極目標。
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-bold backdrop-blur-sm"><i class="fas fa-clock mr-2"></i> 4 小時授課深度</span>
+                            <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-bold backdrop-blur-sm"><i class="fas fa-check-double mr-2"></i> 職安署核定大綱</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-hard-hat absolute right-[-20px] bottom-[-20px] text-white opacity-10 text-[200px]"></i>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-bullseye text-xl"></i></div>
+                        <h3 class="text-lg font-bold mb-2">科學化管理</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">排除傳統「靠運氣」的安全管理，改以 P 與 S 數據化指標衡量風險，讓資源精準投入。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-shield-virus text-xl"></i></div>
+                        <h3 class="text-lg font-bold mb-2">本質安全</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">強調設計階段的危害消除，遵循控制階層原則，將人為疏失的可能性降至最低。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4"><i class="fas fa-users-cog text-xl"></i></div>
+                        <h3 class="text-lg font-bold mb-2">全體參與</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed">風險評估非安全員專屬，需整合業主、設計、監造與施工者的專業，建立完整的風險傳遞鏈。</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border shadow-sm space-y-6">
+                    <h2 class="text-2xl font-black text-slate-800 flex items-center"><i class="fas fa-info-circle mr-3 text-blue-600"></i> 風險評估的核心邏輯</h2>
+                    <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-blue-500 italic text-slate-700 leading-relaxed">
+                        「風險（Risk）」與「危害（Hazard）」的區別：危害是潛在具有傷害力的事物（如：高處作業）；風險則是該危害發生的可能性與後果嚴重度的結合。我們無法完全消除生活中的所有危害，但可以透過控制手段將風險降低至「合理抑低（ALARP）」之範圍。
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8 mt-6">
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-blue-700 underline">風險評估的目的</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> 識別潛在災害情境</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> 決定控制優先順序</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> 符合職安法令之合規性</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> 減少意外事故造成的財損與賠償</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-blue-700 underline">適用範圍</h4>
+                            <p class="text-sm text-slate-600">
+                                舉凡營造工程之規劃、設計、招標、施工、維修甚至拆除階段，均應實施風險評估。尤其針對具有高墜落、高崩塌風險之作業，必須有專項評估。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Legal -->
+            <section id="legal" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">法規體系與各方職責</h2>
+                
+                <div class="bg-red-50 p-8 rounded-3xl border-2 border-red-100 mb-8">
+                    <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center"><i class="fas fa-exclamation-circle mr-2"></i> 職業安全衛生法第 5 條 (核心法條)</h3>
+                    <p class="text-red-900 leading-relaxed mb-4">
+                        「設計者應於設計階段，考量未來施工安全，實施風險評估；營造業主應於規劃設計、施工規劃及施工階段，實施風險評估，並將評估結果提供予相關單位執行。」
+                    </p>
+                    <div class="text-xs text-red-600 font-bold">★ 違反此條款並導致職業災害者，需負擔行政、刑事及民事法律責任。</div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-600">
+                            <h4 class="font-bold text-lg mb-3">工程業主 (Owner)</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>1. 提供合理工期與安全預算（編列安全設施費用）。</li>
+                                <li>2. 收集並提供原始工址資料（地下設施、地質報告）。</li>
+                                <li>3. 整合各階段風險資訊傳遞。</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-600">
+                            <h4 class="font-bold text-lg mb-3">設計單位 (Designer)</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>1. 實施 PtD (Prevention through Design) 設計。</li>
+                                <li>2. 產出「規劃設計階段風險評估報告書」。</li>
+                                <li>3. 標示不可消除之剩餘風險於圖說中。</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-600">
+                            <h4 class="font-bold text-lg mb-3">施工單位 (Contractor)</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>1. 依據設計資訊編製施工安全計畫。</li>
+                                <li>2. 針對作業活動實施 JSA 與危害調查。</li>
+                                <li>3. 落實風險對策並進行動態修正。</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border-t-4 border-blue-600">
+                            <h4 class="font-bold text-lg mb-3">監造單位 (Supervision)</h4>
+                            <ul class="text-sm text-slate-600 space-y-2">
+                                <li>1. 審查施工單位之風險評估報告。</li>
+                                <li>2. 定期監督現場安全設施之維持。</li>
+                                <li>3. 追蹤高風險作業之專項對策執行。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: System & Steps -->
+            <section id="system" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">風險管理制度程序</h2>
+                <p class="text-slate-600 mb-10">成功的風險管理不僅是填寫表格，而是一個持續改進的循環（PDCA）。</p>
+                
+                <div class="flex flex-col space-y-12 relative before:content-[''] before:absolute before:left-8 before:top-0 before:bottom-0 before:w-1 before:bg-blue-100">
+                    <div class="relative pl-20 group">
+                        <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">1</div>
+                        <h4 class="text-xl font-black text-slate-800 mb-2">準備作業與界定範疇</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                            成立風險評估小組（含工地主任、職安員、專業工程師、勞工代表）。定義什麼是「可接受風險」的基準。
+                        </p>
+                    </div>
+                    <div class="relative pl-20 group">
+                        <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">2</div>
+                        <h4 class="text-xl font-black text-slate-800 mb-2">危害辨識 (Hazard Identification)</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                            針對每一項作業流程（如：鋼構吊裝、深開挖），找出潛在的「能量釋放」點，識別誰會受傷、怎麼受傷。
+                        </p>
+                    </div>
+                    <div class="relative pl-20 group">
+                        <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">3</div>
+                        <h4 class="text-xl font-black text-slate-800 mb-2">風險分析與評量 (Analysis & Evaluation)</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                            決定發生率（P）與嚴重度（S）。將兩者相乘得出風險值，對比矩陣圖決定優先順序。
+                        </p>
+                    </div>
+                    <div class="relative pl-20 group">
+                        <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">4</div>
+                        <h4 class="text-xl font-black text-slate-800 mb-2">風險對策研擬 (Treatment)</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                            遵循「消除、取代、工程、管理、個人防護具」的階層原則，制定具體可執行的防護方案。
+                        </p>
+                    </div>
+                    <div class="relative pl-20 group">
+                        <div class="absolute left-0 top-0 w-16 h-16 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">5</div>
+                        <h4 class="text-xl font-black text-slate-800 mb-2">監控、審查與紀錄</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                            現場檢查對策是否落實？是否產生新危害？將評估成果納入施工說明書，作為作業前工具箱會議（TBM）的依據。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Hazard Identification -->
+            <section id="hazard" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">危害辨識技術實務</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-8 rounded-3xl border shadow-sm">
+                        <h3 class="text-xl font-bold mb-4 text-blue-800">四大辨識面向</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 text-blue-700 p-2 rounded-lg mr-4 mt-1"><i class="fas fa-tools"></i></div>
+                                <div>
+                                    <div class="font-bold">機械與設備</div>
+                                    <div class="text-xs text-slate-500">捲入、被切、動力故障、機具翻覆。</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-100 text-green-700 p-2 rounded-lg mr-4 mt-1"><i class="fas fa-mountain"></i></div>
+                                <div>
+                                    <div class="font-bold">環境與場域</div>
+                                    <div class="text-xs text-slate-500">強風、暴雨、地下水湧出、缺氧空間、鄰近高壓電。</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-orange-100 text-orange-700 p-2 rounded-lg mr-4 mt-1"><i class="fas fa-running"></i></div>
+                                <div>
+                                    <div class="font-bold">作業活動</div>
+                                    <div class="text-xs text-slate-500">高處行走、吊掛重物下方、動火作業、侷限空間。</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 text-purple-700 p-2 rounded-lg mr-4 mt-1"><i class="fas fa-user-clock"></i></div>
+                                <div>
+                                    <div class="font-bold">管理與人為</div>
+                                    <div class="text-xs text-slate-500">疲勞駕駛、無證操作、溝通錯誤、教育訓練不足。</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-3xl text-white shadow-lg">
+                        <h3 class="text-xl font-bold mb-4 text-blue-300">常用工程辨識技術</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li class="border-b border-slate-700 pb-2">
+                                <span class="font-bold text-blue-400">JSA (作業安全分析)：</span>
+                                將作業分解為具體步驟（如：架設圍籬），分析各步驟之危害。
+                            </li>
+                            <li class="border-b border-slate-700 pb-2">
+                                <span class="font-bold text-blue-400">Checklist (檢核表)：</span>
+                                根據法規或過往職災紀錄製成檢視表。
+                            </li>
+                            <li class="border-b border-slate-700 pb-2">
+                                <span class="font-bold text-blue-400">What-If (如果...會怎樣)：</span>
+                                討論「如果鋼索斷裂會發生什麼？」之異常情境分析。
+                            </li>
+                            <li>
+                                <span class="font-bold text-blue-400">HAZOP (危害與可操作性評估)：</span>
+                                常用於石化廠或複雜製程營造。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-6">營造工程常見重大危害</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="p-4 bg-red-50 border border-red-100 rounded-2xl text-center group hover:bg-red-100 transition-all">
+                            <i class="fas fa-cloud-download-alt text-3xl text-red-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">墜落</div>
+                        </div>
+                        <div class="p-4 bg-amber-50 border border-amber-100 rounded-2xl text-center group hover:bg-amber-100 transition-all">
+                            <i class="fas fa-house-damage text-3xl text-amber-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">坍塌</div>
+                        </div>
+                        <div class="p-4 bg-yellow-50 border border-yellow-100 rounded-2xl text-center group hover:bg-yellow-100 transition-all">
+                            <i class="fas fa-bolt text-3xl text-yellow-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">感電</div>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-100 rounded-2xl text-center group hover:bg-blue-100 transition-all">
+                            <i class="fas fa-truck-monster text-3xl text-blue-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">被撞</div>
+                        </div>
+                        <div class="p-4 bg-orange-50 border border-orange-100 rounded-2xl text-center group hover:bg-orange-100 transition-all">
+                            <i class="fas fa-wrench text-3xl text-orange-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">物體飛落</div>
+                        </div>
+                        <div class="p-4 bg-purple-50 border border-purple-100 rounded-2xl text-center group hover:bg-purple-100 transition-all">
+                            <i class="fas fa-mask text-3xl text-purple-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">缺氧中毒</div>
+                        </div>
+                        <div class="p-4 bg-red-50 border border-red-100 rounded-2xl text-center group hover:bg-red-100 transition-all">
+                            <i class="fas fa-fire text-3xl text-red-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">火災爆炸</div>
+                        </li>
+                        <div class="p-4 bg-green-50 border border-green-100 rounded-2xl text-center group hover:bg-green-100 transition-all">
+                            <i class="fas fa-lungs text-3xl text-green-500 mb-2 group-hover:scale-125 transition-transform"></i>
+                            <div class="font-bold text-sm">職業病</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Risk Matrix (Interactive) -->
+            <section id="matrix" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">風險評估工具與計算</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                            <h4 class="font-bold text-blue-800 mb-4 flex items-center"><i class="fas fa-dice mr-2"></i> 可能性 (Probability, P)</h4>
+                            <div class="space-y-3">
+                                <button onclick="setP(1)" id="p1" class="p-btn w-full text-left p-3 rounded-xl border hover:bg-blue-50 transition-all bg-blue-600 text-white">1 - 極低 (十年發生不到一次)</button>
+                                <button onclick="setP(2)" id="p2" class="p-btn w-full text-left p-3 rounded-xl border hover:bg-blue-50 transition-all">2 - 低 (一年至十年發生一次)</button>
+                                <button onclick="setP(3)" id="p3" class="p-btn w-full text-left p-3 rounded-xl border hover:bg-blue-50 transition-all">3 - 中 (一個月至一年發生一次)</button>
+                                <button onclick="setP(4)" id="p4" class="p-btn w-full text-left p-3 rounded-xl border hover:bg-blue-50 transition-all">4 - 高 (每月發生一次以上)</button>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                            <h4 class="font-bold text-red-800 mb-4 flex items-center"><i class="fas fa-skull-crossbones mr-2"></i> 嚴重度 (Severity, S)</h4>
+                            <div class="space-y-3">
+                                <button onclick="setS(1)" id="s1" class="s-btn w-full text-left p-3 rounded-xl border hover:bg-red-50 transition-all bg-red-600 text-white">1 - 輕微 (僅需急救、無損失工日)</button>
+                                <button onclick="setS(2)" id="s2" class="s-btn w-full text-left p-3 rounded-xl border hover:bg-red-50 transition-all">2 - 中度 (損失工日、可恢復傷害)</button>
+                                <button onclick="setS(3)" id="s3" class="s-btn w-full text-left p-3 rounded-xl border hover:bg-red-50 transition-all">3 - 嚴重 (永久失能、失能傷害)</button>
+                                <button onclick="setS(4)" id="s4" class="s-btn w-full text-left p-3 rounded-xl border hover:bg-red-50 transition-all">4 - 重大 (造成人員死亡)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col justify-between">
+                        <div id="risk-result-card" class="bg-green-600 p-8 rounded-3xl text-white text-center shadow-2xl transition-all duration-500">
+                            <div class="text-sm font-bold opacity-75 uppercase tracking-widest mb-2">風險分級 (P × S)</div>
+                            <div id="risk-score" class="text-8xl font-black mb-4">1</div>
+                            <div id="risk-text" class="text-3xl font-black mb-6">低度風險</div>
+                            <div class="p-4 bg-white/20 rounded-2xl text-sm leading-relaxed border border-white/20">
+                                <span id="risk-action">現有設施足以控制風險，維持一般巡檢與標準作業程序。</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 bg-white p-4 rounded-2xl border">
+                            <div class="text-[10px] text-slate-400 text-center font-bold mb-2 uppercase tracking-widest">風險矩陣預覽</div>
+                            <table class="w-full risk-table text-[10px] font-bold">
+                                <tr class="bg-slate-50">
+                                    <td class="bg-white">P \ S</td>
+                                    <td>1</td><td>2</td><td>3</td><td>4</td>
+                                </tr>
+                                <tr><td class="bg-slate-50">1</td><td class="bg-green-500 text-white">1</td><td class="bg-green-500 text-white">2</td><td class="bg-yellow-400">3</td><td class="bg-yellow-400">4</td></tr>
+                                <tr><td class="bg-slate-50">2</td><td class="bg-green-500 text-white">2</td><td class="bg-yellow-400">4</td><td class="bg-orange-500 text-white">6</td><td class="bg-orange-500 text-white">8</td></tr>
+                                <tr><td class="bg-slate-50">3</td><td class="bg-yellow-400">3</td><td class="bg-orange-500 text-white">6</td><td class="bg-red-600 text-white">9</td><td class="bg-red-600 text-white">12</td></tr>
+                                <tr><td class="bg-slate-50">4</td><td class="bg-yellow-400">4</td><td class="bg-orange-500 text-white">8</td><td class="bg-red-600 text-white">12</td><td class="bg-red-600 text-white">16</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Hierarchy of Controls -->
+            <section id="hierarchy" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">控制階層與對策研擬</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">當風險超過可接受標準時，應採取對策。對策的選擇應遵循下列優先順序：</p>
+
+                <div class="max-w-3xl mx-auto space-y-2 py-10 relative">
+                    <div class="pyramid-level bg-blue-800 text-white p-6 rounded-lg shadow-md flex justify-between items-center border-l-8 border-white/20">
+                        <div class="font-black text-xl">1. 消除 (Elimination)</div>
+                        <div class="text-sm opacity-80 text-right max-w-xs font-medium">最有效。完全移除危害來源。如：不進入高溫環境、設計階段即將地下管線遷移。</div>
+                    </div>
+                    <div class="pyramid-level bg-blue-700 text-white p-6 rounded-lg shadow-md flex justify-between items-center border-l-8 border-white/20">
+                        <div class="font-black text-xl">2. 取代 (Substitution)</div>
+                        <div class="text-sm opacity-80 text-right max-w-xs font-medium">用安全物質取代危險物質。如：用水性漆取代油性漆、改用安全低電壓(24V)電動工具。</div>
+                    </div>
+                    <div class="pyramid-level bg-blue-600 text-white p-6 rounded-lg shadow-md flex justify-between items-center border-l-8 border-white/20">
+                        <div class="font-black text-xl">3. 工程控制 (Engineering)</div>
+                        <div class="text-sm opacity-80 text-right max-w-xs font-medium">隔離人員與危害。如：設置固定式護欄、裝設漏電斷路器、局部排氣系統、自動化監測。</div>
+                    </div>
+                    <div class="pyramid-level bg-blue-500 text-white p-6 rounded-lg shadow-md flex justify-between items-center border-l-8 border-white/20">
+                        <div class="font-black text-xl">4. 管理控制 (Administrative)</div>
+                        <div class="text-sm opacity-80 text-right max-w-xs font-medium">改變作業方式與程序。如：人員教育訓練、標示警告、作業許可制、輪班減少暴露時間。</div>
+                    </div>
+                    <div class="pyramid-level bg-blue-400 text-white p-6 rounded-lg shadow-md flex justify-between items-center border-l-8 border-white/20">
+                        <div class="font-black text-xl">5. 個人防護具 (PPE)</div>
+                        <div class="text-sm opacity-80 text-right max-w-xs font-medium">最後防線。防護勞工身體。如：安全帽、背負式安全帶、防塵口罩。</div>
+                    </div>
+
+                    <div class="absolute -left-12 top-0 bottom-0 flex flex-col items-center justify-between py-10">
+                        <div class="text-[10px] font-black text-green-600 rotate-180 uppercase tracking-widest" style="writing-mode: vertical-lr;">High Effectiveness</div>
+                        <div class="w-1 bg-gradient-to-b from-green-500 to-red-500 flex-1 my-2"></div>
+                        <div class="text-[10px] font-black text-red-600 uppercase tracking-widest" style="writing-mode: vertical-lr;">Low Effectiveness</div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white p-8 rounded-3xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 text-blue-800 underline">實務案例對比</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-slate-50 rounded-2xl">
+                            <div class="text-xs font-bold text-slate-400 uppercase mb-2">錯誤作法 (過度依賴管理/PPE)</div>
+                            <p class="text-sm text-red-600 font-bold mb-2">危害：高處開口墜落</p>
+                            <p class="text-xs text-slate-600">對策：口頭叮嚀勞工小心、只要求勞工掛安全帶。</p>
+                            <div class="mt-2 text-[10px] text-red-500 italic">★ 效果有限，勞工若忘記掛鉤即發生死亡災害。</div>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-2xl">
+                            <div class="text-xs font-bold text-blue-400 uppercase mb-2">正確作法 (優先工程控制)</div>
+                            <p class="text-sm text-blue-600 font-bold mb-2">危害：高處開口墜落</p>
+                            <p class="text-xs text-slate-600">對策：設置高度 90cm 以上之固定護欄，並覆蓋鋼板固定。</p>
+                            <div class="mt-2 text-[10px] text-blue-500 italic">★ 本質安全，勞工不小心跌倒也會被護欄攔截。</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: PtD / Design Phase -->
+            <section id="ptd" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">規劃設計階段實施指引</h2>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center mb-12">
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-black mb-4">能力與控制曲線 (Ability to Influence Safety)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            著名的 Szymberski 曲線指出：在工程全生命週期中，設計階段對安全的影響能力最大（100%），而隨著進度進入施工與維運，控制風險的機會急劇下降，且成本成倍增加。
+                        </p>
+                        <div class="bg-yellow-50 p-4 border-l-4 border-yellow-400 rounded-r-xl">
+                            <span class="font-bold text-yellow-800">核心精神：</span> 把安全「設計進去（Design-In）」，而不是「補救回來（Fix-It）」。
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-4 bg-white rounded-2xl border shadow-inner">
+                        <div class="text-center text-xs text-slate-400 font-bold mb-2">設計階段風險消除範例</div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start p-2 bg-green-50 rounded-lg text-xs">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span><span class="font-bold">預鑄化工法：</span> 將高處樑柱改為地面預鑄，減少 80% 之高處暴露時間。</span>
+                            </li>
+                            <li class="flex items-start p-2 bg-green-50 rounded-lg text-xs">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span><span class="font-bold">永久性安全母索：</span> 在設計圖說中即指定在結構柱留設掛鉤預埋件。</span>
+                            </li>
+                            <li class="flex items-start p-2 bg-green-50 rounded-lg text-xs">
+                                <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                                <span><span class="font-bold">自動噴撒滅火系統：</span> 於施工期間即先行啟用，防止工地大火。</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4">設計者應產出的文件內容</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead class="bg-slate-50 border-b">
+                                <tr>
+                                    <th class="p-4 font-bold text-slate-700">內容項次</th>
+                                    <th class="p-4 font-bold text-slate-700">說明重點</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr><td class="p-4 font-bold">1. 工址現況調查報告</td><td class="p-4">含地下設施、鄰房狀況、土壤承載力分析。</td></tr>
+                                <tr><td class="p-4 font-bold">2. 危害清單</td><td class="p-4">羅列本設計中無法避免的重大危害（如：深開挖湧水）。</td></tr>
+                                <tr><td class="p-4 font-bold">3. 安全施工規範</td><td class="p-4">將安全要求寫入標單說明書與圖說。</td></tr>
+                                <tr><td class="p-4 font-bold">4. 剩餘風險告知書</td><td class="p-4">明確告知後續施工單位應特別注意的剩餘高風險項目。</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Dynamic Management -->
+            <section id="dynamic" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">施工階段動態管理</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-blue-900 text-white p-8 rounded-3xl shadow-xl">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-tools mr-2 text-blue-400"></i> 作業前危害辨識 (VRA)</h3>
+                        <p class="text-sm opacity-80 mb-6">施工單位在每一作業項目（如吊裝、模板）開始前，必須執行針對現場環境的動態評估。</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center font-bold">T</div>
+                                <span class="font-bold">Toolbox Meeting (工具箱會議)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 pl-11 text-xs opacity-70 italic">
+                                每日開工前由領班帶領，針對當日作業告知危害與防護。
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center font-bold">A</div>
+                                <span class="font-bold">Automatic Check (自動檢查)</span>
+                            </li>
+                            <li class="flex items-center space-x-3 pl-11 text-xs opacity-70 italic">
+                                針對機具（如吊車）、環境（如護欄）進行作業前點檢。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border shadow-sm">
+                        <h3 class="text-xl font-bold mb-6 flex items-center text-slate-800"><i class="fas fa-sync-alt mr-2 text-green-500"></i> 變更管理 (MOC)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">工地環境瞬息萬變，當下列情況發生時，必須「重啟風險評估」：</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center p-3 bg-red-50 rounded-xl border border-red-100 text-red-900 text-xs font-bold">
+                                <i class="fas fa-exclamation-triangle mr-3"></i> 工法、程序變更時
+                            </div>
+                            <div class="flex items-center p-3 bg-red-50 rounded-xl border border-red-100 text-red-900 text-xs font-bold">
+                                <i class="fas fa-wind mr-3"></i> 颱風、地震、強風過後
+                            </div>
+                            <div class="flex items-center p-3 bg-red-50 rounded-xl border border-red-100 text-red-900 text-xs font-bold">
+                                <i class="fas fa-user-plus mr-3"></i> 引進新型機具或新進承攬商時
+                            </div>
+                            <div class="flex items-center p-3 bg-red-50 rounded-xl border border-red-100 text-red-900 text-xs font-bold">
+                                <i class="fas fa-skull mr-3"></i> 發生職災或「虛驚事故」時
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Type D -->
+            <section id="type-d" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-red-600 pb-4 inline-block">丁類危險性工作場所專章</h2>
+                
+                <div class="bg-white p-8 rounded-3xl border shadow-sm mb-12">
+                    <h3 class="text-2xl font-bold mb-6 text-red-700">為什麼是「丁類」？</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        根據「勞動檢查法」第 26 條，對於極高風險之工地（丁類場），雇主應依規定向勞檢機構申請「審查」合格後，方得使勞工在該場所作業。
+                    </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-hotel text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">建築物高度 80m 以上</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-arrow-down text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">開挖深度 15m 以上</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-road text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">隧道全長 1000m 以上</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-bridge text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">單跨 75m/多跨 50m 橋梁</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-compress-arrows-alt text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">採壓氣工法作業場所</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 border rounded-2xl flex items-center">
+                            <i class="fas fa-bomb text-red-500 mr-4 text-2xl"></i>
+                            <div class="text-[11px] font-bold">特殊火藥爆破作業</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-900 text-white p-8 rounded-3xl shadow-xl">
+                        <h4 class="text-xl font-bold mb-4 underline">送審文件清單</h4>
+                        <ul class="space-y-3 text-sm font-medium">
+                            <li><i class="fas fa-file-pdf mr-2 text-red-400"></i> 工程概要說明與配置圖</li>
+                            <li><i class="fas fa-file-pdf mr-2 text-red-400"></i> 分項施工計畫書 (含圖說、計算書)</li>
+                            <li><i class="fas fa-file-pdf mr-2 text-red-400"></i> 施工安全評估報告書 (核心)</li>
+                            <li><i class="fas fa-file-pdf mr-2 text-red-400"></i> 專任工程人員簽章證明</li>
+                            <li><i class="fas fa-file-pdf mr-2 text-red-400"></i> 安全衛生管理計畫</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl border shadow-sm">
+                        <h4 class="text-xl font-bold mb-4 text-slate-800">審查程序重點</h4>
+                        <div class="space-y-4 text-xs text-slate-600">
+                            <p>1. <span class="font-bold">時程：</span> 應於開工 45 日前提出申請。</p>
+                            <p>2. <span class="font-bold">人員：</span> 評估人員需具有足夠專業背景（技師或資深職安人員）。</p>
+                            <p>3. <span class="font-bold">責任：</span> 審查合格後若發生工法變更，需重新申請審查或辦理變更備查。</p>
+                            <p>4. <span class="font-bold">罰則：</span> 未經審查合格即擅自開工者，依法勒令停工並處以罰鍰。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Records & Case Study -->
+            <section id="records" class="tab-content">
+                <h2 class="text-3xl font-black text-slate-800 mb-8 border-b-4 border-blue-600 pb-4 inline-block">紀錄保存與案例分析</h2>
+                
+                <div class="bg-white p-8 rounded-3xl border shadow-sm mb-12 overflow-hidden">
+                    <h3 class="text-xl font-bold mb-6 text-blue-800">風險評估表 (標準範例)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left border-collapse border">
+                            <thead class="bg-blue-900 text-white">
+                                <tr>
+                                    <th class="p-3 border border-blue-800">作業流程</th>
+                                    <th class="p-3 border border-blue-800">危害事件</th>
+                                    <th class="p-3 border border-blue-800">現有控制</th>
+                                    <th class="p-3 border border-blue-800">P</th>
+                                    <th class="p-3 border border-blue-800">S</th>
+                                    <th class="p-3 border border-blue-800">風險值</th>
+                                    <th class="p-3 border border-blue-800">建議措施</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-3 border">地下室開挖</td>
+                                    <td class="p-3 border font-bold text-red-600">支撐崩塌</td>
+                                    <td class="p-3 border">型鋼支撐、自動監測</td>
+                                    <td class="p-3 border text-center">2</td>
+                                    <td class="p-3 border text-center">4</td>
+                                    <td class="p-3 border text-center bg-orange-100 font-bold">8</td>
+                                    <td class="p-3 border text-blue-600 italic font-medium">導入即時應力回傳系統並設警報器</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 border">鋼架屋頂作業</td>
+                                    <td class="p-3 border font-bold text-red-600">墜落死亡</td>
+                                    <td class="p-3 border">安全網、掛安全帶</td>
+                                    <td class="p-3 border text-center">3</td>
+                                    <td class="p-3 border text-center">4</td>
+                                    <td class="p-3 border text-center bg-red-100 font-bold">12</td>
+                                    <td class="p-3 border text-blue-600 italic font-medium">優先採用安全走道與扶手架設</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-slate-50 p-6 rounded-2xl border-l-8 border-slate-300">
+                        <h4 class="font-bold text-slate-700 mb-2">紀錄保存要求</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            1. 風險評估結果應留存至少三年。<br>
+                            2. 必須有評估小組成員之親筆簽章。<br>
+                            3. 應作為職業安全衛生教育訓練之教材內容。
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-2xl border-l-8 border-blue-300">
+                        <h4 class="font-bold text-blue-700 mb-2">虛驚事故分析 (Near-Miss)</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            「差一點就受傷」的事件是最好的學習機會。每一次虛驚事故後，皆應回頭檢視風險評估表中的 P 與 S 值是否低估，並即時修正。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-12 bg-gradient-to-r from-blue-700 to-indigo-900 rounded-[3rem] text-white text-center shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-black mb-4">安全，是營造工程唯一的路</h2>
+                        <p class="opacity-75 max-w-xl mx-auto mb-8 text-sm">
+                            風險評估不是為了寫報告，而是為了讓現場的每一位夥伴，今天都能平平安安地回家。
+                        </p>
+                        <div class="flex justify-center space-x-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-black">0</div>
+                                <div class="text-[10px] uppercase opacity-60">災變</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-black">100%</div>
+                                <div class="text-[10px] uppercase opacity-60">承諾</div>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas fa-user-shield absolute left-[-20px] bottom-[-20px] text-white opacity-5 text-[150px]"></i>
+                </div>
+            </section>
+
+            <!-- Bottom Pagination -->
+            <div class="mt-20 flex justify-between items-center border-t border-slate-200 pt-8">
+                <button id="prev-btn" class="flex items-center space-x-2 text-slate-400 font-bold hover:text-blue-600 transition-colors disabled:opacity-20" disabled>
+                    <i class="fas fa-chevron-left"></i> <span>上一章節</span>
+                </button>
+                <div id="page-indicator" class="text-xs font-black text-slate-300 tracking-widest uppercase">
+                    Page 1 / 10
+                </div>
+                <button id="next-btn" class="flex items-center space-x-2 bg-blue-100 text-blue-700 px-6 py-2 rounded-full font-black hover:bg-blue-600 hover:text-white transition-all">
+                    <span>下一章節</span> <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    // Tab Management
+    const tabs = ['intro', 'legal', 'system', 'hazard', 'matrix', 'hierarchy', 'ptd', 'dynamic', 'type-d', 'records'];
+    let currentTabIndex = 0;
+
+    function showTab(tabId) {
+        // Hide all
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('sidebar-active'));
+        
+        // Show active
+        document.getElementById(tabId).classList.add('active');
+        document.querySelector(`[data-tab="${tabId}"]`).classList.add('sidebar-active');
+        
+        currentTabIndex = tabs.indexOf(tabId);
+        updatePagination();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updatePagination() {
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const indicator = document.getElementById('page-indicator');
+
+        prevBtn.disabled = currentTabIndex === 0;
+        nextBtn.disabled = currentTabIndex === tabs.length - 1;
+        indicator.innerText = `Page ${currentTabIndex + 1} / ${tabs.length}`;
+    }
+
+    document.getElementById('prev-btn').onclick = () => {
+        if (currentTabIndex > 0) showTab(tabs[currentTabIndex - 1]);
+    };
+
+    document.getElementById('next-btn').onclick = () => {
+        if (currentTabIndex < tabs.length - 1) showTab(tabs[currentTabIndex + 1]);
+    };
+
+    // Risk Calculator Logic
+    let currentP = 1;
+    let currentS = 1;
+
+    function setP(val) {
+        currentP = val;
+        document.querySelectorAll('.p-btn').forEach(b => b.className = 'p-btn w-full text-left p-3 rounded-xl border hover:bg-blue-50 transition-all');
+        document.getElementById(`p${val}`).classList.add('bg-blue-600', 'text-white');
+        calculateRisk();
+    }
+
+    function setS(val) {
+        currentS = val;
+        document.querySelectorAll('.s-btn').forEach(b => b.className = 's-btn w-full text-left p-3 rounded-xl border hover:bg-red-50 transition-all');
+        document.getElementById(`s${val}`).classList.add('bg-red-600', 'text-white');
+        calculateRisk();
+    }
+
+    function calculateRisk() {
+        const score = currentP * currentS;
+        const scoreEl = document.getElementById('risk-score');
+        const textEl = document.getElementById('risk-text');
+        const actionEl = document.getElementById('risk-action');
+        const cardEl = document.getElementById('risk-result-card');
+        
+        scoreEl.innerText = score;
+
+        if (score >= 9) {
+            textEl.innerText = '重大風險';
+            actionEl.innerText = '立即停工、研提工程控制對策，直到風險降低至可接受範圍。';
+            cardEl.className = 'bg-red-600 p-8 rounded-3xl text-white text-center shadow-2xl transition-all duration-500';
+        } else if (score >= 6) {
+            textEl.innerText = '高度風險';
+            actionEl.innerText = '應採取強制性工程或管理對策，由高階主管親自監督執行。';
+            cardEl.className = 'bg-orange-500 p-8 rounded-3xl text-white text-center shadow-2xl transition-all duration-500';
+        } else if (score >= 3) {
+            textEl.innerText = '中度風險';
+            actionEl.innerText = '建議增加管理措施或教育訓練，維持現狀監控並定期審查。';
+            cardEl.className = 'bg-yellow-400 p-8 rounded-3xl text-slate-900 text-center shadow-2xl transition-all duration-500';
+        } else {
+            textEl.innerText = '低度風險';
+            actionEl.innerText = '現有設施足以控制風險，維持一般巡檢與標準作業程序。';
+            cardEl.className = 'bg-green-600 p-8 rounded-3xl text-white text-center shadow-2xl transition-all duration-500';
+        }
+    }
+
+    // Mobile Menu
+    document.getElementById('mobile-menu-toggle').onclick = () => {
+        const sidebar = document.querySelector('aside');
+        sidebar.classList.toggle('hidden');
+        sidebar.classList.toggle('fixed');
+        sidebar.classList.toggle('inset-0');
+    };
+</script>
+
+</body>
+</html>
