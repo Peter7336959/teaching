@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>114年下半年實驗室實習工場高溫危害預防策略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        /* 模擬分頁樣式 */
+        .page {
+            background: white;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 60px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 1400px;
+        }
+
+        .section-header {
+            border-left: 8px solid #be123c;
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+            color: #9f1239;
+        }
+
+        .chart-bar {
+            height: 32px;
+            background: linear-gradient(90deg, #fb7185, #e11d48);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* 列印最佳化 */
+        @media print {
+            body { background: white; padding: 0; margin: 0; }
+            .page { 
+                margin: 0; 
+                box-shadow: none; 
+                width: 100%; 
+                max-width: none; 
+                padding: 40px;
+                page-break-after: always;
+                min-height: auto;
+            }
+            .no-print { display: none; }
+            .chart-bar { -webkit-print-color-adjust: exact; }
+            h1, h2, h3 { color: black !important; }
+        }
+
+        .table-pro th { background-color: #1e293b; color: white; padding: 15px; text-align: left; }
+        .table-pro td { border-bottom: 1px solid #e2e8f0; padding: 15px; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- 頂部導航 -->
+    <nav class="bg-slate-800 text-white p-4 sticky top-0 z-50 no-print flex justify-between items-center shadow-md">
+        <div class="font-bold">114年學校職安衛教育訓練專題</div>
+    </nav>
+
+    <!-- 第一頁：封面、前言與統計分析 -->
+    <div class="page">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-rose-900 mb-6">114年下半年實驗室與實習工場<br>高溫接觸危害預防策略</h1>
+            <p class="text-xl font-bold text-slate-600 mb-4">教學對象：學校職業安全衛生管理人員</p>
+            <p class="text-xl text-slate-800">講師：何明信（職安衛技師、退休專業檢查員）</p>
+        </header>
+
+        <!-- 前言區塊 -->
+        <section id="foreword" class="mb-16 p-8 bg-rose-50 rounded-xl border-l-8 border-rose-900">
+            <h3 class="text-2xl font-bold text-rose-900 mb-4">前言</h3>
+            <p class="text-xl leading-relaxed text-slate-700 mb-4">
+                在學術探索與專業實作的過程中，實驗室與實習工場是培育體驗與創新精神的搖籃，但其中潛藏的安全風險亦不容忽視。安全不應僅是口號，而是每一位師生在進行實習作業時，最自然且優先的考量。
+            </p>
+            <p class="text-xl leading-relaxed text-slate-700">
+                教育部始終關心每一位校園師生與管理夥伴的實驗安全。本教學網頁特別針對 114 年下半年（第三及四季）「高溫接觸」專題，從事故數據、法規落實到預防策略進行論述，期許能與各位共同築起校園安全的防護網，透過經驗學習與智慧累積，避免師生重蹈覆轍。
+            </p>
+        </section>
+
+        <section id="analysis">
+            <h2 class="text-3xl section-header font-bold">一、114年下半年事故概況分析 (數據透視)</h2>
+            
+            <div class="grid grid-cols-1 gap-10 mb-12">
+                <div class="p-8 bg-slate-50 rounded-xl border border-slate-200">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-700">【第三季分析】總件數 52 件</h3>
+                    <p class="text-xl mb-4 text-slate-600">與高、低溫接觸佔比 <strong>27% (14件)</strong></p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="chart-bar w-[27%]"></div>
+                        <span class="text-2xl font-bold">14件</span>
+                    </div>
+                    <ul class="text-xl space-y-4 text-slate-700">
+                        <li>📍 <strong>事故分布：</strong> 集中於高中職 (57%)，與餐飲、工科實習課程進入核心操作有關。</li>
+                        <li>🔥 <strong>主要媒介物：</strong> 餐飲實習熱油、高溫糖漿、沸水、瓦斯爐火。</li>
+                        <li>⚠️ <strong>傷勢評估：</strong> 雖多為輕傷，但中度傷勢比例不低，顯示專業設備風險高。</li>
+                    </ul>
+                </div>
+
+                <div class="p-8 bg-rose-50 rounded-xl border border-rose-200">
+                    <h3 class="text-2xl font-bold mb-6 text-rose-700">【第四季分析】總件數 87 件</h3>
+                    <p class="text-xl mb-4 text-rose-600">與高、低溫接觸佔比 <strong>20% (17件)</strong></p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="chart-bar w-[20%]"></div>
+                        <span class="text-2xl font-bold text-rose-600">17件</span>
+                    </div>
+                    <ul class="text-xl space-y-4 text-slate-700">
+                        <li>📍 <strong>事故分布：</strong> 國中案例暴增 (由3件增至10件)，佔該類別事故59%。</li>
+                        <li>🔥 <strong>主要媒介物：</strong> 生活科技實務之焊接器材 (電烙鐵、焊槍) 為大宗。</li>
+                        <li>📢 <strong>群聚效應：</strong> 部分學校短時間內發生多起類似案件，呈現顯著群聚效應。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <h3 class="font-bold text-2xl mb-6">🔍 多人受傷案例一覽表 (114年重點通報)</h3>
+                <table class="w-full text-lg table-pro border">
+                    <thead>
+                        <tr>
+                            <th>學校單位</th>
+                            <th>學制</th>
+                            <th>受傷人數</th>
+                            <th>媒介物與事件摘要</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">臺中市居仁國中</td>
+                            <td>國中</td>
+                            <td class="text-rose-600 font-bold">3人</td>
+                            <td>實驗下課整理器材，因忽略三腳架餘熱導致多人燙傷。</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">高雄市旗山國中</td>
+                            <td>國中</td>
+                            <td class="text-rose-600 font-bold">5人</td>
+                            <td>生科課實作，短短時間內多人發生燙傷與割傷，管理疲勞警訊。</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">高雄市旗山國中</td>
+                            <td>國中</td>
+                            <td class="text-rose-600 font-bold">2人</td>
+                            <td>焊接實作過程中使用不慎，右手手指遭電烙鐵燙傷。</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">雲林縣西螺農工</td>
+                            <td>高職</td>
+                            <td class="text-rose-600 font-bold">2人</td>
+                            <td>化工實驗燒玻璃過程操作不慎，手部輕微燒燙傷。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="text-xl text-slate-700 italic border-l-8 border-amber-400 pl-6 bg-amber-50 p-6 rounded-r-lg">
+                <strong>小結：</strong> 數據反映學期末（Q4）的作品趕工、空間擁擠是國中端事故爆發的主因。職安人員應針對此階段加強現場巡查。
+            </div>
+        </section>
+    </div>
+
+    <!-- 第二頁：危害分析 -->
+    <div class="page">
+        <section id="hazards">
+            <h2 class="text-3xl section-header font-bold">二、核心危害媒介物與風險行為分析</h2>
+            
+            <div class="space-y-12">
+                <div class="bg-white p-8 rounded-2xl shadow-inner border border-slate-200">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-8 flex items-center">
+                        <span class="mr-3">🔥</span> 物理媒介物分類與特性
+                    </h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="border-l-4 border-orange-400 pl-4">
+                            <h4 class="text-xl font-bold mb-2">1. 焊接器材 (電烙鐵/焊槍)</h4>
+                            <p class="text-lg text-slate-600">熱度集中且體積小。在同一桌面多人操作時，極易因碰撞或誤觸高溫前端受傷。</p>
+                        </div>
+                        <div class="border-l-4 border-rose-400 pl-4">
+                            <h4 class="text-xl font-bold mb-2">2. 高溫液體、油脂與糖漿</h4>
+                            <p class="text-lg text-slate-600">包含熱油、糖漿、熱湯。具黏著性，傷害面積大且深。攪拌熱湯引發的「壓力噴濺」極危險。</p>
+                        </div>
+                        <div class="border-l-4 border-blue-400 pl-4">
+                            <h4 class="text-xl font-bold mb-2">3. 引火源與基礎熱源</h4>
+                            <p class="text-lg text-slate-600">瓦斯爐、酒精燈、噴槍。常發生於點火瞬間閃燃或加熱後移取玻璃器材時。</p>
+                        </div>
+                        <div class="border-l-4 border-slate-400 pl-4">
+                            <h4 class="text-xl font-bold mb-2">4. 器材之餘熱</h4>
+                            <p class="text-lg text-slate-600">三腳架、電捲棒。視覺上難以判斷，學生常在下課收納階段因忽略餘熱而導致燙傷。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-rose-50 p-10 rounded-2xl border border-rose-200">
+                    <h3 class="text-2xl font-bold text-rose-800 mb-8">⚠️ 關鍵風險行為分析</h3>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-bold text-rose-300">01</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">認知失誤：注意力不集中</h4>
+                                <p class="text-lg text-slate-700">與同學交談或因環境嘈雜分心，導致手部移動路徑觸碰到高溫表面。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-bold text-rose-300">02</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">程序省略：違反 SOP</h4>
+                                <p class="text-lg text-slate-700">為求快未待冷卻即進行下個動作，或未使用正確夾具移取加熱中的器材。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl font-bold text-rose-300">03</div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">危害預測能力不足</h4>
+                                <p class="text-lg text-slate-700">對於「餘熱持久性」或「液體密封受熱產生壓力」缺乏物理風險認知。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 第三頁：法規對照 -->
+    <div class="page">
+        <section id="regulations">
+            <h2 class="text-3xl section-header font-bold">三、違反相關法規對照一覽表 (依《職業安全衛生設施規則》)</h2>
+            <p class="text-xl text-slate-500 mb-10">※ 職安衛人員應針對以下條款落實校內實驗室之不定期稽核</p>
+            
+            <div class="space-y-12">
+                <table class="w-full text-xl table-pro border-2 border-slate-200">
+                    <thead>
+                        <tr class="bg-slate-800 text-white">
+                            <th class="w-1/4">法規條次</th>
+                            <th class="w-1/2">核心要求與內容</th>
+                            <th class="w-1/4">職安人員稽核重點</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-2xl">
+                        <tr>
+                            <td class="font-bold text-rose-700">第 22 條</td>
+                            <td class="leading-relaxed">高溫熱表面有引起灼燙傷之虞者，<b>應設置警示標誌、隔熱等安全設施。</b></td>
+                            <td class="text-lg text-slate-600">✔ 加熱板警示標籤<br>✔ 焊槍安全支架<br>✔ 桌面耐熱隔板</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-rose-700">第 169 條</td>
+                            <td class="leading-relaxed">高熱設備應有防火構造，並<b>與建築物或可燃物採取必要隔離。</b></td>
+                            <td class="text-lg text-slate-600">✔ 易燃物隔離<br>✔ 酒精瓶遠離熱源</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-rose-700">第 183 條</td>
+                            <td class="leading-relaxed">處置大量高熱物之場所，為防止溢出引起灼傷，應<b>採防範措施並佩戴防護具。</b></td>
+                            <td class="text-lg text-slate-600">✔ 全臉式防護面罩<br>✔ 耐熱長袖工作服</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-rose-700">第 285 條</td>
+                            <td class="leading-relaxed">高溫操作場所應置備適當之<b>防護具，使師生確實使用。</b></td>
+                            <td class="text-lg text-slate-600">✔ 手套狀態檢點<br>✔ 強制佩戴教育</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold text-rose-700">第 304 條</td>
+                            <td class="leading-relaxed">發散大量熱源之爐灶應設置<b>局部排氣或換氣裝置。</b></td>
+                            <td class="text-lg text-slate-600">✔ 通風系統運轉<br>✔ 降低環境熱負荷</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-20 p-10 bg-slate-800 text-white rounded-xl shadow-lg">
+                <p class="font-bold text-2xl mb-4 text-rose-400">💡 實務提醒：</p>
+                <p class="text-xl leading-relaxed">「第285條」的關鍵在於「使師生確實使用」。職安人員巡檢時，應檢查有無學生因炎熱或方便而脫下手套或面罩的情形。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 第四頁：根因分析工具 -->
+    <div class="page">
+        <section id="root-cause">
+            <h2 class="text-3xl section-header font-bold">四、行為安全分析與事故調查學習</h2>
+            
+            <div class="grid grid-cols-2 gap-10 mb-12">
+                <div class="bg-white border-2 border-slate-200 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-blue-800">📊 ABC 行為模型</h3>
+                    <div class="space-y-6 text-xl">
+                        <p><strong>A (Activator) 前因：</strong> <br><span class="text-lg text-slate-600">趕工、擁擠環境、缺乏警告標誌。</span></p>
+                        <p><strong>B (Behavior) 行為：</strong> <br><span class="text-lg text-slate-600">邊聊天邊焊接、未使用夾具移取加熱管。</span></p>
+                        <p><strong>C (Consequence) 後後：</strong> <br><span class="text-lg text-slate-600">燙傷、送醫、停工調查、國賠風險。</span></p>
+                        <hr>
+                        <p class="text-sm text-slate-500 italic">小結：職安人員應著重改善環境中的「前因 (A)」，而非僅針對後果處置。</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-300">
+                    <h3 class="text-2xl font-bold mb-6 text-slate-800">🔍 運用事故調查工具，找出根因</h3>
+                    <div class="space-y-6 text-lg">
+                        <div class="p-4 bg-white rounded border-l-4 border-rose-500">
+                            <p class="font-bold">為何樹分析 (Why-Tree)：</p>
+                            <p class="text-sm">連續詢問「為什麼」向上追溯，從學生失誤追溯至環境或系統性的管理缺失。</p>
+                        </div>
+                        <div class="p-4 bg-white rounded border-l-4 border-rose-500">
+                            <p class="font-bold">屏障分析 (Barrier Analysis)：</p>
+                            <p class="text-sm">檢視危害路徑中，哪一層屏障（如：防護罩、教育、PPE）失效導致結果。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-10 rounded-2xl border-2 border-blue-200 mb-10 text-center">
+                <h3 class="text-2xl font-bold mb-6 text-blue-900">📑 專業實務下載</h3>
+                <p class="text-xl mb-6">落實事故調查是預防二次災害的關鍵。建議下載官方實務指南供參考。</p>
+                <a href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-blue-700 transition">
+                    [事故調查制度實務指南] (連結至職災預防中心)
+                </a>
+            </div>
+            
+            <div class="text-xl text-slate-700 italic border-l-8 border-slate-400 pl-6 bg-slate-100 p-6 rounded-r-lg mt-8">
+                <strong>小結：</strong> 從案例學習智慧，找出環境中「誘導」危險行為的因子，才是職安衛管理的真諦。
+            </div>
+        </section>
+    </div>
+
+    <!-- 第五頁：預防策略 (HOC) -->
+    <div class="page">
+        <section id="hoc">
+            <h2 class="text-3xl section-header font-bold">五、災害防止策略：危害控制階層 (Hierarchy of Control)</h2>
+            
+            <div class="space-y-12">
+                <!-- 工程控制 -->
+                <div class="p-10 border-l-8 border-emerald-500 bg-emerald-50 rounded-r-xl">
+                    <h3 class="text-3xl font-bold text-emerald-800 mb-6">1. 工程控制 (Engineering Controls)</h3>
+                    <p class="text-xl mb-6">優化物理設施，將人與熱源隔開。</p>
+                    <div class="grid grid-cols-1 gap-6 text-xl">
+                        <div class="bg-white p-6 rounded shadow-md">
+                            <p class="font-bold text-emerald-700 mb-2">● 具體實施範例：</p>
+                            <ul class="list-disc list-inside space-y-3 text-lg">
+                                <li>採購具備「自動斷電」或「手柄極佳隔熱」之焊槍。</li>
+                                <li>加熱板加裝物理性隔熱防護網（避免誤觸）。</li>
+                                <li>強化實驗室通風換氣與局部排氣，降低環境熱量。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 管理控制 -->
+                <div class="p-10 border-l-8 border-blue-500 bg-blue-50 rounded-r-xl">
+                    <h3 class="text-3xl font-bold text-blue-800 mb-6">2. 管理控制 (Administrative Controls)</h3>
+                    <p class="text-xl mb-6">強化制度規範與安全意識。</p>
+                    <div class="space-y-6 text-xl">
+                        <div class="bg-white p-6 rounded shadow-md">
+                            <p class="font-bold text-blue-700 mb-2">● 具體實施範例：</p>
+                            <ul class="list-disc list-inside space-y-3 text-lg">
+                                <li>劃定「高溫作業警戒區」，禁止非操作人員進入。</li>
+                                <li>落實「點火前檢查」SOP，並進行 5 分鐘風險評估說明。</li>
+                                <li>嚴格執行燙傷處理流程：沖、脫、泡、蓋、送。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 個人防護 -->
+                <div class="p-10 border-l-8 border-purple-500 bg-purple-50 rounded-r-xl">
+                    <h3 class="text-3xl font-bold text-purple-800 mb-6">3. 個人防護具 (PPE)</h3>
+                    <p class="text-xl mb-6">建立最後一道防禦防線。</p>
+                    <div class="bg-white p-8 rounded shadow-md">
+                        <p class="font-bold text-rose-600 text-2xl mb-4">● 實務升級建議：</p>
+                        <p class="text-xl leading-relaxed">
+                            多起臉部燙傷案例顯示「護目鏡」無法對抗大面積熱液噴濺。對於餐飲實習等高風險環境，應強制穿戴：
+                            <br><strong>(1) 全罩式防護面罩 (Face Shield)</strong>：全臉保護。
+                            <br><strong>(2) 耐熱隔熱手套與圍裙</strong>：防止熱傳導與潑灑。
+                            <br><strong>(3) 狀態監控</strong>：手套變薄或焦黑時立即更換。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 第六頁：職責與參考資料 -->
+    <div class="page">
+        <section id="responsibilities" class="mb-24">
+            <h2 class="text-3xl section-header font-bold">六、相關人員與師生職責</h2>
+            <div class="grid grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-100 rounded-xl border border-slate-300">
+                    <h3 class="font-bold text-2xl mb-4">校方/管理員</h3>
+                    <ul class="text-lg text-left list-disc pl-6 space-y-3">
+                        <li>配置法規要求之隔熱設施。</li>
+                        <li>提供充足且合格的防護具。</li>
+                        <li>定期實施自動檢查檢點。</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-slate-100 rounded-xl border border-slate-300">
+                    <h3 class="font-bold text-2xl mb-4">授課老師</h3>
+                    <ul class="text-lg text-left list-disc pl-6 space-y-3">
+                        <li>確保教學空間秩序良好。</li>
+                        <li>監督學生確實佩戴 PPE。</li>
+                        <li>發現設備損壞立即通報。</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-slate-100 rounded-xl border border-slate-300">
+                    <h3 class="font-bold text-2xl mb-4">參與學生</h3>
+                    <ul class="text-lg text-left list-disc pl-6 space-y-3">
+                        <li>落實遵守安全操作程序。</li>
+                        <li>不隨意傾斜燃燒器材。</li>
+                        <li>實驗後依指示處理器材。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="border-t-2 border-slate-300 pt-12">
+            <h2 class="text-2xl font-bold mb-8">📚 參考資料 (References)</h2>
+            <div class="text-lg text-slate-600 space-y-3">
+                <p>何明信 (114)。<i>114年下半年實驗室實習工場高溫危害預防策略</i>。教育部實驗室安全衛生研習營。</p>
+                <p>教育部 (108)。<i>學校實驗室一般注意事項及安全指引</i>。中華民國：教育部。</p>
+                <p>勞動部 (113)。<i>職業安全衛生設施規則</i>。中華民國：勞動部職安署。</p>
+                <p>職業災害預防及重建中心 (114)。<i>事故調查制度實務指南</i>。取自 https://www.coapre.org.tw/</p>
+            </div>
+        </section>
+
+        <footer class="mt-24 text-center text-slate-500 text-sm">
+            <p>教育部關心您的實驗/實習安全</p>
+            <p class="mt-2">「安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。」</p>
+            <p class="mt-4 text-xs">© 114年教育推廣專題 - 講師：何明信 </p>
+        </footer>
+    </div>
+
+</body>
+</html>
