@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>校園職業安全衛生研習 - 實驗室高溫接觸災害防止策略 | 講師:何明信 | Reveal.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* 自訂樣式增強閱讀與列印友善 */
+        .reveal h1 {
+            font-size: 2.2em;
+            color: #004d73;
+            border-left: 12px solid #f4a261;
+            padding-left: 25px;
+            text-align: left;
+            margin-bottom: 0.5em;
+        }
+        .reveal h2 {
+            font-size: 1.8em;
+            color: #1e5f7a;
+            border-bottom: 3px solid #ffb74d;
+            padding-bottom: 8px;
+            text-align: left;
+        }
+        .reveal h3 {
+            font-size: 1.4em;
+            color: #2c6e49;
+            margin-top: 0.5em;
+        }
+        .reveal p, .reveal li, .reveal blockquote {
+            font-size: 0.9em;
+            line-height: 1.4;
+            text-align: left;
+        }
+        .reveal ul, .reveal ol {
+            text-align: left;
+        }
+        .reveal .stat-badge {
+            background: #f0f7ff;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 40px;
+            font-weight: bold;
+            color: #0059b3;
+            border-left: 5px solid #ff914d;
+            margin: 10px 0;
+        }
+        .highlight {
+            background-color: #fff3d1;
+            font-weight: 700;
+            padding: 0 4px;
+            border-radius: 6px;
+            color: #b45f06;
+        }
+        .case-card {
+            background: #fef7e8;
+            border-left: 8px solid #e67e22;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 16px;
+            text-align: left;
+        }
+        .risk-behavior {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 15px 0;
+            justify-content: flex-start;
+        }
+        .risk-item {
+            background: #fff2e6;
+            flex: 1 1 180px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 500;
+            border: 1px solid #ffd7ae;
+            font-size: 0.85em;
+        }
+        .control-hierarchy {
+            background: #eef4fa;
+            padding: 15px;
+            border-radius: 24px;
+            margin: 15px 0;
+        }
+        .control-level {
+            background: white;
+            border-radius: 30px;
+            padding: 8px 15px;
+            margin: 8px 0;
+            font-weight: bold;
+            border-left: 8px solid #ff8c42;
+            font-size: 0.85em;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.7em;
+            margin: 10px 0;
+        }
+        .data-table th {
+            background-color: #1f6392;
+            color: white;
+            padding: 6px 4px;
+            border: 1px solid #2c7eb6;
+        }
+        .data-table td {
+            border: 1px solid #cbd5e1;
+            padding: 6px 4px;
+            vertical-align: top;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #1f6392;
+            color: white;
+            font-weight: bold;
+            padding: 8px 18px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-size: 0.8em;
+        }
+        .download-card {
+            background: #e9f1f7;
+            border-radius: 20px;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        footer {
+            font-size: 0.6em;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .reveal .slides section {
+            padding: 20px;
+        }
+        .reveal .img-placeholder {
+            background: #e9ecef;
+            border-radius: 16px;
+            padding: 10px;
+            text-align: center;
+            color: #5c6f87;
+            font-size: 0.75em;
+            margin: 12px 0;
+        }
+        .reveal .badge-date {
+            background: #eceff3;
+            padding: 4px 12px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 0.7em;
+            margin-bottom: 15px;
+        }
+        .resources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .resource-item {
+            background: #fef9ef;
+            border-radius: 20px;
+            padding: 12px;
+            flex: 1 1 200px;
+            border: 1px solid #ffe0b5;
+        }
+        @media print {
+            .reveal .controls, .reveal .progress {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- 封面頁 -->
+            <section>
+                <div class="badge-date">🔬 教育部校園職業安全衛生管理研習・南區場次 115年8月10日</div>
+                <h1 style="border-left: none; text-align: center; font-size: 2.5rem;">大專院校實驗室與高溫接觸<br>之災害防止策略</h1>
+                <p style="font-size: 1.5rem; text-align: center;"><strong>講師：何明信</strong> (安衛技師、退休專業檢查員)</p>
+                <p style="font-size: 1.5rem; text-align: center; color: #2c6e49;">📅 115年8月10日 (南區) 15:10 - 17:00 ｜ 時長：2小時</p>
+                <div style="background: #f5f2eb; padding: 15px; border-radius: 24px; margin-top: 20px;">
+                    <p style="font-size: 2rem;">✨ 研習目標：</p>
+                    <ul style="font-size: 2rem;">
+                        <li>宣導職業安全衛生相關法規及學校安全衛生實務推廣</li>
+                        <li>協助高級中等以上學校承辦人員熟識職業安全衛生法規與管理實務</li>
+                        <li>導入行為安全分析與事故調查機制，建立校園預防文化</li>
+                    </ul>
+                    <p style="font-size: 1.5rem; margin-top: 10px;">✔ 主辦：教育部 ｜ 協辦：中國勞工安全衛生管理學會</p>
+                </div>
+                <footer>取自114年校安通報數據．職安設施規則．校園高溫接觸預防專題</footer>
+            </section>
+
+            <!-- 事故概況分析 Q3+Q4 -->
+            <section>
+                <h2>📊 114年第三、四季高溫接觸事故概況</h2>
+                <p>實驗/實習場所事故第三季52件、第四季87件，<br>「與高、低溫接觸」分別占<span class="highlight">27% (14件)</span> 及 <span class="highlight">20% (17件)</span>，居災害第2名。</p>
+                <div style="display: flex; gap: 15px; margin: 15px 0;">
+                    <div style="flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;">
+                        <h3 style="font-size:1.1em;">📌 第三季</h3>
+                        <p>高溫接觸14件<br>➜ 高中職佔57%<br>➜ 媒介物：熱油、瓦斯爐、酒精燈、焊槍、烙鐵、鎂帶</p>
+                    </div>
+                    <div style="flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;">
+                        <h3 style="font-size:1.1em;">📌 第四季</h3>
+                        <p>高溫接觸17件<br>➜ 國中暴增至10件(59%)<br>➜ 居仁國中、旗山國中群聚效應</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <p>⚠️ <strong>關鍵發現</strong>：國中焊接燙傷陡升，反映學期末趕工、空間擁擠；高中職餐飲及化工實習高溫危害居多。</p>
+                </div>
+                <div class="stat-badge">🔥 高溫接觸總計31件 (Q3+Q4) ｜ 輕傷佔比76% ｜ 中度以上24%</div>
+            </section>
+
+            <!-- 媒介物與風險行為 -->
+            <section>
+                <h2>⚠️ 事故媒介物焦點 & 關鍵風險行為</h2>
+                <h3>🔹 主要媒介物</h3>
+                <ul>
+                    <li>熱油/熱液（餐飲、糖漿、壓力噴濺）</li>
+                    <li>焊接器材：焊槍、焊鐵、烙鐵</li>
+                    <li>基礎熱源：酒精燈、瓦斯爐、加熱後玻璃、三腳架餘熱</li>
+                </ul>
+                <h3>🧠 行為安全分析：四大風險模式</h3>
+                <div class="risk-behavior">
+                    <div class="risk-item">🔁 認知失誤：分心碰撞高溫表面</div>
+                    <div class="risk-item">⚠️ 程序省略：未冷卻攪拌、未用夾具</div>
+                    <div class="risk-item">📉 危害預測不足：忽略餘熱、密閉容器壓力噴濺</div>
+                    <div class="risk-item">🏗️ 環境干擾：空間不足、電線交錯</div>
+                </div>
+                <div class="img-placeholder">📷 高溫警戒區劃設、焊槍安全支架及隔熱墊配置示意</div>
+                <p>💡 對策：SOP訓練、視覺警示區、強制防護具與安全倫理教育。</p>
+            </section>
+
+            <!-- 法規重點對照表 -->
+            <section>
+                <h2>📖 法規視角 · 職業安全衛生設施規則</h2>
+                <table class="data-table">
+                    <thead><tr><th>條次</th><th>核心內容</th><th>校園案例對應</th><th>防護建議</th></tr></thead>
+                    <tbody>
+                        <tr><td>第22條</td><td>高溫熱表面應設警示、隔熱</td><td>焊槍、三角架燙傷</td><td>焊槍安全支架+隔熱墊+警戒區</td></tr>
+                        <tr><td>第169條</td><td>高熱設備與可燃物隔離</td><td>瓦斯爐閃燃、噴燈燙傷</td><td>明火與化學品保持距離</td></tr>
+                        <tr><td>第183條</td><td>防高熱物溢出灼傷</td><td>熱油/熱湯噴濺、果汁機爆濺</td><td>全罩式面罩+耐熱圍裙</td></tr>
+                        <tr><td>第285條</td><td>防護具確實使用</td><td>徒手調整酒精燈、未戴手套</td><td>檢點隔熱手套，教師監督</td></tr>
+                        <tr><td>第304條</td><td>局部排氣/換氣</td><td>封閉實習室高溫疲勞失誤</td><td>強化通風與排熱系統</td></tr>
+                    </tbody>
+                </table>
+                <p class="note-ai">表：對照114年下半年校園高溫接觸案例彙整</p>
+            </section>
+
+            <!-- 行為安全分析與事故調查學習 -->
+            <section>
+                <h2>🔍 行為安全分析 (BBS) 與事故調查學習</h2>
+                <p>落實事故調查是<strong>預防二次災害的關鍵</strong>，透過行為安全觀察及根本原因分析，阻斷錯誤重演。</p>
+                <div class="investigation-steps" style="background:#f8f2e3; border-radius: 20px; padding: 12px;">
+                    <h3>📋 調查學習要點</h3>
+                    <ul>
+                        <li>立即應變通報 → 送醫、校安通報</li>
+                        <li>成立調查小組：教師、環安衛、學生代表</li>
+                        <li>行為風險溯源 (HFACS)</li>
+                        <li>改善策進：更新SOP、工程控制、教育訓練</li>
+                    </ul>
+                    <p>⭐ <strong>案例：居仁國中焊接群聚燙傷</strong> – 調查發現未強制使用耐熱手套、焊槍放置混亂，改善後事故歸零。</p>
+                </div>
+                <div class="case-card">💡 建立安全觀察-回饋-改善的正向循環，讓師生主動辨識高溫風險。</div>
+            </section>
+
+            <!-- 專業實務下載：事故調查指南 -->
+            <section>
+                <h2>📎 專業實務下載・事故調查資源</h2>
+                <div class="download-card">
+                    <p style="font-weight: bold;">📘 事故調查制度實務指南</p>
+                    <p>職業災害預防中心／勞動部指引<br>根本原因分析、訪談技巧、改善表單</p>
+                    <a class="btn-download" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank">⬇️ 前往下載資源</a>
+                </div>
+                <p>✅ 各校可納入環安衛委員會標準文件，每學期模擬事故調查演練。</p>
+            </section>
+
+            <!-- 災害防止策略 控制階層 -->
+            <section>
+                <h2>🛡️ 災害防止策略 – 危害控制階層</h2>
+                <div class="control-hierarchy">
+                    <div class="control-level">🏭 1. 本質安全 / 取代：低溫製程、減少高溫暴露</div>
+                    <div class="control-level">⚙️ 2. 工程控制：自動斷電、防護網、局部排氣、隔熱手柄</div>
+                    <div class="control-level">📋 3. 管理控制：SOP、風險說明、案例分享、緊急應變「沖脫泡蓋送」</div>
+                    <div class="control-level">🧤 4. 個人防護具：隔熱手套、全罩面罩、耐熱圍裙、定期檢點</div>
+                </div>
+                <div class="case-card">🔥 特別提醒：多起臉部燙傷顯示護目鏡不足以應對噴濺，應使用全臉式防護面罩。</div>
+            </section>
+
+            <!-- 群聚事故解讀 居仁&旗山 -->
+            <section>
+                <h2>🏫 群聚事故警示・國中焊接燙傷浪潮</h2>
+                <p><strong>📍 臺中居仁國中</strong>：短期多起焊鐵、焊槍燙傷 + 三腳架餘熱燙傷<br>
+                <strong>📍 高雄旗山國中</strong>：生活科技焊接課單日最多5人燙傷</p>
+                <h3>共同失效因子與改善</h3>
+                <ul>
+                    <li>✖ 空間狹小、焊槍隨意擺放 → ✅ 增設焊槍安全架/隔熱墊</li>
+                    <li>✖ 未建立降溫檢查步驟 → ✅ 課後教師統一收置高溫器具</li>
+                    <li>✖ 防護具不足 → ✅ 強制佩戴耐熱手套+分區操作</li>
+                </ul>
+                <div class="stat-badge">📢 召開教師案例檢討會議，採用事故調查指南系統性改善</div>
+            </section>
+
+            <!-- 緊急應變與教育訓練 -->
+            <section>
+                <h2>🚨 強化緊急應變與安全教育訓練</h2>
+                <h3>📌 燙傷處理「沖、脫、泡、蓋、送」</h3>
+                <ul>
+                    <li>沖：冷水沖洗15-30分鐘</li>
+                    <li>脫：移除衣物避免撕破水泡</li>
+                    <li>泡：繼續浸泡降溫</li>
+                    <li>蓋：清潔紗布覆蓋</li>
+                    <li>送：儘速就醫</li>
+                </ul>
+                <h3>🎓 教育訓練亮點</h3>
+                <p>▪ 實驗前風險評估說明 ▪ 教師高溫危害預防知能 ▪ VR或案例影片教學</p>
+                <div class="img-placeholder">📸 實務操作：安全拿取熱玻璃器皿、正確擺放焊槍架</div>
+            </section>
+
+            <!-- 校園安全衛生管理實務推動 -->
+            <section>
+                <h2>📌 校園安全衛生管理實務推動</h2>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div style="background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;">
+                        <strong>📋 行政管理</strong>
+                        <p>修訂高溫SOP、設備自動檢查表、危害通識標示</p>
+                    </div>
+                    <div style="background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;">
+                        <strong>🔧 設備環境改善</strong>
+                        <p>耐熱隔離區、排熱系統、緊急沖淋設備</p>
+                    </div>
+                </div>
+                <p>🧪 每學期舉辦實驗室高溫暴露風險評估，強化聯合稽查。</p>
+                <footer>教育部關心您的實驗/實習安全</footer>
+            </section>
+
+            <!-- 結語 -->
+            <section>
+                <h2>🎯 結語：從行為疏忽邁向本質安全</h2>
+                <p style="font-size:1.2rem; font-style:italic;">“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”</p>
+                <div style="background:#eef2fa; border-radius: 24px; padding: 15px; margin-top: 15px;">
+                    <p>✅ <strong>立即行動</strong></p>
+                    <ul>
+                        <li>針對焊接、餐飲熱油、理化玻璃加熱課程重新審視風險</li>
+                        <li>推動「熱源安全專案」：隔熱裝置、強制面罩/手套</li>
+                        <li>強化國中教師安全督導能量</li>
+                        <li>參照事故調查指南建立學習文化</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 參考資料 & 延伸資源 (含電子報下載) -->
+            <section>
+                <h2>📚 參考資料 & 延伸資源</h2>
+                <div class="resources-grid">
+                    <div class="resource-item">
+                        <strong>📄 法規與通報</strong>
+                        <ul style="font-size:0.7rem;">
+                            <li>職業安全衛生設施規則 (113年)</li>
+                            <li>校安通報114年Q3/Q4統計</li>
+                            <li>學校實驗室一般注意事項指引</li>
+                        </ul>
+                    </div>
+                    <div class="resource-item">
+                        <strong>📘 專業下載</strong>
+                        <ul style="font-size:0.7rem;">
+                            <li><a href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank">事故調查制度實務指南</a></li>
+                            <li><strong>📧 電子報資料下載</strong><br>「114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf」<br>
+                            <a href="docs/114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf" target="_blank" style="background:#f4a261; padding:4px 12px; border-radius:30px; color:white; text-decoration:none; display:inline-block; margin-top:5px;">⬇️ 下載電子報</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="resource-item">
+                        <strong>🧪 行為安全資源</strong>
+                        <p style="font-size:0.7rem;">BBS觀察表單、校園案例影片、緊急應變腳本，可洽教育部環安衛小組</p>
+                    </div>
+                </div>
+                <div class="download-card" style="margin-top: 15px;">
+                    <p>📖 研習補充講義及行為安全檢核表可聯繫主辦單位。<br>電子報內含完整高溫災害預防、法規對照及行為策略，歡迎下載。</p>
+                </div>
+                <footer>課後可進行高溫風險自主檢核及事故調查演練</footer>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: false,   // 靠左對齊較適合長篇內容
+            hash: true,
+            slideNumber: 'c/t',
+            transition: 'slide',
+            width: 1200,
+            height: 800,
+            margin: 0.1,
+            pdfSeparateFragments: false,
+        });
+    </script>
+</body>
+</html>

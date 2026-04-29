@@ -33,5 +33,236 @@
     "title": "教學用網站",
     "section": "4.學校種子人員-高溫接觸危害預防策略",
     "text": "4.學校種子人員-高溫接觸危害預防策略"
+  },
+  {
+    "objectID": "test2.html#quarto",
+    "href": "test2.html#quarto",
+    "title": "Untitled",
+    "section": "Quarto",
+    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see https://quarto.org/docs/presentations/."
+  },
+  {
+    "objectID": "test2.html#bullets",
+    "href": "test2.html#bullets",
+    "title": "Untitled",
+    "section": "Bullets",
+    "text": "Bullets\nWhen you click the Render button a document will be generated that includes:\n\nContent authored with markdown\nOutput from executable code"
+  },
+  {
+    "objectID": "test2.html#code",
+    "href": "test2.html#code",
+    "title": "Untitled",
+    "section": "Code",
+    "text": "Code\nWhen you click the Render button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n\n[1] 2"
+  },
+  {
+    "objectID": "test2.html",
+    "href": "test2.html",
+    "title": "教學網站 - 何明信老師",
+    "section": "",
+    "text": "&lt;!DOCTYPE html&gt;\n\n\n\n\n\n校園職業安全衛生研習 - 實驗室高溫接觸災害防止策略 | 何明信講師 | Reveal.js\n\n /\\* 自訂樣式增強閱讀與列印友善 \\*/ .reveal h1 { font-size: 2.2em; color: #004d73; border-left: 12px solid #f4a261; padding-left: 25px; text-align: left; margin-bottom: 0.5em; } .reveal h2 { font-size: 1.8em; color: #1e5f7a; border-bottom: 3px solid #ffb74d; padding-bottom: 8px; text-align: left; } .reveal h3 { font-size: 1.4em; color: #2c6e49; margin-top: 0.5em; } .reveal p, .reveal li, .reveal blockquote { font-size: 0.9em; line-height: 1.4; text-align: left; } .reveal ul, .reveal ol { text-align: left; } .reveal .stat-badge { background: #f0f7ff; display: inline-block; padding: 5px 15px; border-radius: 40px; font-weight: bold; color: #0059b3; border-left: 5px solid #ff914d; margin: 10px 0; } .highlight { background-color: #fff3d1; font-weight: 700; padding: 0 4px; border-radius: 6px; color: #b45f06; } .case-card { background: #fef7e8; border-left: 8px solid #e67e22; padding: 15px 20px; margin: 15px 0; border-radius: 16px; text-align: left; } .risk-behavior { display: flex; flex-wrap: wrap; gap: 12px; margin: 15px 0; justify-content: flex-start; } .risk-item { background: #fff2e6; flex: 1 1 180px; padding: 8px 12px; border-radius: 20px; font-weight: 500; border: 1px solid #ffd7ae; font-size: 0.85em; } .control-hierarchy { background: #eef4fa; padding: 15px; border-radius: 24px; margin: 15px 0; } .control-level { background: white; border-radius: 30px; padding: 8px 15px; margin: 8px 0; font-weight: bold; border-left: 8px solid #ff8c42; font-size: 0.85em; } .data-table { width: 100%; border-collapse: collapse; font-size: 0.7em; margin: 10px 0; } .data-table th { background-color: #1f6392; color: white; padding: 6px 4px; border: 1px solid #2c7eb6; } .data-table td { border: 1px solid #cbd5e1; padding: 6px 4px; vertical-align: top; } .btn-download { display: inline-block; background-color: #1f6392; color: white; font-weight: bold; padding: 8px 18px; border-radius: 40px; text-decoration: none; margin-top: 10px; font-size: 0.8em; } .download-card { background: #e9f1f7; border-radius: 20px; padding: 15px; text-align: center; margin: 15px 0; } footer { font-size: 0.6em; color: #6c757d; text-align: center; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px; } .reveal .slides section { padding: 20px; } .reveal .img-placeholder { background: #e9ecef; border-radius: 16px; padding: 10px; text-align: center; color: #5c6f87; font-size: 0.75em; margin: 12px 0; } .reveal .badge-date { background: #eceff3; padding: 4px 12px; border-radius: 30px; display: inline-block; font-size: 0.7em; margin-bottom: 15px; } .resources-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; } .resource-item { background: #fef9ef; border-radius: 20px; padding: 12px; flex: 1 1 200px; border: 1px solid #ffe0b5; } @media print { .reveal .controls, .reveal .progress { display: none; } } \n\n\n\n    &lt;div class=\"slides\"&gt;\n\n        &lt;!-- 封面頁 --&gt;\n        &lt;section&gt;\n            &lt;div class=\"badge-date\"&gt;🔬 教育部校園職業安全衛生管理研習・南區場次 115年8月10日&lt;/div&gt;\n            &lt;h1 style=\"border-left: none; text-align: center; font-size: 2.5rem;\"&gt;大專院校實驗室與高溫接觸&lt;br&gt;之災害防止策略&lt;/h1&gt;\n            &lt;p style=\"font-size: 1.2rem; text-align: center;\"&gt;&lt;strong&gt;講師：何明信&lt;/strong&gt; (安衛技師、退休專業檢查員)&lt;/p&gt;\n            &lt;p style=\"font-size: 0.9rem; text-align: center; color: #2c6e49;\"&gt;📅 115年8月10日 (南區) 15:10 - 17:00 ｜ 時長：2小時&lt;/p&gt;\n            &lt;div style=\"background: #f5f2eb; padding: 15px; border-radius: 24px; margin-top: 20px;\"&gt;\n                &lt;p style=\"font-size: 0.9rem;\"&gt;✨ 研習目標：&lt;/p&gt;\n                &lt;ul style=\"font-size: 0.85rem;\"&gt;\n                    &lt;li&gt;宣導職業安全衛生相關法規及學校安全衛生實務推廣&lt;/li&gt;\n                    &lt;li&gt;協助高級中等以上學校承辦人員熟識職業安全衛生法規與管理實務&lt;/li&gt;\n                    &lt;li&gt;導入行為安全分析與事故調查機制，建立校園預防文化&lt;/li&gt;\n                &lt;/ul&gt;\n                &lt;p style=\"font-size: 0.8rem; margin-top: 10px;\"&gt;✔ 主辦：教育部 ｜ 協辦：中國勞工安全衛生管理學會&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;footer&gt;取自114年校安通報數據．職安設施規則．校園高溫接觸預防專題&lt;/footer&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 事故概況分析 Q3+Q4 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📊 114年第三、四季高溫接觸事故概況&lt;/h2&gt;\n            &lt;p&gt;實驗/實習場所事故第三季52件、第四季87件，&lt;br&gt;「與高、低溫接觸」分別占&lt;span class=\"highlight\"&gt;27% (14件)&lt;/span&gt; 及 &lt;span class=\"highlight\"&gt;20% (17件)&lt;/span&gt;，居災害第2名。&lt;/p&gt;\n            &lt;div style=\"display: flex; gap: 15px; margin: 15px 0;\"&gt;\n                &lt;div style=\"flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;\"&gt;\n                    &lt;h3 style=\"font-size:1.1em;\"&gt;📌 第三季&lt;/h3&gt;\n                    &lt;p&gt;高溫接觸14件&lt;br&gt;➜ 高中職佔57%&lt;br&gt;➜ 媒介物：熱油、瓦斯爐、酒精燈、焊槍、烙鐵、鎂帶&lt;/p&gt;\n                &lt;/div&gt;\n                &lt;div style=\"flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;\"&gt;\n                    &lt;h3 style=\"font-size:1.1em;\"&gt;📌 第四季&lt;/h3&gt;\n                    &lt;p&gt;高溫接觸17件&lt;br&gt;➜ 國中暴增至10件(59%)&lt;br&gt;➜ 居仁國中、旗山國中群聚效應&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;\n                &lt;p&gt;⚠️ &lt;strong&gt;關鍵發現&lt;/strong&gt;：國中焊接燙傷陡升，反映學期末趕工、空間擁擠；高中職餐飲及化工實習高溫危害居多。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;div class=\"stat-badge\"&gt;🔥 高溫接觸總計31件 (Q3+Q4) ｜ 輕傷佔比76% ｜ 中度以上24%&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 媒介物與風險行為 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;⚠️ 事故媒介物焦點 & 關鍵風險行為&lt;/h2&gt;\n            &lt;h3&gt;🔹 主要媒介物&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;熱油/熱液（餐飲、糖漿、壓力噴濺）&lt;/li&gt;\n                &lt;li&gt;焊接器材：焊槍、焊鐵、烙鐵&lt;/li&gt;\n                &lt;li&gt;基礎熱源：酒精燈、瓦斯爐、加熱後玻璃、三腳架餘熱&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;h3&gt;🧠 行為安全分析：四大風險模式&lt;/h3&gt;\n            &lt;div class=\"risk-behavior\"&gt;\n                &lt;div class=\"risk-item\"&gt;🔁 認知失誤：分心碰撞高溫表面&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;⚠️ 程序省略：未冷卻攪拌、未用夾具&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;📉 危害預測不足：忽略餘熱、密閉容器壓力噴濺&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;🏗️ 環境干擾：空間不足、電線交錯&lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"img-placeholder\"&gt;📷 高溫警戒區劃設、焊槍安全支架及隔熱墊配置示意&lt;/div&gt;\n            &lt;p&gt;💡 對策：SOP訓練、視覺警示區、強制防護具與安全倫理教育。&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 法規重點對照表 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📖 法規視角 · 職業安全衛生設施規則&lt;/h2&gt;\n            &lt;table class=\"data-table\"&gt;\n    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;條次&lt;/th&gt;&lt;th&gt;核心內容&lt;/th&gt;&lt;th&gt;校園案例對應&lt;/th&gt;&lt;th&gt;防護建議&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;&lt;td&gt;第22條&lt;/td&gt;&lt;td&gt;高溫熱表面應設警示、隔熱&lt;/td&gt;&lt;td&gt;焊槍、三角架燙傷&lt;/td&gt;&lt;td&gt;焊槍安全支架+隔熱墊+警戒區&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第169條&lt;/td&gt;&lt;td&gt;高熱設備與可燃物隔離&lt;/td&gt;&lt;td&gt;瓦斯爐閃燃、噴燈燙傷&lt;/td&gt;&lt;td&gt;明火與化學品保持距離&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第183條&lt;/td&gt;&lt;td&gt;防高熱物溢出灼傷&lt;/td&gt;&lt;td&gt;熱油/熱湯噴濺、果汁機爆濺&lt;/td&gt;&lt;td&gt;全罩式面罩+耐熱圍裙&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第285條&lt;/td&gt;&lt;td&gt;防護具確實使用&lt;/td&gt;&lt;td&gt;徒手調整酒精燈、未戴手套&lt;/td&gt;&lt;td&gt;檢點隔熱手套，教師監督&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第304條&lt;/td&gt;&lt;td&gt;局部排氣/換氣&lt;/td&gt;&lt;td&gt;封閉實習室高溫疲勞失誤&lt;/td&gt;&lt;td&gt;強化通風與排熱系統&lt;/td&gt;&lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\n            &lt;p class=\"note-ai\"&gt;表：對照114年下半年校園高溫接觸案例彙整&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 行為安全分析與事故調查學習 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🔍 行為安全分析 (BBS) 與事故調查學習&lt;/h2&gt;\n            &lt;p&gt;落實事故調查是&lt;strong&gt;預防二次災害的關鍵&lt;/strong&gt;，透過行為安全觀察及根本原因分析，阻斷錯誤重演。&lt;/p&gt;\n            &lt;div class=\"investigation-steps\" style=\"background:#f8f2e3; border-radius: 20px; padding: 12px;\"&gt;\n                &lt;h3&gt;📋 調查學習要點&lt;/h3&gt;\n                &lt;ul&gt;\n                    &lt;li&gt;立即應變通報 → 送醫、校安通報&lt;/li&gt;\n                    &lt;li&gt;成立調查小組：教師、環安衛、學生代表&lt;/li&gt;\n                    &lt;li&gt;行為風險溯源 (HFACS)&lt;/li&gt;\n                    &lt;li&gt;改善策進：更新SOP、工程控制、教育訓練&lt;/li&gt;\n                &lt;/ul&gt;\n                &lt;p&gt;⭐ &lt;strong&gt;案例：居仁國中焊接群聚燙傷&lt;/strong&gt; – 調查發現未強制使用耐熱手套、焊槍放置混亂，改善後事故歸零。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;💡 建立安全觀察-回饋-改善的正向循環，讓師生主動辨識高溫風險。&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 專業實務下載：事故調查指南 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📎 專業實務下載・事故調查資源&lt;/h2&gt;\n            &lt;div class=\"download-card\"&gt;\n                &lt;p style=\"font-weight: bold;\"&gt;📘 事故調查制度實務指南&lt;/p&gt;\n                &lt;p&gt;職業災害預防中心／勞動部指引&lt;br&gt;根本原因分析、訪談技巧、改善表單&lt;/p&gt;\n                &lt;a class=\"btn-download\" href=\"https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF\" target=\"_blank\"&gt;⬇️ 前往下載資源&lt;/a&gt;\n            &lt;/div&gt;\n            &lt;p&gt;✅ 各校可納入環安衛委員會標準文件，每學期模擬事故調查演練。&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 災害防止策略 控制階層 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🛡️ 災害防止策略 – 危害控制階層&lt;/h2&gt;\n            &lt;div class=\"control-hierarchy\"&gt;\n                &lt;div class=\"control-level\"&gt;🏭 1. 本質安全 / 取代：低溫製程、減少高溫暴露&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;⚙️ 2. 工程控制：自動斷電、防護網、局部排氣、隔熱手柄&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;📋 3. 管理控制：SOP、風險說明、案例分享、緊急應變「沖脫泡蓋送」&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;🧤 4. 個人防護具：隔熱手套、全罩面罩、耐熱圍裙、定期檢點&lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;🔥 特別提醒：多起臉部燙傷顯示護目鏡不足以應對噴濺，應使用全臉式防護面罩。&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 群聚事故解讀 居仁&旗山 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🏫 群聚事故警示・國中焊接燙傷浪潮&lt;/h2&gt;\n            &lt;p&gt;&lt;strong&gt;📍 臺中居仁國中&lt;/strong&gt;：短期多起焊鐵、焊槍燙傷 + 三腳架餘熱燙傷&lt;br&gt;\n            &lt;strong&gt;📍 高雄旗山國中&lt;/strong&gt;：生活科技焊接課單日最多5人燙傷&lt;/p&gt;\n            &lt;h3&gt;共同失效因子與改善&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;✖ 空間狹小、焊槍隨意擺放 → ✅ 增設焊槍安全架/隔熱墊&lt;/li&gt;\n                &lt;li&gt;✖ 未建立降溫檢查步驟 → ✅ 課後教師統一收置高溫器具&lt;/li&gt;\n                &lt;li&gt;✖ 防護具不足 → ✅ 強制佩戴耐熱手套+分區操作&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;div class=\"stat-badge\"&gt;📢 召開教師案例檢討會議，採用事故調查指南系統性改善&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 緊急應變與教育訓練 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🚨 強化緊急應變與安全教育訓練&lt;/h2&gt;\n            &lt;h3&gt;📌 燙傷處理「沖、脫、泡、蓋、送」&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;沖：冷水沖洗15-30分鐘&lt;/li&gt;\n                &lt;li&gt;脫：移除衣物避免撕破水泡&lt;/li&gt;\n                &lt;li&gt;泡：繼續浸泡降溫&lt;/li&gt;\n                &lt;li&gt;蓋：清潔紗布覆蓋&lt;/li&gt;\n                &lt;li&gt;送：儘速就醫&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;h3&gt;🎓 教育訓練亮點&lt;/h3&gt;\n            &lt;p&gt;▪ 實驗前風險評估說明 ▪ 教師高溫危害預防知能 ▪ VR或案例影片教學&lt;/p&gt;\n            &lt;div class=\"img-placeholder\"&gt;📸 實務操作：安全拿取熱玻璃器皿、正確擺放焊槍架&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 校園安全衛生管理實務推動 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📌 校園安全衛生管理實務推動&lt;/h2&gt;\n            &lt;div style=\"display: flex; gap: 12px; flex-wrap: wrap;\"&gt;\n                &lt;div style=\"background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;\"&gt;\n                    &lt;strong&gt;📋 行政管理&lt;/strong&gt;\n                    &lt;p&gt;修訂高溫SOP、設備自動檢查表、危害通識標示&lt;/p&gt;\n                &lt;/div&gt;\n                &lt;div style=\"background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;\"&gt;\n                    &lt;strong&gt;🔧 設備環境改善&lt;/strong&gt;\n                    &lt;p&gt;耐熱隔離區、排熱系統、緊急沖淋設備&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;p&gt;🧪 每學期舉辦實驗室高溫暴露風險評估，強化聯合稽查。&lt;/p&gt;\n            &lt;footer&gt;教育部關心您的實驗/實習安全&lt;/footer&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 結語 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🎯 結語：從行為疏忽邁向本質安全&lt;/h2&gt;\n            &lt;p style=\"font-size:1.2rem; font-style:italic;\"&gt;“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”&lt;/p&gt;\n            &lt;div style=\"background:#eef2fa; border-radius: 24px; padding: 15px; margin-top: 15px;\"&gt;\n                &lt;p&gt;✅ &lt;strong&gt;立即行動&lt;/strong&gt;&lt;/p&gt;\n                &lt;ul&gt;\n                    &lt;li&gt;針對焊接、餐飲熱油、理化玻璃加熱課程重新審視風險&lt;/li&gt;\n                    &lt;li&gt;推動「熱源安全專案」：隔熱裝置、強制面罩/手套&lt;/li&gt;\n                    &lt;li&gt;強化國中教師安全督導能量&lt;/li&gt;\n                    &lt;li&gt;參照事故調查指南建立學習文化&lt;/li&gt;\n                &lt;/ul&gt;\n            &lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 參考資料 & 延伸資源 (含電子報下載) --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📚 參考資料 & 延伸資源&lt;/h2&gt;\n            &lt;div class=\"resources-grid\"&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;📄 法規與通報&lt;/strong&gt;\n                    &lt;ul style=\"font-size:0.7rem;\"&gt;\n                        &lt;li&gt;職業安全衛生設施規則 (113年)&lt;/li&gt;\n                        &lt;li&gt;校安通報114年Q3/Q4統計&lt;/li&gt;\n                        &lt;li&gt;學校實驗室一般注意事項指引&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;📘 專業下載&lt;/strong&gt;\n                    &lt;ul style=\"font-size:0.7rem;\"&gt;\n                        &lt;li&gt;&lt;a href=\"https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF\" target=\"_blank\"&gt;事故調查制度實務指南&lt;/a&gt;&lt;/li&gt;\n                        &lt;li&gt;&lt;strong&gt;📧 電子報資料下載&lt;/strong&gt;&lt;br&gt;「114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf」&lt;br&gt;\n                        &lt;a href=\"docs/114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf\" target=\"_blank\" style=\"background:#f4a261; padding:4px 12px; border-radius:30px; color:white; text-decoration:none; display:inline-block; margin-top:5px;\"&gt;⬇️ 下載電子報&lt;/a&gt;\n                        &lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;🧪 行為安全資源&lt;/strong&gt;\n                    &lt;p style=\"font-size:0.7rem;\"&gt;BBS觀察表單、校園案例影片、緊急應變腳本，可洽教育部環安衛小組&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"download-card\" style=\"margin-top: 15px;\"&gt;\n                &lt;p&gt;📖 研習補充講義及行為安全檢核表可聯繫主辦單位。&lt;br&gt;電子報內含完整高溫災害預防、法規對照及行為策略，歡迎下載。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;footer&gt;課後可進行高溫風險自主檢核及事故調查演練&lt;/footer&gt;\n        &lt;/section&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;script src=\"https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js\"&lt;/script&gt;\n&lt;script&gt;\n    Reveal.initialize({\n        controls: true,\n        progress: true,\n        center: false,   // 靠左對齊較適合長篇內容\n        hash: true,\n        slideNumber: 'c/t',\n        transition: 'slide',\n        width: 1200,\n        height: 800,\n        margin: 0.1,\n        pdfSeparateFragments: false,\n    });\n&lt;/script&gt;\n\n\n&lt;!DOCTYPE html&gt;\n\n\n\n\n\n校園職業安全衛生研習 - 實驗室高溫接觸災害防止策略 | 何明信講師 | Reveal.js\n\n /\\* 自訂樣式增強閱讀與列印友善 \\*/ .reveal h1 { font-size: 2.2em; color: #004d73; border-left: 12px solid #f4a261; padding-left: 25px; text-align: left; margin-bottom: 0.5em; } .reveal h2 { font-size: 1.8em; color: #1e5f7a; border-bottom: 3px solid #ffb74d; padding-bottom: 8px; text-align: left; } .reveal h3 { font-size: 1.4em; color: #2c6e49; margin-top: 0.5em; } .reveal p, .reveal li, .reveal blockquote { font-size: 0.9em; line-height: 1.4; text-align: left; } .reveal ul, .reveal ol { text-align: left; } .reveal .stat-badge { background: #f0f7ff; display: inline-block; padding: 5px 15px; border-radius: 40px; font-weight: bold; color: #0059b3; border-left: 5px solid #ff914d; margin: 10px 0; } .highlight { background-color: #fff3d1; font-weight: 700; padding: 0 4px; border-radius: 6px; color: #b45f06; } .case-card { background: #fef7e8; border-left: 8px solid #e67e22; padding: 15px 20px; margin: 15px 0; border-radius: 16px; text-align: left; } .risk-behavior { display: flex; flex-wrap: wrap; gap: 12px; margin: 15px 0; justify-content: flex-start; } .risk-item { background: #fff2e6; flex: 1 1 180px; padding: 8px 12px; border-radius: 20px; font-weight: 500; border: 1px solid #ffd7ae; font-size: 0.85em; } .control-hierarchy { background: #eef4fa; padding: 15px; border-radius: 24px; margin: 15px 0; } .control-level { background: white; border-radius: 30px; padding: 8px 15px; margin: 8px 0; font-weight: bold; border-left: 8px solid #ff8c42; font-size: 0.85em; } .data-table { width: 100%; border-collapse: collapse; font-size: 0.7em; margin: 10px 0; } .data-table th { background-color: #1f6392; color: white; padding: 6px 4px; border: 1px solid #2c7eb6; } .data-table td { border: 1px solid #cbd5e1; padding: 6px 4px; vertical-align: top; } .btn-download { display: inline-block; background-color: #1f6392; color: white; font-weight: bold; padding: 8px 18px; border-radius: 40px; text-decoration: none; margin-top: 10px; font-size: 0.8em; } .download-card { background: #e9f1f7; border-radius: 20px; padding: 15px; text-align: center; margin: 15px 0; } footer { font-size: 0.6em; color: #6c757d; text-align: center; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 10px; } .reveal .slides section { padding: 20px; } .reveal .img-placeholder { background: #e9ecef; border-radius: 16px; padding: 10px; text-align: center; color: #5c6f87; font-size: 0.75em; margin: 12px 0; } .reveal .badge-date { background: #eceff3; padding: 4px 12px; border-radius: 30px; display: inline-block; font-size: 0.7em; margin-bottom: 15px; } .resources-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; } .resource-item { background: #fef9ef; border-radius: 20px; padding: 12px; flex: 1 1 200px; border: 1px solid #ffe0b5; } @media print { .reveal .controls, .reveal .progress { display: none; } } \n\n\n\n    &lt;div class=\"slides\"&gt;\n\n        &lt;!-- 封面頁 --&gt;\n        &lt;section&gt;\n            &lt;div class=\"badge-date\"&gt;🔬 教育部校園職業安全衛生管理研習・南區場次 115年8月10日&lt;/div&gt;\n            &lt;h1 style=\"border-left: none; text-align: center; font-size: 2.5rem;\"&gt;大專院校實驗室與高溫接觸&lt;br&gt;之災害防止策略&lt;/h1&gt;\n            &lt;p style=\"font-size: 1.2rem; text-align: center;\"&gt;&lt;strong&gt;講師：何明信&lt;/strong&gt; (安衛技師、退休專業檢查員)&lt;/p&gt;\n            &lt;p style=\"font-size: 0.9rem; text-align: center; color: #2c6e49;\"&gt;📅 115年8月10日 (南區) 15:10 - 17:00 ｜ 時長：2小時&lt;/p&gt;\n            &lt;div style=\"background: #f5f2eb; padding: 15px; border-radius: 24px; margin-top: 20px;\"&gt;\n                &lt;p style=\"font-size: 0.9rem;\"&gt;✨ 研習目標：&lt;/p&gt;\n                &lt;ul style=\"font-size: 0.85rem;\"&gt;\n                    &lt;li&gt;宣導職業安全衛生相關法規及學校安全衛生實務推廣&lt;/li&gt;\n                    &lt;li&gt;協助高級中等以上學校承辦人員熟識職業安全衛生法規與管理實務&lt;/li&gt;\n                    &lt;li&gt;導入行為安全分析與事故調查機制，建立校園預防文化&lt;/li&gt;\n                &lt;/ul&gt;\n                &lt;p style=\"font-size: 0.8rem; margin-top: 10px;\"&gt;✔ 主辦：教育部 ｜ 協辦：中國勞工安全衛生管理學會&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;footer&gt;取自114年校安通報數據．職安設施規則．校園高溫接觸預防專題&lt;/footer&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 事故概況分析 Q3+Q4 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📊 114年第三、四季高溫接觸事故概況&lt;/h2&gt;\n            &lt;p&gt;實驗/實習場所事故第三季52件、第四季87件，&lt;br&gt;「與高、低溫接觸」分別占&lt;span class=\"highlight\"&gt;27% (14件)&lt;/span&gt; 及 &lt;span class=\"highlight\"&gt;20% (17件)&lt;/span&gt;，居災害第2名。&lt;/p&gt;\n            &lt;div style=\"display: flex; gap: 15px; margin: 15px 0;\"&gt;\n                &lt;div style=\"flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;\"&gt;\n                    &lt;h3 style=\"font-size:1.1em;\"&gt;📌 第三季&lt;/h3&gt;\n                    &lt;p&gt;高溫接觸14件&lt;br&gt;➜ 高中職佔57%&lt;br&gt;➜ 媒介物：熱油、瓦斯爐、酒精燈、焊槍、烙鐵、鎂帶&lt;/p&gt;\n                &lt;/div&gt;\n                &lt;div style=\"flex:1; background:#EDF2F7; border-radius: 20px; padding: 12px;\"&gt;\n                    &lt;h3 style=\"font-size:1.1em;\"&gt;📌 第四季&lt;/h3&gt;\n                    &lt;p&gt;高溫接觸17件&lt;br&gt;➜ 國中暴增至10件(59%)&lt;br&gt;➜ 居仁國中、旗山國中群聚效應&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;\n                &lt;p&gt;⚠️ &lt;strong&gt;關鍵發現&lt;/strong&gt;：國中焊接燙傷陡升，反映學期末趕工、空間擁擠；高中職餐飲及化工實習高溫危害居多。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;div class=\"stat-badge\"&gt;🔥 高溫接觸總計31件 (Q3+Q4) ｜ 輕傷佔比76% ｜ 中度以上24%&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 媒介物與風險行為 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;⚠️ 事故媒介物焦點 & 關鍵風險行為&lt;/h2&gt;\n            &lt;h3&gt;🔹 主要媒介物&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;熱油/熱液（餐飲、糖漿、壓力噴濺）&lt;/li&gt;\n                &lt;li&gt;焊接器材：焊槍、焊鐵、烙鐵&lt;/li&gt;\n                &lt;li&gt;基礎熱源：酒精燈、瓦斯爐、加熱後玻璃、三腳架餘熱&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;h3&gt;🧠 行為安全分析：四大風險模式&lt;/h3&gt;\n            &lt;div class=\"risk-behavior\"&gt;\n                &lt;div class=\"risk-item\"&gt;🔁 認知失誤：分心碰撞高溫表面&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;⚠️ 程序省略：未冷卻攪拌、未用夾具&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;📉 危害預測不足：忽略餘熱、密閉容器壓力噴濺&lt;/div&gt;\n                &lt;div class=\"risk-item\"&gt;🏗️ 環境干擾：空間不足、電線交錯&lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"img-placeholder\"&gt;📷 高溫警戒區劃設、焊槍安全支架及隔熱墊配置示意&lt;/div&gt;\n            &lt;p&gt;💡 對策：SOP訓練、視覺警示區、強制防護具與安全倫理教育。&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 法規重點對照表 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📖 法規視角 · 職業安全衛生設施規則&lt;/h2&gt;\n            &lt;table class=\"data-table\"&gt;\n    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;條次&lt;/th&gt;&lt;th&gt;核心內容&lt;/th&gt;&lt;th&gt;校園案例對應&lt;/th&gt;&lt;th&gt;防護建議&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;\n    &lt;tbody&gt;\n        &lt;tr&gt;&lt;td&gt;第22條&lt;/td&gt;&lt;td&gt;高溫熱表面應設警示、隔熱&lt;/td&gt;&lt;td&gt;焊槍、三角架燙傷&lt;/td&gt;&lt;td&gt;焊槍安全支架+隔熱墊+警戒區&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第169條&lt;/td&gt;&lt;td&gt;高熱設備與可燃物隔離&lt;/td&gt;&lt;td&gt;瓦斯爐閃燃、噴燈燙傷&lt;/td&gt;&lt;td&gt;明火與化學品保持距離&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第183條&lt;/td&gt;&lt;td&gt;防高熱物溢出灼傷&lt;/td&gt;&lt;td&gt;熱油/熱湯噴濺、果汁機爆濺&lt;/td&gt;&lt;td&gt;全罩式面罩+耐熱圍裙&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第285條&lt;/td&gt;&lt;td&gt;防護具確實使用&lt;/td&gt;&lt;td&gt;徒手調整酒精燈、未戴手套&lt;/td&gt;&lt;td&gt;檢點隔熱手套，教師監督&lt;/td&gt;&lt;/tr&gt;\n        &lt;tr&gt;&lt;td&gt;第304條&lt;/td&gt;&lt;td&gt;局部排氣/換氣&lt;/td&gt;&lt;td&gt;封閉實習室高溫疲勞失誤&lt;/td&gt;&lt;td&gt;強化通風與排熱系統&lt;/td&gt;&lt;/tr&gt;\n    &lt;/tbody&gt;\n&lt;/table&gt;\n            &lt;p class=\"note-ai\"&gt;表：對照114年下半年校園高溫接觸案例彙整&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 行為安全分析與事故調查學習 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🔍 行為安全分析 (BBS) 與事故調查學習&lt;/h2&gt;\n            &lt;p&gt;落實事故調查是&lt;strong&gt;預防二次災害的關鍵&lt;/strong&gt;，透過行為安全觀察及根本原因分析，阻斷錯誤重演。&lt;/p&gt;\n            &lt;div class=\"investigation-steps\" style=\"background:#f8f2e3; border-radius: 20px; padding: 12px;\"&gt;\n                &lt;h3&gt;📋 調查學習要點&lt;/h3&gt;\n                &lt;ul&gt;\n                    &lt;li&gt;立即應變通報 → 送醫、校安通報&lt;/li&gt;\n                    &lt;li&gt;成立調查小組：教師、環安衛、學生代表&lt;/li&gt;\n                    &lt;li&gt;行為風險溯源 (HFACS)&lt;/li&gt;\n                    &lt;li&gt;改善策進：更新SOP、工程控制、教育訓練&lt;/li&gt;\n                &lt;/ul&gt;\n                &lt;p&gt;⭐ &lt;strong&gt;案例：居仁國中焊接群聚燙傷&lt;/strong&gt; – 調查發現未強制使用耐熱手套、焊槍放置混亂，改善後事故歸零。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;💡 建立安全觀察-回饋-改善的正向循環，讓師生主動辨識高溫風險。&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 專業實務下載：事故調查指南 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📎 專業實務下載・事故調查資源&lt;/h2&gt;\n            &lt;div class=\"download-card\"&gt;\n                &lt;p style=\"font-weight: bold;\"&gt;📘 事故調查制度實務指南&lt;/p&gt;\n                &lt;p&gt;職業災害預防中心／勞動部指引&lt;br&gt;根本原因分析、訪談技巧、改善表單&lt;/p&gt;\n                &lt;a class=\"btn-download\" href=\"https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF\" target=\"_blank\"&gt;⬇️ 前往下載資源&lt;/a&gt;\n            &lt;/div&gt;\n            &lt;p&gt;✅ 各校可納入環安衛委員會標準文件，每學期模擬事故調查演練。&lt;/p&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 災害防止策略 控制階層 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🛡️ 災害防止策略 – 危害控制階層&lt;/h2&gt;\n            &lt;div class=\"control-hierarchy\"&gt;\n                &lt;div class=\"control-level\"&gt;🏭 1. 本質安全 / 取代：低溫製程、減少高溫暴露&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;⚙️ 2. 工程控制：自動斷電、防護網、局部排氣、隔熱手柄&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;📋 3. 管理控制：SOP、風險說明、案例分享、緊急應變「沖脫泡蓋送」&lt;/div&gt;\n                &lt;div class=\"control-level\"&gt;🧤 4. 個人防護具：隔熱手套、全罩面罩、耐熱圍裙、定期檢點&lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"case-card\"&gt;🔥 特別提醒：多起臉部燙傷顯示護目鏡不足以應對噴濺，應使用全臉式防護面罩。&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 群聚事故解讀 居仁&旗山 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🏫 群聚事故警示・國中焊接燙傷浪潮&lt;/h2&gt;\n            &lt;p&gt;&lt;strong&gt;📍 臺中居仁國中&lt;/strong&gt;：短期多起焊鐵、焊槍燙傷 + 三腳架餘熱燙傷&lt;br&gt;\n            &lt;strong&gt;📍 高雄旗山國中&lt;/strong&gt;：生活科技焊接課單日最多5人燙傷&lt;/p&gt;\n            &lt;h3&gt;共同失效因子與改善&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;✖ 空間狹小、焊槍隨意擺放 → ✅ 增設焊槍安全架/隔熱墊&lt;/li&gt;\n                &lt;li&gt;✖ 未建立降溫檢查步驟 → ✅ 課後教師統一收置高溫器具&lt;/li&gt;\n                &lt;li&gt;✖ 防護具不足 → ✅ 強制佩戴耐熱手套+分區操作&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;div class=\"stat-badge\"&gt;📢 召開教師案例檢討會議，採用事故調查指南系統性改善&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 緊急應變與教育訓練 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🚨 強化緊急應變與安全教育訓練&lt;/h2&gt;\n            &lt;h3&gt;📌 燙傷處理「沖、脫、泡、蓋、送」&lt;/h3&gt;\n            &lt;ul&gt;\n                &lt;li&gt;沖：冷水沖洗15-30分鐘&lt;/li&gt;\n                &lt;li&gt;脫：移除衣物避免撕破水泡&lt;/li&gt;\n                &lt;li&gt;泡：繼續浸泡降溫&lt;/li&gt;\n                &lt;li&gt;蓋：清潔紗布覆蓋&lt;/li&gt;\n                &lt;li&gt;送：儘速就醫&lt;/li&gt;\n            &lt;/ul&gt;\n            &lt;h3&gt;🎓 教育訓練亮點&lt;/h3&gt;\n            &lt;p&gt;▪ 實驗前風險評估說明 ▪ 教師高溫危害預防知能 ▪ VR或案例影片教學&lt;/p&gt;\n            &lt;div class=\"img-placeholder\"&gt;📸 實務操作：安全拿取熱玻璃器皿、正確擺放焊槍架&lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 校園安全衛生管理實務推動 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📌 校園安全衛生管理實務推動&lt;/h2&gt;\n            &lt;div style=\"display: flex; gap: 12px; flex-wrap: wrap;\"&gt;\n                &lt;div style=\"background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;\"&gt;\n                    &lt;strong&gt;📋 行政管理&lt;/strong&gt;\n                    &lt;p&gt;修訂高溫SOP、設備自動檢查表、危害通識標示&lt;/p&gt;\n                &lt;/div&gt;\n                &lt;div style=\"background: #e2f0e6; border-radius: 20px; padding: 12px; flex:1;\"&gt;\n                    &lt;strong&gt;🔧 設備環境改善&lt;/strong&gt;\n                    &lt;p&gt;耐熱隔離區、排熱系統、緊急沖淋設備&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;p&gt;🧪 每學期舉辦實驗室高溫暴露風險評估，強化聯合稽查。&lt;/p&gt;\n            &lt;footer&gt;教育部關心您的實驗/實習安全&lt;/footer&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 結語 --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;🎯 結語：從行為疏忽邁向本質安全&lt;/h2&gt;\n            &lt;p style=\"font-size:1.2rem; font-style:italic;\"&gt;“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”&lt;/p&gt;\n            &lt;div style=\"background:#eef2fa; border-radius: 24px; padding: 15px; margin-top: 15px;\"&gt;\n                &lt;p&gt;✅ &lt;strong&gt;立即行動&lt;/strong&gt;&lt;/p&gt;\n                &lt;ul&gt;\n                    &lt;li&gt;針對焊接、餐飲熱油、理化玻璃加熱課程重新審視風險&lt;/li&gt;\n                    &lt;li&gt;推動「熱源安全專案」：隔熱裝置、強制面罩/手套&lt;/li&gt;\n                    &lt;li&gt;強化國中教師安全督導能量&lt;/li&gt;\n                    &lt;li&gt;參照事故調查指南建立學習文化&lt;/li&gt;\n                &lt;/ul&gt;\n            &lt;/div&gt;\n        &lt;/section&gt;\n\n        &lt;!-- 參考資料 & 延伸資源 (含電子報下載) --&gt;\n        &lt;section&gt;\n            &lt;h2&gt;📚 參考資料 & 延伸資源&lt;/h2&gt;\n            &lt;div class=\"resources-grid\"&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;📄 法規與通報&lt;/strong&gt;\n                    &lt;ul style=\"font-size:0.7rem;\"&gt;\n                        &lt;li&gt;職業安全衛生設施規則 (113年)&lt;/li&gt;\n                        &lt;li&gt;校安通報114年Q3/Q4統計&lt;/li&gt;\n                        &lt;li&gt;學校實驗室一般注意事項指引&lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;📘 專業下載&lt;/strong&gt;\n                    &lt;ul style=\"font-size:0.7rem;\"&gt;\n                        &lt;li&gt;&lt;a href=\"https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF\" target=\"_blank\"&gt;事故調查制度實務指南&lt;/a&gt;&lt;/li&gt;\n                        &lt;li&gt;&lt;strong&gt;📧 電子報資料下載&lt;/strong&gt;&lt;br&gt;「114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf」&lt;br&gt;\n                        &lt;a href=\"docs/114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf\" target=\"_blank\" style=\"background:#f4a261; padding:4px 12px; border-radius:30px; color:white; text-decoration:none; display:inline-block; margin-top:5px;\"&gt;⬇️ 下載電子報&lt;/a&gt;\n                        &lt;/li&gt;\n                    &lt;/ul&gt;\n                &lt;/div&gt;\n                &lt;div class=\"resource-item\"&gt;\n                    &lt;strong&gt;🧪 行為安全資源&lt;/strong&gt;\n                    &lt;p style=\"font-size:0.7rem;\"&gt;BBS觀察表單、校園案例影片、緊急應變腳本，可洽教育部環安衛小組&lt;/p&gt;\n                &lt;/div&gt;\n            &lt;/div&gt;\n            &lt;div class=\"download-card\" style=\"margin-top: 15px;\"&gt;\n                &lt;p&gt;📖 研習補充講義及行為安全檢核表可聯繫主辦單位。&lt;br&gt;電子報內含完整高溫災害預防、法規對照及行為策略，歡迎下載。&lt;/p&gt;\n            &lt;/div&gt;\n            &lt;footer&gt;課後可進行高溫風險自主檢核及事故調查演練&lt;/footer&gt;\n        &lt;/section&gt;\n\n    &lt;/div&gt;\n&lt;/div&gt;\n\n&lt;script src=\"https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js\"&lt;/script&gt;\n&lt;script&gt;\n    Reveal.initialize({\n        controls: true,\n        progress: true,\n        center: false,   // 靠左對齊較適合長篇內容\n        hash: true,\n        slideNumber: 'c/t',\n        transition: 'slide',\n        width: 1200,\n        height: 800,\n        margin: 0.1,\n        pdfSeparateFragments: false,\n    });\n&lt;/script&gt;\n\n\n\n::::\n::::\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "test2.html#研習目標",
+    "href": "test2.html#研習目標",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "研習目標",
+    "text": "研習目標\n\n宣導職業安全衛生相關法規及學校安全衛生實務推廣\n協助高級中等以上學校承辦人員熟識職業安全衛生法規與管理實務\n導入行為安全分析與事故調查機制，建立校園預防文化\n\n\n\n\n\n\n\nTip\n\n\n📅 南區場次：115年8月10日 15:10 - 17:00｜時長：2小時\n✔ 主辦：教育部　｜　協辦：中國勞工安全衛生管理學會\n✔ 對象：高級中等以上學校安全衛生業務相關人員"
+  },
+  {
+    "objectID": "test2.html#年第三四季高溫接觸事故概況",
+    "href": "test2.html#年第三四季高溫接觸事故概況",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📊 114年第三、四季高溫接觸事故概況",
+    "text": "📊 114年第三、四季高溫接觸事故概況\n依校安通報統計，實驗/實習場所事故第三季52件、第四季87件，\n「與高、低溫接觸」災害分別占27% (14件) 及 20% (17件)，位居各類災害第2名，僅次於切割擦傷。\n\n\n📌 第三季 (7-9月)\n\n高溫接觸14件 (27%)\n集中於高中職 8件 (57%)，中度傷害比例偏高\n媒介物：熱油、瓦斯爐、酒精燈、焊槍、電線、烙鐵、鎂帶\n\n\n📌 第四季 (10-12月)\n\n高溫接觸17件 (20%)\n國中案例暴增至 10件 (59%)\n臺中居仁國中、高雄旗山國中群聚效應最明顯\n焊接、熱油噴濺、三角架/焊鐵燙傷為主因\n\n\n\n\n\n\n\n\n⚠️ 關鍵發現：國中第四季焊接與生科課程燙傷事件陡升，反映學期末趕工、空間擁擠、管理疲勞；高中職則餐飲及化工實習高溫危害居多。\n\n\n\n🔥 高溫接觸總計31件 (Q3+Q4) ｜ 輕傷佔比約76% ｜ 中度傷害以上達24%"
+  },
+  {
+    "objectID": "test2.html#事故媒介物焦點-關鍵風險行為",
+    "href": "test2.html#事故媒介物焦點-關鍵風險行為",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "⚠️ 事故媒介物焦點 & 關鍵風險行為",
+    "text": "⚠️ 事故媒介物焦點 & 關鍵風險行為\n🔹 主要媒介物 (高溫接觸)\n\n熱油/熱液：餐飲實習、糖漿、熱湯噴濺（包含果汁機壓力噴濺）\n焊接器材：焊槍、焊鐵、烙鐵 (生科、電子實習)\n基礎熱源：酒精燈、瓦斯爐、加熱後玻璃器材、三腳架餘熱燙傷\n特殊案例：電線短路電燙傷、熱熔膠槍走火、鎂帶灼傷等\n\n🧠 行為安全分析：四大高風險模式\n\n\n\n行為類型\n具體表現\n\n\n\n\n🔁 認知失誤\n聊天分心、環境吵雜→碰觸高溫表面\n\n\n⚠️ 程序省略\n未冷卻攪拌高溫液體、未使用夾具\n\n\n📉 危害預測不足\n忽略餘熱、密閉容器壓力噴濺\n\n\n🏗️ 環境干擾\n實驗桌空間不足、電線交錯碰撞熱源\n\n\n\n💡 防制對策：強化SOP訓練、熱源周圍設立「視覺警示區」、強制佩戴防護具與安全倫理教育"
+  },
+  {
+    "objectID": "test2.html#法規視角-職業安全衛生設施規則重點摘要",
+    "href": "test2.html#法規視角-職業安全衛生設施規則重點摘要",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📖 法規視角 · 職業安全衛生設施規則重點摘要",
+    "text": "📖 法規視角 · 職業安全衛生設施規則重點摘要\n\n\n\n\n\n\n\n\n\n條次\n核心內容\n校園案例對應\n防護建議\n\n\n\n\n第22條\n高溫熱表面應設警示標誌、隔熱設施\n學生觸碰焊槍、加熱玻璃管、三角架燙傷\n✅ 焊槍安全支架+耐熱隔熱墊，劃定警戒區貼「高溫危險」\n\n\n第169條\n高熱設備應與可燃物隔離\n瓦斯爐點火閃燃、噴燈燒水管燙傷他人\n✅ 明火設備與化學品保持安全距離\n\n\n第183條\n大量高熱物處置應防溢出灼傷\n熱油/熱湯潑灑、果汁機攪拌高湯噴濺\n✅ 穩定容器+全罩式面罩+耐熱圍裙 (非僅護目鏡)\n\n\n第285條\n高溫場所應置備防護具並確實使用\n徒手調整酒精燈、未戴手套接觸熱器材\n✅ 實驗前檢點隔熱手套，教師監督配戴正確\n\n\n第304條\n大量熱源場所應設局部排氣/換氣\n封閉實習室多台加熱設備導致環境高溫操作失誤\n✅ 強化通風與排熱系統，避免熱疲勞失誤"
+  },
+  {
+    "objectID": "test2.html#行為安全分析-bbs-與事故調查學習",
+    "href": "test2.html#行為安全分析-bbs-與事故調查學習",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🔍 行為安全分析 (BBS) 與事故調查學習",
+    "text": "🔍 行為安全分析 (BBS) 與事故調查學習\n高溫接觸意外背後往往隱藏「不安全行為」與「不安全狀態」。落實事故調查是預防二次災害的關鍵，透過系統化的行為安全觀察及事故根本原因分析，才能阻斷錯誤重演。\n📋 校園事故調查學習要點\n\n立即應變與通報：燙傷急救送醫，完成校安通報及職災通報(如有適用)\n成立調查小組：教師、環安衛人員、學生代表共同訪談，還原操作流程\n行為風險溯源：運用「人為因素分析 (HFACS)」辨識認知失誤、程序省略、環境干擾\n改善策進：針對根本原因更新SOP、強化工程控制及教育訓練，並追蹤成效\n\n\n\n\n\n\n\nTip\n\n\n⭐ 案例學習：居仁國中焊接群聚燙傷 – 調查發現「未強制使用耐熱手套」「焊槍放置區混亂」，經調整教學動線及加裝防護平台後，後續未再發生類似事件。\n\n\n\n💡 行為安全強調：看見「輕微偏差」即時糾正，建立安全觀察-回饋-改善的正向循環，讓師生主動辨識高溫風險。"
+  },
+  {
+    "objectID": "test2.html#專業實務下載事故調查資源",
+    "href": "test2.html#專業實務下載事故調查資源",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📎 專業實務下載・事故調查資源",
+    "text": "📎 專業實務下載・事故調查資源\n落實事故調查是預防二次災害的關鍵，建議下載官方實務指南並納入校園管理制度。\n\n\n\n\n\n\n📘 事故調查制度實務指南\n\n\n（職業災害預防中心／勞動部相關指引）\n內含：根本原因分析、訪談技巧、改善追蹤表單及校園案例範本\n⬇️ 前往下載資源\n\n\n\n✅ 校園實務應用建議：各校可將此指南納入「環安衛委員會」文件，每學期模擬事故調查演練，提升相關人員調查及矯正能力。"
+  },
+  {
+    "objectID": "test2.html#災害防止策略-依危害控制階層",
+    "href": "test2.html#災害防止策略-依危害控制階層",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🛡️ 災害防止策略 – 依危害控制階層",
+    "text": "🛡️ 災害防止策略 – 依危害控制階層\nX 1. 消除 / 取代\n\n優先選用低溫製程或間接加熱\n規劃減少高溫接觸的實習設計\n\n⚙️ 2. 工程控制\n\n加熱設備自動斷電/防護網隔熱\n強化局部排氣通風\n選用隔熱手柄焊槍、防噴濺裝置\n\n📋 3. 管理控制\n\n修訂SOP (點火前檢查、熱物間隔距離)\n教師風險說明與監督\n事故案例分享會(群聚學校)\n緊急應變「沖、脫、泡、蓋、送」教育\n\n🧤 4. 個人防護具 (最後防線)\n\n強制穿戴隔熱手套、耐熱圍裙、全罩式面罩(防噴濺)\n定期檢點防護具性能，破損立即更換\n\n\n\n\n\n\n\nWarning\n\n\n🔥 特別提醒：從多起臉部燙傷案例顯示，護目鏡不足以應對高熱液體噴濺，應評估使用全臉式防護面罩。並落實燙傷後立即沖水15-30分鐘。"
+  },
+  {
+    "objectID": "test2.html#群聚事故警示國中焊接燙傷浪潮-調查介入成效",
+    "href": "test2.html#群聚事故警示國中焊接燙傷浪潮-調查介入成效",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🏫 群聚事故警示・國中焊接燙傷浪潮 & 調查介入成效",
+    "text": "🏫 群聚事故警示・國中焊接燙傷浪潮 & 調查介入成效\n📍 臺中市立居仁國中 (114年10-11月)\n短期內發生多起生科課焊鐵、焊槍燙傷手指案件，另有三腳架收拾時餘熱燙傷\n📍 高雄市立旗山國中 (114年12月)\n生活科技焊接課連續多班學生手指燙傷，單日最多5人受傷\n🔄 共同失效因子 & 行為調查回饋\n\n\n\n失效因子\n改善對策\n\n\n\n\n✖ 焊接實作空間狹小，學生手臂交疊操作\n✅ 每組劃分獨立操作區\n\n\n✖ 缺乏焊接專用防燙平台，焊槍隨意擺放\n✅ 增設焊槍安全架/矽膠隔熱墊\n\n\n✖ 下課前未建立「降溫檢查」步驟\n✅ 課後統一由教師收置高溫器具\n\n\n✖ 防護裝備不足，多數未戴耐熱手套\n✅ 強制佩戴防護手套\n\n\n\n📢 教育部通報建議：已發生群聚學校應立即重新審視教學空間配置、召開教師案例檢討會議，並採用事故調查指南進行系統性改善。"
+  },
+  {
+    "objectID": "test2.html#強化緊急應變與安全教育訓練",
+    "href": "test2.html#強化緊急應變與安全教育訓練",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🚨 強化緊急應變與安全教育訓練",
+    "text": "🚨 強化緊急應變與安全教育訓練\n📌 燙傷處理標準「沖、脫、泡、蓋、送」\n\n\n\n步驟\n說明\n\n\n\n\n沖\n流動冷水沖洗傷口15-30分鐘，減輕疼痛及降低熱傷害\n\n\n脫\n泡水後小心移除衣物，避免撕破水泡\n\n\n泡\n繼續浸泡冷水(若非大面積燙傷)\n\n\n蓋\n清潔紗布覆蓋保護\n\n\n送\n儘速送醫評估 (二度以上需專業處理)\n\n\n\n🎓 教育訓練亮點\n\n實驗前實施「風險評估說明」，模擬高溫意外情境\n教師及助教應受「高溫危害預防及監督知能」訓練，並定期演練灼燙傷急救\n針對新進學生導入VR或影片案例教學 (認知失誤預防)\n\n\n\n\n\n\n\n📸 實務操作：教師示範如何安全拿取熱玻璃器皿、正確擺放焊槍架"
+  },
+  {
+    "objectID": "test2.html#校園安全衛生管理實務推動建議",
+    "href": "test2.html#校園安全衛生管理實務推動建議",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📌 校園安全衛生管理實務推動建議",
+    "text": "📌 校園安全衛生管理實務推動建議\n\n\n📋 行政管理重點\n\n每年修訂高溫作業SOP及自動檢查表\n落實加熱設備檢點(瓦斯管線、自動斷電功能)\n建立危害通識與化學品安全資料表(SDS)中高溫危害警示\n\n\n🔧 設備環境改善\n\n於實驗桌設置耐熱隔離區/防護隔網\n檢查排氣/排熱系統效能，避免高溫疲勞\n建置緊急沖淋設備(靠近高溫操作區)\n\n\n🧪 依據《職業安全衛生法》第6條及設施規則，學校應提供必要防護設施及教育訓練，並透過定期聯合稽查找出管理缺口。建議每學期至少舉辦一次實驗室高溫暴露風險評估。"
+  },
+  {
+    "objectID": "test2.html#結語從行為疏忽邁向本質安全",
+    "href": "test2.html#結語從行為疏忽邁向本質安全",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🎯 結語：從「行為疏忽」邁向「本質安全」",
+    "text": "🎯 結語：從「行為疏忽」邁向「本質安全」\n\n“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”\n\n\n\n\n\n\n\n✅ 各級學校應立即採取行動\n\n\n\n針對焊接、餐飲熱油、理化玻璃加熱三大類課程重新審視風險\n推動「熱源安全專案」：增設隔熱裝置、強制穿戴面罩/耐熱手套\n第四季數據顯示國中族群事故暴漲，需加強教師安全督導能量\n參照事故調查實務指南，建立事故報告與分享學習文化\n參考美國NIOSH或我國職安署「高溫作業危害預防」指引，制定校園版管理手冊"
+  },
+  {
+    "objectID": "test2.html#參考資料-延伸資源",
+    "href": "test2.html#參考資料-延伸資源",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📚 參考資料 & 延伸資源",
+    "text": "📚 參考資料 & 延伸資源\n\n\n\n\n\n\n📄 法規與通報指引\n\n\n\n職業安全衛生設施規則 (民國113年修正版) – 第22、169、183、285、304條等\n教育部校安通報114年第三季/第四季實驗場所事故統計原始檔\n學校實驗室一般注意事項及安全指引 (108年4月版)\n\n\n\n\n📘 專業下載專區\n\n事故調查制度實務指南 (職業災害預防中心)\n📧 電子報資料下載\n「114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf」\n⬇️ 下載電子報 PDF\n\n\n\n\n\n\n\nTip\n\n\nAI輔助圖像僅為概念示意，實際校園應以實體隔熱設施及教育訓練為主。\n電子報內容涵蓋完整高溫接觸危害預防、法規對照及行為策略，歡迎下載運用。"
+  },
+  {
+    "objectID": "test2.html#課後行動建議",
+    "href": "test2.html#課後行動建議",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "課後行動建議",
+    "text": "課後行動建議\n\n\n\n\n\n\n📋 校園安全衛生自我檢核清單\n\n\n\n是否已完成高溫作業SOP修訂並公告？\n焊接/餐飲實習場所是否配備全罩式面罩及耐熱手套？\n是否建立事故調查機制及案例分享流程？\n是否於熱源周圍設置明顯警示標誌及隔熱設施？\n本學期是否已辦理高溫接觸危害預防教育訓練？\n\n\n\n\n何明信 安衛技師｜曾任勞動檢查員"
+  },
+  {
+    "objectID": "test2.html#致謝",
+    "href": "test2.html#致謝",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "致謝",
+    "text": "致謝\n\n\n\n\n\n\n教育部關心您的實驗/實習安全\n\n\n本簡報內容依據： - 114年校安通報第三、四季度統計數據 - 職業安全衛生設施規則 - 校園事故調查實務案例\n歡迎轉載分享，共同提升校園安全文化。"
+  },
+  {
+    "objectID": "test2.html#結語從行為疏忽邁向本質較安全",
+    "href": "test2.html#結語從行為疏忽邁向本質較安全",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🎯 結語：從「行為疏忽」邁向「本質較安全」",
+    "text": "🎯 結語：從「行為疏忽」邁向「本質較安全」\n\n“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”\n\n\n\n\n\n\n\n✅ 各級學校可採取之行動\n\n\n\n針對焊接、餐飲熱油、理化玻璃加熱三大類課程重新審視風險\n推動「熱源安全專案」：增設隔熱裝置、強制穿戴面罩/耐熱手套\n第四季數據顯示國中族群事故暴漲，需加強教師安全督導能量\n參照事故調查實務指南，建立事故報告與分享學習文化"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#研習目標",
+    "href": "校園＿高溫接觸危害預防策略.html#研習目標",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "研習目標",
+    "text": "研習目標\n\n宣導職業安全衛生相關法規及學校安全衛生實務推廣\n協助高級中等以上學校承辦人員熟識職業安全衛生法規與管理實務\n導入行為安全分析與事故調查機制，建立校園預防文化\n\n\n\n\n\n\n\nTip\n\n\n📅 南區場次：115年8月10日 15:10 - 17:00｜時長：2小時\n✔ 主辦：教育部　｜　協辦：中國勞工安全衛生管理學會\n✔ 對象：高級中等以上學校安全衛生業務相關人員"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#年第三四季高溫接觸事故概況",
+    "href": "校園＿高溫接觸危害預防策略.html#年第三四季高溫接觸事故概況",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📊 114年第三、四季高溫接觸事故概況",
+    "text": "📊 114年第三、四季高溫接觸事故概況\n依校安通報統計，實驗/實習場所事故第三季52件、第四季87件，\n「與高、低溫接觸」災害分別占27% (14件) 及 20% (17件)，位居各類災害第2名，僅次於切割擦傷。\n\n\n📌 第三季 (7-9月)\n\n高溫接觸14件 (27%)\n集中於高中職 8件 (57%)，中度傷害比例偏高\n媒介物：熱油、瓦斯爐、酒精燈、焊槍、電線、烙鐵、鎂帶\n\n\n📌 第四季 (10-12月)\n\n高溫接觸17件 (20%)\n國中案例暴增至 10件 (59%)\n臺中居仁國中、高雄旗山國中群聚效應最明顯\n焊接、熱油噴濺、三角架/焊鐵燙傷為主因\n\n\n\n\n\n\n\n\n⚠️ 關鍵發現：國中第四季焊接與生科課程燙傷事件陡升，反映學期末趕工、空間擁擠、管理疲勞；高中職則餐飲及化工實習高溫危害居多。\n\n\n\n🔥 高溫接觸總計31件 (Q3+Q4) ｜ 輕傷佔比約76% ｜ 中度傷害以上達24%"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#事故媒介物焦點-關鍵風險行為",
+    "href": "校園＿高溫接觸危害預防策略.html#事故媒介物焦點-關鍵風險行為",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "⚠️ 事故媒介物焦點 & 關鍵風險行為",
+    "text": "⚠️ 事故媒介物焦點 & 關鍵風險行為\n🔹 主要媒介物 (高溫接觸)\n\n熱油/熱液：餐飲實習、糖漿、熱湯噴濺（包含果汁機壓力噴濺）\n焊接器材：焊槍、焊鐵、烙鐵 (生科、電子實習)\n基礎熱源：酒精燈、瓦斯爐、加熱後玻璃器材、三腳架餘熱燙傷\n特殊案例：電線短路電燙傷、熱熔膠槍走火、鎂帶灼傷等\n\n🧠 行為安全分析：四大高風險模式\n\n\n\n行為類型\n具體表現\n\n\n\n\n🔁 認知失誤\n聊天分心、環境吵雜→碰觸高溫表面\n\n\n⚠️ 程序省略\n未冷卻攪拌高溫液體、未使用夾具\n\n\n📉 危害預測不足\n忽略餘熱、密閉容器壓力噴濺\n\n\n🏗️ 環境干擾\n實驗桌空間不足、電線交錯碰撞熱源\n\n\n\n💡 防制對策：強化SOP訓練、熱源周圍設立「視覺警示區」、強制佩戴防護具與安全倫理教育"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#法規視角-職業安全衛生設施規則重點摘要",
+    "href": "校園＿高溫接觸危害預防策略.html#法規視角-職業安全衛生設施規則重點摘要",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📖 法規視角 · 職業安全衛生設施規則重點摘要",
+    "text": "📖 法規視角 · 職業安全衛生設施規則重點摘要\n\n\n\n\n\n\n\n\n\n條次\n核心內容\n校園案例對應\n防護建議\n\n\n\n\n第22條\n高溫熱表面應設警示標誌、隔熱設施\n學生觸碰焊槍、加熱玻璃管、三角架燙傷\n✅ 焊槍安全支架+耐熱隔熱墊，劃定警戒區貼「高溫危險」\n\n\n第169條\n高熱設備應與可燃物隔離\n瓦斯爐點火閃燃、噴燈燒水管燙傷他人\n✅ 明火設備與化學品保持安全距離\n\n\n第183條\n大量高熱物處置應防溢出灼傷\n熱油/熱湯潑灑、果汁機攪拌高湯噴濺\n✅ 穩定容器+全罩式面罩+耐熱圍裙 (非僅護目鏡)\n\n\n第285條\n高溫場所應置備防護具並確實使用\n徒手調整酒精燈、未戴手套接觸熱器材\n✅ 實驗前檢點隔熱手套，教師監督配戴正確\n\n\n第304條\n大量熱源場所應設局部排氣/換氣\n封閉實習室多台加熱設備導致環境高溫操作失誤\n✅ 強化通風與排熱系統，避免熱疲勞失誤"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#行為安全分析-bbs-與事故調查學習",
+    "href": "校園＿高溫接觸危害預防策略.html#行為安全分析-bbs-與事故調查學習",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🔍 行為安全分析 (BBS) 與事故調查學習",
+    "text": "🔍 行為安全分析 (BBS) 與事故調查學習\n高溫接觸意外背後往往隱藏「不安全行為」與「不安全狀態」。落實事故調查是預防二次災害的關鍵，透過系統化的行為安全觀察及事故根本原因分析，才能阻斷錯誤重演。\n📋 校園事故調查學習要點\n\n立即應變與通報：燙傷急救送醫，完成校安通報及職災通報(如有適用)\n成立調查小組：教師、環安衛人員、學生代表共同訪談，還原操作流程\n行為風險溯源：運用「人為因素分析 (HFACS)」辨識認知失誤、程序省略、環境干擾\n改善策進：針對根本原因更新SOP、強化工程控制及教育訓練，並追蹤成效\n\n\n\n\n\n\n\nTip\n\n\n⭐ 案例學習：居仁國中焊接群聚燙傷 – 調查發現「未強制使用耐熱手套」「焊槍放置區混亂」，經調整教學動線及加裝防護平台後，後續未再發生類似事件。\n\n\n\n💡 行為安全強調：看見「輕微偏差」即時糾正，建立安全觀察-回饋-改善的正向循環，讓師生主動辨識高溫風險。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#專業實務下載事故調查資源",
+    "href": "校園＿高溫接觸危害預防策略.html#專業實務下載事故調查資源",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📎 專業實務下載・事故調查資源",
+    "text": "📎 專業實務下載・事故調查資源\n落實事故調查是預防二次災害的關鍵，建議下載官方實務指南並納入校園管理制度。\n\n\n\n\n\n\n📘 事故調查制度實務指南\n\n\n（職業災害預防中心／勞動部相關指引）\n內含：根本原因分析、訪談技巧、改善追蹤表單及校園案例範本\n⬇️ 前往下載資源\n\n\n\n✅ 校園實務應用建議：各校可將此指南納入「環安衛委員會」文件，每學期模擬事故調查演練，提升相關人員調查及矯正能力。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#災害防止策略-依危害控制階層",
+    "href": "校園＿高溫接觸危害預防策略.html#災害防止策略-依危害控制階層",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🛡️ 災害防止策略 – 依危害控制階層",
+    "text": "🛡️ 災害防止策略 – 依危害控制階層\nX 1. 消除 / 取代\n\n優先選用低溫製程或間接加熱\n規劃減少高溫接觸的實習設計\n\n⚙️ 2. 工程控制\n\n加熱設備自動斷電/防護網隔熱\n強化局部排氣通風\n選用隔熱手柄焊槍、防噴濺裝置\n\n📋 3. 管理控制\n\n修訂SOP (點火前檢查、熱物間隔距離)\n教師風險說明與監督\n事故案例分享會(群聚學校)\n緊急應變「沖、脫、泡、蓋、送」教育\n\n🧤 4. 個人防護具 (最後防線)\n\n強制穿戴隔熱手套、耐熱圍裙、全罩式面罩(防噴濺)\n定期檢點防護具性能，破損立即更換\n\n\n\n\n\n\n\nWarning\n\n\n🔥 特別提醒：從多起臉部燙傷案例顯示，護目鏡不足以應對高熱液體噴濺，應評估使用全臉式防護面罩。並落實燙傷後立即沖水15-30分鐘。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#群聚事故警示國中焊接燙傷浪潮-調查介入成效",
+    "href": "校園＿高溫接觸危害預防策略.html#群聚事故警示國中焊接燙傷浪潮-調查介入成效",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🏫 群聚事故警示・國中焊接燙傷浪潮 & 調查介入成效",
+    "text": "🏫 群聚事故警示・國中焊接燙傷浪潮 & 調查介入成效\n📍 臺中市立居仁國中 (114年10-11月)\n短期內發生多起生科課焊鐵、焊槍燙傷手指案件，另有三腳架收拾時餘熱燙傷\n📍 高雄市立旗山國中 (114年12月)\n生活科技焊接課連續多班學生手指燙傷，單日最多5人受傷\n🔄 共同失效因子 & 行為調查回饋\n\n\n\n失效因子\n改善對策\n\n\n\n\n✖ 焊接實作空間狹小，學生手臂交疊操作\n✅ 每組劃分獨立操作區\n\n\n✖ 缺乏焊接專用防燙平台，焊槍隨意擺放\n✅ 增設焊槍安全架/矽膠隔熱墊\n\n\n✖ 下課前未建立「降溫檢查」步驟\n✅ 課後統一由教師收置高溫器具\n\n\n✖ 防護裝備不足，多數未戴耐熱手套\n✅ 強制佩戴防護手套\n\n\n\n📢 教育部通報建議：已發生群聚學校應立即重新審視教學空間配置、召開教師案例檢討會議，並採用事故調查指南進行系統性改善。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#強化緊急應變與安全教育訓練",
+    "href": "校園＿高溫接觸危害預防策略.html#強化緊急應變與安全教育訓練",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🚨 強化緊急應變與安全教育訓練",
+    "text": "🚨 強化緊急應變與安全教育訓練\n📌 燙傷處理標準「沖、脫、泡、蓋、送」\n\n\n\n步驟\n說明\n\n\n\n\n沖\n流動冷水沖洗傷口15-30分鐘，減輕疼痛及降低熱傷害\n\n\n脫\n泡水後小心移除衣物，避免撕破水泡\n\n\n泡\n繼續浸泡冷水(若非大面積燙傷)\n\n\n蓋\n清潔紗布覆蓋保護\n\n\n送\n儘速送醫評估 (二度以上需專業處理)\n\n\n\n🎓 教育訓練亮點\n\n實驗前實施「風險評估說明」，模擬高溫意外情境\n教師及助教應受「高溫危害預防及監督知能」訓練，並定期演練灼燙傷急救\n針對新進學生導入VR或影片案例教學 (認知失誤預防)\n\n\n\n\n\n\n\n📸 實務操作：教師示範如何安全拿取熱玻璃器皿、正確擺放焊槍架"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#校園安全衛生管理實務推動建議",
+    "href": "校園＿高溫接觸危害預防策略.html#校園安全衛生管理實務推動建議",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📌 校園安全衛生管理實務推動建議",
+    "text": "📌 校園安全衛生管理實務推動建議\n\n\n📋 行政管理重點\n\n每年修訂高溫作業SOP及自動檢查表\n落實加熱設備檢點(瓦斯管線、自動斷電功能)\n建立危害通識與化學品安全資料表(SDS)中高溫危害警示\n\n\n🔧 設備環境改善\n\n於實驗桌設置耐熱隔離區/防護隔網\n檢查排氣/排熱系統效能，避免高溫疲勞\n建置緊急沖淋設備(靠近高溫操作區)\n\n\n🧪 依據《職業安全衛生法》第6條及設施規則，學校應提供必要防護設施及教育訓練，並透過定期聯合稽查找出管理缺口。建議每學期至少舉辦一次實驗室高溫暴露風險評估。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#結語從行為疏忽邁向本質較安全",
+    "href": "校園＿高溫接觸危害預防策略.html#結語從行為疏忽邁向本質較安全",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "🎯 結語：從「行為疏忽」邁向「本質較安全」",
+    "text": "🎯 結語：從「行為疏忽」邁向「本質較安全」\n\n“安全，是從觀察細微的徵兆開始；預防，則是為了不讓錯誤重演。”\n\n\n\n\n\n\n\n✅ 各級學校可採取之行動\n\n\n\n針對焊接、餐飲熱油、理化玻璃加熱三大類課程重新審視風險\n推動「熱源安全專案」：增設隔熱裝置、強制穿戴面罩/耐熱手套\n第四季數據顯示國中族群事故暴漲，需加強教師安全督導能量\n參照事故調查實務指南，建立事故報告與分享學習文化"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#參考資料-延伸資源",
+    "href": "校園＿高溫接觸危害預防策略.html#參考資料-延伸資源",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "📚 參考資料 & 延伸資源",
+    "text": "📚 參考資料 & 延伸資源\n\n\n\n\n\n\n📄 法規與通報指引\n\n\n\n職業安全衛生設施規則 (民國113年修正版) – 第22、169、183、285、304條等\n教育部校安通報114年第三季/第四季實驗場所事故統計原始檔\n學校實驗室一般注意事項及安全指引 (108年4月版)\n\n\n\n\n📘 專業下載專區\n\n事故調查制度實務指南 (職業災害預防中心)\n📧 電子報資料下載\n「114年下半年-實驗室實習工場高溫危害預防策略(何明信).pdf」\n⬇️ 下載電子報 PDF\n\n\n\n\n\n\n\nTip\n\n\nAI輔助圖像僅為概念示意，實際校園應以實體隔熱設施及教育訓練為主。\n電子報內容涵蓋完整高溫接觸危害預防、法規對照及行為策略，歡迎下載運用。"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#課後行動建議",
+    "href": "校園＿高溫接觸危害預防策略.html#課後行動建議",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "課後行動建議",
+    "text": "課後行動建議\n\n\n\n\n\n\n📋 校園安全衛生自我檢核清單\n\n\n\n是否已完成高溫作業SOP修訂並公告？\n焊接/餐飲實習場所是否配備全罩式面罩及耐熱手套？\n是否建立事故調查機制及案例分享流程？\n是否於熱源周圍設置明顯警示標誌及隔熱設施？\n本學期是否已辦理高溫接觸危害預防教育訓練？\n\n\n\n\n何明信 安衛技師｜曾任勞動檢查員"
+  },
+  {
+    "objectID": "校園＿高溫接觸危害預防策略.html#致謝",
+    "href": "校園＿高溫接觸危害預防策略.html#致謝",
+    "title": "大專院校實驗室與高溫接觸之災害防止策略",
+    "section": "致謝",
+    "text": "致謝\n\n\n\n\n\n\n教育部關心您的實驗/實習安全\n\n\n本簡報內容依據： - 114年校安通報第三、四季度統計數據 - 職業安全衛生設施規則 - 校園事故調查實務案例\n歡迎轉載分享，共同提升校園安全文化。"
   }
 ]
