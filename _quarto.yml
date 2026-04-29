@@ -53,7 +53,7 @@ website:
       - section: "學校種子人員"
         contents:
           - text: 化學有害物危害預防策略
-            href: 校園＿高溫接觸危害預防策略.Rhtml
+            href: https://peter7336959.github.io/teaching/校園＿化學有害物危害預防策略.html
             target: _blank
           - text: 高溫接觸危害預防策略
             href: 校園＿高溫接觸危害預防策略.qmd
