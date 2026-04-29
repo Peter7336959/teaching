@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職場安全衛生風險評估互動指南 - 何明信 編製</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Chosen Palette: 
+         Background: Warm Neutral (Gray-50)
+         Primary/Accent: Trustworthy Blue (Sky-700, Blue-800)
+         Secondary: Safety Teal (Teal-700)
+         Risk Colors: Red (High), Orange (Medium), Green (Low) 
+    -->
+
+    <!-- Application Structure Plan: 
+         1. Hero & Author Info: 標註作者與背景。
+         2. Definitions Section: 新增專頁定義核心名詞，建立學術基礎。
+         3. Interactive Process Timeline: 拆解 PDCA 步驟，並在第三步嵌入「表三」實務範例（感電）。
+         4. Dynamic Risk Matrix: 互動式計算器。
+         5. Hierarchy of Controls: 說明層級控制原則。
+         刪除：產業危害分佈概況（依要求移除模擬數據）。
+    -->
+
+    <!-- Visualization & Content Choices: 
+         - 名詞定義：使用網格佈局呈現專業定義。
+         - 表三：直接在第三步內容中以 HTML Table 呈現，並以「感電」為例。
+         - 控制效能：保留 Chart.js 條型圖，視覺化層級控制的差異。
+         CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
+    -->
+
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+
+        .matrix-cell { transition: all 0.2s ease-in-out; cursor: pointer; }
+        .matrix-cell:hover { transform: scale(1.05); z-index: 10; }
+        .matrix-cell.selected { border: 3px solid #1e3a8a; transform: scale(1.05); font-weight: bold; }
+        
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed tracking-wide">
+
+    <!-- Header / Author Info -->
+    <header class="bg-sky-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold tracking-wider">🛡️ 職安衛風險評估互動指南</h1>
+                <p class="text-xs text-sky-200">何明信 編製 | 2026/04/26</p>
+            </div>
+            <nav class="flex space-x-4 md:space-x-6 text-sm font-medium mt-2 md:mt-0">
+                <a href="#definitions" class="hover:text-sky-200 transition-colors">用語定義</a>
+                <a href="#process" class="hover:text-sky-200 transition-colors">評估流程</a>
+                <a href="#matrix" class="hover:text-sky-200 transition-colors">風險矩陣</a>
+                <a href="#controls" class="hover:text-sky-200 transition-colors">控制層級</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl space-y-16">
+
+        <!-- Section: Intro -->
+        <section id="intro" class="bg-white rounded-2xl shadow-sm p-6 md:p-10 border border-gray-100">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-sky-900 mb-4">預見危害，落實安全管理</h2>
+                <p class="text-lg text-gray-600">
+                    本數位教材依據《風險評估技術指引》設計。透過互動式操作，幫助學員掌握如何辨識工作場所之潛在危害，並運用科學化的風險評估技術，將職業傷病風險降至最低。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: Definitions (NEW) -->
+        <section id="definitions" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-sky-200 pb-2 inline-block">核心用語與定義</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">⚠️ 危害 (Hazard)</h3>
+                    <p class="text-sm text-gray-600">指一種來源、情況或行為，具有潛在傷害，能引致人體傷害或健康受損。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">🎲 風險 (Risk)</h3>
+                    <p class="text-sm text-gray-600">指特定危險事件發生的「可能性」與其所造成之「結果嚴重性」的組合。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">📊 風險矩陣 (Risk Matrix)</h3>
+                    <p class="text-sm text-gray-600">一種將發生可能性與嚴重性交叉組合，用以界定風險等級的圖表工具。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">🔍 危害辨識 (Hazard ID)</h3>
+                    <p class="text-sm text-gray-600">確認危害是否存在，並界定其特性的全過程。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">📉 剩餘風險 (Residual Risk)</h3>
+                    <p class="text-sm text-gray-600">採取控制措施後，依然存在且需持續監控的風險值。</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-bold text-sky-800 border-b mb-2 pb-1">📜 可接受風險</h3>
+                    <p class="text-sm text-gray-600">經組織評估後，認為符合法律義務、政策及現有安全認知下可容許的風險等級。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 5-Step Process -->
+        <section id="process" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-sky-200 pb-2 inline-block">風險評估五步驟 (PDCA)</h2>
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Step Navigation -->
+                <div class="md:w-1/4 flex flex-col space-y-2">
+                    <button onclick="switchTab('step1')" id="btn-step1" class="tab-btn active text-left px-5 py-4 rounded-lg bg-sky-600 text-white font-medium shadow-sm transition-all">1. 準備作業</button>
+                    <button onclick="switchTab('step2')" id="btn-step2" class="tab-btn text-left px-5 py-4 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium transition-all">2. 危害辨識</button>
+                    <button onclick="switchTab('step3')" id="btn-step3" class="tab-btn text-left px-5 py-4 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium transition-all font-bold text-sky-800">3. 風險評估 (核心)</button>
+                    <button onclick="switchTab('step4')" id="btn-step4" class="tab-btn text-left px-5 py-4 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium transition-all">4. 決定控制措施</button>
+                    <button onclick="switchTab('step5')" id="btn-step5" class="tab-btn text-left px-5 py-4 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium transition-all">5. 紀錄與審查</button>
+                </div>
+
+                <!-- Step Content -->
+                <div class="md:w-3/4 bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 min-h-[450px]">
+                    <div id="step1" class="tab-content active">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">第一步：準備作業</h3>
+                        <p class="text-gray-600 mb-4">建立評估小組並蒐集現場資料。重點在於明確劃分作業單元。</p>
+                    </div>
+                    <div id="step2" class="tab-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">第二步：危害辨識</h3>
+                        <p class="text-gray-600 mb-4">找出潛在的物理、化學或人因危害。</p>
+                    </div>
+                    
+                    <!-- ENHANCED STEP 3 with Table 3 (Electric Shock Example) -->
+                    <div id="step3" class="tab-content">
+                        <h3 class="text-2xl font-bold text-sky-800 mb-4">第三步：風險評估 (估計與評價)</h3>
+                        <p class="text-gray-600 mb-6">利用 R = P x S 計算風險值。下方為「表三 風險評估表（系統版）」之實務範例：</p>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left border-collapse border border-gray-300">
+                                <thead class="bg-sky-50 text-sky-900">
+                                    <tr>
+                                        <th class="border border-gray-300 p-2" rowspan="2">項次</th>
+                                        <th class="border border-gray-300 p-2" rowspan="2">作業活動</th>
+                                        <th class="border border-gray-300 p-2" rowspan="2">危害辨識<br>(類型/後果)</th>
+                                        <th class="border border-gray-300 p-2" rowspan="2">現有管制措施</th>
+                                        <th class="border border-gray-300 p-2 text-center" colspan="3">風險評估</th>
+                                        <th class="border border-gray-300 p-2" rowspan="2">建議控制措施<br>(改善計畫)</th>
+                                        <th class="border border-gray-300 p-2 text-center" colspan="3">改善後風險</th>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <th class="border border-gray-300 p-1">P</th>
+                                        <th class="border border-gray-300 p-1">S</th>
+                                        <th class="border border-gray-300 p-1 bg-yellow-50">R</th>
+                                        <th class="border border-gray-300 p-1">P'</th>
+                                        <th class="border border-gray-300 p-1">S'</th>
+                                        <th class="border border-gray-300 p-1 bg-green-50">R'</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="border border-gray-300 p-2 text-center">1</td>
+                                        <td class="border border-gray-300 p-2">生產線機台<br>電氣控制盤維修</td>
+                                        <td class="border border-gray-300 p-2"><span class="text-red-600 font-bold">感電危害</span><br>(心臟停跳、灼傷)</td>
+                                        <td class="border border-gray-300 p-2">機殼接地、<br>裝設漏電斷路器</td>
+                                        <td class="border border-gray-300 p-2 text-center">3</td>
+                                        <td class="border border-gray-300 p-2 text-center">4</td>
+                                        <td class="border border-gray-300 p-2 text-center bg-yellow-100 font-bold text-yellow-800">12</td>
+                                        <td class="border border-gray-300 p-2">1. 實施 LOTO (掛牌上鎖)<br>2. 佩戴絕緣手套<br>3. 作業前驗電</td>
+                                        <td class="border border-gray-300 p-2 text-center">1</td>
+                                        <td class="border border-gray-300 p-2 text-center">4</td>
+                                        <td class="border border-gray-300 p-2 text-center bg-green-100 font-bold text-green-800">4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-500 italic">註：P (可能性), S (嚴重性), R (風險值)。依此例，風險由中度(12)降至低風險(4)。</p>
+                    </div>
+
+                    <div id="step4" class="tab-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">第四步：決定控制措施</h3>
+                        <p class="text-gray-600 mb-4">遵循層級原則。如上述感電案例中，LOTO 是管理管制，接地是工程管制。</p>
+                    </div>
+                    <div id="step5" class="tab-content">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">第五步：紀錄與定期審查</h3>
+                        <p class="text-gray-600 mb-4">將評估結果文件化，並在製程變更或職災發生後重新評估。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Risk Matrix Calculator -->
+        <section id="matrix" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="bg-slate-800 text-white p-6">
+                <h2 class="text-2xl font-bold mb-2">動態風險矩陣計算器 (5x5)</h2>
+                <p class="text-slate-300 text-sm">點擊下方表格，模擬計算感電或其他危害的風險等級。</p>
+            </div>
+            
+            <div class="p-6 md:p-8 flex flex-col lg:flex-row gap-8 items-start">
+                <div class="w-full lg:w-3/5 overflow-x-auto">
+                    <table class="w-full text-center border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="p-2"></th>
+                                <th colspan="5" class="p-2 text-sky-800 font-bold border-b-2 border-sky-200">嚴重性 (S)</th>
+                            </tr>
+                            <tr>
+                                <th class="p-2 text-teal-800 font-bold border-r-2 border-teal-200 whitespace-nowrap text-xs">可能性 (P)</th>
+                                <th class="p-1 text-xs text-gray-600">1<br>微小</th>
+                                <th class="p-1 text-xs text-gray-600">2<br>輕微</th>
+                                <th class="p-1 text-xs text-gray-600">3<br>中度</th>
+                                <th class="p-1 text-xs text-gray-600">4<br>嚴重</th>
+                                <th class="p-1 text-xs text-gray-600">5<br>災難</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrix-body"></tbody>
+                    </table>
+                </div>
+                <div class="w-full lg:w-2/5 bg-gray-50 rounded-xl p-6 border border-gray-200 flex flex-col justify-center min-h-[300px]">
+                    <div class="text-center mb-4">
+                        <span class="block text-sm text-gray-500">風險分數 (R = P × S)</span>
+                        <div id="display-r" class="text-5xl font-black text-gray-300">0</div>
+                    </div>
+                    <div id="risk-alert" class="mt-4 p-4 rounded-lg text-center hidden font-medium"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Hierarchy of Controls -->
+        <section id="controls" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-sky-200 pb-2 inline-block">控制措施層級 (H.O.C)</h2>
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <div class="flex flex-col space-y-3">
+                    <div class="bg-sky-900 text-white p-4 rounded-lg shadow cursor-pointer" onclick="showControlDetail('elimination')">1. 消除 (最高)</div>
+                    <div class="bg-sky-700 text-white p-4 rounded-lg shadow cursor-pointer w-11/12 mx-auto" onclick="showControlDetail('substitution')">2. 取代</div>
+                    <div class="bg-sky-600 text-white p-4 rounded-lg shadow cursor-pointer w-10/12 mx-auto" onclick="showControlDetail('engineering')">3. 工程管制</div>
+                    <div class="bg-sky-500 text-white p-4 rounded-lg shadow cursor-pointer w-9/12 mx-auto" onclick="showControlDetail('admin')">4. 管理管制</div>
+                    <div class="bg-sky-400 text-white p-4 rounded-lg shadow cursor-pointer w-8/12 mx-auto" onclick="showControlDetail('ppe')">5. 個人防護具 (最後防線)</div>
+                    <div id="control-detail-box" class="mt-4 p-5 bg-white border-2 border-dashed border-sky-300 rounded-xl hidden">
+                        <h4 id="ctrl-title" class="text-lg font-bold text-sky-800 mb-2"></h4>
+                        <p id="ctrl-desc" class="text-gray-600 text-sm"></p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-700 mb-4 text-center">防護措施效能比較</h3>
+                    <div class="chart-container">
+                        <canvas id="controlChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-8 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p>編製者：何明信 | 日期：2026/04/26</p>
+            <p class="mt-2">參考來源：勞動部職業安全衛生署《風險評估技術指引》</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-sky-600', 'text-white');
+                el.classList.add('bg-white', 'text-gray-700');
+            });
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.replace('bg-white', 'bg-sky-600');
+            document.getElementById('btn-' + tabId).classList.replace('text-gray-700', 'text-white');
+        }
+
+        const matrixBody = document.getElementById('matrix-body');
+        function getRiskLevel(score) {
+            if (score >= 15) return { text: "不可接受風險 - 應立即改善", bg: "bg-red-100", border: "border-red-500", textCol: "text-red-700", cellClass: "bg-red-400 text-white" };
+            if (score >= 8)  return { text: "中度風險 - 需強化管制", bg: "bg-orange-100", border: "border-orange-500", textCol: "text-orange-700", cellClass: "bg-orange-300 text-orange-900" };
+            return { text: "低風險 - 可接受範圍", bg: "bg-green-100", border: "border-green-500", textCol: "text-green-700", cellClass: "bg-green-200 text-green-900" };
+        }
+
+        for (let p = 5; p >= 1; p--) {
+            const tr = document.createElement('tr');
+            const th = document.createElement('th');
+            th.className = "p-2 text-xs font-semibold text-gray-600 border-r-2 border-teal-200 text-right";
+            th.innerText = p;
+            tr.appendChild(th);
+
+            for (let s = 1; s <= 5; s++) {
+                const td = document.createElement('td');
+                const score = p * s;
+                const riskInfo = getRiskLevel(score);
+                td.className = `p-2 md:p-3 border border-white rounded font-bold matrix-cell ${riskInfo.cellClass}`;
+                td.innerText = score;
+                td.onclick = function() {
+                    document.querySelectorAll('.matrix-cell').forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    updateRiskDisplay(score);
+                };
+                tr.appendChild(td);
+            }
+            matrixBody.appendChild(tr);
+        }
+
+        function updateRiskDisplay(score) {
+            const rDisplay = document.getElementById('display-r');
+            rDisplay.innerText = score;
+            const alertBox = document.getElementById('risk-alert');
+            const info = getRiskLevel(score);
+            rDisplay.className = `text-5xl font-black ${info.textCol}`;
+            alertBox.className = `mt-4 p-4 rounded-lg text-center font-medium border-2 ${info.bg} ${info.border} ${info.textCol} block`;
+            alertBox.innerText = info.text;
+        }
+
+        const controlData = {
+            'elimination': { title: "消除", desc: "最有效。完全移除危害源。例如：停止使用有毒物質。" },
+            'substitution': { title: "取代", desc: "用危險性低的替換。例如：水性漆取代油性漆。" },
+            'engineering': { title: "工程管制", desc: "物理屏障。例如：機台護罩、局部排氣系統、感電案例中的接地線。" },
+            'admin': { title: "管理管制", desc: "程序與規範。例如：LOTO 掛牌、SOP、警示標籤、教育訓練。" },
+            'ppe': { title: "防護具", desc: "最後防線。例如：絕緣手套、安全帽。依賴人為正確佩戴。" }
+        };
+
+        function showControlDetail(type) {
+            const box = document.getElementById('control-detail-box');
+            document.getElementById('ctrl-title').innerText = controlData[type].title;
+            document.getElementById('ctrl-desc').innerText = controlData[type].desc;
+            box.classList.remove('hidden');
+            box.style.animation = 'fadeIn 0.3s ease-out';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            new Chart(document.getElementById('controlChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['消除', '取代', '工程管制', '管理管制', '防護具'],
+                    datasets: [
+                        { label: '防護效能', data: [100, 85, 70, 40, 15], backgroundColor: 'rgba(2, 132, 199, 0.8)' },
+                        { label: '人為依賴度', data: [0, 5, 20, 80, 95], backgroundColor: 'rgba(245, 158, 11, 0.8)' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 100 } } }
+            });
+        });
+    </script>
+</body>
+</html>

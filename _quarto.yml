@@ -1,0 +1,58 @@
+project:
+  type: website
+
+website:
+  back-to-top-navigation: true
+  page-footer: 
+    left: "製作者：何明信老師2026" 
+#    right: 
+#      - icon: github
+#        href: https://github.com/
+#      - icon: twitter 
+#        href: https://twitter.com/   
+    background: light
+
+  title: "教學網站 - 何明信老師"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "首页"
+        href: index.qmd
+      - text: 危險性機械及設備管理
+        href: https://peter7336959.github.io/HME/
+      - text: 暴露評估 
+        href: https://peter7336959.github.io/EA/
+      - text: 事故調查制度實務指南
+        href: https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF
+      - text: 其他(新增中)
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "介紹"
+        href: intro.qmd
+      - section: "甲業"
+        contents:
+          - text: 風險評估
+            href: https://peter7336959.github.io/teaching/%E7%94%B2%E6%A5%AD%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
+          - text: 施工風險評估
+            href: https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
+      - section: "職安衛人員"
+        contents:
+          - layout.qmd
+          - layout-knitr.qmd
+          - layout-jupyter.qmd
+      - section: advanced.qmd
+        contents:
+          - raw-code.qmd
+          - custom-theme.qmd
+      - acknowlegment.qmd
+
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定期製程安全評估 (PSM) 互動指南 - 何明信 編製</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .matrix-cell { transition: all 0.2s ease; }
+        .matrix-cell:hover { transform: scale(1.05); z-index: 10; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); cursor: pointer; border: 2px solid #1e293b; }
+        
+        .risk-r1 { background-color: #fecdd3; color: #9f1239; border: 1px solid #fda4af; }
+        .risk-r2 { background-color: #fef08a; color: #854d0e; border: 1px solid #fde047; }
+        .risk-r3 { background-color: #bbf7d0; color: #166534; border: 1px solid #86efac; }
+        
+        .timeline-node { position: relative; }
+        .timeline-node::before {
+            content: ''; position: absolute; left: 1.25rem; top: 3rem; bottom: -2rem; width: 2px; background-color: #cbd5e1; z-index: 0;
+        }
+        .timeline-node:last-child::before { display: none; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- Chosen Palette: Slate & Teal Professional (bg-slate-50, primary teal-700) -->
+    <!-- Application Structure Plan: 儀表板架構更新。1. 術語定義（Basics）：新增章節，統一專業詞彙。2. 核心理念（Why）。3. 評估框架（Who/When）。4. 方法探索器（How）。5. 互動式風險矩陣（Assessment）。6. 改善與追蹤（Closure）。此結構強化了教學的嚴謹性，從定義出發引導至實務。 -->
+    <!-- Visualization & Content Choices: 1. 術語定義 -> 網格卡片呈現。 2. 其他部分維持原有的互動 JS 標籤、Chart.js 甜甜圈圖與 CSS 互動網格，確保不使用 SVG 或 Mermaid。 -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <nav class="bg-teal-800 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl font-bold">&#9881; PSM</span>
+                    <span class="font-medium hidden sm:block">定期製程安全評估互動指南</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 text-xs lg:text-sm">
+                        <a href="#definitions" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">術語定義</a>
+                        <a href="#philosophy" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">核心理念</a>
+                        <a href="#framework" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">評估框架</a>
+                        <a href="#methods" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">分析方法</a>
+                        <a href="#matrix" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">風險判定</a>
+                        <a href="#tracking" class="hover:bg-teal-700 px-3 py-2 rounded-md font-medium transition-colors">改善追蹤</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-teal-700 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">掌握變更，持續監控風險</h1>
+            <p class="text-xl md:text-2xl text-teal-100 max-w-3xl mx-auto font-light">
+                製程安全管理 (PSM) 的核心不在於文件的堆疊。定期評估是確保安全防禦體系未隨時間劣化的關鍵機制。
+            </p>
+            <div class="mt-8 inline-block bg-teal-800 px-4 py-2 rounded-full text-sm font-medium border border-teal-600 shadow-inner">
+                作者：何明信 編製 2026/04/26
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- 新增章節：術語定義 -->
+        <section id="definitions" class="scroll-mt-24">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">1. 核心術語定義</h2>
+                <p class="text-slate-600 mt-2 text-lg">在進入評估前，必須先建立統一的專業語彙。本節定義了 PSM 領域中最關鍵的概念。</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">H</span> 危害 (Hazard)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        指具有潛在造成人員傷亡、職業病、設備損壞或環境污染的來源、情況或行為。在製程中常見如：高壓、高溫、腐蝕性或毒性化學品。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">R</span> 風險 (Risk)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        指特定危害事件發生的「可能性」(Likelihood) 與其造成的「嚴重度」(Severity) 的組合。風險 = 可能性 × 嚴重度。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">RM</span> 風險矩陣 (Risk Matrix)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        一種用於評估風險等級的定性或半定量工具。通常由橫軸（嚴重度）與縱軸（可能性）構成，將風險劃分為 R1 (高)、R2 (中)、R3 (低) 等級。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">M</span> 變更管理 (MOC)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Management of Change。在製程、化學品、設備或組織發生非同級更換時，必須執行的一套正式審核與批准程序，以確保變更不會引入新風險。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">P</span> 製程安全管理 (PSM)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Process Safety Management。一套整合性的管理體系，旨在預防、準備並回應與高危害化學品相關的非預期釋放事故。
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:border-teal-500 transition-all">
+                    <h4 class="text-teal-700 font-bold text-lg mb-2 flex items-center">
+                        <span class="bg-teal-100 text-teal-700 w-8 h-8 rounded-full flex items-center justify-center mr-2 text-sm">I</span> 安全保護層 (IPL)
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Independent Protection Layer。指能有效防止事故發生或減輕事故後果，且具備獨立性、專一性與可靠性的安全防線。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="scroll-mt-24">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">2. 為什麼需要「定期」評估？</h2>
+                <p class="text-slate-600 mt-2 text-lg">本節說明動態安全管理的目的。系統與設備會隨時間改變，初次的評估結果無法永久適用。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="text-4xl mb-4 text-amber-500">&#9888;</div>
+                    <h3 class="text-xl font-bold mb-3">應對劣化與變更 (Degradation)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        由於設備老化、人員異動、技術更新或環境改變，初次評估的結果會隨時間失效。定期評估旨在檢視這些漸進式的變化是否削弱了系統的安全性。
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                    <div class="text-4xl mb-4 text-teal-600">&#128737;</div>
+                    <h3 class="text-xl font-bold mb-3">驗證保護層 (LOPA)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        針對具有高危害性之化學品製程，透過定期檢討，確認現有保護層（如警報、安全閥、連鎖系統）是否依然足夠且有效運作，以預防重大事故。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="framework" class="scroll-mt-24">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">3. 評估對象與啟動時機</h2>
+                <p class="text-slate-600 mt-2 text-lg">了解哪些場所必須執行，包含評估涵蓋的軟硬體範疇與法定的執行週期。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-100 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg border-b-2 border-slate-300 pb-2 mb-4 flex items-center"><span class="mr-2 text-2xl">&#127981;</span> 適用對象</h4>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#10004;</span> 依「危險工作場所審查及檢查辦法」分類之甲類工作場所。</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#10004;</span> 從事石油裂解等危險工作場所 (職安法第15條)。</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#10004;</span> 涉及易燃液體、易燃氣體或毒性物質之製程。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-100 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg border-b-2 border-slate-300 pb-2 mb-4 flex items-center"><span class="mr-2 text-2xl">&#128269;</span> 評估範疇</h4>
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#9642;</span> <b>硬體設施：</b> 反應器、儲槽、管路系統。</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#9642;</span> <b>作業程序：</b> 正常開停車、緊急停機、維修作業。</li>
+                        <li class="flex items-start"><span class="text-teal-600 mr-2">&#9642;</span> <b>管理制度：</b> MOC（變更管理）、操作標準書、維修管理。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-teal-50 border border-teal-200 p-6 rounded-lg">
+                    <h4 class="font-bold text-lg border-b-2 border-teal-300 pb-2 mb-4 text-teal-800 flex items-center"><span class="mr-2 text-2xl">&#9200;</span> 執行週期</h4>
+                    <div class="flex flex-col h-full justify-center pb-6">
+                        <div class="text-center mb-4">
+                            <span class="text-4xl font-extrabold text-teal-700">5</span> <span class="text-xl font-bold text-teal-700">年</span>
+                            <div class="text-sm text-teal-600 mt-1">法定標準最低週期</div>
+                        </div>
+                        <div class="mt-4 bg-white p-3 rounded text-sm text-slate-700 border border-teal-100 shadow-sm">
+                            <p class="font-bold text-red-600 mb-1">提前觸發條件：</p>
+                            <p>發生重大製程變更、發生重大事故或虛驚事故、或相關法律變更時，必須提前實施。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methods" class="scroll-mt-24">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">4. 評估方法探索器</h2>
+                <p class="text-slate-600 mt-2 text-lg">製程安全評估擁有多種分析工具。點擊下方標籤，了解各種方法的適用情境與特點。其中，HAZOP 為實務上的核心工具。</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="w-full lg:w-1/3 flex flex-col gap-2" id="method-tabs">
+                    <button class="tab-btn w-full text-left px-5 py-4 rounded-lg font-bold border-2 border-slate-200 hover:border-teal-500 transition-all bg-white" data-target="method-hazop">危害及可操作性分析 (HAZOP)</button>
+                    <button class="tab-btn w-full text-left px-5 py-4 rounded-lg font-bold border-2 border-slate-200 hover:border-teal-500 transition-all bg-white" data-target="method-checklist">檢核表法 (Checklists)</button>
+                    <button class="tab-btn w-full text-left px-5 py-4 rounded-lg font-bold border-2 border-slate-200 hover:border-teal-500 transition-all bg-white" data-target="method-whatif">如果...會怎樣 (What-If)</button>
+                    <button class="tab-btn w-full text-left px-5 py-4 rounded-lg font-bold border-2 border-slate-200 hover:border-teal-500 transition-all bg-white" data-target="method-fmea">失效模式與影響分析 (FMEA)</button>
+                    <button class="tab-btn w-full text-left px-5 py-4 rounded-lg font-bold border-2 border-slate-200 hover:border-teal-500 transition-all bg-white" data-target="method-fta">故障樹分析 (FTA)</button>
+                </div>
+
+                <div class="w-full lg:w-2/3 bg-white border border-slate-200 rounded-xl p-8 shadow-sm min-h-[300px]">
+                    <div id="method-hazop" class="tab-content">
+                        <div class="flex items-center justify-between border-b pb-4 mb-4">
+                            <h3 class="text-2xl font-bold text-teal-800">危害及可操作性分析 (HAZOP)</h3>
+                            <span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-sm font-bold">核心工具</span>
+                        </div>
+                        <p class="text-slate-700 mb-4 leading-relaxed">
+                            定期評估最常傾向使用的核心工具。透過系統化的腦力激盪，由多領域專家團隊運用「引導詞」來發掘製程參數的偏差，藉此找出潛在危害與操作問題。
+                        </p>
+                        <div class="bg-slate-50 p-4 rounded-md mb-4 border border-slate-200">
+                            <p class="font-bold text-slate-800 mb-2">引導詞 (Guide Words) 範例：</p>
+                            <div class="grid grid-cols-3 gap-2 text-center text-sm">
+                                <div class="bg-white p-2 border rounded shadow-sm"><span class="font-bold text-red-600">No</span> (無流量)</div>
+                                <div class="bg-white p-2 border rounded shadow-sm"><span class="font-bold text-red-600">More</span> (高壓/高溫)</div>
+                                <div class="bg-white p-2 border rounded shadow-sm"><span class="font-bold text-red-600">Less</span> (低液位)</div>
+                            </div>
+                        </div>
+                        <div class="text-sm text-teal-700 bg-teal-50 p-3 rounded">
+                            <b>專家提示 (HAZOP Re-validation)：</b> 根據手冊建議，若過去五年間變更較少，可採行「紅線標註更新法」；若變更劇烈，則需重新執行全面分析。
+                        </div>
+                    </div>
+
+                    <div id="method-checklist" class="tab-content">
+                        <h3 class="text-2xl font-bold text-teal-800 border-b pb-4 mb-4">檢核表法 (Checklists)</h3>
+                        <p class="text-slate-700 mb-4 leading-relaxed">
+                            最基礎的評估方法。使用預先編製的清單，逐項檢查設備狀態、操作程序或管理制度是否符合標準規範或法規要求。
+                        </p>
+                        <ul class="list-disc pl-5 text-slate-600 space-y-2">
+                            <li><b>特點：</b> 簡單、快速、易於執行。</li>
+                            <li><b>適用階段：</b> 基礎評估、法規符合性查核、已知危害的確認。</li>
+                            <li><b>限制：</b> 只能發現表列中的問題，難以發掘未知的系統性危害。</li>
+                        </ul>
+                    </div>
+
+                    <div id="method-whatif" class="tab-content">
+                        <h3 class="text-2xl font-bold text-teal-800 border-b pb-4 mb-4">如果...會怎樣 (What-If)</h3>
+                        <p class="text-slate-700 mb-4 leading-relaxed">
+                            一種較不具嚴格結構的腦力激盪方法。評估團隊提出各種「如果發生某事，結果會怎樣？」的問題，以發掘非預期的狀況。
+                        </p>
+                        <ul class="list-disc pl-5 text-slate-600 space-y-2">
+                            <li><b>特點：</b> 創意發想、靈活度高。</li>
+                            <li><b>適用階段：</b> 非預期狀況模擬、較簡單的製程、或者與 Checklist 結合使用 (What-If / Checklist)。</li>
+                            <li><b>限制：</b> 嚴重依賴團隊成員的經驗與直覺，容易遺漏細節。</li>
+                        </ul>
+                    </div>
+
+                    <div id="method-fmea" class="tab-content">
+                        <h3 class="text-2xl font-bold text-teal-800 border-b pb-4 mb-4">失效模式與影響分析 (FMEA)</h3>
+                        <p class="text-slate-700 mb-4 leading-relaxed">
+                            一種由下而上 (Bottom-up) 的分析方法。將系統拆解為單一組件，逐一探討每個組件可能發生的故障模式，以及該故障對整體系統造成的影響。
+                        </p>
+                        <ul class="list-disc pl-5 text-slate-600 space-y-2">
+                            <li><b>特點：</b> 系統化、針對硬體。</li>
+                            <li><b>適用階段：</b> 針對單一關鍵組件（如閥門、泵浦、感測器）的詳細故障分析。</li>
+                            <li><b>限制：</b> 難以處理人為錯誤或多重組件同時失效的複雜情況。</li>
+                        </ul>
+                    </div>
+
+                    <div id="method-fta" class="tab-content">
+                        <h3 class="text-2xl font-bold text-teal-800 border-b pb-4 mb-4">故障樹分析 (FTA)</h3>
+                        <p class="text-slate-700 mb-4 leading-relaxed">
+                            一種由上而下 (Top-down) 的演繹分析法。先定義一個最不希望發生的頂端事件 (Top Event，如爆炸)，然後透過邏輯閘 (AND, OR) 往下推演所有可能導致該事件發生的根本原因。
+                        </p>
+                        <ul class="list-disc pl-5 text-slate-600 space-y-2">
+                            <li><b>特點：</b> 圖形化邏輯、可進行量化分析 (計算機率)。</li>
+                            <li><b>適用階段：</b> 尋找重大事故根因、量化分析特定高風險情境。</li>
+                            <li><b>限制：</b> 執行過程耗時且需要專業軟體與數據支持。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col lg:flex-row items-center gap-8">
+                <div class="w-full lg:w-1/2">
+                    <h4 class="text-xl font-bold mb-2">實務運用概況：評估工具選擇 (模擬數據)</h4>
+                    <p class="text-slate-600 text-sm mb-4">
+                        在準備階段，團隊(包含製程、機械、儀控、職安專家)會收集更新的P&ID與圖資。<br>
+                        此圖表模擬呈現了業界在定期評估中，各種分析工具的常見採納比例。HAZOP因其全面性佔據主導地位。
+                    </p>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="chart-container">
+                        <canvas id="methodsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="matrix" class="scroll-mt-24">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">5. 風險等級劃分與判定</h2>
+                <p class="text-slate-600 mt-2 text-lg">這是評估中最核心的學術判斷。請在下方的「風險矩陣」中點擊不同區塊，查看其對應的風險等級 (R1/R2/R3) 及管理要求。</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                <div class="w-full lg:w-1/2 overflow-x-auto bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="text-center font-bold mb-4 text-slate-700">嚴重度 (人員傷亡、財產損失、環境影響) &#8594;</div>
+                    <div class="flex">
+                        <div class="writing-vertical-lr transform rotate-180 text-center font-bold mr-4 text-slate-700" style="writing-mode: vertical-rl;">
+                            &#8592; 發生可能性 (歷史紀錄、失效率)
+                        </div>
+                        <div class="grid grid-cols-4 grid-rows-4 w-full gap-1 border-l border-b border-slate-800 p-1">
+                            <!-- Matrix Row 1 (High Likelihood) -->
+                            <div class="matrix-cell risk-r2 flex items-center justify-center p-4 font-bold rounded" data-risk="R2" data-s="1(輕微)" data-l="4(頻繁)">R2</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="2(中等)" data-l="4(頻繁)">R1</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="3(嚴重)" data-l="4(頻繁)">R1</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="4(災難)" data-l="4(頻繁)">R1</div>
+                            
+                            <!-- Matrix Row 2 -->
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="1(輕微)" data-l="3(偶爾)">R3</div>
+                            <div class="matrix-cell risk-r2 flex items-center justify-center p-4 font-bold rounded" data-risk="R2" data-s="2(中等)" data-l="3(偶爾)">R2</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="3(嚴重)" data-l="3(偶爾)">R1</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="4(災難)" data-l="3(偶爾)">R1</div>
+
+                            <!-- Matrix Row 3 -->
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="1(輕微)" data-l="2(少見)">R3</div>
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="2(中等)" data-l="2(少見)">R3</div>
+                            <div class="matrix-cell risk-r2 flex items-center justify-center p-4 font-bold rounded" data-risk="R2" data-s="3(嚴重)" data-l="2(少見)">R2</div>
+                            <div class="matrix-cell risk-r1 flex items-center justify-center p-4 font-bold rounded" data-risk="R1" data-s="4(災難)" data-l="2(少見)">R1</div>
+
+                            <!-- Matrix Row 4 (Low Likelihood) -->
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="1(輕微)" data-l="1(罕見)">R3</div>
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="2(中等)" data-l="1(罕見)">R3</div>
+                            <div class="matrix-cell risk-r3 flex items-center justify-center p-4 font-bold rounded" data-risk="R3" data-s="3(嚴重)" data-l="1(罕見)">R3</div>
+                            <div class="matrix-cell risk-r2 flex items-center justify-center p-4 font-bold rounded" data-risk="R2" data-s="4(災難)" data-l="1(罕見)">R2</div>
+                        </div>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-4 text-center">註：此為 4x4 簡化矩陣示意。點擊上方格位查看對策。</div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div id="risk-result" class="bg-white border-2 border-dashed border-slate-300 p-8 rounded-xl h-full flex flex-col justify-center items-center text-center transition-all duration-300">
+                        <div class="text-5xl mb-4 text-slate-400">&#8600;</div>
+                        <h3 class="text-2xl font-bold text-slate-500 mb-2">請點擊左側矩陣格位</h3>
+                        <p class="text-slate-500">探索嚴重度與可能性的組合如何決定最終的管理決策。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tracking" class="scroll-mt-24 pb-12">
+            <div class="mb-8 border-l-4 border-teal-600 pl-4">
+                <h2 class="text-3xl font-bold text-slate-800">6. 改善措施與報告閉環</h2>
+                <p class="text-slate-600 mt-2 text-lg">評估的價值在於改善 (Recommendation Tracking)。沒有結案追蹤，評估只是一疊廢紙。</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 max-w-4xl mx-auto">
+                <div class="space-y-0">
+                    
+                    <div class="timeline-node flex gap-6 pb-8">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center border-4 border-white shadow text-teal-700 font-bold text-xl z-10">1</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">建議案提出</h4>
+                            <p class="text-slate-600">基於評估結果，提出的改善建議必須具體且可量化，避免模糊不清的描述。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node flex gap-6 pb-8">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center border-4 border-white shadow text-teal-700 font-bold text-xl z-10">2</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">管理階層承諾</h4>
+                            <p class="text-slate-600">確認預算來源與責任執行部門，確保資源到位。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node flex gap-6 pb-8">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center border-4 border-white shadow text-teal-700 font-bold text-xl z-10">3</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">結案查核</h4>
+                            <p class="text-slate-600">實施改善後，必須回頭檢視：確認風險是否確實降至可接受程度 (R3)。</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-node flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-teal-800 flex items-center justify-center border-4 border-white shadow text-white font-bold text-xl z-10">&#10004;</div>
+                        <div class="bg-teal-50 p-4 rounded-lg border border-teal-100 w-full">
+                            <h4 class="text-xl font-bold text-teal-800 mb-2">產出報告與存檔備查</h4>
+                            <p class="text-slate-700 text-sm mb-2">為應對勞檢或第三方審查，報告書必須包含：</p>
+                            <ul class="list-disc pl-5 text-sm text-slate-600">
+                                <li>執行摘要 (重大發現)</li>
+                                <li>團隊介紹 (專業背景與簽章)</li>
+                                <li>製程描述 (現況 P&ID)</li>
+                                <li>評估紀錄表 (詳細的 HAZOP 紀錄單)</li>
+                                <li>行動追蹤清單</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-slate-800 text-slate-200 p-6 rounded-xl text-center shadow-lg max-w-4xl mx-auto border-l-4 border-amber-400">
+                <h3 class="text-xl font-bold text-white mb-2">&#128161; 專家學術觀點提醒：資料品質決定一切</h3>
+                <p class="text-slate-300">
+                    "Garbage In, Garbage Out." 若輸入的圖資（P&ID）是錯的，HAZOP 的結果就是錯的。評估團隊絕不應只待在會議室，必須親自到場核對設備現況與操作實務，驗證五年間 MOC (變更管理) 的執行成效。
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-sm mb-2">依據《職安署-事業單位實施定期製程安全評估參考手冊 2018》編製互動指南</p>
+            <p class="text-sm font-medium text-slate-500">作者：何明信 編製 &copy; 2026/04/26</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns[0].classList.add('bg-teal-700', 'text-white', 'border-teal-700');
+            tabBtns[0].classList.remove('bg-white');
+            document.getElementById('method-hazop').classList.add('active');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => {
+                        b.classList.remove('bg-teal-700', 'text-white', 'border-teal-700');
+                        b.classList.add('bg-white');
+                    });
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    btn.classList.add('bg-teal-700', 'text-white', 'border-teal-700');
+                    btn.classList.remove('bg-white');
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            const matrixCells = document.querySelectorAll('.matrix-cell');
+            const resultBox = document.getElementById('risk-result');
+
+            const riskContent = {
+                'R1': {
+                    title: 'R1 : 高風險 (不可接受)',
+                    color: 'text-rose-700',
+                    bg: 'bg-rose-50',
+                    border: 'border-rose-400',
+                    icon: '&#9888;',
+                    action: '必須立即採取行動降低風險，否則不得運作。'
+                },
+                'R2': {
+                    title: 'R2 : 中風險 (需關注)',
+                    color: 'text-amber-700',
+                    bg: 'bg-amber-50',
+                    border: 'border-amber-400',
+                    icon: '&#9888;',
+                    action: '需設定改善期限，並納入年度計畫執行改善。'
+                },
+                'R3': {
+                    title: 'R3 : 低風險 (可接受)',
+                    color: 'text-emerald-700',
+                    bg: 'bg-emerald-50',
+                    border: 'border-emerald-400',
+                    icon: '&#10004;',
+                    action: '為可接受風險，但需持續維持現有的管理與防護措施。'
+                }
+            };
+
+            matrixCells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    matrixCells.forEach(c => c.classList.remove('ring-4', 'ring-blue-400', 'ring-offset-1'));
+                    cell.classList.add('ring-4', 'ring-blue-400', 'ring-offset-1');
+
+                    const riskLevel = cell.getAttribute('data-risk');
+                    const sev = cell.getAttribute('data-s');
+                    const lik = cell.getAttribute('data-l');
+                    const content = riskContent[riskLevel];
+
+                    resultBox.className = `border-2 p-8 rounded-xl h-full flex flex-col justify-center items-center text-center transition-all duration-300 ${content.bg} ${content.border}`;
+                    resultBox.innerHTML = `
+                        <div class="text-5xl mb-4 ${content.color}">${content.icon}</div>
+                        <h3 class="text-3xl font-bold ${content.color} mb-4">${content.title}</h3>
+                        <div class="grid grid-cols-2 gap-4 w-full mb-6 text-sm">
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <span class="block text-slate-500 mb-1">判斷：嚴重度</span>
+                                <span class="font-bold text-slate-800">${sev}</span>
+                            </div>
+                            <div class="bg-white p-2 rounded shadow-sm">
+                                <span class="block text-slate-500 mb-1">判斷：可能性</span>
+                                <span class="font-bold text-slate-800">${lik}</span>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-200 w-full text-left">
+                            <h4 class="font-bold text-slate-800 mb-1">管理行動要求：</h4>
+                            <p class="text-slate-700">${content.action}</p>
+                        </div>
+                    `;
+                });
+            });
+
+            const ctx = document.getElementById('methodsChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['HAZOP (危害及可操作性分析)', 'What-If (如果會怎樣)', 'Checklists (檢核表法)', 'FMEA (失效模式)', 'FTA (故障樹)'],
+                    datasets: [{
+                        data: [60, 20, 10, 5, 5],
+                        backgroundColor: ['#0f766e', '#fbbf24', '#94a3b8', '#f43f5e', '#6366f1'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: { family: "'Noto Sans TC', sans-serif" },
+                                boxWidth: 15
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
