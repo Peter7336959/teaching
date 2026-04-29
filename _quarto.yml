@@ -50,11 +50,13 @@ website:
           - layout.qmd
           - layout-knitr.qmd
           - layout-jupyter.qmd
-      - section: advanced.qmd
+      - section: "學校種子人員"
         contents:
-          - raw-code.qmd
-          - custom-theme.qmd
-      - acknowlegment.qmd
+          - text: 校園＿高溫接觸危害預防策略.qmd
+            target: _blank
+          - text: 校園＿高溫接觸危害預防策略.qmd
+            target: _blank
+      - 感謝.qmd
 
 
 
