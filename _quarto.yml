@@ -52,9 +52,11 @@ website:
           - layout-jupyter.qmd
       - section: "學校種子人員"
         contents:
-          - text: 校園＿高溫接觸危害預防策略.qmd
+          - text: 化學有害物危害預防策略
+            href: 校園＿高溫接觸危害預防策略.Rhtml
             target: _blank
-          - text: 校園＿高溫接觸危害預防策略.qmd
+          - text: 高溫接觸危害預防策略
+            href: 校園＿高溫接觸危害預防策略.qmd
             target: _blank
       - 感謝.qmd
 
