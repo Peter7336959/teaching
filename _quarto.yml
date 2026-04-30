@@ -50,8 +50,12 @@ website:
           - text: 機械設備器具安全與風險評估
             href: 機械設備器具安全與風險評估.qmd
             target: _blank
-          - layout-knitr.qmd
-          - layout-jupyter.qmd
+          - text: 具有危險性之機械及設備安全相關法規簡介
+            href: 具有危險性之機械及設備安全相關法規簡介.qmd
+            target: _blank 
+          - text: 危險性機械及設備管理
+            href: 危險性機械及設備管理.qmd
+            target: _blank            
       - section: "學校種子人員"
         contents:
           - text: 化學有害物危害預防策略
