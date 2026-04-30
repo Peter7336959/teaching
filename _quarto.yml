@@ -47,7 +47,9 @@ website:
             target: _blank
       - section: "職安衛人員"
         contents:
-          - layout.qmd
+          - text: 機械設備器具安全與風險評估
+            href: 機械設備器具安全與風險評估.qmd
+            target: _blank
           - layout-knitr.qmd
           - layout-jupyter.qmd
       - section: "學校種子人員"
@@ -59,6 +61,7 @@ website:
             href: 校園＿高溫接觸危害預防策略.qmd
             target: _blank
       - 感謝.qmd
+
 
 
 
