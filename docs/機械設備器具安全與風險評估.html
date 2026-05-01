@@ -6,10 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.36">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.21">
 
-  <meta name="author" content="勞動部職業安全衛生署">
+  <meta name="author" content="講師 何明信">
   <meta name="dcterms.date" content="2026-04-30">
   <title>教學網站 - 何明信老師 – 機械設備器具安全與風險評估</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,9 +18,6 @@
   <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -33,7 +30,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-99eeafcedac04850354b682963cedae3.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -51,6 +48,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -127,6 +125,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -139,16 +140,34 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-講師: 何明信 
+講師 何明信 
 </div>
 </div>
 </div>
 
   <p class="date">2026-04-30</p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/機械設備器具安全與風險評估" id="/toc-機械設備器具安全與風險評估">機械設備器具安全與風險評估</a></li>
+<li><a href="#/機械設備器具安全標準" id="/toc-機械設備器具安全標準">1. 機械設備器具安全標準</a></li>
+<li><a href="#/機械設備器具安全三大管理辦法" id="/toc-機械設備器具安全三大管理辦法">2.機械設備器具安全三大管理辦法</a></li>
+<li><a href="#/總複習" id="/toc-總複習">總複習</a></li>
+<li><a href="#/機械設備器具安全管理總覽" id="/toc-機械設備器具安全管理總覽">機械設備器具安全管理總覽</a></li>
+<li><a href="#/參考法規與辦法" id="/toc-參考法規與辦法">參考法規與辦法</a></li>
+</ul>
+</nav>
 </section>
-<section class="slide level2 center">
-
-<pre><code>```{css} /* 自訂樣式 */ .reveal .footer {     font-size: 0.4em;     color: #6c6c6c;     background: none;     text-shadow: none; } .reveal h1, .reveal h2, .reveal h3 {     text-transform: none; } .reveal .slides section .subtitle {     color: #2c3e50;     font-weight: lighter; } .highlight-red {     color: #e74c3c;     font-weight: bold; } .highlight-green {     color: #27ae60;     font-weight: bold; }</code></pre>
+<section id="講師簡介" class="slide level2 center">
+<h2>講師簡介</h2>
+<ul>
+<li><p>姓名：何明信</p></li>
+<li><p>學歷：成大環醫所 、職安衛技師</p></li>
+<li><p>經歷：檢查員30年 (製造、危機設、營造、化工職衛科、專委)</p></li>
+<li><p>現職：114年退休</p></li>
+<li><p>E-mail：msho7336959@gmail.com</p></li>
+</ul>
 </section>
 <section>
 <section id="機械設備器具安全與風險評估" class="title-slide slide level1 center">
@@ -165,24 +184,19 @@
 <blockquote>
 <p>本課程依據職業安全衛生法及機械設備器具安全標準編製</p>
 </blockquote>
-</section></section>
-<section>
-<section id="單元一機械源頭管理法規" class="title-slide slide level1 center">
-<h1>單元一：機械源頭管理法規</h1>
-
 </section>
-<section id="為何需要源頭管理" class="slide level2 center">
-<h2>為何需要源頭管理？</h2>
+<section id="單元一機械源頭管理法規" class="slide level2 center">
+<h2>單元一：機械源頭管理法規</h2>
+<h3 id="為何需要源頭管理">為何需要源頭管理？</h3>
 <p>過去僅靠雇主「末端管理」無法杜絕有缺陷機械流入市場</p>
-<p>&lt;div class=“fragment”&gt;</p>
+<div class="fragment highlight-red">
 <p><strong>國際公約核心原則</strong>：</p>
 <ul>
 <li><p>無適當防護裝置之機械禁止流通</p></li>
 <li><p>勞工不應使用無安全裝置之機械</p></li>
 </ul>
-<p>&lt;/div&gt; &lt;div class=“fragment highlight-green”&gt;</p>
+</div>
 <p><strong>職安法第5條第2項</strong>：設計、製造、輸入者應於各階段實施風險評估</p>
-<p>&lt;/div&gt;</p>
 </section>
 <section id="職業安全衛生法架構" class="slide level2 center">
 <h2>職業安全衛生法架構</h2>
@@ -199,7 +213,7 @@
 </ul>
 <p><strong>罰則</strong>：違反第7條第1項 → 新臺幣20~200萬元</p>
 </section>
-<section id="第8條-型式驗證" class="slide level2 center">
+<section id="第8條-型式驗證" class="slide level2 center scrollable">
 <h2>第8條 – 型式驗證</h2>
 <blockquote>
 <p>製造者或輸入者對於中央主管機關<strong>公告列入型式驗證</strong>之機械、設備或器具，非經認可之驗證機構實施型式驗證合格及張貼<strong>合格標章</strong>，不得產製運出廠場或輸入。</p>
@@ -275,7 +289,7 @@
 </tbody>
 </table>
 </section>
-<section id="申報登錄自我宣告流程" class="slide level2 center">
+<section id="申報登錄自我宣告流程" class="slide level2 center scrollable">
 <h2>申報登錄自我宣告流程</h2>
 
 <img data-src="images/申報登錄自我宣告流程.png" class="r-stretch"><p><strong>佐證方式</strong>：</p>
@@ -289,16 +303,18 @@
 <h2>安全標示 與 合格標章</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">制度</th>
 <th style="text-align: left;">標示</th>
 <th style="text-align: left;">格式</th>
+<th>圖示</th>
 <th style="text-align: left;">適用</th>
 </tr>
 </thead>
@@ -306,24 +322,24 @@
 <tr class="odd">
 <td style="text-align: left;">申報登錄</td>
 <td style="text-align: left;">TD</td>
-<td style="text-align: left;">圖式 + 識別號碼 (字軌TD + 指定代碼)</td>
+<td style="text-align: left;">圖式 + 識別號碼 (TD + 指定代碼)</td>
+<td><img data-src="images/安全標示.png" width="81" height="88"></td>
 <td style="text-align: left;">指定機械</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">型式驗證</td>
 <td style="text-align: left;">TC</td>
-<td style="text-align: left;">圖式 + 識別號碼 (字軌TC + 代碼 + 機構代號)</td>
+<td style="text-align: left;">圖式 + 識別號碼 (TC + 代碼 + 機構代號)</td>
+<td><img data-src="images/合格標章.png" width="93"></td>
 <td style="text-align: left;">公告列入型式驗證產品</td>
 </tr>
 </tbody>
 </table>
-<p>&lt;div class=“fragment”&gt;</p>
 <blockquote>
 <p>標示應使用不易變質材料、牢固張貼於本體明顯處（銘版上或鄰近商標）</p>
 </blockquote>
-<p>&lt;/div&gt;</p>
 </section>
-<section id="先行放行機制" class="slide level2 center">
+<section id="先行放行機制" class="slide level2 center scrollable">
 <h2>先行放行機制</h2>
 <p>輸入產品因尚未取得測試合格證明而被通關限制時，符合下列情形得申請先行放行：</p>
 <ol type="1">
@@ -363,17 +379,12 @@
 <li><p>標示規定</p></li>
 </ul></li>
 </ul>
-</section></section>
-<section>
-<section id="單元二風險評估與風險降低" class="title-slide slide level1 center">
-<h1>單元二：風險評估與風險降低</h1>
-
 </section>
-<section id="風險評估法源依據" class="slide level2 center">
-<h2>風險評估法源依據</h2>
+<section id="單元二風險評估與風險降低" class="slide level2 center">
+<h2>單元二：風險評估與風險降低</h2>
+<h3 id="風險評估法源依據">風險評估法源依據</h3>
 <blockquote>
-<p><strong>職業安全衛生法第5條第2項</strong><br>
-機械、設備、器具之設計、製造或輸入者，應於設計、製造、輸入階段實施<strong>風險評估</strong>，致力防止此等物件於使用時發生職業災害。</p>
+<p><strong>職業安全衛生法第5條第2項</strong> 機械、設備、器具之設計、製造或輸入者，應於設計、製造、輸入階段實施<strong>風險評估</strong>，致力防止此等物件於使用時發生職業災害。</p>
 </blockquote>
 <p><strong>施行細則第8條</strong>：風險評估指<strong>辨識、分析及評量風險</strong>之程序</p>
 </section>
@@ -397,10 +408,10 @@
 <h2>第二步：危害鑑別 – 10大危害類別 (ISO 12100)</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 7%">
-<col style="width: 42%">
-<col style="width: 7%">
-<col style="width: 41%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -649,21 +660,17 @@
 <blockquote>
 <p>即使採用了本質安全與防護措施，殘餘風險仍須透過使用資訊告知使用者</p>
 </blockquote>
-</section></section>
-<section>
-<section id="單元三實務防護案例" class="title-slide slide level1 center">
-<h1>單元三：實務防護案例</h1>
-
 </section>
-<section id="案例1油壓衝床-風險評估-節錄" class="slide level2 center">
-<h2>案例1：油壓衝床 – 風險評估 (節錄)</h2>
+<section id="單元三實務防護案例" class="slide level2 center">
+<h2>單元三：實務防護案例</h2>
+<h3 id="案例1油壓衝床-風險評估-節錄">案例1：油壓衝床 – 風險評估 (節錄)</h3>
 <table class="caption-top">
 <colgroup>
-<col style="width: 12%">
 <col style="width: 20%">
-<col style="width: 12%">
-<col style="width: 41%">
-<col style="width: 12%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -770,14 +777,10 @@
 </tr>
 </tbody>
 </table>
-</section></section>
-<section>
-<section id="結語" class="title-slide slide level1 center">
-<h1>結語</h1>
-
 </section>
-<section id="建立安全文化從源頭開始" class="slide level2 center">
-<h2>建立安全文化從源頭開始</h2>
+<section id="結語" class="slide level2 center">
+<h2>結語</h2>
+<h3 id="建立安全文化從源頭開始">建立安全文化從源頭開始</h3>
 
 <img data-src="images/建立安全文化從源頭開始.png" class="r-stretch"><blockquote>
 <p>「無適當防護裝置之機械禁止流通」—— 共同實現源頭管理願景</p>
@@ -824,7 +827,7 @@
 </tbody>
 </table>
 </section>
-<section id="參考資料" class="slide level2 center">
+<section id="參考資料" class="slide level2 center scrollable">
 <h2>參考資料</h2>
 <ol type="1">
 <li><p>職業安全衛生法 (108年修正)</p></li>
@@ -836,23 +839,1731 @@
 <li><p>ISO 12100:2010 機械安全 — 設計一般原則 — 風險評鑑與風險降低</p></li>
 <li><p>勞動部職業安全衛生署 機械設備器具安全資訊網</p></li>
 </ol>
+</section></section>
+<section>
+<section id="機械設備器具安全標準" class="title-slide slide level1 center">
+<h1>1. 機械設備器具安全標準</h1>
+<p>(民國111年5月11日修正)</p>
+</section>
+<section id="法源依據" class="slide level2 center">
+<h2>法源依據</h2>
+<ul>
+<li><p>依 <strong>職業安全衛生法第6條第3項、第7條第2項、第8條第5項</strong> 訂定</p></li>
+<li><p><strong>第2條</strong>：適用之機械、設備、器具：</p>
+<ul>
+<li><p>職安法施行細則第12條規定者</p></li>
+<li><p>中央主管機關依第8條第1項公告者</p></li>
+</ul></li>
+<li><p><strong>構造、性能及安全防護不得低於本標準之規定</strong></p></li>
+</ul>
+</section>
+<section id="第一章-總則-第13條" class="slide level2 center">
+<h2>第一章 總則 (第1~3條)</h2>
+<h3 id="重要名詞定義-第3條">重要名詞定義 (第3條)</h3>
+<ul>
+<li><p><strong>快速停止機構</strong>：衝剪機械檢出危險或異常時，能自動停止滑塊、刀具或撞錘動作之機構</p></li>
+<li><p><strong>緊急停止裝置</strong>：發生危險或異常時，以人為操作使滑塊等緊急停止</p></li>
+<li><p><strong>可動式接觸預防裝置</strong>：手推刨床之覆蓋可隨加工材進給自動開閉之刃部接觸預防裝置</p></li>
+</ul>
+</section>
+<section id="第二章-動力衝剪機械" class="slide level2 center">
+<h2>第二章 動力衝剪機械</h2>
+<h3 id="第一節-安全護圍-第45條">第一節 安全護圍 (第4~5條)</h3>
+<h3 id="第4條">第4條</h3>
+<ul>
+<li><p>動力衝壓機械及剪斷機械應具有 <strong>安全護圍、安全模、特定專用衝剪機械或自動衝剪機械</strong></p></li>
+<li><p>無法設置安全護圍等 → 至少設有第6條所定安全裝置一種以上</p></li>
+</ul>
+<h3 id="第5條-安全護圍等性能要求">第5條 – 安全護圍等性能要求</h3>
+<ul>
+<li><p><strong>安全護圍</strong>：手指無法通過或自外側觸及危險界限</p></li>
+<li><p><strong>安全模</strong>：各構件間隙 ≤ 8 mm</p></li>
+<li><p><strong>特定專用衝剪機械</strong>：身體不介入危險界限之構造</p></li>
+<li><p><strong>自動衝剪機械</strong>：自動輸送、加工、排出成品</p></li>
+</ul>
+</section>
+<section id="第二節-安全裝置-第615條" class="slide level2 center scrollable">
+<h2>第二節 安全裝置 (第6~15條)</h2>
+<h3 id="安全裝置應具機能之一-第6條">安全裝置應具機能之一 (第6條)</h3>
+<ol type="1">
+<li><p><strong>連鎖防護式</strong>：身體無法介入危險界限</p></li>
+<li><p><strong>雙手操作式</strong>：</p>
+<ul>
+<li><p>安全一行程式：手離開操作部後至手到達危險前，滑塊停止</p></li>
+<li><p>雙手起動式：雙手操作，動作中手離開即無法達到危險界限</p></li>
+</ul></li>
+<li><p><strong>感應式</strong>：光電、雷射等，身體接近即停止</p></li>
+<li><p><strong>拉開式或掃除式</strong>：身體介入時強制脫離危險界限</p></li>
+</ol>
+</section>
+<section id="安全距離公式-第8條" class="slide level2 center">
+<h2>安全距離公式 (第8條)</h2>
+<h3 id="光電式安全裝置">光電式安全裝置</h3>
+<p>D=1.6×(T1+Ts)+CD=1.6×(T1​+Ts​)+C</p>
+<ul>
+<li><p>DD：安全距離 (mm)</p></li>
+<li><p>T1​：手指遮斷光線至快速停止機構開始動作之時間 (ms)</p></li>
+<li><p>Ts：快速停止機構動作至滑塊停止之時間 (ms)</p></li>
+<li><p>CC：追加距離 (mm) – 依連續遮光幅查表</p></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">連續遮光幅 (mm)</th>
+<th style="text-align: left;">追加距離 C (mm)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">≤14</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&gt;14, ≤20</td>
+<td style="text-align: left;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&gt;20, ≤30</td>
+<td style="text-align: left;">130</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&gt;35, ≤45</td>
+<td style="text-align: left;">300</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&gt;45, ≤50</td>
+<td style="text-align: left;">400</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="雙手操作式安全裝置規範-第10條" class="slide level2 center scrollable">
+<h2>雙手操作式安全裝置規範 (第10條)</h2>
+<ol type="1">
+<li><p>雙手操作之左右手動作時間差 <strong>超過0.5秒</strong> → 滑塊無法動作</p></li>
+<li><p>兩按鈕外側距離 <strong>≥300 mm</strong> (有防護者得酌減)</p></li>
+<li><p>按鈕不得凸出按鈕盒表面或衝剪機械表面</p></li>
+<li><p>未離開一行程操作部時，無法再起動</p></li>
+</ol>
+</section>
+<section id="感應式安全裝置-第1112條" class="slide level2 center">
+<h2>感應式安全裝置 (第11~12條)</h2>
+<h3 id="光電式安全裝置要求-第12條">光電式安全裝置要求 (第12條)</h3>
+<ul>
+<li><p>身體遮斷光線即檢出並停止滑塊</p></li>
+<li><p>投光器及受光器須有 <strong>有效防護高度</strong></p></li>
+<li><p>光軸數 ≥2，連續遮光幅 ≤50 mm (具起動控制功能者 ≤30 mm)</p></li>
+<li><p>剪斷機械之光軸高度與危險界限水平距離關係：<br>
+光軸高度 ≤ 水平距離 × 0.67 (但 ≤180 mm)</p></li>
+</ul>
+</section>
+<section id="拉開式及掃除式安全裝置" class="slide level2 center">
+<h2>拉開式及掃除式安全裝置</h2>
+<h3 id="拉開式-第13條">拉開式 (第13條)</h3>
+<ul>
+<li><p>牽引帶切斷荷重 ≥150 kg</p></li>
+<li><p>肘節傳送帶耐靜荷重 ≥50 kg</p></li>
+</ul>
+<h3 id="掃除式-第14條及第14條之1">掃除式 (第14條及第14條之1)</h3>
+<ul>
+<li><p>防護板寬度 ≥ 金屬模寬度之1/2 (最小100 mm)</p></li>
+<li><p>防護板高度 ≥ 行程長度 (最大300 mm)</p></li>
+<li><p><strong>限用確動式離合器且行程數 ≤120 spm</strong>，不得使用腳踏式快速停止機構</p></li>
+</ul>
+</section>
+<section id="安全裝置零配件要求-第15條" class="slide level2 center">
+<h2>安全裝置零配件要求 (第15條)</h2>
+<ul>
+<li><p>機械零件具充分強度</p></li>
+<li><p>金屬零配件材料：CNS 3828 S45C 以上，硬度 HRC 45~50</p></li>
+<li><p>電氣回路電壓 ≤160 V</p></li>
+<li><p>停電或電氣零件故障時，滑塊不致意外動作</p></li>
+<li><p>切換開關須有明顯標示及保持位置之裝置</p></li>
+</ul>
+</section>
+<section id="第三節-機構及裝置-第1626條" class="slide level2 center">
+<h2>第三節 機構及裝置 (第16~26條)</h2>
+<h3 id="第16條-切換開關安全機能">第16條 – 切換開關安全機能</h3>
+<p>任何切換狀態均應符合安全機能，包括：</p>
+<ul>
+<li><p>行程切換開關 (連續/一行程/安全一行程/寸動)</p></li>
+<li><p>操作切換開關 (雙手/單手/腳踏)</p></li>
+<li><p>操作台數切換開關</p></li>
+<li><p>安全裝置開關</p></li>
+</ul>
+<h3 id="第18條-一行程一停止機構">第18條 – 一行程一停止機構</h3>
+<ul>
+<li>衝壓機械應具有一行程一停止機構</li>
+</ul>
+</section>
+<section id="快速停止機構與緊急停止-第1921條" class="slide level2 center">
+<h2>快速停止機構與緊急停止 (第19~21條)</h2>
+<h3 id="第19條-快速停止機構">第19條 – 快速停止機構</h3>
+<ul>
+<li><p>衝壓機械應具快速停止機構 (但有例外：確動式離合器、不致使身體介入危險界限等)</p></li>
+<li><p>快速停止機構作動後，未再起動操作無法使滑塊動作</p></li>
+</ul>
+<h3 id="第20條-緊急停止裝置">第20條 – 緊急停止裝置</h3>
+<ul>
+<li><p>應備有緊急停止裝置，作動後未使滑塊返回起動狀態位置，無法再起動</p></li>
+<li><p><strong>操作部</strong> (第21條)：紅色凸出型按鈕，設置於各操作區；台身兩側 &gt;1800 mm 者，正面及背面均應設置</p></li>
+</ul>
+</section>
+<section id="寸動機構-第22條" class="slide level2 center">
+<h2>寸動機構 (第22條)</h2>
+<p>衝壓機械應備有寸動機構，並應限制：</p>
+<ul>
+<li><p>移動速度 ≤10 mm/s，或</p></li>
+<li><p>每段移動行程 ≤6 mm，且未離開操作部無法再起動</p></li>
+</ul>
+</section>
+<section id="防止滑塊意外下降-第23條" class="slide level2 center">
+<h2>防止滑塊意外下降 (第23條)</h2>
+<ul>
+<li><p>應具安全撞塊或固定滑塊裝置</p></li>
+<li><p>使用安全撞塊時，滑塊無法動作之連鎖機構</p></li>
+<li><p>摺床或小型衝床得使用安全插栓或安全鎖：</p>
+<ul>
+<li><p>安全插栓配置於每一操作區</p></li>
+<li><p>安全鎖能遮斷主電動機電源</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="第四節-機械系統-第2744條" class="slide level2 center">
+<h2>第四節 機械系統 (第27~44條)</h2>
+<h3 id="離合器與制動裝置-第2735條">離合器與制動裝置 (第27~35條)</h3>
+<ul>
+<li><p>置有滑動銷或滾動鍵之離合器，行程數不得超過附表一 (例：壓力能力≤20噸 → 行程數≤150 spm)</p></li>
+<li><p>摩擦式離合器之衝床應使用 <strong>彈簧脫離式</strong> 或同等安全功能</p></li>
+<li><p>制動裝置避免油脂侵入 (濕式除外)</p></li>
+</ul>
+<h3 id="第38條-超限運轉監視裝置">第38條 – 超限運轉監視裝置</h3>
+<ul>
+<li><p>曲軸轉速 ≤300 rpm 之衝床應設置</p></li>
+<li><p>設定停止點之停止角度應 ≤25°</p></li>
+</ul>
+</section>
+<section id="第五節-液壓系統-第4549條" class="slide level2 center">
+<h2>第五節 液壓系統 (第45~49條)</h2>
+<ul>
+<li><p>液壓衝床：液壓泵起動後未進行起動操作，滑塊無法動作 (第45條)</p></li>
+<li><p>快速停止機構作動後，慣性下降值不得超過附表四：</p>
+<ul>
+<li><p>液壓式摺床以外：壓力能力 ≤50噸 → 50 mm；&gt;300噸 → 150 mm</p></li>
+<li><p>液壓式摺床：≤100噸 → 20 mm；&gt;500噸 → 150 mm</p></li>
+</ul></li>
+<li><p>應設安全撞塊支撐滑塊及上模重量 (第47條)</p></li>
+<li><p>電磁閥應為常開型、彈簧回復型 (第48條)</p></li>
+<li><p>防止液壓超壓之安全裝置 (第49條)</p></li>
+</ul>
+</section>
+<section id="第三章-手推刨床-第5058條" class="slide level2 center">
+<h2>第三章 手推刨床 (第50~58條)</h2>
+<h3 id="刃部接觸預防裝置-第50條">刃部接觸預防裝置 (第50條)</h3>
+<ul>
+<li><p>覆蓋應遮蓋刨削工材以外部分</p></li>
+<li><p><strong>可動式接觸預防裝置</strong>：覆蓋可隨加工材進給自動開閉</p></li>
+<li><p>覆蓋下方與平台面間隙 ≤8 mm</p></li>
+</ul>
+</section>
+<section id="制動裝置與動力遮斷-第5153條" class="slide level2 center">
+<h2>制動裝置與動力遮斷 (第51~53條)</h2>
+<ul>
+<li><p><strong>第51條</strong>：應設制動裝置，使刀軸在10秒內停止</p></li>
+<li><p><strong>第53條</strong>：不離開作業位置即可操作之動力遮斷裝置</p></li>
+</ul>
+</section>
+<section id="其他要求" class="slide level2 center">
+<h2>其他要求</h2>
+<ul>
+<li><p>刀軸旋轉部分應設覆蓋 (第55條)</p></li>
+<li><p>刃部材料：刀片 CNS 2904 SKH2；刀身 CNS 2473 或 CNS 3828 (第56條)</p></li>
+<li><p>刀軸應採圓形 (第58條)</p></li>
+</ul>
+</section>
+<section id="第四章-木材加工用圓盤鋸-第5970條" class="slide level2 center scrollable">
+<h2>第四章 木材加工用圓盤鋸 (第59~70條)</h2>
+<h3 id="安全裝置-第60條">安全裝置 (第60條)</h3>
+<p>應設置：</p>
+<ol type="1">
+<li><p><strong>反撥預防裝置</strong> (橫鋸用或因反撥不致引起危害者除外)</p></li>
+<li><p><strong>鋸齒接觸預防裝置</strong> (製材用圓盤鋸及設有自動輸送裝置者除外)</p></li>
+</ol>
+</section>
+<section id="反撥預防裝置-撑縫片-第6168條" class="slide level2 center">
+<h2>反撥預防裝置 – 撑縫片 (第61、68條)</h2>
+<ul>
+<li><p>撑縫片與鋸齒前端間隙 ≤12 mm</p></li>
+<li><p>厚度為圓鋸片厚度之 <strong>1.1倍以上</strong></p></li>
+<li><p>材料：CNS 2964 SK5 以上</p></li>
+<li><p>安裝螺栓直徑依圓鋸片直徑不同 (附表八，例如鋸片直徑 ≤203mm → 螺栓直徑5mm)</p></li>
+</ul>
+</section>
+<section id="反撥防止爪與鋸齒接觸預防裝置" class="slide level2 center">
+<h2>反撥防止爪與鋸齒接觸預防裝置</h2>
+<ul>
+<li><p>反撥防止爪材料：CNS 2473 SS400 以上 (第69條)</p></li>
+<li><p>鋸齒接觸預防裝置 (第70條)：</p>
+<ul>
+<li><p>可動式覆蓋應圍護鋸齒撑縫片部分與鋸切中部分以外區域</p></li>
+<li><p>攜帶式圓盤鋸之覆蓋應符合附圖一之尺寸</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="制動與動力遮斷-第6264條" class="slide level2 center">
+<h2>制動與動力遮斷 (第62~64條)</h2>
+<ul>
+<li><p>應設制動裝置使圓鋸軸10秒內停止 (但攜帶式、自動輸送等除外)</p></li>
+<li><p>動力遮斷裝置應於不離開作業位置即可操作</p></li>
+</ul>
+</section>
+<section id="第五章-動力堆高機-第7184條" class="slide level2 center">
+<h2>第五章 動力堆高機 (第71~84條)</h2>
+<h3 id="安定度要求">安定度要求</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">堆高機型式</th>
+<th style="text-align: left;">對應條文</th>
+<th style="text-align: left;">坡度要求範例 (配衡型)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">配衡型</td>
+<td style="text-align: left;">第71條，附表九</td>
+<td style="text-align: left;">靜止前後4%，運行前後18%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">側舉型</td>
+<td style="text-align: left;">第72條，附表十</td>
+<td style="text-align: left;">靜止左右6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">伸縮型/跨提型</td>
+<td style="text-align: left;">第73條，附表十一</td>
+<td style="text-align: left;">依負載狀態</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">窄道式</td>
+<td style="text-align: left;">第74條，附表十二</td>
+<td style="text-align: left;">靜止左右6~8%</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="制動裝置-第75條" class="slide level2 center">
+<h2>制動裝置 (第75條)</h2>
+<ul>
+<li><p>制止運行：依負荷狀態及初速度，停止距離 ≤5m (無負荷初速20km/h) / ≤2.5m (負荷初速10km/h)</p></li>
+<li><p>保持停止：無負荷狀態坡度20% 仍可停止</p></li>
+</ul>
+</section>
+<section id="頂蓬與後扶架-第7980條" class="slide level2 center">
+<h2>頂蓬與後扶架 (第79~80條)</h2>
+<ul>
+<li><p>頂蓬強度承受最大荷重2倍 (上限4公噸)</p></li>
+<li><p>上框開口 ≤16 cm</p></li>
+<li><p>座式操作：駕駛座上面至頂蓬下端 ≥95 cm</p></li>
+<li><p>後扶架應設置 (但貨物掉落無危害者除外)</p></li>
+</ul>
+</section>
+<section id="其他關鍵要求" class="slide level2 center">
+<h2>其他關鍵要求</h2>
+<ul>
+<li><p>方向指示器 (第76條)、警報裝置 (第77條)、前照燈/後照燈 (第78條)</p></li>
+<li><p>液壓安全閥 (第81條)</p></li>
+<li><p>貨叉應力 ≤ 鋼材降伏強度之 <strong>1/3</strong> (第82條)</p></li>
+<li><p>鏈條安全係數 ≥5 (第83條)</p></li>
+<li><p>座式駕駛座應配 <strong>安全帶</strong> 防止傾倒壓傷 (第84條)</p></li>
+</ul>
+</section>
+<section id="第六章-研磨機研磨輪-第85109條" class="slide level2 center">
+<h2>第六章 研磨機、研磨輪 (第85~109條)</h2>
+<h3 id="研磨輪性能要求-第85條">研磨輪性能要求 (第85條)</h3>
+<ul>
+<li><p>最高使用周速度由 <strong>破壞旋轉試驗</strong> 決定</p></li>
+<li><p>粗磨以外之機械研磨用：最高使用周速度 ≤ 破壞旋轉周速度 ÷ 1.8</p></li>
+<li><p>其他研磨輪：≤ 破壞旋轉周速度 ÷ 2</p></li>
+<li><p>普通速度使用時，不得超過附表十六所列限度</p></li>
+</ul>
+</section>
+<section id="旋轉試驗與衝擊試驗-第8687條" class="slide level2 center">
+<h2>旋轉試驗與衝擊試驗 (第86~87條)</h2>
+<ul>
+<li><p>直徑 ≥100mm 之研磨輪，每批應取10% (至少5個) 以 <strong>1.5倍</strong> 最高使用周速度試驗</p></li>
+<li><p>定期破壞旋轉試驗 (至少每月一次)</p></li>
+<li><p>盤形研磨輪應實施衝擊試驗 (98焦耳，兩處)</p></li>
+</ul>
+</section>
+<section id="護罩規定-第95104條" class="slide level2 center">
+<h2>護罩規定 (第95~104條)</h2>
+<h3 id="材料與厚度">材料與厚度</h3>
+<ul>
+<li><p>護罩材料：壓延鋼板 (抗拉強度 ≥28 kg/mm²，延伸 ≥14%)</p></li>
+<li><p>厚度依研磨輪最高使用周速度、厚度、直徑查附表二十七～附表三十一</p></li>
+<li><p>鑄鐵護罩厚度係數4倍、可鍛鑄鐵2倍、鑄鋼1.6倍 (附表二十八)</p></li>
+</ul>
+<h3 id="覆蓋範圍-第97條附圖六">覆蓋範圍 (第97條，附圖六)</h3>
+<ul>
+<li><p>供研磨必要部分外，應覆蓋研磨輪周邊、兩側面</p></li>
+<li><p>桌上用研磨機之護罩應設 <strong>舌板</strong>，調整間隙 ≤10mm (第104條)</p></li>
+</ul>
+</section>
+<section id="其他要求-1" class="slide level2 center">
+<h2>其他要求</h2>
+<ul>
+<li><p>不離開作業位置即可操作之動力遮斷裝置 (第105條)</p></li>
+<li><p>電氣絕緣與接地符合 CNS 3265 (第106條)</p></li>
+<li><p>工作物支架間隙 ≤3 mm (第107條)</p></li>
+<li><p>直徑 &lt;50mm 之研磨輪及其護罩不適用本章 (第109條)</p></li>
+</ul>
+</section>
+<section id="第七章-防止爆炸及感電危害設備-第110111條之1" class="slide level2 center">
+<h2>第七章 防止爆炸及感電危害設備 (第110~111條之1)</h2>
+<h3 id="防爆電氣設備">防爆電氣設備</h3>
+<ul>
+<li><p><strong>氣體類防爆電氣設備</strong> (第110條)：性能構造應符合 <strong>CNS 3376系列</strong> 或 <strong>IEC 60079系列</strong> (不一致時以IEC為準)</p></li>
+<li><p><strong>粉塵類防爆電氣設備</strong> (第111條)：符合 CNS 3376、CNS 15591系列、IEC 60079、IEC 61241系列</p></li>
+</ul>
+</section>
+<section id="交流電焊機用自動電擊防止裝置-第111條之1" class="slide level2 center">
+<h2>交流電焊機用自動電擊防止裝置 (第111條之1)</h2>
+<ul>
+<li>構造及性能應符合 <strong>CNS 4782</strong></li>
+</ul>
+</section>
+<section id="第八章-標示-第112119條" class="slide level2 center">
+<h2>第八章 標示 (第112~119條)</h2>
+<h3 id="衝壓機械安全裝置應標示-第112條">衝壓機械安全裝置應標示 (第112條)</h3>
+<ul>
+<li><p>製造號碼、製造者名、製造年月</p></li>
+<li><p>適用之機械種類、壓力能力、行程長度等</p></li>
+<li><p><strong>雙手操作式及光電式安全裝置</strong>：</p>
+<ul>
+<li><p>T1T1​ (手離開至快速停止開始時間) 或 TmTm​ (雙手起動式)</p></li>
+<li><p>TsTs​ (停止時間)</p></li>
+<li><p>對應之安全距離</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="各機械標示事項" class="slide level2 center">
+<h2>各機械標示事項</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">機械</th>
+<th style="text-align: left;">應標示內容 (依據條文)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">衝剪機械</td>
+<td style="text-align: left;">第114條：製造號碼、年月、壓力能力、行程數、行程長度、模高、最大停止時間等</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">手推刨床</td>
+<td style="text-align: left;">第115條：製造者、年月、功率、電壓、無負荷轉速、有效刨削寬度</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">圓盤鋸</td>
+<td style="text-align: left;">第116條：同上，並標適用鋸片直徑、旋轉方向、撑縫片適用範圍</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">堆高機</td>
+<td style="text-align: left;">第117條：製造者、年份、號碼、最大荷重、容許荷重</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">研磨機</td>
+<td style="text-align: left;">第118條：製造者、年月、電壓、轉速、適用研磨輪尺寸、護罩之最高使用周速度</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">研磨輪</td>
+<td style="text-align: left;">第119條：製造者、結合劑種類、最高使用周速度、製造批號</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第九章-附則-第120121條" class="slide level2 center">
+<h2>第九章 附則 (第120~121條)</h2>
+<h3 id="特殊構造之同等安全認定-第120條">特殊構造之同等安全認定 (第120條)</h3>
+<ul>
+<li><p>構造特殊致適用本標準有困難者 → 檢附產品安全評估報告及構造圖說，報請中央主管機關認定具有 <strong>同等以上安全性能</strong></p></li>
+<li><p>可委託學術機構或專業團體辦理</p></li>
+</ul>
+</section>
+<section id="施行日期-第121條" class="slide level2 center">
+<h2>施行日期 (第121條)</h2>
+<ul>
+<li><p>本標準除第110、111條自100年7月1日施行外，自發布日施行</p></li>
+<li><p>103年6月26日修正條文自103年7月3日施行</p></li>
+<li><p>111年5月11日修正之 <strong>第22條及第38條</strong> 自發布後一年施行</p></li>
+</ul>
+</section>
+<section id="重點彙整" class="slide level2 center">
+<h2>重點彙整</h2>
+<h3 id="機械類別安全關鍵字">機械類別安全關鍵字</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">機械</th>
+<th style="text-align: left;">關鍵安全要求</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">動力衝剪機械</td>
+<td style="text-align: left;">安全護圍、雙手操作、光電式安全裝置、安全距離計算、緊急停止</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">手推刨床</td>
+<td style="text-align: left;">可動式接觸預防裝置、制動裝置(10秒內停止)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">圓盤鋸</td>
+<td style="text-align: left;">反撥預防裝置(撑縫片)、鋸齒接觸預防裝置</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">堆高機</td>
+<td style="text-align: left;">安定度(坡度)、制動距離、頂蓬強度、安全帶</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">研磨機/研磨輪</td>
+<td style="text-align: left;">最高使用周速度、破壞旋轉試驗、護罩厚度及覆蓋</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">防爆電氣設備</td>
+<td style="text-align: left;">符合CNS/IEC 60079系列</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="罰則呼應" class="slide level2 center">
+<h2>罰則呼應</h2>
+<ul>
+<li><p>依據職安法第7、8條：違反安全標準不得產製運出、輸入、租賃、供應或設置</p></li>
+<li><p>未符合安全標準且未申報登錄或未通過型式驗證 → 處20~200萬元罰鍰</p></li>
+</ul>
+</section>
+<section id="常見問題與計算重點" class="slide level2 center">
+<h2>常見問題與計算重點</h2>
+<h3 id="安全距離計算-第8條">安全距離計算 (第8條)</h3>
+<blockquote>
+<p>光電式安全裝置之安全距離 D=1.6×(T1+Ts)+CD=1.6×(T1​+Ts​)+C</p>
+</blockquote>
+<p><strong>範例</strong>：T1=20ms,Ts=50msT1​=20ms,Ts​=50ms，連續遮光幅=25mm → C=130mm<br>
+D=1.6×(20+50)+130=1.6×70+130=112+130=242mmD=1.6×(20+50)+130=1.6×70+130=112+130=242mm</p>
+</section>
+<section id="衝壓機械慣性下降值-液壓" class="slide level2 center">
+<h2>衝壓機械慣性下降值 (液壓)</h2>
+<ul>
+<li><p>摺床以外且壓力能力≤50噸 → 慣性下降值 ≤50mm</p></li>
+<li><p>摺床壓力能力≤100噸 → ≤20mm</p></li>
+</ul>
+</section>
+<section id="堆高機制動停止距離" class="slide level2 center">
+<h2>堆高機制動停止距離</h2>
+<ul>
+<li><p>無負荷初速20km/h → ≤5m</p></li>
+<li><p>負荷初速10km/h → ≤2.5m</p></li>
+</ul>
+</section>
+<section id="安全護圍間隙" class="slide level2 center">
+<h2>安全護圍間隙</h2>
+<ul>
+<li><p>安全模各構件間隙 ≤8mm</p></li>
+<li><p>手推刨床覆蓋與平台面間隙 ≤8mm</p></li>
+</ul>
+</section>
+<section id="結語-1" class="slide level2 center">
+<h2>結語</h2>
+<h3 id="落實安全標準從源頭防止災害">落實安全標準，從源頭防止災害</h3>
+<blockquote>
+<p>機械安全非僅靠使用者注意，而應由 <strong>設計、製造、輸入者</strong> 確保本質安全</p>
+</blockquote>
+<ul>
+<li><p>遵守本標準最低要求</p></li>
+<li><p>導入 ISO 12100 風險評估流程</p></li>
+<li><p>透過申報登錄、型式驗證及市場監督，提升整體機械安全水準</p></li>
+</ul>
+</section></section>
+<section>
+<section id="機械設備器具安全三大管理辦法" class="title-slide slide level1 center">
+<h1>2.機械設備器具安全三大管理辦法</h1>
+
+</section>
+<section id="法源依據-1" class="slide level2 center">
+<h2>法源依據</h2>
+<ul>
+<li><p><strong>職業安全衛生法第7條、第8條、第9條</strong></p></li>
+<li><p>為落實 <strong>源頭管理</strong> 及 <strong>後市場監督</strong> 而訂定</p></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">辦法名稱</th>
+<th style="text-align: left;">規範核心</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">機械設備器具安全資訊申報登錄辦法</td>
+<td style="text-align: left;">自我宣告、安全標示(TD)、技術文件保存</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">機械類產品型式驗證實施及監督管理辦法</td>
+<td style="text-align: left;">強制驗證、合格標章(TC)、先行放行</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">機械設備器具監督管理辦法</td>
+<td style="text-align: left;">產品監督、市場查驗、不合格品處理</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第一部分機械設備器具安全資訊申報登錄辦法" class="slide level2 center">
+<h2>第一部分：機械設備器具安全資訊申報登錄辦法</h2>
+<h3 id="第1條第3條-總則">第1條～第3條 – 總則</h3>
+<p><strong>制定目的</strong>：規範中央主管機關指定之機械、設備或器具之安全資訊申報登錄、安全標示及管理</p>
+<p><strong>適用範圍</strong>：</p>
+<ul>
+<li><p>職安法第7條第1項指定之機械（施行細則第12條）</p></li>
+<li><p>但已列入型式驗證公告者，依第8條辦理</p></li>
+</ul>
+<p><strong>名詞定義</strong>：</p>
+<ul>
+<li><p><strong>申報者</strong>：製造者或輸入者</p></li>
+<li><p><strong>資訊網站</strong>：中央主管機關指定之申報網站 (<a href="https://tsmark.osha.gov.tw/">tsmark.osha.gov.tw</a>)</p></li>
+<li><p><strong>安全標示</strong>：完成登錄後張貼於產品之識別標示</p></li>
+</ul>
+</section>
+<section id="第4條-免申報登錄情形" class="slide level2 center scrollable">
+<h2>第4條 – 免申報登錄情形</h2>
+<p>中央主管機關指定之產品有下列情形之一者，得免申報登錄：</p>
+<ol type="1">
+<li><p>依其他法律有實施檢查、檢驗、驗證、認可或管理</p></li>
+<li><p>供國防軍事用途，並有國防部或其直屬機關證明</p></li>
+<li><p>限量製造或輸入僅供科技研發、測試用途之專用機型，經核准</p></li>
+<li><p>非供實際使用或作業用途之商業樣品或展覽品，經核准</p></li>
+<li><p>輸入供加工、組裝後輸出或原件再輸出，經核准</p></li>
+<li><p>其他特殊情形，經核准</p></li>
+</ol>
+</section>
+<section id="第5條-符合安全標準之佐證方式" class="slide level2 center">
+<h2>第5條 – 符合安全標準之佐證方式</h2>
+<p>申報者宣告其產品符合安全標準，應以下列方式之一佐證：</p>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[佐證方式] --&gt; B[型式檢定合格&lt;br&gt;（認可檢定機構）]
+    A --&gt; C[產品驗證機構審驗合格&lt;br&gt;（國內外認證組織認可）]
+    A --&gt; D[自主檢測 +&lt;br&gt;產品製程一致性查核]
+    D --&gt; E[檢測實驗室經認證&lt;br&gt;查核機構經認證]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p><strong>但書</strong>：動力衝剪機械、木材加工用圓盤鋸、研磨機、防爆燈具、防爆電動機、防爆開關箱等六種產品，<strong>僅限採型式檢定合格</strong>。</p>
+</section>
+<section id="第6條-自主檢測之特別規定" class="slide level2 center">
+<h2>第6條 – 自主檢測之特別規定</h2>
+<p>採自主檢測及產品製程一致性查核者，應符合：</p>
+<ul>
+<li><p>自主檢測由<strong>經認證之檢測實驗室</strong>實施</p></li>
+<li><p>產品製程一致性查核由<strong>經認證之機構</strong>實施</p></li>
+<li><p>檢測人員資格符合法令規定</p></li>
+</ul>
+<blockquote>
+<p><strong>單品申報登錄者</strong>：得免附產品製程符合一致性證明。</p>
+</blockquote>
+</section>
+<section id="第7條-申報登錄應上傳之資料" class="slide level2 center scrollable">
+<h2>第7條 – 申報登錄應上傳之資料</h2>
+<p>申報者應上傳加蓋承辦者及負責人印章之資料（電子檔限不可編輯之圖檔或PDF）：</p>
+<ol type="1">
+<li><p><strong>符合性聲明書</strong></p></li>
+<li><p><strong>設立登記文件</strong>（工廠、公司或商業登記等）</p></li>
+<li><p><strong>測試證明文件</strong>（型式檢定合格證明、審驗合格證明或自主檢測報告，效期3個月以上）</p></li>
+<li><p><strong>產品基本資料</strong>（型式名稱說明書、安裝操作保養維修說明書、危險對策）</p></li>
+<li><p><strong>產品安全裝置及配備基本資料</strong>（品名、規格、重要零組件驗證報告等）</p></li>
+<li><p>其他要求之技術文件</p></li>
+</ol>
+</section>
+<section id="第812條-登錄與保存" class="slide level2 center">
+<h2>第8～12條 – 登錄與保存</h2>
+<ul>
+<li><p><strong>第8條</strong>：登錄內容有變更 → 30日內申請變更登錄</p></li>
+<li><p><strong>第9條</strong>：申報者應確保產品符合聲明內容，內容異動應重新申報</p></li>
+<li><p><strong>第10條</strong>：符合性聲明書及相關技術文件 → <strong>保存至該產品停產後至少10年</strong></p></li>
+<li><p><strong>第11條</strong>：登錄資訊得保密或限閱；可公開者以網路查詢下載或重製提供</p></li>
+<li><p><strong>第12條</strong>：文件以中文為主；外文技術文件應有正體字中譯本（英文以外並附英譯本）</p></li>
+</ul>
+</section>
+<section id="第1314條-登錄完成與效期" class="slide level2 center">
+<h2>第13～14條 – 登錄完成與效期</h2>
+<ul>
+<li><p><strong>第13條</strong>：完成登錄 → 中央主管機關給予登錄字號及<strong>登錄完成通知書</strong></p>
+<ul>
+<li>通知書內容：申報者資訊、產品基本資料、產製廠場資料、安全標準條款、登錄字號及日期、效期等</li>
+</ul></li>
+<li><p><strong>第14條</strong>：登錄效期由中央主管機關依產品種類別定之，<strong>3年以上7年以下</strong></p>
+<ul>
+<li>測試驗證證明文件效期屆滿 → 登錄失其效力</li>
+</ul></li>
+</ul>
+</section>
+<section id="第1517條-變更與重新登錄" class="slide level2 center scrollable">
+<h2>第15～17條 – 變更與重新登錄</h2>
+<ul>
+<li><p><strong>第15條</strong>：有下列情形之一，應<strong>30日內重新申報登錄</strong>：</p>
+<ol type="1">
+<li><p>安全標準修正，致原登錄不符規定</p></li>
+<li><p>登錄之產品設計變更，致原申報資訊須更新</p></li>
+</ol></li>
+<li><p><strong>第16條</strong>：效期屆滿前3個月內得申請展延</p></li>
+<li><p><strong>第17條</strong>：同一申報者就同一型式產品不得重複申報（依第15條重新登錄者除外）</p></li>
+</ul>
+</section>
+<section id="第1820條-維持與抽查" class="slide level2 center">
+<h2>第18～20條 – 維持與抽查</h2>
+<ul>
+<li><p><strong>第18條</strong>：完成登錄之產品，實體不得與登錄事項相異</p></li>
+<li><p><strong>第19條</strong>：中央主管機關必要時得要求備樣品，實施<strong>複測、抽驗或赴生產廠場實地查核</strong></p></li>
+<li><p><strong>第20條</strong>：申報登錄所附文件有保密必要者，得不公開</p></li>
+</ul>
+</section>
+<section id="第21條-註銷登錄" class="slide level2 center scrollable">
+<h2>第21條 – 註銷登錄</h2>
+<p>有下列情形之一者，中央主管機關應註銷產品安全資訊登錄：</p>
+<ol type="1">
+<li><p>自行申請註銷</p></li>
+<li><p>申報者設立登記文件經撤銷、廢止或註銷</p></li>
+<li><p>申報者之事業體經解散、歇業或撤回認許</p></li>
+<li><p>查核發現有其他不合規定之<strong>重大情事</strong></p></li>
+</ol>
+<blockquote>
+<p>註銷登錄者，其授權輸入放行通知書隨同喪失效力。</p>
+</blockquote>
+</section>
+<section id="第22條-撤銷登錄" class="slide level2 center">
+<h2>第22條 – 撤銷登錄</h2>
+<ul>
+<li><p>以<strong>詐欺或虛偽不實方法</strong>取得資訊登錄者 → 撤銷其登錄</p></li>
+<li><p>有涉及刑責者 → 移送司法機關</p></li>
+</ul>
+</section>
+<section id="第23條-廢止登錄" class="slide level2 center scrollable">
+<h2>第23條 – 廢止登錄</h2>
+<p>有下列情形之一者，中央主管機關應廢止產品安全資訊登錄：</p>
+<ol type="1">
+<li><p>購樣、取樣檢驗結果不符合安全標準</p></li>
+<li><p>通知限期提供檢驗報告或樣品，屆期無正當理由未提供</p></li>
+<li><p><strong>因瑕疵造成重大傷害或危害</strong></p></li>
+<li><p>未符合標示規定，經通知限期改正未改正</p></li>
+<li><p>未依第10條保存符合性聲明書及技術文件</p></li>
+<li><p>未依第15條重新登錄</p></li>
+<li><p>產品型式違反第16或17條，經通知未改正</p></li>
+<li><p>產品品名或資料內容違反規定</p></li>
+<li><p>未維持產品實體與登錄相同，經通知未改正</p></li>
+<li><p>申報項目經公告廢止應實施申報登錄</p></li>
+<li><p>其他違反本辦法情節重大</p></li>
+</ol>
+<blockquote>
+<p>經撤銷或因產品與申報資訊不符而廢止登錄者，原申報文件不得再供申報之用。</p>
+</blockquote>
+</section>
+<section id="第二部分機械類產品型式驗證實施及監督管理辦法" class="slide level2 center">
+<h2>第二部分：機械類產品型式驗證實施及監督管理辦法</h2>
+<h3 id="第1條第3條-總則-1">第1條～第3條 – 總則</h3>
+<p><strong>法源</strong>：職安法第8條第5項、第9條第4項</p>
+<p><strong>用詞定義</strong> (第2條)：</p>
+<ul>
+<li><p><strong>機械類產品</strong>：經中央主管機關公告應實施型式驗證者</p></li>
+<li><p><strong>產製</strong>：生產、製造、加工或修改（包括組裝銷售、為銷售目的而修改）</p></li>
+<li><p><strong>驗證實施程序</strong>：符合性評鑑程序（取樣、試驗、檢查、評估、登錄、認可等）</p></li>
+<li><p><strong>驗證機構</strong>：經中央主管機關認可辦理型式驗證之機構</p></li>
+<li><p><strong>報驗義務人</strong>：國內產製者、輸入者、委託產製/輸入之委託者、或銷售者（不明時）</p></li>
+</ul>
+</section>
+<section id="第4條-型式驗證義務" class="slide level2 center">
+<h2>第4條 – 型式驗證義務</h2>
+<blockquote>
+<p>依法應實施型式驗證之產品，未經驗證機構實施型式驗證合格，並取得型式驗證合格證明書及張貼合格標章者，<strong>不得運出廠場或輸入</strong>。</p>
+</blockquote>
+<ul>
+<li>但依職安法第8條第4項申請核准先行放行者，不在此限</li>
+</ul>
+</section>
+<section id="第5條-公告指定之產品" class="slide level2 center">
+<h2>第5條 – 公告指定之產品</h2>
+<p>目前中央主管機關公告列入型式驗證之產品：</p>
+<blockquote>
+<p><strong>交流電焊機用自動電擊防止裝置</strong>（自107年7月1日起適用）</p>
+</blockquote>
+</section>
+<section id="第6條-申請型式驗證應檢附書件" class="slide level2 center scrollable">
+<h2>第6條 – 申請型式驗證應檢附書件</h2>
+<p>報驗義務人應填具申請書並檢附：</p>
+<ol type="1">
+<li><p><strong>符合性聲明書</strong></p></li>
+<li><p><strong>產品基本資料</strong>：型式名稱說明書、同一型式理由說明書、主型式及系列型式清單、構造圖說（含安全裝置性能示意圖及安裝位置）、電氣/氣壓/液壓回路圖、性能說明書、安裝操作保養維修說明書及危險對策、安全裝置及安全配備清單（含品名、規格、重要零組件驗證報告等）</p></li>
+<li><p><strong>設立登記文件</strong>影本</p></li>
+<li><p><strong>符合性評鑑證明文件</strong>（或其他經同意替代之驗證證明）</p></li>
+</ol>
+<blockquote>
+<p>文件為影本者應註明「與正本相符」並簽章；驗證機構得要求提供正本查對。</p>
+</blockquote>
+</section>
+<section id="第78條-審查與補正" class="slide level2 center">
+<h2>第7～8條 – 審查與補正</h2>
+<ul>
+<li><p>申請書件不符規定 → 驗證機構通知限期補正；屆期未補正 → 不予受理</p></li>
+<li><p>驗證機構得要求提供電子檔</p></li>
+<li><p>必要時得實施<strong>工廠檢查</strong> (第9條)</p></li>
+</ul>
+</section>
+<section id="第10條-型式驗證實施程序" class="slide level2 center">
+<h2>第10條 – 型式驗證實施程序</h2>
+<ul>
+<li><p>應依中央主管機關指定之型式驗證實施程序及標準辦理</p></li>
+<li><p>驗證程序應包括 <strong>產品設計及製造階段之符合性評鑑程序</strong>，並依產品型式及製造技術能力分別為之</p></li>
+</ul>
+</section>
+<section id="第1112條-合格證明書" class="slide level2 center">
+<h2>第11～12條 – 合格證明書</h2>
+<ul>
+<li><p><strong>第11條</strong>：審驗合格 → 發給附字號之<strong>型式驗證合格證明書</strong>，有效期間 <strong>3年</strong></p></li>
+<li><p><strong>第12條</strong>：有效期間屆滿前3個月內，得申請展延3年（但有第18、20條情形者除外）</p>
+<ul>
+<li>逾期申請展延 → 重新申請型式驗證</li>
+</ul></li>
+</ul>
+</section>
+<section id="第1316條-驗證機構之義務" class="slide level2 center">
+<h2>第13～16條 – 驗證機構之義務</h2>
+<ul>
+<li><p><strong>第13條</strong>：驗證合格後，驗證機構應每年至少實施一次 <strong>不定期工廠檢查</strong>；檢查發現不符，應命限期改正</p></li>
+<li><p><strong>第14條</strong>：驗證機構應將型式驗證合格之資料登錄於中央主管機關指定之資訊網站</p></li>
+<li><p><strong>第15條</strong>：驗證合格證明書遺失或毀損 → 申請補發或換發</p></li>
+<li><p><strong>第16條</strong>：報驗義務人應確保產品符合型式驗證合格內容，實體不得與登錄事項相異</p></li>
+</ul>
+</section>
+<section id="第17條-製程變更之報備" class="slide level2 center">
+<h2>第17條 – 製程變更之報備</h2>
+<ul>
+<li><p>產品之製程或零組件變更，<strong>不影響安全標準符合性且維持同一型式</strong>者 → 報請驗證機構備查</p></li>
+<li><p>涉及安全標準符合性之變更 → 應<strong>申請換發</strong>型式驗證合格證明書</p></li>
+</ul>
+</section>
+<section id="第18條-標準修正時之換發" class="slide level2 center">
+<h2>第18條 – 標準修正時之換發</h2>
+<ul>
+<li>中央主管機關修正型式驗證實施標準時，型式驗證合格證明書名義人應於規定期限內依修正後標準申請<strong>換發</strong></li>
+</ul>
+</section>
+<section id="第19條-合格標章" class="slide level2 center">
+<h2>第19條 – 合格標章</h2>
+<ul>
+<li><p>製造者、輸入者、供應者或雇主，對於未經型式驗證合格或逾期者，<strong>不得使用驗證合格標章</strong>或易生混淆之標章</p></li>
+<li><p>產品有其他標示者，不得與合格標章混淆</p></li>
+</ul>
+<p><strong>合格標章格式</strong>：</p>
+<ul>
+<li><p>圖式由字軌 <strong>TC</strong> + 指定代碼 + 發證機構代號組成</p></li>
+<li><p>顏色黑色 K0</p></li>
+<li><p>應張貼於本體明顯處（銘版上或鄰近商標），使用不易變質材料、牢固標示</p></li>
+</ul>
+</section>
+<section id="第20條-合格證明書之廢止" class="slide level2 center scrollable">
+<h2>第20條 – 合格證明書之廢止</h2>
+<p>有下列情形之一者，中央主管機關得廢止型式驗證合格：</p>
+<ol type="1">
+<li><p>經購樣或取樣檢驗結果不符合安全標準</p></li>
+<li><p>未依第13條第1項規定改正</p></li>
+<li><p>未依第17條或第18條辦理變更或換發</p></li>
+<li><p>產品與驗證合格內容不符</p></li>
+<li><p>其他違反本辦法情節重大</p></li>
+</ol>
+</section>
+<section id="第2123條-驗證機構之認可與管理" class="slide level2 center">
+<h2>第21～23條 – 驗證機構之認可與管理</h2>
+<ul>
+<li><p><strong>第21條</strong>：中央主管機關得認可驗證機構辦理型式驗證；認可有效期間 <strong>3年</strong>，得申請展延</p></li>
+<li><p><strong>第22條</strong>：驗證機構應具備之條件（人員、設備、管理系統等）</p></li>
+<li><p><strong>第23條</strong>：驗證機構之認可得撤銷或廢止之事由</p></li>
+</ul>
+</section>
+<section id="第24條-委辦與監督" class="slide level2 center">
+<h2>第24條 – 委辦與監督</h2>
+<ul>
+<li><p>中央主管機關得將型式驗證相關業務<strong>委託</strong>驗證機構辦理</p></li>
+<li><p>驗證機構執行業務應受中央主管機關<strong>監督</strong>，並依要求提供資料</p></li>
+</ul>
+</section>
+<section id="第25條-標示之禁止" class="slide level2 center">
+<h2>第25條 – 標示之禁止</h2>
+<ul>
+<li>未經型式驗證合格或型式驗證逾期者，不得使用驗證合格標章或易生混淆之類似標章揭示於產品</li>
+</ul>
+</section>
+<section id="第26條-合格標章之管理" class="slide level2 center">
+<h2>第26條 – 合格標章之管理</h2>
+<ul>
+<li><p>製造者或輸入者應依所定格式自行製作合格標章</p></li>
+<li><p>合格標章之製作及張貼應牢固、清晰可辨且不易磨滅</p></li>
+</ul>
+</section>
+<section id="第27條-規費" class="slide level2 center">
+<h2>第27條 – 規費</h2>
+<ul>
+<li><p>型式驗證之申請、換發、補發、展延、工廠檢查等，應繳納規費</p></li>
+<li><p>規費收費標準由中央主管機關定之</p></li>
+</ul>
+</section>
+<section id="第28條-施行日期" class="slide level2 center">
+<h2>第28條 – 施行日期</h2>
+<ul>
+<li>本辦法自發布日施行</li>
+</ul>
+</section>
+<section id="第三部分機械設備器具監督管理辦法" class="slide level2 center">
+<h2>第三部分：機械設備器具監督管理辦法</h2>
+<h3 id="第1條第2條-總則與用詞定義">第1條～第2條 – 總則與用詞定義</h3>
+<p><strong>法源</strong>：職安法第9條第4項</p>
+<p><strong>用詞定義</strong> (第2條)：</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">名詞</th>
+<th style="text-align: left;">定義</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>產品監督</strong></td>
+<td style="text-align: left;">對應申報登錄或型式驗證之產品，於生產廠場或倉儲場所，執行取樣檢驗、查核產銷紀錄完整性及製造階段產品安全規格一致性</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>市場查驗</strong></td>
+<td style="text-align: left;">對應申報登錄或型式驗證之產品，於經銷、生產、倉儲、勞動、營業場所或其他場所，執行產品檢驗或調查</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第3條-受查驗者之義務" class="slide level2 center">
+<h2>第3條 – 受查驗者之義務</h2>
+<ul>
+<li>製造者、輸入者、供應者及經銷、生產、倉儲、勞動、營業場所之負責人（受查驗者），接受查驗、調查、檢驗或封存時，<strong>非有正當理由，不得規避、妨礙或拒絕</strong></li>
+</ul>
+</section>
+<section id="第4條-執行機關" class="slide level2 center">
+<h2>第4條 – 執行機關</h2>
+<ul>
+<li><p>中央主管機關、勞動檢查機構及型式驗證機構，得依業務需要執行產品之購樣、取樣檢驗或調查</p></li>
+<li><p>中央主管機關得委託<strong>專業團體</strong>辦理市場查驗業務（職安法第52條）</p></li>
+</ul>
+</section>
+<section id="第5條-型式驗證機構之年度執行計畫" class="slide level2 center">
+<h2>第5條 – 型式驗證機構之年度執行計畫</h2>
+<ul>
+<li><p>型式驗證機構每年度應依據發證產品之<strong>風險等級</strong>，訂定執行計畫</p></li>
+<li><p>執行計畫包括：</p>
+<ul>
+<li><p>工廠製程與產銷紀錄之查核</p></li>
+<li><p>取樣檢驗</p></li>
+</ul></li>
+<li><p>風險等級得依違規紀錄、事故發生率、購樣或取樣檢驗不合格紀錄、工廠品保模式、產地等風險因素區分</p></li>
+</ul>
+</section>
+<section id="第6條-產品監督之執行方式" class="slide level2 center scrollable">
+<h2>第6條 – 產品監督之執行方式</h2>
+<p>型式驗證機構應指派適當專業人員於產品之<strong>生產廠場或倉儲場所</strong>執行：</p>
+<ol type="1">
+<li><p><strong>產品實體監督</strong>：取樣檢驗、查核產銷資料</p></li>
+<li><p><strong>製程監督</strong>：檢查原物料、零組件管理、半成品及成品檢測，確保量產品與原型式驗證合格品安全規格一致</p></li>
+</ol>
+<blockquote>
+<p>製程監督之地點以生產廠場為限。</p>
+</blockquote>
+</section>
+<section id="第710條-監督紀錄與結果處理" class="slide level2 center">
+<h2>第7～10條 – 監督紀錄與結果處理</h2>
+<ul>
+<li><p><strong>第7條</strong>：型式驗證機構應製作產品監督紀錄，妥存備查</p></li>
+<li><p><strong>第8條</strong>：監督結果不符安全標準 → 依第20條至第25條處理</p></li>
+<li><p><strong>第9條</strong>：監督執行人員應出示識別證</p></li>
+<li><p><strong>第10條</strong>：受監督者應指派人員在場陪同</p></li>
+</ul>
+</section>
+<section id="第11條-產銷資料之建立與保存" class="slide level2 center">
+<h2>第11條 – 產銷資料之建立與保存</h2>
+<ul>
+<li><p>製造者或輸入者對於完成申報登錄或取得型式驗證合格之產品，應建立<strong>產銷資料</strong>：</p>
+<ul>
+<li><p>產製日期、型式、規格、數量</p></li>
+<li><p>出廠日期、銷售對象</p></li>
+<li><p>客戶抱怨處理紀錄、客戶服務紀錄</p></li>
+</ul></li>
+<li><p>保存相關技術文件，供中央主管機關或勞動檢查機構<strong>不定期查核</strong></p></li>
+</ul>
+</section>
+<section id="第12條-市場查驗啟動事由" class="slide level2 center scrollable">
+<h2>第12條 – 市場查驗啟動事由</h2>
+<p>中央主管機關或勞動檢查機構得因下列事由辦理市場查驗：</p>
+<ol type="1">
+<li><p>檢舉人、工作者或勞工團體反映</p></li>
+<li><p>產品發生<strong>災害事故</strong>，致有損害工作者生命、身體、健康或財產之虞</p></li>
+<li><p>依據其他資訊來源認有查驗之必要</p></li>
+</ol>
+</section>
+<section id="第13條-市場查驗項目" class="slide level2 center scrollable">
+<h2>第13條 – 市場查驗項目</h2>
+<p>市場查驗項目包括：</p>
+<ol type="1">
+<li><p>產品是否符合第7條第1項及第3項（指定機械符合安全標準及張貼安全標示）</p></li>
+<li><p>產品是否符合第8條第1項（型式驗證合格）</p></li>
+<li><p>安全標示或驗證合格標章之樣式及張貼方式是否與法令相符</p></li>
+<li><p>違規產品經通知限期<strong>改正</strong>，是否如期改正</p></li>
+<li><p>違規產品經通知限期<strong>回收</strong>，是否如期回收</p></li>
+<li><p>產品登錄或型式驗證合格經註銷、廢止或撤銷者，是否有違法產製運出、輸入、租賃、供應或設置</p></li>
+</ol>
+</section>
+<section id="第14條-查驗程序" class="slide level2 center">
+<h2>第14條 – 查驗程序</h2>
+<ul>
+<li><p>查驗人員應出示識別證，說明查驗依據及目的</p></li>
+<li><p>受查驗者或其指派人員應在場陪同</p></li>
+<li><p>查驗後作成查驗紀錄，由受查驗者簽名或蓋章</p></li>
+</ul>
+</section>
+<section id="第15條-違規產品之調查" class="slide level2 center scrollable">
+<h2>第15條 – 違規產品之調查</h2>
+<p>發現疑有違規產品，調查方式如下：</p>
+<ol type="1">
+<li><p>向受查驗者或相關業者查詢，要求提供佐證資料</p></li>
+<li><p>於所列場所進行調查，並得<strong>取樣檢驗</strong>，或要求提供同型式產品送驗</p></li>
+<li><p>必要時得<strong>封存</strong>疑有違規產品，並由受查驗者具結保管或運存指定處所</p></li>
+</ol>
+</section>
+<section id="第1618條-調查程序與協助" class="slide level2 center">
+<h2>第16～18條 – 調查程序與協助</h2>
+<ul>
+<li><p><strong>第16條</strong>：調查時作成訪談紀錄，並將受查驗者陳述意見列入紀錄</p></li>
+<li><p><strong>第17條</strong>：遇有規避、妨礙或拒絕，得請求<strong>警察機關</strong>派員協助</p></li>
+<li><p><strong>第18條</strong>：調查取樣之樣品，得向受查驗者價購或要求無償提供</p></li>
+</ul>
+</section>
+<section id="第19條-配合義務" class="slide level2 center">
+<h2>第19條 – 配合義務</h2>
+<ul>
+<li>受查驗者對調查應配合提供產品相關資料、文件或樣品，不得拒絕</li>
+</ul>
+</section>
+<section id="第20條-不合格品通報與訪談" class="slide level2 center">
+<h2>第20條 – 不合格品通報與訪談</h2>
+<ul>
+<li><p>對於檢驗不符合安全標準之產品，應列入<strong>追蹤處理</strong>，向製造者、輸入者或供應者進行調查及製作訪談紀錄</p></li>
+<li><p>認定有不安全情形者，應製作<strong>不安全產品通知文件</strong>，載明法令依據、產品名稱、型號、製造（輸入）日期及廠商等事項，並附佐證照片</p></li>
+</ul>
+</section>
+<section id="第2122條-改正與回收" class="slide level2 center">
+<h2>第21～22條 – 改正與回收</h2>
+<ul>
+<li><p><strong>第21條</strong>：檢驗不合格但可改正 → 通知限期改正；改正後須再經檢驗合格</p></li>
+<li><p><strong>第22條</strong>：檢驗不合格且已流通者 → 通知限期回收；回收方式應報中央主管機關核定</p></li>
+</ul>
+</section>
+<section id="第23條-不能改正之處理" class="slide level2 center">
+<h2>第23條 – 不能改正之處理</h2>
+<p>報驗義務人對於檢驗不合格之產品，<strong>不能改正使其符合安全標準者</strong>，應於接獲不合格通知書後<strong>6個月內</strong>，辦理：</p>
+<ul>
+<li><p>退運</p></li>
+<li><p>銷毀</p></li>
+<li><p>拆解致不堪使用</p></li>
+<li><p>其他必要處置</p></li>
+</ul>
+<blockquote>
+<p>處置時應申請拆封或核准自行拆封，並由主管機關或驗證機構派員監督。</p>
+</blockquote>
+</section>
+<section id="第24條-測試樣品之處理" class="slide level2 center">
+<h2>第24條 – 測試樣品之處理</h2>
+<ul>
+<li><p>報驗義務人應於接獲不合格通知書後 <strong>3個月內</strong> 領回測試樣品</p></li>
+<li><p>逾期未領回 → 主管機關或驗證機構得予銷毀、拆解致不堪用或必要處置，費用由報驗義務人負擔</p></li>
+</ul>
+</section>
+<section id="第25條-退運及銷燬程序" class="slide level2 center">
+<h2>第25條 – 退運及銷燬程序</h2>
+<p>報驗義務人辦理退運或銷燬時：</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">處理方式</th>
+<th style="text-align: left;">程序</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>退運</strong></td>
+<td style="text-align: left;">退運後3個月內檢附復運出口報單副本等文件，向中央主管機關申請銷案</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>銷燬</strong></td>
+<td style="text-align: left;">檢附銷燬計畫向中央主管機關提出申請，完成銷燬程序後辦理銷案</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第26條-施行日期" class="slide level2 center">
+<h2>第26條 – 施行日期</h2>
+<ul>
+<li>本辦法自發布日施行</li>
+</ul>
+</section>
+<section id="綜合比較與重點提醒" class="slide level2 center">
+<h2>綜合比較與重點提醒</h2>
+<h3 id="三種辦法之關聯圖">三種辦法之關聯圖</h3>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph 申報登錄辦法
+        A[製造/輸入者&lt;br&gt;自我宣告] --&gt; B[上網登錄]
+        B --&gt; C[張貼安全標示 TD]
+    end
+    subgraph 型式驗證辦法
+        D[公告產品] --&gt; E[驗證機構審驗]
+        E --&gt; F[取得合格證明書]
+        F --&gt; G[張貼合格標章 TC]
+    end
+    subgraph 監督管理辦法
+        H[產品監督&lt;br&gt;（廠場/倉儲）] --&gt; I[市場查驗&lt;br&gt;（經銷/使用場所）]
+        I --&gt; J[不合格品處理&lt;br&gt;改正/回收/退運/銷燬]
+    end
+    C --&gt; H
+    G --&gt; H
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="比較表申報登錄-vs-型式驗證" class="slide level2 center">
+<h2>比較表：申報登錄 vs 型式驗證</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">申報登錄 (自我宣告)</th>
+<th style="text-align: left;">型式驗證 (強制)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">法源</td>
+<td style="text-align: left;">職安法 §7</td>
+<td style="text-align: left;">職安法 §8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">適用對象</td>
+<td style="text-align: left;">施行細則第12條指定機械</td>
+<td style="text-align: left;">中央主管機關公告之產品（目前僅交流電焊機用自動電擊防止裝置）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">方式</td>
+<td style="text-align: left;">上網登錄佐證資料</td>
+<td style="text-align: left;">驗證機構實施審驗</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">標示</td>
+<td style="text-align: left;"><strong>安全標示 (TD)</strong></td>
+<td style="text-align: left;"><strong>合格標章 (TC)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">效期</td>
+<td style="text-align: left;">3~7年</td>
+<td style="text-align: left;">3年（得展延）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">免除機制</td>
+<td style="text-align: left;">免申報登錄（第4條）</td>
+<td style="text-align: left;">免驗證（職安法 §8Ⅱ）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">先行放行</td>
+<td style="text-align: left;">有（輸入先行放行通知書）</td>
+<td style="text-align: left;">有（依機械類產品申請先行放行辦法）</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="監督管理機制總覽" class="slide level2 center">
+<h2>監督管理機制總覽</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">階段</th>
+<th style="text-align: left;">監督方式</th>
+<th style="text-align: left;">法源依據</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">生產廠場</td>
+<td style="text-align: left;">產品監督：製程查核、取樣檢驗</td>
+<td style="text-align: left;">監督辦法 §5~§10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">市場流通</td>
+<td style="text-align: left;">市場查驗：購樣、調查、封存</td>
+<td style="text-align: left;">監督辦法 §12~§18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">不合格處置</td>
+<td style="text-align: left;">改正、回收、退運、銷燬</td>
+<td style="text-align: left;">監督辦法 §20~§25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">產銷資料</td>
+<td style="text-align: left;">建立並保存至少10年（技術文件）</td>
+<td style="text-align: left;">申報登錄辦法 §10；監督辦法 §11</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="罰則提醒" class="slide level2 center">
+<h2>罰則提醒</h2>
+<ul>
+<li><p><strong>未申報登錄</strong> 或 <strong>未張貼安全標示</strong>：職安法第44條 → 新臺幣<strong>3~30萬元</strong></p></li>
+<li><p><strong>未符合安全標準</strong> 而產製運出、輸入、租賃、供應：職安法第44條 → 新臺幣<strong>20~200萬元</strong></p></li>
+<li><p><strong>未經型式驗證合格</strong> 而產製運出、輸入：職安法第44條 → 新臺幣<strong>20~200萬元</strong></p></li>
+<li><p><strong>規避、妨礙或拒絕</strong> 查驗、調查：監督辦法第3條 → 依職安法相關罰則</p></li>
+</ul>
+</section>
+<section id="執行要點與注意事項" class="slide level2 center scrollable">
+<h2>執行要點與注意事項</h2>
+<ol type="1">
+<li><p><strong>單品申報</strong>：免附產品製程符合一致性證明</p></li>
+<li><p><strong>外文文件</strong>：技術文件須有正體字中譯本（英文以外附英譯本）</p></li>
+<li><p><strong>補正期限</strong>：補正總日數不得超過60日</p></li>
+<li><p><strong>登錄失其效力</strong>：所附測試驗證證明文件效期屆滿</p></li>
+<li><p><strong>先行放行之限制</strong>：合格標章未張貼或未取得合格證明前，不得運出設置/儲存地點，不得啟用或移轉第三人</p></li>
+<li><p><strong>工廠檢查</strong>：型式驗證合格後，驗證機構每年至少實施一次不定期工廠檢查</p></li>
+<li><p><strong>不安全產品通報</strong>：應製作正式通知文件並附佐證照片</p></li>
+</ol>
+</section>
+<section id="結語-2" class="slide level2 center">
+<h2>結語</h2>
+<h3 id="落實三辦法建構完整安全鏈">落實三辦法，建構完整安全鏈</h3>
+<ul>
+<li><p><strong>申報登錄辦法</strong> → 確保指定機械上市前具備基本安全資訊</p></li>
+<li><p><strong>型式驗證辦法</strong> → 確保高風險產品通過第三方驗證</p></li>
+<li><p><strong>監督管理辦法</strong> → 確保上市後產品持續符合安全標準，並有效處置不合格品</p></li>
+</ul>
+<blockquote>
+<p>製造者、輸入者、供應者、雇主應共同遵循，達成「無適當防護裝置之機械禁止流通」的終極目標。</p>
+</blockquote>
 </section>
 <section id="qa" class="slide level2 center">
 <h2>Q&amp;A</h2>
-</section></section>
-<section id="感謝聆聽" class="title-slide slide level1 center">
-<h1>感謝聆聽</h1>
 <p><strong>勞動部職業安全衛生署</strong><br>
 機械設備器具安全資訊網<br>
 <a href="https://tsmark.osha.gov.tw/">https://tsmark.osha.gov.tw</a></p>
+</section></section>
+<section id="總複習" class="title-slide slide level1 center">
+<h1>總複習</h1>
+
+</section>
+
+<section>
+<section id="機械設備器具安全管理總覽" class="title-slide slide level1 center">
+<h1>機械設備器具安全管理總覽</h1>
+
+</section>
+<section id="核心理念" class="slide level2 center">
+<h2>核心理念</h2>
+<blockquote>
+<p><strong>「無適當防護裝置之機械禁止流通」</strong><br>
+<strong>「勞工不應使用無安全裝置之機械」</strong></p>
+</blockquote>
+<p><strong>從「末端管理」走向「源頭管理」</strong></p>
+<ul>
+<li><p>過去：僅以雇主為責任主體（勞動契約存續中）</p></li>
+<li><p>現在：製造者、輸入者、供應者共同承擔責任</p></li>
+</ul>
+</section>
+<section id="一法源依據母法" class="slide level2 center">
+<h2>一、法源依據（母法）</h2>
+<h3 id="職業安全衛生法關鍵條文">職業安全衛生法關鍵條文</h3>
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 50%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">條文</th>
+<th style="text-align: left;">核心內容</th>
+<th style="text-align: left;">管理階段</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>§5Ⅱ</strong></td>
+<td style="text-align: left;">設計、製造、輸入者應實施<strong>風險評估</strong></td>
+<td style="text-align: left;">源頭</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>§7</strong></td>
+<td style="text-align: left;">指定機械須符合安全標準，<strong>申報登錄</strong>，張貼<strong>安全標示(TD)</strong></td>
+<td style="text-align: left;">上市前</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>§8</strong></td>
+<td style="text-align: left;">公告產品須經<strong>型式驗證</strong>合格，張貼<strong>合格標章(TC)</strong></td>
+<td style="text-align: left;">上市前</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>§9</strong></td>
+<td style="text-align: left;">禁止使用未完成登錄/驗證之標章；<strong>市場查驗</strong>、抽驗</td>
+<td style="text-align: left;">上市後</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>§44</strong></td>
+<td style="text-align: left;">罰則：違反§7Ⅰ或§8Ⅰ → 20~200萬；違反§7Ⅲ → 3~30萬</td>
+<td style="text-align: left;">罰則</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>施行細則第12條指定機械：動力衝剪機械、手推刨床、圓盤鋸、堆高機、研磨機、防爆電氣設備等</p>
+</blockquote>
+</section>
+<section id="二安全標準符合性基準" class="slide level2 center">
+<h2>二、安全標準（符合性基準）</h2>
+<h3 id="機械設備器具安全標準-1">機械設備器具安全標準</h3>
+<ul>
+<li><p>依職安法第6條第3項、第7條第2項、第8條第5項訂定</p></li>
+<li><p>規範構造、性能及安全防護之<strong>最低要求</strong></p></li>
+</ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">章節</th>
+<th style="text-align: left;">規範對象</th>
+<th style="text-align: left;">關鍵要求</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">動力衝剪機械</td>
+<td style="text-align: left;">安全護圍、安全裝置、緊急停止、安全距離</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">手推刨床</td>
+<td style="text-align: left;">可動式接觸預防裝置、制動裝置</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">木材加工用圓盤鋸</td>
+<td style="text-align: left;">反撥預防裝置、鋸齒接觸預防裝置</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">動力堆高機</td>
+<td style="text-align: left;">安定度、制動距離、頂蓬、安全帶</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">研磨機、研磨輪</td>
+<td style="text-align: left;">最高使用周速度、護罩、旋轉試驗</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">防爆電氣設備</td>
+<td style="text-align: left;">CNS/IEC 60079系列</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">標示</td>
+<td style="text-align: left;">各機械應標示事項</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="三實施路徑雙軌制" class="slide level2 center">
+<h2>三、實施路徑（雙軌制）</h2>
+<h3 id="路徑一申報登錄自我宣告">路徑一：申報登錄（自我宣告）</h3>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[指定機械] --&gt; B{符合安全標準?}
+    B -- 是 --&gt; C[佐證方式：&lt;br&gt;1.型式檢定&lt;br&gt;2.驗證機構審驗&lt;br&gt;3.自主檢測+製程查核]
+    C --&gt; D[上網申報登錄&lt;br&gt;tsmark.osha.gov.tw]
+    D --&gt; E[取得登錄字號&lt;br&gt;張貼安全標示 TD]
+    B -- 否 --&gt; F[不得產製運出/輸入]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>法源</strong>：職安法 §7</p></li>
+<li><p><strong>適用對象</strong>：施行細則第12條指定機械（但公告型式驗證者除外）</p></li>
+<li><p><strong>效期</strong>：3~7年</p></li>
+<li><p><strong>免申報登錄</strong>：國防、研發、樣品、加工再輸出等6種情形</p></li>
+</ul>
+</section>
+<section id="路徑二型式驗證強制驗證" class="slide level2 center">
+<h2>路徑二：型式驗證（強制驗證）</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[公告產品] --&gt; B[向驗證機構申請]
+    B --&gt; C[審驗合格]
+    C --&gt; D[取得型式驗證合格證明書&lt;br&gt;張貼合格標章 TC]
+    D --&gt; E[每年不定期工廠檢查]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>法源</strong>：職安法 §8</p></li>
+<li><p><strong>目前公告產品</strong>：交流電焊機用自動電擊防止裝置（107.7.1起）</p></li>
+<li><p><strong>效期</strong>：3年，得展延3年</p></li>
+<li><p><strong>免驗證</strong>：國防、研發、樣品等5種情形</p></li>
+<li><p><strong>先行放行</strong>：未取得合格證明前，可申請先行放行，於設置地點驗證</p></li>
+</ul>
+</section>
+<section id="雙軌制比較" class="slide level2 center">
+<h2>雙軌制比較</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">申報登錄（自我宣告）</th>
+<th style="text-align: left;">型式驗證（強制）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">法源</td>
+<td style="text-align: left;">§7</td>
+<td style="text-align: left;">§8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">適用範圍</td>
+<td style="text-align: left;">指定機械（細則12）</td>
+<td style="text-align: left;">公告產品（目前1項）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">符合性確認</td>
+<td style="text-align: left;">製造者/輸入者自我宣告+佐證</td>
+<td style="text-align: left;">第三方驗證機構審驗</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">標示</td>
+<td style="text-align: left;"><strong>安全標示 (TD)</strong></td>
+<td style="text-align: left;"><strong>合格標章 (TC)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">效期</td>
+<td style="text-align: left;">3~7年</td>
+<td style="text-align: left;">3年（得展延）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">後續監督</td>
+<td style="text-align: left;">不定期抽驗、市場查驗</td>
+<td style="text-align: left;">每年工廠檢查、市場查驗</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="四監督與後市場管理" class="slide level2 center">
+<h2>四、監督與後市場管理</h2>
+<h3 id="監督管理辦法三大機制">監督管理辦法三大機制</h3>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    subgraph 產品監督
+        A1[生產廠場/倉儲] --&gt; A2[取樣檢驗&lt;br&gt;製程一致性查核]
+    end
+    subgraph 市場查驗
+        B1[經銷/勞動/營業場所] --&gt; B2[購樣檢驗&lt;br&gt;標示檢查&lt;br&gt;改正/回收追蹤]
+    end
+    subgraph 不合格品處理
+        C1[檢驗不合格] --&gt; C2[可改正→限期改正]
+        C1 --&gt; C3[不能改正→6個月內&lt;br&gt;退運/銷燬/拆解]
+    end
+    A2 --&gt; C1
+    B2 --&gt; C1
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="產銷資料保存義務" class="slide level2 center">
+<h2>產銷資料保存義務</h2>
+<ul>
+<li><p>申報登錄或型式驗證合格之產品，製造者/輸入者應建立：</p>
+<ul>
+<li><p>產製日期、型式、規格、數量</p></li>
+<li><p>出廠日期、銷售對象</p></li>
+<li><p>客戶抱怨處理紀錄、服務紀錄</p></li>
+</ul></li>
+<li><p><strong>技術文件保存期限</strong>：停產後至少10年</p></li>
+</ul>
+</section>
+<section id="五風險評估貫穿全程的基石" class="slide level2 center">
+<h2>五、風險評估：貫穿全程的基石</h2>
+<h3 id="職安法第5條第2項">職安法第5條第2項</h3>
+<blockquote>
+<p>設計、製造、輸入者應於設計、製造、輸入階段實施<strong>風險評估</strong>，致力防止使用時發生職業災害。</p>
+</blockquote>
+<ul>
+<li><strong>施行細則第8條</strong>：風險評估 = 辨識、分析、評量風險之程序</li>
+</ul>
+</section>
+<section id="iso-12100-風險評估流程" class="slide level2 center">
+<h2>ISO 12100 風險評估流程</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[決定機械限制] --&gt; B[危害鑑別]
+    B --&gt; C[風險估計]
+    C --&gt; D[風險評量]
+    D --&gt; E{風險已降低?}
+    E -- 否 --&gt; F[保護措施]
+    F --&gt; B
+    E -- 是 --&gt; G[完成]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>風險降低三步驟：本質安全設計 → 安全防護 → 使用資訊</p>
+</blockquote>
+</section>
+<section id="六整體邏輯架構圖" class="slide level2 center">
+<h2>六、整體邏輯架構圖</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    subgraph 法源
+        A[職安法 §5] --&gt; B[§7 指定機械]
+        A --&gt; C[§8 公告產品]
+    end
+    subgraph 安全基準
+        D[機械設備器具安全標準]
+    end
+    subgraph 實施路徑
+        B --&gt; E[申報登錄辦法&lt;br&gt;自我宣告+TD標示]
+        C --&gt; F[型式驗證辦法&lt;br&gt;強制驗證+TC標章]
+    end
+    subgraph 監督管理
+        G[監督管理辦法&lt;br&gt;產品監督/市場查驗]
+    end
+    E --&gt; G
+    F --&gt; G
+    D --&gt; E
+    D --&gt; F
+    A -.-&gt;|源頭風險評估| D
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="角色與責任總結" class="slide level2 center">
+<h2>角色與責任總結</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 52%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">角色</th>
+<th style="text-align: left;">核心責任</th>
+<th style="text-align: left;">法源</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>設計者/製造者/輸入者</strong></td>
+<td style="text-align: left;">實施風險評估、符合安全標準、申報登錄或型式驗證、張貼標章、建立產銷資料</td>
+<td style="text-align: left;">§5、§7、§8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>供應者</strong></td>
+<td style="text-align: left;">不得供應未符合安全標準或未完成登錄/驗證之產品</td>
+<td style="text-align: left;">§7、§8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>雇主</strong></td>
+<td style="text-align: left;">不得設置未符合安全標準之機械；使用已登錄/驗證合格之產品</td>
+<td style="text-align: left;">§7、§8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>驗證機構</strong></td>
+<td style="text-align: left;">辦理型式驗證、每年工廠檢查</td>
+<td style="text-align: left;">§8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>勞動檢查機構</strong></td>
+<td style="text-align: left;">市場查驗、抽驗、監督不合格品處置</td>
+<td style="text-align: left;">§9</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="罰則一覽" class="slide level2 center">
+<h2>罰則一覽</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">違法行為</th>
+<th style="text-align: left;">罰則（新臺幣）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">未符合安全標準而產製運出、輸入、租賃、供應、設置（§7Ⅰ、§8Ⅰ）</td>
+<td style="text-align: left;"><strong>20萬 ~ 200萬元</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">未申報登錄或未張貼安全標示（§7Ⅲ）</td>
+<td style="text-align: left;"><strong>3萬 ~ 30萬元</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">未經型式驗證合格而使用合格標章（§9）</td>
+<td style="text-align: left;">依§44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">規避、妨礙或拒絕市場查驗</td>
+<td style="text-align: left;">依職安法相關罰則</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="結語-3" class="slide level2 center">
+<h2>結語</h2>
+<h3 id="建立完整的安全鏈">建立完整的安全鏈</h3>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[風險評估&lt;br&gt;§5] --&gt; B[符合安全標準]
+    B --&gt; C{屬指定機械?}
+    C -- 是 --&gt; D[申報登錄+TD]
+    C -- 公告產品 --&gt; E[型式驗證+TC]
+    D &amp; E --&gt; F[上市流通]
+    F --&gt; G[監督管理&lt;br&gt;市場查驗]
+    G --&gt; H[確保使用安全]
+    H --&gt; I[降低職業災害]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p><strong>從設計、製造、輸入到使用，層層把關；源頭管理與後市場監督並重。</strong></p>
+</blockquote>
+<p><strong>「無適當防護裝置之機械禁止流通」—— 共同守護工作者安全</strong></p>
+</section></section>
+<section id="參考法規與辦法" class="title-slide slide level1 center scrollable">
+<h1>參考法規與辦法</h1>
+<ol type="1">
+<li><p>職業安全衛生法（§5、§7、§8、§9、§44）</p></li>
+<li><p>職業安全衛生法施行細則（§8、§12、§13）</p></li>
+<li><p>機械設備器具安全標準</p></li>
+<li><p>機械設備器具安全資訊申報登錄辦法</p></li>
+<li><p>機械類產品型式驗證實施及監督管理辦法</p></li>
+<li><p>機械設備器具監督管理辦法</p></li>
+<li><p>安全標示與驗證合格標章使用及管理辦法</p></li>
+<li><p>機械類產品申請先行放行辦法、申請免驗證辦法</p></li>
+</ol>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="https://tsmark.osha.gov.tw/favicon.ico" class="slide-logo"></p>
+<p><img src="images/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>勞動部職業安全衛生署 機械設備器具安全資訊網</p>
+
 </div>
 </div></div>
 
@@ -879,7 +2590,7 @@
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': false,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -887,7 +2598,7 @@
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: true,
@@ -1015,7 +2726,7 @@
         transition: 'slide',
 
         // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
+        transitionSpeed: 'slow',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
@@ -1032,7 +2743,7 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1280,
+        width: 1050,
 
         height: 720,
 
@@ -1114,14 +2825,13 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-          const outerScaffold = trigger.parentElement.cloneNode(true);
-          const codeEl = outerScaffold.querySelector('code');
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
             }
-          }
-          return codeEl.innerText;
+            return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
