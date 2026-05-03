@@ -42,9 +42,12 @@ website:
           - text: 風險評估
             href: https://peter7336959.github.io/teaching/%E7%94%B2%E6%A5%AD%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
             target: _blank
-          - text: 施工風險評估
+          - text: 施工風險評估（簡易版）
             href: https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
             target: _blank
+          - text: 施工風險評估（詳實版）
+            href: https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E6%96%BD%E5%B7%A5%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html#/title-slide
+            target: _blank            
       - section: "職安衛人員"
         contents:
           - text: 機械設備器具安全與風險評估
