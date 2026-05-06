@@ -39,7 +39,7 @@ website:
         href: intro.qmd
       - section: "甲業"
         contents:
-          - text: 風險評估文獻導讀
+          - text: RA經驗、總論與文獻導讀
             href: https://peter7336959.github.io/teaching/RA研究導讀.html
             target: _blank        
           - text: 風險評估
