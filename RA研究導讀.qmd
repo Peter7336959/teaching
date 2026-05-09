@@ -19,7 +19,7 @@ format:
     width: 1280
     height: 800
     link-external-newwindow: true
-    css: style.css
+    css: custom.css
 ---
 
 ## 講師簡介
