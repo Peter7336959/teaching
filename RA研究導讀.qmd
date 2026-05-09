@@ -11,14 +11,15 @@ format:
     logo: "images/logo.png"
     theme: sky
     transition: convex
-    highlight-style: monokai
     toc: true
     toc-depth: 1
-    code-link: false
     incremental: false
-    echo: false
     self-contained: true
-editor: source
+    center: true
+    width: 1280
+    height: 800
+    link-external-newwindow: true
+    css: style.css
 ---
 
 ## 講師簡介
@@ -836,7 +837,7 @@ editor: source
 
 # 3. 專業論述 - 風險與決策
 
-### （待撰寫與分享...）
+（待撰寫與分享...）
 
 # 4. 推薦參考資料
 

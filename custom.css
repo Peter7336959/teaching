@@ -1,0 +1,97 @@
+/* custom.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+/* 基礎字體放大 */
+.reveal {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 32px;          /* 從24px放大至42px */
+  line-height: 1.5;
+}
+
+/* 標題字體更大 */
+.reveal h1 {
+  font-size: 2.5em;
+  color: #1e3a8a;
+  margin-bottom: 0.5em;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+  color: #1e3a8a;
+  margin-top: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.reveal h3 {
+  font-size: 1.4em;
+  color: #1e3a8a;
+}
+
+/* 強調文字色彩 */
+.reveal strong, .reveal b {
+  color: #b31b1b;
+  font-weight: bold;
+}
+
+.reveal em {
+  color: #1e3a8a;
+  font-style: italic;
+}
+
+/* 列表項目放大 */
+.reveal ul, .reveal ol {
+  margin-left: 0.8em;
+  line-height: 1.6;
+}
+
+.reveal li {
+  margin: 0.3em 0;
+}
+
+/* 表格字體調整 */
+.reveal table {
+  font-size: 0.8em;
+  margin: 0.5em auto;
+  width: 95%;
+}
+
+.reveal th, .reveal td {
+  padding: 0.4em 0.8em;
+}
+
+/* 引用區塊 */
+.reveal blockquote {
+  font-size: 0.9em;
+  background: #f0f4f8;
+  border-left: 5px solid #1e3a8a;
+  padding: 0.5em 1em;
+}
+
+/* 程式碼/等寬字 */
+.reveal code {
+  font-size: 0.85em;
+}
+
+/* 投影片內邊距，讓內容不貼邊 */
+.reveal .slides section {
+  padding: 1.5em;
+}
+
+/* 列印樣式：A4橫向 */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0.8cm;
+  }
+  .reveal {
+    font-size: 20pt;
+  }
+  .reveal .slides section {
+    page-break-after: always;
+    break-inside: avoid;
+    padding: 0.8em;
+  }
+  .reveal table {
+    font-size: 0.7em;
+  }
+}
