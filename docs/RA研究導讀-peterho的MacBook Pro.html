@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="何明信 Peter Ho.">
+
+<title>職業健康安全風險評估（OHSRA）總論與相關研究導讀分享 – 教學網站 - 何明信老師</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6b0cdad5c3a486cddbc9bf5f3442135d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">教學網站 - 何明信老師</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" target="_blank" aria-current="page"> 
+<span class="menu-text">首页</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/HME/" target="_blank"> 
+<span class="menu-text">危險性機械及設備管理</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/" target="_blank"> 
+<span class="menu-text">暴露評估</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank"> 
+<span class="menu-text">事故調查制度實務指南</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">其他(新增中)</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">職業健康安全風險評估（OHSRA）總論與相關研究導讀分享</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">甲業</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/RA研究導讀.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">RA經驗、總論與文獻導讀</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E7%94%B2%E6%A5%AD%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">風險評估</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/甲業＿風險評估詳實版.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">風險評估（詳實版）</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">施工風險評估（簡易版）</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E6%96%BD%E5%B7%A5%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html#/title-slide" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">施工風險評估（詳實版）</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">職安衛人員</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./機械設備器具安全與風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">機械設備器具安全與風險評估</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./具有危險性之機械及設備安全相關法規簡介.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">具有危險性之機械及設備安全相關法規簡介</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./危險性機械及設備管理.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">危險性機械及設備管理</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">學校種子人員</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E6%A0%A1%E5%9C%92%EF%BC%BF%E5%8C%96%E5%AD%B8%E6%9C%89%E5%AE%B3%E7%89%A9%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E7%AD%96%E7%95%A5.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">化學有害物危害預防策略</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./校園＿高溫接觸危害預防策略.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">高溫接觸危害預防策略</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text">感謝.qmd</span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#講師簡介" id="toc-講師簡介" class="nav-link active" data-scroll-target="#講師簡介">講師簡介</a></li>
+  <li><a href="#職場風險評估總論" id="toc-職場風險評估總論" class="nav-link" data-scroll-target="#職場風險評估總論">1. 職場風險評估總論</a>
+  <ul class="collapse">
+  <li><a href="#安全與衛生領域的風險評估" id="toc-安全與衛生領域的風險評估" class="nav-link" data-scroll-target="#安全與衛生領域的風險評估">安全與衛生領域的風險評估</a></li>
+  <li><a href="#第一部分通用風險評估五步驟-hse-模式---安全導向" id="toc-第一部分通用風險評估五步驟-hse-模式---安全導向" class="nav-link" data-scroll-target="#第一部分通用風險評估五步驟-hse-模式---安全導向">第一部分：通用風險評估五步驟 (HSE 模式 - 安全導向)</a>
+  <ul class="collapse">
+  <li><a href="#步驟-1辨識顯著危害-look-for-the-hazards" id="toc-步驟-1辨識顯著危害-look-for-the-hazards" class="nav-link" data-scroll-target="#步驟-1辨識顯著危害-look-for-the-hazards">步驟 1：辨識顯著危害 (Look for the Hazards)</a></li>
+  </ul></li>
+  <li><a href="#步驟-2確認可能受到傷害的對象與方式-decide-who-might-be-harmed" id="toc-步驟-2確認可能受到傷害的對象與方式-decide-who-might-be-harmed" class="nav-link" data-scroll-target="#步驟-2確認可能受到傷害的對象與方式-decide-who-might-be-harmed">步驟 2：確認可能受到傷害的對象與方式 (Decide Who Might be Harmed)</a></li>
+  <li><a href="#步驟-3評估風險並決定控制措施-evaluate-and-decide" id="toc-步驟-3評估風險並決定控制措施-evaluate-and-decide" class="nav-link" data-scroll-target="#步驟-3評估風險並決定控制措施-evaluate-and-decide">步驟 3：評估風險並決定控制措施 (Evaluate and Decide)</a></li>
+  <li><a href="#步驟-4記錄重要發現-record-your-findings" id="toc-步驟-4記錄重要發現-record-your-findings" class="nav-link" data-scroll-target="#步驟-4記錄重要發現-record-your-findings">步驟 4：記錄重要發現 (Record Your Findings)</a>
+  <ul class="collapse">
+  <li><a href="#步驟-5審查與修訂-review-and-revise" id="toc-步驟-5審查與修訂-review-and-revise" class="nav-link" data-scroll-target="#步驟-5審查與修訂-review-and-revise">步驟 5：審查與修訂 (Review and Revise)</a></li>
+  </ul></li>
+  <li><a href="#第二部分化學健康風險評估-毒理學模式---衛生導向" id="toc-第二部分化學健康風險評估-毒理學模式---衛生導向" class="nav-link" data-scroll-target="#第二部分化學健康風險評估-毒理學模式---衛生導向">第二部分：化學健康風險評估 (毒理學模式 - 衛生導向)</a>
+  <ul class="collapse">
+  <li><a href="#危害辨識-hazard-identification" id="toc-危害辨識-hazard-identification" class="nav-link" data-scroll-target="#危害辨識-hazard-identification">1. 危害辨識 (Hazard Identification)</a></li>
+  </ul></li>
+  <li><a href="#危害特徵描述與-adme-程序-hazard-characterization" id="toc-危害特徵描述與-adme-程序-hazard-characterization" class="nav-link" data-scroll-target="#危害特徵描述與-adme-程序-hazard-characterization">2. 危害特徵描述與 ADME 程序 (Hazard Characterization)</a></li>
+  <li><a href="#暴露評估與監控邏輯-exposure-assessment" id="toc-暴露評估與監控邏輯-exposure-assessment" class="nav-link" data-scroll-target="#暴露評估與監控邏輯-exposure-assessment">3. 暴露評估與監控邏輯 (Exposure Assessment)</a>
+  <ul class="collapse">
+  <li><a href="#風險特徵描述與長期效應-risk-characterization" id="toc-風險特徵描述與長期效應-risk-characterization" class="nav-link" data-scroll-target="#風險特徵描述與長期效應-risk-characterization">4. 風險特徵描述與長期效應 (Risk Characterization)</a></li>
+  </ul></li>
+  <li><a href="#第三部分安全-vs.-衛生風險評估比較" id="toc-第三部分安全-vs.-衛生風險評估比較" class="nav-link" data-scroll-target="#第三部分安全-vs.-衛生風險評估比較">第三部分：安全 vs.&nbsp;衛生風險評估比較</a></li>
+  <li><a href="#檢查員職涯經驗分享" id="toc-檢查員職涯經驗分享" class="nav-link" data-scroll-target="#檢查員職涯經驗分享">檢查員職涯經驗分享</a></li>
+  <li><a href="#第四部分職安衛專業人員的專業提升建議" id="toc-第四部分職安衛專業人員的專業提升建議" class="nav-link" data-scroll-target="#第四部分職安衛專業人員的專業提升建議">第四部分：職安衛專業人員的專業提升建議</a>
+  <ul class="collapse">
+  <li><a href="#跨學科知識的深度與廣度" id="toc-跨學科知識的深度與廣度" class="nav-link" data-scroll-target="#跨學科知識的深度與廣度">1. 跨學科知識的深度與廣度</a></li>
+  <li><a href="#數據解讀與證據轉化能力-evidence-based-action" id="toc-數據解讀與證據轉化能力-evidence-based-action" class="nav-link" data-scroll-target="#數據解讀與證據轉化能力-evidence-based-action">2. 數據解讀與證據轉化能力 (Evidence-based Action)</a></li>
+  </ul></li>
+  <li><a href="#高階風險溝通與影響力-strategic-communication" id="toc-高階風險溝通與影響力-strategic-communication" class="nav-link" data-scroll-target="#高階風險溝通與影響力-strategic-communication">3. 高階風險溝通與影響力 (Strategic Communication)</a>
+  <ul class="collapse">
+  <li><a href="#國際視野與資訊同步" id="toc-國際視野與資訊同步" class="nav-link" data-scroll-target="#國際視野與資訊同步">4. 國際視野與資訊同步</a></li>
+  </ul></li>
+  <li><a href="#對職安衛主管的實務建議" id="toc-對職安衛主管的實務建議" class="nav-link" data-scroll-target="#對職安衛主管的實務建議">對職安衛主管的實務建議</a></li>
+  </ul></li>
+  <li><a href="#科學研究-職業健康安全風險評估ohsra系統性綜述" id="toc-科學研究-職業健康安全風險評估ohsra系統性綜述" class="nav-link" data-scroll-target="#科學研究-職業健康安全風險評估ohsra系統性綜述">2. 科學研究-職業健康安全風險評估（OHSRA）系統性綜述</a>
+  <ul class="collapse">
+  <li><a href="#模型方法與應用-20022022-liu-et-al.-2023-safety-science" id="toc-模型方法與應用-20022022-liu-et-al.-2023-safety-science" class="nav-link" data-scroll-target="#模型方法與應用-20022022-liu-et-al.-2023-safety-science">模型、方法與應用 (2002–2022) — Liu et al.&nbsp;(2023) Safety Science</a></li>
+  <li><a href="#研究背景" id="toc-研究背景" class="nav-link" data-scroll-target="#研究背景">1. 研究背景</a>
+  <ul class="collapse">
+  <li><a href="#什麼是職業健康安全ohs" id="toc-什麼是職業健康安全ohs" class="nav-link" data-scroll-target="#什麼是職業健康安全ohs">什麼是職業健康安全（OHS）？</a></li>
+  </ul></li>
+  <li><a href="#什麼是-ohs-風險評估ohsra" id="toc-什麼是-ohs-風險評估ohsra" class="nav-link" data-scroll-target="#什麼是-ohs-風險評估ohsra">什麼是 OHS 風險評估（OHSRA）？</a></li>
+  <li><a href="#這篇綜述產出緣由" id="toc-這篇綜述產出緣由" class="nav-link" data-scroll-target="#這篇綜述產出緣由">這篇綜述產出緣由？</a></li>
+  <li><a href="#綜述方法prisma" id="toc-綜述方法prisma" class="nav-link" data-scroll-target="#綜述方法prisma">2. 綜述方法（PRISMA）</a>
+  <ul class="collapse">
+  <li><a href="#文獻檢索策略" id="toc-文獻檢索策略" class="nav-link" data-scroll-target="#文獻檢索策略">文獻檢索策略</a></li>
+  </ul></li>
+  <li><a href="#篩選流程" id="toc-篩選流程" class="nav-link" data-scroll-target="#篩選流程">篩選流程</a></li>
+  <li><a href="#ohsra-方法分類框架" id="toc-ohsra-方法分類框架" class="nav-link" data-scroll-target="#ohsra-方法分類框架">3. OHSRA 方法分類框架</a>
+  <ul class="collapse">
+  <li><a href="#七大類別概覽" id="toc-七大類別概覽" class="nav-link" data-scroll-target="#七大類別概覽">七大類別概覽</a></li>
+  </ul></li>
+  <li><a href="#類別-①兩兩比較法" id="toc-類別-①兩兩比較法" class="nav-link" data-scroll-target="#類別-①兩兩比較法">類別 ①：兩兩比較法</a></li>
+  <li><a href="#類別-②距離度量法" id="toc-類別-②距離度量法" class="nav-link" data-scroll-target="#類別-②距離度量法">類別 ②：距離度量法</a></li>
+  <li><a href="#類別-③折衷方法" id="toc-類別-③折衷方法" class="nav-link" data-scroll-target="#類別-③折衷方法">類別 ③：折衷方法</a></li>
+  <li><a href="#類別-④價值效用法" id="toc-類別-④價值效用法" class="nav-link" data-scroll-target="#類別-④價值效用法">類別 ④：價值/效用法</a></li>
+  <li><a href="#類別-⑤人工智慧法" id="toc-類別-⑤人工智慧法" class="nav-link" data-scroll-target="#類別-⑤人工智慧法">類別 ⑤：人工智慧法</a></li>
+  <li><a href="#類別-⑥整合方法" id="toc-類別-⑥整合方法" class="nav-link" data-scroll-target="#類別-⑥整合方法">類別 ⑥：整合方法</a></li>
+  <li><a href="#類別-⑦其他方法" id="toc-類別-⑦其他方法" class="nav-link" data-scroll-target="#類別-⑦其他方法">類別 ⑦：其他方法</a></li>
+  <li><a href="#風險基準分析" id="toc-風險基準分析" class="nav-link" data-scroll-target="#風險基準分析">4. 風險基準分析</a>
+  <ul class="collapse">
+  <li><a href="#最常用的風險準則出現-2-次" id="toc-最常用的風險準則出現-2-次" class="nav-link" data-scroll-target="#最常用的風險準則出現-2-次">最常用的風險準則（出現 ≥2 次）</a></li>
+  </ul></li>
+  <li><a href="#風險準則數量分佈" id="toc-風險準則數量分佈" class="nav-link" data-scroll-target="#風險準則數量分佈">風險準則數量分佈</a></li>
+  <li><a href="#風險準則權重方法" id="toc-風險準則權重方法" class="nav-link" data-scroll-target="#風險準則權重方法">5. 風險準則權重方法</a>
+  <ul class="collapse">
+  <li><a href="#權重方法使用情況" id="toc-權重方法使用情況" class="nav-link" data-scroll-target="#權重方法使用情況">權重方法使用情況</a></li>
+  <li><a href="#各種權重方法歸納" id="toc-各種權重方法歸納" class="nav-link" data-scroll-target="#各種權重方法歸納">各種權重方法歸納</a></li>
+  </ul></li>
+  <li><a href="#不確定性處理方法" id="toc-不確定性處理方法" class="nav-link" data-scroll-target="#不確定性處理方法">6. 不確定性處理方法</a>
+  <ul class="collapse">
+  <li><a href="#模糊理論與擴展" id="toc-模糊理論與擴展" class="nav-link" data-scroll-target="#模糊理論與擴展">模糊理論與擴展</a></li>
+  </ul></li>
+  <li><a href="#文獻計量分析" id="toc-文獻計量分析" class="nav-link" data-scroll-target="#文獻計量分析">7. 文獻計量分析</a>
+  <ul class="collapse">
+  <li><a href="#發表年份趨勢" id="toc-發表年份趨勢" class="nav-link" data-scroll-target="#發表年份趨勢">發表年份趨勢</a></li>
+  <li><a href="#期刊分佈2-篇" id="toc-期刊分佈2-篇" class="nav-link" data-scroll-target="#期刊分佈2-篇">期刊分佈（≥2 篇）</a></li>
+  </ul></li>
+  <li><a href="#國家地區分佈" id="toc-國家地區分佈" class="nav-link" data-scroll-target="#國家地區分佈">國家/地區分佈</a>
+  <ul class="collapse">
+  <li><a href="#應用領域分佈" id="toc-應用領域分佈" class="nav-link" data-scroll-target="#應用領域分佈">應用領域分佈</a></li>
+  </ul></li>
+  <li><a href="#最具影響力論文top-10" id="toc-最具影響力論文top-10" class="nav-link" data-scroll-target="#最具影響力論文top-10">8. 最具影響力論文（TOP 10）</a>
+  <ul class="collapse">
+  <li><a href="#按總被引-年均被引排序" id="toc-按總被引-年均被引排序" class="nav-link" data-scroll-target="#按總被引-年均被引排序">按總被引 / 年均被引排序</a></li>
+  </ul></li>
+  <li><a href="#方法使用頻率總結所有論文" id="toc-方法使用頻率總結所有論文" class="nav-link" data-scroll-target="#方法使用頻率總結所有論文">方法使用頻率總結（所有論文）</a></li>
+  <li><a href="#當前挑戰與侷限" id="toc-當前挑戰與侷限" class="nav-link" data-scroll-target="#當前挑戰與侷限">9. 當前挑戰與侷限</a>
+  <ul class="collapse">
+  <li><a href="#研究不足之處" id="toc-研究不足之處" class="nav-link" data-scroll-target="#研究不足之處">研究不足之處</a></li>
+  </ul></li>
+  <li><a href="#未來研究方向原文建議-8-條" id="toc-未來研究方向原文建議-8-條" class="nav-link" data-scroll-target="#未來研究方向原文建議-8-條">10. 未來研究方向（原文建議 8 條）</a>
+  <ul class="collapse">
+  <li><a href="#方向-①更強大的不確定性理論" id="toc-方向-①更強大的不確定性理論" class="nav-link" data-scroll-target="#方向-①更強大的不確定性理論">方向 ①：更強大的不確定性理論</a></li>
+  <li><a href="#方向-②專家衝突消除" id="toc-方向-②專家衝突消除" class="nav-link" data-scroll-target="#方向-②專家衝突消除">方向 ②：專家衝突消除</a></li>
+  <li><a href="#方向-③客觀-組合權重" id="toc-方向-③客觀-組合權重" class="nav-link" data-scroll-target="#方向-③客觀-組合權重">方向 ③：客觀 / 組合權重</a></li>
+  <li><a href="#方向-④系統化風險準則體系" id="toc-方向-④系統化風險準則體系" class="nav-link" data-scroll-target="#方向-④系統化風險準則體系">方向 ④：系統化風險準則體系</a></li>
+  <li><a href="#方向-⑤新型-mcdm-模型" id="toc-方向-⑤新型-mcdm-模型" class="nav-link" data-scroll-target="#方向-⑤新型-mcdm-模型">方向 ⑤：新型 MCDM 模型</a></li>
+  <li><a href="#方向-⑥動態-ohsra-模型" id="toc-方向-⑥動態-ohsra-模型" class="nav-link" data-scroll-target="#方向-⑥動態-ohsra-模型">方向 ⑥：動態 OHSRA 模型</a></li>
+  <li><a href="#方向-⑦大群體決策" id="toc-方向-⑦大群體決策" class="nav-link" data-scroll-target="#方向-⑦大群體決策">方向 ⑦：大群體決策</a></li>
+  <li><a href="#方向-⑧人工智慧與深度學習" id="toc-方向-⑧人工智慧與深度學習" class="nav-link" data-scroll-target="#方向-⑧人工智慧與深度學習">方向 ⑧：人工智慧與深度學習</a></li>
+  </ul></li>
+  <li><a href="#結論與啟示" id="toc-結論與啟示" class="nav-link" data-scroll-target="#結論與啟示">11. 結論與啟示</a>
+  <ul class="collapse">
+  <li><a href="#核心結論" id="toc-核心結論" class="nav-link" data-scroll-target="#核心結論">核心結論</a></li>
+  <li><a href="#對實務者的啟示" id="toc-對實務者的啟示" class="nav-link" data-scroll-target="#對實務者的啟示">對實務者的啟示</a></li>
+  </ul></li>
+  <li><a href="#ｑ請舉例營造業施工風險評估與一般行業的風險評估" id="toc-ｑ請舉例營造業施工風險評估與一般行業的風險評估" class="nav-link" data-scroll-target="#ｑ請舉例營造業施工風險評估與一般行業的風險評估">Ｑ、<strong>請舉例（營造業施工風險評估與一般行業的風險評估）</strong></a>
+  <ul class="collapse">
+  <li><a href="#三大風險準則簡要定義" id="toc-三大風險準則簡要定義" class="nav-link" data-scroll-target="#三大風險準則簡要定義">三大風險準則簡要定義</a></li>
+  </ul></li>
+  <li><a href="#ａ.-營造業外牆施工墜落風險評估案例" id="toc-ａ.-營造業外牆施工墜落風險評估案例" class="nav-link" data-scroll-target="#ａ.-營造業外牆施工墜落風險評估案例">Ａ. 營造業<strong>外牆施工墜落風險</strong>評估案例</a>
+  <ul class="collapse">
+  <li><a href="#三大準則評估" id="toc-三大準則評估" class="nav-link" data-scroll-target="#三大準則評估">三大準則評估</a></li>
+  <li><a href="#常見改善措施降低風險" id="toc-常見改善措施降低風險" class="nav-link" data-scroll-target="#常見改善措施降低風險">常見改善措施（降低風險）</a></li>
+  </ul></li>
+  <li><a href="#ｂ.-長時間重複組裝作業導致腕隧道症候群" id="toc-ｂ.-長時間重複組裝作業導致腕隧道症候群" class="nav-link" data-scroll-target="#ｂ.-長時間重複組裝作業導致腕隧道症候群">Ｂ. <strong>長時間重複組裝作業導致腕隧道症候群</strong></a>
+  <ul class="collapse">
+  <li><a href="#三大準則評估-1" id="toc-三大準則評估-1" class="nav-link" data-scroll-target="#三大準則評估-1">三大準則評估</a></li>
+  <li><a href="#常見改善措施" id="toc-常見改善措施" class="nav-link" data-scroll-target="#常見改善措施">常見改善措施</a></li>
+  </ul></li>
+  <li><a href="#c.-可偵測性-d-與控制措施關係" id="toc-c.-可偵測性-d-與控制措施關係" class="nav-link" data-scroll-target="#c.-可偵測性-d-與控制措施關係">C. <strong>可偵測性 (D) 與控制措施關係？</strong></a></li>
+  <li><a href="#d.-可偵測性-d-對人為失效的影響" id="toc-d.-可偵測性-d-對人為失效的影響" class="nav-link" data-scroll-target="#d.-可偵測性-d-對人為失效的影響"><strong>D. 可偵測性 (D)</strong> 對人為失效的影響</a></li>
+  <li><a href="#參考文獻" id="toc-參考文獻" class="nav-link" data-scroll-target="#參考文獻">12. 參考文獻</a></li>
+  <li><a href="#自我詢答" id="toc-自我詢答" class="nav-link" data-scroll-target="#自我詢答">13. 自我詢答？</a></li>
+  </ul></li>
+  <li><a href="#專業論述---風險與決策" id="toc-專業論述---風險與決策" class="nav-link" data-scroll-target="#專業論述---風險與決策">3. 專業論述 - 風險與決策</a>
+  <ul class="collapse">
+  <li><a href="#待撰寫與分享" id="toc-待撰寫與分享" class="nav-link" data-scroll-target="#待撰寫與分享">（待撰寫與分享…）</a></li>
+  </ul></li>
+  <li><a href="#推薦參考資料" id="toc-推薦參考資料" class="nav-link" data-scroll-target="#推薦參考資料">4. 推薦參考資料</a>
+  <ul class="collapse">
+  <li><a href="#練基本功多利用ａｉ工具協助你閱讀." id="toc-練基本功多利用ａｉ工具協助你閱讀." class="nav-link" data-scroll-target="#練基本功多利用ａｉ工具協助你閱讀.">練基本功，多利用ＡＩ工具協助你閱讀….</a></li>
+  </ul></li>
+  <li><a href="#風險評估的日常運用" id="toc-風險評估的日常運用" class="nav-link" data-scroll-target="#風險評估的日常運用">5. 風險評估的日常運用</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="RA研究導讀-peterho的MacBook Pro.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">職業健康安全風險評估（OHSRA）總論與相關研究導讀分享</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>何明信 Peter Ho. </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="講師簡介" class="level2">
+<h2 class="anchored" data-anchor-id="講師簡介">講師簡介</h2>
+<ul>
+<li><p>姓名：何明信</p></li>
+<li><p>學歷：成大環醫所 、職安衛技師</p></li>
+<li><p>經歷：檢查員30年 (製造、危機設、營造、化工職衛科、專委)</p></li>
+<li><p>現職：114年退休</p></li>
+<li><p>E-mail：msho7336959@gmail.com</p></li>
+</ul>
+<hr>
+<p><strong>先腦力激盪一下… (功力傳承)</strong></p>
+<p><img src="images/漢書風險評估.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/風險管理要素.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/風險衡量.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/推薦書目1.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/RA與AI.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/個人與製程安全.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/起司理論控制模式.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/推薦書目2.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/管理者思維.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/愛因斯坦說.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/推薦書目3.png" class="img-fluid"></p>
+<ul>
+<li><p>高速、高營運績效組織的成功，並非取決於聚集了所有具備某種特殊才能的員工。</p></li>
+<li><p>以員工人數動輒成千上百，甚至上萬名的情況看來，這根本毫無可能。</p></li>
+<li><p>這些組織締造高速的關鍵在於，「人盡其才，悉用其力」，刻意且持續地讓中等人才得以發揮到極致。</p></li>
+<li><p>反觀其對手，卻平白糟蹋人力，讓員工為應付系統雜音而疲於奔命，反覆承受著挫折和失敗。</p></li>
+</ul>
+<hr>
+<p><img src="images/該起床了.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="職場風險評估總論" class="level1">
+<h1>1. 職場風險評估總論</h1>
+<section id="安全與衛生領域的風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="安全與衛生領域的風險評估">安全與衛生領域的風險評估</h2>
+<p>這份教材專為職安衛主管設計，旨在深度解析**安全（Safety）<strong>與</strong>衛生（Hygiene）**兩大領域的風險評估精要。透過通用步驟與與健康（專業毒理學）的並陳，學員將建立起「預見危害、科學評估、有效控制」的全方位預防管理思維，從源頭阻斷職業傷害（意外）與職業病的發生。</p>
+</section>
+<section id="第一部分通用風險評估五步驟-hse-模式---安全導向" class="level2">
+<h2 class="anchored" data-anchor-id="第一部分通用風險評估五步驟-hse-模式---安全導向">第一部分：通用風險評估五步驟 (HSE 模式 - 安全導向)</h2>
+<p>通用風險評估主要聚焦於<strong>即時性、物理性</strong>的傷害。這些危害通常是直觀可見的，依循英國安全衛生執行署（HSE）的經典五步驟（融合我國相關指引），其核心在於透過專業的現場巡查與常識判斷來防止傷亡意外。</p>
+<section id="步驟-1辨識顯著危害-look-for-the-hazards" class="level3">
+<h3 class="anchored" data-anchor-id="步驟-1辨識顯著危害-look-for-the-hazards">步驟 1：辨識顯著危害 (Look for the Hazards)</h3>
+<ul>
+<li><p><strong>管理深度解析</strong>：管理者巡視現場時，應具備「預見性」視角。除了顯而易見的缺失，更要關注「潛在」的不安全狀態。例如：</p>
+<ul>
+<li><p><strong>物理能量可能釋放</strong>：如高壓蒸氣管線的腐蝕劣化、未固定的高壓鋼瓶、運轉中缺乏安全護罩的快速刀片等。</p></li>
+<li><p><strong>環境動態可能危害</strong>：濕滑地面不只是液體傾倒，也包含環境溼度凝結；堆放雜物不僅堵塞路口，更可能在地震時坍塌造成傷亡。</p></li>
+<li><p><strong>人機互動介面</strong>：堆高機在盲區的作業、員工因疲勞導致的誤操作情境等。</p></li>
+</ul></li>
+<li><p><strong>關鍵方法</strong>：採取「行動巡檢」，落實到位查證，及徵詢第一線老員工，詢問：「在哪個作業環節你覺得最不合理？」或「哪台機器曾發生過『差點傷到人』的情況？」。</p></li>
+</ul>
+</section>
+</section>
+<section id="步驟-2確認可能受到傷害的對象與方式-decide-who-might-be-harmed" class="level2">
+<h2 class="anchored" data-anchor-id="步驟-2確認可能受到傷害的對象與方式-decide-who-might-be-harmed">步驟 2：確認可能受到傷害的對象與方式 (Decide Who Might be Harmed)</h2>
+<ul>
+<li><p><strong>重點</strong>：不要僅列出姓名，而要分析<strong>群體暴露的脆弱性</strong>及其特定的受傷機制。</p></li>
+<li><p><strong>特殊族群考量</strong>：</p>
+<ul>
+<li><p><strong>青少年與新進勞工</strong>：由於缺乏職涯中的「危險記憶」，常會為了追求效率而簡化安全流程。</p></li>
+<li><p><strong>非固定雇員（承攬商/訪客）</strong>：他們不熟悉廠內特定的應變程序。例如，化學品洩漏報警聲響時，他們可能不知道該往哪裡撤離。</p></li>
+<li><p><strong>脆弱個體</strong>：包含患有特定慢性病（如心臟病勞工在高溫環境）、孕婦（需防範體力負荷過重）或單獨作業者（發生心肌梗塞或受傷時無人呼救）。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="步驟-3評估風險並決定控制措施-evaluate-and-decide" class="level2">
+<h2 class="anchored" data-anchor-id="步驟-3評估風險並決定控制措施-evaluate-and-decide">步驟 3：評估風險並決定控制措施 (Evaluate and Decide)</h2>
+<ul>
+<li><p><strong>目標：（ALARP 原則）</strong> 判斷剩餘風險是否已降至「合理可行」的最低限度（As Low As Reasonably Practicable）。這涉及控制成本與風險降低效益之間的平衡。</p></li>
+<li><p><strong>控制層級（Hierarchy of Controls）應用</strong>：</p>
+<ol type="1">
+<li><p><strong>消減 (Elimination)</strong>：從設計階段就移除風險，如自動化倉儲取代人工搬運。</p></li>
+<li><p><strong>取代 (Substitution)</strong>：改用較低危險性的作業方式或材料。</p></li>
+<li><p><strong>工程控制 (Engineering)</strong>：這是最應投入預算的環節，如設置連鎖防護、遠端遙控作業。</p></li>
+<li><p><strong>行政管理 (Administrative)</strong>：包括建立作業許可證制度（PTW）、限制高風險區域的進入人數、教育訓練、制定ＳＯＰ等。</p></li>
+<li><p><strong>個人防護裝備 (PPE)</strong>：<strong>嚴禁將 PPE 作為第一線或唯一手段</strong>。主管需指導與監督 PPE 的正確配戴與耗材更換頻率。</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="步驟-4記錄重要發現-record-your-findings" class="level2">
+<h2 class="anchored" data-anchor-id="步驟-4記錄重要發現-record-your-findings">步驟 4：記錄重要發現 (Record Your Findings)</h2>
+<ul>
+<li><p><strong>法律與責任</strong>：紀錄不僅是法規要求，更是發生爭議時的「免責與佐證」資料。</p></li>
+<li><p><strong>高品質紀錄的標準</strong>：</p>
+<ul>
+<li><p>必須證明已進行過「適當且充分」的調查。</p></li>
+<li><p>展示已處理所有顯著危害。</p></li>
+<li><p>證明控制措施是與風險程度相稱的（Proportionate）。</p></li>
+</ul></li>
+</ul>
+<section id="步驟-5審查與修訂-review-and-revise" class="level3">
+<h3 class="anchored" data-anchor-id="步驟-5審查與修訂-review-and-revise">步驟 5：審查與修訂 (Review and Revise)</h3>
+<ul>
+<li><strong>觸發機制</strong>：評估不是終點。當引進新設備、製程變更、或發生「事故或虛驚事故（Near Miss）」時，代表既有危害與風險評估可能存在盲點，必須立即重啟評估流程。</li>
+</ul>
+</section>
+</section>
+<section id="第二部分化學健康風險評估-毒理學模式---衛生導向" class="level2">
+<h2 class="anchored" data-anchor-id="第二部分化學健康風險評估-毒理學模式---衛生導向">第二部分：化學健康風險評估 (毒理學模式 - 衛生導向)</h2>
+<p>化學品風險評估需具備科學廣度。由於化學傷害具備<strong>長期性、隱蔽性與不可逆性</strong>，管理者必須仰賴毒理學數據而非僅靠肉眼觀察或感覺。</p>
+<section id="危害辨識-hazard-identification" class="level3">
+<h3 class="anchored" data-anchor-id="危害辨識-hazard-identification">1. 危害辨識 (Hazard Identification)</h3>
+<ul>
+<li><p><strong>資訊解讀能力</strong>：熟練查閱 SDS（安全資料表）第 2、11、15 節。辨識化學品是否具備「三致效應ＣＭＲ」（致癌、致突變、生殖毒性）。</p></li>
+<li><p><strong>環境特徵分析</strong>：分析化學品的飽和蒸氣壓、高揮發性物質在通風不良處會迅速達到有害濃度。</p></li>
+</ul>
+</section>
+</section>
+<section id="危害特徵描述與-adme-程序-hazard-characterization" class="level2">
+<h2 class="anchored" data-anchor-id="危害特徵描述與-adme-程序-hazard-characterization">2. 危害特徵描述與 ADME 程序 (Hazard Characterization)</h2>
+<ul>
+<li><p><strong>毒理動力學（Toxicokinetics）解析</strong>：</p>
+<p><img src="images/毒物動力學.png" class="img-fluid" style="width:100.0%"></p>
+<ul>
+<li><p><strong>吸收 (Absorption)</strong>：吸入是職場最危險途徑，肺泡巨大的交換面積使毒素直接進入血流。注意皮膚滲透，某些溶劑會攜帶其他溶質「穿透」防護手套。</p></li>
+<li><p><strong>分布 (Distribution)</strong>：化學品會儲存於人體「儲存庫」。如鉛儲存於骨骼、脂溶性溶劑存於脂肪。這會導致<strong>動員作用 (Mobilization)</strong>，使員工在停止暴露後血液中仍持續出現毒素。</p></li>
+<li><p><strong>代謝 (Metabolism)</strong>：身體透過酵素將化學物質轉化，可能降低或增加毒性。</p></li>
+<li><p><strong>排泄 (Excretion)</strong>：腎臟功能影響排毒效率。半衰期長的化學品更易造成蓄積性中毒。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="暴露評估與監控邏輯-exposure-assessment" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估與監控邏輯-exposure-assessment">3. 暴露評估與監控邏輯 (Exposure Assessment)</h2>
+<ul>
+<li><p><strong>定量標準</strong>：不僅看現場量測濃度（如 <strong>8 小時時量平均濃度 (TWA)、ＳＴＥＬ等），更要掌握長期暴露概況（exposure profile）</strong>。</p></li>
+<li><p><strong>生物監測 (Biomonitoring)</strong>：必要時透過尿液或血液檢查，確認「總吸收量」，這比單純的環境空氣採樣更能精準反映勞工的真實風險。</p></li>
+</ul>
+<section id="風險特徵描述與長期效應-risk-characterization" class="level3">
+<h3 class="anchored" data-anchor-id="風險特徵描述與長期效應-risk-characterization">4. 風險特徵描述與長期效應 (Risk Characterization)</h3>
+<ul>
+<li><p><strong>潛伏期與慢性疾病</strong>：（例）</p>
+<ul>
+<li><p><strong>慢性肺部損傷</strong>：如石棉引發的肺纖維化、長期粉塵導致的肺氣腫。</p></li>
+<li><p><strong>癌症風險</strong>：潛伏期常長達 20-40 年。這意味著今日的管理疏失，將在員工退休時以癌症形式顯現。</p></li>
+</ul></li>
+<li><p><strong>交互作用 (Interactions)</strong>：</p>
+<ul>
+<li><p><strong>協同效應 (Synergy)</strong>：如吸菸勞工暴露於石棉，其癌症風險不是相加而是<strong>相乘</strong>。</p></li>
+<li><p><strong>相加效應</strong>：多種溶劑同時使用，會累加中樞神經系統的抑制效果。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="第三部分安全-vs.-衛生風險評估比較" class="level2">
+<h2 class="anchored" data-anchor-id="第三部分安全-vs.-衛生風險評估比較">第三部分：安全 vs.&nbsp;衛生風險評估比較</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>比較項目</th>
+<th>通用風險評估 (安全 - Safety)</th>
+<th>化學品風險評估 (衛生 - Hygiene)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>傷害性質</strong></td>
+<td>急性、即時發生（如骨折、電擊、爆炸傷）。</td>
+<td>慢性、累積、延遲發生（如癌症、神經萎縮）。</td>
+</tr>
+<tr class="even">
+<td><strong>危害感知</strong></td>
+<td>危害清晰可見（如漏電、轉動軸、不穩的梯子）。</td>
+<td>危害常不可見（如無味蒸氣、亞微米粉塵）。</td>
+</tr>
+<tr class="odd">
+<td><strong>判定準則</strong></td>
+<td>機械安全標準、法規淨空間距、承重係數。</td>
+<td><strong>OEL</strong>（暴露限值）、<strong>TWA</strong>、<strong>ADME</strong> 分布模型。</td>
+</tr>
+<tr class="even">
+<td><strong>可逆性</strong></td>
+<td>外科損傷通常可修復。</td>
+<td>器官損傷常具<strong>不可逆性</strong>（如肺纖維化、細胞突變）。</td>
+</tr>
+<tr class="odd">
+<td><strong>監控手段</strong></td>
+<td>安全巡檢、設備自動檢測、自動斷電。</td>
+<td>空氣採樣、生物檢材採樣（尿/血）、肺功能監控。</td>
+</tr>
+<tr class="even">
+<td><strong>主要侵入路徑</strong></td>
+<td>物理性機械能、熱能、電能接觸。</td>
+<td><strong>吸入</strong>（最主）、皮膚滲透、體內化學代謝。</td>
+</tr>
+<tr class="odd">
+<td><strong>預防邏輯</strong></td>
+<td>阻斷接觸能量傳遞，隔離危險源。</td>
+<td>降低累積暴露濃度、強化代謝排泄、縮短工時。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="檢查員職涯經驗分享" class="level2">
+<h2 class="anchored" data-anchor-id="檢查員職涯經驗分享">檢查員職涯經驗分享</h2>
+<ul>
+<li><p>營造工地職業衛生評估 （與現場職安人員協作）</p></li>
+<li><p>產出：<strong>營造作業健康危害評估</strong>：何明信、游淳淼、謝聰敏、顏佐旻、李思玄，工業安全衛生月刊，2011年。</p></li>
+</ul>
+<p><img src="images/營造職衛風險評估表1.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/營造職衛風險評估表2.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/營造職衛風險評估表3.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/營造職衛危害告知1.png" class="img-fluid"></p>
+<hr>
+<p><img src="images/營造職衛危害告知2.png" class="img-fluid"></p>
+</section>
+<section id="第四部分職安衛專業人員的專業提升建議" class="level2">
+<h2 class="anchored" data-anchor-id="第四部分職安衛專業人員的專業提升建議">第四部分：職安衛專業人員的專業提升建議</h2>
+<p>為了具備卓越的職場風險評估與控制職能（Competence），專業人員可以從以下四個維度持續自我提升，從追求「合規者」轉型為「策略管理專家」：</p>
+<section id="跨學科知識的深度與廣度" class="level3">
+<h3 class="anchored" data-anchor-id="跨學科知識的深度與廣度">1. 跨學科知識的深度與廣度</h3>
+<ul>
+<li><p><strong>化學與毒理學深耕</strong>：不要只滿足於讀懂 SDS。應研究第 11 節的毒理數據（如 <span class="math inline">\(LD_{50}\)</span>、<span class="math inline">\(LC_{50}\)</span>、<span class="math inline">\(IDLH\)</span>），理解化學品的傷害機制。</p></li>
+<li><p><strong>工程與流體力學</strong>：掌握局部排氣系統（LEV）的評估技術。能判斷捕捉風速是否真正將污染物帶離勞工呼吸帶，而非僅是「有抽風聲而已」。</p></li>
+<li><p><strong>倫理與法規</strong>：熟悉 ISO 45001 與最新勞動法令，同時維持「保護勞工生命與健康與企業發展平衡」的專業倫理。</p></li>
+</ul>
+</section>
+<section id="數據解讀與證據轉化能力-evidence-based-action" class="level3">
+<h3 class="anchored" data-anchor-id="數據解讀與證據轉化能力-evidence-based-action">2. 數據解讀與證據轉化能力 (Evidence-based Action)</h3>
+<ul>
+<li><p><strong>批判性思考</strong>：學會質疑環境監測報告，採樣點是否設在「最糟情況」？採樣時間是否涵蓋了作業高峰期？統計推論暴露風險等。</p></li>
+<li><p><strong>流行病學應用</strong>：觀察員工體檢報告的「趨勢」，若特定單位員工肝指數集體異常，即使環境監測合格，也應懷疑是否存在皮膚吸收或非典型暴露路徑的可能性。</p></li>
+</ul>
+</section>
+</section>
+<section id="高階風險溝通與影響力-strategic-communication" class="level2">
+<h2 class="anchored" data-anchor-id="高階風險溝通與影響力-strategic-communication">3. 高階風險溝通與影響力 (Strategic Communication)</h2>
+<ul>
+<li><p><strong>向上溝通</strong>：學會將「安全與健康數據」轉化為「財務語言」，向高層解釋預防性控制能節省多少未來的停工、罰鍰、職災補償費用與商譽損失等。</p></li>
+<li><p><strong>向下溝通</strong>：將枯燥的法規標準、OEL 限值轉化為感性敘事，如強調「為了二十年後能健康地陪伴家人，在一定狀況下，請選用正確呼吸防護具等」。</p></li>
+</ul>
+<section id="國際視野與資訊同步" class="level3">
+<h3 class="anchored" data-anchor-id="國際視野與資訊同步">4. 國際視野與資訊同步</h3>
+<ul>
+<li><p><strong>追蹤權威機構資訊</strong>：定期訂閱 ＨＳＥ、ＯＳＨＡ、ＡＩＨＡ、勞安所、職安署等電子報或指南與研究報告等。</p></li>
+<li><p><strong>專業認證與社群</strong>：積極參與國內外專業證照考試（如 職安衛技師、管理師、CIH、CSP），並透過案例研討汲取他人的失敗教訓，避免在自家企業重蹈覆轍。</p></li>
+</ul>
+</section>
+</section>
+<section id="對職安衛主管的實務建議" class="level2">
+<h2 class="anchored" data-anchor-id="對職安衛主管的實務建議">對職安衛主管的實務建議</h2>
+<ol type="1">
+<li><p><strong>整合概念 (Integrated Vision)</strong>：考量健康與安全，例如，通風櫃既是職業衛生設施（移除毒氣等有害物質），其馬達也可能需具備安全規格（防爆）。</p></li>
+<li><p><strong>專業判斷力</strong>：例如，看懂 ＴＥＬ、ＬＥＬ、<strong>LC50</strong>（刺激濃度）、專業儀器設備與安全裝置等原理。</p></li>
+<li><p><strong>拒絕謬誤</strong>：<strong>留意倖存者偏差、確認偏誤、可得性偏誤等思維陷阱</strong>，專注於<strong>源頭控制</strong>風險。</p></li>
+<li><p><strong>責任照顧 (Responsible Care)</strong>：視野應超越廠房圍牆，關注社區健康與環境逸散（Fugitive Emissions），落實企業永續經營ＥＳＧ。</p></li>
+</ol>
+<p><strong>總結：安全防護能確保勞工今日平安回家；衛生管理則能確保勞工在退休後依然擁有尊嚴與健康。而你的專業職能，則是這份承諾與期許的唯一保證。</strong></p>
+</section>
+</section>
+<section id="科學研究-職業健康安全風險評估ohsra系統性綜述" class="level1">
+<h1>2. 科學研究-職業健康安全風險評估（OHSRA）系統性綜述</h1>
+<section id="模型方法與應用-20022022-liu-et-al.-2023-safety-science" class="level2">
+<h2 class="anchored" data-anchor-id="模型方法與應用-20022022-liu-et-al.-2023-safety-science">模型、方法與應用 (2002–2022) — Liu et al.&nbsp;(2023) Safety Science</h2>
+<ul>
+<li><p>OHS: Occupational health and safety 職業安全衛生</p></li>
+<li><p>RA: Risk assessment 風險評估</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>文獻</p>
+<p>Liu, R., Liu, H. C., Shi, H., &amp; Gu, X. Z. (2023). Occupational health and safety risk assessment: A systematic literature review of models, methods, and applications. <em>Safety Science</em>, 160, 106050.</p>
+</blockquote>
+</section>
+<section id="研究背景" class="level2">
+<h2 class="anchored" data-anchor-id="研究背景">1. 研究背景</h2>
+<section id="什麼是職業健康安全ohs" class="level3">
+<h3 class="anchored" data-anchor-id="什麼是職業健康安全ohs">什麼是職業健康安全（OHS）？</h3>
+<ul>
+<li><strong>OHS</strong>：多學科活動，旨在識別、評估和控制工作場所中可能損害工人健康與安全的危害</li>
+<li>目標：
+<ul>
+<li>預防職傷與職業病</li>
+<li>營造安全、健康的工作環境</li>
+<li>提升工人身體、心理和社會福祉</li>
+<li>幫助工人實現生產性的社會與經濟生活</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>📌 風險管理是組織OHS的核心</p>
+</blockquote>
+</section>
+</section>
+<section id="什麼是-ohs-風險評估ohsra" class="level2">
+<h2 class="anchored" data-anchor-id="什麼是-ohs-風險評估ohsra">什麼是 OHS 風險評估（OHSRA）？</h2>
+<ul>
+<li><strong>OHSRA</strong> 是 OHS 風險管理中最關鍵的步驟</li>
+<li>四個階段：
+<ol type="1">
+<li>識別已知或潛在的職業危害</li>
+<li>確認每個危害的原因和可能後果</li>
+<li>評估風險並制定防護措施</li>
+<li>記錄重要結果並審查評估資訊</li>
+</ol></li>
+</ul>
+</section>
+<section id="這篇綜述產出緣由" class="level2">
+<h2 class="anchored" data-anchor-id="這篇綜述產出緣由">這篇綜述產出緣由？</h2>
+<ul>
+<li>以往綜述的侷限：
+<ul>
+<li>主要關注特定行業（建築、採礦）</li>
+<li>缺少對 <strong>數學模型</strong> 的系統梳理</li>
+<li>未全面分析風險準則、權重方法和不確定性處理</li>
+</ul></li>
+<li><strong>本研究目標</strong>（2002–2022，Web of Science）：
+<ol type="1">
+<li>有哪些 OHSRA 方法？</li>
+<li>採用哪些風險基準？</li>
+<li>如何確定基準權重？</li>
+<li>如何處理專家評估的不確定性？</li>
+</ol></li>
+</ul>
+<hr>
+</section>
+<section id="綜述方法prisma" class="level2">
+<h2 class="anchored" data-anchor-id="綜述方法prisma">2. 綜述方法（PRISMA）</h2>
+<section id="文獻檢索策略" class="level3">
+<h3 class="anchored" data-anchor-id="文獻檢索策略">文獻檢索策略</h3>
+<ul>
+<li><strong>資料庫</strong>：Web of Science（高品質、高影響力期刊）</li>
+<li><strong>時間跨度</strong>：2002 年 1 月 – 2022 年 11 月</li>
+<li><strong>關鍵詞</strong>：兩層結構
+<ul>
+<li>主關鍵詞：“Occupational health and safety” / “OHS” / “Occupational risk” 等</li>
+<li>從屬關鍵詞：“risk assessment” / “risk evaluation” / “risk analysis”</li>
+</ul></li>
+<li><strong>語言與類型</strong>：僅英文期刊論文（排除會議論文、綜述、教科書、學位論文）</li>
+</ul>
+</section>
+</section>
+<section id="篩選流程" class="level2">
+<h2 class="anchored" data-anchor-id="篩選流程">篩選流程</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">步驟</th>
+<th style="text-align: left;">操作</th>
+<th style="text-align: center;">剩餘篇數</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">初始檢索</td>
+<td style="text-align: center;">1214</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">去重</td>
+<td style="text-align: center;">923</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">標題篩選</td>
+<td style="text-align: center;">367</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">摘要篩選</td>
+<td style="text-align: center;">215</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">全文篩選（納入定量 OHSRA 模型）</td>
+<td style="text-align: center;"><strong>88</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>✅ <strong>納入標準</strong>：論文提出了新的 OHSRA 定量模型或方法<br>
+❌ <strong>排除</strong>：僅自動化 OHSRA、純應用案例（無新模型）、會議論文等</p>
+</blockquote>
+<hr>
+</section>
+<section id="ohsra-方法分類框架" class="level2">
+<h2 class="anchored" data-anchor-id="ohsra-方法分類框架">3. OHSRA 方法分類框架</h2>
+<section id="七大類別概覽" class="level3">
+<h3 class="anchored" data-anchor-id="七大類別概覽">七大類別概覽</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">類別</th>
+<th style="text-align: center;">篇數</th>
+<th style="text-align: center;">佔比</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">① 兩兩比較法 (Pairwise comparison)</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">13.6%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">② 距離度量法 (Distance-based)</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">13.6%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">③ 折衷方法 (Compromise)</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">14.8%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">④ 價值/效用法 (Value &amp; utility)</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;"><strong>18.2%</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">⑤ 人工智慧法 (Artificial intelligence)</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">12.5%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">⑥ 整合方法 (Integrated)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4.5%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">⑦ 其他方法 (Others)</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">22.7%</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>🔥 <strong>價值/效用法是最熱門的類別</strong></p>
+</blockquote>
+</section>
+</section>
+<section id="類別-①兩兩比較法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="類別-①兩兩比較法">類別 ①：兩兩比較法</h2>
+<ul>
+<li><strong>核心方法</strong>：AHP（層次分析法）及其擴展</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Badri et al.&nbsp;(2012) – 工業專案風險評估</li>
+<li>Aminbakhsh et al.&nbsp;(2013) – 安全成本 + AHP</li>
+<li>Kokangul et al.&nbsp;(2017) – Fine-Kinney + AHP</li>
+<li>Tepe &amp; Kaya (2020) – Pythagorean 模糊 AHP + 餘弦相似度</li>
+<li>Unver &amp; Ergenc (2021) – 森林伐木活動風險評估</li>
+</ul></li>
+<li><strong>特點</strong>：透過成對比較建構判斷矩陣，處理主觀偏好</li>
+</ul>
+</section>
+<section id="類別-②距離度量法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="類別-②距離度量法">類別 ②：距離度量法</h2>
+<ul>
+<li><strong>核心方法</strong>：TOPSIS（<strong>9 篇</strong>，最常用）、DEMATEL、MABAC、EDAS、MAIRCA</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Gul &amp; Guneri (2016) – 模糊 TOPSIS</li>
+<li>Mohandes &amp; Zhang (2021) – 永續建築專案</li>
+<li>Liu et al.&nbsp;(2020a) – 雙極模糊 MABAC</li>
+<li>Seker et al.&nbsp;(2017) – DEMATEL + 灰系統理論</li>
+</ul></li>
+<li><strong>特點</strong>：透過計算方案與理想解的距離進行排序</li>
+</ul>
+</section>
+<section id="類別-③折衷方法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="類別-③折衷方法">類別 ③：折衷方法</h2>
+<ul>
+<li><strong>核心方法</strong>：VIKOR（<strong>9 篇</strong>）、CoCoSo、MOORA</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Gul et al.&nbsp;(2017, 2018, 2022) – 模糊 VIKOR 系列</li>
+<li>Ak et al.&nbsp;(2022) – 貝氏 BWM + VIKOR</li>
+<li>Chen et al.&nbsp;(2022) – Fermatean 模糊語言 + CoCoSo</li>
+<li>Mete (2019) – Pythagorean 模糊 AHP + MOORA</li>
+</ul></li>
+<li><strong>特點</strong>：最大化群體效用，最小化個體遺憾，適合妥協解</li>
+</ul>
+</section>
+<section id="類別-④價值效用法" class="level2">
+<h2 class="anchored" data-anchor-id="類別-④價值效用法">類別 ④：價值/效用法</h2>
+<ul>
+<li><strong>核心方法</strong>：<strong>風險評分法（13 篇，單方法最多）</strong>、<strong>風險矩陣</strong>、<strong>SWOT</strong>、MARCOS、COPRAS</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Papadakis &amp; Chalkidou (2008) – 暴露-損害方法</li>
+<li>Gnoni &amp; Bragatto (2013) – 指數法（石化廠）</li>
+<li>Adem et al.&nbsp;(2018) – 猶豫模糊語言 SWOT</li>
+<li>Celik &amp; Gul (2021) – 區間 type-2 模糊 + BWM + MARCOS</li>
+<li>Hacibektasoglu et al.&nbsp;(2021) – SWARA + COPRAS</li>
+</ul></li>
+<li><strong>特點</strong>：基於評分函數或效用值直接排序</li>
+</ul>
+</section>
+<section id="類別-⑤人工智慧法" class="level2">
+<h2 class="anchored" data-anchor-id="類別-⑤人工智慧法">類別 ⑤：人工智慧法</h2>
+<ul>
+<li><strong>核心方法</strong>：模糊規則庫系統（11 篇）、神經模糊推理、遺傳演算法</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Beriha et al.&nbsp;(2012) – 模糊邏輯系統</li>
+<li>Fragiadakis et al.&nbsp;(2014) – 神經模糊推理（造船）</li>
+<li>Gul &amp; Celik (2018) – Fine-Kinney + 模糊規則專家系統</li>
+<li>Ilbahar et al.&nbsp;(2018) – Pythagorean 模糊 AHP + 模糊推理系統</li>
+<li>Durdyev et al.&nbsp;(2022) – 模糊 Delphi + 模糊 BWM + 規則推理</li>
+</ul></li>
+<li><strong>特點</strong>：模擬專家推理，處理非線性複雜關係</li>
+</ul>
+</section>
+<section id="類別-⑥整合方法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="類別-⑥整合方法">類別 ⑥：整合方法</h2>
+<ul>
+<li>僅 4 篇，但方法組合新穎：
+<ul>
+<li>Bao et al.&nbsp;(2017) – FMEA + 改進 AHP（礦業職業病）</li>
+<li>Aslantas et al.&nbsp;(2020) – TOPSIS + VIKOR（區間值 Pythagorean 模糊）</li>
+<li>Liu et al.&nbsp;(2021c) – TODIM + PROMETHEE（語言球形模糊）</li>
+<li>Koulinas et al.&nbsp;(2019) – AHP + PART（建築工地）</li>
+</ul></li>
+<li><strong>特點</strong>：融合兩種或以上 MCDM 方法，取長補短</li>
+</ul>
+</section>
+<section id="類別-⑦其他方法" class="level2">
+<h2 class="anchored" data-anchor-id="類別-⑦其他方法">類別 ⑦：其他方法</h2>
+<ul>
+<li>包括：貝氏網路（3 篇）、事件樹（2 篇）、故障樹、Petri 網、Bow-tie、聚類演算法等</li>
+<li><strong>代表研究</strong>：
+<ul>
+<li>Papazoglou &amp; Ale (2007) – 事件樹量化</li>
+<li>Ale et al.&nbsp;(2008) – Bow-tie 用於核/化工廠</li>
+<li>Mutlu &amp; Altuntas (2019) – FMEA + FTA + BIFPET</li>
+<li>Sarkar et al.&nbsp;(2022) – 自組織地圖 + 遺傳 K-means 聚類</li>
+</ul></li>
+<li><strong>特點</strong>：機率化建模，適合因果鏈分析</li>
+</ul>
+<hr>
+</section>
+<section id="風險基準分析" class="level2">
+<h2 class="anchored" data-anchor-id="風險基準分析">4. 風險基準分析</h2>
+<section id="最常用的風險準則出現-2-次" class="level3">
+<h3 class="anchored" data-anchor-id="最常用的風險準則出現-2-次">最常用的風險準則（出現 ≥2 次）</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">風險準則</th>
+<th style="text-align: center;">出現次數</th>
+<th style="text-align: left;">解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Probability</strong>（機率/頻率）</td>
+<td style="text-align: center;"><strong>79</strong></td>
+<td style="text-align: left;">危害發生的可能性</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Severity</strong>（嚴重度）</td>
+<td style="text-align: center;"><strong>57</strong></td>
+<td style="text-align: left;">後果的嚴重程度</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Detectability</strong>（可探測性）</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">危害被發現的難易</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Exposure</strong>（暴露頻率）</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">工人接觸危害的頻率</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Consequence</strong>（後果）</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">廣義後果</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Undetectability</strong>（不可探測性）</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">探測性反面</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Cost</strong>（成本）</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">經濟成本</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="風險準則數量分佈" class="level2">
+<h2 class="anchored" data-anchor-id="風險準則數量分佈">風險準則數量分佈</h2>
+<ul>
+<li><strong>2 個準則</strong>：11 篇 (12.5%)</li>
+<li><strong>3 個準則</strong>：<strong>27 篇 (30.7%)</strong> ← 最常見</li>
+<li><strong>4 個準則</strong>：4 篇 (4.5%)</li>
+<li><strong>5 個準則</strong>：4 篇 (4.5%)</li>
+<li><strong>無明確準則</strong>：22 篇 (25%)</li>
+<li><strong>其他</strong>：20 篇 (22.7%)</li>
+</ul>
+<blockquote class="blockquote">
+<p>📌 最經典的組合：<strong>機率 + 嚴重度 + 可探測性</strong>（類似 FMEA 的 RPN）</p>
+</blockquote>
+<hr>
+</section>
+<section id="風險準則權重方法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="風險準則權重方法">5. 風險準則權重方法</h2>
+<section id="權重方法使用情況" class="level3">
+<h3 class="anchored" data-anchor-id="權重方法使用情況">權重方法使用情況</h3>
+<ul>
+<li>88 篇中，<strong>48 篇</strong> 明確計算了風險準則的權重</li>
+<li>其餘 40 篇採用等權或直接評分（未加權）</li>
+</ul>
+</section>
+<section id="各種權重方法歸納" class="level3">
+<h3 class="anchored" data-anchor-id="各種權重方法歸納">各種權重方法歸納</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">方法類型</th>
+<th style="text-align: left;">具體方法</th>
+<th style="text-align: center;">使用頻率</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>主觀方法</strong></td>
+<td style="text-align: left;">模糊 AHP</td>
+<td style="text-align: center;"><strong>最流行</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">經典 AHP</td>
+<td style="text-align: center;">較多</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">BWM (Best-Worst Method)</td>
+<td style="text-align: center;">少量</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SWARA</td>
+<td style="text-align: center;">少量</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">德爾菲法</td>
+<td style="text-align: center;">少量</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>客觀/組合方法</strong></td>
+<td style="text-align: left;">熵權法</td>
+<td style="text-align: center;">極少</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ITARA (無差異閾值法)</td>
+<td style="text-align: center;">極少</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">BWRA (區塊加權)</td>
+<td style="text-align: center;">極少</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>💡 <strong>未來方向</strong>：更多採用客觀或組合權重，減少主觀偏差</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="不確定性處理方法" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="不確定性處理方法">6. 不確定性處理方法</h2>
+<section id="模糊理論與擴展" class="level3">
+<h3 class="anchored" data-anchor-id="模糊理論與擴展">模糊理論與擴展</h3>
+<ul>
+<li>88 篇中 <strong>51 篇</strong> 使用了模糊/不確定性理論，<strong>37 篇</strong>仍用明確數值</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">方法</th>
+<th style="text-align: center;">次數</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">三角模糊數 (TFNs)</td>
+<td style="text-align: center;"><strong>19</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pythagorean 模糊集</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">區間值 Pythagorean 模糊集</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">梯形模糊數</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">猶豫模糊語言術語集 (HFLTS)</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">區間 type-2 模糊集</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">球形模糊集 / 語言球形模糊集</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">雙極模糊集、q-梯 orthopair 等</td>
+<td style="text-align: center;">各 1</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>✅ 語言表示法（猶豫模糊、Fermatean 語言等）是新興趨勢</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="文獻計量分析" class="level2">
+<h2 class="anchored" data-anchor-id="文獻計量分析">7. 文獻計量分析</h2>
+<section id="發表年份趨勢" class="level3">
+<h3 class="anchored" data-anchor-id="發表年份趨勢">發表年份趨勢</h3>
+<ul>
+<li>2002–2016：低產年份（不足 5 篇/年）</li>
+<li><strong>2017 年之後顯著增長</strong></li>
+<li>2018–2022 年發表量佔全部文獻的 <strong>69.3%</strong></li>
+<li>2021 年達到峰值 15 篇，2022 年（僅 11 個月）13 篇</li>
+</ul>
+<blockquote class="blockquote">
+<p>📈 增長驅動：ISO 45001（2018）、ISO 31000（2018）、企業 OHS 意識提升</p>
+</blockquote>
+</section>
+<section id="期刊分佈2-篇" class="level3">
+<h3 class="anchored" data-anchor-id="期刊分佈2-篇">期刊分佈（≥2 篇）</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 88%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">期刊</th>
+<th style="text-align: center;">篇數</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><em>Safety Science</em></td>
+<td style="text-align: center;"><strong>15</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Human and Ecological Risk Assessment</em></td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>International Journal of Occupational Safety and Ergonomics</em></td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Journal of Cleaner Production</em></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><em>Reliability Engineering &amp; System Safety</em></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><em>Sustainability</em></td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="國家地區分佈" class="level2">
+<h2 class="anchored" data-anchor-id="國家地區分佈">國家/地區分佈</h2>
+<ul>
+<li><strong>土耳其</strong>：37 篇（佔比 42.0%）</li>
+<li><strong>中國</strong>：13 篇（14.8%）</li>
+<li>兩國合計 <strong>56.8%</strong></li>
+<li>其他國家：印度、伊朗、義大利、馬來西亞等</li>
+</ul>
+<section id="應用領域分佈" class="level3">
+<h3 class="anchored" data-anchor-id="應用領域分佈">應用領域分佈</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">行業</th>
+<th style="text-align: center;">篇數</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>建築業</strong></td>
+<td style="text-align: center;"><strong>31</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>製造業</strong></td>
+<td style="text-align: center;"><strong>25</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">礦業</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">能源與化工</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">服務業</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">交通運輸</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>🏗️ 建築業和製造業是 OHSRA 模型最主要的兩大應用場景</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="最具影響力論文top-10" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="最具影響力論文top-10">8. 最具影響力論文（TOP 10）</h2>
+<section id="按總被引-年均被引排序" class="level3">
+<h3 class="anchored" data-anchor-id="按總被引-年均被引排序">按總被引 / 年均被引排序</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">文獻</th>
+<th style="text-align: left;">核心方法</th>
+<th style="text-align: center;">年均被引</th>
+<th style="text-align: center;">總被引</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ilbahar et al.&nbsp;(2018)</td>
+<td style="text-align: left;">Pythagorean 模糊 AHP + 模糊推理系統</td>
+<td style="text-align: center;"><strong>51.2</strong></td>
+<td style="text-align: center;">256</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kokangul et al.&nbsp;(2017)</td>
+<td style="text-align: left;">AHP + Fine-Kinney</td>
+<td style="text-align: center;">23.3</td>
+<td style="text-align: center;">140</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aminbakhsh et al.&nbsp;(2013)</td>
+<td style="text-align: left;">安全成本 + AHP</td>
+<td style="text-align: center;">22.2</td>
+<td style="text-align: center;">222</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gul (2020a)</td>
+<td style="text-align: left;">模糊 AHP + VIKOR</td>
+<td style="text-align: center;">19.0</td>
+<td style="text-align: center;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Karasan et al.&nbsp;(2018)</td>
+<td style="text-align: left;">安全與關鍵效應分析 + Pythagorean 模糊</td>
+<td style="text-align: center;">17.0</td>
+<td style="text-align: center;">85</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gul &amp; Ak (2018)</td>
+<td style="text-align: left;">Pythagorean 模糊 TOPSIS</td>
+<td style="text-align: center;">16.0</td>
+<td style="text-align: center;">80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gul &amp; Guneri (2016)</td>
+<td style="text-align: left;">模糊 TOPSIS</td>
+<td style="text-align: center;">14.9</td>
+<td style="text-align: center;">104</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mete (2019)</td>
+<td style="text-align: left;">FMEA + AHP + MOORA (Pythagorean 模糊)</td>
+<td style="text-align: center;">14.3</td>
+<td style="text-align: center;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Koulinas et al.&nbsp;(2019)</td>
+<td style="text-align: left;">模糊 AHP + PART</td>
+<td style="text-align: center;">12.8</td>
+<td style="text-align: center;">51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mohandes et al.&nbsp;(2020)</td>
+<td style="text-align: left;">模糊 MCDM</td>
+<td style="text-align: center;">12.7</td>
+<td style="text-align: center;">38</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>🏆 Ilbahar et al.&nbsp;(2018) 既是年均被引最高，也是總被引最高</p>
+</blockquote>
+</section>
+</section>
+<section id="方法使用頻率總結所有論文" class="level2">
+<h2 class="anchored" data-anchor-id="方法使用頻率總結所有論文">方法使用頻率總結（所有論文）</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">方法</th>
+<th style="text-align: center;">次數</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">風險評分法</td>
+<td style="text-align: center;"><strong>13</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">模糊規則庫系統</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VIKOR</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TOPSIS</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AHP</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MOORA</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">貝氏網路</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DEMATEL, MABAC, EDAS, COPRAS, MARCOS 等</td>
+<td style="text-align: center;">各 1–2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="當前挑戰與侷限" class="level2">
+<h2 class="anchored" data-anchor-id="當前挑戰與侷限">9. 當前挑戰與侷限</h2>
+<section id="研究不足之處" class="level3">
+<h3 class="anchored" data-anchor-id="研究不足之處">研究不足之處</h3>
+<ol type="1">
+<li><strong>靜態評估</strong>：大多數模型只能處理固定的一組危害，不能隨時間、空間動態變化<br>
+</li>
+<li><strong>專家小組規模小</strong>：通常由少量專家評估，難以反映分散式組織的實際情況<br>
+</li>
+<li><strong>不確定性處理仍不充分</strong>：37 篇使用精確數值，忽略模糊性<br>
+</li>
+<li><strong>主觀權重佔主導</strong>：模糊 AHP 雖普及，但缺乏客觀數據支撐<br>
+</li>
+<li><strong>缺少統一的風險準則體系</strong>：不同研究採用不同準則，難以橫向比較</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="未來研究方向原文建議-8-條" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="未來研究方向原文建議-8-條">10. 未來研究方向（原文建議 8 條）</h2>
+<section id="方向-①更強大的不確定性理論" class="level3">
+<h3 class="anchored" data-anchor-id="方向-①更強大的不確定性理論">方向 ①：更強大的不確定性理論</h3>
+<ul>
+<li>採用多粒度不平衡猶豫模糊語言術語集<br>
+</li>
+<li>區間語言術語多值集<br>
+</li>
+<li>q-梯 orthopair 立方模糊集</li>
+</ul>
+</section>
+<section id="方向-②專家衝突消除" class="level3">
+<h3 class="anchored" data-anchor-id="方向-②專家衝突消除">方向 ②：專家衝突消除</h3>
+<ul>
+<li>引入衝突最小化演算法<br>
+</li>
+<li>共識達成模型（如 Delphi 變體，回饋機制）</li>
+</ul>
+</section>
+<section id="方向-③客觀-組合權重" class="level3">
+<h3 class="anchored" data-anchor-id="方向-③客觀-組合權重">方向 ③：客觀 / 組合權重</h3>
+<ul>
+<li>熵權法、離差最大化法、CRITIC 等<br>
+</li>
+<li>主觀+客觀的組合賦權</li>
+</ul>
+</section>
+<section id="方向-④系統化風險準則體系" class="level3">
+<h3 class="anchored" data-anchor-id="方向-④系統化風險準則體系">方向 ④：系統化風險準則體系</h3>
+<ul>
+<li>建立分層的、標準化的風險準則框架<br>
+</li>
+<li>類似 ISO 31000 的通用結構</li>
+</ul>
+</section>
+<section id="方向-⑤新型-mcdm-模型" class="level3">
+<h3 class="anchored" data-anchor-id="方向-⑤新型-mcdm-模型">方向 ⑤：新型 MCDM 模型</h3>
+<ul>
+<li>開發更適合 OHSRA 的新 MCDM 方法<br>
+</li>
+<li>多種 MCDM 融合提高穩健性（如整合 VIKOR+TOPSIS+ELECTRE）</li>
+</ul>
+</section>
+<section id="方向-⑥動態-ohsra-模型" class="level3">
+<h3 class="anchored" data-anchor-id="方向-⑥動態-ohsra-模型">方向 ⑥：動態 OHSRA 模型</h3>
+<ul>
+<li>考慮時間、空間、環境因素變化<br>
+</li>
+<li>即時數據驅動的動態風險評估</li>
+</ul>
+</section>
+<section id="方向-⑦大群體決策" class="level3">
+<h3 class="anchored" data-anchor-id="方向-⑦大群體決策">方向 ⑦：大群體決策</h3>
+<ul>
+<li>擴展 OHSRA 到大群體環境（例如分散式組織）<br>
+</li>
+<li>採用大數據和社群網路分析</li>
+</ul>
+</section>
+<section id="方向-⑧人工智慧與深度學習" class="level3">
+<h3 class="anchored" data-anchor-id="方向-⑧人工智慧與深度學習">方向 ⑧：人工智慧與深度學習</h3>
+<ul>
+<li>利用深度學習自動學習風險準則權重<br>
+</li>
+<li>從歷史事故數據中提取模式<br>
+</li>
+<li>建構智慧預警系統</li>
+</ul>
+<blockquote class="blockquote">
+<p>🤖 <strong>最有潛力的方向</strong>：深度學習和動態 OHSRA</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="結論與啟示" class="level2">
+<h2 class="anchored" data-anchor-id="結論與啟示">11. 結論與啟示</h2>
+<section id="核心結論" class="level3">
+<h3 class="anchored" data-anchor-id="核心結論">核心結論</h3>
+<ol type="1">
+<li><strong>領域快速發展</strong>：2017 年後論文數量激增，已成為安全管理研究熱點<br>
+</li>
+<li><strong>方法多樣化</strong>、<strong>模糊集應用最廣</strong><br>
+</li>
+<li><strong>風險準則聚焦</strong>：<strong>機率、嚴重度、可探測性是最核心三個指標</strong><br>
+</li>
+<li><strong>應用高度集中</strong>：建築業和製造業佔 60% 以上，土耳其和中國是研究主力<br>
+</li>
+<li><strong>存在明顯侷限</strong>：靜態、小群體、主觀權重為主</li>
+</ol>
+</section>
+<section id="對實務者的啟示" class="level3">
+<h3 class="anchored" data-anchor-id="對實務者的啟示">對實務者的啟示</h3>
+<ul>
+<li>選擇 OHSRA 方法時，應根據行業特點、數據可得性、不確定性程度靈活選擇</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ｑ請舉例營造業施工風險評估與一般行業的風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="ｑ請舉例營造業施工風險評估與一般行業的風險評估">Ｑ、<strong>請舉例（營造業施工風險評估與一般行業的風險評估）</strong></h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>研究指出：發生機率（Probability）、嚴重性（Severity）與可偵測性（Detectability）是最常被納入考量的三大準則（30.7% 的文獻）。</p>
+</div>
+</div>
+<section id="三大風險準則簡要定義" class="level3">
+<h3 class="anchored" data-anchor-id="三大風險準則簡要定義">三大風險準則簡要定義</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">準則</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>發生機率</strong></td>
+<td style="text-align: left;">危害事件發生的可能性（高/中/低，或量化頻率）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>嚴重性</strong></td>
+<td style="text-align: left;">事件發生後，對人員健康、安全造成的後果程度（例如：輕傷、重傷、死亡）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>可偵測性</strong></td>
+<td style="text-align: left;">在事件發生前，能否透過檢查、監測、警報等方式發現危害存在或其前兆</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ａ.-營造業外牆施工墜落風險評估案例" class="level2">
+<h2 class="anchored" data-anchor-id="ａ.-營造業外牆施工墜落風險評估案例">Ａ. 營造業<strong>外牆施工墜落風險</strong>評估案例</h2>
+<ul>
+<li>工人於 10 公尺高之施工架上進行外牆貼磚，未設置完整護欄，需佩戴安全帶。</li>
+</ul>
+<section id="三大準則評估" class="level3">
+<h3 class="anchored" data-anchor-id="三大準則評估">三大準則評估</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 74%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">準則</th>
+<th style="text-align: left;">評估等級</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>機率</strong></td>
+<td style="text-align: left;"><strong>高</strong></td>
+<td style="text-align: left;">施工架未每日檢查，天候變化（強風、下雨）頻繁，工人疲勞或未正確鉤掛安全帶 → 墜落可能性高。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>嚴重性</strong></td>
+<td style="text-align: left;"><strong>非常高</strong></td>
+<td style="text-align: left;">10 公尺高度墜落，極可能導致死亡或多處骨折、重傷。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>可偵測性</strong></td>
+<td style="text-align: left;"><strong>低 → 中等</strong></td>
+<td style="text-align: left;">• 安全帶掛點可由監工目視檢查（可偵測）<br>
+• 但施工架組立缺失（螺絲鬆脫、踏板未固定）在每日作業前若未詳細查驗，不易偵測。<br>
+• 天候突變之前兆（風速計）若未安裝，則無法預警。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="常見改善措施降低風險" class="level3">
+<h3 class="anchored" data-anchor-id="常見改善措施降低風險">常見改善措施（降低風險）</h3>
+<ul>
+<li><p>設置完整護欄、安全母索（降低機率）</p></li>
+<li><p>使用個人墜落防護系統（降低嚴重性）</p></li>
+<li><p>每日作業前檢查施工架與安全帶掛點（提高可偵測性）</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>可偵測性</strong>往往與「定期巡檢」、「安全觀察」密切相關</p>
+</div>
+</div>
+</section>
+</section>
+<section id="ｂ.-長時間重複組裝作業導致腕隧道症候群" class="level2">
+<h2 class="anchored" data-anchor-id="ｂ.-長時間重複組裝作業導致腕隧道症候群">Ｂ. <strong>長時間重複組裝作業導致腕隧道症候群</strong></h2>
+<ul>
+<li>生產線員工每日重複相同手腕動作（鎖螺絲、組裝小型零件），持續 8 小時，無適當休息或輔助工具。</li>
+</ul>
+<section id="三大準則評估-1" class="level3">
+<h3 class="anchored" data-anchor-id="三大準則評估-1">三大準則評估</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">準則</th>
+<th style="text-align: left;">評估等級</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>機率</strong></td>
+<td style="text-align: left;"><strong>中 → 高</strong></td>
+<td style="text-align: left;">若作業節奏快、年資長，罹患累積性肌肉骨骼疾病的機率會顯著上升。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>嚴重性</strong></td>
+<td style="text-align: left;"><strong>中</strong></td>
+<td style="text-align: left;">可能導致手腕麻痛、無力，需手術或長期復健，但通常不致命。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>可偵測性</strong></td>
+<td style="text-align: left;"><strong>低</strong></td>
+<td style="text-align: left;">• 初期症狀（輕微麻木）易被忽視。<br>
+• 無即時監測儀器，需依賴員工自覺與定期健康問卷。<br>
+• 作業現場不易用目視發現「風險累積」。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="常見改善措施" class="level3">
+<h3 class="anchored" data-anchor-id="常見改善措施">常見改善措施</h3>
+<ul>
+<li><p>調整工作檯高度、提供電動工具（降低機率）</p></li>
+<li><p>增加休息頻率、工作輪調（降低機率及嚴重性）</p></li>
+<li><p>定期人因危害評估、員工自報症狀調查（提高可偵測性）</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>強調「健康監測」與「主訴回報」的可偵測方式</p>
+</div>
+</div>
+</section>
+</section>
+<section id="c.-可偵測性-d-與控制措施關係" class="level2">
+<h2 class="anchored" data-anchor-id="c.-可偵測性-d-與控制措施關係">C. <strong>可偵測性 (D) 與控制措施關係？</strong></h2>
+<ul>
+<li><p><strong>加入 D 之後</strong>，風險評估變為：<span class="math inline">\(R=P×S×D\)</span></p></li>
+<li><p><strong>加入可偵測性 (Detectability, D) 能夠有效減少控制措施的失效</strong>，不論是來自人為失誤或自然因素（例如設備老化、天候變化）</p></li>
+<li><p>核心機制：偵測 → 預警 → 補救</p>
+<ul>
+<li>提高可偵測性 → 及早發現危害徵兆或控制措施異常 → 即時介入 → <strong>避免危害真正發生</strong> → 等同於降低了「發生機率 (P)」。</li>
+</ul></li>
+</ul>
+</section>
+<section id="d.-可偵測性-d-對人為失效的影響" class="level2">
+<h2 class="anchored" data-anchor-id="d.-可偵測性-d-對人為失效的影響"><strong>D. 可偵測性 (D)</strong> 對人為失效的影響</h2>
+<p>人為失效例如：操作錯誤、忘記檢查、疏於維護、違反程序。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">控制措施</th>
+<th style="text-align: left;">失效模式</th>
+<th style="text-align: left;">可偵測性設計</th>
+<th style="text-align: left;">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">每日施工架檢查</td>
+<td style="text-align: left;">工人偷懶未確實檢查</td>
+<td style="text-align: left;">安全監工隨機抽驗 + 電子簽核系統（未簽 → 警報）</td>
+<td style="text-align: left;">失效立即被發現，可要求補做 → 降低 P</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">戴安全帽</td>
+<td style="text-align: left;">工人脫帽休息時未戴</td>
+<td style="text-align: left;">AI 攝影機偵測未戴安全帽 → 即時語音提醒</td>
+<td style="text-align: left;">失效秒級偵測 → 立即改正 → 減少墜落物砸傷風險</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">高風險作業許可證</td>
+<td style="text-align: left;">忘記簽核就施工</td>
+<td style="text-align: left;">電子門禁系統：未簽核無法進入作業區</td>
+<td style="text-align: left;">失效被系統阻擋 → 強制執行程序 → P 顯著下降</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<ul>
+<li><p><strong>可偵測性將「隱性的人為失效」轉為「顯性」，讓管理者有機會即時糾正</strong>，而非等到事故發生。</p>
+<ul>
+<li><p>D 分數越高（越難偵測） → RPN 越高 → 需要優先改善 <strong>偵測能力</strong>。</p></li>
+<li><p>改善偵測能力後，D 分數降低 → RPN 降低 → 實際上 P 也因為及時介入而下降。</p></li>
+</ul></li>
+</ul>
+<p>實務上會看到許多風險改善措施其實是<strong>建置監測、檢查、警報系統</strong>，而這些正是為了提升可偵測性，進而降低控制措施的失效風險。</p>
+</blockquote>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>加入可偵測性，等於為控制措施裝上「監視器」與「警報器」。</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="參考文獻" class="level2">
+<h2 class="anchored" data-anchor-id="參考文獻">12. 參考文獻</h2>
+<blockquote class="blockquote">
+<p>Liu, R., Liu, H. C., Shi, H., &amp; Gu, X. Z. (2023). Occupational health and safety risk assessment: A systematic literature review of models, methods, and applications. <em>Safety Science</em>, 160, 106050.</p>
+<p><a href="https://doi.org/10.1016/j.ssci.2022.106050">點此查看原文 DOI</a></p>
+</blockquote>
+<p><strong>資料庫</strong>：Web of Science<br>
+<strong>方法</strong>：PRISMA 系統性綜述<br>
+<strong>納入文獻</strong>：88 篇（2002–2022）<br>
+<strong>分類</strong>：7 大模型類別</p>
+<hr>
+</section>
+<section id="自我詢答" class="level2">
+<h2 class="anchored" data-anchor-id="自我詢答">13. 自我詢答？</h2>
+<ul>
+<li>❓ 您所在領域主要使用哪種風險評估方法？<br>
+</li>
+<li>❓ 當遇到專家意見衝突或數據不確定的問題時，如何處理？<br>
+</li>
+<li>❓ 動態風險評估在您的場景中有多重要？</li>
+</ul>
+<blockquote class="blockquote">
+<p>🗣️ 提問與分享！</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="專業論述---風險與決策" class="level1">
+<h1>3. 專業論述 - 風險與決策</h1>
+<section id="待撰寫與分享" class="level3">
+<h3 class="anchored" data-anchor-id="待撰寫與分享">（待撰寫與分享…）</h3>
+</section>
+</section>
+<section id="推薦參考資料" class="level1">
+<h1>4. 推薦參考資料</h1>
+<section id="練基本功多利用ａｉ工具協助你閱讀." class="level2">
+<h2 class="anchored" data-anchor-id="練基本功多利用ａｉ工具協助你閱讀.">練基本功，多利用ＡＩ工具協助你閱讀….</h2>
+<ul>
+<li><p>Successful health and safety management ,HSG65, HSE ,2013</p></li>
+<li><p>Five steps to risk assessment, INDG163(rev3), 2011</p></li>
+<li><p>Investigating accidents and incidents, HSG245, 2004</p></li>
+<li><p>Reducing error and influencing behaviour , HSG48 , HSE, 1999</p></li>
+<li><p>Managing competence for safety-related systems, HSE, 2006</p></li>
+<li><p>Health and safety training，INDG345(rev1), HSE, 2012.</p></li>
+<li><p>A Guide to measuring Health &amp; Safety Performance, HSE, 2001</p></li>
+<li><p><strong>換你來，自己建構….</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="風險評估的日常運用" class="level1">
+<h1>5. 風險評估的日常運用</h1>
+<p>Q1：問題＿食物外送員車禍風險較高嗎 ? （相對風險ＯＲ）</p>
+<p>Q2：問題＿檢查員會待多久？ （存活分析）</p>
+<p>Q3：換你來…</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>製作者：何明信老師2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
