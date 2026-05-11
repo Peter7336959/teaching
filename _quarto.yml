@@ -73,6 +73,14 @@ website:
           - text: 高溫接觸危害預防策略
             href: 校園＿高溫接觸危害預防策略.qmd
             target: _blank
+      - section: "書籍簡讀"
+        contents:
+          - text: 大腦解鎖
+            href: https://peter7336959.github.io/teaching/books/B_大腦解鎖.html
+            target: _blank        
+            
+            
+            
       - 感謝.qmd
 
 
