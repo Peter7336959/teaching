@@ -18,13 +18,13 @@ website:
     background: primary
     search: true
     left:
-      - text: "首页"
+      - text: "首頁"
         href: index.qmd
         target: _blank
       - text: 危險性機械及設備管理
         href: https://peter7336959.github.io/HME/
         target: _blank
-      - text: 暴露評估 
+      - text: 暴露評估
         href: https://peter7336959.github.io/EA/
         target: _blank
       - text: 事故調查制度實務指南
@@ -37,13 +37,13 @@ website:
     collapse-level: 1
     contents:
       - text: "介紹"
-        href: intro.qmd
+        href: index.qmd
       - section: "甲業"
         contents:
-          - text: RA經驗、總論與文獻導讀
-            href: https://peter7336959.github.io/teaching/RA研究導讀.html
+          - text: 職安衛整體風險評估概念
+            href: https://peter7336959.github.io/teaching/職安衛整體風險評估概念.html
             target: _blank        
-          - text: 風險評估
+          - text: 風險評估（簡易版）
             href: https://peter7336959.github.io/teaching/%E7%94%B2%E6%A5%AD%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
             target: _blank
           - text: 風險評估（詳實版）
@@ -54,7 +54,10 @@ website:
             target: _blank
           - text: 施工風險評估（詳實版）
             href: https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E6%96%BD%E5%B7%A5%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html#/title-slide
-            target: _blank            
+            target: _blank    
+          - text: 營造RA經驗、總論與文獻導讀
+            href: https://peter7336959.github.io/teaching/RA研究導讀.html
+            target: _blank                    
       - section: "職安衛人員"
         contents:
           - text: 機械設備器具安全與風險評估
@@ -86,11 +89,6 @@ website:
             href: https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html
             target: _blank            
             
-            
-      - 感謝.qmd
-
-
-
 
 format:
   html:
