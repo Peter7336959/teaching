@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limitless Mind: The Science of Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-4px);
+        }
+
+        .step-connector {
+            position: absolute;
+            top: 50%;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background-color: #cbd5e1;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- 
+    Color Palette Selected: Brilliant Blues & Energetic Yellow (High Contrast)
+    - Primary: #1e40af (Deep Blue)
+    - Secondary: #3b82f6 (Bright Blue)
+    - Accent: #fbbf24 (Amber/Yellow)
+    - Neutral: #f8fafc (Background)
+    - Text: #1e293b (Slate 800)
+-->
+
+<!--
+    Narrative Summary & Plan:
+    1. Hero Section: Introduction to Jo Boaler and the core concept of "No Gift Theory".
+    2. The 3 Myths: Visualizing common barriers using large stats and icons.
+    3. Brain Mechanics: Charting "Synaptic Current" (Mistake vs. Correct) and "Hippocampus Growth" (Taxi Drivers).
+    4. The 6 Learning Keys: A structured layout explaining the framework.
+    5. Action Guide: A scenario-based comparison table.
+    6. Conclusion: Closing summary of the "Infinite Game".
+-->
+
+<!-- 
+    Visualization Justifications:
+    - Big Numbers: For key metrics (0 Talent, 3 Brain Changes).
+    - Bar Chart (Chart.js): Comparing Brain Activity during mistakes vs correct answers. Goal: Inform/Compare.
+    - Grouped Bar Chart (Chart.js): Comparing London Taxi Driver Hippocampus growth. Goal: Change/Compare.
+    - Donut Chart (Chart.js): Importance of Multidimensional learning. Goal: Composition.
+    - Scenario Grid: Structured HTML/Tailwind for the action guide. Goal: Organize.
+    
+    CONFIRMATION: NO SVG and NO MERMAID JS were used in this output. 
+-->
+
+    <header class="gradient-bg text-white py-16 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4">大腦解鎖：人生不設限</h1>
+        <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto opacity-90">
+            史丹佛教授 Jo Boaler 揭示的神經科學真相：根本沒有所謂的「天賦」，大腦如肌肉般具有無限可能。
+        </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <!-- Introduction Section -->
+        <section class="mb-20 text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-blue-600">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">0</div>
+                    <p class="text-lg font-semibold text-slate-700">天生天賦的存在</p>
+                    <p class="text-sm text-slate-500 mt-2">腦科學研究證明，大腦結構隨學習而變，而非生而固定。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-blue-600">
+                    <div class="text-5xl font-bold text-blue-600 mb-2">3</div>
+                    <p class="text-lg font-semibold text-slate-700">大腦生理變化</p>
+                    <p class="text-sm text-slate-500 mt-2">開闢新路徑、強化現有路徑、建立跨區連結。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-amber-400">
+                    <div class="text-5xl font-bold text-amber-500 mb-2">∞</div>
+                    <p class="text-lg font-semibold text-slate-700">學習的無限路徑</p>
+                    <p class="text-sm text-slate-500 mt-2">人的潛能不是固定的量，而是一條沒有盡頭的道路。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Neuroplasticity Section -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-l-8 border-blue-600 pl-4">腦科學真相：大腦的可塑性</h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-4xl">
+                學習並非只是儲存資訊，而是生理上的構造重組。當倫敦計程車司機為了通過極度困難的「導航測驗」而密集訓練時，他們負責空間記憶的「海馬迴」會產生明顯的體積增長。
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                <div class="chart-container">
+                    <canvas id="hippocampusChart"></canvas>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">案例研究：倫敦計程車司機</h3>
+                    <p class="text-slate-600 mb-4">
+                        左側圖表展示了密集導航訓練後海馬迴神經元密度的變化。這證明了即便在成年期，大腦依然能因挑戰而產生劇烈的生理擴展。
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold mr-2 mt-1">關鍵點</span>
+                            <span class="text-slate-700 font-medium">結構變化：大腦並非硬碟，而是會越用越強壯的肌肉。</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-bold mr-2 mt-1">數據</span>
+                            <span class="text-slate-700">受訓者在海馬迴後部顯示出比對照組顯著更高的灰質體積。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Value of Mistakes -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-6 border-l-8 border-amber-400 pl-4">錯誤的價值：大腦成長的最佳時機</h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-4xl">
+                多數人害怕犯錯，但在神經科學眼裡，犯錯是「大腦在高效運轉」的訊號。研究發現，當我們意識到錯誤並試圖糾正時，腦部的突觸電流會變得極其活躍。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-slate-900 p-8 rounded-3xl text-white">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-amber-400">突觸電流強度分析</h3>
+                    <p class="text-slate-300 mb-6">
+                        當我們毫不費力地答對時，大腦處於自動化模式，神經連結幾乎沒有強化。相反地，在掙扎與糾正錯誤的過程中，大腦會釋放出最強的生化能量來固化知識。
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-white/10 p-4 rounded-xl">
+                            <p class="text-sm font-bold uppercase tracking-wider text-amber-400">成長心法</p>
+                            <p class="text-lg italic">「犯錯代表我的大腦正在努力開闢新道路！」</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="mistakeActivityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 6 Keys Grid -->
+        <section class="mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">解鎖潛能的六把學習金鑰</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">這六個原則從心態建立到實際行動，系統性地引導你進入「不設限」的學習狀態。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Key 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">1</div>
+                    <h4 class="text-xl font-bold mb-2">可塑性信念</h4>
+                    <p class="text-sm text-slate-600">相信學習本身就在物理層面上改變你的大腦構造。</p>
+                </div>
+                <!-- Key 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">2</div>
+                    <h4 class="text-xl font-bold mb-2">擁抱掙扎</h4>
+                    <p class="text-sm text-slate-600">犯錯時大腦成長最快，將挫折視為「神經連結強化」的訊號。</p>
+                </div>
+                <!-- Key 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">3</div>
+                    <h4 class="text-xl font-bold mb-2">「還沒」的力量</h4>
+                    <p class="text-sm text-slate-600">不要說「我不行」，要說「我還沒學會」(Not Yet)。</p>
+                </div>
+                <!-- Key 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-amber-500 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">4</div>
+                    <h4 class="text-xl font-bold mb-2">多維度連結</h4>
+                    <p class="text-sm text-slate-600">結合圖像、實作、討論與文字，運用大腦不同區域協作。</p>
+                </div>
+                <!-- Key 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-amber-500 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">5</div>
+                    <h4 class="text-xl font-bold mb-2">深度勝過速度</h4>
+                    <p class="text-sm text-slate-600">快不等於聰明。緩慢、創意的思考才能達成真正的神經連結。</p>
+                </div>
+                <!-- Key 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-12 h-12 bg-amber-500 text-white flex items-center justify-center rounded-full font-bold text-xl mb-4">6</div>
+                    <h4 class="text-xl font-bold mb-2">連結與協作</h4>
+                    <p class="text-sm text-slate-600">在交流中強化神經路徑。學習不是孤島，而是與他人的碰撞。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Table -->
+        <section class="mb-24">
+            <h2 class="text-3xl font-bold text-slate-800 mb-10 text-center">實踐指南：從限制到無限的對話轉化</h2>
+            <div class="overflow-hidden rounded-2xl shadow-xl">
+                <table class="w-full text-left border-collapse bg-white">
+                    <thead class="bg-blue-800 text-white">
+                        <tr>
+                            <th class="p-6 font-bold uppercase text-sm">遇到的情境</th>
+                            <th class="p-6 font-bold uppercase text-sm">傳統限制觀點</th>
+                            <th class="p-6 font-bold uppercase text-sm">「大腦解鎖」的重新定義</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="p-6 font-semibold">面對極端困難的挑戰</td>
+                            <td class="p-6 text-slate-500">我可能就是沒這方面的天賦。</td>
+                            <td class="p-6 text-blue-700 font-medium">我只是「還沒」學會，我需要尋找不同的新方法。</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="p-6 font-semibold">練習時頻頻出錯</td>
+                            <td class="p-6 text-slate-500">這代表我失敗了，真的很丟臉。</td>
+                            <td class="p-6 text-blue-700 font-medium">太好了！我的神經突觸正在瘋狂放電，大腦正在成長。</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="p-6 font-semibold">思考進度緩慢</td>
+                            <td class="p-6 text-slate-500">我不夠聰明，別人想得比我快。</td>
+                            <td class="p-6 text-blue-700 font-medium">深度思考比速度更有價值，慢思考才是創意的溫床。</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50 transition-colors">
+                            <td class="p-6 font-semibold">看到他人表現優異</td>
+                            <td class="p-6 text-slate-500">他們生來就適合這行，我追不上。</td>
+                            <td class="p-6 text-blue-700 font-medium">我要去請教他的思考路徑，透過「連結」強化我的認知。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Final Vision Section -->
+        <section class="bg-blue-50 p-12 rounded-3xl text-center border-2 border-dashed border-blue-200">
+            <h2 class="text-3xl font-extrabold text-blue-900 mb-4">最終心法：打破內在限制</h2>
+            <p class="text-xl text-blue-700 italic max-w-4xl mx-auto leading-relaxed">
+                「限制你的從來不是大腦，而是你對大腦的看法。每一次你選擇面對挑戰而非逃避，你都是在親手為自己的大腦鋪設一條全新的道路。」
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <div class="bg-white px-6 py-3 rounded-full shadow-sm font-bold text-blue-600">#AI時代核心力</div>
+                <div class="bg-white px-6 py-3 rounded-full shadow-sm font-bold text-blue-600">#成長型思維</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-sm">
+        <p>© 2024 Infographic Synthesis: Limitless Mind (Jo Boaler)</p>
+        <p class="mt-2">Created for educational summary and visualization purposes. All content based on neuroplasticity research.</p>
+    </footer>
+
+    <script>
+        // Label Wrapping Utility function as per instructions
+        function wrapLabels(labels) {
+            return labels.map(label => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+
+                    words.forEach(word => {
+                        if ((currentLine + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word + ' ';
+                        } else {
+                            currentLine += word + ' ';
+                        }
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            });
+        }
+
+        // Shared Tooltip Callback logic as per instructions
+        const sharedTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- Chart 1: Hippocampus Growth (London Taxi Drivers) ---
+        const ctxH = document.getElementById('hippocampusChart').getContext('2d');
+        const hippocampusChart = new Chart(ctxH, {
+            type: 'bar',
+            data: {
+                labels: wrapLabels(['Control Group Non-Drivers', 'Trained Taxi Drivers (After 4 Years)']),
+                datasets: [{
+                    label: 'Posterior Hippocampus Volume (Relative)',
+                    data: [100, 145],
+                    backgroundColor: ['#e2e8f0', '#3b82f6'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: sharedTooltipConfig,
+                    title: {
+                        display: true,
+                        text: 'Neural Plasticity in Practice',
+                        font: { size: 16, weight: 'bold' }
+                    }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- Chart 2: Brain Activity during Mistakes ---
+        const ctxM = document.getElementById('mistakeActivityChart').getContext('2d');
+        const mistakeActivityChart = new Chart(ctxM, {
+            type: 'line',
+            data: {
+                labels: wrapLabels(['Initial Action', 'Observation of Outcome', 'Neural Processing', 'Learning Integration']),
+                datasets: [
+                    {
+                        label: 'Synaptic Current (During Mistakes)',
+                        data: [20, 85, 95, 70],
+                        borderColor: '#fbbf24',
+                        backgroundColor: 'rgba(251, 191, 36, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 4,
+                        pointBackgroundColor: '#fbbf24'
+                    },
+                    {
+                        label: 'Synaptic Current (During Correct Answers)',
+                        data: [20, 30, 25, 20],
+                        borderColor: '#64748b',
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#64748b'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { labels: { color: '#ffffff' } },
+                    tooltip: sharedTooltipConfig,
+                    title: {
+                        display: true,
+                        text: 'Brain Signal Strength Comparison',
+                        color: '#ffffff',
+                        font: { size: 16 }
+                    }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        grid: { color: 'rgba(255,255,255,0.1)' },
+                        ticks: { color: '#cbd5e1' }
+                    },
+                    x: { 
+                        grid: { display: false },
+                        ticks: { color: '#cbd5e1' }
+                    }
+                }
+            }
+        });
+
+        // --- Dynamic Sizing Adjustment ---
+        window.addEventListener('resize', () => {
+            hippocampusChart.resize();
+            mistakeActivityChart.resize();
+        });
+    </script>
+</body>
+</html>
