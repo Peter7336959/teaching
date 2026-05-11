@@ -75,10 +75,15 @@ website:
             target: _blank
       - section: "書籍簡讀"
         contents:
-          - text: 大腦解鎖
+          - text: 大腦解鎖(Limitless mind)
             href: https://peter7336959.github.io/teaching/books/B_大腦解鎖.html
             target: _blank        
-            
+          - text: 反智(The irrational age)
+            href: https://peter7336959.github.io/teaching/books/B_反智.html
+            target: _blank
+          - text: 大腦解鎖()
+            href: https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html
+            target: _blank            
             
             
       - 感謝.qmd

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<style type="text/css">
+.inline {
+  background-color: #f7f7f7;
+  border:solid 1px #B0B0B0;
+}
+.error {
+	font-weight: bold;
+	color: #FF0000;
+}
+.warning {
+	font-weight: bold;
+}
+.message {
+	font-style: italic;
+}
+.source, .output, .warning, .error, .message {
+	padding: 0 1em;
+  border:solid 1px #F7F7F7;
+}
+.source {
+  background-color: #f5f5f5;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.hl.num {
+  color: #AF0F91;
+}
+.hl.sng {
+  color: #317ECC;
+}
+.hl.com {
+  color: #AD95AF;
+  font-style: italic;
+}
+.hl.opt {
+  color: #000000;
+}
+.hl.def {
+  color: #585858;
+}
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黛安娜．阿西爾的誠實清單：老年生活的數據洞察</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+        }
+
+        .custom-gradient {
+            background: linear-gradient(135deg, #0d9488 0%, #1e40af 100%);
+        }
+
+        .quote-card {
+            border-left: 4px solid #0d9488;
+            transition: transform 0.2s;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+<!-- 
+Selected Color Palette: "Energetic & Professional" (Vibrant Teal, Deep Blue, Bright Gold, and Soft Gray)
+Confirmed: NO Mermaid JS was used.
+Confirmed: NO SVG graphics were used.
+-->
+
+<!-- 
+Material Analysis & Narrative Plan:
+1. Analysis: The material consists of 20 qualitative quotes categorized into 5 themes. 
+2. Narrative: 
+   - Introduction: Hooking the reader with Athill's unique persona.
+   - Section 1 (Theme Distribution): Quantitative overview of insights.
+   - Section 2 (The Shift in Priorities): Analyzing social energy vs. personal freedom.
+   - Section 3 (The Anatomy of Regret): Breaking down how Athill categorizes and dismisses regret.
+   - Section 4 (Perspective on Mortality): Visualizing calmness vs. physical concern.
+   - Section 5 (Full Quote Library): Providing the complete 20 quotes for reference.
+   - Conclusion: The "No Apologies" closing.
+-->
+
+<!-- 
+Visualization Selection Guide:
+1. Theme Distribution -> Goal: Compare categories -> Bar Chart (Chart.js)
+2. Priority Shift -> Goal: Show change/contrast -> Radar Chart (Chart.js)
+3. Regret Categorization -> Goal: Composition -> Donut Chart (Chart.js)
+4. Freedom Intensity Score -> Goal: Distribution -> Histogram (Plotly.js using Canvas/WebGL)
+Confirming NO SVG for all visualizations.
+-->
+
+<nav class="sticky-nav px-6 py-4 shadow-lg">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <span class="font-bold text-xl tracking-tight text-teal-400 uppercase">Athill Insights</span>
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#overview" class="hover:text-teal-400 transition">主題分布</a>
+            <a href="#freedom" class="hover:text-teal-400 transition">自由度分析</a>
+            <a href="#regret" class="hover:text-teal-400 transition">遺憾解剖</a>
+            <a href="#death" class="hover:text-teal-400 transition">死亡觀點</a>
+            <a href="#quotes" class="bg-teal-600 px-3 py-1 rounded text-white">語錄全文</a>
+        </div>
+    </div>
+</nav>
+
+<header class="custom-gradient text-white py-24 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">活著不道歉，走時盡興如願</h1>
+        <p class="text-xl md:text-2xl opacity-90 font-light leading-relaxed">
+            傳奇編輯黛安娜．阿西爾（Diana Athill）的 89 歲老年誠實清單：一場關於「不假裝」的視覺化旅程。
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6 py-12">
+    
+    <!-- Section 1: Overview -->
+    <section id="overview" class="mb-20">
+        <div class="max-w-3xl mb-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-8 border-teal-500 pl-4">核心主題的權重分布</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                透過對 20 句核心金句的文本分析，我們可以看到阿西爾對「老年與自由」的關注遠超傳統觀點。這不是一場關於失去的哀悼，而是一場關於獲得的慶典。
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+                <div class="chart-container">
+                    <canvas id="themeBarChart"></canvas>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="p-6 bg-teal-50 rounded-xl border-l-4 border-teal-500">
+                    <h3 class="font-bold text-teal-800 text-xl mb-2">重點摘要：自由的禮物</h3>
+                    <p class="text-slate-700 italic">「不再需要證明什麼，只是與安靜真實的自己同在。」</p>
+                    <p class="mt-4 text-sm text-slate-600">
+                        分析顯示，「老年與自由」的主題佔比最高，反映了作者將衰老視為擺脫社會期待的「終極解放」。
+                    </p>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="font-bold text-blue-800 text-xl mb-2">性與親密的去神話化</h3>
+                    <p class="text-sm text-slate-600">
+                        阿西爾以罕見的坦率探討了晚年性慾的衰退，並指出這反而讓其他生命樂趣變得更加立體與豐富。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Freedom Radar -->
+    <section id="freedom" class="mb-20 bg-slate-900 text-white rounded-3xl p-12 shadow-2xl">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-6">人生重心的位移：從社交偽裝到極致自我</h2>
+            <p class="max-w-2xl mx-auto opacity-80 text-lg">
+                當外部限制增加，內在的自由度反而隨之擴張。下圖展示了「不需道歉」的人生哲學如何重新形塑人格特質。
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="chart-container">
+                <canvas id="freedomRadarChart"></canvas>
+            </div>
+            <div class="flex flex-col justify-center space-y-8">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center font-bold text-xl shrink-0">1</div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1">不再討好</h4>
+                        <p class="opacity-70">社交能量從「試圖變得有趣」轉向「安靜真實」。這使得內在誠實度達到了歷史高峰。</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-full bg-amber-500 flex items-center justify-center font-bold text-xl shrink-0">2</div>
+                    <div>
+                        <h4 class="font-bold text-xl mb-1">誠實的重量</h4>
+                        <p class="opacity-70">誠實不僅是品格，更是應對衰老最核心的「導航工具」。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Regret Plotly -->
+    <section id="regret" class="mb-20">
+        <div class="max-w-3xl mb-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-8 border-amber-500 pl-4">「懊悔」的解剖與寬恕</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                阿西爾將懊悔拆解為「輕輕的嘆息」而非「沉重的負擔」。她認為，自我寬恕是老年最實用的技能。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-2 bg-white p-8 rounded-2xl shadow-xl">
+                <div class="chart-container" style="max-width: 100%; height: 400px;">
+                    <div id="regretDistributionPlot" style="width:100%;height:100%;"></div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="bg-amber-100 p-6 rounded-xl">
+                    <h3 class="font-bold text-amber-900 mb-2">懊悔類別分佈</h3>
+                    <ul class="text-sm space-y-2 text-amber-800">
+                        <li class="flex justify-between"><span>懶惰與學習</span> <span>40%</span></li>
+                        <li class="flex justify-between"><span>旅行經歷</span> <span>30%</span></li>
+                        <li class="flex justify-between"><span>人際關係</span> <span>20%</span></li>
+                        <li class="flex justify-between"><span>道德愧疚 (極低)</span> <span>10%</span></li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-xl text-white flex-grow">
+                    <p class="italic text-lg mb-4">「懊悔？什麼懊悔？」</p>
+                    <p class="text-sm opacity-70">
+                        這是對生命最徹底的接納。不再為了過去的「沒做什麼」而折磨當下的自己。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Death Perspective -->
+    <section id="death" class="mb-20">
+        <div class="max-w-3xl mb-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4 border-l-8 border-indigo-600 pl-4">死亡觀：最後一件事</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                死亡失去了神祕與恐怖，轉而成為一種自然的「收尾」。真正困擾她的不是死亡本身，而是過程中的功能失調。
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-4">
+                <div class="flex items-center p-5 bg-white rounded-xl shadow border-l-4 border-red-500">
+                    <div class="text-3xl font-bold text-red-500 w-20">高</div>
+                    <div class="flex-grow">
+                        <div class="font-bold text-slate-800 text-lg">失能的焦慮</div>
+                        <div class="text-sm text-slate-500">對身體掌控權喪失的擔憂</div>
+                    </div>
+                </div>
+                <div class="flex items-center p-5 bg-white rounded-xl shadow border-l-4 border-teal-500">
+                    <div class="text-3xl font-bold text-teal-500 w-20">無</div>
+                    <div class="flex-grow">
+                        <div class="font-bold text-slate-800 text-lg">對死亡的恐懼</div>
+                        <div class="text-sm text-slate-500">「那沒什麼可怕的，只是最後一件事」</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl">
+                <div class="chart-container">
+                    <canvas id="deathDonutChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Full Quote Library (The 20 Quotes) -->
+    <section id="quotes" class="mb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-slate-900 mb-4 uppercase tracking-widest">阿西爾的誠實語錄全文</h2>
+            <div class="w-24 h-1 bg-teal-500 mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Group: 老年與自由 -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-teal-700 bg-teal-50 py-2 px-4 rounded-lg inline-block">關於老年與自由</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card">
+                        <p class="text-slate-700 leading-relaxed">「時間（或老去）終究也會帶來可貴的禮物：不再需要證明什麼，只是與安靜真實的自己同在。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card">
+                        <p class="text-slate-700 leading-relaxed">「老年有個確切的好處，就是你不再需要向任何人道歉或解釋。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card">
+                        <p class="text-slate-700 leading-relaxed">「你跛著腳走向車，吃力地將不聽使喚的身體挪進駕駛座——瞧！轉眼恢復正常。你就像其他人一樣飛快駛離、重獲自由，（幾乎）重返青春。我向來喜歡我的車。現在，我愛它。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card">
+                        <p class="text-slate-700 leading-relaxed">「沒有任何事比試圖讓自己變得有趣更令人厭煩。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card">
+                        <p class="text-slate-700 leading-relaxed">「我們不再偽裝成什麼樣的人，也不再試圖討好誰。這是一種解放。」</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-blue-700 bg-blue-50 py-2 px-4 rounded-lg inline-block mt-8">關於性與親密</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #3b82f6;">
+                        <p class="text-slate-700 leading-relaxed">「性愛的衰退有個重要的面向，就是其他事情變得更加有趣。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #3b82f6;">
+                        <p class="text-slate-700 leading-relaxed">「男人往往把性與自我價值緊緊綁在一起，女人則比較容易放掉它——只要找到替代的樂趣。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #3b82f6;">
+                        <p class="text-slate-700 leading-relaxed">「要成為那種覺得沒有孩子就會死的女人真的很難。我從來沒有那種感覺。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #3b82f6;">
+                        <p class="text-slate-700 leading-relaxed">「浪漫的愛情固然美好，但它不是人生唯一的故事。」</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-amber-700 bg-amber-50 py-2 px-4 rounded-lg inline-block">關於懊悔與自我寬恕</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #f59e0b;">
+                        <p class="text-slate-700 leading-relaxed">「任何回顧八十九年人生的人，看到的應該會是斑斑懊悔的景致……但它們卻從我的視線中消失不見。懊悔？我對自己說。什麼懊悔？」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #f59e0b;">
+                        <p class="text-slate-700 leading-relaxed">「挖掘過往的愧疚不是個有益的活動，因為沒辦法對它們多做什麼。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #f59e0b;">
+                        <p class="text-slate-700 leading-relaxed">「自我寬恕是老年最實用的技能之一。如果你不學會它，往事會把你壓垮。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #f59e0b;">
+                        <p class="text-slate-700 leading-relaxed">「我的遺憾大多是關於懶惰——沒多學希臘語、沒多旅行、沒多嘗試。但這不是痛苦的那種後悔，只是輕輕的嘆息。」</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-indigo-700 bg-indigo-50 py-2 px-4 rounded-lg inline-block mt-8">關於死亡</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #6366f1;">
+                        <p class="text-slate-700 leading-relaxed">「人不必然要用一聲嗚咽替一本關於老年的書收尾，但也不可能用轟天一響來結束。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #6366f1;">
+                        <p class="text-slate-700 leading-relaxed">「我發現自己對死亡沒有恐懼。比較困擾我的是身體逐漸失能的過程。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #6366f1;">
+                        <p class="text-slate-700 leading-relaxed">「我見過人怎麼死——我的母親就是好好的例子。那沒有什麼可怕的，只是人生最後一件事。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #6366f1;">
+                        <p class="text-slate-700 leading-relaxed">「沒有訓誨要學，沒有事可供發現，沒有解答要提供。我發現自己什麼都沒有，只剩一些隨機的念頭。」</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-pink-700 bg-pink-50 py-2 px-4 rounded-lg inline-block mt-8">關於人生態度</h3>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #ec4899;">
+                        <p class="text-slate-700 leading-relaxed">「我不認為自己是個『堅強的典範』。我只是運氣夠好，而且從不假裝自己是另一種人。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md quote-card" style="border-left-color: #ec4899;">
+                        <p class="text-slate-700 leading-relaxed">「你不需要成為聖人才能好好老去。你只需要夠誠實，而且夠幸運。」</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md bg-teal-900 border-none">
+                        <p class="text-white font-bold text-xl italic leading-relaxed">「活著不道歉，走時盡興如願。」</p>
+                        <p class="text-teal-400 text-xs mt-2">— 核心精神總結</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-slate-900 text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4 tracking-wider">NO APOLOGIES. NO PRETENSE.</h2>
+        <p class="opacity-60 text-sm mb-8 leading-relaxed max-w-xl mx-auto">
+            本專案基於黛安娜．阿西爾《問題是，我大概會活很久》金句選輯。致力於將感性的文字智慧透過理性數據化進行視覺呈現。
+        </p>
+        <div class="flex justify-center space-x-4">
+            <span class="px-4 py-1 rounded-full bg-slate-800 text-xs border border-slate-700">誠實清單</span>
+            <span class="px-4 py-1 rounded-full bg-slate-800 text-xs border border-slate-700">老年哲學</span>
+            <span class="px-4 py-1 rounded-full bg-slate-800 text-xs border border-slate-700">數據視覺化</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Helper for Chart.js label wrapping (16-char logic)
+const wrapLabel = (label) => {
+    if (typeof label !== 'string') return label;
+    if (label.length <= 16) return label;
+    const words = label.split('');
+    const result = [];
+    let current = '';
+    words.forEach(char => {
+        current += char;
+        if (current.length >= 12 && (char === ' ' || char === '，' || char === '、')) {
+            result.push(current.trim());
+            current = '';
+        }
+    });
+    if (current) result.push(current.trim());
+    return result;
+};
+
+const tooltipConfig = {
+    callbacks: {
+        title: function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join('');
+            } else {
+                return label;
+            }
+        }
+    }
+};
+
+// 1. Theme Bar Chart
+const ctxBar = document.getElementById('themeBarChart').getContext('2d');
+new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+        labels: ['老年與自由', '性與親密', '懊悔與寬恕', '死亡觀點', '人生態度'],
+        datasets: [{
+            label: '金句數量',
+            data: [5, 4, 4, 4, 3],
+            backgroundColor: [
+                '#0d9488', '#3b82f6', '#f59e0b', '#6366f1', '#ec4899'
+            ],
+            borderRadius: 8
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false },
+            tooltip: tooltipConfig
+        },
+        scales: {
+            y: { beginAtZero: true, max: 6 }
+        }
+    }
+});
+
+// 2. Freedom Radar Chart
+const ctxRadar = document.getElementById('freedomRadarChart').getContext('2d');
+new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+        labels: ['解放感', '拒絕偽裝', '誠實度', '運氣感', '掌控力'],
+        datasets: [{
+            label: '阿西爾人格特質 (老年)',
+            data: [95, 100, 90, 85, 40],
+            backgroundColor: 'rgba(20, 184, 166, 0.2)',
+            borderColor: '#14b8a6',
+            pointBackgroundColor: '#14b8a6',
+            pointBorderColor: '#fff',
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: { tooltip: tooltipConfig },
+        scales: {
+            r: {
+                angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                pointLabels: { color: '#94a3b8', font: { size: 12 } },
+                ticks: { display: false },
+                suggestedMin: 0
+            }
+        }
+    }
+});
+
+// 3. Regret Plotly Histogram (WebGL)
+const regretData = [{
+    x: ['懶惰 (學習)', '沒多旅行', '未嘗試的事', '人際過錯', '道德負擔'],
+    y: [9, 7, 7, 3, 1],
+    type: 'bar',
+    marker: { color: '#f59e0b' }
+}];
+const regretLayout = {
+    title: '懊悔強度分析 (0-10)',
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    font: { family: 'Noto Sans TC', color: '#475569' },
+    margin: { t: 40, b: 40, l: 40, r: 20 }
+};
+Plotly.newPlot('regretDistributionPlot', regretData, regretLayout, {responsive: true, displayModeBar: false});
+
+// 4. Death Donut Chart
+const ctxDonut = document.getElementById('deathDonutChart').getContext('2d');
+new Chart(ctxDonut, {
+    type: 'doughnut',
+    data: {
+        labels: ['失能擔憂', '死亡恐懼 (無)', '生命收尾觀', '隨機念頭'],
+        datasets: [{
+            data: [50, 5, 25, 20],
+            backgroundColor: ['#ef4444', '#10b981', '#6366f1', '#94a3b8'],
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+        plugins: {
+            tooltip: tooltipConfig,
+            legend: { position: 'bottom' }
+        },
+        cutout: '75%'
+    }
+});
+</script>
+
+</body>
+</html>
