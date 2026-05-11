@@ -34,6 +34,7 @@ website:
   sidebar:
     style: "docked"
     search: true
+    collapse-level: 1
     contents:
       - text: "介紹"
         href: intro.qmd
