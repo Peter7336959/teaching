@@ -40,27 +40,21 @@ website:
         href: index.qmd
       - section: "甲業"
         contents:
-          - text: 職安衛風險評估
+          - text: 職安衛風RA
             href: 職安衛整體風險評估概念.qmd
             target: _blank        
-          - text: 安全風險評估(簡易版)
-            href: https://peter7336959.github.io/teaching/%E7%94%B2%E6%A5%AD%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
-            target: _blank
-          - text: 安全風險評估(詳實版)
+          - text: 安全RA
             href: 甲業＿風險評估詳實版.qmd
             target: _blank            
-          - text: 施工安全風險評估(簡易版)
-            href: https://peter7336959.github.io/teaching/%E7%87%9F%E7%94%B2%EF%BC%BF%E9%A2%A8%E9%9A%AA%E8%A9%95%E4%BC%B0.html
-            target: _blank
-          - text: 施工安全風險評估(詳實版)
-            href: 營甲＿施工風險評估.qmd
+          - text: 施工安全RA
+            href: 營甲_施工風險評估.qmd
             target: _blank    
-          - text: 營造RA經驗&文獻
+          - text: 營造RA經驗、文獻
             href: RA研究導讀.qmd
-            target: _blank                    
-          - text: 職業衛生暴露評估
+            target: _blank                   
+          - text: 職業衛生EA
             href: 職業衛生暴露風險評估與實務.qmd
-            target: _blank                         
+            target: _blank                          
       - section: "職安衛人員"
         contents:
           - text: 機械設備器具安全與風險評估
@@ -96,5 +90,5 @@ website:
 format:
   html:
     theme: cosmo
-    css: style\styles.css
+    css: styles.css
     toc: true

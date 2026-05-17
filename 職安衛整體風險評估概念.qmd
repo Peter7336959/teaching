@@ -2,6 +2,7 @@
 title: "職場風險評估總論"
 format: 
   revealjs:
+    toc-title: ""    
     smaller: true
     scrollable: true
     show-slide-number: all
@@ -13,9 +14,11 @@ format:
     chalkboard: true
     toc: true
     toc-depth: 1
+    code-fold: false
     fig-responsive: true
     css: 
       - style/custom.css
+      - style/table.css
 ---
 
 # 職場風險評估總論
@@ -133,7 +136,7 @@ format:
 ## 第三部分：安全 vs. 衛生風險評估比較
 
 | 比較項目 | 通用風險評估 (安全 - Safety) | 化學品風險評估 (衛生 - Hygiene) |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | **傷害性質** | 急性、即時發生（如骨折、電擊、爆炸傷）。 | 慢性、累積、延遲發生（如癌症、神經萎縮）。 |
 | **危害感知** | 危害清晰可見（如漏電、轉動軸、不穩的梯子）。 | 危害常不可見（如無味蒸氣、亞微米粉塵）。 |
 | **判定準則** | 機械安全標準、法規淨空間距、承重係數。 | **OEL**（暴露限值）、**TWA**、**ADME** 分布模型。 |
