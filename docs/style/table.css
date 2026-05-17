@@ -1,0 +1,59 @@
+/* ========================================
+   Revealjs 表格美化樣式表
+   功能：生動、顯眼、易讀、響應式
+   作者：Quarto Expert
+   版本：1.0.0
+   ======================================== */
+
+/* -------------------------------
+   1. 基礎表格樣式（全域美化）
+--------------------------------- */
+.reveal table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.7em;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* 表格懸停效果 */
+.reveal table:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* -------------------------------
+   2. 表格標題列（醒目設計）
+--------------------------------- */
+.reveal th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+/* 標題列懸停效果 */
+.reveal th:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46a0 100%);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* 第一欄標題特殊樣式 */
+.reveal th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.reveal th:last-child {
+    border-top-right-radius: 12px;
+}

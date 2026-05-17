@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職業安全風險評估 (RA)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 加載 MathJax 用於高品質 LaTeX 渲染 -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.8;
+            scroll-behavior: smooth;
+        }
+
+        /* NIOSH Hierarchy Replica - CSS Only */
+        .hoc-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 650px;
+            margin: 4rem auto;
+        }
+
+        .hoc-level {
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            padding: 1.25rem;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hoc-elimination { width: 100%; background-color: #3b719f; border-radius: 12px 12px 0 0; }
+        .hoc-substitution { width: 85%; background-color: #84bd5e; }
+        .hoc-engineering { width: 70%; background-color: #ffcc00; color: #333; }
+        .hoc-administrative { width: 55%; background-color: #f37021; }
+        .hoc-ppe { width: 40%; background-color: #ed1c24; border-radius: 0 0 12px 12px; }
+
+        /* ISO 45001 PDCA Loop with LaTeX Tags */
+        .iso-circle {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            border: 10px solid #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 4rem auto;
+        }
+
+        .iso-core {
+            width: 140px;
+            height: 140px;
+            background-color: #1e3a8a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        .iso-phase {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background-color: white;
+            border: 3px solid #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            color: #1e3a8a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .phase-plan { top: -45px; border-color: #ef4444; color: #ef4444; border-width: 4px; }
+        .phase-do { right: -45px; }
+        .phase-check { bottom: -45px; }
+        .phase-act { left: -45px; }
+
+        .ra-highlight {
+            background-color: #ef4444;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            position: absolute;
+            top: -25px;
+            white-space: nowrap;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 3rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 2rem auto;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-slate-900 text-white py-24 px-6 shadow-2xl">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">職場安全風險評估 (RA)<br></h1>
+            <p class="text-xl text-slate-400 max-w-4xl leading-relaxed">
+                本指引遵循 <strong>ISO 45001</strong> 管理架構與 <strong>NIOSH</strong> 控制階層理論，將風險管理從「經驗法則」提升至「系統化量測」，並強化風險評估與緊急應變的科學動態連動。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-20 space-y-32">
+
+        <!-- 1. ISO 45001 角色 -->
+        <section id="section-1" class="info-card">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">條文對齊：ISO 45001 Clause 6.1</span>
+                    <h2 class="text-4xl font-bold text-slate-900">1. RA 在 ISO 45001 中的戰略角色</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        在國際標準中，風險評估 (Risk Assessment) 被定位為整個管理體系的「情報引擎」。它實現了從「事故補救」到 <strong>主動預防 (Proactive Prevention)</strong> 的管理轉型。
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold">決定資源配置</h4>
+                                <p class="text-sm text-slate-500">透過 RA 判定的風險等級，管理者能科學地決定預算與人力投入優先順序。</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold">驅動作業管制</h4>
+                                <p class="text-sm text-slate-500">所有的作業標準 (SOP) 必須立基於 RA 辨識出的危害源與控制需求。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="iso-circle">
+                    <div class="iso-core">
+                        <span class="font-bold">領導作用</span>
+                        <span class="text-xs mt-1">勞工參與</span>
+                    </div>
+                    <div class="iso-phase phase-plan">
+                        <span class="ra-highlight">RA 決策點</span>
+                        規劃
+                    </div>
+                    <div class="iso-phase phase-do">營運控制</div>
+                    <div class="iso-phase phase-check">績效評估</div>
+                    <div class="iso-phase phase-act">改善</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 科學化作業流程 -->
+        <section id="section-2" class="space-y-16">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-4xl font-bold text-slate-900">2. 風險評估之科學化標準作業流程 (SOP)</h2>
+                <p class="text-slate-500">遵循 <strong>ISO 31000</strong> 風險管理框架，確保評估過程具備科學的可驗證性。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-2xl font-bold text-blue-600">步驟一：危害辨識 (Hazard ID)</h3>
+                    <p class="text-slate-600">找出所有潛在的危害源。危害可分為物理性、化學性、生理性及心理社會性。重點在於 <strong>能量意外釋放</strong> 的可能性辨識。</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-2xl font-bold text-blue-600">步驟二：風險分析 (Risk Analysis)</h3>
+                    <p class="text-slate-600">使用科學量化公式來評估風險水平：</p>
+                    <div class="bg-slate-900 text-white p-6 rounded-xl text-center text-xl font-serif">
+                        $$Risk = Likelihood(L) \times Severity(S)$$
+                    </div>
+                    <p class="text-xs text-slate-500">其中 $L$ 代表事故發生可能性，$S$ 代表後果嚴重度。兩者均需基於歷史數據或可靠機率模型定義。</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-2xl font-bold text-blue-600">步驟三：風險評價 (Risk Evaluation)</h3>
+                    <p class="text-slate-600">將分析結果與 <strong>風險接受準則</strong> 進行對照。判定風險是否落於：</p>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-center gap-2"><span class="w-3 h-3 bg-red-600 rounded-full"></span> <strong>不可接受區 (Unacceptable)</strong></li>
+                        <li class="flex items-center gap-2"><span class="w-3 h-3 bg-yellow-500 rounded-full"></span> <strong>ALARP 區 (合理可行之最低)</strong></li>
+                        <li class="flex items-center gap-2"><span class="w-3 h-3 bg-green-600 rounded-full"></span> <strong>可接受區 (Acceptable)</strong></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="text-2xl font-bold text-blue-600">步驟四：風險處理 (Risk Treatment)</h3>
+                    <p class="text-slate-600">針對不可接受風險，依據控制層級擬定對策。處理後必須再次計算 <strong>殘餘風險</strong>。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 方法工具對照 -->
+        <section id="section-3" class="info-card">
+            <h2 class="text-3xl font-bold mb-10 text-center">3. 風險評估方法與工具箱</h2>
+            <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-900 text-white">
+                        <tr>
+                            <th class="p-5 font-bold">評估方法</th>
+                            <th class="p-5 font-bold">分析性質</th>
+                            <th class="p-5 font-bold">適用範疇</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="p-5 font-bold">JSA (工作安全分析)</td>
+                            <td class="p-5 text-sm text-blue-600">定性分析</td>
+                            <td class="p-5 text-sm">單一作業、重複性操作之細部步驟辨識。</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-bold">HAZOP (危害及可操作性分析)</td>
+                            <td class="p-5 text-sm text-blue-600">定性/半定量</td>
+                            <td class="p-5 text-sm">複雜製程系統、化工流體管線之偏差分析。</td>
+                        </tr>
+                        <tr>
+                            <td class="p-5 font-bold">FTA (故障樹分析)</td>
+                            <td class="p-5 text-sm text-red-600">定量分析</td>
+                            <td class="p-5 text-sm">針對重大事故之發生機率溯源計算。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. NIOSH 控制層級 -->
+        <section id="section-4" class="info-card">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">4. 風險控制層級 (Hierarchy of Controls)</h2>
+                <p class="text-slate-500">依據 <strong>NIOSH</strong> 標準，當風險判定為不可接受時，應依據以下科學排序選擇對策。</p>
+            </div>
+
+            <div class="hoc-container">
+                <h3 class="text-2xl font-black mb-10 text-slate-800">Hierarchy of Controls</h3>
+                
+                <div class="hoc-level hoc-elimination">
+                    <span class="text-xl">消除 (Elimination)</span>
+                    <span class="text-xs font-normal mt-1 opacity-90 text-slate-100">物理性地移除危害源</span>
+                </div>
+                
+                <div class="hoc-level hoc-substitution">
+                    <span class="text-xl">取代 (Substitution)</span>
+                    <span class="text-xs font-normal mt-1 opacity-90 text-slate-100">替換為較不危險的物質或製程</span>
+                </div>
+                
+                <div class="hoc-level hoc-engineering">
+                    <span class="text-xl">工程控制 (Engineering)</span>
+                    <span class="text-xs font-normal mt-1 opacity-90 text-slate-800">將人員與危害隔離（屏障、連鎖、通風）</span>
+                </div>
+                
+                <div class="hoc-level hoc-administrative">
+                    <span class="text-xl">行政管理 (Administrative)</span>
+                    <span class="text-xs font-normal mt-1 opacity-90 text-slate-100">改變工作模式（SOP、標示、訓練）</span>
+                </div>
+                
+                <div class="hoc-level hoc-ppe">
+                    <span class="text-xl">個人防護具 (PPE)</span>
+                    <span class="text-xs font-normal mt-1 opacity-90 text-slate-100">最後一道防線：防護裝備</span>
+                </div>
+
+                <div class="w-full flex justify-between mt-8 px-2 text-xs font-bold text-slate-400">
+                    <span>⬆️ 最有效 (設計本質安全)</span>
+                    <span>最不有效 (依賴行為紀律) ⬇️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. RA 與緊急應變規劃 (深度擴充) -->
+        <section id="section-5" class="space-y-16">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 mb-6">5. RA 與緊急應變規劃 (ERP) 的科學聯動</h2>
+                <p class="text-slate-600">
+                    風險評估不應在對策產出後結束。<strong>殘餘風險</strong> 的存在，正是 <strong>緊急應變計畫 (ERP)</strong> 規劃的邊界條件與唯一輸入數據。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-indigo-950 text-white p-12 rounded-[2.5rem] shadow-xl">
+                    <h4 class="text-2xl font-bold mb-6 text-blue-400">數據鏈結一：應變場景定義</h4>
+                    <p class="leading-relaxed mb-6">
+                        根據 RA 計算結果中嚴重度 $S$ 最高之情境（如：高壓槽爆炸、劇毒氣體擴散），定義 <strong>最壞情況 (Worst-Case Scenario)</strong>。這直接決定了應變演練的範疇與撤離半徑。
+                    </p>
+                    <div class="border-t border-white/20 pt-6">
+                        <h5 class="font-bold mb-2">應變決策邏輯：</h5>
+                        <p class="text-sm text-slate-400">若 RA 辨識出存在劇毒危害，則 ERP 必須具備相應的化學防護等級（如 Level A 或 B），而非僅依靠一般醫用口罩。</p>
+                    </div>
+                </div>
+                <div class="bg-white p-12 rounded-[2.5rem] border border-slate-200 shadow-sm space-y-8">
+                    <h4 class="text-2xl font-bold text-slate-800">數據鏈結二：應變資源配置</h4>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <div class="text-emerald-600 text-xl">✔</div>
+                            <div>
+                                <strong>設施規格：</strong> 根據殘餘風險之能量等級，規劃適當容量的溢漏處理設備或滅火系統。
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <div class="text-emerald-600 text-xl">✔</div>
+                            <div>
+                                <strong>演練回饋：</strong> 緊急應變演練的結果應回饋至 RA 程序，用以修正發生機率 $L$ 的主動估算值。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. RA 與事故調查 -->
+        <section id="section-6" class="info-card bg-slate-900 text-white border-none">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold">6. RA 與事故調查的動態互動</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        事故調查 (Clause 10.2) 與風險評估應形成 <strong>封閉學習循環 (Closed-Loop Learning)</strong>。事故的發生本質上代表著原本 RA 的失效或存在盲點。
+                    </p>
+                    <div class="bg-white/10 p-6 rounded-2xl">
+                        <p class="text-sm italic">"事故後若未更新相關作業的風險評估數據，則安全管理體系視為停滯失效。"</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+                        <h5 class="font-bold text-blue-400 mb-2">事故對 RA 的貢獻：</h5>
+                        <p class="text-sm text-slate-300">1. 驗證控制措施之實際有效性。<br>2. 修正 $L$ 與 $S$ 的機率預估值。<br>3. 辨識先前未曾發現之新型危害源。</p>
+                    </div>
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
+                        <h5 class="font-bold text-emerald-400 mb-2">RA 對調查的貢獻：</h5>
+                        <p class="text-sm text-slate-300">1. 提供調查時的「防線基準」。<br>2. 判定事故是「系統防線缺失」還是「人為失誤」。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 結語 -->
+        <section id="section-7" class="text-center max-w-4xl mx-auto space-y-10">
+            <h2 class="text-4xl font-bold text-slate-900">7. 結語：通往韌性組織的數據力</h2>
+            <p class="text-xl text-slate-600 leading-relaxed">
+                職場安全風險評估並非一場文字遊戲，而是與生產流程共鳴的科學工程。真正的安全韌性來自於對數據的尊重、對控制層級的嚴謹執行，以及將 <strong>預警、防禦與應變</strong> 無縫連結的動態管理。
+            </p>
+            <div class="flex justify-center gap-10 text-slate-400 font-bold text-sm">
+                <span>🛡️ 本質安全</span>
+                <span>🔬 數據決策</span>
+                <span>🔄 持續進化</span>
+            </div>
+        </section>
+
+        <!-- 8. 參考文獻 -->
+        <section id="section-8" class="pt-20 border-t border-slate-200">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-lg font-bold mb-8">參考文獻 (APA 格式)</h3>
+                <ul class="space-y-4 text-sm text-slate-500">
+                    <li>Health and Safety Executive. (2014). <em>Risk assessment: A brief guide to controlling risks in the workplace</em> (INDG163).</li>
+                    <li>International Organization for Standardization. (2018). <em>ISO 31000:2018 Risk management — Guidelines</em>.</li>
+                    <li>International Organization for Standardization. (2018). <em>ISO 45001:2018 Occupational health and safety management systems</em>.</li>
+                    <li>National Institute for Occupational Safety and Health (NIOSH). (2015). <em>Hierarchy of Controls</em>. CDC.</li>
+                    <li>OSHA. (2022). <em>Standardizing Emergency Response Plans through data-driven Risk Assessment</em>. US Department of Labor.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 改進後的 Footer：高對比度且易於閱讀 -->
+    <footer class="bg-slate-100 text-slate-800 py-16 border-t border-slate-300 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-base font-medium mb-2">本數位資料僅供學術交流、企業訓練與研究用途。內容基於國際最新職安衛生標準撰寫。</p>
+            <p class="text-sm opacity-70">&copy; 2026 何明信 Peter Ho. 。</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化 Chart.js 標籤處理等邏輯（如有需要）
+        });
+    </script>
+</body>
+</html>

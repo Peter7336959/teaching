@@ -95,3 +95,10 @@
     font-size: 0.7em;
   }
 }
+
+/* 加入 table.css 中 */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: 12px;
+}

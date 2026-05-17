@@ -1,6 +1,6 @@
-name: RevealMenu
-script: [fullscreen.js]
-stylesheet: [fullscreen.css]
+name: menu
+script: [menu.js, quarto-menu.js]
+stylesheet: [menu.css, quarto-menu.css]
 config:
   menu:
     side: "left"
