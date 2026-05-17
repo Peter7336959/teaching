@@ -14,9 +14,9 @@ format:
     chalkboard: true
     toc: true
     toc-depth: 1
-    code-fold: false
     fig-responsive: true
-    css: custom.css
+    css: 
+      - style/custom.css
 ---
 
 # 職場風險評估總論
