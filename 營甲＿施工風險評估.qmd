@@ -20,8 +20,7 @@ format:
     transition: slide
     transition-speed: slow
     navigation-mode: vertical
-    mouse-wheel: true
-    controls: true
+#    controls: true
     center: true
     width: 1280
     height: 800
