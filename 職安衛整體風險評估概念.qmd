@@ -2,7 +2,6 @@
 title: "職場風險評估總論"
 format: 
   revealjs:
-    toc-title: ""    
     smaller: true
     scrollable: true
     show-slide-number: all
