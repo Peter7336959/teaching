@@ -4,21 +4,28 @@ subtitle: "高壓氣體．起重升降機具．鍋爐與壓力容器"
 author: "講師：何明信"
 format:
   revealjs:
+    theme: default
     smaller: true
     scrollable: true
-    theme: simple
-    slide-number: c/t
     transition: slide
     transition-speed: slow
+    slide-number: c/t
+#    show-slide-number: print
     chalkboard: true
-    navigation-mode: linear
-    footer: "職業安全衛生法規系列"
+    preview-links: auto
+    footer: "prepared by Peter Ho."
+    logo: "images/logo.jpg"
     toc: true
     toc-depth: 1
+    hash: true
+    embed-resources: false
+    slide-level: 2
+    code-link: true
+    incremental: false
+    center: true
     background-transition: fade
     width: 1050
     height: 720
-    logo: "images/logo.jpg"
     css: style/custom.css
 ---
 

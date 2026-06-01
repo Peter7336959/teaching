@@ -6,26 +6,28 @@ date: "2026-04-30"
 #institute: "中國勞工安全衛生管理學會"
 format:
   revealjs:
-    theme: serif
-    toc: true
-    toc-depth: 1
-    toc-title: "課程目錄"    
+    theme: default
     smaller: true
     scrollable: true
-    slide-number: c/t
-    show-slide-number: all
-    preview-links: auto
-    logo: "images/logo.jpg"
-    footer: ""
-    chalkboard: true
     transition: slide
     transition-speed: slow
-    navigation-mode: vertical
-    mouse-wheel: true
-    controls: true
+    slide-number: c/t
+    chalkboard: true
+    preview-links: auto
+    footer: "prepared by Peter Ho."
+    logo: "images/logo.jpg"
+    toc: true
+    toc-depth: 1
+    hash: true
+    embed-resources: false
+    slide-level: 2
+    code-link: true
+    incremental: false
+    center: true
+    background-transition: fade
     width: 1050
     height: 720
-    link-external-newwindow: true
+    css: style/custom.css
 ---
 
 ## 講師簡介
@@ -194,7 +196,7 @@ format:
 ### 檢查類型與有效期限
 
 | 檢查類型 | 適用機械                             | 有效期限                   |
-|:---------------|:--------------------------------|:-----------------------|
+|:-----------------|:-------------------------------|:----------------------|
 | 竣工檢查 | 固定式、人字臂、營建用升降機、提升機 | 2年（升降機1年）           |
 | 使用檢查 | 移動式起重機、吊籠                   | 2年（吊籠1年）             |
 | 定期檢查 | 所有                                 | 延長2年（升降機、吊籠1年） |
