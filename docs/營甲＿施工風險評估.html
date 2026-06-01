@@ -1,169 +1,568 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="講師 何明信">
+<meta name="dcterms.date" content="2026-05-01">
+
+<title>營造工程施工風險評估實務 – 教學網站 - 何明信老師</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.21">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6b0cdad5c3a486cddbc9bf5f3442135d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <meta name="author" content="講師 何明信">
-  <meta name="dcterms.date" content="2026-05-01">
-  <title>教學網站 - 何明信老師 – 營造工程施工風險評估實務</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
-    }
-  </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-99eeafcedac04850354b682963cedae3.css">
-  <link rel="stylesheet" href="style/custom.css">
-  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
-  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style/style.css">
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">營造工程施工風險評估實務</h1>
-  <p class="subtitle">甲種職業安全衛生業務主管訓練課程</p>
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-講師 何明信 
-</div>
-</div>
-</div>
-
-  <p class="date">2026-05-01</p>
-</section><section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">課程目錄</h2>
-<ul>
-<li><a href="#/教材內容介紹" id="/toc-教材內容介紹">1. 教材內容介紹</a></li>
-<li><a href="#/營造工程施工風險評估技術指引介紹" id="/toc-營造工程施工風險評估技術指引介紹">2. 營造工程施工風險評估技術指引（介紹）</a></li>
-<li><a href="#/游離二氧化矽暴露風險評估例" id="/toc-游離二氧化矽暴露風險評估例">3. 游離二氧化矽暴露風險評估（例）</a></li>
-<li><a href="#/科學研究營造業墜落事故在風險評估上的應用" id="/toc-科學研究營造業墜落事故在風險評估上的應用">4. 科學研究：營造業墜落事故在風險評估上的應用</a></li>
-<li><a href="#/科學研究重新定義職業健康風險與安全" id="/toc-科學研究重新定義職業健康風險與安全">5. 科學研究：重新定義職業健康、風險與安全</a></li>
-<li><a href="#/職安衛法修正重點與職災案例" id="/toc-職安衛法修正重點與職災案例">6. 職安衛法修正重點與職災案例</a></li>
-<li><a href="#/英國-cdm-2015-與台灣職安署指引之比較" id="/toc-英國-cdm-2015-與台灣職安署指引之比較">7. 英國 CDM 2015 與台灣職安署指引之比較</a></li>
-<li><a href="#/課程與本講義聲明" id="/toc-課程與本講義聲明">課程與本講義聲明</a></li>
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">教學網站 - 何明信老師</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" target="_blank" aria-current="page"> 
+<span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/HME/" target="_blank"> 
+<span class="menu-text">危險性機械及設備管理</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/" target="_blank"> 
+<span class="menu-text">暴露評估</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank"> 
+<span class="menu-text">事故調查制度實務指南</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">其他(新增中)</span>
+    </span>
+  </li>  
 </ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./職安衛整體風險評估概念.html">甲業</a></li><li class="breadcrumb-item"><a href="./營甲＿施工風險評估.html">施工安全RA</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">甲業</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職安衛整體風險評估概念.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職安衛風RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./甲業＿風險評估詳實版.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./營甲＿施工風險評估.html" class="sidebar-item-text sidebar-link active" target="_blank">
+ <span class="menu-text">施工安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RA研究導讀.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">營造RA經驗、文獻</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職業衛生暴露風險評估與實務.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職業衛生EA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">職安衛人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./機械設備器具安全與風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">機械設備器具安全與風險評估</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./具有危險性之機械及設備安全相關法規簡介.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">具有危險性之機械及設備安全相關法規簡介</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./危險性機械及設備管理.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">危險性機械及設備管理</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">學校種子人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E6%A0%A1%E5%9C%92%EF%BC%BF%E5%8C%96%E5%AD%B8%E6%9C%89%E5%AE%B3%E7%89%A9%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E7%AD%96%E7%95%A5.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">化學有害物危害預防策略</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./校園＿高溫接觸危害預防策略.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">高溫接觸危害預防策略</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">書籍簡讀</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_大腦解鎖.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">大腦解鎖(Limitless mind)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_反智.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">反智(The irrational age)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">問題是, 我大概會活很久(Somewhere Towards the End)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
 </nav>
-</section>
-<section id="講師簡介" class="slide level2 center">
-<h2>講師簡介</h2>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#講師簡介" id="toc-講師簡介" class="nav-link active" data-scroll-target="#講師簡介">講師簡介</a></li>
+  <li><a href="#教材內容介紹" id="toc-教材內容介紹" class="nav-link" data-scroll-target="#教材內容介紹">1. 教材內容介紹</a>
+  <ul class="collapse">
+  <li><a href="#課程目標" id="toc-課程目標" class="nav-link" data-scroll-target="#課程目標">課程目標</a></li>
+  <li><a href="#營造工程風險特性" id="toc-營造工程風險特性" class="nav-link" data-scroll-target="#營造工程風險特性">營造工程風險特性</a></li>
+  <li><a href="#相關法規依據" id="toc-相關法規依據" class="nav-link" data-scroll-target="#相關法規依據">相關法規依據</a></li>
+  <li><a href="#風險管理程序-iso-31000" id="toc-風險管理程序-iso-31000" class="nav-link" data-scroll-target="#風險管理程序-iso-31000">風險管理程序 (ISO 31000)</a></li>
+  <li><a href="#關鍵名詞定義" id="toc-關鍵名詞定義" class="nav-link" data-scroll-target="#關鍵名詞定義">關鍵名詞定義</a></li>
+  <li><a href="#施工風險評估的類型" id="toc-施工風險評估的類型" class="nav-link" data-scroll-target="#施工風險評估的類型">施工風險評估的類型</a></li>
+  <li><a href="#設計階段風險評估小組" id="toc-設計階段風險評估小組" class="nav-link" data-scroll-target="#設計階段風險評估小組">設計階段風險評估小組</a></li>
+  <li><a href="#作業拆解-work-breakdown-structure-wbs" id="toc-作業拆解-work-breakdown-structure-wbs" class="nav-link" data-scroll-target="#作業拆解-work-breakdown-structure-wbs">作業拆解 (Work Breakdown Structure, WBS)</a></li>
+  <li><a href="#作業拆解案例連續壁工程" id="toc-作業拆解案例連續壁工程" class="nav-link" data-scroll-target="#作業拆解案例連續壁工程">作業拆解案例：連續壁工程</a></li>
+  <li><a href="#危害辨識方法---5m1e-魚骨圖" id="toc-危害辨識方法---5m1e-魚骨圖" class="nav-link" data-scroll-target="#危害辨識方法---5m1e-魚骨圖">危害辨識方法 - 5M1E 魚骨圖</a></li>
+  <li><a href="#危害風險情境描述---5w1h" id="toc-危害風險情境描述---5w1h" class="nav-link" data-scroll-target="#危害風險情境描述---5w1h">危害/風險情境描述 - 5W1H</a></li>
+  <li><a href="#風險分析與評量" id="toc-風險分析與評量" class="nav-link" data-scroll-target="#風險分析與評量">風險分析與評量</a></li>
+  <li><a href="#級風險矩陣可能性分級例" id="toc-級風險矩陣可能性分級例" class="nav-link" data-scroll-target="#級風險矩陣可能性分級例">5級風險矩陣：可能性分級(例)</a></li>
+  <li><a href="#級風險矩陣嚴重度分級例" id="toc-級風險矩陣嚴重度分級例" class="nav-link" data-scroll-target="#級風險矩陣嚴重度分級例">5級風險矩陣：嚴重度分級(例)</a></li>
+  <li><a href="#x5-風險矩陣-風險值與等級例" id="toc-x5-風險矩陣-風險值與等級例" class="nav-link" data-scroll-target="#x5-風險矩陣-風險值與等級例">5x5 風險矩陣 (風險值與等級)(例)</a>
+  <ul class="collapse">
+  <li><a href="#風險等級例" id="toc-風險等級例" class="nav-link" data-scroll-target="#風險等級例">風險等級(例)</a></li>
+  </ul></li>
+  <li><a href="#實例高處作業墜落風險" id="toc-實例高處作業墜落風險" class="nav-link" data-scroll-target="#實例高處作業墜落風險">實例：高處作業墜落風險</a>
+  <ul class="collapse">
+  <li><a href="#對策措施消除降低風險" id="toc-對策措施消除降低風險" class="nav-link" data-scroll-target="#對策措施消除降低風險">對策措施（消除/降低風險）：</a></li>
+  </ul></li>
+  <li><a href="#實例臨時用電感電風險" id="toc-實例臨時用電感電風險" class="nav-link" data-scroll-target="#實例臨時用電感電風險">實例：臨時用電感電風險</a>
+  <ul class="collapse">
+  <li><a href="#對策措施工程管理控制" id="toc-對策措施工程管理控制" class="nav-link" data-scroll-target="#對策措施工程管理控制">對策措施（工程/管理控制）：</a></li>
+  </ul></li>
+  <li><a href="#風險矩陣圖示墜落-vs-感電" id="toc-風險矩陣圖示墜落-vs-感電" class="nav-link" data-scroll-target="#風險矩陣圖示墜落-vs-感電">風險矩陣圖示（墜落 vs 感電）</a></li>
+  <li><a href="#風險對策的優先順序-階層" id="toc-風險對策的優先順序-階層" class="nav-link" data-scroll-target="#風險對策的優先順序-階層">風險對策的優先順序 (階層)</a></li>
+  <li><a href="#風險對策類型範例" id="toc-風險對策類型範例" class="nav-link" data-scroll-target="#風險對策類型範例">風險對策類型範例</a></li>
+  <li><a href="#設計階段風險評估成果" id="toc-設計階段風險評估成果" class="nav-link" data-scroll-target="#設計階段風險評估成果">設計階段風險評估成果</a></li>
+  <li><a href="#施工風險評估表-標準版-5級矩陣範例" id="toc-施工風險評估表-標準版-5級矩陣範例" class="nav-link" data-scroll-target="#施工風險評估表-標準版-5級矩陣範例">施工風險評估表 (標準版) 5級矩陣範例</a></li>
+  <li><a href="#作業前危害調查與勤前教育-搭配5級矩陣" id="toc-作業前危害調查與勤前教育-搭配5級矩陣" class="nav-link" data-scroll-target="#作業前危害調查與勤前教育-搭配5級矩陣">作業前危害調查與勤前教育 (搭配5級矩陣)</a></li>
+  <li><a href="#工程變更風險評估-5級矩陣" id="toc-工程變更風險評估-5級矩陣" class="nav-link" data-scroll-target="#工程變更風險評估-5級矩陣">工程變更風險評估 (5級矩陣)</a></li>
+  <li><a href="#風險矩陣實務要點" id="toc-風險矩陣實務要點" class="nav-link" data-scroll-target="#風險矩陣實務要點">風險矩陣實務要點</a></li>
+  <li><a href="#施工規劃階段風險評估流程" id="toc-施工規劃階段風險評估流程" class="nav-link" data-scroll-target="#施工規劃階段風險評估流程">施工規劃階段風險評估流程</a></li>
+  <li><a href="#施工方案評選範例" id="toc-施工方案評選範例" class="nav-link" data-scroll-target="#施工方案評選範例">施工方案評選範例</a></li>
+  <li><a href="#施工風險評估表-標準版-重點欄位" id="toc-施工風險評估表-標準版-重點欄位" class="nav-link" data-scroll-target="#施工風險評估表-標準版-重點欄位">施工風險評估表 (標準版) 重點欄位</a></li>
+  <li><a href="#作業前危害調查與勤前教育" id="toc-作業前危害調查與勤前教育" class="nav-link" data-scroll-target="#作業前危害調查與勤前教育">作業前危害調查與勤前教育</a></li>
+  <li><a href="#作業前危害調查表-範例" id="toc-作業前危害調查表-範例" class="nav-link" data-scroll-target="#作業前危害調查表-範例">作業前危害調查表 (範例)</a></li>
+  <li><a href="#工程變更風險評估" id="toc-工程變更風險評估" class="nav-link" data-scroll-target="#工程變更風險評估">工程變更風險評估</a></li>
+  <li><a href="#拆除作業風險評估重點" id="toc-拆除作業風險評估重點" class="nav-link" data-scroll-target="#拆除作業風險評估重點">拆除作業風險評估重點</a></li>
+  <li><a href="#風險資訊傳遞與追蹤管制" id="toc-風險資訊傳遞與追蹤管制" class="nav-link" data-scroll-target="#風險資訊傳遞與追蹤管制">風險資訊傳遞與追蹤管制</a></li>
+  <li><a href="#實務演練建議" id="toc-實務演練建議" class="nav-link" data-scroll-target="#實務演練建議">實務演練建議</a></li>
+  <li><a href="#總結" id="toc-總結" class="nav-link" data-scroll-target="#總結">總結</a></li>
+  <li><a href="#q-a" id="toc-q-a" class="nav-link" data-scroll-target="#q-a">Q &amp; A</a></li>
+  </ul></li>
+  <li><a href="#營造工程施工風險評估技術指引介紹" id="toc-營造工程施工風險評估技術指引介紹" class="nav-link" data-scroll-target="#營造工程施工風險評估技術指引介紹">2. 營造工程施工風險評估技術指引（介紹）</a>
+  <ul class="collapse">
+  <li><a href="#導引" id="toc-導引" class="nav-link" data-scroll-target="#導引">導引</a></li>
+  <li><a href="#營造工程風險特性-1" id="toc-營造工程風險特性-1" class="nav-link" data-scroll-target="#營造工程風險特性-1">營造工程風險特性</a></li>
+  <li><a href="#法源依據" id="toc-法源依據" class="nav-link" data-scroll-target="#法源依據">法源依據</a></li>
+  <li><a href="#關鍵名詞定義-1" id="toc-關鍵名詞定義-1" class="nav-link" data-scroll-target="#關鍵名詞定義-1">關鍵名詞定義</a></li>
+  <li><a href="#風險管理架構" id="toc-風險管理架構" class="nav-link" data-scroll-target="#風險管理架構">風險管理架構</a></li>
+  <li><a href="#風險管理程序-process" id="toc-風險管理程序-process" class="nav-link" data-scroll-target="#風險管理程序-process">風險管理程序 (Process)</a></li>
+  <li><a href="#各角色當責" id="toc-各角色當責" class="nav-link" data-scroll-target="#各角色當責">各角色當責</a></li>
+  <li><a href="#準備作業-成立風險評估小組" id="toc-準備作業-成立風險評估小組" class="nav-link" data-scroll-target="#準備作業-成立風險評估小組">準備作業 – 成立風險評估小組</a>
+  <ul class="collapse">
+  <li><a href="#設計階段小組組成" id="toc-設計階段小組組成" class="nav-link" data-scroll-target="#設計階段小組組成">設計階段小組組成</a></li>
+  </ul></li>
+  <li><a href="#施工規劃階段小組組成" id="toc-施工規劃階段小組組成" class="nav-link" data-scroll-target="#施工規劃階段小組組成">施工規劃階段小組組成</a></li>
+  <li><a href="#作業拆解-work-breakdown-structure" id="toc-作業拆解-work-breakdown-structure" class="nav-link" data-scroll-target="#作業拆解-work-breakdown-structure">作業拆解 (Work Breakdown Structure)</a></li>
+  <li><a href="#危害辨識-5m1e-魚骨圖" id="toc-危害辨識-5m1e-魚骨圖" class="nav-link" data-scroll-target="#危害辨識-5m1e-魚骨圖">危害辨識 – 5M1E 魚骨圖</a>
+  <ul class="collapse">
+  <li><a href="#前已說明不贅述" id="toc-前已說明不贅述" class="nav-link" data-scroll-target="#前已說明不贅述">前已說明，不贅述。</a></li>
+  <li><a href="#方法多元不限於此" id="toc-方法多元不限於此" class="nav-link" data-scroll-target="#方法多元不限於此">方法多元，不限於此 。</a></li>
+  <li><a href="#需經驗累積多看事故調查報告" id="toc-需經驗累積多看事故調查報告" class="nav-link" data-scroll-target="#需經驗累積多看事故調查報告">需經驗累積，多看事故調查報告。</a></li>
+  </ul></li>
+  <li><a href="#風險描述-5w1h" id="toc-風險描述-5w1h" class="nav-link" data-scroll-target="#風險描述-5w1h">風險描述 – 5W1H</a></li>
+  <li><a href="#風險分析-5級可能性基準參考" id="toc-風險分析-5級可能性基準參考" class="nav-link" data-scroll-target="#風險分析-5級可能性基準參考">風險分析 – 5級可能性基準（參考）</a></li>
+  <li><a href="#風險分析-5級嚴重度基準參考" id="toc-風險分析-5級嚴重度基準參考" class="nav-link" data-scroll-target="#風險分析-5級嚴重度基準參考">風險分析 – 5級嚴重度基準（參考）</a></li>
+  <li><a href="#x5-風險矩陣參考" id="toc-x5-風險矩陣參考" class="nav-link" data-scroll-target="#x5-風險矩陣參考">5x5 風險矩陣（參考）</a></li>
+  <li><a href="#風險評量與可接受度" id="toc-風險評量與可接受度" class="nav-link" data-scroll-target="#風險評量與可接受度">風險評量與可接受度</a></li>
+  <li><a href="#風險處理-對策類型及優先順序" id="toc-風險處理-對策類型及優先順序" class="nav-link" data-scroll-target="#風險處理-對策類型及優先順序">風險處理 – 對策類型及優先順序</a>
+  <ul class="collapse">
+  <li><a href="#風險控制層級表hierarchy-of-controls" id="toc-風險控制層級表hierarchy-of-controls" class="nav-link" data-scroll-target="#風險控制層級表hierarchy-of-controls">風險控制層級表（Hierarchy of Controls）</a></li>
+  </ul></li>
+  <li><a href="#例" id="toc-例" class="nav-link" data-scroll-target="#例">例</a></li>
+  <li><a href="#風險處理-追蹤管制" id="toc-風險處理-追蹤管制" class="nav-link" data-scroll-target="#風險處理-追蹤管制">風險處理 – 追蹤管制</a></li>
+  <li><a href="#設計階段施工風險評估" id="toc-設計階段施工風險評估" class="nav-link" data-scroll-target="#設計階段施工風險評估">設計階段施工風險評估</a>
+  <ul class="collapse">
+  <li><a href="#實施時機" id="toc-實施時機" class="nav-link" data-scroll-target="#實施時機">實施時機</a></li>
+  <li><a href="#主要工作" id="toc-主要工作" class="nav-link" data-scroll-target="#主要工作">主要工作</a></li>
+  <li><a href="#輸出成果" id="toc-輸出成果" class="nav-link" data-scroll-target="#輸出成果">輸出成果</a></li>
+  </ul></li>
+  <li><a href="#設計方案評選表例" id="toc-設計方案評選表例" class="nav-link" data-scroll-target="#設計方案評選表例">設計方案評選表（例）</a></li>
+  <li><a href="#施工規劃階段風險評估" id="toc-施工規劃階段風險評估" class="nav-link" data-scroll-target="#施工規劃階段風險評估">施工規劃階段風險評估</a>
+  <ul class="collapse">
+  <li><a href="#實施時機-1" id="toc-實施時機-1" class="nav-link" data-scroll-target="#實施時機-1">實施時機</a></li>
+  <li><a href="#主要工作-1" id="toc-主要工作-1" class="nav-link" data-scroll-target="#主要工作-1">主要工作</a></li>
+  <li><a href="#輸出成果-1" id="toc-輸出成果-1" class="nav-link" data-scroll-target="#輸出成果-1">輸出成果</a></li>
+  </ul></li>
+  <li><a href="#施工方案評選表例" id="toc-施工方案評選表例" class="nav-link" data-scroll-target="#施工方案評選表例">施工方案評選表（例）</a></li>
+  <li><a href="#作業前危害調查與勤前教育-1" id="toc-作業前危害調查與勤前教育-1" class="nav-link" data-scroll-target="#作業前危害調查與勤前教育-1">作業前危害調查與勤前教育</a>
+  <ul class="collapse">
+  <li><a href="#法源" id="toc-法源" class="nav-link" data-scroll-target="#法源">法源</a></li>
+  <li><a href="#實施方式" id="toc-實施方式" class="nav-link" data-scroll-target="#實施方式">實施方式</a></li>
+  </ul></li>
+  <li><a href="#作業前危害調查與危害告知流程" id="toc-作業前危害調查與危害告知流程" class="nav-link" data-scroll-target="#作業前危害調查與危害告知流程">作業前危害調查與危害告知流程</a></li>
+  <li><a href="#工程變更風險評估-1" id="toc-工程變更風險評估-1" class="nav-link" data-scroll-target="#工程變更風險評估-1">工程變更風險評估</a>
+  <ul class="collapse">
+  <li><a href="#時機" id="toc-時機" class="nav-link" data-scroll-target="#時機">時機</a></li>
+  <li><a href="#實施步驟" id="toc-實施步驟" class="nav-link" data-scroll-target="#實施步驟">實施步驟</a></li>
+  </ul></li>
+  <li><a href="#拆除作業施工風險評估" id="toc-拆除作業施工風險評估" class="nav-link" data-scroll-target="#拆除作業施工風險評估">拆除作業施工風險評估</a>
+  <ul class="collapse">
+  <li><a href="#事前調查重點" id="toc-事前調查重點" class="nav-link" data-scroll-target="#事前調查重點">事前調查重點</a></li>
+  <li><a href="#拆除計畫應包含" id="toc-拆除計畫應包含" class="nav-link" data-scroll-target="#拆除計畫應包含">拆除計畫應包含</a></li>
+  </ul></li>
+  <li><a href="#風險資訊傳遞與追蹤管制-1" id="toc-風險資訊傳遞與追蹤管制-1" class="nav-link" data-scroll-target="#風險資訊傳遞與追蹤管制-1">風險資訊傳遞與追蹤管制</a></li>
+  <li><a href="#風險處理追蹤管制表例" id="toc-風險處理追蹤管制表例" class="nav-link" data-scroll-target="#風險處理追蹤管制表例">風險處理追蹤管制表（例）</a></li>
+  <li><a href="#風險評估表單-簡易版" id="toc-風險評估表單-簡易版" class="nav-link" data-scroll-target="#風險評估表單-簡易版">風險評估表單 – 簡易版</a></li>
+  <li><a href="#風險評估表單-基本版" id="toc-風險評估表單-基本版" class="nav-link" data-scroll-target="#風險評估表單-基本版">風險評估表單 – 基本版</a></li>
+  <li><a href="#風險評估表單-標準版" id="toc-風險評估表單-標準版" class="nav-link" data-scroll-target="#風險評估表單-標準版">風險評估表單 – 標準版</a></li>
+  <li><a href="#案例演練建議" id="toc-案例演練建議" class="nav-link" data-scroll-target="#案例演練建議">案例演練建議</a></li>
+  <li><a href="#結語" id="toc-結語" class="nav-link" data-scroll-target="#結語">結語</a></li>
+  <li><a href="#q-a-1" id="toc-q-a-1" class="nav-link" data-scroll-target="#q-a-1">Q &amp; A</a></li>
+  <li><a href="#營造只有安全風險健康呢" id="toc-營造只有安全風險健康呢" class="nav-link" data-scroll-target="#營造只有安全風險健康呢"><strong>營造只有安全風險？健康呢？</strong></a></li>
+  </ul></li>
+  <li><a href="#游離二氧化矽暴露風險評估例" id="toc-游離二氧化矽暴露風險評估例" class="nav-link" data-scroll-target="#游離二氧化矽暴露風險評估例">3. 游離二氧化矽暴露風險評估（例）</a>
+  <ul class="collapse">
+  <li><a href="#台灣人造石案例" id="toc-台灣人造石案例" class="nav-link" data-scroll-target="#台灣人造石案例">台灣人造石案例</a></li>
+  <li><a href="#台灣人造石案例的啟示" id="toc-台灣人造石案例的啟示" class="nav-link" data-scroll-target="#台灣人造石案例的啟示">台灣人造石案例的啟示</a></li>
+  <li><a href="#一危害辨識哪些營造作業有rcs風險" id="toc-一危害辨識哪些營造作業有rcs風險" class="nav-link" data-scroll-target="#一危害辨識哪些營造作業有rcs風險">一、危害辨識：哪些營造作業有RCS風險？</a></li>
+  <li><a href="#二風險評估方法沿用既有風險矩陣納入健康暴露評估" id="toc-二風險評估方法沿用既有風險矩陣納入健康暴露評估" class="nav-link" data-scroll-target="#二風險評估方法沿用既有風險矩陣納入健康暴露評估">二、風險評估方法：沿用既有風險矩陣，納入健康暴露評估</a></li>
+  <li><a href="#三風險控制措施層級控制與實務要點" id="toc-三風險控制措施層級控制與實務要點" class="nav-link" data-scroll-target="#三風險控制措施層級控制與實務要點">三、風險控制措施：層級控制與實務要點</a></li>
+  <li><a href="#四監測機制空氣監測與健康監測" id="toc-四監測機制空氣監測與健康監測" class="nav-link" data-scroll-target="#四監測機制空氣監測與健康監測">四、監測機制：空氣監測與健康監測</a>
+  <ul class="collapse">
+  <li><a href="#空氣監測-環測" id="toc-空氣監測-環測" class="nav-link" data-scroll-target="#空氣監測-環測">4.1 空氣監測 (環測)</a></li>
+  <li><a href="#健康監測" id="toc-健康監測" class="nav-link" data-scroll-target="#健康監測">4.2 健康監測</a></li>
+  </ul></li>
+  <li><a href="#五管理文件與資訊傳遞" id="toc-五管理文件與資訊傳遞" class="nav-link" data-scroll-target="#五管理文件與資訊傳遞">五、管理文件與資訊傳遞</a></li>
+  <li><a href="#六結論營造風險評估應納入rcs暴露風險評估" id="toc-六結論營造風險評估應納入rcs暴露風險評估" class="nav-link" data-scroll-target="#六結論營造風險評估應納入rcs暴露風險評估">六、結論：營造風險評估應納入RCS暴露風險評估</a>
+  <ul class="collapse">
+  <li><a href="#參考文獻" id="toc-參考文獻" class="nav-link" data-scroll-target="#參考文獻">參考文獻</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#科學研究營造業墜落事故在風險評估上的應用" id="toc-科學研究營造業墜落事故在風險評估上的應用" class="nav-link" data-scroll-target="#科學研究營造業墜落事故在風險評估上的應用">4. 科學研究：營造業墜落事故在風險評估上的應用</a>
+  <ul class="collapse">
+  <li><a href="#一研究背景與方法" id="toc-一研究背景與方法" class="nav-link" data-scroll-target="#一研究背景與方法">一、研究背景與方法</a></li>
+  <li><a href="#二關鍵研究發現" id="toc-二關鍵研究發現" class="nav-link" data-scroll-target="#二關鍵研究發現">二、關鍵研究發現</a>
+  <ul class="collapse">
+  <li><a href="#墜落事故的時空分布" id="toc-墜落事故的時空分布" class="nav-link" data-scroll-target="#墜落事故的時空分布">1. 墜落事故的時空分布</a></li>
+  </ul></li>
+  <li><a href="#工程資訊與墜落風險" id="toc-工程資訊與墜落風險" class="nav-link" data-scroll-target="#工程資訊與墜落風險">2. 工程資訊與墜落風險</a></li>
+  <li><a href="#作業活動與職業別" id="toc-作業活動與職業別" class="nav-link" data-scroll-target="#作業活動與職業別">3. 作業活動與職業別</a></li>
+  <li><a href="#墜落高度與位置" id="toc-墜落高度與位置" class="nav-link" data-scroll-target="#墜落高度與位置">4. 墜落高度與位置</a></li>
+  <li><a href="#防護具使用現況嚴重警訊" id="toc-防護具使用現況嚴重警訊" class="nav-link" data-scroll-target="#防護具使用現況嚴重警訊">5. 防護具使用現況（嚴重警訊）</a>
+  <ul class="collapse">
+  <li><a href="#年齡與經驗" id="toc-年齡與經驗" class="nav-link" data-scroll-target="#年齡與經驗">6. 年齡與經驗</a></li>
+  </ul></li>
+  <li><a href="#三風險評估方法的應用從描述到預測" id="toc-三風險評估方法的應用從描述到預測" class="nav-link" data-scroll-target="#三風險評估方法的應用從描述到預測">三、風險評估方法的應用：從描述到預測</a>
+  <ul class="collapse">
+  <li><a href="#卡方檢定找出與致命顯著相關的因子" id="toc-卡方檢定找出與致命顯著相關的因子" class="nav-link" data-scroll-target="#卡方檢定找出與致命顯著相關的因子">1. 卡方檢定：找出與「致命」顯著相關的因子</a></li>
+  </ul></li>
+  <li><a href="#邏輯斯迴歸模型" id="toc-邏輯斯迴歸模型" class="nav-link" data-scroll-target="#邏輯斯迴歸模型">2. 邏輯斯迴歸模型</a></li>
+  <li><a href="#四對營造風險評估實務的啟示" id="toc-四對營造風險評估實務的啟示" class="nav-link" data-scroll-target="#四對營造風險評估實務的啟示">四、對營造風險評估實務的啟示</a>
+  <ul class="collapse">
+  <li><a href="#風險評估必須納入高度的細緻分級" id="toc-風險評估必須納入高度的細緻分級" class="nav-link" data-scroll-target="#風險評估必須納入高度的細緻分級">1. 風險評估必須納入「高度」的細緻分級</a></li>
+  <li><a href="#特定作業與職業應納入專項風險評估" id="toc-特定作業與職業應納入專項風險評估" class="nav-link" data-scroll-target="#特定作業與職業應納入專項風險評估">2. 特定作業與職業應納入專項風險評估</a></li>
+  </ul></li>
+  <li><a href="#防護具不是萬能但無防護絕對致命" id="toc-防護具不是萬能但無防護絕對致命" class="nav-link" data-scroll-target="#防護具不是萬能但無防護絕對致命">3. 防護具不是萬能，但「無防護」絕對致命</a>
+  <ul class="collapse">
+  <li><a href="#年齡因子應納入風險評估" id="toc-年齡因子應納入風險評估" class="nav-link" data-scroll-target="#年齡因子應納入風險評估">4. 年齡因子應納入風險評估</a></li>
+  </ul></li>
+  <li><a href="#事故趨勢分析可做為風險評估滾動更新的依據" id="toc-事故趨勢分析可做為風險評估滾動更新的依據" class="nav-link" data-scroll-target="#事故趨勢分析可做為風險評估滾動更新的依據">5. 事故趨勢分析可做為風險評估滾動更新的依據</a></li>
+  <li><a href="#五結論" id="toc-五結論" class="nav-link" data-scroll-target="#五結論">五、結論</a></li>
+  <li><a href="#參考文獻apa-格式" id="toc-參考文獻apa-格式" class="nav-link" data-scroll-target="#參考文獻apa-格式">參考文獻（APA 格式）</a></li>
+  </ul></li>
+  <li><a href="#科學研究重新定義職業健康風險與安全" id="toc-科學研究重新定義職業健康風險與安全" class="nav-link" data-scroll-target="#科學研究重新定義職業健康風險與安全">5. 科學研究：重新定義職業健康、風險與安全</a>
+  <ul class="collapse">
+  <li><a href="#一研究背景與方法-1" id="toc-一研究背景與方法-1" class="nav-link" data-scroll-target="#一研究背景與方法-1">一、研究背景與方法</a></li>
+  <li><a href="#研究對象與方法" id="toc-研究對象與方法" class="nav-link" data-scroll-target="#研究對象與方法">1.2 研究對象與方法</a></li>
+  <li><a href="#二核心洞察健康風險與安全的動態關係" id="toc-二核心洞察健康風險與安全的動態關係" class="nav-link" data-scroll-target="#二核心洞察健康風險與安全的動態關係">二、核心洞察：健康、風險與安全的動態關係</a></li>
+  <li><a href="#三對營造業風險評估的應用" id="toc-三對營造業風險評估的應用" class="nav-link" data-scroll-target="#三對營造業風險評估的應用">三、對營造業風險評估的應用</a>
+  <ul class="collapse">
+  <li><a href="#釐清風險評估中的用語" id="toc-釐清風險評估中的用語" class="nav-link" data-scroll-target="#釐清風險評估中的用語">3.1 釐清風險評估中的用語</a></li>
+  </ul></li>
+  <li><a href="#將韌性脆弱度納入風險評估" id="toc-將韌性脆弱度納入風險評估" class="nav-link" data-scroll-target="#將韌性脆弱度納入風險評估">3.2 將「韌性/脆弱度」納入風險評估</a></li>
+  <li><a href="#安全績效衡量方式的反思" id="toc-安全績效衡量方式的反思" class="nav-link" data-scroll-target="#安全績效衡量方式的反思">3.3 安全績效衡量方式的反思</a></li>
+  <li><a href="#納入非物質媒介健康的風險" id="toc-納入非物質媒介健康的風險" class="nav-link" data-scroll-target="#納入非物質媒介健康的風險">3.4 納入非物質媒介(健康)的風險</a></li>
+  <li><a href="#四對營造業管理實務的具體建議" id="toc-四對營造業管理實務的具體建議" class="nav-link" data-scroll-target="#四對營造業管理實務的具體建議">四、對營造業管理實務的具體建議</a>
+  <ul class="collapse">
+  <li><a href="#定義統一化" id="toc-定義統一化" class="nav-link" data-scroll-target="#定義統一化">4.1 定義統一化</a></li>
+  <li><a href="#風險評估工具更新" id="toc-風險評估工具更新" class="nav-link" data-scroll-target="#風險評估工具更新">4.2 風險評估工具更新</a></li>
+  <li><a href="#安全績效管理" id="toc-安全績效管理" class="nav-link" data-scroll-target="#安全績效管理">4.3 安全績效管理</a></li>
+  </ul></li>
+  <li><a href="#七結論" id="toc-七結論" class="nav-link" data-scroll-target="#七結論">七、結論</a>
+  <ul class="collapse">
+  <li><a href="#參考文獻apa格式" id="toc-參考文獻apa格式" class="nav-link" data-scroll-target="#參考文獻apa格式">參考文獻（APA格式）</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#職安衛法修正重點與職災案例" id="toc-職安衛法修正重點與職災案例" class="nav-link" data-scroll-target="#職安衛法修正重點與職災案例">6. 職安衛法修正重點與職災案例</a>
+  <ul class="collapse">
+  <li><a href="#職安衛法修正重點與職災案例-1" id="toc-職安衛法修正重點與職災案例-1" class="nav-link" data-scroll-target="#職安衛法修正重點與職災案例-1">職安衛法修正重點與職災案例</a>
+  <ul class="collapse">
+  <li><a href="#納入工程業主責任" id="toc-納入工程業主責任" class="nav-link" data-scroll-target="#納入工程業主責任"><strong>納入工程業主責任？</strong></a></li>
+  <li><a href="#風險評估從事屋頂剪黏作業發生墜落致死災害" id="toc-風險評估從事屋頂剪黏作業發生墜落致死災害" class="nav-link" data-scroll-target="#風險評估從事屋頂剪黏作業發生墜落致死災害">風險評估？—從事屋頂剪黏作業發生墜落致死災害</a></li>
+  <li><a href="#思考事故調查與風險評估關係" id="toc-思考事故調查與風險評估關係" class="nav-link" data-scroll-target="#思考事故調查與風險評估關係">思考：事故調查與風險評估關係？</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#英國-cdm-2015-與台灣職安署指引之比較" id="toc-英國-cdm-2015-與台灣職安署指引之比較" class="nav-link" data-scroll-target="#英國-cdm-2015-與台灣職安署指引之比較">7. 英國 CDM 2015 與台灣職安署指引之比較</a>
+  <ul class="collapse">
+  <li><a href="#課程目標-1" id="toc-課程目標-1" class="nav-link" data-scroll-target="#課程目標-1">課程目標</a></li>
+  <li><a href="#為什麼要比較英國-cdm-2015" id="toc-為什麼要比較英國-cdm-2015" class="nav-link" data-scroll-target="#為什麼要比較英國-cdm-2015">為什麼要比較英國 CDM 2015？</a></li>
+  <li><a href="#英國-cdm-2015-核心架構" id="toc-英國-cdm-2015-核心架構" class="nav-link" data-scroll-target="#英國-cdm-2015-核心架構">英國 CDM 2015 核心架構</a></li>
+  <li><a href="#cdm-2015-五大角色與職責" id="toc-cdm-2015-五大角色與職責" class="nav-link" data-scroll-target="#cdm-2015-五大角色與職責">CDM 2015 五大角色與職責</a></li>
+  <li><a href="#台灣指引的角色與職責" id="toc-台灣指引的角色與職責" class="nav-link" data-scroll-target="#台灣指引的角色與職責">台灣指引的角色與職責</a></li>
+  <li><a href="#角色對照英國-cdm-vs-台灣指引" id="toc-角色對照英國-cdm-vs-台灣指引" class="nav-link" data-scroll-target="#角色對照英國-cdm-vs-台灣指引">角色對照：英國 CDM vs 台灣指引</a></li>
+  <li><a href="#風險評估範圍的比較" id="toc-風險評估範圍的比較" class="nav-link" data-scroll-target="#風險評估範圍的比較">風險評估範圍的比較</a></li>
+  <li><a href="#英國-cdm-的核心工具" id="toc-英國-cdm-的核心工具" class="nav-link" data-scroll-target="#英國-cdm-的核心工具">英國 CDM 的核心工具</a>
+  <ul class="collapse">
+  <li><a href="#pre-construction-information施工前資訊" id="toc-pre-construction-information施工前資訊" class="nav-link" data-scroll-target="#pre-construction-information施工前資訊">1. Pre-construction Information（施工前資訊）</a></li>
+  </ul></li>
+  <li><a href="#construction-phase-plan施工階段計畫" id="toc-construction-phase-plan施工階段計畫" class="nav-link" data-scroll-target="#construction-phase-plan施工階段計畫">2. Construction Phase Plan（施工階段計畫）</a></li>
+  <li><a href="#health-safety-file安全檔案" id="toc-health-safety-file安全檔案" class="nav-link" data-scroll-target="#health-safety-file安全檔案">3. Health &amp; Safety File（安全檔案）</a></li>
+  <li><a href="#風險評估方法的對照" id="toc-風險評估方法的對照" class="nav-link" data-scroll-target="#風險評估方法的對照">風險評估方法的對照</a></li>
+  <li><a href="#英國-cdm-的一般預防原則general-principles-of-prevention" id="toc-英國-cdm-的一般預防原則general-principles-of-prevention" class="nav-link" data-scroll-target="#英國-cdm-的一般預防原則general-principles-of-prevention">英國 CDM 的「一般預防原則」（General Principles of Prevention）</a></li>
+  <li><a href="#台灣與英國風險管理流程對照" id="toc-台灣與英國風險管理流程對照" class="nav-link" data-scroll-target="#台灣與英國風險管理流程對照">台灣與英國風險管理流程對照</a></li>
+  <li><a href="#實際案例高架作業墜落風險" id="toc-實際案例高架作業墜落風險" class="nav-link" data-scroll-target="#實際案例高架作業墜落風險">實際案例：高架作業墜落風險</a>
+  <ul class="collapse">
+  <li><a href="#英國-cdm-2015-的處理方式" id="toc-英國-cdm-2015-的處理方式" class="nav-link" data-scroll-target="#英國-cdm-2015-的處理方式">英國 CDM 2015 的處理方式</a></li>
+  <li><a href="#台灣指引的處理方式" id="toc-台灣指引的處理方式" class="nav-link" data-scroll-target="#台灣指引的處理方式">台灣指引的處理方式</a></li>
+  </ul></li>
+  <li><a href="#對營造業甲種業務主管的啟示" id="toc-對營造業甲種業務主管的啟示" class="nav-link" data-scroll-target="#對營造業甲種業務主管的啟示">對營造業甲種業務主管的啟示</a></li>
+  <li><a href="#結論英國-cdm-的核心精神" id="toc-結論英國-cdm-的核心精神" class="nav-link" data-scroll-target="#結論英國-cdm-的核心精神">結論：英國 CDM 的核心精神</a></li>
+  <li><a href="#結語台灣實務" id="toc-結語台灣實務" class="nav-link" data-scroll-target="#結語台灣實務">結語：台灣實務</a></li>
+  <li><a href="#q-a-2" id="toc-q-a-2" class="nav-link" data-scroll-target="#q-a-2">Q &amp; A</a></li>
+  </ul></li>
+  <li><a href="#課程與本講義聲明" id="toc-課程與本講義聲明" class="nav-link" data-scroll-target="#課程與本講義聲明">課程與本講義聲明</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="營甲＿施工風險評估.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./職安衛整體風險評估概念.html">甲業</a></li><li class="breadcrumb-item"><a href="./營甲＿施工風險評估.html">施工安全RA</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">營造工程施工風險評估實務</h1>
+<p class="subtitle lead">甲種職業安全衛生業務主管訓練課程</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>講師 何明信 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="講師簡介" class="level2">
+<h2 class="anchored" data-anchor-id="講師簡介">講師簡介</h2>
 <ul>
 <li><p>姓名：何明信</p></li>
 <li><p>學歷：成大環醫所 、職安衛技師</p></li>
@@ -172,13 +571,10 @@
 <li><p>E-mail：msho7336959@gmail.com</p></li>
 </ul>
 </section>
-<section>
-<section id="教材內容介紹" class="title-slide slide level1 center">
+<section id="教材內容介紹" class="level1">
 <h1>1. 教材內容介紹</h1>
-
-</section>
-<section id="課程目標" class="slide level2 center">
-<h2>課程目標</h2>
+<section id="課程目標" class="level2">
+<h2 class="anchored" data-anchor-id="課程目標">課程目標</h2>
 <ul>
 <li><p><span style="color:#b31b1b;">理解</span> 營造工程風險特性與相關法規要求</p></li>
 <li><p><span style="color:#b31b1b;">掌握</span> 施工風險評估的完整流程（危害辨識、分析、評量、處理）</p></li>
@@ -187,23 +583,24 @@
 <li><p><span style="color:#b31b1b;">建立</span> 風險資訊傳遞與追蹤管制的正確觀念</p></li>
 <li><p><span style="color:#b31b1b;">增加</span> 營造風險評估廣度（國際化）</p></li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>期待課後能協助公司建立施工風險評估制度，持續更人專業成長，並指導同仁執行。</p>
 </div>
 </div>
-</div>
+<hr>
 </section>
-<section id="營造工程風險特性" class="slide level2 center">
-<h2>營造工程風險特性</h2>
-<table class="caption-top">
+<section id="營造工程風險特性" class="level2">
+<h2 class="anchored" data-anchor-id="營造工程風險特性">營造工程風險特性</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">特性</th>
@@ -233,12 +630,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>台灣營造業職災發生率及嚴重度均遠高於其他行業，須透過系統性風險評估來預防。</p>
 </blockquote>
+<hr>
 </section>
-<section id="相關法規依據" class="slide level2 center">
-<h2>相關法規依據</h2>
+<section id="相關法規依據" class="level2">
+<h2 class="anchored" data-anchor-id="相關法規依據">相關法規依據</h2>
 <ul>
 <li><strong>職業安全衛生法 第5條第2項</strong>：工程設計或施工者應於設計或施工規劃階段實施風險評估。</li>
 <li><strong>職業安全衛生法施行細則 第8條</strong>：風險評估定義（辨識、分析、評量）。</li>
@@ -247,59 +645,61 @@
 <li><strong>職業安全衛生管理辦法 第12條之3</strong>：變更管理（修改製程、作業程序前應評估風險）。</li>
 <li><strong>政府採購法 第70條之1</strong>：機關應分析潛在施工危險，編製安全衛生圖說及經費。</li>
 </ul>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Caution</strong></p>
+<div class="callout-title-container flex-fill">
+Caution
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>違反上述規定，除可能發生職災外，亦將面臨行政處罰。</p>
 </div>
 </div>
-</div>
+<hr>
 </section>
-<section id="風險管理程序-iso-31000" class="slide level2 center">
-<h2>風險管理程序 (ISO 31000)</h2>
-
-<img data-src="images/營甲圖1RA.png" class="r-stretch"><ul>
+<section id="風險管理程序-iso-31000" class="level2">
+<h2 class="anchored" data-anchor-id="風險管理程序-iso-31000">風險管理程序 (ISO 31000)</h2>
+<p><img src="images/營甲圖1RA.png" class="img-fluid"></p>
+<ul>
 <li><p><strong>範圍</strong>：工程全生命週期（規劃、設計、施工、使用、拆除）</p></li>
 <li><p><strong>準則</strong>：法令、指引、實務規範、工程經驗</p></li>
 </ul>
+<hr>
 </section>
-<section id="關鍵名詞定義" class="slide level2 center">
-<h2>關鍵名詞定義</h2>
+<section id="關鍵名詞定義" class="level2">
+<h2 class="anchored" data-anchor-id="關鍵名詞定義">關鍵名詞定義</h2>
 <ul>
 <li><p><strong>危害 (Hazard)</strong>：可能造成人員傷亡或健康損害的<strong>根源</strong>（如：開口、感電）。</p></li>
 <li><p><strong>風險 (Risk)</strong>：危害發生的<strong>可能性</strong> × 後果的<strong>嚴重度</strong>。</p></li>
 <li><p><strong>風險評估 (Risk Assessment)</strong>：包括辨識、分析、評量風險的程序。</p></li>
 <li><p><strong>風險處理 (Risk Treatment)</strong>：對不可接受風險擬定對策，並執行追蹤。</p></li>
 </ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>風險 = 可能性 × 嚴重度</strong><br>
 風險評估的核心就是計算這個值，並決定是否要進一步控制。</p>
 </div>
 </div>
-</div>
 </section>
-<section id="施工風險評估的類型" class="slide level2 center">
-<h2>施工風險評估的類型</h2>
+<section id="施工風險評估的類型" class="level2">
+<h2 class="anchored" data-anchor-id="施工風險評估的類型">施工風險評估的類型</h2>
 <p>根據指引，營造工程全生命週期需辦理以下評估：</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 40%">
-<col style="width: 34%">
+<col style="width: 39%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -336,9 +736,10 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="設計階段風險評估小組" class="slide level2 center">
-<h2>設計階段風險評估小組</h2>
+<section id="設計階段風險評估小組" class="level2">
+<h2 class="anchored" data-anchor-id="設計階段風險評估小組">設計階段風險評估小組</h2>
 <ul>
 <li><p>召集人/工程設計負責人</p>
 <ul>
@@ -351,34 +752,35 @@
 <li><p>繪圖人員</p></li>
 </ul></li>
 </ul>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Tip</strong></p>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>職業安全衛生人員須具備職安衛風險評估專業知識，引導小組進行法令遵循與程序控管。</p>
 </div>
 </div>
-</div>
+<hr>
 </section>
-<section id="作業拆解-work-breakdown-structure-wbs" class="slide level2 center">
-<h2>作業拆解 (Work Breakdown Structure, WBS)</h2>
+<section id="作業拆解-work-breakdown-structure-wbs" class="level2">
+<h2 class="anchored" data-anchor-id="作業拆解-work-breakdown-structure-wbs">作業拆解 (Work Breakdown Structure, WBS)</h2>
 <p><strong>目的</strong>：將複雜工程分解為可管理的作業單元，以便模擬風險。</p>
-
-<img data-src="images/營甲分項工程.png" class="r-stretch"><p><strong>編碼範例</strong>：B（分項） - b（第一階） - ⅱ（第二階） - 03（作業步驟） = <code>Bbⅱ03</code></p>
+<p><img src="images/營甲分項工程.png" class="img-fluid"></p>
+<p><strong>編碼範例</strong>：B（分項） - b（第一階） - ⅱ（第二階） - 03（作業步驟） = <code>Bbⅱ03</code></p>
 </section>
-<section id="作業拆解案例連續壁工程" class="slide level2 center">
-<h2>作業拆解案例：連續壁工程</h2>
-<table class="caption-top">
+<section id="作業拆解案例連續壁工程" class="level2">
+<h2 class="anchored" data-anchor-id="作業拆解案例連續壁工程">作業拆解案例：連續壁工程</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 16%">
-<col style="width: 24%">
-<col style="width: 33%">
+<col style="width: 25%">
+<col style="width: 19%">
+<col style="width: 22%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -427,24 +829,26 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>拆解越細，越能發現潛在可能危害。</p>
 </blockquote>
+<hr>
 </section>
-<section id="危害辨識方法---5m1e-魚骨圖" class="slide level2 center">
-<h2>危害辨識方法 - 5M1E 魚骨圖</h2>
-
-<img data-src="images/營甲5M1E.png" class="r-stretch"><blockquote>
+<section id="危害辨識方法---5m1e-魚骨圖" class="level2">
+<h2 class="anchored" data-anchor-id="危害辨識方法---5m1e-魚骨圖">危害辨識方法 - 5M1E 魚骨圖</h2>
+<p><img src="images/營甲5M1E.png" class="img-fluid"></p>
+<blockquote class="blockquote">
 <p>透過小組討論，逐一列出可能導致事故的根源(危害？)。</p>
 </blockquote>
+<hr>
 </section>
-<section id="危害風險情境描述---5w1h" class="slide level2 center">
-<h2>危害/風險情境描述 - 5W1H</h2>
-<table class="caption-top">
+<section id="危害風險情境描述---5w1h" class="level2">
+<h2 class="anchored" data-anchor-id="危害風險情境描述---5w1h">危害/風險情境描述 - 5W1H</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 28%">
-<col style="width: 13%">
-<col style="width: 57%">
+<col style="width: 27%">
+<col style="width: 18%">
+<col style="width: 53%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -486,12 +890,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>完整描述風險情境，才能擬定有效對策。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險分析與評量" class="slide level2 center">
-<h2>風險分析與評量</h2>
+<section id="風險分析與評量" class="level2">
+<h2 class="anchored" data-anchor-id="風險分析與評量">風險分析與評量</h2>
 <p><strong>步驟</strong>：</p>
 <ul>
 <li><p>分析</p>
@@ -504,17 +909,17 @@
 <li>查<strong>風險矩陣</strong>得風險值與等級</li>
 </ul></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>這是半量化方法，受主觀影響</p>
 </blockquote>
 </section>
-<section id="級風險矩陣可能性分級例" class="slide level2 center">
-<h2>5級風險矩陣：可能性分級(例)</h2>
-<table class="caption-top">
+<section id="級風險矩陣可能性分級例" class="level2">
+<h2 class="anchored" data-anchor-id="級風險矩陣可能性分級例">5級風險矩陣：可能性分級(例)</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 23%">
-<col style="width: 66%">
+<col style="width: 16%">
+<col style="width: 21%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -551,18 +956,19 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>營造業可依據<strong>作業頻率</strong>（如每週幾次）、<strong>作業人數</strong>（如每次10人以上）來判斷可能性。?</p>
 </blockquote>
+<hr>
 </section>
-<section id="級風險矩陣嚴重度分級例" class="slide level2 center">
-<h2>5級風險矩陣：嚴重度分級(例)</h2>
-<table class="caption-top">
+<section id="級風險矩陣嚴重度分級例" class="level2">
+<h2 class="anchored" data-anchor-id="級風險矩陣嚴重度分級例">5級風險矩陣：嚴重度分級(例)</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 31%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -605,20 +1011,21 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>嚴重度應同時考量<strong>人員傷害</strong>與<strong>工程損失</strong>，取較高等級。</p>
 </blockquote>
+<hr>
 </section>
-<section id="x5-風險矩陣-風險值與等級例" class="slide level2 center">
-<h2>5x5 風險矩陣 (風險值與等級)(例)</h2>
-<table class="caption-top" style="width:100%;">
+<section id="x5-風險矩陣-風險值與等級例" class="level2">
+<h2 class="anchored" data-anchor-id="x5-風險矩陣-風險值與等級例">5x5 風險矩陣 (風險值與等級)(例)</h2>
+<table class="caption-top table">
 <colgroup>
+<col style="width: 14%">
 <col style="width: 16%">
 <col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -673,12 +1080,13 @@
 </tr>
 </tbody>
 </table>
-<h3 id="風險等級例">風險等級(例)</h3>
-<table class="caption-top">
+<section id="風險等級例" class="level3">
+<h3 class="anchored" data-anchor-id="風險等級例">風險等級(例)</h3>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 16%">
-<col style="width: 58%">
+<col style="width: 24%">
+<col style="width: 18%">
+<col style="width: 55%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -715,11 +1123,13 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="實例高處作業墜落風險" class="slide level2 center scrollable">
-<h2>實例：高處作業墜落風險</h2>
+</section>
+<section id="實例高處作業墜落風險" class="level2">
+<h2 class="anchored" data-anchor-id="實例高處作業墜落風險">實例：高處作業墜落風險</h2>
 <p><strong>作業情境</strong>：5樓外牆施工架（高度15公尺）上進行模板組立。</p>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">評估項目</th>
@@ -755,7 +1165,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="對策措施消除降低風險">對策措施（消除/降低風險）：</h3>
+<section id="對策措施消除降低風險" class="level3">
+<h3 class="anchored" data-anchor-id="對策措施消除降低風險">對策措施（消除/降低風險）：</h3>
 <ol type="1">
 <li><p><strong>優先</strong>：採用系統式施工架，並設置<strong>雙層護欄</strong>及<strong>下拉桿</strong>。</p></li>
 <li><p><strong>使用安全母索</strong>：作業人員必須穿戴安全帶，並確實掛勾於母索。</p></li>
@@ -763,11 +1174,13 @@
 <li><p><strong>勤前教育</strong>：每日確認安全帶掛勾點。</p></li>
 </ol>
 <p><strong>對策後評估</strong>：可能性降至2（不太可能），嚴重度仍為5，風險值=10（高度風險），仍須持續降低與管理？</p>
+<hr>
 </section>
-<section id="實例臨時用電感電風險" class="slide level2 center scrollable">
-<h2>實例：臨時用電感電風險</h2>
+</section>
+<section id="實例臨時用電感電風險" class="level2">
+<h2 class="anchored" data-anchor-id="實例臨時用電感電風險">實例：臨時用電感電風險</h2>
 <p><strong>作業情境</strong>：工地使用延長線接電鋸，電纜線破損且橫越潮濕地面。</p>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">評估項目</th>
@@ -803,7 +1216,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="對策措施工程管理控制">對策措施（工程/管理控制）：</h3>
+<section id="對策措施工程管理控制" class="level3">
+<h3 class="anchored" data-anchor-id="對策措施工程管理控制">對策措施（工程/管理控制）：</h3>
 <ol type="1">
 <li><p><strong>裝設漏電斷路器 (ELCB)</strong>：於分電盤或延長線插座端裝設，動作電流30mA以下。</p></li>
 <li><p><strong>電纜線保護</strong>：架高電纜線或使用橡膠護套覆蓋，避免水浸。</p></li>
@@ -812,12 +1226,13 @@
 </ol>
 <p><strong>對策後評估</strong>：可能性降至1（幾乎不可能），嚴重度仍為5，風險值=5（中度風險），可接受 ?</p>
 </section>
-<section id="風險矩陣圖示墜落-vs-感電" class="slide level2 center">
-<h2>風險矩陣圖示（墜落 vs 感電）</h2>
-<div class="cell" data-reveal="true" data-layout-align="default">
+</section>
+<section id="風險矩陣圖示墜落-vs-感電" class="level2">
+<h2 class="anchored" data-anchor-id="風險矩陣圖示墜落-vs-感電">風險矩陣圖示（墜落 vs 感電）</h2>
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
-<p></p><figure class=""><p></p>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">quadrantChart
     title 風險矩陣分布範例
@@ -838,29 +1253,29 @@
 </div>
 </div>
 </section>
-<section id="風險對策的優先順序-階層" class="slide level2 center scrollable">
-<h2>風險對策的優先順序 (階層)</h2>
-
-<img data-src="images/營甲RCS.png" style="width:80.0%" class="r-stretch"><ol type="1">
+<section id="風險對策的優先順序-階層" class="level2">
+<h2 class="anchored" data-anchor-id="風險對策的優先順序-階層">風險對策的優先順序 (階層)</h2>
+<p><img src="images/營甲RCS.png" class="img-fluid" style="width:80.0%"></p>
+<ol type="1">
 <li><p>消除風險 - 改變設計/工法、AI 識別？</p></li>
 <li><p>降低風險 - 以安全方法替代危險</p></li>
 <li><p>工程控制 - 護欄、安全網、漏電斷路器、AI 識別等</p></li>
 <li><p>管理控制 - 教育訓練、標準作業程序、自主檢查等</p></li>
 <li><p>個人防護具 - 安全帽、安全帶、護目鏡等</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p><strong>重要概念</strong>：<strong>消除風險</strong>是最有效的對策（本質安全），<strong>個人防護具</strong>是最後一道防線。</p>
 <p><strong>進階閱讀</strong>：美國安全工程師專業雜誌文章 <a href="https://aeasseincludes.assp.org/professionalsafety/pastissues/050/05/030505as.pdf">Risk Assessment &amp; Hierarchies of Control</a></p>
 </blockquote>
 </section>
-<section id="風險對策類型範例" class="slide level2 center">
-<h2>風險對策類型範例</h2>
-<table class="caption-top">
+<section id="風險對策類型範例" class="level2">
+<h2 class="anchored" data-anchor-id="風險對策類型範例">風險對策類型範例</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 18%">
+<col style="width: 26%">
+<col style="width: 24%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -903,9 +1318,10 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="設計階段風險評估成果" class="slide level2 center scrollable">
-<h2>設計階段風險評估成果</h2>
+<section id="設計階段風險評估成果" class="level2">
+<h2 class="anchored" data-anchor-id="設計階段風險評估成果">設計階段風險評估成果</h2>
 <p>設計者完成風險評估後，必須產出以下文件，納入招標文件：</p>
 <ol type="1">
 <li><p><strong>施工安全衛生設施參考圖說</strong>：如護欄、施工架、擋土支撐標準圖。(只有硬體？)</p></li>
@@ -919,14 +1335,15 @@
 <li><p><strong>職業安全衛生經費明細表</strong>：量化編列，如安全網數量、護欄長度。</p></li>
 <li><p><strong>合理工期建議</strong>：避免因趕工而忽略安全。</p></li>
 </ol>
+<hr>
 </section>
-<section id="施工風險評估表-標準版-5級矩陣範例" class="slide level2 center">
-<h2>施工風險評估表 (標準版) 5級矩陣範例</h2>
-<table class="caption-top" style="width:97%;">
+<section id="施工風險評估表-標準版-5級矩陣範例" class="level2">
+<h2 class="anchored" data-anchor-id="施工風險評估表-標準版-5級矩陣範例">施工風險評估表 (標準版) 5級矩陣範例</h2>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 15%">
-<col style="width: 4%">
-<col style="width: 20%">
+<col style="width: 5%">
+<col style="width: 19%">
 <col style="width: 13%">
 <col style="width: 14%">
 <col style="width: 12%">
@@ -972,12 +1389,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>風險處理後，目標是將風險值降至 <strong>中度 (≤9)</strong> 或更低。</p>
 </blockquote>
+<hr>
 </section>
-<section id="作業前危害調查與勤前教育-搭配5級矩陣" class="slide level2 center">
-<h2>作業前危害調查與勤前教育 (搭配5級矩陣)</h2>
+<section id="作業前危害調查與勤前教育-搭配5級矩陣" class="level2">
+<h2 class="anchored" data-anchor-id="作業前危害調查與勤前教育-搭配5級矩陣">作業前危害調查與勤前教育 (搭配5級矩陣)</h2>
 <ul>
 <li><p><strong>法源</strong>：營造安全衛生設施標準第6條</p></li>
 <li><p><strong>時機</strong>：每日或每項作業開始前</p></li>
@@ -991,9 +1409,10 @@
 <li><p>勞工<strong>複誦</strong>安全要領並簽名確認。</p></li>
 </ul></li>
 </ul>
+<hr>
 </section>
-<section id="工程變更風險評估-5級矩陣" class="slide level2 center scrollable">
-<h2>工程變更風險評估 (5級矩陣)</h2>
+<section id="工程變更風險評估-5級矩陣" class="level2">
+<h2 class="anchored" data-anchor-id="工程變更風險評估-5級矩陣">工程變更風險評估 (5級矩陣)</h2>
 <p><strong>時機</strong>：現地情況差異、施工方法改變、主要機具變更、安衛設施變更等</p>
 <p><strong>流程</strong>：</p>
 <ol type="1">
@@ -1003,12 +1422,13 @@
 <li><p><strong>處理</strong>：對高度/極高風險擬定對策，修正施工計畫。</p></li>
 <li><p><strong>啟用前檢查</strong>：所有措施完成後，經資深人員檢查確認才能開始施作。</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>範例：原採傳統施工架，變更為<strong>高空工作車</strong>，墜落風險從L:4,S:5（20極高）降為L:2,S:4（8中度）。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險矩陣實務要點" class="slide level2 center scrollable">
-<h2>風險矩陣實務要點</h2>
+<section id="風險矩陣實務要點" class="level2">
+<h2 class="anchored" data-anchor-id="風險矩陣實務要點">風險矩陣實務要點</h2>
 <ol type="1">
 <li><p><strong>分級更細</strong>：極高風險(20-25)必須<strong>立即停工</strong>改善。</p></li>
 <li><p><strong>量化評估</strong>：透過作業頻率、人數、傷亡程度合理給分，避免主觀。</p></li>
@@ -1016,25 +1436,25 @@
 <li><p><strong>結合目標管理</strong>：將高度/極高風險項目列為年度安全衛生管理方案。</p></li>
 <li><p><strong>教育訓練</strong>：讓所有主管及勞工理解風險等級的意義及對應的行動。</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>使用5級矩陣，能更精準地配置資源，優先處理墜落、感電、倒塌等重大風險。</p>
 </blockquote>
 </section>
-<section id="施工規劃階段風險評估流程" class="slide level2 center">
-<h2>施工規劃階段風險評估流程</h2>
-
-<img data-src="images/施工RA.png" style="width:80.0%" class="r-stretch"></section>
-<section id="施工方案評選範例" class="slide level2 center">
-<h2>施工方案評選範例</h2>
-<table class="caption-top">
+<section id="施工規劃階段風險評估流程" class="level2">
+<h2 class="anchored" data-anchor-id="施工規劃階段風險評估流程">施工規劃階段風險評估流程</h2>
+<p><img src="images/施工RA.png" class="img-fluid" style="width:80.0%"></p>
+</section>
+<section id="施工方案評選範例" class="level2">
+<h2 class="anchored" data-anchor-id="施工方案評選範例">施工方案評選範例</h2>
+<table class="caption-top table">
 <colgroup>
+<col style="width: 15%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
 <col style="width: 17%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 14%">
-<col style="width: 19%">
-<col style="width: 9%">
-<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1068,13 +1488,14 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>「安全」項目的權重不應低於各項目權重之平均值，建議至少15%-30%。</p>
 </blockquote>
+<hr>
 </section>
-<section id="施工風險評估表-標準版-重點欄位" class="slide level2 center">
-<h2>施工風險評估表 (標準版) 重點欄位</h2>
-<table class="caption-top" style="width:97%;">
+<section id="施工風險評估表-標準版-重點欄位" class="level2">
+<h2 class="anchored" data-anchor-id="施工風險評估表-標準版-重點欄位">施工風險評估表 (標準版) 重點欄位</h2>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 5%">
@@ -1119,12 +1540,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>事業單位可依工程規模選擇<strong>簡易版</strong>、<strong>基本版</strong>或<strong>標準版</strong>評估表。</p>
 </blockquote>
+<hr>
 </section>
-<section id="作業前危害調查與勤前教育" class="slide level2 center">
-<h2>作業前危害調查與勤前教育</h2>
+<section id="作業前危害調查與勤前教育" class="level2">
+<h2 class="anchored" data-anchor-id="作業前危害調查與勤前教育">作業前危害調查與勤前教育</h2>
 <ul>
 <li><p><strong>法源</strong>：營造安全衛生設施標準第6條</p></li>
 <li><p><strong>時機</strong>：每日或每項作業開始前</p></li>
@@ -1138,15 +1560,16 @@
 <li><p>勞工<strong>複誦</strong>安全要領並簽名確認</p></li>
 </ul></li>
 </ul>
+<hr>
 </section>
-<section id="作業前危害調查表-範例" class="slide level2 center">
-<h2>作業前危害調查表 (範例)</h2>
-<table class="caption-top">
+<section id="作業前危害調查表-範例" class="level2">
+<h2 class="anchored" data-anchor-id="作業前危害調查表-範例">作業前危害調查表 (範例)</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1177,12 +1600,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>所有作業人員必須在<strong>勤前教育紀錄表</strong>上簽名，表示已了解風險及對策。</p>
 </blockquote>
+<hr>
 </section>
-<section id="工程變更風險評估" class="slide level2 center scrollable">
-<h2>工程變更風險評估</h2>
+<section id="工程變更風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="工程變更風險評估">工程變更風險評估</h2>
 <p><strong>時機</strong>：現地情況差異、施工方法改變、主要機具變更、安衛設施變更</p>
 <p><strong>流程</strong>：</p>
 <ol type="1">
@@ -1192,14 +1616,15 @@
 <li><p><strong>處理</strong>：修正施工計畫、修改圖說、增設設施、教育訓練</p></li>
 <li><p><strong>啟用前檢查</strong>：所有措施完成後，經資深人員檢查確認才能開始施作</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>依據<a href="https://laws.mol.gov.tw/FLAW/FLAWDOC01.aspx?id=FL015039&amp;flno=12-3">職業安全衛生管理辦法第12條之3</a>，變更前<strong>必須</strong>評估。</p>
 </blockquote>
+<hr>
 </section>
-<section id="拆除作業風險評估重點" class="slide level2 center">
-<h2>拆除作業風險評估重點</h2>
+<section id="拆除作業風險評估重點" class="level2">
+<h2 class="anchored" data-anchor-id="拆除作業風險評估重點">拆除作業風險評估重點</h2>
 <p>拆除作業風險極高，必須事前詳實調查：</p>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">調查項目</th>
@@ -1226,21 +1651,23 @@
 </tbody>
 </table>
 <p><strong>拆除計畫</strong>須包括：工法、機具、支撐系統、分類、交通維持、安全衛生管理、緊急應變。</p>
-<blockquote>
+<blockquote class="blockquote">
 <p>部分拆除（如結構補強）更要詳加評估保留部分的穩定性。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險資訊傳遞與追蹤管制" class="slide level2 center">
-<h2>風險資訊傳遞與追蹤管制</h2>
-
-<img data-src="images/營甲風險資訊傳遞.png" style="width:80.0%" class="r-stretch"><ul>
+<section id="風險資訊傳遞與追蹤管制" class="level2">
+<h2 class="anchored" data-anchor-id="風險資訊傳遞與追蹤管制">風險資訊傳遞與追蹤管制</h2>
+<p><img src="images/營甲風險資訊傳遞.png" class="img-fluid" style="width:80.0%"></p>
+<ul>
 <li><p><strong>主要設計者</strong>：彙整各設計者成果，編製「設計階段施工風險評估報告」傳給施工者。</p></li>
 <li><p><strong>主要施工者</strong>：彙整各施工者風險評估成果，編製「施工風險管理報告」交付業主，轉給使用單位。</p></li>
 <li><p><strong>追蹤管制表</strong>：列出風險項目、對策、負責人、完成日期、結案確認。</p></li>
 </ul>
+<hr>
 </section>
-<section id="實務演練建議" class="slide level2 center scrollable">
-<h2>實務演練建議</h2>
+<section id="實務演練建議" class="level2">
+<h2 class="anchored" data-anchor-id="實務演練建議">實務演練建議</h2>
 <ol type="1">
 <li><p><strong>分組討論</strong>：選擇一個工地常見作業（如：施工架組拆、擋土支撐、鋼筋吊掛）。</p></li>
 <li><p><strong>填寫風險評估表</strong>：使用標準版或基本版表格。</p>
@@ -1253,12 +1680,13 @@
 <li><p><strong>簡報分享</strong>：各組說明評估結果與對策。</p></li>
 <li><p><strong>講師回饋</strong>：補充法令要求與實務經驗。</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>透過實際操作，才能真正掌握風險評估的技巧。</p>
 </blockquote>
+<hr>
 </section>
-<section id="總結" class="slide level2 center">
-<h2>總結</h2>
+<section id="總結" class="level2">
+<h2 class="anchored" data-anchor-id="總結">總結</h2>
 <ul>
 <li><p><strong>源頭管理</strong>：設計階段就要納入施工安全考量，消除或降低風險。</p></li>
 <li><p><strong>全員參與</strong>：由小組進行評估，結合專業與經驗。</p></li>
@@ -1266,10 +1694,11 @@
 <li><p><strong>資訊透明</strong>：風險評估成果要確實傳遞給現場施工人員（透過勤前教育）。</p></li>
 <li><p><strong>持續改善</strong>：追蹤對策成效，發現新風險立即再評估。</p></li>
 </ul>
+<hr>
 </section>
-<section id="q-a" class="slide level2 center scrollable">
-<h2>Q &amp; A</h2>
-<blockquote>
+<section id="q-a" class="level2">
+<h2 class="anchored" data-anchor-id="q-a">Q &amp; A</h2>
+<blockquote class="blockquote">
 <p>參考資料：</p>
 <ol type="1">
 <li><p>勞動部職業安全衛生署，<a href="https://www.osha.gov.tw/48110/48129/48177/48183/49944/">營造工程風險評估技術指引 (第三版)</a>，114年2月</p></li>
@@ -1277,15 +1706,13 @@
 <li><p>營造甲種職業安全衛生業務主管教材</p></li>
 </ol>
 </blockquote>
-</section></section>
-<section>
-<section id="營造工程施工風險評估技術指引介紹" class="title-slide slide level1 center">
-<h1>2. 營造工程施工風險評估技術指引（介紹）</h1>
-
 </section>
-<section id="導引" class="slide level2 center">
-<h2>導引</h2>
-<blockquote>
+</section>
+<section id="營造工程施工風險評估技術指引介紹" class="level1">
+<h1>2. 營造工程施工風險評估技術指引（介紹）</h1>
+<section id="導引" class="level2">
+<h2 class="anchored" data-anchor-id="導引">導引</h2>
+<blockquote class="blockquote">
 <p>依《職業安全衛生法》第5條第2項規定：「工程之設計或施工者，應於設計或施工規劃階段實施風險評估。」</p>
 </blockquote>
 <p>本內容由講師依據勞動部職安署 <strong>「營造工程風險評估技術指引（第三版）」</strong> 編訂，協助營造業甲種業務主管：</p>
@@ -1295,14 +1722,15 @@
 <li>✅ 掌握設計、施工規劃、作業前、變更及拆除階段之風險評估重點</li>
 <li>✅ 建立風險評估資訊傳遞與追蹤管制機制</li>
 </ul>
+<hr>
 </section>
-<section id="營造工程風險特性-1" class="slide level2 center">
-<h2>營造工程風險特性</h2>
-<table class="caption-top">
+<section id="營造工程風險特性-1" class="level2">
+<h2 class="anchored" data-anchor-id="營造工程風險特性-1">營造工程風險特性</h2>
+<table class="caption-top table">
 <colgroup>
+<col style="width: 24%">
 <col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1339,17 +1767,18 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>💡 營造業職災發生率及嚴重度均高於其他行業，惟有系統性風險評估方可有效預防。</p>
 </blockquote>
+<hr>
 </section>
-<section id="法源依據" class="slide level2 center">
-<h2>法源依據</h2>
-<table class="caption-top">
+<section id="法源依據" class="level2">
+<h2 class="anchored" data-anchor-id="法源依據">法源依據</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 22%">
+<col style="width: 35%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1386,16 +1815,17 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>📌 違反上述規定，除可能發生職業災害外，將面臨行政處罰。</p>
 </blockquote>
+<hr>
 </section>
-<section id="關鍵名詞定義-1" class="slide level2 center">
-<h2>關鍵名詞定義</h2>
-<table class="caption-top">
+<section id="關鍵名詞定義-1" class="level2">
+<h2 class="anchored" data-anchor-id="關鍵名詞定義-1">關鍵名詞定義</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 40%">
+<col style="width: 59%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1426,17 +1856,18 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>目標：將風險控制在 <strong>最低合理可行範圍 (ALARP)</strong>。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險管理架構" class="slide level2 center">
-<h2>風險管理架構</h2>
-<table class="caption-top">
+<section id="風險管理架構" class="level2">
+<h2 class="anchored" data-anchor-id="風險管理架構">風險管理架構</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 36%">
+<col style="width: 21%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1493,24 +1924,26 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>參考ISO 31000:2018及CNS 31000:2021風險管理原則、架構及程序。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險管理程序-process" class="slide level2 center">
-<h2>風險管理程序 (Process)</h2>
-
-<img data-src="images/RA流程.png" style="width:80.0%" class="r-stretch"><ul>
+<section id="風險管理程序-process" class="level2">
+<h2 class="anchored" data-anchor-id="風險管理程序-process">風險管理程序 (Process)</h2>
+<p><img src="images/RA流程.png" class="img-fluid" style="width:80.0%"></p>
+<ul>
 <li><p><strong>範圍</strong>：全生命週期（規劃、設計、施工、使用、拆除）</p></li>
 <li><p><strong>準則</strong>：法令、指引、實務規範、工程經驗、災害案例</p></li>
 </ul>
+<hr>
 </section>
-<section id="各角色當責" class="slide level2 center">
-<h2>各角色當責</h2>
-<table class="caption-top">
+<section id="各角色當責" class="level2">
+<h2 class="anchored" data-anchor-id="各角色當責">各角色當責</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 28%">
+<col style="width: 71%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1541,15 +1974,17 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="準備作業-成立風險評估小組" class="slide level2 center">
-<h2>準備作業 – 成立風險評估小組</h2>
-<h3 id="設計階段小組組成">設計階段小組組成</h3>
-<table class="caption-top">
+<section id="準備作業-成立風險評估小組" class="level2">
+<h2 class="anchored" data-anchor-id="準備作業-成立風險評估小組">準備作業 – 成立風險評估小組</h2>
+<section id="設計階段小組組成" class="level3">
+<h3 class="anchored" data-anchor-id="設計階段小組組成">設計階段小組組成</h3>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 29%">
-<col style="width: 27%">
-<col style="width: 43%">
+<col style="width: 26%">
+<col style="width: 42%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1597,13 +2032,14 @@
 </tbody>
 </table>
 </section>
-<section id="施工規劃階段小組組成" class="slide level2 center">
-<h2>施工規劃階段小組組成</h2>
-<table class="caption-top">
+</section>
+<section id="施工規劃階段小組組成" class="level2">
+<h2 class="anchored" data-anchor-id="施工規劃階段小組組成">施工規劃階段小組組成</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 44%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1650,17 +2086,18 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>評估小組應涵蓋<strong>工程專業、安衛、施工實務</strong>等成員，必要時邀請設計單位提供諮詢。</p>
 </blockquote>
+<hr>
 </section>
-<section id="作業拆解-work-breakdown-structure" class="slide level2 center">
-<h2>作業拆解 (Work Breakdown Structure)</h2>
+<section id="作業拆解-work-breakdown-structure" class="level2">
+<h2 class="anchored" data-anchor-id="作業拆解-work-breakdown-structure">作業拆解 (Work Breakdown Structure)</h2>
 <p>目的：將工程分解為可管理、可評估風險的作業單元。（舉例）</p>
-<table class="caption-top" style="width:98%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
-<col style="width: 13%">
+<col style="width: 14%">
 <col style="width: 32%">
 <col style="width: 34%">
 </colgroup>
@@ -1701,26 +2138,34 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>✅ 拆解越細，越能完整辨識潛在危害。</p>
 </blockquote>
+<hr>
 </section>
-<section id="危害辨識-5m1e-魚骨圖" class="slide level2 center">
-<h2>危害辨識 – 5M1E 魚骨圖</h2>
-<h3 id="前已說明不贅述">前已說明，不贅述。</h3>
-<h3 id="方法多元不限於此">方法多元，不限於此 。</h3>
-<h3 id="需經驗累積多看事故調查報告">需經驗累積，多看事故調查報告。</h3>
-<blockquote>
+<section id="危害辨識-5m1e-魚骨圖" class="level2">
+<h2 class="anchored" data-anchor-id="危害辨識-5m1e-魚骨圖">危害辨識 – 5M1E 魚骨圖</h2>
+<section id="前已說明不贅述" class="level3">
+<h3 class="anchored" data-anchor-id="前已說明不贅述">前已說明，不贅述。</h3>
+</section>
+<section id="方法多元不限於此" class="level3">
+<h3 class="anchored" data-anchor-id="方法多元不限於此">方法多元，不限於此 。</h3>
+</section>
+<section id="需經驗累積多看事故調查報告" class="level3">
+<h3 class="anchored" data-anchor-id="需經驗累積多看事故調查報告">需經驗累積，多看事故調查報告。</h3>
+<blockquote class="blockquote">
 <p>評估小組逐項檢討，列出每項作業可能的所有危害根源。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險描述-5w1h" class="slide level2 center">
-<h2>風險描述 – 5W1H</h2>
-<table class="caption-top">
+</section>
+<section id="風險描述-5w1h" class="level2">
+<h2 class="anchored" data-anchor-id="風險描述-5w1h">風險描述 – 5W1H</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 30%">
-<col style="width: 16%">
-<col style="width: 53%">
+<col style="width: 29%">
+<col style="width: 18%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1762,13 +2207,14 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>完整描述風險情境，才能擬定有效對策。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險分析-5級可能性基準參考" class="slide level2 center">
-<h2>風險分析 – 5級可能性基準（參考）</h2>
-<table class="caption-top">
+<section id="風險分析-5級可能性基準參考" class="level2">
+<h2 class="anchored" data-anchor-id="風險分析-5級可能性基準參考">風險分析 – 5級可能性基準（參考）</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">等級</th>
@@ -1810,13 +2256,14 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>營造工程亦可參考<strong>過去災害統計</strong>：同類工程曾發生多次→給較高等級。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險分析-5級嚴重度基準參考" class="slide level2 center">
-<h2>風險分析 – 5級嚴重度基準（參考）</h2>
-<table class="caption-top">
+<section id="風險分析-5級嚴重度基準參考" class="level2">
+<h2 class="anchored" data-anchor-id="風險分析-5級嚴重度基準參考">風險分析 – 5級嚴重度基準（參考）</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">等級</th>
@@ -1858,13 +2305,14 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>嚴重度應同時考量<strong>人員傷害</strong>與<strong>工程/財物損失</strong>，取較高等級。</p>
 </blockquote>
+<hr>
 </section>
-<section id="x5-風險矩陣參考" class="slide level2 center">
-<h2>5x5 風險矩陣（參考）</h2>
-<table class="caption-top">
+<section id="x5-風險矩陣參考" class="level2">
+<h2 class="anchored" data-anchor-id="x5-風險矩陣參考">5x5 風險矩陣（參考）</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">風險值</th>
@@ -1918,11 +2366,11 @@
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 27%">
-<col style="width: 17%">
-<col style="width: 55%">
+<col style="width: 26%">
+<col style="width: 21%">
+<col style="width: 51%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1959,9 +2407,10 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="風險評量與可接受度" class="slide level2 center">
-<h2>風險評量與可接受度</h2>
+<section id="風險評量與可接受度" class="level2">
+<h2 class="anchored" data-anchor-id="風險評量與可接受度">風險評量與可接受度</h2>
 <ul>
 <li><p><strong>風險評量</strong>為將風險分析結果（風險值/等級）與預先設定的<strong>風險判定基準</strong>比較，決定風險是否可接受。</p></li>
 <li><p><strong>風險基準</strong>應由工程業主或設計/施工者依據：</p>
@@ -1977,16 +2426,18 @@
 <li><p>低度風險及極低風險 (風險值 ≤ 4) 可維持現有防護，但仍需定期監控。</p></li>
 </ul></li>
 </ul>
+<hr>
 </section>
-<section id="風險處理-對策類型及優先順序" class="slide level2 center">
-<h2>風險處理 – 對策類型及優先順序</h2>
-<h3 id="風險控制層級表hierarchy-of-controls">風險控制層級表（Hierarchy of Controls）</h3>
-<table class="caption-top">
+<section id="風險處理-對策類型及優先順序" class="level2">
+<h2 class="anchored" data-anchor-id="風險處理-對策類型及優先順序">風險處理 – 對策類型及優先順序</h2>
+<section id="風險控制層級表hierarchy-of-controls" class="level3">
+<h3 class="anchored" data-anchor-id="風險控制層級表hierarchy-of-controls">風險控制層級表（Hierarchy of Controls）</h3>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 26%">
+<col style="width: 35%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2030,9 +2481,10 @@
 </tbody>
 </table>
 </section>
-<section id="例" class="slide level2 center">
-<h2>例</h2>
-<table class="caption-top">
+</section>
+<section id="例" class="level2">
+<h2 class="anchored" data-anchor-id="例">例</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">優先順序</th>
@@ -2068,9 +2520,10 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="風險處理-追蹤管制" class="slide level2 center">
-<h2>風險處理 – 追蹤管制</h2>
+<section id="風險處理-追蹤管制" class="level2">
+<h2 class="anchored" data-anchor-id="風險處理-追蹤管制">風險處理 – 追蹤管制</h2>
 <ul>
 <li><p><strong>指定負責人</strong>：每項風險對策應指派人員於期限內完成。</p></li>
 <li><p><strong>處理後再評估</strong>：實施對策後，重新分析殘餘風險（可能性及嚴重度），確認風險值已降至可接受範圍。</p></li>
@@ -2081,17 +2534,21 @@
 <li><p>如發現殘餘風險仍不可接受或衍生新風險，應立即再評估、調整對策。</p></li>
 </ul></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>📌 風險處理不是一次性工作，而是<strong>滾動式管理與修正</strong>。</p>
 </blockquote>
+<hr>
 </section>
-<section id="設計階段施工風險評估" class="slide level2 center scrollable">
-<h2>設計階段施工風險評估</h2>
-<h3 id="實施時機">實施時機</h3>
+<section id="設計階段施工風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="設計階段施工風險評估">設計階段施工風險評估</h2>
+<section id="實施時機" class="level3">
+<h3 class="anchored" data-anchor-id="實施時機">實施時機</h3>
 <ul>
 <li>可行性研究、綜合規劃、基本設計、細部設計階段</li>
 </ul>
-<h3 id="主要工作">主要工作</h3>
+</section>
+<section id="主要工作" class="level3">
+<h3 class="anchored" data-anchor-id="主要工作">主要工作</h3>
 <ol type="1">
 <li><p>工址環境現況調查及工程功能需求分析</p></li>
 <li><p>工址及工程需求潛在危害辨識</p></li>
@@ -2099,7 +2556,9 @@
 <li><p>設計成果作業拆解及施工風險評估</p></li>
 <li><p>風險處理：修正設計、選用安全工法、編製安衛圖說及規範、編列經費</p></li>
 </ol>
-<h3 id="輸出成果">輸出成果</h3>
+</section>
+<section id="輸出成果" class="level3">
+<h3 class="anchored" data-anchor-id="輸出成果">輸出成果</h3>
 <ul>
 <li><p>設計階段施工風險評估報告</p></li>
 <li><p>施工安全衛生設施參考圖說</p></li>
@@ -2107,13 +2566,15 @@
 <li><p>職業安全衛生經費明細表</p></li>
 <li><p>使用維護手冊（初稿）</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>此階段為<strong>源頭管理</strong>，消除風險的成本最低、效果最好。</p>
 </blockquote>
+<hr>
 </section>
-<section id="設計方案評選表例" class="slide level2 center">
-<h2>設計方案評選表（例）</h2>
-<table class="caption-top" style="width:100%;">
+</section>
+<section id="設計方案評選表例" class="level2">
+<h2 class="anchored" data-anchor-id="設計方案評選表例">設計方案評選表（例）</h2>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -2167,17 +2628,21 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>「安全」權重應不低於各項目權重之平均值，建議 ≥15%。</p>
 </blockquote>
+<hr>
 </section>
-<section id="施工規劃階段風險評估" class="slide level2 center scrollable">
-<h2>施工規劃階段風險評估</h2>
-<h3 id="實施時機-1">實施時機</h3>
+<section id="施工規劃階段風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="施工規劃階段風險評估">施工規劃階段風險評估</h2>
+<section id="實施時機-1" class="level3">
+<h3 class="anchored" data-anchor-id="實施時機-1">實施時機</h3>
 <ul>
 <li>施工前，施工者擬定施工計畫時</li>
 </ul>
-<h3 id="主要工作-1">主要工作</h3>
+</section>
+<section id="主要工作-1" class="level3">
+<h3 class="anchored" data-anchor-id="主要工作-1">主要工作</h3>
 <ol type="1">
 <li><p>工址環境補充調查及施工需求分析</p></li>
 <li><p>辨識工址及施工需求潛在危害</p></li>
@@ -2186,18 +2651,22 @@
 <li><p>作業拆解及施工風險評估</p></li>
 <li><p>風險處理：修正施工方法、改變程序、選用安全機具、設置設施、訂定SOP、教育訓練、自主檢查、個人防護具</p></li>
 </ol>
-<h3 id="輸出成果-1">輸出成果</h3>
+</section>
+<section id="輸出成果-1" class="level3">
+<h3 class="anchored" data-anchor-id="輸出成果-1">輸出成果</h3>
 <ul>
 <li><p>施工規劃階段施工風險評估報告</p></li>
 <li><p>修正後施工計畫（含安衛設施施工圖、安全作業標準等）</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>施工規劃階段評估結果應納入<strong>施工計畫</strong>，並作為<strong>作業前危害調查</strong>的基礎。</p>
 </blockquote>
+<hr>
 </section>
-<section id="施工方案評選表例" class="slide level2 center">
-<h2>施工方案評選表（例）</h2>
-<table class="caption-top" style="width:100%;">
+</section>
+<section id="施工方案評選表例" class="level2">
+<h2 class="anchored" data-anchor-id="施工方案評選表例">施工方案評選表（例）</h2>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -2251,15 +2720,19 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>即使初期成本較高，但<strong>安全權重</strong>納入後，優選方案仍可能勝出。</p>
 </blockquote>
+<hr>
 </section>
-<section id="作業前危害調查與勤前教育-1" class="slide level2 center">
-<h2>作業前危害調查與勤前教育</h2>
-<h3 id="法源">法源</h3>
+<section id="作業前危害調查與勤前教育-1" class="level2">
+<h2 class="anchored" data-anchor-id="作業前危害調查與勤前教育-1">作業前危害調查與勤前教育</h2>
+<section id="法源" class="level3">
+<h3 class="anchored" data-anchor-id="法源">法源</h3>
 <p>營造安全衛生設施標準第6條：「雇主使勞工於營造工程工作場所作業前，應指派所僱之職業安全衛生人員、工作場所負責人或專任工程人員等專業人員，實施危害調查、評估，並採適當防護設施，列入施工計畫執行。」</p>
-<h3 id="實施方式">實施方式</h3>
+</section>
+<section id="實施方式" class="level3">
+<h3 class="anchored" data-anchor-id="實施方式">實施方式</h3>
 <ul>
 <li><p><strong>時機</strong>：每日作業前或每項作業開始前</p></li>
 <li><p><strong>調查內容</strong>：</p>
@@ -2272,17 +2745,21 @@
 <li><p><strong>處理</strong>：即時調整作業方法、增設防護設施</p></li>
 <li><p><strong>勤前教育</strong>：告知勞工危害及安全作業要領，勞工複誦並簽名</p></li>
 </ul>
+<hr>
 </section>
-<section id="作業前危害調查與危害告知流程" class="slide level2 center">
-<h2>作業前危害調查與危害告知流程</h2>
-
-<img data-src="images/作業前危害調查與危害告知.png" style="width:80.0%" class="r-stretch"><blockquote>
+</section>
+<section id="作業前危害調查與危害告知流程" class="level2">
+<h2 class="anchored" data-anchor-id="作業前危害調查與危害告知流程">作業前危害調查與危害告知流程</h2>
+<p><img src="images/作業前危害調查與危害告知.png" class="img-fluid" style="width:80.0%"></p>
+<blockquote class="blockquote">
 <p>勤前教育紀錄應妥善保存，備供查核。</p>
 </blockquote>
+<hr>
 </section>
-<section id="工程變更風險評估-1" class="slide level2 center scrollable">
-<h2>工程變更風險評估</h2>
-<h3 id="時機">時機</h3>
+<section id="工程變更風險評估-1" class="level2">
+<h2 class="anchored" data-anchor-id="工程變更風險評估-1">工程變更風險評估</h2>
+<section id="時機" class="level3">
+<h3 class="anchored" data-anchor-id="時機">時機</h3>
 <ul>
 <li><p>現地情況差異（如地質與設計不符）</p></li>
 <li><p>工程內容或設計變更</p></li>
@@ -2290,7 +2767,9 @@
 <li><p>主要機具設備變更</p></li>
 <li><p>主要安全衛生設施變更</p></li>
 </ul>
-<h3 id="實施步驟">實施步驟</h3>
+</section>
+<section id="實施步驟" class="level3">
+<h3 class="anchored" data-anchor-id="實施步驟">實施步驟</h3>
 <ol type="1">
 <li><p>辨識變更可能帶來的新危害</p></li>
 <li><p>使用風險矩陣分析新風險等級</p></li>
@@ -2305,20 +2784,25 @@
 </ul></li>
 <li><p><strong>啟用前檢查</strong>：由資深人員確認所有措施完成後方可開始作業</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>依據職安管理辦法第12條之3：變更前未經評估，不得逕行施工。</p>
 </blockquote>
+<hr>
 </section>
-<section id="拆除作業施工風險評估" class="slide level2 center">
-<h2>拆除作業施工風險評估</h2>
-<h3 id="事前調查重點">事前調查重點</h3>
+</section>
+<section id="拆除作業施工風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="拆除作業施工風險評估">拆除作業施工風險評估</h2>
+<section id="事前調查重點" class="level3">
+<h3 class="anchored" data-anchor-id="事前調查重點">事前調查重點</h3>
 <ul>
 <li><p>圖說及紀錄：設計圖、施工紀錄、竣工圖、維修改建紀錄</p></li>
 <li><p>構造物現況：結構損壞、腐蝕、裂縫、有無石綿、放射性物質</p></li>
 <li><p>管線及設備：電力、瓦斯、給排水、化學品殘留</p></li>
 <li><p>鄰近環境：道路、建築物、人車流動</p></li>
 </ul>
-<h3 id="拆除計畫應包含">拆除計畫應包含</h3>
+</section>
+<section id="拆除計畫應包含" class="level3">
+<h3 class="anchored" data-anchor-id="拆除計畫應包含">拆除計畫應包含</h3>
 <ul>
 <li><p>拆除方法及順序（穩定維持措施）</p></li>
 <li><p>使用機具設備</p></li>
@@ -2327,29 +2811,32 @@
 <li><p>職業安全衛生管理計畫</p></li>
 <li><p>緊急應變計畫</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>拆除作業風險極高，必須擬定<strong>拆除計畫</strong>並實施風險評估後方可作業。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險資訊傳遞與追蹤管制-1" class="slide level2 center">
-<h2>風險資訊傳遞與追蹤管制</h2>
-
-<img data-src="images/風險資訊傳遞與追蹤管制.png" style="width:100.0%" class="r-stretch"><blockquote>
+</section>
+<section id="風險資訊傳遞與追蹤管制-1" class="level2">
+<h2 class="anchored" data-anchor-id="風險資訊傳遞與追蹤管制-1">風險資訊傳遞與追蹤管制</h2>
+<p><img src="images/風險資訊傳遞與追蹤管制.png" class="img-fluid" style="width:100.0%"></p>
+<blockquote class="blockquote">
 <p>各階段風險資訊應完整記錄並傳遞予後續權責單位，確保風險對策持續有效。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險處理追蹤管制表例" class="slide level2 center">
-<h2>風險處理追蹤管制表（例）</h2>
-<table class="caption-top">
+<section id="風險處理追蹤管制表例" class="level2">
+<h2 class="anchored" data-anchor-id="風險處理追蹤管制表例">風險處理追蹤管制表（例）</h2>
+<table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 28%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2396,24 +2883,25 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>高度及極高風險項目應列為優先改善對象，並由管理階層定期審查。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險評估表單-簡易版" class="slide level2 center">
-<h2>風險評估表單 – 簡易版</h2>
+<section id="風險評估表單-簡易版" class="level2">
+<h2 class="anchored" data-anchor-id="風險評估表單-簡易版">風險評估表單 – 簡易版</h2>
 <p>（適用契約金額150萬以下或勞工人數未滿5人之微型工程）</p>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2453,14 +2941,15 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>簡易版將風險分析併入評量，直接判斷可否接受。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險評估表單-基本版" class="slide level2 center">
-<h2>風險評估表單 – 基本版</h2>
+<section id="風險評估表單-基本版" class="level2">
+<h2 class="anchored" data-anchor-id="風險評估表單-基本版">風險評估表單 – 基本版</h2>
 <p>（適用150萬以上、5000萬以下或勞工人數5人以上、30人以下之工程）</p>
-<table class="caption-top" style="width:96%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
 <col style="width: 7%">
@@ -2501,14 +2990,15 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>基本版區分「法定防護設施」及「新增防護設施」二次評估。</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險評估表單-標準版" class="slide level2 center">
-<h2>風險評估表單 – 標準版</h2>
+<section id="風險評估表單-標準版" class="level2">
+<h2 class="anchored" data-anchor-id="風險評估表單-標準版">風險評估表單 – 標準版</h2>
 <p>（適用5000萬以上、勞工人數30人以上或丁類危險性工作場所）</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 8%">
@@ -2556,12 +3046,13 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>標準版詳細記錄風險分析(可能性/嚴重度/風險值/等級)及處理後再評估結果。</p>
 </blockquote>
+<hr>
 </section>
-<section id="案例演練建議" class="slide level2 center scrollable">
-<h2>案例演練建議</h2>
+<section id="案例演練建議" class="level2">
+<h2 class="anchored" data-anchor-id="案例演練建議">案例演練建議</h2>
 <ol type="1">
 <li><p><strong>分組討論（20分鐘）</strong></p>
 <ul>
@@ -2582,9 +3073,10 @@
 <li><p>補充法令規定及實務最佳作法。</p></li>
 </ul></li>
 </ol>
+<hr>
 </section>
-<section id="結語" class="slide level2 center">
-<h2>結語</h2>
+<section id="結語" class="level2">
+<h2 class="anchored" data-anchor-id="結語">結語</h2>
 <ul>
 <li><p><strong>源頭管理</strong>：設計階段即實施風險評估，消除或降低施工風險，效果最好、成本最低。</p></li>
 <li><p><strong>系統化程序</strong>：依循 ISO 31000 風險管理原則，持續溝通、監督、審查。</p></li>
@@ -2592,13 +3084,14 @@
 <li><p><strong>全員參與</strong>：風險評估小組須納入安衛、工程、施工、分包商等成員。</p></li>
 <li><p><strong>資訊透明</strong>：風險評估成果必須傳遞至現場作業勞工（透過勤前教育及危害告知）。</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>落實施工風險評估，是提升營造安全文化、預防職業災害的根本之道。</p>
 </blockquote>
+<hr>
 </section>
-<section id="q-a-1" class="slide level2 center">
-<h2>Q &amp; A</h2>
-<blockquote>
+<section id="q-a-1" class="level2">
+<h2 class="anchored" data-anchor-id="q-a-1">Q &amp; A</h2>
+<blockquote class="blockquote">
 <p>各事業單位可依工程規模與特性，參考指引表單格式，自訂符合實際需求之評估表格。</p>
 </blockquote>
 <p><strong>參考資料</strong>：</p>
@@ -2608,49 +3101,43 @@
 <li><p>營造安全衛生設施標準、職業安全衛生管理辦法等相關法規</p></li>
 </ul>
 </section>
-<section id="營造只有安全風險健康呢" class="slide level2 center">
-<h2><strong>營造只有安全風險？健康呢？</strong></h2>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<section id="營造只有安全風險健康呢" class="level2">
+<h2 class="anchored" data-anchor-id="營造只有安全風險健康呢"><strong>營造只有安全風險？健康呢？</strong></h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Caution</strong></p>
+<div class="callout-title-container flex-fill">
+Caution
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>你關心什麼健康議題？</strong></p>
 </div>
 </div>
-</div>
-</section></section>
-<section>
-<section id="游離二氧化矽暴露風險評估例" class="title-slide slide level1 center">
-<h1>3. 游離二氧化矽暴露風險評估（例）</h1>
-
 </section>
-<section id="台灣人造石案例" class="slide level2 center">
-<h2>台灣人造石案例</h2>
-
-<img data-src="images/人造石圖1.png" style="width:100.0%" class="r-stretch"></section>
-<section class="slide level2 center">
-
-
-<img data-src="images/人造石圖2.png" style="width:100.0%" class="r-stretch"></section>
-<section class="slide level2 center">
-
-
-<img data-src="images/人造石圖3.png" style="width:100.0%" class="r-stretch"></section>
-<section id="台灣人造石案例的啟示" class="slide level2 center">
-<h2>台灣人造石案例的啟示</h2>
+</section>
+<section id="游離二氧化矽暴露風險評估例" class="level1">
+<h1>3. 游離二氧化矽暴露風險評估（例）</h1>
+<section id="台灣人造石案例" class="level2">
+<h2 class="anchored" data-anchor-id="台灣人造石案例">台灣人造石案例</h2>
+<p><img src="images/人造石圖1.png" class="img-fluid" style="width:100.0%"></p>
+<hr>
+<p><img src="images/人造石圖2.png" class="img-fluid" style="width:100.0%"></p>
+<hr>
+<p><img src="images/人造石圖3.png" class="img-fluid" style="width:100.0%"></p>
+</section>
+<section id="台灣人造石案例的啟示" class="level2">
+<h2 class="anchored" data-anchor-id="台灣人造石案例的啟示">台灣人造石案例的啟示</h2>
 <ul>
 <li><p>在營造工程中，<strong>結晶型游離二氧化矽</strong>（respirable crystalline silica, <strong>RCS</strong>）暴露是常見卻容易被忽視的職業健康危害。</p></li>
 <li><p>許多營造作業（如混凝土切割、鑽孔、研磨，磁磚、紅磚切割，以及近年興起的人造石加工）都會產生RCS，長期吸入可能導致<strong>矽肺症、肺癌等不可逆疾病</strong>。</p></li>
 <li><p>以下整合澳洲安全作業規範與台灣本土案例，說明如何在營造工程的風險評估架構中納入RCS暴露管理，提供甲種業務主管實務操作參考。</p></li>
 </ul>
 </section>
-<section id="一危害辨識哪些營造作業有rcs風險" class="slide level2 center">
-<h2>一、危害辨識：哪些營造作業有RCS風險？</h2>
+<section id="一危害辨識哪些營造作業有rcs風險" class="level2">
+<h2 class="anchored" data-anchor-id="一危害辨識哪些營造作業有rcs風險">一、危害辨識：哪些營造作業有RCS風險？</h2>
 <p>RCS主要來自含石英（Quartz）等結晶型二氧化矽的建材，包括：<strong>混凝土、紅磚、磁磚、花崗岩、砂岩，以及人造石（engineered stone）</strong>。營造工程中常見的高風險作業有：</p>
 <ul>
 <li><p>使用電動手工具（切割機、砂輪機、鑽孔機）進行<strong>乾式切削、研磨、拋光</strong></p></li>
@@ -2661,14 +3148,14 @@
 <p><strong>澳洲規範</strong>（Safe Work Australia, 2025）明確將上述作業定義為「crystalline silica substance processing」，並規定必須進行風險評估。</p>
 <p><strong>台灣人造石案例</strong>（財團法人職業災害預防及重建中心，2023）指出，<strong>人造石(石英石)含有高濃度二氧化矽（通常 &gt; 90%）</strong>，從業者<strong>暴露年資僅4-10年即發病</strong>，遠短於傳統矽肺症（&gt;20年），且多位年輕患者需接受肺臟移植。這警示營造業若以乾式方式切割含高矽建材，風險極高。</p>
 </section>
-<section id="二風險評估方法沿用既有風險矩陣納入健康暴露評估" class="slide level2 center">
-<h2>二、風險評估方法：沿用既有風險矩陣，納入健康暴露評估</h2>
+<section id="二風險評估方法沿用既有風險矩陣納入健康暴露評估" class="level2">
+<h2 class="anchored" data-anchor-id="二風險評估方法沿用既有風險矩陣納入健康暴露評估">二、風險評估方法：沿用既有風險矩陣，納入健康暴露評估</h2>
 <p>營造工程風險評估已熟悉 <strong>危害辨識 → 風險分析（可能性 × 嚴重度）→ 風險評量 → 風險處理</strong> 的流程。RCS暴露風險可融入此模式：</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 28%">
-<col style="width: 55%">
+<col style="width: 18%">
+<col style="width: 27%">
+<col style="width: 53%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2702,10 +3189,10 @@
 </table>
 <p>澳洲規範進一步建議，若無法確定RCS空氣濃度是否超過<strong>暴露標準（0.05 mg/m³ 八小時時量平均，台灣0.1mg/m³）</strong>，應執行<strong>空氣監測</strong>。對於高風險作業（風險值 ≥ 10），應建立<strong>矽暴露風險控制計畫</strong>，並實施<strong>健康監測</strong>（肺功能、胸部X光或低劑量電腦斷層）。</p>
 </section>
-<section id="三風險控制措施層級控制與實務要點" class="slide level2 center">
-<h2>三、風險控制措施：層級控制與實務要點</h2>
+<section id="三風險控制措施層級控制與實務要點" class="level2">
+<h2 class="anchored" data-anchor-id="三風險控制措施層級控制與實務要點">三、風險控制措施：層級控制與實務要點</h2>
 <p>澳洲規範（Safe Work Australia, 2025）強調必須依<strong>層級控制（Hierarchy of Control）</strong> 選擇對策，且<strong>優先消除或取代</strong>，不可僅依賴呼吸防護具。</p>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 30%">
@@ -2752,19 +3239,22 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>台灣案例（財團法人職業災害預防及重建中心，2023）中，多位勞工即使雇主提供N95口罩，仍因<strong>未正確佩戴、有鬍鬚導致密合不良</strong>而罹病。因此，呼吸防護具應視為最後一道防線，且必須搭配教育訓練與監督。</p>
 </blockquote>
 </section>
-<section id="四監測機制空氣監測與健康監測" class="slide level2 center">
-<h2>四、監測機制：空氣監測與健康監測</h2>
-<h3 id="空氣監測-環測">4.1 空氣監測 (環測)</h3>
+<section id="四監測機制空氣監測與健康監測" class="level2">
+<h2 class="anchored" data-anchor-id="四監測機制空氣監測與健康監測">四、監測機制：空氣監測與健康監測</h2>
+<section id="空氣監測-環測" class="level3">
+<h3 class="anchored" data-anchor-id="空氣監測-環測">4.1 空氣監測 (環測)</h3>
 <ul>
 <li><p>時機：當不確定暴露是否超過法定標準（0.1 mg/m³ 八小時時量平均），或為確認控制措施有效性時執行。</p></li>
 <li><p>方法：委請職業衛生專業人員進行個人呼吸帶採樣，樣本送至認證實驗室分析。（直讀式？）</p></li>
 <li><p>結果應用：若超過標準，立即採行與檢討控制措施。</p></li>
 </ul>
-<h3 id="健康監測">4.2 健康監測</h3>
+</section>
+<section id="健康監測" class="level3">
+<h3 class="anchored" data-anchor-id="健康監測">4.2 健康監測</h3>
 <ul>
 <li><p>適用對象：從事高風險RCS暴露作業之勞工（粉塵作業）。</p></li>
 <li><p>頻率：新進人員<strong>作業前特殊體格</strong>檢查，其後定期<strong>特殊健康</strong>追蹤（建議每年或依醫囑）。</p></li>
@@ -2773,60 +3263,62 @@
 </ul>
 <p>台灣人造石案例（財團法人職業災害預防及重建中心，2023）顯示，多數患者確診時已進展至嚴重肺纖維化，需肺臟移植。<strong>早期發現</strong>至關重要，建議高暴露族群每年實施低劑量電腦斷層篩檢。</p>
 </section>
-<section id="五管理文件與資訊傳遞" class="slide level2 center">
-<h2>五、管理文件與資訊傳遞</h2>
+</section>
+<section id="五管理文件與資訊傳遞" class="level2">
+<h2 class="anchored" data-anchor-id="五管理文件與資訊傳遞">五、管理文件與資訊傳遞</h2>
 <ul>
 <li><p><strong>(澳洲) 矽暴露風險控制計畫</strong>：對於高風險作業，應擬定書面計畫，內容包括：作業說明、控制措施、監測計畫、教育訓練、緊急應變。</p></li>
 <li><p><strong>安全作業標準（SOP）</strong>：將濕式作業、工具檢查、清潔程序標準化，並於每日勤前教育宣導。</p></li>
 <li><p><strong>記錄保存</strong>：空氣監測結果（30年）、健康監測報告（30年）、呼吸防護具密合度測試紀錄應妥善保存。</p></li>
 </ul>
 </section>
-<section id="六結論營造風險評估應納入rcs暴露風險評估" class="slide level2 center">
-<h2>六、結論：營造風險評估應納入RCS暴露風險評估</h2>
+<section id="六結論營造風險評估應納入rcs暴露風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="六結論營造風險評估應納入rcs暴露風險評估">六、結論：營造風險評估應納入RCS暴露風險評估</h2>
 <p>傳統營造風險評估多聚焦於墜落、倒塌、感電等立即性危害，容易忽略<strong>慢性健康危害</strong>如游離二氧化矽暴露。</p>
 <p>介紹澳洲規範的系統化評估方法（辨識高危害作業→量化風險→層級控制→監測驗證），並警惕於人造石案例的慘痛教訓，營造業應將RCS暴露納入施工規劃階段及作業前危害調查，確實執行工程控制與健康監測，才能有效保護勞工健康。</p>
-</section>
-<section class="slide level2 center">
-
-<h3 id="參考文獻">參考文獻</h3>
+<hr>
+<section id="參考文獻" class="level3">
+<h3 class="anchored" data-anchor-id="參考文獻">參考文獻</h3>
 <p>Safe Work Australia. (2025). <em>Managing risks of respirable crystalline silica in the workplace: Code of practice</em>.</p>
 <p>財團法人職業災害預防及重建中心. (2023). 人造石產業易致矽肺症，健康的隱形殺手. <em>健康報報</em>, (1), 3-7.</p>
 <p>唐壹恬, &amp; 楊振昌. (2020). 新興產業人造石造成的矽肺症. <em>臨床醫學月刊</em>, <em>86卷6期 (2020/12) Pp.&nbsp;736-739</em></p>
 <p>陳韻如, 范豪益, &amp; 曹又中. (2022). 流理台切割作業致矽肺症案例討論. <em>環境職業醫學會訊</em>.</p>
 <p>郭育良等人. (2023). <em>人造石作業勞工健康危害評估研究</em>. 勞動部勞動及職業安全衛生研究所。</p>
-</section></section>
-<section>
-<section id="科學研究營造業墜落事故在風險評估上的應用" class="title-slide slide level1 center">
+</section>
+</section>
+</section>
+<section id="科學研究營造業墜落事故在風險評估上的應用" class="level1">
 <h1>4. 科學研究：營造業墜落事故在風險評估上的應用</h1>
 <ul>
 <li><p>在營造業風險評估實務中，墜落一直是最主要且致命的危害類型。</p></li>
 <li><p>本節整理 Halabi 等人（2022）發表於 <em>Safety Science</em> 的研究〈Causal factors and risk assessment of fall accidents in the U.S. construction industry: A comprehensive data analysis (2000-2020)〉，說明如何運用大數據分析強化風險評估的科學基礎，並提供我國營造甲種業務主管可借鏡的管理重點。</p></li>
 </ul>
-</section>
-<section id="一研究背景與方法" class="slide level2 center">
-<h2>一、研究背景與方法</h2>
+<section id="一研究背景與方法" class="level2">
+<h2 class="anchored" data-anchor-id="一研究背景與方法">一、研究背景與方法</h2>
 <p>該研究分析美國 OSHA 資料庫中 <strong>23,057 件</strong> 墜落事故（2000年1月至2020年8月），涵蓋工程類型、作業活動、職業別、墜落高度、位置、防護具使用、傷害程度（致命/非致命）等變項。分析方法包括：</p>
 <ul>
 <li><p><strong>頻率分析</strong>：描述各變項的分布趨勢與佔比。</p></li>
 <li><p><strong>卡方檢定</strong>：檢驗各因子與傷害程度（致命 vs.&nbsp;非致命）之間是否有顯著關聯。</p></li>
 <li><p><strong>邏輯斯迴歸</strong>：建立預測模型，估算各因子對「致命」結果的勝算比（odds ratio），並計算模型的預測準確率。</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>此研究為目前少數同時涵蓋<strong>描述統計、關聯性分析與預測建模</strong>的墜落風險研究，對風險評估的量化與動態管理極具參考價值。</p>
 </blockquote>
 </section>
-<section id="二關鍵研究發現" class="slide level2 center">
-<h2>二、關鍵研究發現</h2>
-<h3 id="墜落事故的時空分布">1. 墜落事故的時空分布</h3>
+<section id="二關鍵研究發現" class="level2">
+<h2 class="anchored" data-anchor-id="二關鍵研究發現">二、關鍵研究發現</h2>
+<section id="墜落事故的時空分布" class="level3">
+<h3 class="anchored" data-anchor-id="墜落事故的時空分布">1. 墜落事故的時空分布</h3>
 <ul>
 <li><p><strong>月份</strong>：60.5% 的事故發生在 4 月至 10 月，夏季（6-8月）佔比最高（43.9%），<strong>高溫與疲勞是可能原因</strong>。</p></li>
 <li><p><strong>星期</strong>：週末事故數較少，但<strong>致命率（RFFA）高於平日</strong>，可能因安全監管較鬆散。</p></li>
 <li><p><strong>時段</strong>：上午 10:00-12:00 與下午 13:00-15:00 為兩個高峰，分別對應上午疲勞與午後注意力下降。</p></li>
 </ul>
 </section>
-<section id="工程資訊與墜落風險" class="slide level2 center">
-<h2>2. 工程資訊與墜落風險</h2>
-<table class="caption-top">
+</section>
+<section id="工程資訊與墜落風險" class="level2">
+<h2 class="anchored" data-anchor-id="工程資訊與墜落風險">2. 工程資訊與墜落風險</h2>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">類別</th>
@@ -2853,38 +3345,41 @@
 </tbody>
 </table>
 </section>
-<section id="作業活動與職業別" class="slide level2 center">
-<h2>3. 作業活動與職業別</h2>
+<section id="作業活動與職業別" class="level2">
+<h2 class="anchored" data-anchor-id="作業活動與職業別">3. 作業活動與職業別</h2>
 <ul>
 <li><p><strong>最高事故作業活動</strong>：<strong>屋頂作業</strong>（27.7% 致命事故）、外牆收尾、鋼結構吊裝、外牆木作。</p></li>
 <li><p><strong>最高事故職業</strong>：<strong>屋頂工</strong>（26.3% 致命事故）、建築 laborers、木工。</p></li>
 <li><p><strong>屋頂工的致命風險</strong>：為木工的 <strong>1.95 倍</strong>。</p></li>
 </ul>
 </section>
-<section id="墜落高度與位置" class="slide level2 center">
-<h2>4. 墜落高度與位置</h2>
+<section id="墜落高度與位置" class="level2">
+<h2 class="anchored" data-anchor-id="墜落高度與位置">4. 墜落高度與位置</h2>
 <ul>
 <li><p><strong>高度</strong>：80.5% 的事故發生在 <strong>30 英尺（約 9.15 公尺）以下</strong>，顯示低處墜落仍佔絕大多數，且防護法規在低處易被忽略。</p></li>
 <li><p><strong>位置</strong>：<strong>從屋頂墜落佔 30.0%（最高），其次為梯子（21.7%）</strong>、施工架（9.9%）、開口（7.3%）。</p></li>
 </ul>
 </section>
-<section id="防護具使用現況嚴重警訊" class="slide level2 center">
-<h2>5. 防護具使用現況（嚴重警訊）</h2>
+<section id="防護具使用現況嚴重警訊" class="level2">
+<h2 class="anchored" data-anchor-id="防護具使用現況嚴重警訊">5. 防護具使用現況（嚴重警訊）</h2>
 <ul>
 <li><p><strong>無任何防護（No protection）</strong> 佔 <strong>27.3%</strong>，此類事故的致命率高達 <strong>48.1%</strong>。</p></li>
 <li><p>僅提供被動防護（如安全網、護欄）佔 <strong>44.7%</strong>；同時提供被動與個人防護者僅 <strong>5.5%</strong>。</p></li>
 <li><p>與 1990-2001 年相比，防護具使用率<strong>未有顯著改善</strong>。</p></li>
 </ul>
-<h3 id="年齡與經驗">6. 年齡與經驗</h3>
+<section id="年齡與經驗" class="level3">
+<h3 class="anchored" data-anchor-id="年齡與經驗">6. 年齡與經驗</h3>
 <ul>
 <li><p>45-64 歲勞工佔致命事故的 <strong>45.2%</strong>，且致命率隨年齡遞增。</p></li>
 <li><p><strong>經驗並不足以取代安全防護</strong>，高齡勞工生理條件較差，墜落後果更嚴重。</p></li>
 </ul>
 </section>
-<section id="三風險評估方法的應用從描述到預測" class="slide level2 center">
-<h2>三、風險評估方法的應用：從描述到預測</h2>
-<h3 id="卡方檢定找出與致命顯著相關的因子">1. 卡方檢定：找出與「致命」顯著相關的因子</h3>
-<table class="caption-top">
+</section>
+<section id="三風險評估方法的應用從描述到預測" class="level2">
+<h2 class="anchored" data-anchor-id="三風險評估方法的應用從描述到預測">三、風險評估方法的應用：從描述到預測</h2>
+<section id="卡方檢定找出與致命顯著相關的因子" class="level3">
+<h3 class="anchored" data-anchor-id="卡方檢定找出與致命顯著相關的因子">1. 卡方檢定：找出與「致命」顯著相關的因子</h3>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">因子</th>
@@ -2923,8 +3418,9 @@
 <p><strong>時間（星期、時段）、工程成本、SIC 碼</strong>等與致命性無顯著關聯（V &lt; 0.06）。<br>
 -&gt; <strong>意涵</strong>：事故「發生頻率」高的因子（如清晨時段、低成本工程）不一定導致更高的致命率；風險評估應區分 <strong>「發生可能性」</strong> 與 <strong>「後果嚴重度」</strong>。</p>
 </section>
-<section id="邏輯斯迴歸模型" class="slide level2 center">
-<h2>2. 邏輯斯迴歸模型</h2>
+</section>
+<section id="邏輯斯迴歸模型" class="level2">
+<h2 class="anchored" data-anchor-id="邏輯斯迴歸模型">2. 邏輯斯迴歸模型</h2>
 <ul>
 <li><p><strong>預測變項</strong>：墜落高度、工程用途、職業、作業活動、墜落位置、防護具。</p></li>
 <li><p><strong>模型表現</strong>：</p>
@@ -2934,7 +3430,7 @@
 </ul></li>
 <li><p><strong>勝算比（Odds Ratio）—致命風險的關鍵驅動因子</strong>：</p></li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">因子</th>
@@ -2980,26 +3476,30 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>提供防護具雖能降低致命風險，但降幅僅 17%，顯示防護具的正確使用與配套工程控制仍嚴重不足。</p>
 </blockquote>
 </section>
-<section id="四對營造風險評估實務的啟示" class="slide level2 center">
-<h2>四、對營造風險評估實務的啟示</h2>
-<h3 id="風險評估必須納入高度的細緻分級">1. 風險評估必須納入「高度」的細緻分級</h3>
+<section id="四對營造風險評估實務的啟示" class="level2">
+<h2 class="anchored" data-anchor-id="四對營造風險評估實務的啟示">四、對營造風險評估實務的啟示</h2>
+<section id="風險評估必須納入高度的細緻分級" class="level3">
+<h3 class="anchored" data-anchor-id="風險評估必須納入高度的細緻分級">1. 風險評估必須納入「高度」的細緻分級</h3>
 <p>傳統風險矩陣常將「高度 &gt; 2m」一律視為高風險，但研究顯示 <strong>80% 墜落發生在 9m 以下</strong>，且高度與致命性呈連續正相關。建議：</p>
 <ul>
 <li><p>將高度分為 ≤2m、2-6m、6-9m、9-15m、&gt;15m 等層級。</p></li>
 <li><p>低處墜落（如梯子、施工架 2-6m）亦應視為不可接受風險，並採取工程控制。</p></li>
 </ul>
-<h3 id="特定作業與職業應納入專項風險評估">2. 特定作業與職業應納入專項風險評估</h3>
+</section>
+<section id="特定作業與職業應納入專項風險評估" class="level3">
+<h3 class="anchored" data-anchor-id="特定作業與職業應納入專項風險評估">2. 特定作業與職業應納入專項風險評估</h3>
 <ul>
 <li><p>屋頂作業、鋼構吊裝、開口作業應列為<strong>高風險作業</strong>，於施工計畫中強制要求防墜計畫及第三方檢查。</p></li>
 <li><p>作業前危害調查應針對屋頂工、鋼構工等職業，加強<strong>個人防護具適配性與使用監督</strong>。</p></li>
 </ul>
 </section>
-<section id="防護具不是萬能但無防護絕對致命" class="slide level2 center">
-<h2>3. 防護具不是萬能，但「無防護」絕對致命</h2>
+</section>
+<section id="防護具不是萬能但無防護絕對致命" class="level2">
+<h2 class="anchored" data-anchor-id="防護具不是萬能但無防護絕對致命">3. 防護具不是萬能，但「無防護」絕對致命</h2>
 <ul>
 <li><p>研究顯示「無防護」佔 27.3%，致命率近五成。風險評估必須明確記錄：</p>
 <ul>
@@ -3009,7 +3509,8 @@
 </ul></li>
 <li><p>我國營造工地常見「有安全帶卻未掛勾」或「掛勾點不當」，可參考此研究強化稽核。</p></li>
 </ul>
-<h3 id="年齡因子應納入風險評估">4. 年齡因子應納入風險評估</h3>
+<section id="年齡因子應納入風險評估" class="level3">
+<h3 class="anchored" data-anchor-id="年齡因子應納入風險評估">4. 年齡因子應納入風險評估</h3>
 <ul>
 <li><p>高齡勞工（45歲以上）墜落後致命風險顯著較高。風險評估可增加「年齡」作為風險因子：</p>
 <ul>
@@ -3018,15 +3519,16 @@
 </ul></li>
 </ul>
 </section>
-<section id="事故趨勢分析可做為風險評估滾動更新的依據" class="slide level2 center">
-<h2>5. 事故趨勢分析可做為風險評估滾動更新的依據</h2>
+</section>
+<section id="事故趨勢分析可做為風險評估滾動更新的依據" class="level2">
+<h2 class="anchored" data-anchor-id="事故趨勢分析可做為風險評估滾動更新的依據">5. 事故趨勢分析可做為風險評估滾動更新的依據</h2>
 <ul>
 <li><p>研究發現，屋頂墜落比例從 24.7%（1997-2012）上升至 30.0%（2000-2020），顯示既有防護策略失效。營造事業單位應<strong>定期回顧自身事故或虛驚事件</strong>，更新風險評估表單中的「可能風險狀況」與「現有防護設施」。</p></li>
 <li><p>建議建立<strong>工地風險資料庫</strong>，每年進行趨勢分析，調整下一年度的風險管理重點。</p></li>
 </ul>
 </section>
-<section id="五結論" class="slide level2 center scrollable">
-<h2>五、結論</h2>
+<section id="五結論" class="level2">
+<h2 class="anchored" data-anchor-id="五結論">五、結論</h2>
 <p>Halabi 等人（2022）的研究證明，大量墜落事故數據經過嚴謹的統計分析，能夠：</p>
 <ul>
 <li><p>辨識出真正影響<strong>致命後果</strong>的關鍵因子（高度、職業、位置、防護具），而不只是發生頻率。</p></li>
@@ -3040,15 +3542,16 @@
 <li><p>每季檢討工地墜落事故與虛驚，滾動修正風險評估表。</p></li>
 <li><p>加強高齡勞工的作業前健康詢問與工作指派調整。</p></li>
 </ol>
+<hr>
 </section>
-<section id="參考文獻apa-格式" class="slide level2 center">
-<h2>參考文獻（APA 格式）</h2>
+<section id="參考文獻apa-格式" class="level2">
+<h2 class="anchored" data-anchor-id="參考文獻apa-格式">參考文獻（APA 格式）</h2>
 <p>Halabi, Y., Xu, H., Long, D., Chen, Y., Yu, Z., Alhaeck, F., &amp; Alhaddad, W. (2022). Causal factors and risk assessment of fall accidents in the U.S. construction industry: A comprehensive data analysis (2000-2020). <em>Safety Science, 146</em>, 105537. <a href="https://doi.org/10.1016/j.ssci.2021.105537" class="uri">https://doi.org/10.1016/j.ssci.2021.105537</a></p>
-</section></section>
-<section>
-<section id="科學研究重新定義職業健康風險與安全" class="title-slide slide level1 center">
+</section>
+</section>
+<section id="科學研究重新定義職業健康風險與安全" class="level1">
 <h1>5. 科學研究：重新定義職業健康、風險與安全</h1>
-<blockquote>
+<blockquote class="blockquote">
 <p>對營造業風險評估的啟示</p>
 </blockquote>
 <ul>
@@ -3056,10 +3559,11 @@
 <li><p>Karanikas 與 Zerguine（2025）發表於 <em>Safety Science</em> 的研究〈Health is influenced by risks moderated by safety’: Redefining health, risk, and safety for occupational settings〉，透過混合方法（焦點團體訪談 + 文獻回顧）重新定義這三個核心構念，並提出<strong>依組織層級調整的定義版本</strong>。</p></li>
 <li><p>本節整理該研究的重要發現與對營造業的應用建議。</p></li>
 </ul>
-</section>
-<section id="一研究背景與方法-1" class="slide level2 center">
-<h2>一、研究背景與方法</h2>
-<h4 id="研究動機">1.1 研究動機</h4>
+<hr>
+<section id="一研究背景與方法-1" class="level2">
+<h2 class="anchored" data-anchor-id="一研究背景與方法-1">一、研究背景與方法</h2>
+<section id="研究動機" class="level4">
+<h4 class="anchored" data-anchor-id="研究動機">1.1 研究動機</h4>
 <ul>
 <li><p>職業安全衛生（OHS）領域長期缺乏對「健康」、「風險」、「安全」的共識性定義。</p></li>
 <li><p>定義不清會影響：</p>
@@ -3071,8 +3575,9 @@
 </ul></li>
 </ul>
 </section>
-<section id="研究對象與方法" class="slide level2 center">
-<h2>1.2 研究對象與方法</h2>
+</section>
+<section id="研究對象與方法" class="level2">
+<h2 class="anchored" data-anchor-id="研究對象與方法">1.2 研究對象與方法</h2>
 <ul>
 <li><p><strong>研究對象</strong>：澳洲最大私有營造公司 Hutchinson Builders</p>
 <ul>
@@ -3088,10 +3593,10 @@
 <li><p><strong>分析方式</strong>：主題分析，將定義分類為「狀態」、「能力」、「結果」、「過程」、「特性」等類別</p></li>
 </ul>
 </section>
-<section id="二核心洞察健康風險與安全的動態關係" class="slide level2 center">
-<h2>二、核心洞察：健康、風險與安全的動態關係</h2>
+<section id="二核心洞察健康風險與安全的動態關係" class="level2">
+<h2 class="anchored" data-anchor-id="二核心洞察健康風險與安全的動態關係">二、核心洞察：健康、風險與安全的動態關係</h2>
 <p>研究提出一個簡潔的關係式，可作為營造業風險評估的指導原則：</p>
-<blockquote>
+<blockquote class="blockquote">
 <p><strong>健康受風險影響，風險由安全調節。</strong></p>
 <p><strong><em>Health is influenced by risks moderated by safety.</em></strong></p>
 </blockquote>
@@ -3101,17 +3606,19 @@
 <li><p><strong>安全是「行動」</strong>而非「結果」 — 是主動的、可見的</p></li>
 <li><p><strong>健康是「受影響的狀態與能力」</strong> — 是動態的、可比較的</p></li>
 </ul>
+<hr>
 </section>
-<section id="三對營造業風險評估的應用" class="slide level2 center">
-<h2>三、對營造業風險評估的應用</h2>
-<h3 id="釐清風險評估中的用語">3.1 釐清風險評估中的用語</h3>
+<section id="三對營造業風險評估的應用" class="level2">
+<h2 class="anchored" data-anchor-id="三對營造業風險評估的應用">三、對營造業風險評估的應用</h2>
+<section id="釐清風險評估中的用語" class="level3">
+<h3 class="anchored" data-anchor-id="釐清風險評估中的用語">3.1 釐清風險評估中的用語</h3>
 <p><strong>問題</strong>：<strong>營造工地中，「風險」常與「危害」混用；「安全」常被理解為「零事故」。</strong></p>
 <p><strong>應用</strong>：</p>
 <ul>
 <li><p>使用研究提供的定義，建立組織內共同的 <strong>風險語言</strong></p></li>
 <li><p>風險評估前，先確認團隊對「風險」、「危害」、「安全」的理解一致</p></li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">常見混淆</th>
@@ -3134,8 +3641,9 @@
 </tbody>
 </table>
 </section>
-<section id="將韌性脆弱度納入風險評估" class="slide level2 center">
-<h2>3.2 將「韌性/脆弱度」納入風險評估</h2>
+</section>
+<section id="將韌性脆弱度納入風險評估" class="level2">
+<h2 class="anchored" data-anchor-id="將韌性脆弱度納入風險評估">3.2 將「韌性/脆弱度」納入風險評估</h2>
 <p><strong>問題</strong>：傳統風險矩陣假設所有勞工面對相同危害時的脆弱度相同，忽略個人差異。</p>
 <p><strong>應用</strong>：</p>
 <ul>
@@ -3145,7 +3653,7 @@
 <li><p>外在韌性：防護具取得與使用、作業輔具、團隊支援</p></li>
 </ul></li>
 <li><p>可利用研究提出的關係式：</p>
-<blockquote>
+<blockquote class="blockquote">
 <p><strong>韌性 = 1 − 脆弱度</strong></p>
 </blockquote></li>
 </ul>
@@ -3155,8 +3663,8 @@
 <li><p>風險矩陣的「嚴重度」可依年齡或健康狀況進行調整</p></li>
 </ul>
 </section>
-<section id="安全績效衡量方式的反思" class="slide level2 center">
-<h2>3.3 安全績效衡量方式的反思</h2>
+<section id="安全績效衡量方式的反思" class="level2">
+<h2 class="anchored" data-anchor-id="安全績效衡量方式的反思">3.3 安全績效衡量方式的反思</h2>
 <p><strong>問題</strong>：營造業普遍以「失能傷害頻率（FR）」、「嚴重率（SR）」等 <strong>落後指標</strong> 衡量安全績效，但這些是「結果」，而非「安全本身」。</p>
 <p><strong>應用</strong>：</p>
 <ul>
@@ -3168,12 +3676,12 @@
 <li><p>風險等級在行動前後的 <strong>變化</strong>（相對安全有效性）</p></li>
 </ul></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>研究建議使用「相對安全水準」與「相對安全有效性」取代傳統的安全績效指標。</p>
 </blockquote>
 </section>
-<section id="納入非物質媒介健康的風險" class="slide level2 center">
-<h2>3.4 納入非物質媒介(健康)的風險</h2>
+<section id="納入非物質媒介健康的風險" class="level2">
+<h2 class="anchored" data-anchor-id="納入非物質媒介健康的風險">3.4 納入非物質媒介(健康)的風險</h2>
 <p><strong>問題</strong>：營造業風險評估偏重物理性危害（墜落、感電、倒塌），忽略 <strong>心理社會風險</strong>。</p>
 <p><strong>應用</strong>：</p>
 <ul>
@@ -3189,11 +3697,15 @@
 <ul>
 <li>屋頂工在夏季高溫下作業，除了墜落風險外，還有熱壓力、疲勞導致的注意力下降 — 這些非物質媒介風險應納入評估</li>
 </ul>
+<hr>
 </section>
-<section id="四對營造業管理實務的具體建議" class="slide level2 center">
-<h2>四、對營造業管理實務的具體建議</h2>
-<h3 id="定義統一化">4.1 定義統一化</h3>
-<h3 id="風險評估工具更新">4.2 風險評估工具更新</h3>
+<section id="四對營造業管理實務的具體建議" class="level2">
+<h2 class="anchored" data-anchor-id="四對營造業管理實務的具體建議">四、對營造業管理實務的具體建議</h2>
+<section id="定義統一化" class="level3">
+<h3 class="anchored" data-anchor-id="定義統一化">4.1 定義統一化</h3>
+</section>
+<section id="風險評估工具更新" class="level3">
+<h3 class="anchored" data-anchor-id="風險評估工具更新">4.2 風險評估工具更新</h3>
 <ul>
 <li><p>風險評估表中增加：</p>
 <ul>
@@ -3203,7 +3715,9 @@
 </ul></li>
 <li><p>風險等級計算時，不僅考慮「機率×嚴重度」，還可納入「可控制性」</p></li>
 </ul>
-<h3 id="安全績效管理">4.3 安全績效管理</h3>
+</section>
+<section id="安全績效管理" class="level3">
+<h3 class="anchored" data-anchor-id="安全績效管理">4.3 安全績效管理</h3>
 <ul>
 <li><p>減少對落後指標（事故率）的依賴</p></li>
 <li><p>增加領先指標：</p>
@@ -3214,9 +3728,11 @@
 </ul></li>
 <li><p>建立「安全行動」與「安全干預」的分類記錄系統</p></li>
 </ul>
+<hr>
 </section>
-<section id="七結論" class="slide level2 center scrollable">
-<h2>七、結論</h2>
+</section>
+<section id="七結論" class="level2">
+<h2 class="anchored" data-anchor-id="七結論">七、結論</h2>
 <p>Karanikas 與 Zerguine（2025）的研究對營造業風險評估提供了以下重要啟示：</p>
 <ol type="1">
 <li><p><strong>定義是行動的基礎</strong>：沒有清晰的定義，就無法設計有效的風險評估工具與管理措施。</p></li>
@@ -3226,46 +3742,49 @@
 <li><p><strong>依層級溝通</strong>：組織應針對不同角色採用不同複雜度的定義，以確保有效溝通與落實。</p></li>
 <li><p><strong>物質與非物質媒介並重</strong>：營造業風險評估應從傳統的物理危害擴展至心理社會風險。</p></li>
 </ol>
-</section>
-<section class="slide level2 center">
-
-<h3 id="參考文獻apa格式">參考文獻（APA格式）</h3>
+<hr>
+<section id="參考文獻apa格式" class="level3">
+<h3 class="anchored" data-anchor-id="參考文獻apa格式">參考文獻（APA格式）</h3>
 <p>Karanikas, N., &amp; Zerguine, H. (2025). ‘Health is influenced by risks moderated by safety’: Redefining health, risk, and safety for occupational settings: A mixed-methods study. <em>Safety Science, 181</em>, 106698. <a href="https://doi.org/10.1016/j.ssci.2024.106698" class="uri">https://doi.org/10.1016/j.ssci.2024.106698</a></p>
-</section></section>
-<section>
-<section id="職安衛法修正重點與職災案例" class="title-slide slide level1 center">
+</section>
+</section>
+</section>
+<section id="職安衛法修正重點與職災案例" class="level1">
 <h1>6. 職安衛法修正重點與職災案例</h1>
-
+<section id="職安衛法修正重點與職災案例-1" class="level2">
+<h2 class="anchored" data-anchor-id="職安衛法修正重點與職災案例-1">職安衛法修正重點與職災案例</h2>
+<section id="納入工程業主責任" class="level3">
+<h3 class="anchored" data-anchor-id="納入工程業主責任"><a href="https://sh168.osha.gov.tw/Content/Epaper/EpaperCategoryDetail?enc=E6D418B07354271208349EA29C6F835834D06B223F36D46BD1FC4267220B0A6B"><strong>納入工程業主責任？</strong></a></h3>
 </section>
-<section id="職安衛法修正重點與職災案例-1" class="slide level2 center">
-<h2>職安衛法修正重點與職災案例</h2>
-<h3 id="納入工程業主責任"><a href="https://sh168.osha.gov.tw/Content/Epaper/EpaperCategoryDetail?enc=E6D418B07354271208349EA29C6F835834D06B223F36D46BD1FC4267220B0A6B"><strong>納入工程業主責任？</strong></a></h3>
-<h3 id="風險評估從事屋頂剪黏作業發生墜落致死災害">風險評估？—<a href="https://sh168.osha.gov.tw/Content/Epaper/EpaperCategoryDetail?enc=E6D418B07354271208349EA29C6F835872128816B754AAE123F1A312ADAFF2EC">從事屋頂剪黏作業發生墜落致死災害</a></h3>
-<h3 id="思考事故調查與風險評估關係">思考：事故調查與風險評估關係？</h3>
-</section></section>
-<section>
-<section id="英國-cdm-2015-與台灣職安署指引之比較" class="title-slide slide level1 center">
+<section id="風險評估從事屋頂剪黏作業發生墜落致死災害" class="level3">
+<h3 class="anchored" data-anchor-id="風險評估從事屋頂剪黏作業發生墜落致死災害">風險評估？—<a href="https://sh168.osha.gov.tw/Content/Epaper/EpaperCategoryDetail?enc=E6D418B07354271208349EA29C6F835872128816B754AAE123F1A312ADAFF2EC">從事屋頂剪黏作業發生墜落致死災害</a></h3>
+</section>
+<section id="思考事故調查與風險評估關係" class="level3">
+<h3 class="anchored" data-anchor-id="思考事故調查與風險評估關係">思考：事故調查與風險評估關係？</h3>
+</section>
+</section>
+</section>
+<section id="英國-cdm-2015-與台灣職安署指引之比較" class="level1">
 <h1>7. 英國 CDM 2015 與台灣職安署指引之比較</h1>
-
-</section>
-<section id="課程目標-1" class="slide level2 center">
-<h2>課程目標</h2>
+<section id="課程目標-1" class="level2">
+<h2 class="anchored" data-anchor-id="課程目標-1">課程目標</h2>
 <ul>
 <li>✅ 了解英國 CDM 2015 的核心架構與角色分工</li>
 <li>✅ 掌握 CDM 2015 與台灣指引在<strong>風險評估要求</strong>上的異同</li>
 <li>✅ 學習將國際最佳實務轉化為營造工地可運用的管理措施</li>
 <li>✅ 建立<strong>全生命週期風險管理</strong>的正確認知</li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>本內容比較 <strong>英國 HSE《Construction (Design and Management) Regulations 2015》（CDM 2015）</strong> 與 <strong>勞動部職安署《營造工程風險評估技術指引（第三版）》</strong>，協助甲種業務主管理解國際趨勢並提升實務管理能力。</p>
 </blockquote>
+<hr>
 </section>
-<section id="為什麼要比較英國-cdm-2015" class="slide level2 center">
-<h2>為什麼要比較英國 CDM 2015？</h2>
-<table class="caption-top">
+<section id="為什麼要比較英國-cdm-2015" class="level2">
+<h2 class="anchored" data-anchor-id="為什麼要比較英國-cdm-2015">為什麼要比較英國 CDM 2015？</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 74%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3292,23 +3811,25 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>台灣指引雖已納入「設計階段風險評估」，但英國 CDM 在 <strong>角色職能、資訊傳遞、法定責任分配</strong> 上更為細緻，值得借鏡。</p>
 </blockquote>
+<hr>
 </section>
-<section id="英國-cdm-2015-核心架構" class="slide level2 center">
-<h2>英國 CDM 2015 核心架構</h2>
-
-<img data-src="images/英國 CDM 2015 核心架構.png" style="width:100.0%" class="r-stretch"><blockquote>
+<section id="英國-cdm-2015-核心架構" class="level2">
+<h2 class="anchored" data-anchor-id="英國-cdm-2015-核心架構">英國 CDM 2015 核心架構</h2>
+<p><img src="images/英國 CDM 2015 核心架構.png" class="img-fluid" style="width:100.0%"></p>
+<blockquote class="blockquote">
 <p><strong>核心精神</strong>：業主（Client）負最終責任，主導設計者與主導施工者在施工前、中、後分別擔任協調與管理角色。</p>
 </blockquote>
+<hr>
 </section>
-<section id="cdm-2015-五大角色與職責" class="slide level2 center">
-<h2>CDM 2015 五大角色與職責</h2>
-<table class="caption-top">
+<section id="cdm-2015-五大角色與職責" class="level2">
+<h2 class="anchored" data-anchor-id="cdm-2015-五大角色與職責">CDM 2015 五大角色與職責</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 26%">
+<col style="width: 73%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3339,25 +3860,27 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
+<blockquote class="blockquote">
 <p>資料來源：HSE L153 (2015) <em>Managing health and safety in construction</em>, Table 1, pp.5-7</p>
 </blockquote>
+<hr>
 </section>
-<section id="台灣指引的角色與職責" class="slide level2 center">
-<h2>台灣指引的角色與職責</h2>
-
-<img data-src="images/我國指引架構.png" style="width:100.0%" class="r-stretch"><blockquote>
+<section id="台灣指引的角色與職責" class="level2">
+<h2 class="anchored" data-anchor-id="台灣指引的角色與職責">台灣指引的角色與職責</h2>
+<p><img src="images/我國指引架構.png" class="img-fluid" style="width:100.0%"></p>
+<blockquote class="blockquote">
 <p>台灣指引強調「工程業主為核心」，但業主本身不直接執行風險評估，而是透過契約要求設計者與施工者辦理，並由監造者監督。</p>
 </blockquote>
+<hr>
 </section>
-<section id="角色對照英國-cdm-vs-台灣指引" class="slide level2 center">
-<h2>角色對照：英國 CDM vs 台灣指引</h2>
-<table class="caption-top">
+<section id="角色對照英國-cdm-vs-台灣指引" class="level2">
+<h2 class="anchored" data-anchor-id="角色對照英國-cdm-vs-台灣指引">角色對照：英國 CDM vs 台灣指引</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 11%">
+<col style="width: 30%">
+<col style="width: 28%">
+<col style="width: 28%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3406,14 +3929,15 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="風險評估範圍的比較" class="slide level2 center">
-<h2>風險評估範圍的比較</h2>
-<table class="caption-top">
+<section id="風險評估範圍的比較" class="level2">
+<h2 class="anchored" data-anchor-id="風險評估範圍的比較">風險評估範圍的比較</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 16%">
+<col style="width: 41%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3455,10 +3979,12 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="英國-cdm-的核心工具" class="slide level2 center">
-<h2>英國 CDM 的核心工具</h2>
-<h3 id="pre-construction-information施工前資訊">1. Pre-construction Information（施工前資訊）</h3>
+<section id="英國-cdm-的核心工具" class="level2">
+<h2 class="anchored" data-anchor-id="英國-cdm-的核心工具">英國 CDM 的核心工具</h2>
+<section id="pre-construction-information施工前資訊" class="level3">
+<h3 class="anchored" data-anchor-id="pre-construction-information施工前資訊">1. Pre-construction Information（施工前資訊）</h3>
 <p>業主須提供給設計者與施工者的資訊，包括：</p>
 <ul>
 <li><p>專案描述、關鍵時程</p></li>
@@ -3466,24 +3992,25 @@
 <li><p>既有安全檔案（如有）</p></li>
 <li><p>管理安排（合作、協調機制）</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>「施工前資訊」是設計者進行風險評估的起點（HSE L153, Appendix 2）</p>
 </blockquote>
 </section>
-<section id="construction-phase-plan施工階段計畫" class="slide level2 center">
-<h2>2. Construction Phase Plan（施工階段計畫）</h2>
+</section>
+<section id="construction-phase-plan施工階段計畫" class="level2">
+<h2 class="anchored" data-anchor-id="construction-phase-plan施工階段計畫">2. Construction Phase Plan（施工階段計畫）</h2>
 <p>主導施工者制定，內容須包括：</p>
 <ul>
 <li><p>安全管理安排</p></li>
 <li><p>工地規則</p></li>
 <li><p>Schedule 3 特定高風險作業的特別措施</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>相當於台灣的「施工計畫」加上「風險評估報告」</p>
 </blockquote>
 </section>
-<section id="health-safety-file安全檔案" class="slide level2 center">
-<h2>3. Health &amp; Safety File（安全檔案）</h2>
+<section id="health-safety-file安全檔案" class="level2">
+<h2 class="anchored" data-anchor-id="health-safety-file安全檔案">3. Health &amp; Safety File（安全檔案）</h2>
 <p>竣工後移交業主，供未來維護、改建、拆除使用：</p>
 <ul>
 <li><p>結構設計原則</p></li>
@@ -3491,17 +4018,18 @@
 <li><p>危險材料位置</p></li>
 <li><p>設備維護資訊</p></li>
 </ul>
-<blockquote>
+<blockquote class="blockquote">
 <p>相當於台灣的「使用維護手冊」+「施工風險管理報告」</p>
 </blockquote>
+<hr>
 </section>
-<section id="風險評估方法的對照" class="slide level2 center">
-<h2>風險評估方法的對照</h2>
-<table class="caption-top">
+<section id="風險評估方法的對照" class="level2">
+<h2 class="anchored" data-anchor-id="風險評估方法的對照">風險評估方法的對照</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 15%">
+<col style="width: 34%">
+<col style="width: 49%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3538,9 +4066,10 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="英國-cdm-的一般預防原則general-principles-of-prevention" class="slide level2 center scrollable">
-<h2>英國 CDM 的「一般預防原則」（General Principles of Prevention）</h2>
+<section id="英國-cdm-的一般預防原則general-principles-of-prevention" class="level2">
+<h2 class="anchored" data-anchor-id="英國-cdm-的一般預防原則general-principles-of-prevention">英國 CDM 的「一般預防原則」（General Principles of Prevention）</h2>
 <p>英國 HSE《建築設計與管理法規 2015 (CDM 2015)》附錄 1 (Appendix 1) 要求所有設計者、主導設計者、主導施工者、施工者在執行職務時，必須考量 <strong>Management Regulations 1999 Schedule 1</strong> 的九項原則（HSE L153, Appendix 1）：</p>
 <ol type="1">
 <li><p><strong>避免風險</strong> (avoid risks)。</p></li>
@@ -3553,17 +4082,18 @@
 <li><p><strong>集體防護措施優先於個人防護措施</strong> (give collective protective measures priority over individual protective measures)。</p></li>
 <li><p><strong>給予員工適當的指示與指導</strong> (give appropriate instructions to employees)。</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p>這套原則與台灣指引的「風險對策階層」（消除、降低、工程、管理、防護具）實質一致，但英國更強調 <strong>組織政策與社會關係</strong>。</p>
 </blockquote>
+<hr>
 </section>
-<section id="台灣與英國風險管理流程對照" class="slide level2 center">
-<h2>台灣與英國風險管理流程對照</h2>
-<table class="caption-top">
+<section id="台灣與英國風險管理流程對照" class="level2">
+<h2 class="anchored" data-anchor-id="台灣與英國風險管理流程對照">台灣與英國風險管理流程對照</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 14%">
+<col style="width: 47%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3610,33 +4140,39 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="實際案例高架作業墜落風險" class="slide level2 center scrollable">
-<h2>實際案例：高架作業墜落風險</h2>
-<h3 id="英國-cdm-2015-的處理方式">英國 CDM 2015 的處理方式</h3>
+<section id="實際案例高架作業墜落風險" class="level2">
+<h2 class="anchored" data-anchor-id="實際案例高架作業墜落風險">實際案例：高架作業墜落風險</h2>
+<section id="英國-cdm-2015-的處理方式" class="level3">
+<h3 class="anchored" data-anchor-id="英國-cdm-2015-的處理方式">英國 CDM 2015 的處理方式</h3>
 <ol type="1">
 <li><p><strong>設計階段</strong>：設計師是否可在屋頂設計永久護欄或錨點？是否可將空調主機移至地面？</p></li>
 <li><p><strong>施工前資訊</strong>：業主提供既有結構圖、墜落風險區域</p></li>
 <li><p><strong>施工階段計畫</strong>：主導施工者訂定安全網、護欄、個人防墜系統</p></li>
 <li><p><strong>安全檔案</strong>：竣工後記錄需維護的墜落防護設備位置及檢測週期</p></li>
 </ol>
-<h3 id="台灣指引的處理方式">台灣指引的處理方式</h3>
+</section>
+<section id="台灣指引的處理方式" class="level3">
+<h3 class="anchored" data-anchor-id="台灣指引的處理方式">台灣指引的處理方式</h3>
 <ol type="1">
 <li><p><strong>設計階段</strong>：設計者實施風險評估，繪製安全衛生設施參考圖說（如護欄標準圖）</p></li>
 <li><p><strong>施工規劃</strong>：施工者擬定施工計畫，納入墜落預防措施</p></li>
 <li><p><strong>作業前危害調查</strong>：每日確認護欄、安全母索、安全帶勾點</p></li>
 <li><p><strong>使用維護手冊</strong>：記錄維護時高空作業的安全要求</p></li>
 </ol>
-<blockquote>
+<blockquote class="blockquote">
 <p><strong>差異</strong>：英國 CDM 要求設計階段即需評估「維護時的安全」，並將資訊傳遞至安全檔案；台灣指引亦有類似要求（使用維護手冊），但實務落實度仍有加強空間。</p>
 </blockquote>
+<hr>
 </section>
-<section id="對營造業甲種業務主管的啟示" class="slide level2 center">
-<h2>對營造業甲種業務主管的啟示</h2>
-<table class="caption-top">
+</section>
+<section id="對營造業甲種業務主管的啟示" class="level2">
+<h2 class="anchored" data-anchor-id="對營造業甲種業務主管的啟示">對營造業甲種業務主管的啟示</h2>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -3663,10 +4199,11 @@
 </tr>
 </tbody>
 </table>
+<hr>
 </section>
-<section id="結論英國-cdm-的核心精神" class="slide level2 center scrollable">
-<h2>結論：英國 CDM 的核心精神</h2>
-<blockquote>
+<section id="結論英國-cdm-的核心精神" class="level2">
+<h2 class="anchored" data-anchor-id="結論英國-cdm-的核心精神">結論：英國 CDM 的核心精神</h2>
+<blockquote class="blockquote">
 <p><strong>「安全不是檢查表，而是從設計到拆除的持續對話」</strong></p>
 </blockquote>
 <ol type="1">
@@ -3675,24 +4212,25 @@
 <li><p><strong>設計階段是關鍵</strong>：約 70% 的風險可在設計階段消除或降低，成本最低、效果最好。</p></li>
 <li><p><strong>工作者參與</strong>：CDM 明確要求主導施工者須諮詢工作者並讓他們參與安全決策。</p></li>
 </ol>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<div class="callout-title-container flex-fill">
+Important
 </div>
-<div class="callout-content">
-<blockquote>
+</div>
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
 <p>安全是設計出來的！</p>
 </blockquote>
 </div>
 </div>
-</div>
+<hr>
 </section>
-<section id="結語台灣實務" class="slide level2 center scrollable">
-<h2>結語：台灣實務</h2>
+<section id="結語台灣實務" class="level2">
+<h2 class="anchored" data-anchor-id="結語台灣實務">結語：台灣實務</h2>
 <ul>
 <li><p>台灣指引已具備與國際接軌的基礎架構（設計階段評估、作業前調查、變更管理、使用維護手冊）。</p></li>
 <li><p>強化重點：</p>
@@ -3703,444 +4241,473 @@
 <li><p>建立<strong>安全檔案（Health &amp; Safety File）</strong> 的標準格式與交付義務</p></li>
 </ol></li>
 </ul>
-<blockquote>
-<div class="callout callout-caution callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<blockquote class="blockquote">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Caution</strong></p>
+<div class="callout-title-container flex-fill">
+Caution
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>甲種業務主管應扮演 <strong>風險溝通橋樑</strong>，確保設計端的風險資訊能確實傳遞至施工端與維護端。</p>
 </div>
 </div>
-</div>
 </blockquote>
+<hr>
 </section>
-<section id="q-a-2" class="slide level2 center">
-<h2>Q &amp; A</h2>
+<section id="q-a-2" class="level2">
+<h2 class="anchored" data-anchor-id="q-a-2">Q &amp; A</h2>
 <p><strong>參考文獻</strong>：</p>
 <ul>
 <li><p>HSE (2015). <em>Managing health and safety in construction: Construction (Design and Management) Regulations 2015. Guidance on Regulations (L153)</em>. Health and Safety Executive.</p></li>
 <li><p>勞動部職業安全衛生署 (2025). <em>營造工程風險評估技術指引（第三版）</em>.</p></li>
 <li><p>勞動部職業安全衛生署. <em>營造工程施工風險評估技術指引解說手冊（核定版）</em>.</p></li>
 </ul>
-</section></section>
-<section id="課程與本講義聲明" class="title-slide slide level1 center">
+</section>
+</section>
+<section id="課程與本講義聲明" class="level1">
 <h1>課程與本講義聲明</h1>
 <ul>
 <li><p>本網頁資訊供職安衛專業人員課程使用，在合理使用上（不涉及商業營利）原則下，歡迎分享，以充實職安衛專業與防止職災。</p></li>
 <li><p>本網頁內容雖有參考依據，但仍有ＡＩ工具之協助與應用，正確性上容有疏誤，職安衛專業人員仍應參考相關法規、資訊與指引等，做出正確判斷。</p></li>
 <li><p>本網頁講義可透過列印功能，做成ＰＤＦ電子檔案，不另行提供紙本。</p></li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>講師：何明信 職安衛技師、退休專業檢查員 2026-05</p>
-</div>
 </div>
 </div>
 
 
 </section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
 
-</div>
-</div></div>
-
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': true,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': true,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: true,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'default',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'slow',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1280,
-
-        height: 800,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
-          return false;
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
-            }
-            return codeEl.innerText;
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
         }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-                // target, if specified
-                link.setAttribute("target", "_blank");
-                if (link.getAttribute("rel") === null) {
-                  link.setAttribute("rel", "noopener");
-                }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
             } else {
-              return "";
+              container.appendChild(child.cloneNode(true));
+              break;
             }
-          });
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
             }
           } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
         }
+      }, function(instance) {
       });
-      </script>
-    
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>製作者：何明信老師2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
 
 </body></html>

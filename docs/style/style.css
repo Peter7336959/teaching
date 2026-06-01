@@ -1,0 +1,46 @@
+/* 1. 標題列下方加上細的漸層線 */
+.reveal h1, .reveal h2, .reveal h3 {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.reveal h1:after, .reveal h2:after, .reveal h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;          /* 改為靠左 */
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff5722, #ff5722, #ff5722, transparent);
+  border-radius: 2px;
+}
+
+/* 2. 表格 hover 效果（整列變淺底色） */
+.reveal table tr:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  transition: background-color 0.2s ease;
+}
+
+/* 針對深色/淺色主題的相容加強 */
+.reveal table tr:hover td {
+  background-color: transparent !important;
+}
+
+/* 3. 圖形要有深色框線（適用於圖片、圖形區塊、程式碼輸出等） */
+.reveal section img,
+.reveal .r-stack,
+.reveal figure,
+.reveal .cell,
+.reveal .quarto-figure {
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 4. 重點文字使用紅色粗體 */
+.reveal strong, 
+.reveal b, 
+.reveal .red-text {
+  color: #e74c3c !important;
+  font-weight: bold !important;
+}

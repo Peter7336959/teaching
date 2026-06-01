@@ -1,0 +1,37 @@
+/* ========================================
+   hero-cards.css - 特殊卡片樣式
+   ======================================== */
+
+.hero-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    margin: 1rem 0;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card h1,
+.hero-card h2,
+.hero-card h3 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
