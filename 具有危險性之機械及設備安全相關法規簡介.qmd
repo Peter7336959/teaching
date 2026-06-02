@@ -10,9 +10,9 @@ format:
     transition: slide
     transition-speed: slow
     slide-number: c/t
-#    show-slide-number: print
     chalkboard: true
     preview-links: auto
+    toc-title: "課程目錄"    
     footer: "prepared by Peter Ho."
     logo: "images/logo.jpg"
     toc: true
@@ -24,8 +24,8 @@ format:
     incremental: false
     center: true
     background-transition: fade
-    width: 1050
-    height: 720
+#    width: 1050
+#    height: 720
     css: style/custom.css
 ---
 

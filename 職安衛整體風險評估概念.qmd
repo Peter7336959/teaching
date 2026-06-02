@@ -1,24 +1,32 @@
 ---
 title: "職場風險評估總論"
-format: 
+subtitle: "甲種職業安全衛生業務主管課程"
+author: "講師：何明信 "
+format:
   revealjs:
-    toc-title: ""    
+    theme: default
     smaller: true
     scrollable: true
-    show-slide-number: all
-    preview-links: auto
-    logo: "images/logo.png"  
-    theme: simple
     transition: slide
-    slide-number: true
+    transition-speed: slow
+    slide-number: c/t
     chalkboard: true
+    preview-links: auto
+    toc-title: "課程目錄"    
+    footer: "prepared by Peter Ho."
+    logo: "images/logo.jpg"
     toc: true
     toc-depth: 1
-    code-fold: false
-    fig-responsive: true
-    css: 
-      - style/custom.css
-      - style/table.css
+    hash: true
+    embed-resources: false
+    slide-level: 2
+    code-link: true
+    incremental: false
+    center: true
+    background-transition: fade
+#    width: 1050
+#    height: 720
+    css: style/custom.css
 ---
 
 # 職場風險評估總論
