@@ -18,12 +18,12 @@ format:
     toc: true
     toc-depth: 1
     hash: true
-    embed-resources: false
-    slide-level: 2
-    code-link: true
-    incremental: false
-    center: true
-    background-transition: fade
+#    embed-resources: false
+#    slide-level: 2
+#    code-link: true
+#    incremental: false
+#    center: true
+#    background-transition: fade
 #    width: 1050
 #    height: 720
     css: style/custom.css
