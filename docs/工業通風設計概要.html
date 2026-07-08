@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Peter Ho.">
+<meta name="dcterms.date" content="2026-06-01">
+
+<title>工業通風設計概要 – 教學網站 - 何明信老師</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bf30dfbe067e0f8468691acbb41e00f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">教學網站 - 何明信老師</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" target="_blank" aria-current="page"> 
+<span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/HME/" target="_blank"> 
+<span class="menu-text">危險性機械及設備管理</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/" target="_blank"> 
+<span class="menu-text">暴露評估</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank"> 
+<span class="menu-text">事故調查制度實務指南</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">其他(新增中)</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">工業通風設計概要</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">甲業</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職安衛整體風險評估概念.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職安衛風RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./甲業＿風險評估詳實版.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./營甲＿施工風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">施工安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RA研究導讀.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">營造RA經驗、文獻</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職業衛生暴露風險評估與實務.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職業衛生EA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">職安衛人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./機械設備器具安全與風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">機械設備器具安全與風險評估</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./具有危險性之機械及設備安全相關法規簡介.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">具有危險性之機械及設備安全相關法規簡介</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./危險性機械及設備管理.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">危險性機械及設備管理</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">學校種子人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E6%A0%A1%E5%9C%92%EF%BC%BF%E5%8C%96%E5%AD%B8%E6%9C%89%E5%AE%B3%E7%89%A9%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E7%AD%96%E7%95%A5.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">化學有害物危害預防策略</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./校園＿高溫接觸危害預防策略.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">高溫接觸危害預防策略</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">書籍簡讀</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_大腦解鎖.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">大腦解鎖(Limitless mind)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_反智.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">反智(The irrational age)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">問題是, 我大概會活很久(Somewhere Towards the End)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading1.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">不對稱陷阱(Skin in the game)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">職衛師</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./局部排氣控制與設計.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">局部排氣控制與設計</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#講師簡介" id="toc-講師簡介" class="nav-link active" data-scroll-target="#講師簡介">講師簡介</a></li>
+  <li><a href="#參考書籍" id="toc-參考書籍" class="nav-link" data-scroll-target="#參考書籍">參考書籍</a></li>
+  <li><a href="#第1章-基本概念" id="toc-第1章-基本概念" class="nav-link" data-scroll-target="#第1章-基本概念">第1章 基本概念</a>
+  <ul class="collapse">
+  <li><a href="#均勻混合模型-well-mixed" id="toc-均勻混合模型-well-mixed" class="nav-link" data-scroll-target="#均勻混合模型-well-mixed">均勻混合模型 ((Well-mixed)</a></li>
+  <li><a href="#質量守恆原理" id="toc-質量守恆原理" class="nav-link" data-scroll-target="#質量守恆原理">質量守恆原理</a></li>
+  </ul></li>
+  <li><a href="#空氣氣流狀態" id="toc-空氣氣流狀態" class="nav-link" data-scroll-target="#空氣氣流狀態">空氣氣流狀態</a></li>
+  <li><a href="#局部排氣" id="toc-局部排氣" class="nav-link" data-scroll-target="#局部排氣">局部排氣</a></li>
+  <li><a href="#第2章-空氣狀態" id="toc-第2章-空氣狀態" class="nav-link" data-scroll-target="#第2章-空氣狀態">第2章 空氣狀態</a>
+  <ul class="collapse">
+  <li><a href="#空氣壓力" id="toc-空氣壓力" class="nav-link" data-scroll-target="#空氣壓力">空氣壓力</a></li>
+  </ul></li>
+  <li><a href="#靜壓全壓動壓" id="toc-靜壓全壓動壓" class="nav-link" data-scroll-target="#靜壓全壓動壓">靜壓、全壓、動壓</a>
+  <ul class="collapse">
+  <li><a href="#三種壓力比較" id="toc-三種壓力比較" class="nav-link" data-scroll-target="#三種壓力比較">三種壓力比較</a></li>
+  </ul></li>
+  <li><a href="#動壓與風速" id="toc-動壓與風速" class="nav-link" data-scroll-target="#動壓與風速">動壓與風速</a></li>
+  <li><a href="#空氣中氣膠aerosol" id="toc-空氣中氣膠aerosol" class="nav-link" data-scroll-target="#空氣中氣膠aerosol">空氣中氣膠（Aerosol）</a></li>
+  <li><a href="#捕捉速度與管內氣流狀態" id="toc-捕捉速度與管內氣流狀態" class="nav-link" data-scroll-target="#捕捉速度與管內氣流狀態">捕捉速度與管內氣流狀態</a>
+  <ul class="collapse">
+  <li><a href="#雷諾數reynolds-number-re-" id="toc-雷諾數reynolds-number-re-" class="nav-link" data-scroll-target="#雷諾數reynolds-number-re-">雷諾數（Reynolds Number, Re）-</a></li>
+  <li><a href="#雷諾數實際計算範例" id="toc-雷諾數實際計算範例" class="nav-link" data-scroll-target="#雷諾數實際計算範例">雷諾數實際計算範例</a></li>
+  <li><a href="#雷諾數對通風設計的影響" id="toc-雷諾數對通風設計的影響" class="nav-link" data-scroll-target="#雷諾數對通風設計的影響">雷諾數對通風設計的影響</a></li>
+  </ul></li>
+  <li><a href="#捕捉速度排氣量與通風系統設計" id="toc-捕捉速度排氣量與通風系統設計" class="nav-link" data-scroll-target="#捕捉速度排氣量與通風系統設計">捕捉速度、排氣量、與通風系統設計</a>
+  <ul class="collapse">
+  <li><a href="#完整設計流程6步驟" id="toc-完整設計流程6步驟" class="nav-link" data-scroll-target="#完整設計流程6步驟">完整設計流程（6步驟）</a></li>
+  </ul></li>
+  <li><a href="#蒸氣濃度百分比體積分率" id="toc-蒸氣濃度百分比體積分率" class="nav-link" data-scroll-target="#蒸氣濃度百分比體積分率">蒸氣濃度百分比（體積分率）</a>
+  <ul class="collapse">
+  <li><a href="#ppm-與-mgm³-換算" id="toc-ppm-與-mgm³-換算" class="nav-link" data-scroll-target="#ppm-與-mgm³-換算">ppm 與 mg/m³ 換算</a></li>
+  </ul></li>
+  <li><a href="#第5章-局部排氣通風系統" id="toc-第5章-局部排氣通風系統" class="nav-link" data-scroll-target="#第5章-局部排氣通風系統">第5章 局部排氣通風系統</a>
+  <ul class="collapse">
+  <li><a href="#系統類型" id="toc-系統類型" class="nav-link" data-scroll-target="#系統類型">5.1 系統類型</a></li>
+  </ul></li>
+  <li><a href="#設備與元件" id="toc-設備與元件" class="nav-link" data-scroll-target="#設備與元件">5-2 設備與元件</a></li>
+  <li><a href="#靜壓-static-pressure" id="toc-靜壓-static-pressure" class="nav-link" data-scroll-target="#靜壓-static-pressure">5-3 靜壓 (Static Pressure)</a></li>
+  <li><a href="#肘管損失elbow-losses" id="toc-肘管損失elbow-losses" class="nav-link" data-scroll-target="#肘管損失elbow-losses">肘管損失（Elbow Losses）</a></li>
+  <li><a href="#歧管損失-branch-losses" id="toc-歧管損失-branch-losses" class="nav-link" data-scroll-target="#歧管損失-branch-losses">歧管損失 (Branch Losses)</a></li>
+  <li><a href="#第-6-章氣罩的選擇與設計" id="toc-第-6-章氣罩的選擇與設計" class="nav-link" data-scroll-target="#第-6-章氣罩的選擇與設計">第 6 章「氣罩的選擇與設計」</a>
+  <ul class="collapse">
+  <li><a href="#氣罩-hood" id="toc-氣罩-hood" class="nav-link" data-scroll-target="#氣罩-hood">氣罩 (Hood)</a></li>
+  </ul></li>
+  <li><a href="#氣罩壓力損失的基本概念" id="toc-氣罩壓力損失的基本概念" class="nav-link" data-scroll-target="#氣罩壓力損失的基本概念">氣罩壓力損失的基本概念</a></li>
+  <li><a href="#束縮面-vena-contract" id="toc-束縮面-vena-contract" class="nav-link" data-scroll-target="#束縮面-vena-contract"><strong>6-2 束縮面 (Vena Contract)</strong></a></li>
+  <li><a href="#氣罩吸入係數-ce-與捕集效率" id="toc-氣罩吸入係數-ce-與捕集效率" class="nav-link" data-scroll-target="#氣罩吸入係數-ce-與捕集效率"><strong>氣罩吸入係數 (</strong>Ce<strong>) 與捕集效率</strong></a></li>
+  <li><a href="#損失係數-k-與-吸入係數-ce-的關係" id="toc-損失係數-k-與-吸入係數-ce-的關係" class="nav-link" data-scroll-target="#損失係數-k-與-吸入係數-ce-的關係">損失係數 (K) 與 吸入係數 (Ce) 的關係</a></li>
+  <li><a href="#風罩設計方法" id="toc-風罩設計方法" class="nav-link" data-scroll-target="#風罩設計方法">6-3風罩設計方法</a></li>
+  <li><a href="#氣罩設計練習" id="toc-氣罩設計練習" class="nav-link" data-scroll-target="#氣罩設計練習">氣罩設計練習</a></li>
+  <li><a href="#體積流率及速度方程式" id="toc-體積流率及速度方程式" class="nav-link" data-scroll-target="#體積流率及速度方程式">6-4體積流率及速度方程式</a></li>
+  <li><a href="#實際操作狀況" id="toc-實際操作狀況" class="nav-link" data-scroll-target="#實際操作狀況">6-5 實際操作狀況</a></li>
+  <li><a href="#第7章-風管的種類與空氣流體行為" id="toc-第7章-風管的種類與空氣流體行為" class="nav-link" data-scroll-target="#第7章-風管的種類與空氣流體行為">第7章 風管的種類與空氣流體行為</a>
+  <ul class="collapse">
+  <li><a href="#風管內之空氣流速" id="toc-風管內之空氣流速" class="nav-link" data-scroll-target="#風管內之空氣流速">7-1 風管內之空氣流速</a></li>
+  </ul></li>
+  <li><a href="#風管內空氣之流體行為" id="toc-風管內空氣之流體行為" class="nav-link" data-scroll-target="#風管內空氣之流體行為">7-2 風管內空氣之流體行為</a>
+  <ul class="collapse">
+  <li><a href="#基礎流體力學與穩態能量方程式" id="toc-基礎流體力學與穩態能量方程式" class="nav-link" data-scroll-target="#基礎流體力學與穩態能量方程式">1. 基礎流體力學與穩態能量方程式</a></li>
+  <li><a href="#三大壓力關係與能量的不可逆性" id="toc-三大壓力關係與能量的不可逆性" class="nav-link" data-scroll-target="#三大壓力關係與能量的不可逆性">2. 三大壓力關係與能量的不可逆性</a></li>
+  <li><a href="#造成全壓損失的兩大元兇摩擦與動態損失" id="toc-造成全壓損失的兩大元兇摩擦與動態損失" class="nav-link" data-scroll-target="#造成全壓損失的兩大元兇摩擦與動態損失">3. 造成全壓損失的兩大元兇：摩擦與動態損失</a></li>
+  <li><a href="#實務設計的兩大轉換工具" id="toc-實務設計的兩大轉換工具" class="nav-link" data-scroll-target="#實務設計的兩大轉換工具">4. 實務設計的兩大轉換工具</a></li>
+  </ul></li>
+  <li><a href="#風管系統之守恆定律" id="toc-風管系統之守恆定律" class="nav-link" data-scroll-target="#風管系統之守恆定律">7-3 風管系統之守恆定律</a>
+  <ul class="collapse">
+  <li><a href="#質量守恆-conservation-of-mass" id="toc-質量守恆-conservation-of-mass" class="nav-link" data-scroll-target="#質量守恆-conservation-of-mass">1. 質量守恆 (Conservation of Mass)</a></li>
+  <li><a href="#能量守恆-conservation-of-energy" id="toc-能量守恆-conservation-of-energy" class="nav-link" data-scroll-target="#能量守恆-conservation-of-energy">2. 能量守恆 (Conservation of Energy)</a></li>
+  </ul></li>
+  <li><a href="#工業風管的組件及種類" id="toc-工業風管的組件及種類" class="nav-link" data-scroll-target="#工業風管的組件及種類">7-4 工業風管的組件及種類</a>
+  <ul class="collapse">
+  <li><a href="#摩擦損失與風管幾何設計" id="toc-摩擦損失與風管幾何設計" class="nav-link" data-scroll-target="#摩擦損失與風管幾何設計">1. 摩擦損失與風管幾何設計</a></li>
+  </ul></li>
+  <li><a href="#第8章-風機fan的選擇與操作" id="toc-第8章-風機fan的選擇與操作" class="nav-link" data-scroll-target="#第8章-風機fan的選擇與操作">第8章 風機（Fan）的選擇與操作</a>
+  <ul class="collapse">
+  <li><a href="#風機種類與實務選用" id="toc-風機種類與實務選用" class="nav-link" data-scroll-target="#風機種類與實務選用">8-1 風機種類與實務選用</a></li>
+  <li><a href="#風機測試與系統效應" id="toc-風機測試與系統效應" class="nav-link" data-scroll-target="#風機測試與系統效應">8-2 風機測試與系統效應</a></li>
+  </ul></li>
+  <li><a href="#風機壓力與動力" id="toc-風機壓力與動力" class="nav-link" data-scroll-target="#風機壓力與動力">2. 風機壓力與動力</a>
+  <ul class="collapse">
+  <li><a href="#描述風機能力的兩大壓力指標" id="toc-描述風機能力的兩大壓力指標" class="nav-link" data-scroll-target="#描述風機能力的兩大壓力指標">描述風機能力的兩大壓力指標</a></li>
+  </ul></li>
+  <li><a href="#風機動力-fan-power-fhp" id="toc-風機動力-fan-power-fhp" class="nav-link" data-scroll-target="#風機動力-fan-power-fhp">3.風機動力 (Fan Power / FHP)</a></li>
+  <li><a href="#風機動力---練習" id="toc-風機動力---練習" class="nav-link" data-scroll-target="#風機動力---練習">風機動力 - 練習</a>
+  <ul class="collapse">
+  <li><a href="#題目1" id="toc-題目1" class="nav-link" data-scroll-target="#題目1"><strong>題目1</strong></a></li>
+  <li><a href="#題目2" id="toc-題目2" class="nav-link" data-scroll-target="#題目2"><strong>題目2</strong></a></li>
+  </ul></li>
+  <li><a href="#風機壓力變化" id="toc-風機壓力變化" class="nav-link" data-scroll-target="#風機壓力變化">風機壓力變化</a></li>
+  <li><a href="#如何知道風機壓力變化整理及目的" id="toc-如何知道風機壓力變化整理及目的" class="nav-link" data-scroll-target="#如何知道風機壓力變化整理及目的">如何知道風機壓力變化（整理）及目的</a>
+  <ul class="collapse">
+  <li><a href="#如何進行系統設計與效率評估" id="toc-如何進行系統設計與效率評估" class="nav-link" data-scroll-target="#如何進行系統設計與效率評估">如何進行系統設計與效率評估？</a></li>
+  </ul></li>
+  <li><a href="#sop-和風機曲線風機匹配" id="toc-sop-和風機曲線風機匹配" class="nav-link" data-scroll-target="#sop-和風機曲線風機匹配">8-3 SOP 和風機曲線（風機匹配）</a>
+  <ul class="collapse">
+  <li><a href="#系統需求系統操作點-sop-與系統曲線" id="toc-系統需求系統操作點-sop-與系統曲線" class="nav-link" data-scroll-target="#系統需求系統操作點-sop-與系統曲線">1. 系統需求：系統操作點 (SOP) 與系統曲線</a></li>
+  <li><a href="#風機能力風機特性曲線-風機本身的性能" id="toc-風機能力風機特性曲線-風機本身的性能" class="nav-link" data-scroll-target="#風機能力風機特性曲線-風機本身的性能">2. 風機能力：風機特性曲線 （風機本身的性能）</a></li>
+  </ul></li>
+  <li><a href="#sop-和風機曲線風機匹配續" id="toc-sop-和風機曲線風機匹配續" class="nav-link" data-scroll-target="#sop-和風機曲線風機匹配續">8-3 SOP 和風機曲線（風機匹配）續</a>
+  <ul class="collapse">
+  <li><a href="#綜合評估群組曲線與最佳效率區" id="toc-綜合評估群組曲線與最佳效率區" class="nav-link" data-scroll-target="#綜合評估群組曲線與最佳效率區">3. 綜合評估：群組曲線與最佳效率區</a></li>
+  <li><a href="#風機曲線後部-back-of-the-curve" id="toc-風機曲線後部-back-of-the-curve" class="nav-link" data-scroll-target="#風機曲線後部-back-of-the-curve">4. 風機曲線後部 (Back of the Curve)</a></li>
+  </ul></li>
+  <li><a href="#系統曲線-system-curve" id="toc-系統曲線-system-curve" class="nav-link" data-scroll-target="#系統曲線-system-curve"><strong>8-4 系統曲線 (System Curve)</strong></a></li>
+  <li><a href="#風機選擇" id="toc-風機選擇" class="nav-link" data-scroll-target="#風機選擇"><strong>8-5 風機選擇</strong></a></li>
+  <li><a href="#設計範例" id="toc-設計範例" class="nav-link" data-scroll-target="#設計範例">9-5設計範例</a>
+  <ul class="collapse">
+  <li><a href="#第一階段確立設計參數與決定管徑" id="toc-第一階段確立設計參數與決定管徑" class="nav-link" data-scroll-target="#第一階段確立設計參數與決定管徑">1. 第一階段：確立設計參數與決定管徑</a></li>
+  <li><a href="#第二階段逐點精算壓力損失-the-node-to-node-calculation" id="toc-第二階段逐點精算壓力損失-the-node-to-node-calculation" class="nav-link" data-scroll-target="#第二階段逐點精算壓力損失-the-node-to-node-calculation">2. 第二階段：逐點精算壓力損失 (The Node-to-Node Calculation)</a></li>
+  <li><a href="#第三階段決定風機動力與安全馬力" id="toc-第三階段決定風機動力與安全馬力" class="nav-link" data-scroll-target="#第三階段決定風機動力與安全馬力">3. 第三階段：決定風機動力與安全馬力</a></li>
+  <li><a href="#第四階段壓損分佈圖-pressure-loss-distribution-diagram" id="toc-第四階段壓損分佈圖-pressure-loss-distribution-diagram" class="nav-link" data-scroll-target="#第四階段壓損分佈圖-pressure-loss-distribution-diagram">4. 第四階段：壓損分佈圖 (Pressure Loss Distribution Diagram)</a></li>
+  </ul></li>
+  <li><a href="#其他範例" id="toc-其他範例" class="nav-link" data-scroll-target="#其他範例">其他範例</a>
+  <ul class="collapse">
+  <li><a href="#參考書籍-鍾基強工業通風設計概要第二版全華圖書2011" id="toc-參考書籍-鍾基強工業通風設計概要第二版全華圖書2011" class="nav-link" data-scroll-target="#參考書籍-鍾基強工業通風設計概要第二版全華圖書2011">參考書籍： 鍾基強，<strong>工業通風設計概要(第二版)，</strong>全華圖書，2011</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="工業通風設計概要.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">工業通風設計概要</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter Ho. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="講師簡介" class="level2">
+<h2 class="anchored" data-anchor-id="講師簡介">講師簡介</h2>
+<ul>
+<li><p>姓名：何明信</p></li>
+<li><p>學歷：成大環醫所 、職安衛技師</p></li>
+<li><p>經歷：檢查員30年 (製造、危機設、營造、化工職衛科、專委)</p></li>
+<li><p>現職：114年退休</p></li>
+<li><p>E-mail：msho7336959@gmail.com</p></li>
+</ul>
+</section>
+<section id="參考書籍" class="level2">
+<h2 class="anchored" data-anchor-id="參考書籍">參考書籍</h2>
+<p>鍾基強，<strong>工業通風設計概要(第二版)，</strong>全華圖書，2011</p>
+</section>
+<section id="第1章-基本概念" class="level2">
+<h2 class="anchored" data-anchor-id="第1章-基本概念">第1章 基本概念</h2>
+<section id="均勻混合模型-well-mixed" class="level3">
+<h3 class="anchored" data-anchor-id="均勻混合模型-well-mixed">均勻混合模型 ((Well-mixed)</h3>
+</section>
+<section id="質量守恆原理" class="level3">
+<h3 class="anchored" data-anchor-id="質量守恆原理">質量守恆原理</h3>
+<ul>
+<li><p>室內空間體積 V(m3)，內部污染物總質量 m(g)，則<strong>平均濃度</strong> C=m/V&nbsp;(g/m3)</p></li>
+<li><p>污染物質量的變化率 = 流入率 − 流出率 + 內部產生率 (<strong>汙染物質量守恆</strong>)</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>汙染物質量守恆</td>
+<td><span class="math inline">\(\frac{dm}{dt} = \dot{m}_{in} - \dot{m}_{out} + \dot{m}_{gen}\)</span></td>
+</tr>
+<tr class="even">
+<td>(均勻混合假設) 微分方程式</td>
+<td><span class="math inline">\(V \frac{dC}{dt} = QC_0 - QC + G\)</span></td>
+</tr>
+<tr class="odd">
+<td>當時間足夠長，濃度不再變化</td>
+<td><span class="math inline">\(C = C_0 + \frac{G}{Q}\)</span></td>
+</tr>
+<tr class="even">
+<td>所需換氣量</td>
+<td><span class="math inline">\(Q =  \frac{G}{C_{PEL}-C_0}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>重要
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>留意推演中隱含的假設：例如，均勻混合、<strong>產生率</strong>G為常數、<strong>換氣量</strong>Q為常數等等</p>
+</div>
+</div>
+<section id="應用範例甲苯洩漏" class="level4">
+<h4 class="anchored" data-anchor-id="應用範例甲苯洩漏">應用範例：甲苯洩漏</h4>
+<ul>
+<li><p>G=30&nbsp;g/hr，容許濃度 100 ppm，室外 C0=0 ppm，分子量 M=92g/mol</p></li>
+<li><p><a href="https://oemd.osha.gov.tw/exposure/content/tools/Tools4.aspx">定量暴露評估模式推估工具-完全混合模式</a> (職安署)</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="空氣氣流狀態" class="level2">
+<h2 class="anchored" data-anchor-id="空氣氣流狀態">空氣氣流狀態</h2>
+<p>整體換氣</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/氣流狀態1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/工業通風/氣流狀態1.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/氣流狀態2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/工業通風/氣流狀態2.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="局部排氣" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣">局部排氣</h2>
+<ul>
+<li>特別適用於高濃度、有毒性、腐蝕性、可燃性等空氣汙染物。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 45%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/工業通風/局排系統圖.png" class="img-fluid"></td>
+<td><p><img src="images/工業通風/氣罩1.png" class="img-fluid"></p>
+<p><img src="images/工業通風/氣罩2.png" class="img-fluid"></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第2章-空氣狀態" class="level2">
+<h2 class="anchored" data-anchor-id="第2章-空氣狀態">第2章 空氣狀態</h2>
+<ul>
+<li>密度：空氣的密度為1.2 kg/m3 (標準狀態下)</li>
+<li>比重：氣體或蒸氣質量 / 空氣的質量 (相同體積)
+<ul>
+<li>CO比重為0.968，</li>
+</ul></li>
+<li>在標準環境中，假設空氣為理想氣體狀態，空氣的密度與壓力和温度有關。 理想氣體定律: <span class="math inline">\(\frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2}\)</span></li>
+</ul>
+<section id="空氣壓力" class="level3">
+<h3 class="anchored" data-anchor-id="空氣壓力">空氣壓力</h3>
+<ul>
+<li><p>空氣會因為<strong>壓力差</strong>而流動： <strong>由高壓區流向低壓區</strong></p></li>
+<li><p>在通風系統中，空氣主要是靠<strong>風機（風扇）所產生的壓差</strong>來移動。</p></li>
+<li><p>風機<strong>入口負壓</strong>(靜壓小於大氣壓)，出口正壓。</p></li>
+<li><p><strong>靜壓</strong>（Static Pressure）指空氣對容器或風管壁垂直作用的壓力(可正可負)</p>
+<ul>
+<li><p>通常利用U型管壓力計（水柱壓力計）或氣壓計測量</p></li>
+<li><p>常用壓力單位：公厘水柱（mm H₂O）</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>「高壓往低壓流，風機入口負、出口正；靜壓測管壁，水柱量壓力。」</p>
+</div>
+</div>
+</div>
+<p><img src="images/工業通風/風管內靜壓圖.png" class="img-fluid"></p>
+</section>
+</section>
+<section id="靜壓全壓動壓" class="level2">
+<h2 class="anchored" data-anchor-id="靜壓全壓動壓">靜壓、全壓、動壓</h2>
+<ul>
+<li>靜壓（Static Pressure）：由<strong>空氣本身重量（重力）及風機推動氣流</strong>所形成的壓力，作用於風管壁面，且<strong>各個方向皆存在且大小相同</strong>。</li>
+<li>動壓（Velocity Pressure）：因<strong>空氣流動速度</strong>所產生的壓力，也就是空氣分子撞擊測量探針所造成的壓力。若空氣停止流動動壓＝0 ，若風速增加動壓隨之增加。 動壓代表的是<strong>氣流動能的大小</strong>。</li>
+<li>全壓（Total Pressure） <strong>= 靜壓 + 動壓</strong></li>
+</ul>
+<section id="三種壓力比較" class="level3">
+<h3 class="anchored" data-anchor-id="三種壓力比較">三種壓力比較</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>項目</th>
+<th>靜壓</th>
+<th>動壓</th>
+<th>全壓</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>來源</td>
+<td>空氣本身壓力</td>
+<td>空氣流動速度</td>
+<td>靜壓＋動壓</td>
+</tr>
+<tr class="even">
+<td>是否受風速影響</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr class="odd">
+<td>測量方向</td>
+<td>與氣流垂直</td>
+<td>正對氣流</td>
+<td>正對氣流</td>
+</tr>
+<tr class="even">
+<td>單位</td>
+<td>mmH₂O、Pa</td>
+<td>mmH₂O、Pa</td>
+<td>mmH₂O、Pa</td>
+</tr>
+<tr class="odd">
+<td><strong>用途</strong></td>
+<td>判斷系統壓力</td>
+<td>計算風速</td>
+<td>評估風機性能</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>量測動壓與全壓時，應取平均值，因為導管截面不同位置的風速並不完全一致。</p>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/全壓圖.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td><img src="images/工業通風/壓力分佈圖.png" class="img-fluid"></td>
+</tr>
+<tr class="odd">
+<td><img src="images/工業通風/壓力分佈圖2.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="動壓與風速" class="level2">
+<h2 class="anchored" data-anchor-id="動壓與風速">動壓與風速</h2>
+<section id="體積流率-q-v-a" class="level4">
+<h4 class="anchored" data-anchor-id="體積流率-q-v-a">體積流率 Q = V * A</h4>
+<p><strong>題目：</strong>導管的直徑 <span class="math inline">\(D = 25\text{ cm}\)</span>，在標準環境下管內氣流的平均速度 <span class="math inline">\(V = 21\text{ m/s}\)</span>，流率 <span class="math inline">\(Q = ?\)</span> <strong>解答：</strong> <span class="math inline">\(1.03\text{ m}^3\text{/s}\)</span></p>
+</section>
+<section id="動壓p_v與風管中風速關係" class="level4">
+<h4 class="anchored" data-anchor-id="動壓p_v與風管中風速關係">動壓（<span class="math inline">\(P_v\)</span>）與風管中風速關係</h4>
+<ul>
+<li><p>動壓（<span class="math inline">\(P_v\)</span>）與風管中速度關係可以以下式表示：</p>
+<p><span class="math inline">\(P_v = \frac{\rho V^2}{2g} = \frac{1.2 \times V^2}{2 \times 9.8} = \left(\frac{V}{4.03}\right)^2 \text{公制} = \left(\frac{V}{4005}\right)^2 \text{英制}\)</span></p></li>
+<li><p>在通風工程（如 ACGIH 標準）中，最常出現的經典公式：</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 24%">
+<col style="width: 34%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>單位系統</strong></td>
+<td>經典公式（d=1 時）</td>
+<td>風速單位 (V)</td>
+<td>動壓單位 (Pv​)</td>
+</tr>
+<tr class="even">
+<td><strong>英制</strong></td>
+<td><span class="math inline">\(V = 4005 \sqrt{P_v}\)</span></td>
+<td>英呎/分鐘 (<span class="math inline">\(\text{fpm}\)</span>)</td>
+<td>吋水柱高 (<span class="math inline">\(\text{in. wg}\)</span>)</td>
+</tr>
+<tr class="odd">
+<td><strong>公制 (標準)</strong></td>
+<td><span class="math inline">\(V = 1.29 \sqrt{P_v}\)</span></td>
+<td>公尺/秒 (<span class="math inline">\(\text{m/s}\)</span>)</td>
+<td>帕斯卡 (<span class="math inline">\(\text{Pa}\)</span>)</td>
+</tr>
+<tr class="even">
+<td><strong>公制系(傳統)</strong></td>
+<td><span class="math inline">\(V = 4.04 \sqrt{P_v}\)</span></td>
+<td>公尺/秒 (<span class="math inline">\(\text{m/s}\)</span>)</td>
+<td>毫米水柱高 (<span class="math inline">\(\text{mmH}_2\text{O}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>題目：</strong>在管內蒸氣的平均動壓 <span class="math inline">\(P_v = 1.0\text{ in H}_2\text{O}\)</span>，平均速度 <span class="math inline">\(V = ?\)</span></p>
+<ul>
+<li><strong>解答：</strong> <span class="math inline">\(V = 4005\text{ ft/min}\)</span></li>
+</ul></li>
+<li><p><strong>題目：</strong>管內蒸氣的中心動壓 <span class="math inline">\(P_v = 12\text{ mm H}_2\text{O}\)</span>，中心速度 <span class="math inline">\(V = ?\)</span></p>
+<ul>
+<li><strong>解答：</strong> <span class="math inline">\(V \doteq 13.9 = 14\text{ m/s}\)</span></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="空氣中氣膠aerosol" class="level2">
+<h2 class="anchored" data-anchor-id="空氣中氣膠aerosol">空氣中氣膠（Aerosol）</h2>
+<ul>
+<li><p><strong>氣膠（Aerosol）</strong> 是指<strong>固體或液體微粒懸浮於氣體介質中</strong>所形成的穩定狀態(系統)。</p>
+<ul>
+<li><p>不是單純指「微粒」或「氣體」，而是 <strong>微粒 + 氣體</strong> 的兩相組合，常見例子：煙霧、灰塵、雲霧、PM₂.₅、病毒飛沫等。</p></li>
+<li><p>粒狀物 = 懸浮的固體或液滴本身，氣膠 = 粒狀物 + 承載氣體（如空氣）</p></li>
+</ul></li>
+</ul>
+<p><img src="images/工業通風/氣膠尺寸範圍.png" class="img-fluid"></p>
+</section>
+<section id="捕捉速度與管內氣流狀態" class="level2">
+<h2 class="anchored" data-anchor-id="捕捉速度與管內氣流狀態">捕捉速度與管內氣流狀態</h2>
+<ul>
+<li><p>（Capture Velocity）：逸散源附近空氣的速度，必須大到能夠捕捉逸散物，並能將其帶到通風管內。</p>
+<ul>
+<li>整體換氣：靠<strong>稀釋；</strong>局部排氣：靠<strong>捕捉</strong>（捕捉速度是LEV關鍵設計參數）</li>
+</ul></li>
+</ul>
+<section id="雷諾數reynolds-number-re-" class="level3">
+<h3 class="anchored" data-anchor-id="雷諾數reynolds-number-re-">雷諾數（Reynolds Number, Re）-</h3>
+<ul>
+<li>用於判斷管內流態、混合、壓損等，是慣性力 / 黏滯力之比，​ 無因次 ​<br>
+<span class="math inline">\(Re = \frac{\rho V D}{\mu}\)</span></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Re 範圍</th>
+<th style="text-align: left;">流態</th>
+<th style="text-align: left;">特性</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">&lt; 2000</td>
+<td style="text-align: left;">層流（Laminar）</td>
+<td style="text-align: left;">流線平穩、混合差</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2000～4000</td>
+<td style="text-align: left;">過渡區</td>
+<td style="text-align: left;">不穩定</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&gt; 4000</td>
+<td style="text-align: left;">紊流（Turbulent）</td>
+<td style="text-align: left;">混合良好、壓損較高</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="雷諾數實際計算範例" class="level3">
+<h3 class="anchored" data-anchor-id="雷諾數實際計算範例">雷諾數實際計算範例</h3>
+<p><strong>已知條件（英制轉公制統一單位）：</strong> *<strong>管徑</strong> <span class="math inline">\(D = 12\text{ in} = 0.3048\text{ m}\)</span> ，<strong>流速</strong> <span class="math inline">\(V = 1000\text{ ft/min} = 5.08\text{ m/s}\)</span> ，<strong>室溫空氣物性</strong>： * 密度 <span class="math inline">\(\rho \approx 1.2\text{ kg/m}^3\)</span> * 動力黏滯係數 <span class="math inline">\(\mu \approx 1.8 \times 10^{-5}\text{ kg/(s}\cdot\text{m)}\)</span>； 雷諾數<span class="math inline">\(Re  \approx 103,000\)</span></p>
+</section>
+<section id="雷諾數對通風設計的影響" class="level3">
+<h3 class="anchored" data-anchor-id="雷諾數對通風設計的影響">雷諾數對通風設計的影響</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">影響項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>混合效率</strong></td>
+<td style="text-align: left;">紊流混合好 → 有利整體換氣</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>壓力損失</strong></td>
+<td style="text-align: left;">紊流壓損較高（需更大風機靜壓）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>粒狀物傳輸</strong></td>
+<td style="text-align: left;">紊流可懸浮微粒，避免沉降（但在風管內會撞擊管壁）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>量測穩定度</strong></td>
+<td style="text-align: left;">紊流造成速度、壓力波動（量測值變得不穩定）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>捕捉能力</strong></td>
+<td style="text-align: left;">紊流有助於將污染物帶入吸氣口（過強會干擾製程）</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>捕捉速度</strong>確保污染物「進得去」吸氣口，<br>
+<strong>雷諾數</strong>確保污染物在管內「送得走」且混合良好。</p>
+</div>
+</div>
+</section>
+</section>
+<section id="捕捉速度排氣量與通風系統設計" class="level2">
+<h2 class="anchored" data-anchor-id="捕捉速度排氣量與通風系統設計">捕捉速度、排氣量、與通風系統設計</h2>
+<ul>
+<li><p>Q = 捕捉速度 × 有效吸氣面積</p></li>
+<li><p>捕捉速度會隨距離迅速衰減，無法直接代簡單面積公式，需使用<strong>經驗公式</strong>。</p></li>
+</ul>
+<section id="完整設計流程6步驟" class="level3">
+<h3 class="anchored" data-anchor-id="完整設計流程6步驟">完整設計流程（6步驟）</h3>
+<ul>
+<li><p>Step 1：確認污染源與作業方式</p></li>
+<li><p>Step 2：選定捕捉速度 Vc (可參考ACGIH建議)</p></li>
+<li><p>Step 3：選擇吸氣口形狀與位置</p></li>
+<li><p>Step 4：套用對應公式計算Q</p></li>
+<li><p>Step 5：考慮安全係數與混合效率</p></li>
+<li><p>Step 6：驗證風管內速度</p></li>
+</ul>
+</section>
+</section>
+<section id="蒸氣濃度百分比體積分率" class="level2">
+<h2 class="anchored" data-anchor-id="蒸氣濃度百分比體積分率">蒸氣濃度百分比（體積分率）</h2>
+<p><span class="math display">\[C (\%) = \frac{PP (飽和蒸氣壓)}{BP (大氣壓力)} \times 100\]</span></p>
+<section id="ppm-與-mgm³-換算" class="level3">
+<h3 class="anchored" data-anchor-id="ppm-與-mgm³-換算">ppm 與 mg/m³ 換算</h3>
+<p><span class="math display">\[\frac{\text{mg/m}^3}{\text{ppm}} = \frac{MW}{24.1}\]</span></p>
+<ul>
+<li>例題：水銀蒸氣 ，已知條件：水銀（Hg）飽和蒸氣壓 PP=0.0013mmHg，大氣壓 BP=760mmHg，水銀分子量 MW=201g/mol，標準環境（25°C、1 atm）</li>
+</ul>
+<section id="計算體積濃度ppm" class="level5">
+<h5 class="anchored" data-anchor-id="計算體積濃度ppm">計算體積濃度（ppm）</h5>
+</section>
+<section id="c-fracppbp-frac0.0013760-approx-1.71-times-10-6-1.71text-ppm" class="level5">
+<h5 class="anchored" data-anchor-id="c-fracppbp-frac0.0013760-approx-1.71-times-10-6-1.71text-ppm"><span class="math display">\[C = \frac{PP}{BP} = \frac{0.0013}{760} \approx 1.71 \times 10^{-6} = 1.71\text{ ppm}\]</span></h5>
+</section>
+<section id="ppm-與-mgm³-換算-textppm-times-mw-textmgm3-times-24.1" class="level5">
+<h5 class="anchored" data-anchor-id="ppm-與-mgm³-換算-textppm-times-mw-textmgm3-times-24.1">ppm 與 mg/m³ 換算 <span class="math display">\[\text{ppm} \times MW = \text{mg/m}^3 \times 24.1\]</span></h5>
+</section>
+<section id="section" class="level5">
+<h5 class="anchored" data-anchor-id="section"></h5>
+</section>
+</section>
+</section>
+<section id="第5章-局部排氣通風系統" class="level2">
+<h2 class="anchored" data-anchor-id="第5章-局部排氣通風系統">第5章 局部排氣通風系統</h2>
+<section id="系統類型" class="level3">
+<h3 class="anchored" data-anchor-id="系統類型">5.1 系統類型</h3>
+<ul>
+<li><p>局部換氣系統（Local Exhaust Ventilation, LEV）最基礎也最重要的目標，是在空氣污染物（如有害的煙、氣體或蒸氣）逸散並侵入工作場所、特別是勞工的呼吸帶之前，就預先在污染源附近將其捕捉或控制。</p></li>
+<li><p>採用局部排氣系統的6大評估條件:</p>
+<ul>
+<li><p><strong>無法實施合乎成本效益的控制時</strong>。</p></li>
+<li><p><strong>污染物具有高危害性</strong>。</p></li>
+<li><p><strong>員工位於污染源的鄰近區域</strong>。</p></li>
+<li><p><strong>逸散率隨時間而變</strong>(不穩定或大量逸散)。</p></li>
+<li><p><strong>污染源的特性與狀態明確</strong>。</p></li>
+<li><p><strong>法規規則或標準的要求</strong>。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="設備與元件" class="level2">
+<h2 class="anchored" data-anchor-id="設備與元件">5-2 設備與元件</h2>
+<ol type="1">
+<li>氣罩 (Hood)：必須能容納或涵蓋污染逸散源。</li>
+<li>管路 (Piping / Duct)：(風管）扮演著傳輸的微血管與動脈角色 。</li>
+<li>空氣濾清器 (Air Cleaner)：常稱為空污防制設備。</li>
+<li>風機 (Fan)：是整個系統的「心臟」，功能是供應管路內一定的「靜壓（Static Pressure）」，並維持空氣的持續流動。</li>
+<li>排氣管 (Stack / 煙囪)：通風系統的最後一個出口。</li>
+</ol>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>五大元件（氣罩、管路、空氣濾清器、風機、排氣管）</p>
+</div>
+</div>
+</div>
+</section>
+<section id="靜壓-static-pressure" class="level2">
+<h2 class="anchored" data-anchor-id="靜壓-static-pressure">5-3 靜壓 (Static Pressure)</h2>
+<ul>
+<li>不了解靜壓，就無法正確地選擇風機，也無法確保氣罩端有足夠的抽氣量來保護勞工。</li>
+<li>空氣之所以會流動，是因為「壓力差」，<strong>風機在氣罩與管路上游創造了一個極大的低壓區</strong>，大氣壓力便會將污染空氣推入氣罩與管路中。
+<ul>
+<li>當系統想要讓空氣流動（購買空氣動力）時，就必須把<strong>靜壓 (Ps)轉換成動壓或速度壓 (Pv)</strong> 。</li>
+</ul></li>
+<li><strong>能量轉換的代價：靜壓損失 (</strong>hL​<strong>)</strong>
+<ul>
+<li><p>在理想狀態下，靜壓可以完全轉換為動壓；但靜壓轉換為動壓的過程中，有一部分的能量會因為摩擦、熱、震動或噪音而耗損，這就是所謂的「靜壓損失 (Static Pressure Loss, hL​)」。</p>
+<ul>
+<li><span class="math inline">\(P_{s1​}+P_{v1​}=P_{s2}+P_{v2}​+h_L\)</span></li>
+</ul></li>
+<li><p>設計人員的首要任務，就是盡可能地<strong>減低系統的靜壓損失</strong>，因為「減低靜壓損失就是節省經營支出」。</p></li>
+</ul></li>
+<li>系統中造成靜壓損失的原件
+<ul>
+<li>管路摩擦損失、配件造成的損失(例如經過肘管（彎管）、收縮管、擴張管或孔口時造成的流場變化)、歧管損失：氣流進入分支管或合流管處的損失、氣罩損失、風機系統效應造成的損失、特殊裝置造成的損失(如風門、閥、孔口、空氣濾清器等造成的阻力 )</li>
+</ul></li>
+<li>靜壓損失的計算通式
+<ul>
+<li>靜壓損失的基本方程式如下： <span class="math inline">\(P_{SL}​=K_{loss}​×P_v​×d\)</span>
+<ul>
+<li>PSL​ = 靜壓損失 ( mm H2​O)，Kloss​ = 損失係數 (實驗經驗值，無單位，每種氣罩或管件都不同)，Pv​ = 管路中平均速度壓，d = 空氣密度修正係數 (無單位)。</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="肘管損失elbow-losses" class="level2">
+<h2 class="anchored" data-anchor-id="肘管損失elbow-losses">肘管損失（Elbow Losses）</h2>
+<ul>
+<li>當空氣流經肘管或歧管時，會導致<strong>靜壓被消耗</strong>（能量耗損與擾流），這些損失主要來自於<strong>氣流方向的改變、管壁摩擦力、震動造成的擾動等</strong>。</li>
+<li>要計算肘管的壓力損失，我們必須先求出其「損失係數（K 值）」，而 K 值的大小完全取決於肘管的幾何構造，其中最重要的參數就是 R/D <strong>值。</strong></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/肘管損失係數表.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="歧管損失-branch-losses" class="level2">
+<h2 class="anchored" data-anchor-id="歧管損失-branch-losses">歧管損失 (Branch Losses)</h2>
+<ul>
+<li><p>當支管的氣流匯入主管時所產生的靜壓損失。</p>
+<ul>
+<li><strong>損失係數與「匯入角度」成正比</strong> 決定歧管損失大小最關鍵的幾何因素，就是支管匯入主管的「角度 (θ)」。</li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/歧管損失係數表.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="第-6-章氣罩的選擇與設計" class="level2">
+<h2 class="anchored" data-anchor-id="第-6-章氣罩的選擇與設計">第 6 章「氣罩的選擇與設計」</h2>
+<section id="氣罩-hood" class="level3">
+<h3 class="anchored" data-anchor-id="氣罩-hood">氣罩 (Hood)</h3>
+<ul>
+<li>氣罩是局部排氣系統中相當重要的一環，其尺寸設計和安裝位置的選擇，將直接影響整個局部排氣系統的效率。</li>
+<li>空氣被推入氣罩的過程，伴隨著能量的轉換。在氣罩內，所有氣罩內靜壓(SPh)都會轉換成維持空氣流動的速度壓 (Pv​)，以及空氣進入氣罩時因擾流與摩擦所產生的氣罩壓力損失 (he​)。</li>
+<li>這個能量平衡關係，可以用以下流體力學方程式來描述：<span class="math inline">\(∣SPh∣=Pv​+he​\)</span>
+<ul>
+<li>SPh：在風管裡提供給氣罩的靜壓（通常為負值），Pv​：風管平均速度壓，he​(hood entry loss)：進入氣罩的壓力損失。</li>
+</ul></li>
+<li>在實務的檢測上，教量測靜壓值 (SPh) 的位置，通常是落在氣罩下游大約 4 到 6 個導管直徑的位置。</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/氣罩靜壓值量測位置.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="氣罩壓力損失的基本概念" class="level2">
+<h2 class="anchored" data-anchor-id="氣罩壓力損失的基本概念">氣罩壓力損失的基本概念</h2>
+<ul>
+<li><p><strong>he (hood entry loss)</strong>：從氣罩開口面到風管內量測點之間，所有壓力損失的總和。</p></li>
+<li><p>物理意義：</p>
+<ul>
+<li><p>空氣進入氣罩時，因形狀變化、摩擦、渦流等造成的能量損失</p></li>
+<li><p>表現為<strong>靜壓的下降</strong></p></li>
+<li><p>無法恢復，以熱或噪音形式散逸</p>
+<ul>
+<li><p>氣罩進入損失 <span class="math inline">\(he=K×Pv×d\)</span></p></li>
+<li><p>靜壓 <span class="math inline">\(∣SPh∣=Pv+K×Pv =(1+K)×Pv\)</span></p></li>
+</ul></li>
+</ul></li>
+<li><p>題目：風管內速度壓 Pv=18.5 mmHg，氣罩靜壓 SPh=−26.5 mmHg，求氣罩進入損失 he？</p>
+<ul>
+<li><p>he=26.5−18.5=8.0&nbsp;mmHg (1 mmHg≈13.6 mmH₂O)</p></li>
+<li><p>也就是13.6 mmH₂O的壓力損失消耗於氣罩入口處。</p></li>
+</ul></li>
+</ul>
+<section id="實務應用重點" class="level4">
+<h4 class="anchored" data-anchor-id="實務應用重點">實務應用重點</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 65%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">設計時</td>
+<td style="text-align: left;">需計算 he，才能決定風機所需靜壓</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">量測時</td>
+<td style="text-align: left;">可量測 SPh 與 Pv​，反推 he</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">KK值</td>
+<td style="text-align: left;">由氣罩形狀決定，銳緣入口 K 大，圓滑入口 K 小</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">最小化 he</td>
+<td style="text-align: left;">使用圓滑入口、導流板、減少急遽收縮</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="束縮面-vena-contract" class="level2">
+<h2 class="anchored" data-anchor-id="束縮面-vena-contract"><strong>6-2 束縮面 (Vena Contract)</strong></h2>
+<ul>
+<li><p>當氣流從廣大的開放空間，被強大的負壓吸入狹窄的氣罩與風管開口時，空氣分子無法立刻轉彎平順地貼著管壁流動。這種流體慣性會導致氣流在進入導管後，形成一個比實際管徑還要窄的「縮口」，這個現象與位置就稱為「束縮面」。</p></li>
+<li><p>從物理學的角度來看，空氣被擠壓進入氣罩時會產生嚴重的擾流。</p></li>
+<li><p>這個氣流縮口（束縮面）的中心點，通常會發生在進入導管內約<strong>「半個直徑 (</strong>d<strong>/2)」深度的位置</strong>。這意味著，氣罩與風管交接處的設計若不夠平順，此處的能量耗損將會非常驚人。</p></li>
+</ul>
+</section>
+<section id="氣罩吸入係數-ce-與捕集效率" class="level2">
+<h2 class="anchored" data-anchor-id="氣罩吸入係數-ce-與捕集效率"><strong>氣罩吸入係數 (</strong>Ce<strong>) 與捕集效率</strong></h2>
+<ul>
+<li>為了量化束縮面所造成的能量損失，使用<strong>氣罩吸入係數 (Coefficient of Entry, 簡稱</strong> Ce<strong>)</strong>。
+<ol type="1">
+<li><p><strong>物理定義</strong>： Ce 值可以描述成「實際氣流量 (Q實際​)」對應「理想氣流量 (Q理想​)」之比。 其公式為：Ce=Q(實際)​/Q(理想)​。</p></li>
+<li><p><strong>能量轉換的觀點</strong>： 在理想狀態下，如果將所有氣罩的靜壓（潛在能量）全部無損耗地轉變為速度壓（動能），則可以達到理想氣流量。但因為束縮面與擾流的存在，從來沒有靜壓轉換成速度壓是完美理想的。 因此，Ce 值也可以用壓力來估計，公式為：<span class="math inline">\(Ce=\sqrt{Pv​/∣SPh∣}​​\)</span>。 （其中 Pv​ 是平均導管速度壓，SPh 是氣罩靜壓力的絕對值）</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="損失係數-k-與-吸入係數-ce-的關係" class="level2">
+<h2 class="anchored" data-anchor-id="損失係數-k-與-吸入係數-ce-的關係">損失係數 (K) 與 吸入係數 (Ce) 的關係</h2>
+<ul>
+<li>管路配件的壓力損失是用「損失係數 (K)」來評估；而在氣罩端，我們常看到設備商提供 Ce 值。這兩個數值其實是一體兩面。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 62%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(C_e = \sqrt{\frac{1}{1 + K_{hood}}}\)</span></td>
+<td>(氣罩進入損失 he​ 與 Ce 的關係)<br>
+<span class="math inline">\(h_e = \frac{1 - C_e^2}{C_e^2} \times P_v = K_{hood}​ \times P_v\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>「氣罩吸入係數</strong> Ce<strong>，跟氣罩的外型有關。</strong>Ce <strong>值不會改變，除非氣罩的外型改變」</strong>。</p>
+<ul>
+<li><p>當我們在工廠現場，若隨意改變了氣罩的形狀（例如嫌礙事，把氣罩邊緣的凸緣或擋板切除，或是把原本漸縮平順的開口撞凹），氣罩的外型一旦改變，其 Ce 值就會跟著變差（下降），導致束縮面效應加劇、K 值（壓力損失）飆高。</p></li>
+<li><p>在風機能力固定的情況下，壓力損失一增加，氣罩開口處的實際抽氣量 (Q) 就會急遽下降。最後的結果，就是氣罩無法達到我國法規要求，有害氣體就會從這個無效的氣罩口溢散到勞工的呼吸帶。</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>優良的氣罩設計（如加裝凸緣、設計平順的漸縮錐形入口），可以有效減緩束縮面的產生，提高</strong> Ce <strong>值，降低壓力損失。</strong></p>
+</div>
+</div>
+</div>
+<p><img src="images/工業通風/束縮面氣流.png" class="img-fluid"></p>
+<section id="問題1求吸入係數-ce" class="level4">
+<h4 class="anchored" data-anchor-id="問題1求吸入係數-ce">問題1（求吸入係數 Ce​）</h4>
+<ul>
+<li>已知氣罩的靜壓測量值 SPh=−29.0&nbsp;mmH₂O，平均導管速度壓測量值 Pv​=8.5&nbsp;mmH₂O，求氣罩吸入係數 Ce​ 為多少？ 解答：Ce = 0.54</li>
+</ul>
+</section>
+<section id="問題2" class="level4">
+<h4 class="anchored" data-anchor-id="問題2">問題2</h4>
+<ul>
+<li><p>已知導管內平均速度 V=10&nbsp;m/s，氣罩損失係數 Khood​=2.2，求 he 及 SPh 為多少？（假設d=1）解答： he≈13.49&nbsp;mmHg，SPh≈−19.65&nbsp;mmHg</p>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>計算速度壓 Pv​，2.計算氣罩進入損失 he， 3.計算氣罩靜壓 SPh</li>
+</ol>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="問題3" class="level4">
+<h4 class="anchored" data-anchor-id="問題3">問題3</h4>
+<ul>
+<li><p>手握式研磨氣罩：SPh=−60&nbsp;mmHg，V=20&nbsp;m/s，導管直徑 D=45&nbsp;cm(0.45&nbsp;m)，d=1，求：流量 Q、he、Ce​、K？</p>
+<ul>
+<li>解答：P≈24.5&nbsp;mmHg，Q≈3.18&nbsp;m3/s，he=∣SPh∣−Pv​=35.5&nbsp;mmHg，Ce​≈0.64，K≈1.44</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>1.計算速度壓 Pv​，2. 計算流量 Q，3.計算氣罩進入損失 he，4.計算吸入係數 CeC， 5.計算損失係數 K</p>
+</div>
+</div>
+</section>
+<section id="問題4" class="level4">
+<h4 class="anchored" data-anchor-id="問題4">問題4</h4>
+<ul>
+<li>在問題3中，原量測條件為：SPh=−60&nbsp;mmHg，導管直徑 D=45&nbsp;cm，計算得 Ce=0.64。假如在往後的日期，重新量測氣罩靜壓力為：SPh=−50&nbsp;mmHg，假設 Ce​ 保持為常數（氣罩外形未改變），且d=1，求<strong>此時氣體流率</strong> Q 為多少？ 解答：Q≈2.906&nbsp;m3/s (設計時Q≈3.18&nbsp;m3/s)</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>hint</strong></p>
+<p>1.利用 Ce求新速度壓 Pv​，2. 計算導管內平均速度 V，3.計算流量 Q</p>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">概念</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ce為常數</td>
+<td style="text-align: left;">氣罩外形未變，吸入效率不變</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SPh 下降（60 → 50）</td>
+<td style="text-align: left;">系統阻力改變（如風門調整、濾網堵塞等）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Q 下降（3.18 → 2.9）</td>
+<td style="text-align: left;">靜壓降低 → 流量降低 (流量下降了約&nbsp;<strong>9%</strong>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">實務應用</td>
+<td style="text-align: left;">可藉由量測 SPh 快速推算當前流量</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>這代表氣罩的&nbsp;<strong>捕捉能力下降</strong>，可能導致污染物逸散。</p>
+</div>
+</div>
+</section>
+<section id="改善前需確認原因診斷" class="level4">
+<h4 class="anchored" data-anchor-id="改善前需確認原因診斷">改善前需確認原因（診斷）</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 37%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">可能原因</th>
+<th style="text-align: left;">現象</th>
+<th style="text-align: left;">檢查方式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>風機性能下降</strong></td>
+<td style="text-align: left;">轉速降低、皮帶鬆弛、葉輪磨損</td>
+<td style="text-align: left;">量測風機轉速、電流</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>濾網或風管堵塞</strong></td>
+<td style="text-align: left;">壓力損失增加 → 風量下降</td>
+<td style="text-align: left;">檢查濾網壓差、風管內部</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>系統洩漏</strong></td>
+<td style="text-align: left;">風管破損或接頭鬆脫</td>
+<td style="text-align: left;">目視檢查、煙霧測試</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>風門或調節閥被調整</strong></td>
+<td style="text-align: left;">人為關小</td>
+<td style="text-align: left;">檢查風門開度</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>氣罩入口被異物阻塞</strong></td>
+<td style="text-align: left;">部分吸氣面積被擋住</td>
+<td style="text-align: left;">目視檢查</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="風罩設計方法" class="level2">
+<h2 class="anchored" data-anchor-id="風罩設計方法">6-3風罩設計方法</h2>
+<ul>
+<li>具備氣罩的基礎知識與流體力學中「束縮面」的概念後，接著是在實務工程上究竟該如何著手進行設計。</li>
+</ul>
+<section id="氣罩設計的指導原則六面減法設計" class="level4">
+<h4 class="anchored" data-anchor-id="氣罩設計的指導原則六面減法設計">1. 氣罩設計的指導原則：「六面減法」設計</h4>
+<ul>
+<li>六面：把污染源用一個具備四個側邊、一個上邊和一個下邊的「完整密閉箱」完全包圍起來。</li>
+<li>再根據現場製程的需求、勞工操作的便利性，或是維修人員的檢修空間，開始以「減法」來移除最少的邊數。 需要強調「移除最少」？因為依據流體連續方程式 Q=VA（流量＝速度 × 面積），當氣罩的開放面積（A）愈大，空氣消耗的速度就愈快，為就必須提供極大的排氣量（Q）與補給氣流。</li>
+</ul>
+</section>
+<section id="氣罩內部的能量轉換與靜壓損失-he-物理機制" class="level4">
+<h4 class="anchored" data-anchor-id="氣罩內部的能量轉換與靜壓損失-he-物理機制">2. 氣罩內部的能量轉換與靜壓損失 (he​) 物理機制</h4>
+<ul>
+<li>束縮面效應：當空氣被迫擠入風罩狹窄的縮口時，依據 Q=VA，面積 (A) 變小導致速度 (V) 劇烈上升。速度上升意味著「速度壓 (Pv​)」急遽增加，這就需要消耗系統中更多的「靜壓 (SPh)」來轉換。 當氣流通過縮口，導管管徑恢復原本的尺寸時，一部分額外的速度壓會再次轉換回靜壓，流體力學上稱之為「靜壓再得 (Static Regain)」。</li>
+<li>然而，能量轉換在現實世界中絕對不可能達到百分之百的完美效率，這些在轉換過程中因為摩擦與劇烈擾流而永久消耗掉的能量，這就是「氣罩進口壓力損失 (he​)」。</li>
+</ul>
+</section>
+<section id="氣罩設計的六大關鍵參數" class="level4">
+<h4 class="anchored" data-anchor-id="氣罩設計的六大關鍵參數">3. 氣罩設計的「六大關鍵參數」</h4>
+<ul>
+<li><strong>最佳形狀</strong>：決定氣罩外觀以配合製程並減低擾流。</li>
+<li><strong>控制污染源的流量 (</strong>Q<strong>)</strong>：這與捕捉速度有關？</li>
+<li><strong>摩擦係數</strong>：評估氣罩內部表面的阻力。</li>
+<li><strong>氣罩吸入係數 (</strong>Ce<strong>)</strong>：評估氣罩外型設計的優劣程度。</li>
+<li><strong>速度</strong>：包含開口面速度、補給氣流速度，以及能避免粉塵沉積的導管內傳送速度。</li>
+<li><strong>尺寸</strong>：長、寬、高與導管銜接管徑。</li>
+</ul>
+</section>
+<section id="實務設計的三種途徑與硬紙板模型法" class="level4">
+<h4 class="anchored" data-anchor-id="實務設計的三種途徑與硬紙板模型法">4. 實務設計的「三種途徑」與「硬紙板模型法」</h4>
+<ul>
+<li><p>要決定上述的設計參數，有三個基本的方法：<strong>(1)使用全尺寸模型；(2)使用可利用的圖表（如工業通風手冊）；(3)使用方程式</strong>。</p></li>
+<li><p>能同時滿足「高捕集效率」與「勞工操作需求」這兩個條件。</p></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>設計方法的核心精神就是：<strong>在不影響勞工作業的前提下，盡可能增加氣罩的包圍面（趨近於六面）。</strong></p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="氣罩設計練習" class="level2">
+<h2 class="anchored" data-anchor-id="氣罩設計練習">氣罩設計練習</h2>
+<section id="題目-6-9-一個磨輪式氣罩磨輪直徑-30-cm試決定體積流率傳送速度導管直徑摩擦係數-kce和-sph公制" class="level4">
+<h4 class="anchored" data-anchor-id="題目-6-9-一個磨輪式氣罩磨輪直徑-30-cm試決定體積流率傳送速度導管直徑摩擦係數-kce和-sph公制"><strong>題目 6-9</strong> 一個磨輪式氣罩，磨輪直徑 = 30 cm，試決定體積流率，傳送速度，導管直徑，摩擦係數 K，Ce，和 SPh？（公制）</h4>
+</section>
+<section id="步驟一查表取得氣罩的設計基準參數-在實務工程上不會憑空捏造這些流體力學數值必須翻閱如工業通風手冊附錄b來尋找金屬研磨氣罩的標準規範值-查表獲得以下資料" class="level4">
+<h4 class="anchored" data-anchor-id="步驟一查表取得氣罩的設計基準參數-在實務工程上不會憑空捏造這些流體力學數值必須翻閱如工業通風手冊附錄b來尋找金屬研磨氣罩的標準規範值-查表獲得以下資料"><strong>步驟一：查表取得氣罩的設計基準參數</strong> 在實務工程上，不會憑空捏造這些流體力學數值。必須翻閱如工業通風手冊（附錄B）來尋找「金屬研磨氣罩」的標準規範值。 查表獲得以下資料：</h4>
+<ul>
+<li><strong>氣罩壓力損失係數 (</strong>K<strong>)</strong> = 0.4，<strong>氣罩吸入係數 (</strong>Ce<strong>)</strong> = 0.85，<strong>導管內搬運速度 (</strong>Vtrans​<strong>)</strong> = 23 m/s</li>
+</ul>
+<p><img src="images/工業通風/附錄Ｂ氣罩壓力損失表1.png" class="img-fluid" width="515"></p>
+</section>
+<section id="步驟二決定體積流率-q-依據標準氣罩的經驗公式針對磨輪直徑x30-cm-輪寬其所需的排氣量計算如下" class="level4">
+<h4 class="anchored" data-anchor-id="步驟二決定體積流率-q-依據標準氣罩的經驗公式針對磨輪直徑x30-cm-輪寬其所需的排氣量計算如下"><strong>步驟二：決定體積流率 (</strong>Q<strong>)</strong> 依據標準氣罩的經驗公式，針對磨輪直徑（X=30&nbsp;cm 輪寬），其所需的排氣量計算如下：</h4>
+<ul>
+<li>Q=0.0093×30−0.023=0.256&nbsp;m3/s （於標準空氣狀況下）</li>
+</ul>
+</section>
+<section id="步驟三計算導管直徑-d-我們已經知道必須抽走多少空氣-q也知道管內空氣必須跑多快-vtrans接著利用流體連續方程式-qva-來反推導管的截面積與直徑" class="level4">
+<h4 class="anchored" data-anchor-id="步驟三計算導管直徑-d-我們已經知道必須抽走多少空氣-q也知道管內空氣必須跑多快-vtrans接著利用流體連續方程式-qva-來反推導管的截面積與直徑"><strong>步驟三：計算導管直徑 (</strong>D<strong>)</strong> 我們已經知道必須抽走多少空氣 (Q)，也知道管內空氣必須跑多快 (Vtrans​)，接著利用流體連續方程式 Q=V×A 來反推導管的截面積與直徑。</h4>
+<ul>
+<li><p><strong>截面積 (</strong>A<strong>)</strong> = Q/Vtrans​=0.256/23=0.011&nbsp;m2</p></li>
+<li><p><strong>導管直徑 (</strong>D<strong>)</strong> = $D = = = 0.119 = 11.9 $</p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在實際的工廠配管工程中，市面上並沒有剛好 11.9 cm 這種奇數規格的螺旋風管。因此，我們通常會選用標準規格尺寸（例如 12 cm 或 12.5 cm 的風管），然後再根據實際選用的管徑，重新微調計算管內的真實流速，以確保其不低於 23 m/s。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="步驟四計算導管速度壓-pv-與氣罩進入損失-he-接下來要計算能量轉換的數值公制單位下速度-v-轉換為速度壓-pv-的公式為-v4.04pv移項後得" class="level4">
+<h4 class="anchored" data-anchor-id="步驟四計算導管速度壓-pv-與氣罩進入損失-he-接下來要計算能量轉換的數值公制單位下速度-v-轉換為速度壓-pv-的公式為-v4.04pv移項後得"><strong>步驟四：計算導管速度壓 (</strong>Pv​<strong>) 與氣罩進入損失 (</strong>he​<strong>)</strong> 接下來要計算能量轉換的數值。公制單位下，速度 (V) 轉換為速度壓 (Pv​) 的公式為 V=4.04Pv​​，移項後得：</h4>
+<ul>
+<li>Pv​(導管)=(V/4.04​)2=(23/4.04​)2=32.4&nbsp;mm&nbsp;H2​O</li>
+<li><strong>氣罩進入損失 (</strong>he​<strong>)</strong> = K×Pv​=0.4×32.4=12.96&nbsp;mm&nbsp;H2​O</li>
+</ul>
+</section>
+<section id="步驟五計算氣罩靜壓-sph-氣罩靜壓是風機必須在風管與氣罩交界處提供的負壓吸力它必須足以克服氣罩進入損失-he-並提供流體動能-pv" class="level4">
+<h4 class="anchored" data-anchor-id="步驟五計算氣罩靜壓-sph-氣罩靜壓是風機必須在風管與氣罩交界處提供的負壓吸力它必須足以克服氣罩進入損失-he-並提供流體動能-pv"><strong>步驟五：計算氣罩靜壓 (</strong>SPh<strong>)</strong> 氣罩靜壓是風機必須在風管與氣罩交界處提供的「負壓吸力」，它必須足以克服氣罩進入損失 (he​) 並提供流體動能 (Pv​)。</h4>
+<ul>
+<li>SPh=−(1+K)×Pv​=−(1+0.4)×32.4=−45.36&nbsp;mm&nbsp;H2​O</li>
+</ul>
+</section>
+</section>
+<section id="體積流率及速度方程式" class="level2">
+<h2 class="anchored" data-anchor-id="體積流率及速度方程式">6-4體積流率及速度方程式</h2>
+<ul>
+<li>身為職業衛生專家，我們最常面臨的實務問題是：「為了解決眼前的污染源，我到底需要買抽氣量多大的風機？」或者反過來問：「現有風機的抽氣量，能不能在勞工作業的位置產生足夠的捕捉風速？」</li>
+</ul>
+<section id="面積方程式理論球面模型" class="level4">
+<h4 class="anchored" data-anchor-id="面積方程式理論球面模型"><strong>1. 面積方程式（理論球面模型）</strong></h4>
+<ul>
+<li><p>假設空氣是呈現一個「球狀」向氣罩中心匯集，而在這一個個同心球面上，每一個點的空氣移動速度都是相等的。依據流體連續方程式 Q=V×A：</p>
+<ul>
+<li><p>Q = 體積流率（排氣量）</p></li>
+<li><p>Vc​ = 氣流速度（我們在實務上關心的就是在距離 x 處的「捕集速度」）</p></li>
+<li><p>A = 球形的表面積，其數學公式為 A=(4πx)2 （x 為距離氣罩中心的半徑距離）</p></li>
+</ul>
+<p>因此，最基礎的推估方程式即為：Vc​=Q/(4πx)2​ 或 Q=Vc​×(4πx)2。</p>
+<p>公式應用：當排氣量 Q=0.22&nbsp;m3/s，在距離氣罩 12 公分（x=0.12&nbsp;m）的位置，其捕集速度 Vc​ 約為 1.22&nbsp;m/s。</p></li>
+</ul>
+</section>
+<section id="美國職業衛生學會acgih實驗方程式-工業通風手冊" class="level4">
+<h4 class="anchored" data-anchor-id="美國職業衛生學會acgih實驗方程式-工業通風手冊"><strong>2. 美國職業衛生學會（ACGIH）實驗方程式</strong> 《工業通風手冊》</h4>
+<ul>
+<li>查表</li>
+</ul>
+<p><img src="images/工業通風/常見氣罩面積公式.png" class="img-fluid" width="496"></p>
+<ul>
+<li>假設決定某作業所需的控制風速（Vc​）必須達到 0.4&nbsp;m/s。 如果使用一般開口導管，所需的排氣量 Q=Vc​×(4πx)2。 如果運用職業衛生工程的專業，要求在氣罩周圍加上一片便宜的金屬「凸緣（擋板）」，公式就變成了 Q=Vc​×(2πx)2。<strong>加上擋板後，維持相同的法定控制風速，所需的排氣風量 (</strong>Q<strong>) 直接節省了一半！</strong> 這不僅大大降低了風機的建置成本，更能長久節省工廠的運轉電費。</li>
+</ul>
+</section>
+<section id="決定捕集速度vc與外部干擾評估" class="level4">
+<h4 class="anchored" data-anchor-id="決定捕集速度vc與外部干擾評估">3. 決定捕集速度（Vc​）與外部干擾評估</h4>
+<ul>
+<li>有了（知道 Q 與 V 的關係）後，我們還必須決定一個關鍵數值：特定的污染源到底需要多大的捕集速度（控制風速）？及局部排氣系統最致命的殺手—<strong>「干擾氣流（Cross Drafts）」</strong>。</li>
+<li>例如要求勞工改變電風扇的吹向，或在氣罩旁加裝膠簾擋風。唯有在沒有劇烈干擾氣流的環境下，我們利用體積流率方程式設計出的局部排氣系統，才能真正發揮保護勞工健康的作用。</li>
+</ul>
+</section>
+</section>
+<section id="實際操作狀況" class="level2">
+<h2 class="anchored" data-anchor-id="實際操作狀況">6-5 實際操作狀況</h2>
+<ul>
+<li>氣罩通常必須根據工人在現場工作狀況而定</li>
+</ul>
+<section id="四大氣罩型式之實務設計與操作建議" class="level4">
+<h4 class="anchored" data-anchor-id="四大氣罩型式之實務設計與操作建議">四大氣罩型式之實務設計與操作建議</h4>
+<ol type="1">
+<li><p>包圍式氣罩 (Enclosing Hood)</p>
+<ul>
+<li><strong>最小化開口</strong>：僅在「必要」的地點提供讓物料或手部進入的通道。</li>
+<li><strong>免費的效能提升</strong>：通常不需要增加風機的流量（Q）或馬力，只要我們把氣罩盡可能包圍起來（減少開口面積 A），依據 Q=VA，其開口面速度（Vf​）就能輕易提升。</li>
+</ul></li>
+<li><p>接收式（天蓬式）氣罩 (Receiving / Canopy Hood)</p>
+<ul>
+<li><strong>適用限制</strong>：僅建議使用於「高溫作業場所」的上升氣流處理。</li>
+<li><strong>抽氣量要求</strong>：從氣罩抽出的空氣體積，必須「超過」抵達氣罩表面的熱空氣體積。</li>
+<li><strong>擴散效應的對策</strong>：當熱空氣上升時會有向外擴散的趨勢，因此氣罩的邊緣建議設計為 <strong>45度傾斜</strong>，且氣罩口的表面積應該要是熱空氣上升氣流截面積的 <strong>125%</strong>，才能確保完全罩住擴散的污染源。當然，氣罩位置要盡可能接近污染源。</li>
+</ul></li>
+<li><p>側吸式 / 槽縫式氣罩 (Lateral / Slot Hood)</p>
+<ul>
+<li><p>這是我國表面處理業、電鍍業與酸洗作業中最常見的氣罩型式（法規定義的側方外裝式氣罩）。</p>
+<ul>
+<li><strong>充氣室 (Plenum)</strong> ：狹長縫口的側吹式氣罩是個「複合式氣罩」，空氣需要進入兩次：先通過長縫口進入「充氣室」，再由充氣室進入導管。充氣室的作用是讓靜壓力均勻分布到整個長縫口的背後，確保槽體每一段的吸力都是均勻的。</li>
+<li><strong>速度配置</strong>：為了達到均勻抽氣的穩壓效果，長縫口內的氣流速度，必須設計成比充氣室內的速度大上 <strong>2～3 倍</strong>。</li>
+<li><strong>壓力損失計算</strong>：實用的槽縫氣罩靜壓力（SPh）估算方程式： SPh=2.78Pv(slot)​+(1+K)Pv(duct)​。 （其中 Pv(slot)​ 為槽縫速度壓，Pv(duct)​ 為導管速度壓）。</li>
+<li><strong>有效捕集距離限制</strong>：側吹式氣罩的吸力衰減極快，通常僅有助於捕捉前方大約「<strong>兩呎（約 60 公分）</strong>」以內的空氣。因此，如果在現場遇到一個四呎寬的電鍍槽，必須在槽的「兩個長邊」都設置長縫口氣罩，否則絕對無法達到法規要求的控制風速。</li>
+</ul></li>
+</ul></li>
+<li><p>下吸式氣罩 (Downdraft Hood)</p>
+<ul>
+<li><p><strong>優點</strong>：地心引力會幫助我們，因此非常有益於「大顆粒氣體（粉塵）」的傳送。</p></li>
+<li><p><strong>致命缺點與限制</strong>：絕對「<strong>不適合高溫作業環境</strong>」，因為這會與熱空氣自然上升的浮力產生嚴重對抗。此外，大型工件若擺放在氣罩（工作檯）面上，會直接阻礙空氣流動。</p></li>
+<li><p><strong>維護需求</strong>：由於大顆粒容易掉落，系統下方必須提供微粒物質捕捉器（沉澱池），並考量後續的清潔方法。</p></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>局部排氣系統不僅需要生硬的流體力學公式（Q=VA、靜壓損失計算），更需要我們走入現場，觀察勞工的操作姿態、評估熱源浮力、檢視槽體尺寸，將「工程科學」與「現場實務」緊密結合。</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="第7章-風管的種類與空氣流體行為" class="level2">
+<h2 class="anchored" data-anchor-id="第7章-風管的種類與空氣流體行為">第7章 風管的種類與空氣流體行為</h2>
+<section id="風管內之空氣流速" class="level3">
+<h3 class="anchored" data-anchor-id="風管內之空氣流速">7-1 風管內之空氣流速</h3>
+<ul>
+<li>風管的基本任務是運送空氣污染物，並對從氣罩進入之污染物進行處理、操作和排出。同時，風管管路系統也必須提供從風機到氣罩，以及從風機到煙囪的必要壓力降（壓差）。</li>
+<li><strong>在工業通風系統中，管路系統通常是最常發生失敗的設計環節。</strong> 風管必須承受極大的損耗。例如，粉塵或研磨碎屑會對管壁（特別是在彎曲的肘管處）造成嚴重的磨損與打掃不完全的堵塞問題。</li>
+<li>思考一下：<strong>為什麼風管內需要維持「高速紊流」？</strong></li>
+</ul>
+<section id="風管內的邊界層boundary-layer與摩擦力" class="level4">
+<h4 class="anchored" data-anchor-id="風管內的邊界層boundary-layer與摩擦力">風管內的邊界層（Boundary Layer）與摩擦力</h4>
+<ul>
+<li>從微觀的角度來看管內空氣流動，空氣流經管路時，會遭遇兩種摩擦力：空氣與管壁之間的相互摩擦，以及空氣流層與流層之間的摩擦。</li>
+<li>在靠近風管內壁的地方，存在一個非常薄（只有幾微米厚）的區域，我們稱之為「邊界層（Boundary Layer）」<strong>。流體力學在此有一個重要的假設，稱為</strong>「無滑動條件（No-slip Condition）」：在固體表面（管壁）上，空氣是完全靜止不動的（速度 V=0）。而在這幾微米的邊界層內，雖然有極大的剪應力變化，但因為缺乏驅動力，空氣幾乎不會移動。</li>
+</ul>
+<p><img src="images/工業通風/風管內流速分布圖.png" class="img-fluid" width="487"></p>
+</section>
+<section id="風管橫截面的速度分佈與估算公式" class="level4">
+<h4 class="anchored" data-anchor-id="風管橫截面的速度分佈與估算公式">風管橫截面的速度分佈與估算公式</h4>
+<ul>
+<li>從靜止的管壁往風管中心移動，空氣的流速會逐漸增加，直到管中心達到最大值。由於這種不均勻的速度分佈（管壁為零、中心最大），我們在實務量測與計算時，必須了解其相對關係。</li>
+<li>預測「長直圓管」橫截面平均速度的經驗法則。
+<ul>
+<li><strong>平均速度 (</strong>Vave​<strong>)</strong>：會稍微小於中心速度。其估算公式為： Vave​=<strong>0.9</strong>×Vcenter​ <strong>(中心處)</strong></li>
+<li>如果利用白努力方程式（Bernoulli equation），將速度轉換為我們量測常用的「動壓（速度壓，Pv​）」，則動壓的關係式為： Pv(ave)​=<strong>0.81</strong>×Pv(center)​ <strong>(中心處)</strong></li>
+</ul></li>
+<li><strong>五倍管徑法則</strong>（現場檢測的鐵律）：上述的速度分佈規律與估算公式，<strong>一般只指長直管段，且必須在彎管、阻塞物或過渡區域「下游五倍管徑長度」的地方才會成立</strong>。</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在職業衛生現場檢測實務中，常會拿著皮托管（Pitot tube）或風速計要測量風管內的風速。如果在風管轉彎後立刻開一個檢測孔檢測，此時管內的氣流充滿了極度混亂的擾流與偏向，你測得的中心風速絕對無法套用上述 0.9 的係數。在直管段（遠離擾流源）預留標準的檢測孔，如此才能精準確認系統的真實排氣量是否符合法規要求。</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="風管內空氣之流體行為" class="level2">
+<h2 class="anchored" data-anchor-id="風管內空氣之流體行為">7-2 風管內空氣之流體行為</h2>
+<ul>
+<li>在通風工程中，風機如同系統的心臟，而風管則是輸送污染空氣的血管。如果我們不懂得計算空氣在血管（風管）內流動時所消耗的能量，我們就無法為這套系統選配合適的心臟（風機）。</li>
+<li>利用流體力學的能量守恆定律，精準計算出管路系統的「壓力損失」。</li>
+</ul>
+<section id="基礎流體力學與穩態能量方程式" class="level3">
+<h3 class="anchored" data-anchor-id="基礎流體力學與穩態能量方程式">1. 基礎流體力學與穩態能量方程式</h3>
+<ul>
+<li><p>空氣為何流動？風管內任意兩點間只要產生了壓力差，就會造成空氣的流動，而這股壓力差是由風機所引導的。</p>
+<ul>
+<li><strong>理想狀態的 Bernoulli（白努力）方程式：</strong> 在最理想、沒有任何摩擦力干擾的情況下，空氣流動遵守白努力方程式。在工業通風的實務計算中，我們通常假設空氣為「不可壓縮流（密度 ρ = 常數）」。因此理想的能量方程式為： <span class="math inline">\(\frac{v^2}{2} + \frac{P}{\rho} + gZ = \text{常數}\)</span> （其中 v 是流速，P 是絕對壓力，Z 是高度）。</li>
+<li><strong>真實管路的穩態能量方程式</strong> 然而，現實中的風管是有阻力的。當空氣在真實的風管系統中流動時，必定存在摩擦力而產生壓力降。因此，「穩態能量方程式」，將熱量（q）、機械作功（w）以及極為關鍵的揚程損失（Head Loss, ΔH）加入計算。揚程損失代表了流體在風管截面 1 與 2 之間，因為機械損失所耗費的能量。（能量方程式公式推導略）</li>
+</ul></li>
+</ul>
+</section>
+<section id="三大壓力關係與能量的不可逆性" class="level3">
+<h3 class="anchored" data-anchor-id="三大壓力關係與能量的不可逆性">2. 三大壓力關係與能量的不可逆性</h3>
+<ul>
+<li>當我們把系統假設為絕熱、無外部作功，且忽略風管兩端的高低差時，上述複雜的<strong>穩態能量方程式</strong>就可以被大幅簡化，並引導出工業通風中最重要的三個壓力指標：
+<ul>
+<li><strong>靜壓（Static Pressure,</strong> Ps​<strong>）</strong>：相當於熱力學上的絕對壓力（P），是系統中的潛在能量。</li>
+<li><strong>動壓 / 速度壓（Dynamic / Velocity Pressure,</strong> Pv​<strong>）</strong>：代表流速或動能的變化大小，公式為 ρV2/2。</li>
+<li><strong>全壓（Total Pressure,</strong> Pt​<strong>）</strong>：全壓就是靜壓與動壓的總和（Pt​=Ps​+Pv​），代表流體具有的總機械能。</li>
+</ul></li>
+<li><strong>流體在風管間流動的過程，由於能量具備不可逆性（Irreversibility），其「全壓」絕對會朝著流動的方向而減少。</strong> 也就是，全壓損失（ΔPt​）永遠是正值。</li>
+<li>但「靜壓」與「動壓」則不然。例如，當風管的管徑突然變大（漸擴管）時，流速變慢導致動壓（Pv​）下降；根據能量守恆，這部分減少的動壓會轉換成靜壓，造成靜壓反而上升，這個現象在流體力學中稱為「靜壓再得（Static Regain）」。儘管靜壓回升了，但轉換過程中必然伴隨亂流損耗，因此「全壓」依然是下降的。</li>
+</ul>
+</section>
+<section id="造成全壓損失的兩大元兇摩擦與動態損失" class="level3">
+<h3 class="anchored" data-anchor-id="造成全壓損失的兩大元兇摩擦與動態損失">3. 造成全壓損失的兩大元兇：摩擦與動態損失</h3>
+<ul>
+<li><p>我們在設計局部排氣系統時，必須計算系統到底消耗了多少全壓。這些全壓損失主要分成兩大類：</p>
+<ul>
+<li><strong>摩擦損失（Friction Loss,</strong> ΔPf​<strong>）</strong> 因為流體本身的黏滯性，以及流體與風管管壁摩擦所造成的能量損耗。
+<ul>
+<li><p>計算公式採用 <strong>Darcy 方程式</strong>：ΔPf​=f×(L/Df​)×Pv​。</p></li>
+<li><p><strong>摩擦因子（</strong>f<strong>）</strong>：它取決於管內氣流的雷諾數（Reynolds Number, Re）以及管壁的相對粗糙度。在工業通風中，管內流速極快，雷諾數通常遠大於 4000，屬於「紊流（Turbulent flow）」狀態。</p></li>
+<li><p><strong>材質的影響</strong>：不同的風管材質有不同的絕對粗糙度（ε）。例如，常用的鍍鋅鐵管粗糙度約為 0.00015&nbsp;m，而 PVC 塑膠管表面極度平滑，粗糙度僅有 0.0000015&nbsp;m。(需另查)</p></li>
+</ul></li>
+<li><strong>動態損失（Dynamic Loss,</strong> ΔPd​<strong>）</strong> 當氣流通過彎管、分支管、閘門或風管截面積形狀改變時，會產生劇烈的「渦流（Eddy Current）」，進而造成機械能銳減，這就是動態損失。
+<ul>
+<li><p>計算公式為：ΔPd​=C×Pv​。</p></li>
+<li><p>這裡的 C <strong>稱為「局部損失係數」</strong>，每種彎管或配件都有對應的實驗值，工程設計上通常直接查表取得。</p></li>
+</ul></li>
+</ul></li>
+<li><p>最後，整個風管系統的<strong>總全壓損失</strong>，就是將所有的摩擦損失與動態損失加總起來：ΔPt​=ΔPf​+ΔPd​。</p></li>
+</ul>
+</section>
+<section id="實務設計的兩大轉換工具" class="level3">
+<h3 class="anchored" data-anchor-id="實務設計的兩大轉換工具">4. 實務設計的兩大轉換工具</h3>
+<ul>
+<li>在實際的工程計算上，為了解決形狀與配件複雜度的問題，兩個非常實用的轉換概念：
+<ul>
+<li><strong>矩形風管的當量直徑（Equivalent Diameter,</strong> De​<strong>）：</strong> 工廠為了配合建築物樑柱或空間限制，經常會把圓形風管改成「矩形風管」。但所有的摩擦損失公式與圖表都是以圓形風管為基礎所建立的。因此，我們必須利用公式，將長寬分別為 a、b 的矩形風管，轉換成擁有相同摩擦阻力的「流量當量直徑（De​）」。其經驗公式為：De​=<span class="math inline">\(1.3 \times \frac{(ab)^{0.625}}{(a + b)^{0.25}}\)</span></li>
+<li><strong>等效長度（Equivalent Length,</strong> Le​<strong>）：</strong> 為了方便早期沒有電腦軟體時的手工計算，工程師會將配件（如彎管、T型管）所產生的動態損失，直接換算成一段「具有相同摩擦損失的直管長度」，這樣就可以把整個系統全部視為一條長的直管來快速估算壓力損失。（公式與表格另查）</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在審查通風設計圖時，如果發現設計上沒有確實計算「摩擦因子（f）」與彎管的「局部損失係數（C）」，或者隨意把圓管壓扁成矩形卻沒有校正「當量直徑（De​）」，這將導致系統實際遭遇的「全壓損失」遠大於預期。最終的後果，就是原先選購的風機馬力不足，無法克服管路阻力，導致氣罩端的抽氣量大幅衰退。</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="風管系統之守恆定律" class="level2">
+<h2 class="anchored" data-anchor-id="風管系統之守恆定律">7-3 風管系統之守恆定律</h2>
+<ul>
+<li>在評估整個局部排氣系統時，風管網絡就像人體的血管般錯綜複雜，但無論管路如何分支與匯流，內部的空氣流動必定嚴格遵守兩大物理守恆定律：</li>
+</ul>
+<section id="質量守恆-conservation-of-mass" class="level3">
+<h3 class="anchored" data-anchor-id="質量守恆-conservation-of-mass">1. 質量守恆 (Conservation of Mass)</h3>
+<ul>
+<li>在工業通風的實務計算中，我們通常假設空氣為不可壓縮流體。因此，對於風管系統中的任何一個交會「節點（Node）」，流入該節點的總體積流率（排氣量），必定等於流出該節點的總體積流率。
+<ul>
+<li><strong>方程式表示</strong>：∑Qin​=∑Qout​。</li>
+<li><strong>實務意義</strong>：假設一條主風管（匯流後排向風機）連接了兩個分支氣罩，那麼主風管內的排氣量，必定等於這兩個分支氣罩排氣量的總和。如果我們在現場量測發現總風量對不上，就代表管路中必定有嚴重的破損漏氣，或者是檢測孔的位置（未遠離擾流源）發生了錯誤。</li>
+</ul></li>
+</ul>
+</section>
+<section id="能量守恆-conservation-of-energy" class="level3">
+<h3 class="anchored" data-anchor-id="能量守恆-conservation-of-energy">2. 能量守恆 (Conservation of Energy)</h3>
+<ul>
+<li>風管系統中流體的全壓（Total Pressure, Pt​），代表了流體所具有的總機械能。
+<ul>
+<li><strong>最佳化系統的能量分佈</strong>：在一個設計良好的風管系統中，各個路徑的「總全壓損失」必須相等。</li>
+<li><strong>節點壓力平衡</strong>：對於系統中的某個節點 a 而言，流體在 a 點所具有的全壓，必定等於以 a 點為起點的所有子路徑上「總全壓損失的總和」，其能量守恆方程式可表示為：Pt,a​=∑ΔPi​。</li>
+<li><strong>實務意義</strong>：空氣非常「聰明」，它永遠會選擇阻力（壓力損失）最小的路徑走。如果兩個分支管連接到同一個主風管，但兩者的管路阻力設計不平衡，空氣就會大量從阻力小的那一端抽走，導致阻力大的那一端氣罩完全失去吸力。</li>
+</ul></li>
+</ul>
+<p><img src="images/工業通風/風管系統守恆.png" class="img-fluid" width="368"></p>
+</section>
+</section>
+<section id="工業風管的組件及種類" class="level2">
+<h2 class="anchored" data-anchor-id="工業風管的組件及種類">7-4 工業風管的組件及種類</h2>
+<ul>
+<li>知道守恆定律後，來看看構成系統阻力的硬體。工業用的通風管通常是由直管、肘管、漸擴或漸縮管、孔口、流量控制閥、歧管通道、開門與閥、防雨擋板或防雨罩以及空氣過濾器等零件所構成。 這些組件在空氣流動時<strong>都會產生擾流或摩擦</strong>，進而造成使用者會包含摩擦損失、肘管損失、歧管通道損失、孔口損失、漸擴損失、漸縮損失、風機入口損失、煙囪損失和其它擾流或系統的摩擦損失。</li>
+</ul>
+<section id="摩擦損失與風管幾何設計" class="level3">
+<h3 class="anchored" data-anchor-id="摩擦損失與風管幾何設計">1. 摩擦損失與風管幾何設計</h3>
+<ul>
+<li>在所有損失中，直管的「摩擦損失」是最基礎也最常遇到的。</li>
+<li>我們應該使用何種形狀的風管？ 在工業通風通常都是：<strong>盡可能使用圓管</strong>。使用圓管有三大絕對好處：
+<ul>
+<li><strong>阻力損失較小</strong>。</li>
+<li><strong>能提供較好的氣流傳輸環境</strong>。</li>
+<li><strong>相較於相等面積的方形/矩形管，使用較少的金屬（因此，它可能會便宜一點）</strong>。</li>
+</ul></li>
+<li>摩擦損失的六大關鍵參數關係
+<ul>
+<li>空氣流過風管時都是呈現紊流並且會有摩擦損失。「損失」表示靜壓轉換成熱、震動和噪音。身為設計者，必須熟記摩擦損失（ΔP）與以下參數的絕對關係：</li>
+<li><strong>與管的長度呈線性正比關係</strong>（ΔP∝L）。</li>
+<li><strong>與管壁的粗糙度與管的材質有很大的關係</strong>（ΔP∝f）。</li>
+<li><strong>與空氣的速度成二次方正比關係</strong>：流速若變為 2 倍，摩擦損失會暴增為 4 倍（ΔP∝V2）。</li>
+<li><strong>與管徑的關係</strong>：
+<ul>
+<li><p>當速度為常數時，與管徑的一次方程式成反比關係（ΔP∝1/D）。？？？</p></li>
+<li><p>當 Q（排氣量）為常數時，與管徑成五次方反比關係（ΔP∝1/D^5）。這意味著若管徑縮為一半，損失會暴增 32 倍！</p></li>
+</ul></li>
+<li><strong>與空氣密度呈線性正比關係</strong>：密度減少 20%（例如在高海拔或高溫環境），摩擦力也會減少約 20%（ΔP∝ρ）。</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="第8章-風機fan的選擇與操作" class="level2">
+<h2 class="anchored" data-anchor-id="第8章-風機fan的選擇與操作">第8章 風機（Fan）的選擇與操作</h2>
+<ul>
+<li>前面呈現如何計算氣罩需要的排氣量（Q），以及如何精算管路克服摩擦與配件阻力所需的靜壓（Ps​）。這兩個重要參數，正是設備商選擇合適風機時的最關鍵依據。</li>
+</ul>
+<section id="風機種類與實務選用" class="level3">
+<h3 class="anchored" data-anchor-id="風機種類與實務選用">8-1 風機種類與實務選用</h3>
+<ul>
+<li>在職業衛生的局部排氣工程中，最常遭遇也最核心的是<strong>離心式風機 (Centrifugal Type Fan)</strong>。離心式風機又可細分為好幾類(略)。</li>
+</ul>
+</section>
+<section id="風機測試與系統效應" class="level3">
+<h3 class="anchored" data-anchor-id="風機測試與系統效應">8-2 風機測試與系統效應</h3>
+<ul>
+<li>在實務上，設備商型錄上的風機數據通常非常完美，但當把風機安裝到工廠管路上後，往往會發現風量達不到預期。為了解決這種性能爭議，風機測試分三種方式：<strong>實驗室測試</strong>、<strong>現場直接量測(</strong>真實反映)、<strong>原機縮小模型測試</strong>。</li>
+</ul>
+<section id="風機定律-fan-laws" class="level4">
+<h4 class="anchored" data-anchor-id="風機定律-fan-laws">1. 風機定律 (Fan Laws)</h4>
+<ul>
+<li><p>如果在現場測試發現風量不足，工程師最常做的就是「調高風機的轉速 (RPM)」。但在此之前，必須熟記<strong>「風機定律」</strong>。</p></li>
+<li><p>當我們改變風機轉速（N）時，系統的風量（Q）、壓力（P）與所需功率（W）的變化關係如下：</p>
+<ul>
+<li><p><strong>第一定律（流量）</strong>：Q∝N （風量與轉速成「一次方正比」）。想增加 10% 的風量，轉速就調快 10%。</p></li>
+<li><p><strong>第二定律（壓力）</strong>：P∝N^2 （壓力與轉速成「二次方正比」）。轉速增加 10%，壓力會增加 21% (1.1^2=1.21)。</p></li>
+<li><p><strong>第三定律（功率）</strong>：W∝N^3 （馬達功率與轉速成「三次方正比」）。這是最危險的一環！如果轉速增加 10%，馬達需要的動力會暴增 33% (1.1^3=1.331)。</p></li>
+<li><p>審查或改善現場通風效能時，這三條定律是工程實務的鐵律。如果發現某個氣罩的控制風速不夠，千萬不要隨意把風機皮帶輪換小以大幅拉高轉速。 依據第三定律，假如你將轉速提高一倍（2倍），風量雖然變成 2 倍，但<strong>馬達所需的電力將會變成 8 倍 (</strong>2^3<strong>)</strong>！這會導致馬達瞬間過載燒毀，甚至引發工廠火災。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="風機壓力與動力" class="level2">
+<h2 class="anchored" data-anchor-id="風機壓力與動力">2. 風機壓力與動力</h2>
+<ul>
+<li>精算了氣罩的排氣量以及管路的總壓力損失後，我們必須將這些需求「翻譯」成設備商聽得懂的語言，也就是決定風機的「壓力規格」與「馬達馬力」。</li>
+</ul>
+<section id="描述風機能力的兩大壓力指標" class="level3">
+<h3 class="anchored" data-anchor-id="描述風機能力的兩大壓力指標">描述風機能力的兩大壓力指標</h3>
+<ul>
+<li>當我們翻開設備商的風機型錄，通常會看到兩種描述風機壓力的數值：<strong>風機全壓 (FTP)</strong> 與 <strong>風機靜壓 (FSP)</strong>。這兩者在工程上有著截然不同的意義。</li>
+</ul>
+<section id="風機全壓-fan-total-pressure-ftp" class="level4">
+<h4 class="anchored" data-anchor-id="風機全壓-fan-total-pressure-ftp">1. 風機全壓 (Fan Total Pressure, FTP)</h4>
+<ul>
+<li><strong>物理意義</strong>：風機全壓代表了空氣流過整個通風系統時，風機所必須提供的「總能量」。它在數值上等於管路內全壓損失計算的絕對值。</li>
+<li><strong>計算公式</strong>：風機全壓等於風機出口處的全壓 (Pt,out​) 減去風機入口處的全壓 (Pt,in​)。 <span class="math inline">\(FTP=Pt_{out}​−Pt_{in}​\)</span>（註：如果風機入口與出口的速度相同，即動壓 Pv​ 互相抵銷，則 FTP 也可簡化為 Ps,out​−Ps,in​）。</li>
+</ul>
+</section>
+<section id="風機靜壓-fan-static-pressure-fsp" class="level4">
+<h4 class="anchored" data-anchor-id="風機靜壓-fan-static-pressure-fsp">2. 風機靜壓 (Fan Static Pressure, FSP)</h4>
+<ul>
+<li><p><strong>物理意義與實務考量</strong>：在實務上，風機靜壓被定義為風機全壓減去風機外吹的平均速度壓 (Pv,out​)。風機静壓力不完全等於靜壓力 out滅去静壓力in。但風機静可取代全壓損失如此更保守。FSP可定義為系統的損失,例 如,静壓力的能量轉變成沒有用處的熱或噪音。</p></li>
+<li><p><strong>計算公式</strong>： <span class="math inline">\(FSP=FTP−Pv_{out}​\)</span> 或者是 <span class="math inline">\(FSP=Ps_{out}​−Pt_{in}​=Ps_{out}​−(Ps_{in}​+Pv_{in}​)\)</span></p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="風機動力-fan-power-fhp" class="level2">
+<h2 class="anchored" data-anchor-id="風機動力-fan-power-fhp">3.風機動力 (Fan Power / FHP)</h2>
+<ul>
+<li><p>決定了風機需要克服的壓力 (FTP) 以及輸送的風量 (Q) 之後，我們就必須計算出這台風機需要配置多大的「馬達 (馬力)」來驅動，這就是風機動力 (Fan Horsepower, 簡稱 FHP)。</p>
+<ul>
+<li><p><strong>求取千瓦 (kW) 的公式</strong>：<span class="math inline">\(FHP = \frac{Q \times FTP}{6120 \times \eta}\)</span>​</p></li>
+<li><p><strong>求取馬力 (HP) 的公式</strong>：<span class="math inline">\(FHP = \frac{Q \times FTP}{8204 \times \eta}\)</span></p>
+<ul>
+<li><p>Q：為風量（單位為 m3/min）。</p></li>
+<li><p>FTP：為風機全壓（教材在此標示單位為 <span class="math inline">\(mm H_2O\)</span>，但我稍後會作實務勘誤）。</p></li>
+<li><p>η：為風機的傳動輸出效率。一般工業風機的機械效率大約落在 <strong>0.6 ~ 0.7</strong> 之間。</p>
+<ul>
+<li>如果高估了風機的機械效率（例如把 η 誤設為 1.0 的完美狀態），算出來的馬達馬力就會偏小。當這套設備安裝到工廠現場時，馬達會因為帶不動葉片克服管路阻力而發生過載跳機，或者只能以極低的轉速運轉。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="風機動力---練習" class="level2">
+<h2 class="anchored" data-anchor-id="風機動力---練習">風機動力 - 練習</h2>
+<section id="題目1" class="level3">
+<h3 class="anchored" data-anchor-id="題目1"><strong>題目1</strong></h3>
+<section id="風機風量為-100-m3min由下列各進口及出口的條件計算-ftp-及風機馬力各為多少" class="level4">
+<h4 class="anchored" data-anchor-id="風機風量為-100-m3min由下列各進口及出口的條件計算-ftp-及風機馬力各為多少">風機風量為 100&nbsp;m3/min，由下列各進口及出口的條件計算 FTP 及風機馬力各為多少？</h4>
+<ul>
+<li><p><strong>給定條件 (US單位 / SI公制單位)</strong></p>
+<ul>
+<li><p>Ps​&nbsp;in <strong>(入口靜壓)</strong>: −5.00”&nbsp;Hg / −127&nbsp;mm&nbsp;Hg&nbsp;</p></li>
+<li><p>Ps​&nbsp;out <strong>(出口靜壓)</strong>: +0.40”&nbsp;Hg / +10&nbsp;mm&nbsp;Hg</p></li>
+<li><p>Pv​&nbsp;in=Pv​&nbsp;out <strong>(進出口速度壓)</strong>: +1.00”&nbsp;Hg / +25&nbsp;mm&nbsp;Hg</p></li>
+</ul></li>
+<li><p><strong>計算過程</strong></p></li>
+</ul>
+<ol type="1">
+<li><p><strong>計算風機全壓 (FTP)</strong> 簡化為出口靜壓減去入口靜壓： FTP=Ps&nbsp;out​−Ps&nbsp;in​=0.4”&nbsp;Hg+5”&nbsp;Hg=5.4”&nbsp;Hg=137&nbsp;mm&nbsp;Hg</p></li>
+<li><p><strong>計算風機動力 (FHP)</strong> 已知風量 Q=100&nbsp;m3/min，FTP=137&nbsp;mm。假設風機的傳動輸出效率 η=0.65：</p></li>
+</ol>
+<ul>
+<li><p><strong>求取千瓦 (kW)</strong>： FHP=3.44&nbsp;kW， <strong>求取馬力 (HP)</strong>： FHP==2.57&nbsp;HP</p></li>
+<li><p><strong>留意單位可能有誤 (Aq, not Hg)</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="題目2" class="level3">
+<h3 class="anchored" data-anchor-id="題目2"><strong>題目2</strong></h3>
+<section id="從上題的條件中估計風機的-fsp-為多少-ussi" class="level4">
+<h4 class="anchored" data-anchor-id="從上題的條件中估計風機的-fsp-為多少-ussi">從上題的條件中，估計風機的 FSP 為多少？ (US/SI)</h4>
+<ul>
+<li><strong>計算過程</strong></li>
+</ul>
+<ol type="1">
+<li><p>依據風機靜壓的定義，FSP 等於風機出口靜壓減去風機入口的全壓（即入口靜壓加動壓）： FSP=Ps&nbsp;out​−(Ps&nbsp;in​+Pv&nbsp;in​)</p></li>
+<li><p>代入數值計算（以 US 單位代入後換算為 SI 單位）： FSP=0.4−(−5+1)=4.4”&nbsp;Hg=112&nbsp;mm&nbsp;Hg <em>(若直接以 SI 單位計算：</em>10−(−127+25)=112&nbsp;mm<em>)</em></p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="風機壓力變化" class="level2">
+<h2 class="anchored" data-anchor-id="風機壓力變化">風機壓力變化</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/風機壓力變化圖.png" class="img-fluid" width="517"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>原則：根據流體力學，全壓等於靜壓與速度壓之和：<span class="math inline">\(P_T = P_S + P_V\)</span></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 36%">
+<col style="width: 36%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>參數</strong></td>
+<td><strong>吸氣側（e 點之前）</strong></td>
+<td><strong>排氣側（f 點之後）</strong></td>
+</tr>
+<tr class="even">
+<td><strong>靜壓 (</strong><span class="math inline">\(P_S\)</span>) 狀態</td>
+<td><strong>負壓</strong>（低於大氣壓，吸入空氣）</td>
+<td><strong>正壓</strong>（高於大氣壓，推送空氣）</td>
+</tr>
+<tr class="odd">
+<td><strong>速度壓 (</strong><span class="math inline">\(P_V\)</span>) 狀態</td>
+<td>永遠為<strong>正值</strong>（由風速決定）</td>
+<td>永遠為<strong>正值</strong>（由風速決定）</td>
+</tr>
+<tr class="even">
+<td><strong>能量變化</strong></td>
+<td>沿流程因摩擦阻力而<strong>遞減</strong></td>
+<td>沿流程因摩擦阻力而<strong>遞減</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>壓力變化圖能透過量測風機進出口的壓力，精確計算出這台風機到底提供了多少<strong>全壓升 (</strong><span class="math inline">\(P_{Tf}\)</span>) 與<strong>靜壓升 (</strong><span class="math inline">\(P_{Sf}\)</span>)，進而評估風機效率或進行系統設計。</li>
+</ul>
+</section>
+<section id="如何知道風機壓力變化整理及目的" class="level2">
+<h2 class="anchored" data-anchor-id="如何知道風機壓力變化整理及目的">如何知道風機壓力變化（整理）及目的</h2>
+<ul>
+<li>要精確評估風機，<strong>絕對必須同時量測入口e與出口f</strong>。</li>
+<li>從職業衛生（工業通風）專家的角度來看，局部排氣系統的設計與評估，不能只看風機本身，而是要看它「克服系統總阻力」的能力。
+<ul>
+<li><p><strong>出口壓力量什麼？</strong></p>
+<p>在實務量測上，我們在出口管路（f點）通常會量測到<strong>全壓 (</strong><span class="math inline">\(P_{To}\)</span>) 或 <strong>靜壓 (</strong><span class="math inline">\(P_{So}\)</span>)。因為出口流速通常已知，知道其中一個，就能透過公式換算另一個。</p></li>
+<li><p><strong>一定要量入口嗎？</strong></p>
+<p><strong>是的，一定要量！</strong> 因為風機前半段（吸氣側）的管路摩擦、氣罩損失，全部都會累積成入口處的負靜壓（<span class="math inline">\(P_{Si}\)</span>）。不量測入口，就無法知道風機頂住了多少吸氣端的阻力。</p></li>
+</ul></li>
+</ul>
+<section id="如何進行系統設計與效率評估" class="level3">
+<h3 class="anchored" data-anchor-id="如何進行系統設計與效率評估">如何進行系統設計與效率評估？</h3>
+<ol type="1">
+<li><p>系統設計（從需求出發）</p>
+<ul>
+<li><p><strong>步驟 A：決定風量 (</strong><span class="math inline">\(Q\)</span>) 根據有害物種類（如化學溶劑、粉塵），依據法規或 ACGIH 標準設定氣罩的「捕捉風速」，計算出系統所需的總風量。</p></li>
+<li><p><strong>步驟 B：計算壓損（壓力的減項）</strong></p>
+<p>模擬空氣從氣罩吸入、經過直管、彎頭、空氣清淨裝置（洗滌塔/集塵器），一路到排出口的<strong>總阻力（即系統全壓損失）</strong>。</p></li>
+<li><p><strong>步驟 C：選配風機</strong></p>
+<p>選用的風機，其提供的<strong>風機全壓升 (</strong><span class="math inline">\(P_{Tf}\)</span>) 必須大於或等於系統的總阻力，才能確保風量達標。</p></li>
+</ul></li>
+<li><p>現場量測與評估（實地健檢）</p>
+<ul>
+<li>在風機進出口的直管處鑽孔，使用皮托管（Pitot tube）與微壓計進行量測：</li>
+<li><strong>量測入口 e 點：</strong> 得到 <span class="math inline">\(P_{Si}\)</span>（靜壓）與 <span class="math inline">\(P_{Vi}\)</span>（速度壓），相加得到入口全壓 <span class="math inline">\(P_{Ti}\)</span>。</li>
+<li><strong>量測出口 f 點：</strong> 得到 <span class="math inline">\(P_{So}\)</span>（靜壓）與 <span class="math inline">\(P_{Vo}\)</span>（速度壓），相加得到出口全壓 <span class="math inline">\(P_{To}\)</span>。</li>
+</ul></li>
+<li><p>計算風機效率（評估效能）</p>
+<ul>
+<li><p>得到數據後，我們會計算<strong>風機功率（空氣馬力,</strong> <span class="math inline">\(AHP\)</span>），並與電動機消耗的軸馬力（<span class="math inline">\(BHP\)</span>）做對比：</p></li>
+<li><p><span class="math inline">\(AHP = \frac{Q \times P_{Tf}}{常數}\)</span></p>
+<ul>
+<li><strong>風機全效率 (</strong><span class="math inline">\(\eta_t\)</span>) <span class="math inline">\(= \frac{AHP}{BHP} \times 100\%\)</span></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>實務建議：</strong> 如果量測出來發現風機效率極低，通常代表<strong>風機選錯型號（不在高效能操作區）</strong>、<strong>管路積塵嚴重阻力變大</strong>，或是<strong>風機葉片磨損</strong>。在職業衛生上，這意味著控制風速可能不足，勞工暴露風險會隨之提高。</p>
+</blockquote></li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="sop-和風機曲線風機匹配" class="level2">
+<h2 class="anchored" data-anchor-id="sop-和風機曲線風機匹配">8-3 SOP 和風機曲線（風機匹配）</h2>
+<section id="系統需求系統操作點-sop-與系統曲線" class="level3">
+<h3 class="anchored" data-anchor-id="系統需求系統操作點-sop-與系統曲線">1. 系統需求：系統操作點 (SOP) 與系統曲線</h3>
+<ul>
+<li>管路設計目標：為了達到法規要求的控制風速，我們所需要的特定排氣量（Q），以及對應此風量下系統產生的總靜壓力(Ps)需求。</li>
+<li><strong>系統操作點 (System Operating Point, SOP)</strong>：當我們把這組算出來的 (Q,Ps​) 座標標繪在圖表上時，這個點就稱為「系統操作點（SOP）」。這是我們通風系統設計的絕對目標。</li>
+<li><strong>系統曲線的形狀</strong>：如果我們將系統在不同風量下的壓力需求全部描繪出來，這條「系統曲線」會呈現出類似二次方程式的拋物線形狀。根據風機定律，管路靜壓力的改變粗略地會與流量（cfm）變化的平方成正比。在零轉速（零風量）下，沒有空氣流動發生，自然也測量不到任何靜壓力。</li>
+</ul>
+</section>
+<section id="風機能力風機特性曲線-風機本身的性能" class="level3">
+<h3 class="anchored" data-anchor-id="風機能力風機特性曲線-風機本身的性能">2. 風機能力：風機特性曲線 （風機本身的性能）</h3>
+<ul>
+<li><strong>最大靜壓點（A點）</strong>：在風機進口側安裝一個蝴蝶閥，啟動風機（例如設定在 500 rpm）並將閥門「完全關閉」。此時沒有任何空氣流出（流量為零），但風機會產生最大的靜壓力，這就是曲線上的 A 點。</li>
+<li><strong>最大流量點</strong>：接著，慢慢打開蝴蝶閥。隨著時間增加，會有越來越多的空氣流過導管，直到閥門完全打開時，將產生最大的流量，而此時用來克服阻力的靜壓力則降至最低。 將這些點連接起來，就形成了一條專屬於該台風機在特定轉速下的「風機特性曲線」。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/風機工作曲線.png" class="img-fluid"></td>
+<td><img src="images/工業通風/風機特性曲線.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sop-和風機曲線風機匹配續" class="level2">
+<h2 class="anchored" data-anchor-id="sop-和風機曲線風機匹配續">8-3 SOP 和風機曲線（風機匹配）續</h2>
+<section id="綜合評估群組曲線與最佳效率區" class="level3">
+<h3 class="anchored" data-anchor-id="綜合評估群組曲線與最佳效率區">3. 綜合評估：群組曲線與最佳效率區</h3>
+<ul>
+<li>在實務上，設備商不會只給我們一條線。
+<ul>
+<li><strong>群組曲線 (Family of Curves)</strong>：藉由測試不同轉速下的風機，或者直接使用我們上一節學過的「風機定律（Fan Laws）」進行數學預測，我們可以畫出一整組在不同 rpm 下運轉的群組曲線（如圖 8-9a）。這讓工程師能知道若調整皮帶輪改變轉速，風機能力的變化範圍。</li>
+<li><strong>附加性能參數</strong>：除了風量與靜壓，專業的風機型錄還會在這張圖上疊加標繪其他的關鍵參數，例如「馬力消耗率 (B.D)」、「效率 (EFF)」，以及「噪音程度 (NOISE)」。</li>
+<li><strong>操作範圍 (Operating Range)</strong>：通常，我們僅僅只對曲線中「較有效率」的操作範圍部份感興趣，因此製造商通常只會標示出建議的操作區間（如圖 8-9c 中未被遮蔽的部分）。</li>
+</ul></li>
+</ul>
+</section>
+<section id="風機曲線後部-back-of-the-curve" class="level3">
+<h3 class="anchored" data-anchor-id="風機曲線後部-back-of-the-curve">4. 風機曲線後部 (Back of the Curve)</h3>
+<ul>
+<li><strong>正常的風機通常不會在曲線區域的「左邊範圍」工作，也就是所謂在「風機曲線後部」操作</strong>。會造成空氣極度不穩定，同時振動及噪音大幅增大，並且伴隨極低效能的運作與低下的流動率等各種嚴重問題。</li>
+</ul>
+<p><img src="images/工業通風/風機特性曲線群組圖.png" class="img-fluid" width="624"></p>
+</section>
+</section>
+<section id="系統曲線-system-curve" class="level2">
+<h2 class="anchored" data-anchor-id="系統曲線-system-curve"><strong>8-4 系統曲線 (System Curve)</strong></h2>
+<ul>
+<li>當一定之風量（排氣量）通過一組空氣風管系統時，必然會因為摩擦與配件干擾而產生壓力損失或阻力。而這個壓力損失的大小，會隨著我們抽氣量的多寡而產生劇烈的改變。</li>
+<li><strong>流體力學的壓力損失與速度的平方成正比</strong>
+<ul>
+<li>一個典型之「固定系統」的特性曲線，若將風量（橫軸）與壓力阻力（縱軸）標繪出來，會呈現一條向上彎曲的「拋物線」。 例如，假設原設計系統在 100% 的風量下，系統阻力為 100%；如果我們希望將風量增加至原來的 120%，根據公式，系統阻力將會暴增至 1.2＾2=1.44 倍（即 144%）。反之，若風量減到 50%，則風壓阻力亦會減至原來的 25% (0.5＾2=0.25)。</li>
+</ul></li>
+<li><strong>系統曲線與風機效率曲線之交會點決定了實際之風量</strong>
+<ul>
+<li>這個交會點，就是我們上一節提到的「系統操作點 (SOP)」。如果系統阻力已經精確確定，而且風機也選得適當，這兩條線的交會點就會剛好落在我們原先設計的目標風量處。</li>
+</ul></li>
+<li><strong>工廠的現場是動態的，系統的阻力隨時可能發生改變。</strong>
+<ul>
+<li>當系統阻力發生變化時，原先的系統曲線（曲線 A）會偏移：
+<ol type="1">
+<li><p><strong>阻力增加（曲線往左上偏移至 B）</strong>： 當系統中加入了額外的阻力，例如「風門被關小」、「空氣濾清器（集塵機）濾袋積滿粉塵阻塞」，或者「導管內積垢」時，系統阻力百分比會增加。這會使得系統曲線轉變成更陡峭的曲線 B。此時，新的交會點會落在風機曲線的左上方(點2)，<strong>導致實際排氣風量大幅減少</strong>。</p></li>
+<li><p><strong>阻力減少（曲線往右下偏移至 C）</strong>： 相反地，如果系統阻力減少（例如某段風管破洞漏氣、或者操作員把所有調節風門全開），系統曲線會變得平緩（轉變為曲線 C）。此時交會點會往右下方移動(點3)，使總排氣量增加。</p></li>
+</ol></li>
+</ul></li>
+</ul>
+<p><img src="images/工業通風/圖-11.png" class="img-fluid" width="595"></p>
+<ul>
+<li><p>預期之外的阻力：安全係數與系統影響 (System Effect)</p>
+<ul>
+<li><p>在設計階段，工程師在紙上算出的阻力，往往與實際安裝後的阻力有落差。教材在 8-4-1 與 8-4-2 節中，點出了兩個導致「風機系統效能不足」的致命原因：</p>
+<ul>
+<li><strong>低估系統阻力與「安全係數」</strong>： 有時候實際系統壓力損失大於原設計時之估算，為了彌補這種不精確的估算，系統設計師在概估系統阻力時，往往必須加上一個「安全係數 (Safety Factor)」。如果沒有加安全係數，導致實際阻力過大時，工程師就必須被迫「增加風機轉速」以達到設計風量。但請記得風機定律，轉速增加 10%，馬達需要的動力會暴增 33%（即 1.1＾3=1.33），這極容易導致馬達過載燒毀。</li>
+<li><strong>系統影響 (System Effect)</strong>： 即使直管與彎管的摩擦損失都算對了，造成風機與系統組合效能不足最常見的原因有三項：<strong>(1) 風機出口端銜接不當；(2) 風機進口端氣流不均勻；(3) 在風機進口端有旋轉渦流</strong>。 這些因為安裝不良導致的空氣動力流場破壞，會讓風機無法發揮潛能，在工程上我們必須將這種額外損失估算為「系統影響因子」，並將其加入原本的壓力損失計算中，否則實際的風量絕對會低於設計值。</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>解決方案絕對不是盲目地去換一顆更大的馬達（或硬拉轉速，這會燒毀設備），而是要求雇主<strong>落實設備的維護保養、清理管路積塵與更換濾袋</strong>。只要將系統阻力降回原先設計的曲線 A，交會點就會回到設計風量，控制風速自然就能恢復。</p>
+</div>
+</div>
+</section>
+<section id="風機選擇" class="level2">
+<h2 class="anchored" data-anchor-id="風機選擇"><strong>8-5 風機選擇</strong></h2>
+<p><img src="images/工業通風/不同風機曲線.png" class="img-fluid" width="524"></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 35%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>實務評估面向</th>
+<th>曲線 A：平坦型風機 (Flat Curve)</th>
+<th>曲線 B：陡峭型風機 (Steep Curve)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>曲線幾何特徵</strong></td>
+<td>壓力隨風量變化的斜率較平緩。</td>
+<td>壓力隨風量變化的斜率較陡直。</td>
+</tr>
+<tr class="even">
+<td><strong>面對系統阻力增加時(如：濾袋阻塞、管路積垢)</strong></td>
+<td><strong>操作點左移，風量 (</strong>Q<strong>) 產生巨大的衰退變化。</strong> (呈現斷崖式下跌)</td>
+<td><strong>操作點左移，但風量 (</strong>Q<strong>) 的減少幅度非常小。</strong> (幾乎能維持原抽氣量)</td>
+</tr>
+<tr class="odd">
+<td><strong>系統操作點 (SOP) 穩定度</strong></td>
+<td><strong>極低</strong>。極易受現場動態干擾影響。</td>
+<td><strong>極高</strong>。能抵抗預期外的系統壓力波動。</td>
+</tr>
+<tr class="even">
+<td><strong>能源效率與耗電表現</strong></td>
+<td>通常在設計點上的運轉效率較高，較為省電。</td>
+<td>操作上比較沒有效率，耗電量相對較大。</td>
+</tr>
+<tr class="odd">
+<td><strong>法規落實與勞工防護後果</strong></td>
+<td><strong>【高風險 / 易違規】</strong></td>
+<td><strong>【高防護 / 符法規】</strong></td>
+</tr>
+<tr class="even">
+<td><strong>職業衛生專家學者建議</strong></td>
+<td><strong>不建議採用。</strong></td>
+<td><strong>強烈建議優先選用。</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="設計範例" class="level2">
+<h2 class="anchored" data-anchor-id="設計範例">9-5設計範例</h2>
+<p><img src="images/工業通風/局排設計範例.png" class="img-fluid" width="578"></p>
+<section id="第一階段確立設計參數與決定管徑" class="level3">
+<h3 class="anchored" data-anchor-id="第一階段確立設計參數與決定管徑">1. 第一階段：確立設計參數與決定管徑</h3>
+<ul>
+<li><p>畫出管路配置圖，根據法規要求與製程特性，訂出最基礎的流體力學參數。本範例假設了一個附有凸緣（面積 0.06&nbsp;m2）的方形氣罩，為了有效控制污染，工程師設定了以下條件：</p>
+<ul>
+<li><p><strong>捕集速度 (</strong>Vc​<strong>)</strong>：0.4&nbsp;m/s（這是為了確保在距離氣罩 0.2&nbsp;m 處能有效抓取污染物）。</p></li>
+<li><p><strong>搬運速度 (</strong>Vtrans​<strong>)</strong>：15&nbsp;m/s（確保粉塵在管內不會沉積）。</p></li>
+</ul></li>
+<li><p><strong>1. 計算所需排氣量 (</strong>Q<strong>)</strong> 利用氣罩流量公式推算：Q=0.75(10X＾2+Af​)×Vc​≈10&nbsp;m3/min。這就是系統的「目標抽氣量」。</p></li>
+<li><p><strong>2. 導管直徑的計算與「規格化修正」</strong> 這是實務上極度重要的一環！算出所需風量後，我們利用 Q=VA 反推管徑：</p>
+<ul>
+<li><p><strong>吸氣側導管（主管）</strong>：算出來的精確管徑為 11.9&nbsp;cm。但市面上沒有這種尺寸，所以我們必須選用標準規格的 12&nbsp;cm 風管。因為管徑變大了，實際的管內搬運速度會微幅下降修正為 14.7&nbsp;m/s。</p></li>
+<li><p><strong>排氣側導管（主管）</strong>：算出的管徑為 14.6&nbsp;cm，實務上選用 15&nbsp;cm，其排氣速度修正為 9.4&nbsp;m/s</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="第二階段逐點精算壓力損失-the-node-to-node-calculation" class="level3">
+<h3 class="anchored" data-anchor-id="第二階段逐點精算壓力損失-the-node-to-node-calculation">2. 第二階段：逐點精算壓力損失 (The Node-to-Node Calculation)</h3>
+<ul>
+<li>有了真實管徑與真實流速，接下來就是最考驗工程師細心程度的「逐段壓損計算」。從氣罩口開始（第1點），一路算到排氣煙囪口（第12點）。</li>
+</ul>
+<ol type="1">
+<li><p><strong>計算動壓 (速度壓,</strong> Pv​<strong>)</strong>： 利用公式 Pv​=(V/4.03)^2，算出 12&nbsp;cm 吸氣管的 Pv1​=13.2&nbsp;mmH2​O。</p></li>
+<li><p><strong>氣罩端損失與靜壓 (</strong>Ps1​<strong>)</strong>： 查表得知氣罩損失係數 K=0.7。氣罩壓力損失 Pr1​=K×Pv1​=0.7×13.2=9.3&nbsp;mmH2​O。 因此，氣罩出口處的靜壓 Ps1​=−(Pr1​+Pv1​)=−22.4&nbsp;mmH2​O。這代表風機必須在此處產生這麼大的負壓才能驅動空氣。</p></li>
+<li><p><strong>直管摩擦與配件動態損失</strong>： 接著順著氣流，逐一計算每一段直管的摩擦力（例如第2點到第3點的直管損失為 4.4&nbsp;mmH2​O）以及轉彎處的肘管損失（例如 90度肘管 K=0.55，損失 7.3&nbsp;mmH2​O）。 另外，絕對不能忘記<strong>空氣清淨設備（如洗滌塔或集塵機）的巨大壓損</strong>。範例中直接假設其壓損為 50&nbsp;mmH2​O。</p></li>
+<li><p><strong>排氣端損失與防雨罩</strong>： 氣流通過風機後進入正壓區，計算排氣側 15&nbsp;cm 管路的摩擦，以及煙囪末端「防雨罩（Weather cap）」的阻力（查表 K=1.1，損失 5.9&nbsp;mmH2​O）。</p></li>
+</ol>
+</section>
+<section id="第三階段決定風機動力與安全馬力" class="level3">
+<h3 class="anchored" data-anchor-id="第三階段決定風機動力與安全馬力">3. 第三階段：決定風機動力與安全馬力</h3>
+<ul>
+<li>將上述所有管段、配件、空氣清淨設備與防雨罩的壓力損失全部加總，我們得出這個系統的「總壓力損失」為 99.8&nbsp;mmH2​O。</li>
+<li>接著，工程師必須決定採購多大的風機（心臟）：</li>
+</ul>
+<ol type="1">
+<li><p><strong>風機全壓 (</strong>PTf​<strong>)</strong>：考量吸氣側與排氣側動壓的差異，視為風力損失與動壓靜壓值，計算出風機全壓為 105.2&nbsp;mmH2​O。</p></li>
+<li><p><strong>風機動力 (KW)</strong>：代入公式 (Q×PTf​)/(6120×全壓效率)。假設風機機械效率為 0.6，算出所需的理論馬力為 0.29&nbsp;KW。</p></li>
+<li><p><strong>馬達動力的「安全餘裕」</strong>：這是工程上極度重要的一步！教材特別標示：「為安全起見，宜將排氣機馬達動力增加 20%」。因此實際採購的馬達馬力應為 0.29&nbsp;KW×1.2=0.34&nbsp;KW。</p></li>
+</ol>
+</section>
+<section id="第四階段壓損分佈圖-pressure-loss-distribution-diagram" class="level3">
+<h3 class="anchored" data-anchor-id="第四階段壓損分佈圖-pressure-loss-distribution-diagram">4. 第四階段：壓損分佈圖 (Pressure Loss Distribution Diagram)</h3>
+<ul>
+<li><p>計算完畢後，展示整個系統流體力學的「心電圖」—壓損分佈圖（圖 9-11）。</p></li>
+<li><p>這張圖傳達了一個核心物理概念：<strong>管路系統的壓力本身是平衡的</strong>。</p>
+<ul>
+<li>空氣進入氣罩後，靜壓 (SP) 與全壓 (TP) 一路呈現往下的斜坡（因為摩擦損耗，負壓越來越大）。</li>
+<li>到了風機處，風機將「靜壓值 (點5)」瞬間拉升到正壓區，這就是風機所代入系統的能量。</li>
+<li>隨後在排氣管路中，壓力再次因摩擦而下降，直到排氣煙囪末端完美歸零，與大氣壓力達到新的平衡。</li>
+</ul></li>
+</ul>
+<p><img src="images/工業通風/圖9-11.png" class="img-fluid" width="545"></p>
+<ul>
+<li>表 9-17 局部排氣系統之設計步驟（計算表）」<strong>，其核心目的正是為了</strong>方便記錄、呈現與修改。而且誠如你所言，在現代的通風工程實務中，工程師絕對是將這張表直接建置在 Excel 等試算表軟體中來進行自動化運算的。</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/表9-17_1.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td><img src="images/工業通風/表9-17_2.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>這張「計算表」在實務操作與法規審查上的重大意義：</p>
+<ul>
+<li><p>「嘗試錯誤 (Trial and Error)」的最佳工程載體</p></li>
+<li><p><strong>系統化防呆：追蹤流體力學的動態軌跡</strong></p></li>
+<li><p><strong>法規審查與工程驗收的共通語言</strong></p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="其他範例" class="level2">
+<h2 class="anchored" data-anchor-id="其他範例">其他範例</h2>
+<p><img src="images/工業通風/負壓病房設計.png" class="img-fluid"></p>
+<section id="參考書籍-鍾基強工業通風設計概要第二版全華圖書2011" class="level3">
+<h3 class="anchored" data-anchor-id="參考書籍-鍾基強工業通風設計概要第二版全華圖書2011">參考書籍： 鍾基強，<strong>工業通風設計概要(第二版)，</strong>全華圖書，2011</h3>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>製作者：何明信老師2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

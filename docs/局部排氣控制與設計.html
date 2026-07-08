@@ -1,0 +1,3358 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Peter Ho.">
+<meta name="dcterms.date" content="2026-06-01">
+
+<title>局部排氣控制與設計 – 教學網站 - 何明信老師</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bf30dfbe067e0f8468691acbb41e00f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">教學網站 - 何明信老師</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" target="_blank" aria-current="page"> 
+<span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/HME/" target="_blank"> 
+<span class="menu-text">危險性機械及設備管理</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/" target="_blank"> 
+<span class="menu-text">暴露評估</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank"> 
+<span class="menu-text">事故調查制度實務指南</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">其他(新增中)</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./局部排氣控制與設計.html">職衛師</a></li><li class="breadcrumb-item"><a href="./局部排氣控制與設計.html">局部排氣控制與設計</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">甲業</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職安衛整體風險評估概念.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職安衛風RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./甲業＿風險評估詳實版.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./營甲＿施工風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">施工安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RA研究導讀.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">營造RA經驗、文獻</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職業衛生暴露風險評估與實務.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職業衛生EA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">職安衛人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./機械設備器具安全與風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">機械設備器具安全與風險評估</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./具有危險性之機械及設備安全相關法規簡介.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">具有危險性之機械及設備安全相關法規簡介</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./危險性機械及設備管理.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">危險性機械及設備管理</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">學校種子人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E6%A0%A1%E5%9C%92%EF%BC%BF%E5%8C%96%E5%AD%B8%E6%9C%89%E5%AE%B3%E7%89%A9%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E7%AD%96%E7%95%A5.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">化學有害物危害預防策略</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./校園＿高溫接觸危害預防策略.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">高溫接觸危害預防策略</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">書籍簡讀</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_大腦解鎖.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">大腦解鎖(Limitless mind)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_反智.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">反智(The irrational age)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">問題是, 我大概會活很久(Somewhere Towards the End)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading1.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">不對稱陷阱(Skin in the game)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">職衛師</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./局部排氣控制與設計.html" class="sidebar-item-text sidebar-link active" target="_blank">
+ <span class="menu-text">局部排氣控制與設計</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#講師簡介" id="toc-講師簡介" class="nav-link active" data-scroll-target="#講師簡介">講師簡介</a></li>
+  <li><a href="#第四十五章-局部排氣控制與設計" id="toc-第四十五章-局部排氣控制與設計" class="nav-link" data-scroll-target="#第四十五章-局部排氣控制與設計">第四十五章 局部排氣控制與設計</a>
+  <ul class="collapse">
+  <li><a href="#參考資料" id="toc-參考資料" class="nav-link" data-scroll-target="#參考資料">參考資料</a></li>
+  <li><a href="#一-局部排氣目的使用時機" id="toc-一-局部排氣目的使用時機" class="nav-link" data-scroll-target="#一-局部排氣目的使用時機">一、 局部排氣目的、使用時機</a>
+  <ul class="collapse">
+  <li><a href="#a-局部排氣的核心目的與優勢" id="toc-a-局部排氣的核心目的與優勢" class="nav-link" data-scroll-target="#a-局部排氣的核心目的與優勢">A、 局部排氣的核心目的與優勢</a></li>
+  </ul></li>
+  <li><a href="#b局部排氣裝置使用時機" id="toc-b局部排氣裝置使用時機" class="nav-link" data-scroll-target="#b局部排氣裝置使用時機">B、局部排氣裝置使用時機</a></li>
+  <li><a href="#合理可行-1" id="toc-合理可行-1" class="nav-link" data-scroll-target="#合理可行-1">合理可行? [1]</a>
+  <ul class="collapse">
+  <li><a href="#危害控制階層" id="toc-危害控制階層" class="nav-link" data-scroll-target="#危害控制階層">危害控制階層</a></li>
+  <li><a href="#設計安裝lev前應評估事項" id="toc-設計安裝lev前應評估事項" class="nav-link" data-scroll-target="#設計安裝lev前應評估事項">設計安裝LEV前，應評估事項？</a></li>
+  </ul></li>
+  <li><a href="#空氣中有害物-部分特性" id="toc-空氣中有害物-部分特性" class="nav-link" data-scroll-target="#空氣中有害物-部分特性">空氣中有害物? (部分特性)</a></li>
+  <li><a href="#粉塵" id="toc-粉塵" class="nav-link" data-scroll-target="#粉塵">粉塵</a></li>
+  <li><a href="#粒狀物粒徑與吸入沉降位置" id="toc-粒狀物粒徑與吸入沉降位置" class="nav-link" data-scroll-target="#粒狀物粒徑與吸入沉降位置">粒狀物粒徑與吸入沉降位置</a></li>
+  <li><a href="#二-為何要取-50-cut-size" id="toc-二-為何要取-50-cut-size" class="nav-link" data-scroll-target="#二-為何要取-50-cut-size">二、 為何要取 50% cut-size？</a></li>
+  <li><a href="#為何要取-50-cut-size" id="toc-為何要取-50-cut-size" class="nav-link" data-scroll-target="#為何要取-50-cut-size">為何要取 50% cut-size？</a></li>
+  <li><a href="#cut-size-的本質為什麼是-50" id="toc-cut-size-的本質為什麼是-50" class="nav-link" data-scroll-target="#cut-size-的本質為什麼是-50">50% cut-size 的本質：為什麼是 50%？</a>
+  <ul class="collapse">
+  <li><a href="#統計上的必然選擇" id="toc-統計上的必然選擇" class="nav-link" data-scroll-target="#統計上的必然選擇">1. 統計上的必然選擇</a></li>
+  <li><a href="#生理上的分界點" id="toc-生理上的分界點" class="nav-link" data-scroll-target="#生理上的分界點">2. 生理上的「分界點」</a></li>
+  </ul></li>
+  <li><a href="#二-除了呼吸保護50-cut-size-還有哪些用途" id="toc-二-除了呼吸保護50-cut-size-還有哪些用途" class="nav-link" data-scroll-target="#二-除了呼吸保護50-cut-size-還有哪些用途">二、 除了呼吸保護，50% cut-size 還有哪些用途？</a>
+  <ul class="collapse">
+  <li><a href="#採樣儀器的設計基準工程錨點" id="toc-採樣儀器的設計基準工程錨點" class="nav-link" data-scroll-target="#採樣儀器的設計基準工程錨點">1. 採樣儀器的設計基準（工程錨點）</a></li>
+  <li><a href="#法規標準的比較基準合規判定" id="toc-法規標準的比較基準合規判定" class="nav-link" data-scroll-target="#法規標準的比較基準合規判定">2. 法規標準的比較基準（合規判定）</a></li>
+  <li><a href="#流行病學研究的暴露指標健康效應歸因" id="toc-流行病學研究的暴露指標健康效應歸因" class="nav-link" data-scroll-target="#流行病學研究的暴露指標健康效應歸因">3. 流行病學研究的暴露指標（健康效應歸因）</a></li>
+  <li><a href="#綜合總結50-cut-size-的角色" id="toc-綜合總結50-cut-size-的角色" class="nav-link" data-scroll-target="#綜合總結50-cut-size-的角色">綜合總結：50% cut-size 的角色</a></li>
+  <li><a href="#一句話總結" id="toc-一句話總結" class="nav-link" data-scroll-target="#一句話總結">一句話總結</a></li>
+  </ul></li>
+  <li><a href="#氣體與蒸氣空氣混合物" id="toc-氣體與蒸氣空氣混合物" class="nav-link" data-scroll-target="#氣體與蒸氣空氣混合物">氣體與蒸氣－空氣混合物</a></li>
+  <li><a href="#製程與有害物發生源" id="toc-製程與有害物發生源" class="nav-link" data-scroll-target="#製程與有害物發生源">製程與有害物發生源</a></li>
+  <li><a href="#二-局部排氣結構及各元件功能" id="toc-二-局部排氣結構及各元件功能" class="nav-link" data-scroll-target="#二-局部排氣結構及各元件功能">二、 局部排氣結構及各元件功能</a></li>
+  <li><a href="#二-各核心元件功能" id="toc-二-各核心元件功能" class="nav-link" data-scroll-target="#二-各核心元件功能">二、 各核心元件功能</a>
+  <ul class="collapse">
+  <li><a href="#氣罩-hood" id="toc-氣罩-hood" class="nav-link" data-scroll-target="#氣罩-hood"><strong>1. 氣罩 (Hood)</strong></a></li>
+  </ul></li>
+  <li><a href="#二-各核心元件功能-續" id="toc-二-各核心元件功能-續" class="nav-link" data-scroll-target="#二-各核心元件功能-續">二、 各核心元件功能 (續)</a>
+  <ul class="collapse">
+  <li><a href="#導管-duct" id="toc-導管-duct" class="nav-link" data-scroll-target="#導管-duct"><strong>2. 導管 (Duct)</strong></a></li>
+  <li><a href="#空氣清淨裝置-air-cleaner" id="toc-空氣清淨裝置-air-cleaner" class="nav-link" data-scroll-target="#空氣清淨裝置-air-cleaner"><strong>3. 空氣清淨裝置 (Air Cleaner)</strong></a></li>
+  </ul></li>
+  <li><a href="#二-各核心元件功能-續-1" id="toc-二-各核心元件功能-續-1" class="nav-link" data-scroll-target="#二-各核心元件功能-續-1">二、 各核心元件功能 (續)</a>
+  <ul class="collapse">
+  <li><a href="#排氣機-fan" id="toc-排氣機-fan" class="nav-link" data-scroll-target="#排氣機-fan"><strong>4. 排氣機 (Fan)</strong></a></li>
+  <li><a href="#煙囪-排氣口-stack" id="toc-煙囪-排氣口-stack" class="nav-link" data-scroll-target="#煙囪-排氣口-stack"><strong>5. 煙囪 / 排氣口 (Stack)</strong></a></li>
+  </ul></li>
+  <li><a href="#三-局部排氣控制原理" id="toc-三-局部排氣控制原理" class="nav-link" data-scroll-target="#三-局部排氣控制原理">三、 局部排氣控制原理</a></li>
+  <li><a href="#三-局部排氣控制原理-續" id="toc-三-局部排氣控制原理-續" class="nav-link" data-scroll-target="#三-局部排氣控制原理-續">三、 局部排氣控制原理 (續)</a></li>
+  <li><a href="#局部排氣之有效性" id="toc-局部排氣之有效性" class="nav-link" data-scroll-target="#局部排氣之有效性"><strong>局部排氣之有效性?</strong></a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件" id="toc-四-氣罩與風管設計原則與要件" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件">四、 氣罩與風管設計原則與要件</a>
+  <ul class="collapse">
+  <li><a href="#一-氣罩的核心功能與系統地位" id="toc-一-氣罩的核心功能與系統地位" class="nav-link" data-scroll-target="#一-氣罩的核心功能與系統地位"><strong>一、 氣罩的核心功能與系統地位</strong></a></li>
+  </ul></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續" id="toc-四-氣罩與風管設計原則與要件-續" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#包圍型氣罩-hsg-258" id="toc-包圍型氣罩-hsg-258" class="nav-link" data-scroll-target="#包圍型氣罩-hsg-258">包圍型氣罩 (HSG 258)</a></li>
+  <li><a href="#部分包圍型崗亭式hsg-258" id="toc-部分包圍型崗亭式hsg-258" class="nav-link" data-scroll-target="#部分包圍型崗亭式hsg-258">部分包圍型（崗亭式）(HSG 258)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-1" id="toc-四-氣罩與風管設計原則與要件-續-1" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-1">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-2" id="toc-四-氣罩與風管設計原則與要件-續-2" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-2">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#外裝型氣罩-hsg-258" id="toc-外裝型氣罩-hsg-258" class="nav-link" data-scroll-target="#外裝型氣罩-hsg-258">外裝型氣罩 (HSG 258)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-3" id="toc-四-氣罩與風管設計原則與要件-續-3" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-3">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-4" id="toc-四-氣罩與風管設計原則與要件-續-4" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-4">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-5" id="toc-四-氣罩與風管設計原則與要件-續-5" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-5">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-6" id="toc-四-氣罩與風管設計原則與要件-續-6" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-6">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-7" id="toc-四-氣罩與風管設計原則與要件-續-7" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-7">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-8" id="toc-四-氣罩與風管設計原則與要件-續-8" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-8">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-9" id="toc-四-氣罩與風管設計原則與要件-續-9" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-9">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#接受型氣罩-hsg-258" id="toc-接受型氣罩-hsg-258" class="nav-link" data-scroll-target="#接受型氣罩-hsg-258">接受型氣罩 (HSG 258)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-10" id="toc-四-氣罩與風管設計原則與要件-續-10" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-10">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-11" id="toc-四-氣罩與風管設計原則與要件-續-11" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-11">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#四-氣罩與風管設計原則與要件-續-12" id="toc-四-氣罩與風管設計原則與要件-續-12" class="nav-link" data-scroll-target="#四-氣罩與風管設計原則與要件-續-12">四、 氣罩與風管設計原則與要件 (續)</a></li>
+  <li><a href="#局部排氣氣罩之設計與應用基本原理" id="toc-局部排氣氣罩之設計與應用基本原理" class="nav-link" data-scroll-target="#局部排氣氣罩之設計與應用基本原理">局部排氣氣罩之設計與應用基本原理</a></li>
+  <li><a href="#控制有效性" id="toc-控制有效性" class="nav-link" data-scroll-target="#控制有效性">控制有效性</a></li>
+  <li><a href="#計算範例" id="toc-計算範例" class="nav-link" data-scroll-target="#計算範例"><strong>計算範例</strong></a></li>
+  <li><a href="#五-導管壓力損失介紹" id="toc-五-導管壓力損失介紹" class="nav-link" data-scroll-target="#五-導管壓力損失介紹">五、 導管壓力損失介紹</a></li>
+  <li><a href="#五-導管壓力損失介紹-續" id="toc-五-導管壓力損失介紹-續" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-1" id="toc-五-導管壓力損失介紹-續-1" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-1">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-2" id="toc-五-導管壓力損失介紹-續-2" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-2">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-3" id="toc-五-導管壓力損失介紹-續-3" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-3">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-4" id="toc-五-導管壓力損失介紹-續-4" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-4">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-5" id="toc-五-導管壓力損失介紹-續-5" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-5">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-6" id="toc-五-導管壓力損失介紹-續-6" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-6">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-7" id="toc-五-導管壓力損失介紹-續-7" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-7">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-8" id="toc-五-導管壓力損失介紹-續-8" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-8">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-9" id="toc-五-導管壓力損失介紹-續-9" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-9">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-10" id="toc-五-導管壓力損失介紹-續-10" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-10">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-11" id="toc-五-導管壓力損失介紹-續-11" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-11">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-12" id="toc-五-導管壓力損失介紹-續-12" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-12">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-13" id="toc-五-導管壓力損失介紹-續-13" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-13">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-14" id="toc-五-導管壓力損失介紹-續-14" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-14">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-15" id="toc-五-導管壓力損失介紹-續-15" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-15">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-16" id="toc-五-導管壓力損失介紹-續-16" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-16">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-17" id="toc-五-導管壓力損失介紹-續-17" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-17">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-18" id="toc-五-導管壓力損失介紹-續-18" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-18">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-19" id="toc-五-導管壓力損失介紹-續-19" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-19">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-20" id="toc-五-導管壓力損失介紹-續-20" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-20">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#五-導管壓力損失介紹-續-21" id="toc-五-導管壓力損失介紹-續-21" class="nav-link" data-scroll-target="#五-導管壓力損失介紹-續-21">五、 導管壓力損失介紹 (續)</a></li>
+  <li><a href="#六-空氣清淨裝置與排氣機選用" id="toc-六-空氣清淨裝置與排氣機選用" class="nav-link" data-scroll-target="#六-空氣清淨裝置與排氣機選用"><strong>六、 空氣清淨裝置與排氣機選用</strong></a></li>
+  <li><a href="#六-空氣清淨裝置與排氣機選用-續" id="toc-六-空氣清淨裝置與排氣機選用-續" class="nav-link" data-scroll-target="#六-空氣清淨裝置與排氣機選用-續"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></a></li>
+  <li><a href="#六-空氣清淨裝置與排氣機選用-續-1" id="toc-六-空氣清淨裝置與排氣機選用-續-1" class="nav-link" data-scroll-target="#六-空氣清淨裝置與排氣機選用-續-1"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></a></li>
+  <li><a href="#六-空氣清淨裝置與排氣機選用-續-2" id="toc-六-空氣清淨裝置與排氣機選用-續-2" class="nav-link" data-scroll-target="#六-空氣清淨裝置與排氣機選用-續-2"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></a></li>
+  <li><a href="#六-空氣清淨裝置與排氣機選用-續-3" id="toc-六-空氣清淨裝置與排氣機選用-續-3" class="nav-link" data-scroll-target="#六-空氣清淨裝置與排氣機選用-續-3"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></a></li>
+  <li><a href="#計算範例-1" id="toc-計算範例-1" class="nav-link" data-scroll-target="#計算範例-1"><strong>計算範例</strong></a></li>
+  <li><a href="#風扇特性hsg-258-fan-characteristics" id="toc-風扇特性hsg-258-fan-characteristics" class="nav-link" data-scroll-target="#風扇特性hsg-258-fan-characteristics">風扇特性（HSG 258 Fan characteristics）</a>
+  <ul class="collapse">
+  <li><a href="#系統曲線與風扇曲線的配合" id="toc-系統曲線與風扇曲線的配合" class="nav-link" data-scroll-target="#系統曲線與風扇曲線的配合">系統曲線與風扇曲線的配合</a></li>
+  </ul></li>
+  <li><a href="#風扇特性hsg-258-fan-characteristics續" id="toc-風扇特性hsg-258-fan-characteristics續" class="nav-link" data-scroll-target="#風扇特性hsg-258-fan-characteristics續">風扇特性（HSG 258 Fan characteristics）續</a>
+  <ul class="collapse">
+  <li><a href="#風扇曲線是供應面" id="toc-風扇曲線是供應面" class="nav-link" data-scroll-target="#風扇曲線是供應面">1️⃣ 風扇曲線是「供應面」</a></li>
+  <li><a href="#系統曲線是需求面" id="toc-系統曲線是需求面" class="nav-link" data-scroll-target="#系統曲線是需求面">2️⃣ 系統曲線是「需求面」</a></li>
+  <li><a href="#工作點-風扇提供的壓力-系統需要的壓力" id="toc-工作點-風扇提供的壓力-系統需要的壓力" class="nav-link" data-scroll-target="#工作點-風扇提供的壓力-系統需要的壓力">3️⃣ 工作點 = 風扇提供的壓力 = 系統需要的壓力</a></li>
+  </ul></li>
+  <li><a href="#職業衛生師現場會遇到的三種情境" id="toc-職業衛生師現場會遇到的三種情境" class="nav-link" data-scroll-target="#職業衛生師現場會遇到的三種情境">🛠 職業衛生師現場會遇到的三種情境</a>
+  <ul class="collapse">
+  <li><a href="#實務" id="toc-實務" class="nav-link" data-scroll-target="#實務">實務</a></li>
+  </ul></li>
+  <li><a href="#排氣機定律fan-laws" id="toc-排氣機定律fan-laws" class="nav-link" data-scroll-target="#排氣機定律fan-laws">「排氣機定律（Fan Laws）」</a></li>
+  <li><a href="#排氣機定律fan-laws續" id="toc-排氣機定律fan-laws續" class="nav-link" data-scroll-target="#排氣機定律fan-laws續">「排氣機定律（Fan Laws）」(續)</a></li>
+  <li><a href="#排氣機定律fan-laws續-1" id="toc-排氣機定律fan-laws續-1" class="nav-link" data-scroll-target="#排氣機定律fan-laws續-1">「排氣機定律（Fan Laws）」(續)</a></li>
+  <li><a href="#排氣機風扇的種類與選用實務" id="toc-排氣機風扇的種類與選用實務" class="nav-link" data-scroll-target="#排氣機風扇的種類與選用實務">「排氣機（風扇）的種類與選用實務」</a></li>
+  <li><a href="#風扇和其他排氣機-hsg-258" id="toc-風扇和其他排氣機-hsg-258" class="nav-link" data-scroll-target="#風扇和其他排氣機-hsg-258">風扇和其他排氣機 (HSG 258)</a></li>
+  <li><a href="#排氣機風扇的種類與選用實務續" id="toc-排氣機風扇的種類與選用實務續" class="nav-link" data-scroll-target="#排氣機風扇的種類與選用實務續">「排氣機（風扇）的種類與選用實務」(續)</a></li>
+  <li><a href="#排氣機風扇的種類與選用實務續-1" id="toc-排氣機風扇的種類與選用實務續-1" class="nav-link" data-scroll-target="#排氣機風扇的種類與選用實務續-1">「排氣機（風扇）的種類與選用實務」(續)</a></li>
+  <li><a href="#七-簡易煙囪設計原則" id="toc-七-簡易煙囪設計原則" class="nav-link" data-scroll-target="#七-簡易煙囪設計原則"><strong>七、 簡易煙囪設計原則</strong></a></li>
+  <li><a href="#七-簡易煙囪設計原則-續" id="toc-七-簡易煙囪設計原則-續" class="nav-link" data-scroll-target="#七-簡易煙囪設計原則-續"><strong>七、 簡易煙囪設計原則 (續)</strong></a></li>
+  <li><a href="#七-簡易煙囪設計原則-續-1" id="toc-七-簡易煙囪設計原則-續-1" class="nav-link" data-scroll-target="#七-簡易煙囪設計原則-續-1"><strong>七、 簡易煙囪設計原則 (續)</strong></a></li>
+  </ul></li>
+  <li><a href="#lev-職安衛法規重點" id="toc-lev-職安衛法規重點" class="nav-link" data-scroll-target="#lev-職安衛法規重點">LEV 職安衛法規重點</a>
+  <ul class="collapse">
+  <li><a href="#lev-職安衛法規重點-續" id="toc-lev-職安衛法規重點-續" class="nav-link" data-scroll-target="#lev-職安衛法規重點-續">LEV 職安衛法規重點 (續)</a></li>
+  <li><a href="#局部排氣之設計與應用考量" id="toc-局部排氣之設計與應用考量" class="nav-link" data-scroll-target="#局部排氣之設計與應用考量">局部排氣之設計與應用考量</a></li>
+  <li><a href="#局部排氣系統設計-hsg-258" id="toc-局部排氣系統設計-hsg-258" class="nav-link" data-scroll-target="#局部排氣系統設計-hsg-258">局部排氣系統設計 (HSG 258)</a></li>
+  <li><a href="#接管工程-hsg-258" id="toc-接管工程-hsg-258" class="nav-link" data-scroll-target="#接管工程-hsg-258">接管工程 (HSG 258)</a></li>
+  <li><a href="#補氣make-up-air-hsg-258" id="toc-補氣make-up-air-hsg-258" class="nav-link" data-scroll-target="#補氣make-up-air-hsg-258">補氣（Make-up air）— HSG 258</a>
+  <ul class="collapse">
+  <li><a href="#補氣的設計" id="toc-補氣的設計" class="nav-link" data-scroll-target="#補氣的設計">補氣的設計</a></li>
+  </ul></li>
+  <li><a href="#局排或整體換氣" id="toc-局排或整體換氣" class="nav-link" data-scroll-target="#局排或整體換氣">局排或整體換氣？</a></li>
+  <li><a href="#局部排氣系統其他事項-hsg-258" id="toc-局部排氣系統其他事項-hsg-258" class="nav-link" data-scroll-target="#局部排氣系統其他事項-hsg-258">局部排氣系統其他事項 (HSG 258)</a></li>
+  <li><a href="#hsg-258-確認-lev-控制有效性的方法" id="toc-hsg-258-確認-lev-控制有效性的方法" class="nav-link" data-scroll-target="#hsg-258-確認-lev-控制有效性的方法">HSG 258 確認 LEV 控制有效性的方法</a></li>
+  <li><a href="#hsg-258-局部排氣lev量測方法" id="toc-hsg-258-局部排氣lev量測方法" class="nav-link" data-scroll-target="#hsg-258-局部排氣lev量測方法">HSG 258 局部排氣（LEV）量測方法</a></li>
+  <li><a href="#研究文獻" id="toc-研究文獻" class="nav-link" data-scroll-target="#研究文獻">研究文獻</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="局部排氣控制與設計.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./局部排氣控制與設計.html">職衛師</a></li><li class="breadcrumb-item"><a href="./局部排氣控制與設計.html">局部排氣控制與設計</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">局部排氣控制與設計</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter Ho. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 1, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="講師簡介" class="level2">
+<h2 class="anchored" data-anchor-id="講師簡介">講師簡介</h2>
+<ul>
+<li><p>姓名：何明信</p></li>
+<li><p>學歷：成大環醫所 、職安衛技師</p></li>
+<li><p>經歷：檢查員30年 (製造、危機設、營造、化工職衛科、專委)</p></li>
+<li><p>現職：114年退休</p></li>
+<li><p>E-mail：msho7336959@gmail.com</p></li>
+</ul>
+</section>
+<section id="第四十五章-局部排氣控制與設計" class="level1">
+<h1>第四十五章 局部排氣控制與設計</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>防止呼吸危害 (空氣中汙染物)</strong></p>
+</div>
+</div>
+<p><a href="images/工業通風/呼吸危害與防護.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/工業通風/呼吸危害與防護.png" class="img-fluid" style="width:50.0%"></a></p>
+<section id="參考資料" class="level2">
+<h2 class="anchored" data-anchor-id="參考資料">參考資料</h2>
+<ol type="1">
+<li><p>HSE, <u>Controlling airborne contaminants at work</u> <u>- A guide to local exhaust ventilation (LEV)</u>, 2017,<a href="https://www.hse.gov.uk/pubns/books/hsg258.htm">HSG 258</a></p></li>
+<li></li>
+</ol>
+</section>
+<section id="一-局部排氣目的使用時機" class="level2">
+<h2 class="anchored" data-anchor-id="一-局部排氣目的使用時機">一、 局部排氣目的、使用時機</h2>
+<ul>
+<li>局部排氣（Local Exhaust Ventilation, LEV）
+<ul>
+<li><strong>指藉動力強制吸引並排出已發散有害物之設備</strong>。(有機/粉塵)</li>
+<li>LEV is an engineering control system to reduce exposures to airborne contaminants such as dust, mist, fume, vapour or gas in a workplace. (HSG 258)</li>
+</ul></li>
+</ul>
+<section id="a-局部排氣的核心目的與優勢" class="level3">
+<h3 class="anchored" data-anchor-id="a-局部排氣的核心目的與優勢">A、 局部排氣的核心目的與優勢</h3>
+<ul>
+<li><p><strong>集中高濃度捕集與排除</strong>：作業場所產生<strong>可能散布空氣中有害物質</strong>(粉塵、氣體、蒸氣或煙霧等)時，處於高濃度狀態且尚未擴散、混合至廠區清潔空氣前，利用吸氣氣流在局部範圍內將其<strong>有效捕集並抽離</strong>，後續再經由空氣清淨裝置處理後排放至大氣。</p></li>
+<li><p><strong>經濟性與高效性</strong>：不是稀釋有害物(整體換氣)，是直接針對污染源進行排除污染物，在設備運轉與能源消耗上也更具經濟效益。</p></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>LEV ?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://youtu.be/Ky8y2jDk6i8" title="What is Local Exhaust Ventilation?">What is Local Exhaust Ventilation?</a></p>
+</div>
+</div>
+</section>
+</section>
+<section id="b局部排氣裝置使用時機" class="level2">
+<h2 class="anchored" data-anchor-id="b局部排氣裝置使用時機">B、局部排氣裝置使用時機</h2>
+<ul>
+<li><p>缺乏更佳替代方案時</p></li>
+<li><p>實測數據或勞工體感反映危害時</p></li>
+<li><p>符合我國法規強制規範時</p>
+<ul>
+<li>《有機溶劑中毒預防規則》、《鉛中毒預防規則》、《四烷基鉛中毒預防規則》、《特定化學物質危害預防標準》及《粉塵危害預防標準》等法規</li>
+</ul></li>
+<li><p>追求綜合效益提昇時</p></li>
+<li><p><strong>發生源具備小、固定或易散布特性時</strong></p></li>
+<li><p><strong>發生源緊鄰勞工呼吸區（Breathing Zone）時</strong></p></li>
+<li><p>發生量呈動態不穩定時</p></li>
+<li><p><strong>高危害或低容許暴露濃度（PEL）之化學品作業時</strong></p></li>
+</ul>
+</section>
+<section id="合理可行-1" class="level2">
+<h2 class="anchored" data-anchor-id="合理可行-1">合理可行? [1]</h2>
+<section id="危害控制階層" class="level3">
+<h3 class="anchored" data-anchor-id="危害控制階層">危害控制階層</h3>
+<p>在某些狀況下，局部排氣不見得是 可行的控制措施，例如有太多有害物發生源或規模大到局部排氣難以控制的有害物雲團。其它控制選項包括：</p>
+<p>(1) 消除有害物發生源； (2) 以較安全的物料取代現有物料； (3) 減少製程中有害物發生源之規模； (4) 調整製程以減少排氣頻率或時段； (5) 減少每一製程的勞工人數； (6) 採用簡易控制措施，例如設備加蓋密合。</p>
+</section>
+<section id="設計安裝lev前應評估事項" class="level3">
+<h3 class="anchored" data-anchor-id="設計安裝lev前應評估事項">設計安裝LEV前，應評估事項？</h3>
+<ol type="1">
+<li>空氣中有害物之重要性質。</li>
+<li>氣體丶蒸氣、粉塵、及霧滴如何逸散到空氣中。</li>
+<li>有害物雲圍如何隨氣流移動。</li>
+<li>工作場所中有害物發生源之可能製程。</li>
+<li>操作者在有害物發生源附近工作之必要性。</li>
+<li>需要多少控制措施。</li>
+<li>如何準備規格給LEV設計者。</li>
+<li>要告訴局部排氣供應商什麼。</li>
+</ol>
+<p>(HSG 258)</p>
+</section>
+</section>
+<section id="空氣中有害物-部分特性" class="level2">
+<h2 class="anchored" data-anchor-id="空氣中有害物-部分特性">空氣中有害物? (部分特性)</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 40%">
+<col style="width: 37%">
+<col style="width: 13%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>名稱 (Name)</strong></td>
+<td><strong>說明與粒徑 (Description and size)</strong></td>
+<td><strong>可見度 (Visibility)</strong></td>
+<td><strong>範例 (Examples)</strong></td>
+</tr>
+<tr class="even">
+<td><p><strong>粉塵</strong></p>
+<p>(Dust)</p></td>
+<td><p>固體微粒－由物料處置提供（例如粉體搬運），或由製程產生（例如粉碎與研磨）。</p>
+<p>• <strong>可吸入性微粒粒徑</strong>：<span class="math inline">\(0.01\ \mu\text{m}\)</span> 至 <span class="math inline">\(100\ \mu\text{m}\)</span></p>
+<p>• <strong>可呼吸性微粒粒徑</strong>：<span class="math inline">\(10\ \mu\text{m}\)</span> 以下</p></td>
+<td><p>在一般光線下：</p>
+<p>• 可吸入性粉塵雲為<strong>部分可見</strong>。</p>
+<p>• 可呼吸性粉塵雲在濃度高達數十 <span class="math inline">\(\text{mg/m}^3\)</span> 時，<strong>實際上仍看不見</strong>。</p></td>
+<td>穀物粉塵、木屑、矽粉。</td>
+</tr>
+<tr class="odd">
+<td><p><strong>燻煙</strong></p>
+<p>(Fume)</p></td>
+<td><p>固體蒸發（汽化）後再冷凝而成之微粒。</p>
+<p>• <strong>微粒粒徑</strong>：<span class="math inline">\(0.001\ \mu\text{m}\)</span> 至 <span class="math inline">\(1\ \mu\text{m}\)</span></p></td>
+<td>燻煙雲往往較為密集。它們是<strong>部分可見</strong>的。燻煙及煙霧（smoke）通常比相同濃度的粉塵<strong>更容易被肉眼看見</strong>。</td>
+<td>橡膠燻煙、銲錫燻煙、焊接燻煙。</td>
+</tr>
+<tr class="even">
+<td><p><strong>霧滴</strong></p>
+<p>(Mist)</p></td>
+<td><p>液態微粒－由製程所產生（例如透過噴塗）。</p>
+<p>• <strong>微粒粒徑範圍</strong>：<span class="math inline">\(0.01\ \mu\text{m}\)</span> 至 <span class="math inline">\(100\ \mu\text{m}\)</span>，但當揮發性液體蒸發時，其粒徑分布可能會發生改變。</p></td>
+<td><strong>同粉塵</strong></td>
+<td>電鍍、噴漆、水蒸汽。</td>
+</tr>
+<tr class="odd">
+<td><p><strong>纖維</strong></p>
+<p>(Fibres)</p></td>
+<td><p>固體微粒－其長度為直徑的數倍。</p>
+<p>• <strong>微粒粒徑</strong>：<strong>同粉塵</strong></p></td>
+<td><strong>同粉塵</strong></td>
+<td>石綿、玻璃纖維。</td>
+</tr>
+<tr class="even">
+<td><p><strong>蒸氣</strong></p>
+<p>(Vapour)</p></td>
+<td><p>物質的氣相狀態，該物質在常溫（室溫）下通常為液態或固態。</p>
+<p>• 其行為表現如同氣體。</p></td>
+<td><p><strong>通常看不見</strong>。</p>
+<p>在極高濃度下，充滿蒸氣的雲霧<strong>可能勉強可見</strong>。</p></td>
+<td>苯乙烯、汽油、丙酮、汞（水銀）、碘。</td>
+</tr>
+<tr class="odd">
+<td><p><strong>氣體</strong></p>
+<p>(Gas)</p></td>
+<td>在常溫（室溫）下即為氣態的物質。</td>
+<td><strong>通常看不見</strong>－有些氣體在高度濃縮時<strong>會帶有顏色</strong>。</td>
+<td>氯氣、一氧化碳。</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>註:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>粒徑超過100 微米之粉塵為不可吸入性，因大到無法被吸入，它們會自空氣中沉降到樓池板及製程附近表面。</p>
+</div>
+</div>
+</section>
+<section id="粉塵" class="level2">
+<h2 class="anchored" data-anchor-id="粉塵">粉塵</h2>
+<ul>
+<li><p>大部分來自有機物，例如木材或麵粉的粉塵塵雲中的粒狀物，主要是可吸入性的，少部分屬可呼吸性粉塵。</p></li>
+<li><p>大部分來自礦物（例如石頭、混凝土）的粉塵塵雲中的粒狀物，主要是可呼吸性的，少部分屬吸入性粉塵，但此較大粒狀物佔了大部分之粉塵重量。</p></li>
+<li><p>肉眼很難看得見氣懸塵雲的全貌，有些狀況下，例如當所有粒狀物粒往都小於可吸入性”時，此塵雲將完全不可見</p></li>
+<li><p>較小之粒狀物會懸浮在空氣中（可達數分鐘），並隨氣流運動，意即，如果製程產生快速氣流（如畊磨輪或圓盤鋸），細微粉塵將會被帶至離有害物發生源較遠處，使粉塵控制變得困難。</p></li>
+<li><p>製程產生的與製程相關之物質（粉塵丶燻煙、霧滴）可能具磨損性或黏性，或容易冷凝，有些可能具易燃性，這些特性要納入局部排氣設計考量。</p></li>
+</ul>
+</section>
+<section id="粒狀物粒徑與吸入沉降位置" class="level2">
+<h2 class="anchored" data-anchor-id="粒狀物粒徑與吸入沉降位置">粒狀物粒徑與吸入沉降位置</h2>
+<ul>
+<li><p><strong>粉塵危害</strong>在於<strong>顆粒大小</strong>以及<strong>在呼吸道中的沉積位置</strong></p>
+<ul>
+<li>遵循國際標準化組織（ISO）、歐洲標準化委員會（CEN）與美國政府工業衛生師協會（ACGIH）共同制定的國際共識。</li>
+</ul></li>
+<li><p><strong>吸入性分率 (Inhalable Fraction)：</strong> 通過鼻子和嘴巴吸入的總空氣懸浮物質量分率。 D50​=<span class="math inline">\(100\ \mu\text{m}\)</span></p></li>
+<li><p><strong>胸腔性分率 (Thoracic Fraction)：</strong> 吸入的顆粒中，能穿透超越喉部的質量分率。D50=<span class="math inline">\(10\ \mu\text{m}\)</span></p></li>
+<li><p><strong>可呼吸性分率 (Respirable Fraction)：</strong> 吸入的顆粒中，能穿透到無纖毛氣道（肺泡區）的質量分率。D50​=<span class="math inline">\(4\ \mu\text{m}\)</span></p></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Brown等人的研究論文：</strong> 指出<strong>現行的採樣標準（設</strong> D50=10μm 與 4μm）是為了「保護」而故意高估的真實沉積量。他們根據真實生理參數（成人/兒童、鼻/口呼吸比例）重新計算後發現，<strong>真正的胸腔性分率</strong> D50​ 其實大約在 3−5μm（成人約 3μm，兒童約 5μm），遠小於現行標準的 10μm。這解釋了為什麼空氣污染研究中，<strong>細懸浮微粒（</strong>PM2.5​） 的健康效應遠比粗顆粒明確。</p>
+</blockquote>
+<p><span class="citation" data-cites="brown2013">(<a href="#ref-brown2013" role="doc-biblioref">Brown et al. 2013</a>)</span></p>
+</section>
+<section id="二-為何要取-50-cut-size" class="level2">
+<h2 class="anchored" data-anchor-id="二-為何要取-50-cut-size">二、 為何要取 50% cut-size？</h2>
+<ul>
+<li>取 50% cut-size（也就是某粒徑的顆粒有 50% 能穿透進入該區域，50% 被攔截在外）有兩個主要理由：<strong>一個是生理統計分布，另一個是風險管理妥協(保護勞工)。</strong></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/50%%20cut-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/工業通風/50%%20cut-size.png" class="img-fluid"></a><a href="images/工業通風/cut-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/工業通風/cut-size.png" class="img-fluid"></a><a href="images/工業通風/50%%20cut-size.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/工業通風/50%%20cut-size.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="為何要取-50-cut-size" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="為何要取-50-cut-size">為何要取 50% cut-size？</h2>
+<ul>
+<li>取 50% cut-size（也就是某粒徑的顆粒有 50% 能穿透進入該區域，50% 被攔截在外）有兩個主要理由：<strong>一個是生理統計的必然性，另一個是工程與政策的妥協。</strong></li>
+</ul>
+<section id="生理事實粒徑分離不是一刀切" class="level4">
+<h4 class="anchored" data-anchor-id="生理事實粒徑分離不是一刀切">1. 生理事實：粒徑分離不是一刀切</h4>
+<ul>
+<li><p>人體呼吸道對於顆粒的過濾不是「10μm 以上的進不去，以下的全部進去」。實際上，這是一條<strong>平滑的 S 型曲線（累積對數常態分佈）</strong>。</p>
+<ul>
+<li><p>一個 12μm 的顆粒，<strong>有極低的機率（例如 &lt; 20%）</strong> 會穿過鼻腔到達胸腔。</p></li>
+<li><p>一個 8μm 的顆粒，<strong>有較高的機率（例如 &gt; 70%）</strong> 會到達胸腔。</p></li>
+</ul></li>
+<li><p>D50=10μm意味著：直徑 10μm的顆粒，恰好有 <strong>50%</strong> 的機率會穿過喉部進入胸腔區域，另外 50% 會被攔截在外部。</p></li>
+<li><p><strong>用 50% 作為代表值，是統計分佈的標準做法</strong>（類似國民身高中位數）。這給出了一個簡潔、易懂的特徵粒徑，用來描述複雜的過濾行為。</p></li>
+</ul>
+</section>
+<section id="政策保護的妥協故意把標準訂得更嚴" class="level4">
+<h4 class="anchored" data-anchor-id="政策保護的妥協故意把標準訂得更嚴">2. 政策保護的妥協：故意把標準訂得更嚴</h4>
+<p>現行國際標準（ACGIH、ISO、CEN）的 50% cut-size 是 <strong>「有意識地保守」</strong>（保守在此意味著更安全）。</p>
+<ul>
+<li><p><strong>參考對象：</strong> 標準制定時，考慮的是 <strong>「口呼吸」</strong> 狀態。因為人在運動或重體力勞動時會改用嘴巴呼吸，鼻腔過濾效率歸零，此時大顆粒更容易進入肺部。雖然一般人日常多是鼻呼吸，但為了保護那些在工作中張嘴呼吸的勞工，標準選用了<strong>最糟糕的情況（worst-case scenario）</strong>。</p></li>
+<li><p><strong>目的：</strong> 為了確保即使在最不利的呼吸模式下，採樣標準也能涵蓋所有可能造成危害的顆粒，因此刻意將 D50​ 向<strong>更大的粒徑</strong>偏移（例如把胸腔性分率訂在 10μm，即使實際穿透率可能低很多）。這樣做會<strong>高估</strong>（overestimate）實際進入肺部的粉塵質量。</p></li>
+</ul>
+<p><strong>簡單總結：</strong><br>
+之所以用 <strong>50% cut-size</strong>，是因為它能簡潔地描述一條複雜的 S 型過濾曲線。而之所以把胸腔訂在 10μm、可呼吸性訂在 4μm，是因為<strong>政策上決定要保護那些張嘴呼吸的人</strong>，這是一種工程上的安全係數。Brown 等人 2013 年的論文正是想提醒大家：實際生理情況可能比現行標準嚴格得多（實際 D50更低）。</p>
+</section>
+</section>
+<section id="cut-size-的本質為什麼是-50" class="level2" data-visibility="hidden">
+<h2 data-visibility="hidden" class="anchored" data-anchor-id="cut-size-的本質為什麼是-50">50% cut-size 的本質：為什麼是 50%？</h2>
+<section id="統計上的必然選擇" class="level3">
+<h3 class="anchored" data-anchor-id="統計上的必然選擇">1. 統計上的必然選擇</h3>
+<p>人體呼吸道對粒徑的分離不是「全有或全無」，而是一條 <strong>S 型曲線（累積對數常態分佈）</strong>。用 <strong>50% 穿透率</strong> 作為特徵值，是統計學上描述這種平滑過渡曲線最簡潔的方式，類似於「中位數」。</p>
+</section>
+<section id="生理上的分界點" class="level3">
+<h3 class="anchored" data-anchor-id="生理上的分界點">2. 生理上的「分界點」</h3>
+<ul>
+<li><p>D50=4μm：小於此粒徑的顆粒有超過 50% 的機率進入肺泡區；大於此粒徑則多半卡在氣道。</p></li>
+<li><p>D50=10μmD50​=10μm：小於此粒徑的顆粒有超過 50% 的機率穿過喉部進入胸腔。</p></li>
+</ul>
+<p>這個數字讓人能快速理解：<strong>什麼粒徑「開始」進入某個區域，什麼粒徑「開始」被擋在外面</strong>。</p>
+</section>
+</section>
+<section id="二-除了呼吸保護50-cut-size-還有哪些用途" class="level2">
+<h2 class="anchored" data-anchor-id="二-除了呼吸保護50-cut-size-還有哪些用途">二、 除了呼吸保護，50% cut-size 還有哪些用途？</h2>
+<section id="採樣儀器的設計基準工程錨點" class="level3">
+<h3 class="anchored" data-anchor-id="採樣儀器的設計基準工程錨點">1. 採樣儀器的設計基準（工程錨點）</h3>
+<p>這是 <strong>最核心的衍生用途</strong>。採樣器（如旋風分離器、衝擊器）無法完美複製人體過濾曲線，但工程師可以設計一個裝置，使其在某個流量下對某個粒徑達到 <strong>50% 捕集效率</strong>，並使整條曲線盡量接近人體 S 型曲線。</p>
+<p><strong>例子：</strong></p>
+<ul>
+<li><p><strong>IOM 採樣器</strong>（吸入性）：設計目標 D50=100μm，實際操作流量 2L/min。</p></li>
+<li><p><strong>GK2.69 旋風分離器</strong>（胸腔性）：設計目標 D50=10μm，操作流量 1.6L/min1.6L/min。</p></li>
+<li><p><strong>Higgins-Dewell 旋風分離器</strong>（可呼吸性）：設計目標 D50=4μm，操作流量 2.2L/min。</p></li>
+</ul>
+<p><strong>沒有 50% cut-size 這個數字，工程師就沒有目標可以對準。</strong> 它讓採樣器的設計從「亂猜」變成「有依據的逼近」。</p>
+</section>
+<section id="法規標準的比較基準合規判定" class="level3">
+<h3 class="anchored" data-anchor-id="法規標準的比較基準合規判定">2. 法規標準的比較基準（合規判定）</h3>
+<p>各國法規（OSHA、MSHA、NIOSH、HSE）在設定粉塵容許濃度時，必須指定是哪一種分率：</p>
+<ul>
+<li><p>煤塵：可呼吸性分率（D50=4μm），容許濃度 2mg/m。</p></li>
+<li><p>木屑粉塵：吸入性分率（D50=100μm），容許濃度 5mg/m3。</p></li>
+</ul>
+<p><strong>若沒有統一的 50% cut-size 定義，不同實驗室的數據無法比較，也無法判定工廠是否超標。</strong></p>
+</section>
+<section id="流行病學研究的暴露指標健康效應歸因" class="level3">
+<h3 class="anchored" data-anchor-id="流行病學研究的暴露指標健康效應歸因">3. 流行病學研究的暴露指標（健康效應歸因）</h3>
+<p>流行病學研究需要一個 <strong>可操作的暴露指標</strong>，來與疾病發生率進行統計分析。粒徑分率（以 50% cut-size 為代表）提供了這樣的指標。</p>
+<p><strong>經典案例：</strong></p>
+<ul>
+<li><p>美國 PM2.52.5​ 空氣品質標準的制定，部分基礎來自將 <strong>粒徑 &lt;2.5μm</strong> 的暴露量與心肺疾病死亡率進行統計迴歸。</p></li>
+<li><p>煤礦工人的塵肺症研究證明，<strong>可呼吸性分率（</strong>D50=4μm） 比總粉塵更準確地預測疾病。</p></li>
+</ul>
+<p><strong>若沒有以 50% cut-size 定義的分率，流行病學家就無法回答：「到底是哪個粒徑區間在殺人？」</strong></p>
+</section>
+<section id="綜合總結50-cut-size-的角色" class="level3">
+<h3 class="anchored" data-anchor-id="綜合總結50-cut-size-的角色">綜合總結：50% cut-size 的角色</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">用途</th>
+<th style="text-align: left;">說明</th>
+<th style="text-align: left;">例子</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>呼吸保護</strong></td>
+<td style="text-align: left;">定義哪些粒徑進入呼吸道哪個區域</td>
+<td style="text-align: left;">肺泡只允許 &lt;4μm</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>採樣儀器設計</strong></td>
+<td style="text-align: left;">提供工程設計的目標粒徑</td>
+<td style="text-align: left;">旋風分離器設計目標 D50=4μm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>法規合規判定</strong></td>
+<td style="text-align: left;">統一標準，讓數據可比較</td>
+<td style="text-align: left;">煤塵容許濃度 2mg/m3（可呼吸性）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>流行病學研究</strong></td>
+<td style="text-align: left;">將暴露量與疾病關聯</td>
+<td style="text-align: left;">PM2.5與心肺疾病</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>風險評估調整</strong></td>
+<td style="text-align: left;">依族群、呼吸模式調整</td>
+<td style="text-align: left;">兒童的 D50比成人高</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>爭議焦點</strong></td>
+<td style="text-align: left;">定義相同不等於測值一致</td>
+<td style="text-align: left;">Bartley：標準太寬，測值可差 6 倍</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="一句話總結" class="level3">
+<h3 class="anchored" data-anchor-id="一句話總結">一句話總結</h3>
+<blockquote class="blockquote">
+<p><strong>50% cut-size 是一個「務實的妥協」：它讓科學家、工程師、法規制定者與工業衛生師能夠用一個共同的數字溝通，但同時也必須記住——它只是一個近似值，真實的人體比任何一條曲線都複雜。</strong></p>
+</blockquote>
+</section>
+</section>
+<section id="氣體與蒸氣空氣混合物" class="level2">
+<h2 class="anchored" data-anchor-id="氣體與蒸氣空氣混合物">氣體與蒸氣－空氣混合物</h2>
+<ul>
+<li><p>蒸氣與氣體在空氣中混合並隨空氣移動。</p></li>
+<li><p>蒸氣－空氣混合物，與氣體－空氣混合物可被深深吸入肺部中。</p></li>
+<li><p>飽和蒸氣－空氣混合物（雲）存在於液面上方，一開始蒸發後，它是比空氣重而 往下沉，遠離有害物發生源。如杲周遭不易稀釋，例如此蒸氣－空氣混合物流入 局限空間，此蒸氣－空氣混合物將會沉降，如此會產生中募風險，視蒸氣本質， 可能還有火災爆炸風險。</p></li>
+<li><p>局部排氣控制措旄應該在蒸氣－空氣混合物與作業瓖境空氣混合前，就將其包圍並捕集。</p></li>
+</ul>
+</section>
+<section id="製程與有害物發生源" class="level2">
+<h2 class="anchored" data-anchor-id="製程與有害物發生源">製程與有害物發生源</h2>
+<ul>
+<li><p>為使局部排氣能有效運作，應妥善瞭解製程與有害物發生源。</p></li>
+<li><p>有害物發生源可分成4 種型態： (1) 具浮力的，如熱燻煙； (2) 噴射至流動空氣中，如以噴槍噴出； (3) 逸散至作業環境空氣中，如跟箸側風流動；以及 (4) 具方向性的。</p></li>
+<li><p>局部排氣系統設計者應瞭解製程如何產生有害物發生源，以及有害物雲團如何自有害物發生源流出。</p></li>
+<li><p>同一製程在不同階段都會產生有害物發生源。</p></li>
+</ul>
+<p><a href="images/工業通風/Figure 4 The source and contaminant cloud.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/工業通風/Figure 4 The source and contaminant cloud.png" class="img-fluid"></a></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Common processes , sources and possible controls (see HSG 258 Table 2)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="二-局部排氣結構及各元件功能" class="level2">
+<h2 class="anchored" data-anchor-id="二-局部排氣結構及各元件功能">二、 局部排氣結構及各元件功能</h2>
+<p><strong>一、 局部排氣系統總體架構與壓力配置原則</strong></p>
+<ul>
+<li><strong>系統組成</strong>：標準的局部排氣裝置由前端至後端依序為：氣罩（hood）、吸氣導管（duct）、空氣清淨裝置（air cleaner）、排氣機（fan）、排氣導管及排氣口（stack）。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="images/工業通風/圖1 單一導管局部排氣系統之共通元件.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/工業通風/圖1 單一導管局部排氣系統之共通元件.png" class="img-fluid"></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">圖1 單一導管局部排氣系統之共通元件 (引自 HSG258)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>管內壓力變化</strong>：以排氣機為分界，其前方的所有導管稱為「<strong>吸氣導管</strong>」，內部氣流處於<strong>負壓狀態</strong>；排氣機之後的所有導管稱為「<strong>排氣導管</strong>」，內部氣流則處於<strong>正壓狀態</strong>。</p></li>
+<li><p><strong>清淨裝置之位置</strong>：在工程實務上，空氣清淨裝置通常配置於排氣機「之前」。</p></li>
+</ul>
+</section>
+<section id="二-各核心元件功能" class="level2">
+<h2 class="anchored" data-anchor-id="二-各核心元件功能">二、 各核心元件功能</h2>
+<section id="氣罩-hood" class="level3">
+<h3 class="anchored" data-anchor-id="氣罩-hood"><strong>1. 氣罩 (Hood)</strong></h3>
+<ul>
+<li><p><strong>功能</strong>：作為系統的入口部分，其設計須包圍污染物發生源的圍壁，或在無法包圍時盡量貼近發生源設置開口面，利用產生的吸氣氣流，將污染物引導入氣罩內部。</p></li>
+<li><p><strong>型式分類</strong>：實務上依據製程特性，通常分為五大類：包圍式（enclose）、崗亭式（booth）、外裝型氣罩（exterior）、接收式（receiver）以及吹吸式（push-pull）。</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><a href="images/工業通風/圖10 局部排氣型式分類.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/工業通風/圖10 局部排氣型式分類.png" class="img-fluid"></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><a href="images/工業通風/Figure 9 Effectiveness of various types of LEV.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/工業通風/Figure 9 Effectiveness of various types of LEV.png" class="img-fluid"></a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">圖10 局部排氣型式分類 (引自 HSG258)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="二-各核心元件功能-續" class="level2">
+<h2 class="anchored" data-anchor-id="二-各核心元件功能-續">二、 各核心元件功能 (續)</h2>
+<section id="導管-duct" class="level3">
+<h3 class="anchored" data-anchor-id="導管-duct"><strong>2. 導管 (Duct)</strong></h3>
+<ul>
+<li><p><strong>功能</strong>：負責流體運輸，包含從氣罩、空氣清淨裝置至排氣機的「吸氣管路」，以及從排氣機至排氣口的「搬運管路（排氣導管）」。</p></li>
+<li><p><strong>設計權衡（Trade-off）</strong>：設計導管尺寸時，必須同時考量「排氣量」與污染物流經時所產生的「壓力損失」，導管截面積與長度是重要影響因子。</p>
+<ul>
+<li><div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>導管截面積若設計較大，雖能有效降低壓力損失，但會導致管內流速減低；若流速不足，極易造成大粒徑粉塵沉降並堆積於導管內。</p>
+</div>
+</div>
+</div></li>
+</ul></li>
+</ul>
+</section>
+<section id="空氣清淨裝置-air-cleaner" class="level3">
+<h3 class="anchored" data-anchor-id="空氣清淨裝置-air-cleaner"><strong>3. 空氣清淨裝置 (Air Cleaner)</strong></h3>
+<ul>
+<li><p><strong>功能</strong>：利用物理或化學方法將氣流中的污染物予以清除，以符合排放大氣標準。</p></li>
+<li><p><strong>設備分類</strong>：</p>
+<ul>
+<li><p><strong>除塵裝置</strong>（粒狀物）：如重力沉降室、慣性集塵機、離心分離機、濕式洗塵器、靜電集塵器及袋式集塵器等。</p></li>
+<li><p><strong>廢氣處理裝置</strong>（氣態物）：如充填塔（吸收塔）、洗滌塔、焚燒爐等。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="二-各核心元件功能-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="二-各核心元件功能-續-1">二、 各核心元件功能 (續)</h2>
+<section id="排氣機-fan" class="level3">
+<h3 class="anchored" data-anchor-id="排氣機-fan"><strong>4. 排氣機 (Fan)</strong></h3>
+<ul>
+<li><p><strong>功能</strong>：通常為排氣風扇，是局部排氣裝置的動力來源，藉由在導管前後產生不同壓力來帶動氣流。</p></li>
+<li><p><strong>常見型式</strong>：</p>
+<ul>
+<li><p><strong>軸流式 (Axial)</strong>：排氣量大但靜壓低，形體較小且可直接置於導管內。</p></li>
+<li><p><strong>離心式 (Centrifugal)</strong>：體積較大，涵蓋低靜壓至高靜壓的廣泛範圍。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="煙囪-排氣口-stack" class="level3">
+<h3 class="anchored" data-anchor-id="煙囪-排氣口-stack"><strong>5. 煙囪 / 排氣口 (Stack)</strong></h3>
+<ul>
+<li><p><strong>過濾與排放設計</strong>：排氣煙囪在排氣前應通過高性能過濾材（HEPA）的過濾。</p></li>
+<li><p><strong>避免回流 (Re-entry)</strong> ：防止排出的污染空氣再次被吸入廠房</p>
+<ul>
+<li><p>排氣孔必須高於建築物屋頂 3 公尺以上，且垂直排氣速度須高於 15 米/秒。</p></li>
+<li><p>排氣口與新鮮空氣引入口保持 15 公尺以上的水平距離，不得回流至進氣口。</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="三-局部排氣控制原理" class="level2">
+<h2 class="anchored" data-anchor-id="三-局部排氣控制原理">三、 局部排氣控制原理</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>雇主應評估是否有可能消除有害物發生源，或減少它的規模。沒有經過前述 的事先評估，就貿然採用局部排氣到製程中，這是不好的作為。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 法定通風控制設備之三大分類</strong></p>
+<ul>
+<li>一般工業通風領域，通常分為「整體換氣」與「局部排氣」兩大類，但若結合我國職安衛相關法規的嚴格定義，危害控制設備實則分為三種層級：</li>
+</ul>
+<ol type="1">
+<li><p><strong>密閉設備</strong>：指將有害物的發生源完全密閉，這是防護層級最高的設備。</p></li>
+<li><p><strong>局部排氣裝置 (LEV)</strong>：指利用強制吸引氣流，將有害物發散源予以捕集並排出。</p></li>
+<li><p><strong>整體換氣裝置 (Dilution Ventilation)</strong>：指利用動力引入新鮮空氣，將已經發散於工作場所的有害物予以「稀釋」的設備。</p></li>
+</ol>
+</section>
+<section id="三-局部排氣控制原理-續" class="level2">
+<h2 class="anchored" data-anchor-id="三-局部排氣控制原理-續">三、 局部排氣控制原理 (續)</h2>
+<p><strong>二、 防護效率與我國法規的優先順序</strong></p>
+<p>局部排氣的控制汙染效率遠大於整體換氣，因此，在我國的各項危害預防法規中，皆明文要求事業單位必須「優先」設置密閉設備或局部排氣裝置：例如</p>
+<ul>
+<li><p><strong>《有機溶劑中毒預防規則》</strong>：當勞工於室內或儲槽等場所從事高危害的「第一種有機溶劑（或其混存物）」作業時，依法必須強制設置密閉設備或局部排氣裝置。</p></li>
+<li><p><strong>《鉛中毒預防規則》</strong>：針對毒性極高的鉛危害，除了在「通風不充分之場所從事鉛合金軟焊作業」這一特定情況下可特許設置整體換氣外，其餘所有的鉛作業皆全面禁止採用整體換氣，必須依賴局部排氣或密閉設備。</p></li>
+</ul>
+<p><strong>三、 局部排氣系統具工程經濟優勢</strong></p>
+<p><strong>四、 危害控制階層 (Hierarchy of Controls) :</strong> 源頭管理思維。</p>
+</section>
+<section id="局部排氣之有效性" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣之有效性"><strong>局部排氣之有效性?</strong></h2>
+<p>可以用下列方式來判斷：</p>
+<p>(1) 氣罩如何制約有害物雲圍；</p>
+<p>(2) 局部排氣引起之氣流如何將有害物雲圍帶入系統中；</p>
+<p>(3) 有害物雲圍進入製程操作者呼吸區的量少到什麼程度。</p>
+</section>
+<section id="四-氣罩與風管設計原則與要件" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件">四、 氣罩與風管設計原則與要件</h2>
+<section id="一-氣罩的核心功能與系統地位" class="level3">
+<h3 class="anchored" data-anchor-id="一-氣罩的核心功能與系統地位"><strong>一、 氣罩的核心功能與系統地位</strong></h3>
+<ul>
+<li><p><strong>第一道防線</strong>：氣罩設置於有害物發生源附近，其核心功能是在有害物逸散至作業環境或到達勞工呼吸帶之前，將其有效捕集。</p></li>
+<li><p><strong>決定系統效能的關鍵</strong>：氣罩是受污染空氣進入局部排氣系統的「入口」，因此氣罩的<strong>型式選擇</strong>、<strong>規格設計</strong>以及<strong>安裝位置</strong>，將影響整個系統的運作與捕捉效率。</p></li>
+</ul>
+<p><strong>二、 氣罩的五大基本型式與分類</strong></p>
+<ul>
+<li>工業氣罩主要分為五大類型：<strong>包圍式</strong>、<strong>崗亭式</strong>、<strong>外裝側吸式</strong>、<strong>接收式</strong>及<strong>吹吸式</strong>。要正確選用，必須釐清以下兩大分類邏輯：</li>
+</ul>
+<ol type="1">
+<li><p>包圍式 vs.&nbsp;外裝式（依「發生源<strong>相對位置</strong>」區分）：</p>
+<ul>
+<li><p><strong>包圍式</strong>：有害物發生源完全或部分位於氣罩「內部」 (<strong>氣罩包圍發生源</strong>)。</p></li>
+<li><p><strong>外裝式</strong>：發生源位於氣罩「外部」，氣罩裝設於發生源的附近進行抽氣。</p></li>
+</ul></li>
+<li><p>外裝式 vs.&nbsp;接收式（依「有害物<strong>初始動力</strong>」區分）：</p>
+<ul>
+<li><strong>外裝式</strong>：有害物產生時「無明顯動力」，必須完全仰賴局部排氣系統提供的抽氣動力。</li>
+<li><strong>接收式</strong>：有害物產生時本身已「具有動力」。例如：高溫熔爐產生的熱煙，或是研磨機產生的粉屑；此時氣罩設計只需「順勢接收」即可。</li>
+</ul></li>
+</ol>
+<p><a href="images/工業通風/氣罩的分類.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/工業通風/氣罩的分類.png" class="img-fluid"></a></p>
+</section>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>三、 包圍式氣罩（Enclosing Hood）</strong></p>
+<ul>
+<li>包圍式氣罩的防護層級最高，依其包圍程度與開口面數目，可細分為三類：</li>
+</ul>
+<ol type="1">
+<li><p><strong>完全包圍式（最高防護層級）</strong>：</p>
+<ul>
+<li><p>平常操作時幾乎沒有開口（或僅留極小開口），只有在停止操作或維修時才會打開。</p></li>
+<li><p>常見設備如覆蓋型氣罩、手套箱（glove hood）。</p></li>
+<li><p><strong>法規實務</strong>：我國職安衛法規（如特定化學物質、有機溶劑法規）中所優先要求設置的「密閉設備」，它是有害物暴露量最低的設計。</p></li>
+</ul></li>
+<li><p><strong>單面開口式</strong></p>
+<ul>
+<li>僅留一個操作面，例如實驗室常見的抽氣櫃（laboratory hood），或是採用崗亭型（booth）設計的噴塗室。</li>
+</ul></li>
+<li><p><strong>雙面開口式</strong></p>
+<ul>
+<li>兩端皆有開口，通常稱為隧道型氣罩，最常應用於具有輸送帶的乾燥或冷卻流程。</li>
+</ul></li>
+</ol>
+</section>
+<section id="包圍型氣罩-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="包圍型氣罩-hsg-258">包圍型氣罩 (HSG 258)</h2>
+<ul>
+<li><p>設計原則：</p>
+<ul>
+<li><p>包圍型氣罩內部壓力必須始終是低於包圍型氣罩外部的工作室。包圍型氣罩應該足夠大，以維持負壓並包圍任何突然逸散的有害物。</p></li>
+<li><p>在正壓大時提供警示。</p></li>
+<li><p>能最大化單向順暢氣流。</p></li>
+<li><p>作業人員往往需要有效的呼吸防護。</p></li>
+<li><p>通風需要持續有效運轉。</p></li>
+<li><p>良好人因設計。</p></li>
+</ul></li>
+</ul>
+<p><a href="images/工業通風/圖16 嘖漆室或隔離房.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/工業通風/圖16 嘖漆室或隔離房.png" class="img-fluid"></a></p>
+</section>
+<section id="部分包圍型崗亭式hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="部分包圍型崗亭式hsg-258">部分包圍型（崗亭式）(HSG 258)</h2>
+<ul>
+<li><p>設計原則：</p>
+<ul>
+<li><p>使有害物污染源或產生的有害物，朝向一個固定的方向高速移動。</p></li>
+<li><p>應標註正確的工作位置。</p></li>
+<li><p>留意尾流效應，尾流效應最具影響力的情況，出現在小崗亭、作業員在氣罩開口作業且接近有害物產生源。</p></li>
+<li><p>設計消除/減緩尾流效應，讓作業員之暴露降到最低。</p></li>
+<li><p>使受外部側風影響最小， 可行的語，使用可調式開口，以儘量減少氣罩開口面積。</p></li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/Figure 18 Large booth.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/工業通風/Figure 18 Large booth.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 20 Work positions i.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/工業通風/Figure 20 Work positions i.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 21 Partial enclosing hood.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/工業通風/Figure 21 Partial enclosing hood.png" class="img-fluid"></a></td>
+</tr>
+<tr class="even">
+<td><a href="images/工業通風/Figure 23 Wake effect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/工業通風/Figure 23 Wake effect.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 25 Reducing wake effect.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/工業通風/Figure 25 Reducing wake effect.png" class="img-fluid"></a></td>
+<td>側吸式及下抽式崗亭氣罩可減少尾流效應(HSG 258)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-1">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>四、 包圍式氣罩之排氣量推估</strong></p>
+<ul>
+<li><p>通風設計者必須學會計算所需的排氣量（Q）。對於包圍式氣罩（以崗亭式為例），其排氣量推估公式為：</p></li>
+<li><p><strong>基本公式</strong>：<span class="math inline">\(Q = V \times A = V \times W \times H\)</span></p>
+<ul>
+<li><p>Q：排氣量（m³/s）； V：氣罩開口面的平均風速（m/s）</p></li>
+<li><p>A：氣罩開口面積（m²），即 開口寬度 (<span class="math inline">\(W\)</span>) <span class="math inline">\(\times\)</span> 開口高度 (<span class="math inline">\(H\)</span>)</p></li>
+</ul></li>
+<li><p><strong>下方吸引式氣罩的特殊考量</strong></p>
+<ul>
+<li><p>若氣罩直接與工作臺面緊密相連（空氣100%從工作臺面上方被吸入），可直接使用上述式 (4-1) 計算。</p></li>
+<li><p>若氣罩未與工作臺面密合（部分空氣從工作臺面旁側被吸入，產生洩漏），這時氣罩的流場行為已退化為「外裝式氣罩」，必須改用外裝式氣罩的公式 (4-2) 來進行推估，所需的排氣量將大幅增加。</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>氣罩設計的最高指導原則就是「盡可能包圍發生源」。在設計通風系統時，請優先思考如何將製程做到「完全包圍（密閉設備）」，若不可行再退而求其次考慮「部分包圍（如崗亭式）」，最後才選擇「外裝式」。</p>
+</div>
+</div>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-2">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>一、 外裝式氣罩之應用時機與型式分類</strong></p>
+<ul>
+<li><p><strong>應用時機</strong>：為配合製程或物料進出的操作需要，在現場無法裝設包圍式氣罩時，退而求其次所採用的通風工程設計。</p></li>
+<li><p><strong>吸氣方向分類</strong>：依據氣流捕捉的方向，可分為側吸式（side-draft）、上方自由懸吊式（freely suspended）以及下方吸引式（down-draft）。</p></li>
+<li><p><strong>開口形狀分類</strong>：常見有圓形、矩形、狹縫型、百葉型及格條型。</p>
+<ul>
+<li>「狹縫型（槽溝型，slot）」定義：指矩形氣罩開口的展弦比（aspect ratio，即長寬比 H/W）小於 0.2。一旦小於此比例，其流場特性將不同於一般氣罩，不能再套用傳統的點源或球面流場公式。</li>
+</ul></li>
+</ul>
+<p><a href="images/工業通風/外裴型氯孱.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/工業通風/外裴型氯孱.png" class="img-fluid"></a></p>
+</section>
+<section id="外裝型氣罩-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="外裝型氣罩-hsg-258">外裝型氣罩 (HSG 258)</h2>
+<ul>
+<li><p>外裝型氣罩(Capturing hood)也被稱為捕捉型、外加型或捕集型氣罩。</p></li>
+<li><p>外裝型氣罩的有效性， 受到以下因素影響： (1) 有效捕集區當常太小； (2) 有效捕集區會被側風打亂； (3) 有效捕集區並未涵蓋作業區； (4) 工作本質會把作業區移出有效捕集區； (5) 捕集有效性會被高估； (6) 缺乏有效捕集區大小之資訊。</p></li>
+<li><p>設計原則：</p>
+<ul>
+<li><p>選擇或開發其他類型的局部排氣氣罩，讓氣罩對有害物發生源的包圍度更大。</p></li>
+<li><p>經驗法則：在距離外裝型氣罩開口1個氣罩直徑處，其風速已銳減為氣罩開口表面風速之<strong>1/10</strong>。</p></li>
+<li><p>清楚標示有效捕集區之範圍，或是標示具有最遠有效捕集距離之氣罩。</p></li>
+<li><p>外裝型氣罩加上凸緣。</p></li>
+</ul></li>
+<li><p><strong>捕集風速</strong>指在有害物發生源處所需之氣流速率，以克服有害物雲圍之向外運動，並將其抽進氣罩內。</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>有害物雲團逸散方式</th>
+<th>製程例</th>
+<th>捕集風速m/s</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>以很少或根本沒有能量的方式進入靜止空氣中</td>
+<td>蒸發、來自電鍍槽之霧滴</td>
+<td>0.25～0.5</td>
+</tr>
+<tr class="even">
+<td>以低能量的方式進入相當靜止的空氣中</td>
+<td>焊接、焊錫、轉移液體</td>
+<td>0.5～1.0</td>
+</tr>
+<tr class="odd">
+<td>以溫和能量的方式進入流動的空氣中</td>
+<td>碎石、塗布</td>
+<td>1.0～2.5</td>
+</tr>
+<tr class="even">
+<td>以高能量的方式進入紊流空氣中*</td>
+<td>切割、噴砂、打磨</td>
+<td>2.5～&gt;10</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p>*這類型的有害物雲團是難以用外裝型氣罩控制的。</p>
+</blockquote>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/Figure 30 Some capturing hoods.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td><img src="images/工業通風/Figure 31 Capture zone and working zone.png" class="img-fluid"></td>
+</tr>
+<tr class="odd">
+<td><img src="images/工業通風/圖32 凸緣對捕集風速等速線之影攀.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-3">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>二、 排氣量 (Q) 推估與公式</strong></p>
+<ul>
+<li>外裝式氣罩的排氣量推估，必須考量「捕捉風速 (V)」、「捕捉點與氣罩開口的垂直距離 (X)」以及「開口面積 (A)」。X 距離愈遠，所需的排氣量將呈指數級增加。</li>
+</ul>
+<p><strong>1. 一般自由懸吊外裝式氣罩 (基本型)</strong></p>
+<ul>
+<li><p><strong>適用條件</strong>：當 X 小於氣罩開口特性長度（圓形直徑或方形邊長）的 1.5 倍，且展弦比（H/W）大於 0.2 時。</p></li>
+<li><p><strong>推估公式</strong>：<span class="math inline">\(Q = V(10X^2 + A)\)</span></p>
+<ul>
+<li><p>Q：排氣量 (<span class="math inline">\(m^3/s\)</span>)</p></li>
+<li><p>V：捕捉點所需之氣罩開口面平均風速 (m/s)</p></li>
+<li><p>X：捕捉點與氣罩開口面之垂直距離 (m)</p></li>
+<li><p>A：氣罩開口面積 (<span class="math inline">\(m^2\)</span>)</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-4">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>2. 具有實體阻隔邊界之氣罩 (置於工作臺或地板)</strong></p>
+<ul>
+<li><p><strong>工程考量</strong>：當氣罩平放於工作臺面或地板上時，桌面/地面會阻擋來自氣罩下方或後方的無效空氣被吸入，這種「半球面」的流場能<strong>大幅提升抽氣的幾何效率</strong>。</p></li>
+<li><p><strong>推估公式</strong>：因為減少了無效抽氣，所需排氣量係數減半，公式修正為 <span class="math inline">\(Q = V(5X^2 + A)\)</span>。</p></li>
+</ul>
+<p><strong>3. 狹縫型氣罩 (Slot Hood)</strong></p>
+<ul>
+<li><p><strong>流場特性</strong>：當展弦比小於 0.2，流場呈現柱面狀分佈，其排氣量推估依循特定的經驗公式。</p></li>
+<li><p><strong>推估公式</strong>：<span class="math inline">\(Q = 3.7 \times V \times W \times X\)</span>（其中 W 為狹縫長度，單位 m）。</p></li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-5">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>三、 凸緣 (Flange / 法蘭) 的節能工程效益</strong></p>
+<ul>
+<li><p><strong>凸緣的流體力學功能</strong>：在氣罩開口四周加裝一塊擋板（凸緣寬度一般建議為氣罩開口或狹縫面積的平方根值）。其核心作用在於<strong>物理性地阻隔來自氣罩開口後方的無效氣流</strong>，迫使吸氣流場更集中於前方的污染發生源。</p></li>
+<li><p><strong>節能效果</strong>：加裝凸緣通常可<strong>減少約 25% 的所需排氣量</strong>，也就是排氣量可降為原設計的 75%。這在廠房整體通風系統的風機動力計算上，具有極大的經濟價值。</p></li>
+<li><p><strong>公式修正</strong>：</p>
+<ul>
+<li><p><strong>具凸緣之一般氣罩</strong>：排氣量由 (4-2) 式修正為 <span class="math inline">\(Q = 0.75 \times V(10X^2 + A)\)</span>。</p></li>
+<li><p><strong>具凸緣之狹縫式氣罩</strong>：排氣量由 (4-3) 式修正為 <span class="math inline">\(Q = 2.8 \times V \times W \times X\)</span>（因為 <span class="math inline">\(3.7 \times 0.75 \approx 2.8\)</span>）。</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>外裝式氣罩的設計重點在於「如何以最小的排氣量，在 X 距離外精準建立足夠的捕捉風速」。</p>
+<p>實務上，在評估現場改善方案時，必須盡可能將<strong>氣罩貼近污染源（縮小 X）</strong>、<strong>利用桌面等邊界阻擋無效氣流</strong>、並建議加裝<strong>凸緣</strong>，藉由這三大工程手段來確保系統運轉效能符合保護勞工與節約能源的雙重標準。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-6">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>一、 外裝式氣罩的距離衰減效應與「升級」設計-「實體阻隔」</strong></p>
+<ul>
+<li><p><strong>風速急遽衰減現象</strong>：外裝式氣罩的流場特性在於，抽氣氣流的風速在離開氣罩開口後會極速遞減。因此，通風設計的<strong>鐵律是氣罩必須盡可能貼近污染發生源</strong>。</p></li>
+<li><p><strong>臨界距離評估</strong>：實務上，氣罩與發生源的距離最好不要超過氣罩開口的規格尺寸（特性長度）。流體力學經驗指出，在距離氣罩開口等於該開口尺寸的位置，其捕捉風速大約只剩下開口處風速的<strong>1/10</strong>散。</p></li>
+<li><p><strong>工程升級（加裝擋板）</strong>：若外裝式氣罩設置於作業區正上方，在不干擾勞工原先作業的前提下，強烈建議在氣罩開口邊緣往下加裝擋板。若能將擋板往下延伸至作業區甚至作業區下方來盡量包圍污染源，這個等同於直接升級為高防護層級的「包圍式氣罩」。</p></li>
+<li><p><strong>擋板材質與設計彈性</strong>：擋板的選擇相當彈性，可採用<strong>塑膠布或壓克力材質</strong>；設計上可以是完整的一面，或是為配合物料進出與手部操作而裁切成的<strong>垂簾條式</strong>；固定方式亦可依現場需求設計為固定式或活動式。</p></li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-7" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-7">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>二、 常溫敞篷型懸吊式氣罩 (Canopy Hood) 之排氣量推估</strong></p>
+<ul>
+<li><p>當有害物發生源「<strong>不是熱源</strong>」（即常溫情況，無明顯向上的熱浮力）時，若採用敞篷型懸吊式氣罩，其所需的排氣量推估必須考量污染源的周長與氣罩的懸吊高度。</p></li>
+<li><p><strong>推估公式</strong>：<span class="math inline">\(Q = 1.4 \times V \times P \times Y\)</span>。</p></li>
+<li><p><strong>參數定義</strong>：</p>
+<ul>
+<li><p>Q：所需之排氣量。</p></li>
+<li><p>V：捕捉風速。在一般常溫作業下，依據危害物的發散特性，捕捉風速通常應設計在 0.25 至 2.5 m/s 之間。</p></li>
+<li><p>P：作業面的周長 (m)。</p></li>
+<li><p>Y：作業面與氣罩開口面之間的垂直高度差 (m)。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-8" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-8">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>三、 懸吊式氣罩的實體阻隔改良與防護升級</strong></p>
+<ul>
+<li><p>為了強化捕集效果、<strong>抵抗側風干擾</strong>並節約能源，我們通常建議在懸吊式氣罩的下方加裝塑膠布幕或實體圍板，藉由<strong>減少無效的開放面積</strong>來優化流場。</p></li>
+<li><p><strong>加裝兩面圍板（轉變為部分包圍式）</strong>：如果將懸吊式氣罩圍住兩面，氣罩的流場特性即轉變為「包圍式氣罩」。此時排氣量的推估大幅簡化，所需排氣量公式修正為 <span class="math inline">\(Q = V(W+H)Y\)</span>。（公式中的 W 及 H 為開口面的邊長，而 (W+H)Y 則代表了氣罩與作業面之間剩餘尚未被封閉的開口面積）。</p></li>
+<li><p><strong>加裝三面圍板（轉變為崗亭式）</strong>：若進一步圍蔽三面，僅留下一面供勞工作業操作，此時氣罩即形成防護極佳的「崗亭式氣罩 (Booth)」。其排氣量推估即可比照單面開口包圍式氣罩的基本公式，變成 <span class="math inline">\(Q = VWY\)</span> 或 <span class="math inline">\(Q = VHY\)</span>。</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>工業通風控制的核心哲學始終圍繞著「盡可能包圍」。透過簡單的實體擋板或布幕進行改造，不僅能大幅提昇氣罩對有害物的捕集效率，更能顯著降低系統所需的總排氣量，達成保護勞工呼吸帶安全與企業節能減碳的雙贏目標。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-9" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-9">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>一、 接收式氣罩 (Receiving Hood) 的運作機制與熱源考量</strong></p>
+<ul>
+<li><p><strong>基本原理</strong>：接收式氣罩專門針對「已具備初始動力」的有害物雲團進行捕集。常見的應用有兩種：一是利用研磨輪切線動力捕集粉屑的「<strong>研磨輪型氣罩</strong>」；二是利用熱浮力<strong>捕集熱煙的「敞篷型懸吊式氣罩 (Canopy Hood)」</strong>。</p></li>
+<li><p><strong>熱效應流場流體力學</strong>：在高溫熔爐作業時，熱效應會使熱空氣產生向上的熱浮力（例如高達 2 m/s 的上升速度）。在熱空氣上升的過程中，會不斷捲吸並與周圍冷空氣混合，導致這個污染空氣柱的直徑與總流率不斷增加，濃度隨之變稀薄。</p></li>
+<li><p><strong>排氣量推估的複雜性</strong>：因為熱源流場會隨高度擴大，其排氣量推估公式與一般常溫或低溫操作完全不同。實務設計上，必須依據氣罩是高吊式、低吊式、矩形或圓形，以及熱源規模大小來精算，這部分需仰賴進階的工業通風專書來進行設計。</p></li>
+</ul>
+</section>
+<section id="接受型氣罩-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="接受型氣罩-hsg-258">接受型氣罩 (HSG 258)</h2>
+<ul>
+<li><p>設計原則：(Receiving hoods)</p>
+<ul>
+<li><p>氣罩，特別是開口面，要大到足以接收有害物雲圍。</p></li>
+<li><p>抽氣速率至少要和氣罩被污染空氣填滿的速率相當。</p></li>
+<li><p>懸吊式氣罩設計經驗法則：氣罩之排氣流率應該是煙流上升到氣罩開口面時的體積流率之<strong>1.2倍</strong>。氣罩凸出有害物發生源四周之寛度，應該是氣罩與有害物發生源距離的<strong>0.4倍</strong>。</p></li>
+<li><p>盡量靠近有害物發生源。</p></li>
+<li><p>吹吸型換氣裝置可能是開放液面槽的正瓘控制解決方案，它們還可用於具有大面積、低能量之有害物發生源。</p>
+<ul>
+<li><p>當工件在槽桶中上升或下降時，有互鎖裝置來關閉吹氣噴流。否則，含有害 物的吹氣噴流被工件改道而進入工作室中。</p></li>
+<li><p>物件可能被溶劑潤濕而產生蒸氣，需有控制方法。</p></li>
+<li><p>試驗及使用發煙法或其他檢查方法以檢點”吹氣”氣流的大小、方向及流率。</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/Figure 27 Canopy hoods.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="images/工業通風/Figure 27 Canopy hoods.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 28 Grinding wheel and receiving hood.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="images/工業通風/Figure 28 Grinding wheel and receiving hood.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 29 Push-pull.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="images/工業通風/Figure 29 Push-pull.png" class="img-fluid" width="167"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-10" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-10">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>二、 氣罩防護效能之優先位階 (Hierarchy of Effectiveness)</strong></p>
+<ul>
+<li>有害物質在「氣罩內」的控制效果絕對遠優於「氣罩外」。在進行通風工程防護效益評估時，各型氣罩的效能優劣順序如下：</li>
+</ul>
+<ol type="1">
+<li><p><strong>完全包圍式</strong>（防護最佳）。</p></li>
+<li><p><strong>崗亭式</strong>（部分包圍，優於外裝）。</p></li>
+<li><p><strong>吹吸式</strong>（藉由吹氣流將作業區涵蓋於氣流中，優於單純抽氣的外裝式）。</p></li>
+<li><p><strong>外裝式</strong>（防護效能最容易受干擾）。</p></li>
+</ol>
+<ul>
+<li><strong>實務</strong>：以噴漆作業為例，因其含有高濃度的揮發性有機物(VOCs)及油漆霧滴，應在「噴漆室（崗亭式氣罩）」中進行施作。若將作業移出噴漆室，單靠一般外裝式氣罩，是很難達到噴漆室同等的捕集效能的。</li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-11" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-11">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>三、 檢驗指標：「捕捉風速」與「控制風速」</strong></p>
+<ul>
+<li><p><strong>法規演進</strong> 局部排氣的終極目標是利用抽引能力，在發生源將有害物抽除，避免其逸散至作業環境。</p></li>
+<li><p><strong>捕捉風速 (Capture Velocity) 定義</strong>：指由局部排氣裝置產生，其大小剛好「足以克服室內氣流干擾、捕捉有害物，並將其傳送至氣罩內」的<strong>最小風速</strong>。這是目前工業通風設計最核心的工程指標。</p></li>
+<li><p><strong>控制風速 (Control Velocity) -歷史名詞</strong>：在過去的我國法規中，曾有「控制風速」的明確規定。</p>
+<ul>
+<li><p>對於<strong>外裝型氣罩</strong>：指在氣罩吸引範圍內，距離氣罩開口面最遠之「作業位置」的風速。</p></li>
+<li><p>對於<strong>包圍型氣罩</strong>：指氣罩開口任一點之「最低風速」。</p></li>
+<li><p>對於<strong>回轉機械 (如磨床)</strong>：舊版《粉塵危害預防標準》第 9 條曾規定，為回轉體於停止狀態下，氣罩開口面的最低風速。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="四-氣罩與風管設計原則與要件-續-12" class="level2">
+<h2 class="anchored" data-anchor-id="四-氣罩與風管設計原則與要件-續-12">四、 氣罩與風管設計原則與要件 (續)</h2>
+<p><strong>四、 我國職安衛法規刪除「控制風速」之理由</strong></p>
+<ul>
+<li>我國已於民國 90~92 年間，全面刪除了相關法規中關於「控制風速」的硬性數值規定，其核心考量如下：</li>
+</ul>
+<ol type="1">
+<li><p><strong>缺乏暴露相關性</strong>：依據勞動部勞動及職業安全衛生研究所 (ILOSH) 的研究證實，「控制風速」的大小與「勞工實際暴露濃度」之間，並沒有顯著的統計相關性。</p></li>
+<li><p><strong>無法反映系統整體性能</strong>：單一的風速測點，無法代表整個局部排氣系統捕集與清淨的實際效能。且國外先進國家的職安衛法規，亦未強制規定控制風速。</p></li>
+</ol>
+<ul>
+<li><strong>回歸防護本質 (Performance-based)</strong>：法規設計的精神，是要求事業單位確保局部排氣裝置具備足夠的吸引能力(<strong>捕捉風速?</strong>)，讓作業場所的有害物濃度能確實低於「容許暴露標準 (PEL)」等法定限值，而非盲目追求某一個風速數據。</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在實務現場進行通風系統評估時，請務必將「包圍發生源」視為最高指導原則，精確計算「捕捉風速」，並以<strong>勞工呼吸帶的「實際暴露濃度」</strong>是否符合法規標準，作為檢驗通風工程成敗的最終依據。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="局部排氣氣罩之設計與應用基本原理" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣氣罩之設計與應用基本原理">局部排氣氣罩之設計與應用基本原理</h2>
+<ol type="1">
+<li>讓製程和有害物發生源之包圍程度最大化，因為如此之局部排氣將更為有效。</li>
+<li>對外裝型及接受型氣罩而言，確保氣罩能愈接近製程和有害物發生源愈好。</li>
+<li>調整氣罩位置，籍以利用有害物發生源產生氣流的速率和方向。</li>
+<li>使氣罩的大小能符合製程及有害物雲團的大小。</li>
+<li>儘量區隔有害物雲團與勞工的呼吸區。</li>
+<li>儘量減少氣罩內之渦流。</li>
+<li>在設計局部排氣氣罩之應用時，採用人體工學原理，並確認它有搭配勞工的實際作業模式。</li>
+<li>嚐試選定的局部排氣裝置，做出原型並獲得使用者的回饋意見。</li>
+<li>採用觀察法、取得良好控制作為之資訊，以及簡單的方法，例如發煙法或粉塵探燈，以評估暴露控制的有效性。在必要時，進行測量，例如空氣採樣。</li>
+<li>局部排氣控制的有效性要搭配潛在的過度暴露程度。</li>
+</ol>
+</section>
+<section id="控制有效性" class="level2">
+<h2 class="anchored" data-anchor-id="控制有效性">控制有效性</h2>
+<ul>
+<li><p>局部排氣氣罩的效率和有效性，會因為氣流分流、迴流渦流、空氣紊流、側風而減少。</p></li>
+<li><p>雇主需要瓘係局部排氣系統能持續正當工作。有幾種檢點方法，例如在作業程序運行中使用<strong>風速計、粉塵探燈或發煙示蹤器</strong>。但最簡單的方法可能是使用氣流顯示器。這將會給作業員一個簡單的指示，氣罩是否正常工作。當作業員不得不調整風門，以獲得足夠的氣流時，氣流顯示器就變得至關重要。氣流顯示器必須簡單、清楚比表明氣流何時是足夠的。最簡單的顯示器通常是<strong>壓差計</strong>。<a href="images/工業通風/Figure 15 Airflow into a hood.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20"><img src="images/工業通風/Figure 15 Airflow into a hood.png" class="img-fluid"></a></p></li>
+</ul>
+</section>
+<section id="計算範例" class="level2">
+<h2 class="anchored" data-anchor-id="計算範例"><strong>計算範例</strong></h2>
+<p>有一攜帶式局部排氣裝置（portable local exhaust ventilation device），具</p>
+<p>有一15°鐘型氣罩，依序連接一1.5 公尺圓形吸氣導管，一空氣清淨裝置，</p>
+<p>一0.5 公尺圓形排氣導管，一離心式排氣扇，及排氣扇出口。若鐘型氣罩之</p>
+<p>氣罩進入損失係數Fh 為0.2，吸氣導管之動壓Pv 為25 mmH<sub>2</sub>O，所有導管之</p>
+<p>單位長度壓力損失皆為Pduct = 2.5 mmH<sub><span class="smallcaps">2</span></sub>O/m，空氣清淨裝置壓力損失Pcleaner</p>
+<p>= 50 mmH<sub>2</sub>O，排氣導管之動壓Pv 為15 mmH<sub>2</sub>O，排氣扇出口處總壓PTOut =</p>
+<p>25 mmH<sub>2</sub>O，導管平均直徑為15 公分，導管內平均風速為V = 12 m/s，而排</p>
+<p>氣扇之機械效率為0.56，動力單位轉換係數為6120，試計算：（2015 年工</p>
+<p>礦衛生技師考題）</p>
+<p>（1） 該攜帶式局部排氣裝置之氣罩靜壓為多少mmH<sub>2</sub>O？</p>
+<ul>
+<li><p>使用進入係數（<span class="math inline">\(C_e\)</span>）與氣罩進入損失係數（<span class="math inline">\(F_h\)</span>）的關係式來推導：</p></li>
+<li><p><span class="math inline">\(C_e = \sqrt{\frac{1}{1 + F_h}} = \sqrt{\frac{VP}{SP_h}}\)</span> 將公式移項後，可得氣罩靜壓（<span class="math inline">\(SP_h\)</span>）與導管動壓（<span class="math inline">\(VP\)</span>）的直接關係為： <span class="math inline">\(SP_h = VP \times (1 + F_h)\)</span></p></li>
+<li><p><strong>代入數據</strong>： 題目已知氣罩進入損失係數 <span class="math inline">\(F_h = 0.2\)</span>，吸氣導管之動壓 <span class="math inline">\(VP = 25 \text{ mmH}_2\text{O}\)</span>。 <span class="math inline">\(SP_h = 25 \times (1 + 0.2) = 25 \times 1.2 = 30 \text{ mmH}_2\text{O}\)</span></p></li>
+</ul>
+<p>（2） 導管平均排氣量為多少m3/min？</p>
+<ul>
+<li><p><strong>計算公式</strong>： $$$$<span class="math inline">\(Q = A \times v\)</span> 其中，圓形導管的截面積 <span class="math inline">\(A = \frac{\pi \times D^2}{4}\)</span>。由於排氣量要求的單位是 <span class="math inline">\(\text{m}^3/\text{min}\)</span>，因此計算時必須將風速從 <span class="math inline">\(\text{m/s}\)</span> 轉換為 <span class="math inline">\(\text{m/min}\)</span>。</p></li>
+<li><p><strong>代入數據</strong>： 題目已知導管平均直徑 <span class="math inline">\(D = 15 \text{ 公分} = 0.15 \text{ 公尺}\)</span>，導管內平均風速 <span class="math inline">\(v = 12 \text{ m/s}\)</span>。 <span class="math inline">\(Q = \left(\frac{\pi \times 0.15^2}{4}\right) \times (12 \times 60)\)</span>， $<span class="math inline">\(Q = \frac{\pi \times 0.0225}{4} \times 720 \approx 12.72 \text{ m}^3/\text{min}\)</span></p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹">五、 導管壓力損失介紹</h2>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在工業通風的管路工程中，導管（Duct）的設計與壓力損失（Pressure Loss）評估，是決定整套通風系統能否達成預期危害控制效能的命脈。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 導管系統之結構定位與傳輸功能</strong></p>
+<ul>
+<li><strong>系統分段</strong>：在局部排氣裝置中，導管系統以排氣機（風扇）為界，可分為兩大區段。<strong>前端為「吸氣導管」</strong>（自氣罩、空氣清淨裝置延伸至排氣機的運輸管路），<strong>後端為「排氣導管」</strong>（自排氣機延伸至排氣口的搬運管路）。</li>
+</ul>
+<p><strong>二、 導管設計的關鍵權衡因子（Trade-off）</strong></p>
+<ul>
+<li><p>在規劃廠房的導管配置時，工程師必須<strong>同時考量</strong>「系統排氣量」以及「污染物流經導管時所產生的壓力損失」。</p></li>
+<li><p><strong>幾何尺寸的影響</strong>：導管的<strong>「截面積」</strong>與<strong>「長度」</strong>是影響系統壓力損失的最重要幾何因子。在實務上，導管的佈線方式、長度以及流速，直接決定了管內粉塵是否會堆積，以及風機能否有效克服阻力。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 截面積過大 / 風速過低之工程危害</strong> 在流體力學連續方程式（<span class="math inline">\(Q = A \times V\)</span>）的基礎下，若為了降低管內摩擦壓力損失而一味將導管截面積設計得過大，雖然壓損降低了，但管內流速（V）會隨之急遽減低。<strong>會造成</strong></p>
+<ol type="1">
+<li><p><strong>微粒沉降</strong>：流速不足以維持粉塵的懸浮狀態，大粒徑的粉塵容易因重力沉降並堆積於導管底部。</p></li>
+<li><p><strong>效能惡化與保養負擔</strong>：導管中一旦堆積粉塵，會直接減少導管的有效排氣截面積，進而增加摩擦損失係數，不僅使得抽氣效能大幅衰退，更會加重廠務人員清理與維護的工作負擔，嚴重時甚至會完全阻塞導管。</p></li>
+<li><p><strong>火災爆炸風險</strong>：若沉積的粉塵屬於可燃性粉塵（如鋁粉、鎂粉、木屑或有機粉塵），管內的大量堆積將成為潛在的燃料源，極易引發廠房的火災或粉塵爆炸危害。</p></li>
+</ol>
+<p><strong>四、 風速過高之能源與設備代價</strong></p>
+<ul>
+<li><p>相反地，為了絕對避免粉塵沉降而將導管風速設計得過高，同樣是不良的工程設計。</p></li>
+<li><p><strong>動壓與壓損的連鎖效應</strong>：導管內的<strong>動壓（Velocity Pressure, VP）與風速的平方成正比</strong>。當導管風速過高時，動壓會急遽變大，進而導致系統中各式各樣的壓力損失（包含摩擦損失、彎管損失等，其計算皆為動壓的函數）<strong>全面倍增</strong>。</p></li>
+<li><p><strong>能源浪費</strong>：壓力損失的劇增，意味著需要更高功率的排氣機才能克服系統阻力，這將引起顯著的能源損耗，並大幅增加排氣機的電力負荷與事業單位的營運成本。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-1">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在工業通風的管路設計中，氣流的流動行為主要是由流體力學的兩大基本定律——「質量守恆」與「能量守恆」來描述。</p>
+</div>
+</div>
+</div>
+<p>工業通風計算在應用定律前，通常會先設定「四項簡化假設」，以排除溫度、濕度、密度及流率的微小變動。</p>
+<p><strong>一、 氣流狀態的四大工程簡化假設</strong></p>
+<ul>
+<li>身為通風設計者，必須清楚這些假設的適用條件，以及何時需要進行校正：</li>
+</ul>
+<ol type="1">
+<li><p><strong>假設管壁無熱傳現象</strong>：一般廠房環境下，導管內外溫差不大，可忽略熱傳遞。(高溫會影響氣流的密度與流率)。</p></li>
+<li><p><strong>假設為不可壓縮氣流</strong>：一般局部排氣導管內的壓差不大，空氣可視為不可壓縮。但實務上當系統壓差高達 <strong>50 cm H<sub>2</sub>O</strong> 時，空氣密度將產生約 <strong>5% 的變化</strong>，導致流率改變，此時就必須當作可壓縮流體處理。</p></li>
+<li><p><strong>假設為乾燥氣流（不含水蒸氣）</strong>：水蒸氣的存在會降低空氣的整體密度。若處理的是高濕度製程（如電鍍槽、洗滌塔廢氣），必須查閱「濕度圖（Psychrometric chart）」來進行氣流密度的校正。</p></li>
+<li><p><strong>假設有害物體積與質量可忽略</strong>：在絕大多數的作業環境中，粉塵或氣體的濃度相對於龐大的空氣體積而言微乎其微。但若在極高濃度的物料輸送或特殊製程中，有害物濃度高到足以影響整體氣流密度時，則必須加以校正。</p></li>
+</ol>
+</section>
+<section id="五-導管壓力損失介紹-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-2">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>二、 質量守恆定律與連續方程式 (Continuity Equation)</strong></p>
+<ul>
+<li><p>在確認上述假設後，我們即可套用質量守恆定律，即「進入流體系統的質量流率，必等於離開該系統的質量流率」。</p></li>
+<li><p><strong>質量流率方程式</strong>：單位時間內通過導管截面積的流體質量，公式為 <span class="math inline">\(\dot{M} = \rho \times A \times v\)</span> （其中 <span class="math inline">\(\dot{M}\)</span> 為質量流率，<span class="math inline">\(\rho\)</span> 為密度，<span class="math inline">\(A\)</span> 為截面積，<span class="math inline">\(v\)</span> 為平均風速）。</p></li>
+<li><p><strong>推導過程</strong>：根據質量守恆，上游(1)與下游(2)的質量流率相等，即 <span class="math inline">\(\dot{M}_1 = \dot{M}_2\)</span>，展開為 <span class="math inline">\(\rho_1 A_1 v_1 = \rho_2 A_2 v_2\)</span>。</p></li>
+<li><p><strong>不可壓縮流體的體積流率 (Q)</strong>：基於前面第二項「不可壓縮氣流」的假設，上下游的空氣密度不變（<span class="math inline">\(\rho_1 = \rho_2\)</span>），因此方程式可進一步大幅簡化為工程上最常用的連續方程式：<span class="math inline">\(Q = A_1 v_1 = A_2 v_2\)</span>。</p></li>
+<li><p><strong>工程實務</strong>：公式中的 <span class="math inline">\(Q\)</span> 代表體積流率，依據不同場合可指通風量、排氣量或抽氣量等。這個公式告訴我們一個極為重要的通風設計觀念：<strong>在排氣量（Q）固定的情況下，導管截面積（A）與管內平均風速（v）成反比</strong>。當導管截面積縮小時，風速必然增加；截面積增大時，風速則會降低。</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>透過改變導管的管徑來精準控制各管段所需的「搬運風速」，以確保粉塵不會在中途沉降。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="五-導管壓力損失介紹-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-3">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>「能量守恆」</strong>，也就是著名的「伯努利方程式（Bernoulli’s equation）」。在工業通風領域，理解管路中壓力的變化與能量的損耗，是我們評估系統阻力以及選擇排氣機的根本基礎。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 伯努利方程式與理想流體特性</strong></p>
+<ul>
+<li><p><strong>適用條件</strong>：伯努利方程式的成立，必須建立在「不可壓縮流體（incompressible fluid）」、「沒有黏滯力」且為「穩定流體」的假設前提下。</p></li>
+<li><p><strong>能量守恆方程式</strong>：若忽略能量損耗，單位體積流體的能量守恆可表示為 <span class="math inline">\(P + \frac{\rho V^2}{2} + \rho gh = \text{定值}\)</span>。</p></li>
+<li><p><strong>流速與壓力的互換原理</strong>：在一般廠房導管中，兩點之間的高度變化通常不大（<span class="math inline">\(h\)</span> 可忽略），此時伯努利方程式告訴我們一個極為重要的現象：<strong>當流體流速（</strong><span class="math inline">\(V\)</span><strong>）增加時，其壓力（</strong><span class="math inline">\(P\)</span><strong>）必然變小，反之亦然</strong>。這是流體力學中最經典的物理現象。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-4">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>二、 工業通風的三大核心壓力指標：靜壓、動壓與全壓</strong></p>
+<ul>
+<li>伯努利方程式中的各項皆可轉換為通風工程上的壓力單位，進而定義出以下三種壓力：</li>
+</ul>
+<ol type="1">
+<li><p><strong>靜壓 (Static Pressure, SP)</strong></p>
+<ul>
+<li><p>定義：代表流體所受的壓力強度（方程式中的 <span class="math inline">\(P\)</span> 項）。</p></li>
+<li><p>物理特性：其作用方向是<strong>四面八方均勻分布</strong>的。若管內為正壓，導管會有向外膨脹的趨勢；若為負壓，導管則會有向內凹陷的趨勢（這也是為什麼吸氣導管需要足夠的管壁厚度以防壓扁）。</p></li>
+</ul></li>
+<li><p><strong>動壓 (Velocity Pressure, VP)</strong></p>
+<ul>
+<li><p>定義：代表流體單位體積的動能（方程式中的 <span class="math inline">\(\frac{\rho V^2}{2g}\)</span> 項）。</p></li>
+<li><p>物理特性：由空氣移動所造成，因此它只受氣流方向影響，作用方向恆為流動之方向，且<strong>動壓一定為正值</strong>。</p></li>
+</ul></li>
+<li><p><strong>全壓 (Total Pressure, TP)</strong></p>
+<ul>
+<li><p>定義：全壓是<strong>動壓與靜壓的代數和</strong>，公式為 <span class="math inline">\(TP = SP + VP\)</span>。</p></li>
+<li><p>物理特性：代表流體的總能量，依據靜壓的正負大小，全壓的值可能為正，也可能為負。</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="五-導管壓力損失介紹-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-5">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 實務工程計算：風速與動壓的轉換公式</strong></p>
+<ul>
+<li><p>在一般通風裝置計算中，壓力單位通常使用毫米水柱（mmH<sub>2</sub>O）。</p></li>
+<li><p><strong>標準狀態假設</strong>：在一般溫濕度及大氣壓力下（即 20°C，70% 相對濕度，1 大氣壓），空氣密度約為 <span class="math inline">\(1.2 \text{ kg/m}^3\)</span>。</p></li>
+<li><p><strong>工程轉換公式</strong>：代入密度後，動壓與風速（m/s）的關係可簡化為我們在現場最常使用的經驗公式：</p>
+<ul>
+<li><p><span class="math inline">\(V = 4.04 \sqrt{VP}\)</span></p></li>
+<li><p><span class="math inline">\(VP = \left(\frac{V}{4.04}\right)^2\)</span></p></li>
+</ul></li>
+<li><div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>實務提醒：在現場使用皮托管（Pitot tube）量測動壓（VP）後，就是利用這個公式直接換算出管內的平均風速（V）。</p>
+</div>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-6">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>四、 真實系統的能量守恆：能量損失與風機作功</strong></p>
+<ul>
+<li><p><strong>理想狀態（無損耗）</strong>：在單一導管中<strong>若無能量損耗與加入，全壓保持不變</strong>，即 <span class="math inline">\(TP_1 = TP_2\)</span>，展開為 <span class="math inline">\(SP_1 + VP_1 = SP_2 + VP_2\)</span>。</p></li>
+<li><p><strong>真實狀態（摩擦與作功）</strong>：在實際流體狀態下，空氣流經導管一定會與管壁摩擦產生能量損失（<span class="math inline">\(h_L\)</span>），同時我們也會裝設排氣機（風扇）對氣流作功（<span class="math inline">\(w\)</span>）來補充能量。</p></li>
+<li><p><strong>修正後的伯努利方程式</strong>：</p>
+<ul>
+<li><p><span class="math inline">\(TP_1 + w = TP_2 + h_L\)</span></p></li>
+<li><p><span class="math inline">\(SP_1 + VP_1 + w = SP_2 + VP_2 + h_L\)</span></p></li>
+<li><p>公式中的 <span class="math inline">\(w\)</span> 就是排氣機為克服系統阻力所必須提供的能量，而 <span class="math inline">\(h_L\)</span> 則是點 1 與點 2 之間所損失的能量總和。</p></li>
+</ul></li>
+<li><div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>工業通風設計的核心使命：我們設計通風系統，本質上就是在精算氣流經過氣罩、直管、彎管與清淨裝置時會產生多少壓力損失（$h_L$），然後選配一台作功能力（<span class="math inline">\(w\)</span>）足夠的排氣機，來彌補這些損失並維持所需的動壓（<span class="math inline">\(VP\)</span>）。</p>
+</div>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-7" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-7">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>工業通風管路設計中的關鍵工程考量—「導管壓力損失（Duct Pressure Loss）」。氣流在導管內傳輸時，其攜帶的能量必然會產生耗損，精確掌握這些損失的來源，並在設計中予以最小化。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 壓力損失的兩大核心來源</strong> 導管中空氣氣流所具有的能量（包含靜壓或全壓），在傳輸過程中會不可避免地產生損耗。主要可歸納為以下兩大類：</p>
+<ol type="1">
+<li><p><strong>摩擦損失（Friction Loss）</strong>：這是導管中最主要、基本的壓力損失型式。當空氣在導管內流動時，主要是受到「流體速度梯度（Velocity Gradient）」以及「導管內壁粗糙度（Roughness）」的影響而產生摩擦阻力。</p></li>
+<li><p><strong>動態／局部損失（Dynamic Loss）</strong>：當氣流遭遇「方向改變（如流經彎管）」或是「截面積變化（如導管直徑發生縮小或擴大）」時，流場將無法保持平順。這些幾何條件的改變會引發管內產生紊流（Turbulence）以及流速的劇烈增減，進而造成額外的壓力損失。</p></li>
+</ol>
+<p><strong>二、 降低壓力損失之工程設計原則</strong></p>
+<ul>
+<li><p><strong>法規規範</strong>：在《特定化學物質危害預防標準》、《有機溶劑中毒預防規則》以及《粉塵危害預防標準》等三大核心危害預防法規中，皆對導管的設計提出了明確的規範。</p></li>
+<li><p><strong>通風設計之兩大鐵律</strong></p>
+<ol type="1">
+<li><p><strong>導管長度宜儘量縮短</strong>：藉由縮短總管路長度，能直接減少氣流與管壁的接觸面積與距離，從根本上大幅降低「摩擦損失」。</p></li>
+<li><p><strong>減少彎管（肘管）數目</strong>：透過減少氣流方向的改變次數，能極小化因紊流與流速變化所造成的「動態損失」。</p></li>
+</ol></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>秉持「<strong>最短距離、最少彎折</strong>」的佈線原則</p>
+</div>
+</div>
+</div>
+</section>
+<section id="五-導管壓力損失介紹-續-8" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-8">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>最常造成顯著壓損的元件—「肘管（Elbow，即彎管）」。在實務建廠或改善工程中，管路無可避免地需要轉彎來避開廠房樑柱或設備，但每一次的轉彎都是系統能量的耗損。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 肘管壓力損失機制與累積效應</strong></p>
+<ul>
+<li><p><strong>成因</strong>：肘管導致導管中氣流「改變方向」，當氣流被迫改變原本的直線運動時，會產生流場的擠壓、分離與二次渦流，進而導致動能消耗與壓力損失。</p></li>
+<li><p><strong>累積效應</strong>：管路系統中設置的肘管數目越多，整體累積的壓力損失就越大。</p></li>
+</ul>
+<p><strong>二、 肘管壓力損失之推估</strong> 在工程計算上，單一肘管所造成的靜壓損失（<span class="math inline">\(\Delta SP\)</span>）可透過以下公式精確計算： <span class="math inline">\(\Delta SP = h_{L,elbow} = C_{elbow} \times \left(\frac{\theta}{90}\right) \times VP\)</span></p>
+<ul>
+<li><p><span class="math inline">\(C_{elbow}\)</span>：代表 90 度轉彎肘管的壓力損失係數。</p></li>
+<li><p><span class="math inline">\(\theta\)</span>：代表肘管實際的彎曲角度。</p></li>
+<li><p><span class="math inline">\(VP\)</span>：代表管內的動壓（Velocity Pressure）。</p></li>
+</ul>
+<p><strong>實務意義</strong>：此公式清楚表明，肘管的壓損與「轉彎角度大小」成正比（例如 45 度彎管的損失約為 90 度彎管的一半），並且是「管內動壓（VP）」的倍數函數。若導管風速極高（VP 很大），即使是一個小小的彎管，也會造成驚人的壓力損失。</p>
+</section>
+<section id="五-導管壓力損失介紹-續-9" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-9">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 影響損失係數 (</strong><span class="math inline">\(C_{elbow}\)</span><strong>) 的幾何關鍵：轉彎程度 (R/D)</strong> 決定 <span class="math inline">\(C_{elbow}\)</span> 大小的最關鍵幾何參數，在於肘管的「曲率半徑與管徑比（R/D）」：</p>
+<ul>
+<li><p><strong>R/D 定義</strong>：<span class="math inline">\(R\)</span> 代表肘管中軸的轉彎曲率半徑；<span class="math inline">\(D\)</span> 代表導管的直徑（或矩形管沿轉彎半徑方向的邊長）。</p></li>
+<li><p><strong>工程規律</strong>：R/D 的數值越小，代表肘管的轉彎程度越「陡峭（即俗稱的急彎或死彎）」，流體經過時產生的擾動與撞擊越劇烈，壓力損失也就越大。在實務設計上，我們通常會要求 R/D 至少大於 1.5 到 2.0，採用「緩彎」來取代「急彎」，以維持氣流的平順。</p></li>
+</ul>
+<p><strong>四、 圓形與矩形斷面之流體力學差異</strong></p>
+<ul>
+<li><p><strong>圓形斷面肘管</strong>：其壓力損失係數單純僅與轉彎程度（R/D）有關。因為其流場對稱、無死角，加上阻力較小，這也是為什麼工業通風實務上建議採用圓形導管的原因。</p></li>
+<li><p><strong>矩形斷面肘管</strong>：除了受轉彎程度（R/D）影響外，流場還會受到「導管截面展弦比（W/D，即長寬比）」的強烈交互影響。由於矩形管的角落極易產生無效的渦流區，其壓損計算與流場複雜度遠高於圓形管。</p></li>
+<li><div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在審圖或繪製通風管路佈局（Layout）時，應盡可能將路徑「直線化」。若不可避免必須轉彎，請務必嚴格要求承包商採用「大曲率半徑（大 R/D 值）」的圓形肘管，並將轉彎角度（<span class="math inline">\(\theta\)</span>）降至最低。這是確保排氣機效能不被白白耗損、節省廠務能源的專業堅持。</p>
+</div>
+</div>
+</div></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/表 5-1 圓形肘管之壓力損失係數.png" class="lightbox" data-gallery="quarto-lightbox-gallery-21"><img src="images/工業通風/表 5-1 圓形肘管之壓力損失係數.png" class="img-fluid" style="width:100.0%"></a></td>
+<td><a href="images/工業通風/表 5-2 矩形肘管之壓力損失係數.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22"><img src="images/工業通風/表 5-2 矩形肘管之壓力損失係數.png" class="img-fluid" style="width:100.0%"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="五-導管壓力損失介紹-續-10" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-10">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>導管管路系統中另一個造成顯著「動態／局部損失」的關鍵樞紐—「合流管（Merge / Junction）」。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 合流管之結構</strong></p>
+<ul>
+<li><p><strong>物理定義</strong>：合流管是指兩條導管交會連結的位置。</p></li>
+<li><p><strong>主管與支管的區分</strong>：</p>
+<ul>
+<li><p><strong>主管（Main Duct）</strong>：通常是指在合流後，氣流「方向不改變」的導管；為了容納匯入的額外氣體，<strong>合流後的主管管徑通常會增加</strong>。</p></li>
+<li><p><strong>支管（Branch Duct）</strong>：指從側邊以特定角度（即「合流角 <span class="math inline">\(\theta\)</span>」）匯入主管的另一條導管。</p></li>
+</ul></li>
+</ul>
+<p><strong>二、 合流壓力損失之成因與累積效應</strong></p>
+<ul>
+<li><p><strong>流場擾動機制</strong>：在合流處，由於管徑發生變化，氣流的動壓必然會隨之改變。同時，兩股不同方向、不同流速的氣流在此交匯，會導致流場發生劇烈改變（產生擠壓、碰撞與紊流），進而產生能量的消耗與壓力損失。</p></li>
+<li><p><strong>系統累積效應</strong>：基於上述物理現象，管路系統中設計的「合流管數量越多，整體系統累積的壓力損失就越大」。這在多支管局部排氣系統的平衡設計上是極大的挑戰。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-11" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-11">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 靜壓損失推估</strong> 在進行工業通風管路壓力損失計算時，工程上通常將合流所造成的靜壓損失<strong>「假設發生於支管」</strong>來進行保守推估。</p>
+<ul>
+<li><p><strong>計算公式</strong>：<span class="math inline">\(SP_2 - SP_3 = C_{merge} \cdot VP_2\)</span></p>
+<ul>
+<li><p><strong>下標定義</strong>：下標 <span class="math inline">\(2\)</span> 代表「匯入支管的末端」，下標 <span class="math inline">\(3\)</span> 代表「合流交會點」。</p></li>
+<li><p><span class="math inline">\(VP_2\)</span>：代表支管末端匯入時的「動壓 (Velocity Pressure)」。</p></li>
+<li><p><span class="math inline">\(C_{merge}\)</span>：代表「合流壓力損失係數」。</p></li>
+</ul></li>
+</ul>
+<p><strong>四、 決定損失大小的關鍵：合流角 (</strong><span class="math inline">\(\theta\)</span><strong>)</strong></p>
+<ul>
+<li><p><strong>幾何函數關係</strong>：公式中的合流壓力損失係數（<span class="math inline">\(C_{merge}\)</span>），完全是支管匯入主管之「合流角 <span class="math inline">\(\theta\)</span>」的函數。</p></li>
+<li><p><strong>設計規律</strong>：依據流體力學數據（如教材表 5-3 所示）證實，<strong>合流管的流入角度越大（即支管以越陡峭的角度匯入主管），其造成的壓力損失就越大</strong>。</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/表 5-3 不同合流角角度（θ）之合流壓力損失係數.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23"><img src="images/工業通風/表 5-3 不同合流角角度（θ）之合流壓力損失係數.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>為了降低系統阻力、節省排氣機耗電，<strong>嚴禁採用 90 度垂直的「T型三通管」來做為合流設計</strong>（因為 90 度匯流的 <span class="math inline">\(C_{merge}\)</span> 係數極大，能量幾乎全部轉換為紊流碰撞損失）。在標準的工業通風設計規範（如 ACGIH 工業通風手冊）中，我們通常要求支管必須以順向的角度匯入主管，<strong>最佳的合流角</strong> <span class="math inline">\(\theta\)</span> <strong>建議設計在 30 度至 45 度之間</strong>，最大絕對不可超過 45 度。這就是利用物理原理來引導流場平順匯合，展現職業衛生工程師專業價值的所在。</p>
+</div>
+</div>
+</div>
+</section>
+<section id="五-導管壓力損失介紹-續-12" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-12">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在實務廠房中，為了因應排氣量變化或銜接不同設備，導管管徑往往需要改變。當氣流由大管徑進入小管徑時，流速會被迫加快，流場的擠壓會造成顯著的能量耗損。</p>
+</div>
+</div>
+</div>
+<ul>
+<li>依據管徑縮小的幾何設計，主要分為「漸縮管」與「驟縮管」兩種</li>
+</ul>
+<p><strong>一、 漸縮管 (Tapered Contraction) 之壓力損失</strong></p>
+<ul>
+<li><p><strong>定義</strong>：漸縮管是指導管截面積「逐漸」縮小之處。這種設計提供了一個過渡空間，讓氣流得以較平順地加速。</p></li>
+<li><p><strong>壓力損失推估公式</strong>：<span class="math inline">\(SP_1 - SP_2 = (1 + C_{tapered}) \cdot (VP_2 - VP_1)\)</span>。</p>
+<ul>
+<li><p>下標 <span class="math inline">\(1\)</span> 代表上游點，下標 <span class="math inline">\(2\)</span> 代表下游點。</p></li>
+<li><p>由於截面積縮小，依據連續方程式，下游動壓必然大於上游動壓 (<span class="math inline">\(VP_2 &gt; VP_1\)</span>)。</p></li>
+</ul></li>
+<li><p><strong>關鍵影響因子（縮角</strong> <span class="math inline">\(\theta\)</span><strong>）</strong>：公式中的漸縮管壓力損失係數 (<span class="math inline">\(C_{tapered}\)</span>) 是「縮角 <span class="math inline">\(\theta\)</span>」的函數。</p></li>
+<li><p><strong>設計規律</strong>：圓形縮小管的縮角度越大（即管徑變化越劇烈），對氣流造成的擠壓與擾動越嚴重，其壓力損失也就越大。在實務通風設計上，我們通常建議將漸縮角控制在 <span class="math inline">\(30^\circ\)</span> 以內，以維持流場穩定並減少耗能。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-13" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-13">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>二、 驟縮管 (Abrupt Contraction) 之壓力損失原理</strong></p>
+<ul>
+<li><p><strong>定義</strong>：驟縮管是指兩段不同截面積的導管「直接」連接，完全沒有過渡段，且下游截面積小於上游截面積。</p></li>
+<li><p><strong>壓力損失推估公式</strong>：<span class="math inline">\(SP_1 - SP_2 = (VP_2 - VP_1) + C_{abrupt} \cdot VP_2\)</span>。</p>
+<ul>
+<li>式中的 <span class="math inline">\(VP_2\)</span> 為氣流進入狹窄下游段後所產生的高動壓。</li>
+</ul></li>
+<li><p><strong>關鍵影響因子（截面積比</strong> <span class="math inline">\(A_2/A_1\)</span><strong>）</strong>：驟縮管的壓力損失係數 (<span class="math inline">\(C_{abrupt}\)</span>) 是由「上下游導管截面積比值」所決定。上下游截面積差異越大，氣流撞擊管壁及產生「開口縮流 (Vena contracta)」的現象就越劇烈，導致極大的擾動損失。</p></li>
+<li><div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>應盡極大可能<strong>避免使用「驟縮管」</strong>。驟縮的設計不僅會產生龐大的壓力損失，急遽的流場變化更易在管內產生嚴重的紊流與噪音。</p>
+</div>
+</div>
+</div></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/表 5-4 不同縮角角度（θ）漸縮管之壓力損失係數.png" class="lightbox" data-gallery="quarto-lightbox-gallery-24"><img src="images/工業通風/表 5-4 不同縮角角度（θ）漸縮管之壓力損失係數.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="五-導管壓力損失介紹-續-14" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-14">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>在工業通風實務中，擴張管（Expansions）通常應用於空氣清淨裝置的前端降速，或者是系統末端的排氣口設計。</p>
+<p>理解擴張管的流體力學，核心在於掌握「動能（動壓）轉換為位能（靜壓）」的「壓力回復（Pressure Recovery）」概念。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 擴張管的流體力學機制與能量轉換</strong></p>
+<ul>
+<li><p><strong>物理定義與流速變化</strong>：擴張管是指通風導管截面積增加的區段。依據連續方程式（<span class="math inline">\(Q=A \times V\)</span>），當導管截面積增加時，管內的空氣流速必然降低，連帶使得氣流的動壓（VP）也隨之降低。</p></li>
+<li><p><strong>理想與現實的能量守恆差異</strong></p>
+<ul>
+<li><p><strong>理想狀態（無耗損）</strong>：若氣流在擴張過程中沒有任何能量損失，依據伯努利方程式，擴張管前後因風速降低而減少的動壓量，應該會百分之百轉換為增加的靜壓量（亦即動壓降低量恰好等於靜壓增加量）。</p></li>
+<li><p><strong>實際狀態（有耗損）</strong>：在實際的工業通風管路中，當氣流進入較大截面的空間時，極易產生邊界層分離與渦流（紊流）。因此，靜壓的實際增加量會「小於」動壓的降低量。這部分未能成功轉換為靜壓而平白耗損的能量，會造成系統「全壓（TP）」的下降，此全壓下降量正是擴張管真正的壓力損失。</p></li>
+</ul></li>
+</ul>
+<p><strong>二、 壓力回復與全壓損失之推估公式</strong> 對於連接兩段不同截面積導管的內部擴張管，我們在工程計算上使用「擴張管壓力回復係數（<span class="math inline">\(C_{expansion}\)</span>）」來評估其能量轉換效率：</p>
+<ul>
+<li><p><strong>靜壓變化（回復量）公式</strong>：<span class="math inline">\(SP_2 - SP_1 = C_{expansion}(VP_1 - VP_2)\)</span>。</p>
+<ul>
+<li>下標 <span class="math inline">\(1\)</span> 與 <span class="math inline">\(2\)</span> 分別代表擴張管的上游點與下游點。</li>
+</ul></li>
+<li><p><strong>全壓損失公式</strong>：<span class="math inline">\(TP_1 - TP_2 = (1 - C_{expansion})(VP_1 - VP_2)\)</span>。</p></li>
+<li><p><strong>係數的極限意義</strong>：當 <span class="math inline">\(C_{expansion} = 1\)</span> 時，代表這是一個完美無能量損失的理想擴張管，動壓的減少量完全回復成靜壓。但在實務中，由於摩擦與擾動，<span class="math inline">\(C_{expansion}\)</span> 永遠小於 1。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-15" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-15">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 影響壓力回復係數的幾何關鍵</strong></p>
+<ul>
+<li><p>公式中的擴張管壓力回復係數（<span class="math inline">\(C_{expansion}\)</span>）之大小，取決於兩個幾何參數：「擴張角度（<span class="math inline">\(\theta\)</span>）」以及「上下游導管管徑比值（<span class="math inline">\(d_2/d_1\)</span>）」。</p></li>
+<li><p><strong>設計規律</strong>：對圓形擴大管而言，擴大角度越大（意即管徑變化越劇烈、越陡峭），氣流的擠壓、分離與擾動就越嚴重，造成的壓力損失也就越大（亦即 <span class="math inline">\(C_{expansion}\)</span> 數值越低，能量轉換效率越差）。</p></li>
+</ul>
+<p><strong>四、 導管末端擴張口（排氣口）之特殊考量</strong> 在局部排氣系統末端，有時會將排氣管口做成擴張狀以降低排氣流速。</p>
+<ul>
+<li><p><strong>邊界條件簡化</strong>：對於排入大氣等開放空間的導管末端擴張口，由於離開管口後風速迅速消散，在工程計算上可將其下游動壓視為零（<span class="math inline">\(VP_2 = 0\)</span>）。</p></li>
+<li><p><strong>末端靜壓變化公式</strong>：帶入上述條件後，公式大幅簡化為 <span class="math inline">\(SP_2 - SP_1 = C_{expansion} \times VP_1\)</span>。</p></li>
+<li><p><strong>末端擴張口係數影響因子</strong>：此時的 <span class="math inline">\(C_{expansion}\)</span> 數值（如教材表 5-7 所示），是擴張口「長徑比（<span class="math inline">\(L/d_1\)</span>）」與「前後端管徑比（<span class="math inline">\(d_2/d_1\)</span>）」的函數。同樣地，管徑變化越大，造成的壓力損失越大。</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>當我們為了配合空氣清淨裝置（如袋式集塵器）的低表面風速需求，或是為降低管內風速而必須放大管徑時，<strong>絕對不可採用截面積突然放大的「驟擴」設計</strong>。我們必須嚴格規範承攬商採用具有平緩擴張角（$\theta$）的「漸擴管」。</p>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/表 5-6 擴張管壓力回復係數.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25"><img src="images/工業通風/表 5-6 擴張管壓力回復係數.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="五-導管壓力損失介紹-續-16" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-16">五、 導管壓力損失介紹 (續)</h2>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>氣罩是局部排氣系統的入口，空氣從靜止的大氣被抽入導管的過程中，會經歷劇烈的能量轉換。理解這段能量變化，是我們計算系統總壓損（也就是決定排氣機規格）的第一步。</p>
+</div>
+</div>
+</div>
+<p><strong>一、 空氣進入氣罩的能量轉換（理想與實際狀態）</strong></p>
+<ul>
+<li><p><strong>基準點假設</strong>：在工程計算上，我們一般認定大氣環境中的靜壓（SP）、動壓（VP）與全壓（TP）均為零（<span class="math inline">\(SP_1 = VP_1 = TP_1 = 0\)</span>）。</p></li>
+<li><p><strong>理想狀態（能量守恆）</strong>：當空氣流進氣罩時，風速從零增加至導管內的風速，動壓也隨之相對增加。若在此過程中完全沒有能量損失，依據伯努利方程式，靜壓必須以「等量」下降至負值（形成負壓抽氣），而氣罩前後的系統全壓（TP）會完美維持於零。</p></li>
+<li><p><strong>實際狀態（能量耗損）</strong>：實際上，空氣在進入氣罩邊緣時會產生擠壓、摩擦與開口縮流（Vena contracta），這些擾動會造成能量平白耗損，我們稱之為「氣罩進入損失（Hood Entry Loss, <span class="math inline">\(h_e\)</span>）」。</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/圖 5-1 氣罩壓力損失示意圖.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="五-導管壓力損失介紹-續-17" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-17">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>二、 氣罩靜壓 (</strong><span class="math inline">\(SP_2\)</span><strong>) 的兩大組成要素</strong></p>
+<ul>
+<li>在考慮能量損失後，緊接在氣罩後方的導管靜壓（<span class="math inline">\(SP_2\)</span>）實際上是以下組成： <span class="math inline">\(SP_2 = - VP_2 - F_h \cdot VP_2 = - (1 + F_h) VP_2\)</span></li>
+</ul>
+<ol type="1">
+<li><p><span class="math inline">\(-VP_2\)</span><strong>（氣罩加速靜壓損失，Acceleration loss）</strong>：這部分<strong>不是</strong>真正的浪費，而是為了將靜止的空氣加速到導管風速，必須將靜壓轉換為動能（動壓）的必要代價。</p></li>
+<li><p><span class="math inline">\(-F_h \cdot VP_2\)</span><strong>（氣罩進入損失，</strong><span class="math inline">\(h_e\)</span><strong>）</strong>：這部分則是空氣流經氣罩邊緣時，因為擾動與摩擦而真正「浪費」掉的能量（<span class="math inline">\(F_h\)</span> 為氣罩進入損失係數）。</p></li>
+</ol>
+<ul>
+<li>實務提醒：在通風工程中，氣罩靜壓 (<span class="math inline">\(SP_h\)</span>)為了方便計算，通常取絕對值（<span class="math inline">\(SP_h = -SP_2\)</span>）來計算氣罩靜壓的大小。</li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-18" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-18">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 評估氣罩空氣動力性能的指標：進入係數 (</strong><span class="math inline">\(C_e\)</span><strong>)</strong></p>
+<ul>
+<li><p>除了用損失係數 (<span class="math inline">\(F_h\)</span>) 來評估外，工程上更常使用「進入係數（Hood flow coefficient, <span class="math inline">\(C_e\)</span>）」來直觀判斷氣罩的流體力學設計優劣。</p></li>
+<li><p><strong>物理定義</strong>：進入係數是指在一定的氣罩靜壓下，氣罩入口的「實際體積流率」與「理想體積流率（即假設靜壓 100% 完美轉換為動壓，無任何損失時的流率）」的比例。</p></li>
+<li><p><strong>計算公式</strong>： <span class="math inline">\(C_e = \frac{Q_{real}}{Q_{ideal}} = \sqrt{\frac{VP}{SP_h}} = \sqrt{\frac{1}{1+C_{hood} (或 F_h)}}\)</span></p></li>
+<li><p><strong>係數間的轉換關係</strong>： 將公式移項後，損失係數 <span class="math inline">\(F_h\)</span> 與進入係數 <span class="math inline">\(C_e\)</span> 有絕對的數學關係：<span class="math inline">\(F_h = \frac{1 - C_e^2}{C_e^2}\)</span>。 同時，氣罩靜壓也能直接用 <span class="math inline">\(C_e\)</span> 來表示：<span class="math inline">\(SP_2 = -SP_h = -VP_2 / C_e^2\)</span>。</p></li>
+</ul>
+<div class="callout callout-style-simple callout-important no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>【實務】</strong> <span class="math inline">\(C_e\)</span> 的數值永遠介於 0 到 1 之間。一個設計不良、邊緣銳利的外裝型氣罩，其氣流擾動極大，<span class="math inline">\(C_e\)</span> 值可能只有 0.6 左右（代表效率差、<span class="math inline">\(F_h\)</span> 壓損極大）；而一個經過優良流體力學設計、帶有平順鐘形開口（Bell-mouth）的氣罩，其 <span class="math inline">\(C_e\)</span> 值可高達 0.98，幾乎沒有能量浪費。</p>
+</div>
+</div>
+</div>
+<p>身為職業衛生設計者，我們在現場的任務，就是透過加裝凸緣（法蘭）、改良氣罩開口形狀（如漸縮形），來極大化這個進入係數 (<span class="math inline">\(C_e\)</span>)，從而在源頭大幅降低風機必須克服的系統總阻力。</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="images/工業通風/表 5-8 各型氣罩之壓力損失係數與進入係數.png" class="img-fluid"></td>
+<td><img src="images/工業通風/表 5-9 各型氣罩之壓力損失係數與進入係數.png" class="img-fluid"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="五-導管壓力損失介紹-續-19" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-19">五、 導管壓力損失介紹 (續)</h2>
+<ul>
+<li><p>前面探討了各個單一通風元件（如氣罩、直管、彎管與漸縮管等）的壓力損失原理，現在我們要將視野放大，從宏觀的系統角度來看整套「局部排氣裝置」在運作時，管路內部壓力的動態變化情形。</p></li>
+<li><p>掌握系統各區段的壓力變化，是我們在實務上繪製「系統壓力梯度圖（Pressure Gradient Diagram）」與診斷系統洩漏危害的理論基礎。</p></li>
+</ul>
+<p><strong>一、 氣罩入口段：能量的初始轉換</strong></p>
+<ul>
+<li><p><strong>壓力變化</strong>：當靜止的空氣流進氣罩時，氣流從零加速至導管內的設計風速，因此其「動壓（VP）」會逐漸增加。</p></li>
+<li><p><strong>能量守恆體現</strong>：為了提供這股動能，在無能量損失的理想狀態下，大氣的「靜壓（SP）」會以等量下降至負值（形成抽氣的負壓環境），連帶使得氣罩前後的「全壓（TP）」也隨之下降。</p></li>
+</ul>
+<p><strong>二、 吸氣導管段（排氣機上游）：持續遞減的負壓環境</strong></p>
+<ul>
+<li><p><strong>動壓恆定</strong>：在排氣機之前的吸氣導管中，如果我們假設導管管徑固定（即截面積不變），依據連續方程式，管內的風速將保持固定，因此動壓（VP）也維持不變。</p></li>
+<li><p><strong>摩擦損耗與靜壓下降</strong>：氣流沿著導管流動時，無可避免地會受到導管內壁的摩擦損失影響，這會導致靜壓（SP）沿著氣流方向逐漸減少。</p></li>
+<li><p><strong>全壓同步衰減</strong>：因為全壓是動壓與靜壓的總和（TP = SP + VP），在動壓不變但靜壓持續下降的情況下，全壓也會沿氣流方向逐漸減少。</p></li>
+<li><p><strong>極端負壓點</strong>：在排氣機上游的整段管路中，靜壓及全壓皆維持在負壓狀態；且「越接近排氣機，壓力越小」（也就是負壓的絕對值達到最大）。這也是為何吸氣導管需要足夠的管壁厚度（如鍍鋅鋼板），以防被強大負壓吸扁。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-20" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-20">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>三、 排氣機（風扇）段：系統能量的挹注中心</strong></p>
+<ul>
+<li><p><strong>動能作功</strong>：當氣流經過排氣機時，流體力學的狀態發生劇烈反轉。排氣機的葉輪對氣流作功，提供了龐大的能量來克服前面的累積阻力。</p></li>
+<li><p><strong>壓力驟升</strong>：這股外加能量會使系統的靜壓與全壓「驟增為正值」，這也是區分吸氣導管（負壓）與排氣導管（正壓）的絕對分界點。</p></li>
+</ul>
+<p><strong>四、 排氣導管段（排氣機下游）：帶有耗損的正壓傳輸</strong></p>
+<ul>
+<li><p><strong>管徑縮小之動壓變化</strong>：實務設計上有時排氣機下游的導管管徑會小於上游管徑；此時依據流體力學，下游排氣段的流速會加快，使得下游動壓將高於上游動壓。</p></li>
+<li><p><strong>維持正壓的衰減</strong>：即使獲得了風機的能量，氣流在排氣導管內流動時依然會產生摩擦損失，因此靜壓與全壓同樣會隨氣流方向逐漸減少。但請注意，從排氣機出口一直到系統的最終排氣口，管內皆會維持在「正壓」狀態。</p></li>
+<li><p><strong>工程防護考量</strong>：正因為排氣導管內部是「正壓」，萬一管路破損，含有害物的廢氣會直接向外「吹出」逸散。因此，這也呼應了我國職安衛工程實務的強烈建議：<strong>排氣機與排氣導管應盡可能設置於廠房室外</strong>，避免正壓段的廢氣洩漏回作業環境中。</p></li>
+</ul>
+</section>
+<section id="五-導管壓力損失介紹-續-21" class="level2">
+<h2 class="anchored" data-anchor-id="五-導管壓力損失介紹-續-21">五、 導管壓力損失介紹 (續)</h2>
+<p><strong>五、 煙囪與排氣口：系統的終點</strong></p>
+<ul>
+<li><p><strong>末端流速決定因素</strong>：當氣流到達系統末端的排氣口時，其排氣口風速及動壓數值，完全由系統的「總排氣量」及「排氣口截面積」來決定。</p></li>
+<li><p>身為設計者，我們在此處必須確保排氣口的截面積設計能產生足夠的垂直排放初速（例如法規常見要求的 15 m/s 以上），以利有害物衝破建築物邊界層，順利逸散至大氣中而不回流。</p></li>
+</ul>
+<p>這一段壓力變化的邏輯（負壓逐漸變大 <span class="math inline">\(\rightarrow\)</span> 風機加壓轉正 <span class="math inline">\(\rightarrow\)</span> 正壓逐漸變小），是所有工業通風系統檢測與故障排除（Troubleshooting）的核心。未來在現場如果發現某段管路的壓力讀值與這個梯度不符，通常就代表該處發生了嚴重的阻塞或破漏。</p>
+</section>
+<section id="六-空氣清淨裝置與排氣機選用" class="level2">
+<h2 class="anchored" data-anchor-id="六-空氣清淨裝置與排氣機選用"><strong>六、 空氣清淨裝置與排氣機選用</strong></h2>
+<ul>
+<li>進入局部排氣系統的「末端防線」—空氣清淨裝置（Air Cleaner）。我們必須確保排放出去的廢氣不會對大氣環境造成二次污染。</li>
+</ul>
+<p><strong>一、 空氣清淨裝置之設置目的</strong></p>
+<ul>
+<li><p><strong>設置時機與目的</strong>：當局部排氣裝置捕集的有害物濃度或總排放量過高，直接排放會危害人體健康時，必須在排至室外大氣前，先經過空氣清淨裝置進行有效處理。</p></li>
+<li><p><strong>環保法規之強制性</strong>：在實務建廠上，除了符合職安衛法規，排放口的設計更必須嚴格遵守我國環保署的《固定污染源空氣污染物排放標準》等環境保護相關法規。</p></li>
+<li><p><strong>工程經濟考量</strong>：除了防制污染，設計優良的清淨裝置還能用來回收有經濟價值的製程原料或成品，為企業創造額外效益。</p></li>
+</ul>
+<p><strong>二、 危害物型態分類與對應控制設備</strong> 在選擇設備前，必須先釐清空氣污染物的物理型態，主要分為兩大類：</p>
+<ol type="1">
+<li><p><strong>粒狀有害物（Particulate Matter）</strong>：包含粉塵、燻煙（fume）等，必須對應裝設「除塵裝置」。</p></li>
+<li><p><strong>氣狀有害物（Gaseous Matter）</strong>：包含有毒氣體及揮發性有機蒸氣（VOCs），則必須配置「廢氣處理裝置」（如洗滌塔、活性碳吸附塔等）。</p></li>
+</ol>
+</section>
+<section id="六-空氣清淨裝置與排氣機選用-續" class="level2">
+<h2 class="anchored" data-anchor-id="六-空氣清淨裝置與排氣機選用-續"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></h2>
+<p><strong>三、 粒狀物除塵裝置之六大分類與工程定位</strong> 針對粉塵等粒狀物，依據捕集的操作物理原理，工業上主要分為六大類除塵裝置：重力沉降室、慣性分離器、旋風器（Cyclone）、靜電除塵裝置（ESP）、過濾式除塵裝置（袋式集塵器，Bag filter）以及洗滌器（Scrubber）。</p>
+<p>在系統設計佈局上，我們通常將設備分為兩個層級：</p>
+<ul>
+<li><p><strong>前處理設備（初級過濾）</strong>：例如「重力沉降室」與「旋風器」。它們的特點是處理負荷高（能容納大量粉塵），但對微小粒徑的捕集效率較低。實務上常配置在系統最前端，用來先削去大量粗顆粒。</p></li>
+<li><p><strong>主除塵設備（精密過濾）</strong>：例如「過濾式除塵裝置」、「靜電除塵裝置」與「洗滌器」。這類設備集塵效率極高，能處理微細粉塵，常被作為系統的最終把關設備。先用前處理設備擋下大顆粒，能有效延長這些精密主設備的壽命並減少維護成本。</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/圖36 袋式集塵室.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26"><img src="images/工業通風/圖36 袋式集塵室.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/圖37 旋風集塵器圖38 靜電集塵器.png" class="lightbox" data-gallery="quarto-lightbox-gallery-27"><img src="images/工業通風/圖37 旋風集塵器圖38 靜電集塵器.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/圖39 文式洗塵器.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28"><img src="images/工業通風/圖39 文式洗塵器.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="六-空氣清淨裝置與排氣機選用-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="六-空氣清淨裝置與排氣機選用-續-1"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></h2>
+<p><strong>二、 氣狀有害物之廢氣處理裝置 (Gas/Vapor Treatment)</strong> 處理氣狀污染物（如有毒氣體、VOCs）一般來說比除塵單純，核心任務在於精確「確認廢氣組成」，從而對症下藥選擇適當的設備，以符合職安法規對勞工作業環境的保護以及環保署的排放標準。工程上主要分為三大核心技術：</p>
+<p><strong>1. 吸收塔 (Absorption Tower) — 氣液相的質量傳遞</strong></p>
+<p><strong>2. 吸附塔 (Adsorption Tower) — 氣固相的表面捕捉</strong></p>
+<p><strong>3. 化學反應器 (Chemical Reactor) — 熱破壞與氧化</strong></p>
+</section>
+<section id="六-空氣清淨裝置與排氣機選用-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="六-空氣清淨裝置與排氣機選用-續-2"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></h2>
+<ul>
+<li>確認了局部排氣系統的各項管路壓損與空氣清淨裝置後，我們最終的任務是要「選配一台馬力足夠的排氣機（風扇）」。</li>
+</ul>
+<p><strong>一、 排氣機動力學的核心方程式</strong> 在流體力學中，要驅動一定體積的流體克服阻力，就必須對其作功。公式 (6-1) 正是這個概念的具體化： <span class="math inline">\(\eta = \frac{Q \times FTP}{CF \times PWR} = \frac{Q \times (FSP + VP_{outlet})}{CF \times PWR}\)</span></p>
+<p>在現場實務中，我們通常會將其移項，用來求取「排氣機所需動力 (PWR)」： <span class="math display">\[                                                                                                                                                                                                                                                                \]</span>$PWR = $$</p>
+<p><strong>二、 關鍵參數與物理意義解析</strong></p>
+<ol type="1">
+<li><p><span class="math inline">\(\eta\)</span> <strong>(排氣機機械效率)</strong>：沒有一台排氣機能將馬達的能量 100% 轉換給氣流，因為風機內部的氣流摩擦、擾動及機械傳動都會產生能量耗損。一般而言，工業用離心式排氣機的效率約落在 0.5 到 0.8 之間，這個數值需由排氣機製造商的性能曲線提供。</p></li>
+<li><p><span class="math inline">\(Q\)</span> <strong>(排氣量，m³/min)</strong>：這是系統設計時為了有效捕捉有害物所設定的總搬運體積流率。</p></li>
+<li><p><span class="math inline">\(FTP\)</span> <strong>(排氣機全壓，Fan Total Pressure，mmH<sub>2</sub>O)</strong>： 排氣機全壓代表排氣機必須賦予氣流的「總能量」。依據公式，它等於「排氣機靜壓 (FSP)」加上「排氣機出口動壓 (<span class="math inline">\(VP_{outlet}\)</span>)」。</p>
+<ul>
+<li><p><strong>排氣機靜壓 (FSP)</strong>：用來克服從氣罩入口一路到排氣煙囪出口為止，整個系統（包含直管、彎管、清淨裝置等）所累積的系統總壓力損失。</p></li>
+<li><p><strong>排氣機出口動壓 (</strong><span class="math inline">\(VP_{outlet}\)</span><strong>)</strong>：除了克服系統阻力，排氣機還必須額外賦予廢氣足夠的動能（動壓），使其能以特定的速度從煙囪口噴射出去（例如法規要求的垂直排放流速 15 m/s 以上），這部分能量即轉換為出口處的動壓。</p></li>
+</ul></li>
+<li><p><span class="math inline">\(PWR\)</span> <strong>(排氣機所需動力，kW)</strong>：代表馬達必須輸出的實際軸功率。</p></li>
+</ol>
+</section>
+<section id="六-空氣清淨裝置與排氣機選用-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="六-空氣清淨裝置與排氣機選用-續-3"><strong>六、 空氣清淨裝置與排氣機選用 (續)</strong></h2>
+<p><strong>三、 工程單位的轉換係數 (CF)</strong> 這是一個在設計計算時極容易出錯的陷阱。因為各參數的單位不同，必須靠常數 <span class="math inline">\(CF\)</span> 來平衡等式：</p>
+<ul>
+<li><p><strong>公制計算 (CF = 6120)</strong>：當排氣量使用 <span class="math inline">\(\text{m}^3/\text{min}\)</span>，壓力使用 <span class="math inline">\(\text{mmH}_2\text{O}\)</span>，且求出的動力單位為「千瓦 (kW)」時，常數固定為 6120。</p></li>
+<li><p><strong>英制計算 (CF = 6362)</strong>：在實務現場，我們也常遇到美規的設備或原廠型錄。當壓力單位改為英吋水柱 (<span class="math inline">\(\text{inH}_2\text{O}\)</span>)，排氣量單位改為 CFM (<span class="math inline">\(\text{ft}^3/\text{min}\)</span>)，且動力單位改為「馬力 (hp)」時，轉換係數必須配合修正為 6362。</p></li>
+</ul>
+<p><strong>【實務】</strong> 計算系統各管段的局部壓損與摩擦壓損，目的就是求出公式中的 <span class="math inline">\(FTP\)</span> (或 <span class="math inline">\(FSP\)</span>) 與 <span class="math inline">\(Q\)</span>。算出理論所需的 <span class="math inline">\(PWR\)</span> 後，在實際採購馬達時，我們還會依據現場的變異性乘上一個適當的安全係數，以避免排氣機在管路濾網微塞或系統老化阻力增加時發生過載燒毀。</p>
+</section>
+<section id="計算範例-1" class="level2">
+<h2 class="anchored" data-anchor-id="計算範例-1"><strong>計算範例</strong></h2>
+<p>一施工中之負壓隔離病房，長5 公尺，寬4 公尺，高3 公尺，病房內</p>
+<p>有一浴廁長2 公尺，寬1.5 公尺，高3 公尺。病房入口處上方有一供氣口</p>
+<p>（supply air opening）及病床床頭側有一排氣口（exhaust air opening），而排</p>
+<p>氣口沿著空氣柱接連排氣導管，並延伸至屋頂的空氣清淨裝置、排氣機及</p>
+<p>排氣煙囪，已知排氣機初始排氣量設定為470 m3/hr，排氣機機械效率為0.55。</p>
+<p>（102 工礦衛生技師考題）</p>
+<p>(1) 病房內若要符合每小時換氣8 次之規範，請問供氣口每小時需供給</p>
+<p>之氣體體積為何？</p>
+<p>(2) 經試運轉後，發現需調整排氣機轉速至原先設計轉速之1.2 倍，才</p>
+<p>有足夠排氣量，請問排氣機經調整後之排氣量為多少m3/hr？</p>
+<p>(3) 呈上題，若經排氣機轉速調整後，病房對大氣之壓力差符合標準值</p>
+<p>-8 pa，而排氣機靜壓提昇至50 mmH2O，排氣機出口動壓提昇至60</p>
+<p>mmH2O，請問排氣機所需動力為多少kW？</p>
+</section>
+<section id="風扇特性hsg-258-fan-characteristics" class="level2">
+<h2 class="anchored" data-anchor-id="風扇特性hsg-258-fan-characteristics">風扇特性（HSG 258 Fan characteristics）</h2>
+<ul>
+<li><p>風扇的<strong>效率</strong>與<strong>噪音特性</strong>因風扇類型、尺寸、轉速及使用方式而有顯著差異。</p></li>
+<li><p>風扇所需的<strong>功率</strong>及其<strong>效率</strong>會隨著<strong>體積流量</strong>而變化。</p></li>
+<li><p><strong>壓力、功率、效率</strong>對<strong>體積流量</strong>的關係曲線，稱為「<strong>風扇曲線（fan curves）</strong>」。</p></li>
+<li><p>風扇製造商的型錄會提供每種風扇的曲線及相關資訊，以協助選擇合適的風扇。</p></li>
+</ul>
+<section id="系統曲線與風扇曲線的配合" class="level3">
+<h3 class="anchored" data-anchor-id="系統曲線與風扇曲線的配合">系統曲線與風扇曲線的配合</h3>
+<ul>
+<li><p><strong>系統曲線</strong>：顯示在空氣輸送裝置（風扇）的任一給定壓力下，系統所能移動的空氣體積。</p></li>
+<li><p>應選擇的風扇，必須能在該壓力差下<strong>至少移動此設計要求的空氣體積</strong>—即符合風扇曲線。</p></li>
+<li><p>風扇的選擇應使<strong>系統曲線與風扇曲線</strong>在<strong>設計壓力與流量點（工作點，duty point）</strong> 相交。</p></li>
+<li><p>通常需要透過<strong>變速控制器</strong>或<strong>限制閥（restriction valve）</strong> 來移動風扇曲線，使兩者相交於所需的工作點。</p></li>
+</ul>
+</section>
+</section>
+<section id="風扇特性hsg-258-fan-characteristics續" class="level2">
+<h2 class="anchored" data-anchor-id="風扇特性hsg-258-fan-characteristics續">風扇特性（HSG 258 Fan characteristics）續</h2>
+<p><a href="images/工業通風/Figure 35 Fan curve.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29"><img src="images/工業通風/Figure 35 Fan curve.png" class="img-fluid"></a></p>
+<ul>
+<li><p><strong>X軸</strong>：<strong>體積流量 (Volume flow rate)</strong>，單位通常為 m³/s 或 cfm。代表 LEV 系統實際抽走的空氣量。</p></li>
+<li><p><strong>Y軸</strong>：<strong>壓力 (Pressure)</strong>，單位通常為 Pa 或 in w.g.。<br>
+代表風扇能產生的壓力（風扇曲線）或系統所需的壓力（系統曲線）。</p></li>
+</ul>
+<p>圖中包含三條線：</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">線條</th>
+<th style="text-align: left;">名稱</th>
+<th style="text-align: left;">意義</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">向下傾斜的曲線</td>
+<td style="text-align: left;"><strong>風扇曲線 (Fan curve)</strong></td>
+<td style="text-align: left;">風扇在不同流量下能提供的壓力（風扇性能）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">向上彎的拋物線</td>
+<td style="text-align: left;"><strong>系統曲線 (System curve)</strong></td>
+<td style="text-align: left;">系統在不同流量下需要的壓力（壓損）</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">鐘形曲線</td>
+<td style="text-align: left;"><strong>功率曲線 (Power)</strong></td>
+<td style="text-align: left;">風扇在不同流量下的軸功率（可省略，重點在交點）</td>
+</tr>
+</tbody>
+</table>
+<section id="風扇曲線是供應面" class="level3">
+<h3 class="anchored" data-anchor-id="風扇曲線是供應面">1️⃣ 風扇曲線是「供應面」</h3>
+<ul>
+<li><p>風扇的「能力」：給定轉速下，流量越大，能提供的壓力越小（物理限制）。</p></li>
+<li><p>不同風扇有不同的曲線（離心、軸流、前傾、後傾…）。</p></li>
+</ul>
+</section>
+<section id="系統曲線是需求面" class="level3">
+<h3 class="anchored" data-anchor-id="系統曲線是需求面">2️⃣ 系統曲線是「需求面」</h3>
+<ul>
+<li><p>系統（風管、排氣櫃、濾網、彎頭…）的「阻力」：流量越大，需要的壓力越大（壓損 ∝ 流量²）。</p></li>
+<li><p>每一個 LEV 系統<strong>只有一條系統曲線</strong>（除非改管或濾網堵塞）。</p></li>
+</ul>
+</section>
+<section id="工作點-風扇提供的壓力-系統需要的壓力" class="level3">
+<h3 class="anchored" data-anchor-id="工作點-風扇提供的壓力-系統需要的壓力">3️⃣ 工作點 = 風扇提供的壓力 = 系統需要的壓力</h3>
+<ul>
+<li><p>系統會<strong>自動</strong>運轉在風扇曲線與系統曲線的<strong>交點</strong>。</p></li>
+<li><p>設計者的責任：<strong>確保這個交點的流量 ≥ 法規或設計要求</strong>（例如排氣櫃捕獲速度達標）。</p></li>
+</ul>
+</section>
+</section>
+<section id="職業衛生師現場會遇到的三種情境" class="level2">
+<h2 class="anchored" data-anchor-id="職業衛生師現場會遇到的三種情境">🛠 職業衛生師現場會遇到的三種情境</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">情境</th>
+<th style="text-align: left;">圖上變化</th>
+<th style="text-align: left;">後果</th>
+<th style="text-align: left;">該做什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>濾網堵塞</strong></td>
+<td style="text-align: left;">系統曲線變陡（需求壓力↑），工作點<strong>向左移動</strong></td>
+<td style="text-align: left;">流量下降，捕獲速度不足</td>
+<td style="text-align: left;">檢查壓差計，更換濾網</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>風門關太小</strong></td>
+<td style="text-align: left;">同上（人為增加系統阻力）</td>
+<td style="text-align: left;">流量下降、能耗浪費</td>
+<td style="text-align: left;">調整風門或改用 VFD變頻器</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>風扇皮帶鬆 / 轉速下降</strong></td>
+<td style="text-align: left;">風扇曲線<strong>向下移動</strong></td>
+<td style="text-align: left;">流量與壓力都下降</td>
+<td style="text-align: left;">檢查皮帶、馬達轉速</td>
+</tr>
+</tbody>
+</table>
+<section id="實務" class="level3">
+<h3 class="anchored" data-anchor-id="實務">實務</h3>
+<ul>
+<li><p>現場實測流量 ≥ 設計流量（捕獲速度達標）</p>
+<ul>
+<li>用熱線式風速計在風扇「上游」或「下游」的一段筆直、無干擾的風管，再計算體積流量。</li>
+</ul></li>
+<li><p>風扇運轉聲音平穩（無異常振動或噪音）</p></li>
+<li><p>風扇外殼溫度正常（無過熱）</p></li>
+</ul>
+</section>
+</section>
+<section id="排氣機定律fan-laws" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機定律fan-laws">「排氣機定律（Fan Laws）」</h2>
+<ul>
+<li>學會了如何計算排氣機的所需動力，接下來我們必須了解當排氣機實際安裝到管路系統後，它的「真實運作狀態」是如何決定的，以及當系統條件改變時，我們如何利用流體力學的「排氣機定律（Fan Laws）」來預測與調整效能。</li>
+</ul>
+<p><strong>一、 決定系統真實排氣量的關鍵：「操作點 (Point of Operation)」</strong> 當排氣機連接到通風管路後，它並不會隨意輸出任意風量，而是會<strong>自然達到一個平衡狀態</strong>，工程上稱之為<strong>「操作點」</strong>。這個操作點是由「排氣機性能曲線」上的兩條關鍵曲線交會而決定的：</p>
+<ol type="1">
+<li><p><strong>系統曲線 (System Curve)</strong>：這是一條隨著排氣量增加而上升的曲線，代表在不同排氣量之下，管路系統對排氣機所產生的阻力以及所需的動力（PWR）。</p></li>
+<li><p><strong>排氣機曲線 (Fan Curve)</strong>：代表該台排氣機本身在不同排氣量下，所能輸出的壓力變化（此壓力可為排氣機靜壓 FSP 或排氣機全壓 FTP，依製造商提供的數據而定）。</p></li>
+</ol>
+<ul>
+<li><strong>工程規律</strong>：系統實際運作的<strong>正確操作點，必然落在排氣機曲線與系統曲線的「交會點」上</strong>。這代表排氣機輸出的能量，剛好克服了系統在該排氣量下的所有阻力。</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/圖 6-1 典型排氣機性能曲線.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30"><img src="images/工業通風/圖 6-1 典型排氣機性能曲線.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="排氣機定律fan-laws續" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機定律fan-laws續">「排氣機定律（Fan Laws）」(續)</h2>
+<p><strong>二、 排氣機定律 (Fan Laws) 之三大核心方程式</strong> 當我們需要改變系統的排氣量（例如更換風機尺寸、調整馬達轉速，或是處理不同溫濕度導致的空氣密度改變）時，我們不需要重新做複雜的管路壓損計算，而是直接套用基於「幾何相似 (geometrically similar)」原理的排氣機定律。</p>
+<p>定律中包含六大參數：排氣機大小 (SIZE)、轉速 (RPM)、氣體密度 (<span class="math inline">\(\rho\)</span>)、排氣量 (Q)、壓力 (P) 及所需動力 (PWR)。當大小、轉速或密度改變時，會遵循以下三大公式：</p>
+<ol type="1">
+<li><p><strong>排氣量 (Q) 的變化公式</strong>： <span class="math inline">\(Q_2 = Q_1 \times \left(\frac{SIZE_2}{SIZE_1}\right)^3 \times \left(\frac{RPM_2}{RPM_1}\right)^1\)</span></p>
+<ul>
+<li>意義：排氣量變化不受空氣密度影響。它與排氣機尺寸的 3 次方成正比，與轉速的 1 次方成正比。</li>
+</ul></li>
+<li><p><strong>壓力 (P) 的變化公式</strong>： <span class="math inline">\(P_2 = P_1 \times \left(\frac{SIZE_2}{SIZE_1}\right)^2 \times \left(\frac{RPM_2}{RPM_1}\right)^2 \times \left(\frac{\rho_2}{\rho_1}\right)^1\)</span></p>
+<ul>
+<li>意義：此處的壓力泛指全壓、動壓或靜壓。壓力變化與尺寸的 2 次方、轉速的 2 次方，以及密度的 1 次方成正比。</li>
+</ul></li>
+<li><p><strong>所需動力 (PWR) 的變化公式</strong>： <span class="math inline">\(PWR_2 = PWR_1 \times \left(\frac{SIZE_2}{SIZE_1}\right)^5 \times \left(\frac{RPM_2}{RPM_1}\right)^3 \times \left(\frac{\rho_2}{\rho_1}\right)^1\)</span></p>
+<ul>
+<li>意義：動力消耗的增長極為驚人！它與尺寸的 5 次方、轉速的 3 次方成正比。這提醒我們在現場調高風機轉速時，必須極度注意馬達是否會因負荷急遽呈 3 次方飆升而過載燒毀。</li>
+</ul></li>
+</ol>
+</section>
+<section id="排氣機定律fan-laws續-1" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機定律fan-laws續-1">「排氣機定律（Fan Laws）」(續)</h2>
+<p><strong>三、 排氣量與風扇尺寸 3 次方成正比的物理推導</strong></p>
+<ul>
+<li><p>排氣量 Q（單位：<span class="math inline">\(\text{m}^3/\text{min}\)</span>），在物理本質上等於「排風機有效體積（<span class="math inline">\(\text{m}^3\)</span>）」與「轉速（<span class="math inline">\(1/\text{min}\)</span>）」的乘積。</p></li>
+<li><p>有效體積是一個三維（3D）的空間概念，因此它是單一維度長度（SIZE）的立方（3次方）。例如：如果我們將排氣機的幾何長度放大為 2 倍，其內部可容納的有效體積將會激增為 <span class="math inline">\(2^3 = 8\)</span> 倍。</p></li>
+<li><p>因此，我們可完美推導出：風量（Q）必然與「風扇大小的 3 次方」成正比，並與「風扇轉速的 1 次方」成正比。</p></li>
+</ul>
+<p><strong>【實務】</strong> 前面題目要求將排氣機轉速調整為原先設計的 1.2 倍來求新的排氣量。在那個情境中，因為我們是用「同一台風機」在「同樣的空氣環境」下操作，所以 <span class="math inline">\(SIZE_2 = SIZE_1\)</span> 且 <span class="math inline">\(\rho_2 = \rho_1\)</span>。我們當時就是直接套用了第一條定律：<span class="math inline">\(Q_2 = Q_1 \times (1.2)^1\)</span>，這就是排氣機定律最典型且最核心的實務應用。</p>
+</section>
+<section id="排氣機風扇的種類與選用實務" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機風扇的種類與選用實務">「排氣機（風扇）的種類與選用實務」</h2>
+<ul>
+<li>常會聽到各種稱呼（如風車、鼓風機、抽風機等），但身為專業的職業衛生工程師，我們必須精確定義並根據製程特性來開立設備規格（Specification）。</li>
+</ul>
+<p><strong>一、 空氣驅動裝置之定義與壓力分級</strong> 在工程界，能使空氣持續流動的設備總稱為「空氣驅動裝置（air driving device）」。我們實務上常依據設備能產生的「壓力大小」來進行嚴格的等級區分：</p>
+<ol type="1">
+<li><p><strong>風扇 (Fan)</strong>：產生的壓力通常未滿 <span class="math inline">\(0.1 \text{ kg/cm}^2\)</span>。</p></li>
+<li><p><strong>鼓風機 (Blower)</strong>：產生的壓力介於 <span class="math inline">\(0.1 \sim 1 \text{ kg/cm}^2\)</span> 之間。</p></li>
+<li><p><strong>壓縮機 (Compressor)</strong>：產生的壓力大於 <span class="math inline">\(1 \text{ kg/cm}^2\)</span>（如廠務常用的空壓機 CDAR）。</p></li>
+</ol>
+<ul>
+<li><strong>定位</strong>：在我們工業通風（包含局部排氣與整體換氣）領域中，最主要使用的空氣驅動裝置是風扇及排風機，為了溝通一致，本章節將其統稱為「排氣機」。</li>
+</ul>
+</section>
+<section id="風扇和其他排氣機-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="風扇和其他排氣機-hsg-258">風扇和其他排氣機 (HSG 258)</h2>
+<ul>
+<li>風扇是最當見的排氣機。它從氣罩吸入空氣和有害物，通過導管系統到排放口。<strong>風扇一般可分成5 大類：</strong> (1) 螺旋槳式propeller； (2) 軸流式axial； (3) 離心式centrifugal； (4) 渦輪抽風機turbo exhauster； (5) 壓縮空氣驅動之排氣機compressed-air-driven air mover。</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/螺旋櫫式風扇.png" class="lightbox" data-gallery="quarto-lightbox-gallery-31"><img src="images/工業通風/螺旋櫫式風扇.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/管軸式風扇.png" class="lightbox" data-gallery="quarto-lightbox-gallery-32"><img src="images/工業通風/管軸式風扇.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/離心式風扇.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img src="images/工業通風/離心式風扇.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="排氣機風扇的種類與選用實務續" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機風扇的種類與選用實務續">「排氣機（風扇）的種類與選用實務」(續)</h2>
+<p><strong>二、 排氣機的兩大基本型態與應用場合</strong> 排氣機的氣動力學設計主要分為兩類，其適用場合完全不同：</p>
+<ol type="1">
+<li><p><strong>軸流式 (Axial)</strong>：</p>
+<ul>
+<li><p><strong>型式</strong>：包含螺旋槳式（propeller）、管狀軸流式（tube-axial）以及導流板軸流式（vane-axial）。</p></li>
+<li><p><strong>特性與應用</strong>：氣流流向與風機轉動軸「同方向」（類似家裡的電風扇）。由於其排氣量大但能克服的靜壓低，通常專門應用於裝設在廠房屋頂及周邊牆壁的「整體換氣裝置」。</p></li>
+</ul></li>
+<li><p><strong>離心式 (Centrifugal)</strong>：</p>
+<ul>
+<li><p><strong>型式</strong>：包含前曲風葉型（forward curved）、後曲風葉型（backward curved）以及輻射風葉型（radial impeller）。</p></li>
+<li><p><strong>特性與應用</strong>：氣流沿軸向吸入後，藉由離心力沿切線方向甩出,。因為它能克服極大的管路與濾網阻力，被廣泛且絕對地應用於「局部排氣系統」以及帶有長管路的空調系統中。</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="排氣機風扇的種類與選用實務續-1" class="level2">
+<h2 class="anchored" data-anchor-id="排氣機風扇的種類與選用實務續-1">「排氣機（風扇）的種類與選用實務」(續)</h2>
+<p><strong>三、 職業衛生設計實務：排氣機選用的 10 大評估要件</strong></p>
+<ul>
+<li><p>選用排氣機絕不能只看「風量」，我們必須全面評估廢氣特性、操作環境與機械結構。在審查供應商報價單與規格時，逐一檢核以下 10 點：</p></li>
+<li><p><strong>【效能匹配】</strong></p>
+<ol type="1">
+<li><p><strong>排氣量</strong>：必須具備足夠的所需體積流率 (<span class="math inline">\(Q\)</span>)。</p></li>
+<li><p><strong>壓力克服</strong>：排氣機提供的動力必須足以克服全系統（包含氣罩、管路、清淨裝置）累積的必要靜壓或全壓。</p></li>
+</ol></li>
+<li><p><strong>【廢氣特性對策】（關鍵職衛考量）</strong></p>
+<ul>
+<li>3. <strong>廢氣性質與污染程度</strong>： * <strong>粉塵負荷</strong>：若僅含少量粉塵或燻煙，可選用高效率的「後曲風葉離心式」或軸流式；若粉塵濃度較高，則「必須」選用類似水車槳葉的「輻射風葉型（Radial impeller）」，以避免粉塵積聚導致葉輪不平衡,。 * <strong>火災爆炸危害</strong>：當處理易燃或爆炸性物質（如 VOCs 溶劑蒸氣）時，風機結構必須使用防微火花材質（如鋁合金葉輪），且驅動馬達必須為「防爆型馬達（Explosion-proof motor）」。 * <strong>腐蝕性物質</strong>：處理酸鹼廢氣時，應使用防蝕塗層，或直接指定使用不銹鋼、玻璃纖維（FRP）、塑膠（PVC/PP）等耐腐蝕材質。 * <strong>高溫氣流</strong>：針對熔爐等高溫製程，需選擇耐高溫材質以防材料強度衰退。</li>
+</ul></li>
+<li><p><strong>【機械傳動與控制】</strong></p>
+<ul>
+<li><p>4. <strong>幾何與安裝限制</strong>：評估吸入口尺寸、設備重量、安裝位置及維護的便利性。</p></li>
+<li><p>5. <strong>傳動方式選擇</strong>： * <strong>直結傳動式 (Direct drive)</strong>：馬達與葉輪直接相連，組合緊密，轉速固定不變。 * <strong>皮帶傳動式 (Belt drive)</strong>：藉由皮帶輪驅動，最大的優勢在於<strong>具備改變排氣機轉速的彈性</strong>。當未來廠房擴建管路或製程變更時，我們只需更換不同直徑的皮帶輪即可調整風量（這正是我們前面所學「排氣機定律」的完美應用）。</p></li>
+<li><p>9. <strong>風量控制</strong>：在風機入口或出口處是否需裝設調節風門（baffle / damper）來微調風量。</p></li>
+<li><p>10. <strong>動力參數</strong>：確認排氣機回轉數 (RPM)、機械效率、傳動效率及馬達所需功率 (kW 或 HP)。</p></li>
+</ul></li>
+<li><p><strong>【環安衛與維護要求】</strong></p>
+<ul>
+<li><p>6. <strong>噪音控制</strong>：評估設備產生的白噪音（由框內擾流產生），特別注意輻射風葉型排氣機特有的「風葉經過頻率（BPF）」純音噪音，必要時需加裝隔音罩或消音管。</p></li>
+<li><p>7. <strong>機械防護</strong>：確保吸入口、排出口、傳動軸及皮帶驅動位置設有安全護罩，符合機械安全防護規範。</p></li>
+<li><p>8. <strong>維護附屬裝置</strong>：針對可能積水或積塵的系統，風機外殼應具備排水孔（Drain）、清潔孔（Cleanout door）、便於拆卸的接合外框（Split housing）及軸封（Shaft seal）。</p></li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>排氣機就是整套局部排氣系統的「心臟」。作為職衛工程師，我們不僅要讓這顆心臟夠力（風量、風壓足夠），更要確保它在面對廠房嚴苛的「血液（腐蝕、易燃、高溫廢氣）」時，能夠安全、穩定且持久地跳動。</p>
+</div>
+</div>
+</section>
+<section id="七-簡易煙囪設計原則" class="level2">
+<h2 class="anchored" data-anchor-id="七-簡易煙囪設計原則"><strong>七、 簡易煙囪設計原則</strong></h2>
+<p><strong>一、 法規要求與例外</strong></p>
+<ul>
+<li><p><strong>防止回流（Re-entry）</strong>：依據《有機溶劑中毒預防規則》、《特定化學物質危害預防標準》及《粉塵危害預防標準》，<strong>排氣口原則上必須置於室外</strong>，且應直接朝向大氣開放，絕對要避免排出的有害物再次回流至作業場所。</p></li>
+<li><p><strong>醫療</strong>：在《醫院設置標準》及負壓隔離病房的規範中，給出了非常明確的工程數據：排氣孔必須<strong>高於建築物屋頂 3 公尺以上</strong>，<strong>垂直排氣速度必須大於 15 m/s</strong>，且排氣口與新鮮空氣引入口（外氣空調箱 MAU 等）必須保持 <strong>15 公尺以上的水平距離</strong>。這些數據在實務上常被我們直接借用為高科技廠房建廠的設計標竿。</p></li>
+<li><p><strong>室內排放的法定例外</strong>：依據《粉塵危害預防標準》的但書，如果你的系統具備極高效率的「過濾除塵方式（如袋濾機搭配 HEPA）」或「靜電除塵方式」，排氣口是可以合法置於室內的。這在無塵室或高價金屬回收製程非常常見。</p></li>
+</ul>
+<p><img src="images/工業通風/圖41 排放煙囟的位置.png" class="img-fluid"></p>
+</section>
+<section id="七-簡易煙囪設計原則-續" class="level2">
+<h2 class="anchored" data-anchor-id="七-簡易煙囪設計原則-續"><strong>七、 簡易煙囪設計原則 (續)</strong></h2>
+<p><strong>二、 煙囪效能：ACGIH 設計原則</strong> 煙囪的實際排氣高度，在工程上稱為「有效高度（Effective Stack Height）」，它等於「煙囪實體高度」加上「排氣動能造成的衝流高度」與「熱氣的浮力高度」。<strong>排氣出口風速必須「至少為大氣風速的 1.5 倍」</strong>。</p>
+<ol type="1">
+<li><p><strong>克服下吹效應（Downwash / Wake Effect）</strong>：</p>
+<ul>
+<li><p>當大氣風速吹過建築物或煙囪時，會在背風面產生負壓的「尾流（Wake）」。如果排氣動能不足，廢氣會被直接捲入這個尾流中往下吹。</p></li>
+<li><p><strong>理想風速設計值</strong>：ACGIH 建議最佳的出口風速設定為 <strong>15.24 m/s</strong>（約 3000 fpm）。因為這足以抵抗高達 10.8~13.8 m/s（相當於 6級強風）的大氣風速造成的下吹效應。同時，如果前方的清淨裝置破漏，這個風速也足以作為搬運風速，避免粉塵沉積在煙囪口。</p></li>
+</ul></li>
+<li><p><strong>高度與風速不可互相完全取代</strong>：</p>
+<ul>
+<li><p>不能用極高的出口風速來彌補煙囪高度的不足。</p></li>
+<li><p>煙囪必須盡可能設在「建築物的最高屋頂上」，並避開高架棚、閣樓、甚至是為了美觀而設置的「建築屏風」，因為這些障礙物都會產生龐大的尾流區。</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="七-簡易煙囪設計原則-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="七-簡易煙囪設計原則-續-1"><strong>七、 簡易煙囪設計原則 (續)</strong></h2>
+<p><strong>三、 防雨罩（Rain Cap）</strong></p>
+<ul>
+<li><p><strong>排氣煙囪不可使用傳統的「傘狀防雨罩」或「彎頭向下」設計</strong>。</p></li>
+<li><p><strong>防雨罩的危害</strong>：防雨罩會直接破壞排氣的向上動能，將含有害物的廢氣強制「往下」導向屋頂。</p></li>
+<li><p><strong>流速抗雨</strong>：雨滴落下的最終沉降終端速度大約是 10.16 m/s。只要我們的煙囪出口風速設計高於 <strong>13.20 m/s</strong>，強大的向上氣流就足以將雨水阻擋在外。</p></li>
+<li><p><strong>停機時的防雨對策</strong>：當排氣機關閉時，雨水確實會直接落入呈「直圓柱體」的煙囪內。因此，正確的設計是在排氣機底部或煙囪最下方的轉折處，設置「排水孔（Drain）」，並讓導管朝排氣機方向稍微傾斜以防積水，將收集到的雨水導引至廠區廢水系統。研究指出，防雨罩只能擋掉約 16%~45% 的雨水。<img src="images/工業通風/Figure 42 Stack design.png" class="img-fluid"></p></li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>「<strong>高煙囪不足以代替良好的汙染排放控制</strong>」。</p>
+<p>源頭減量<strong>+</strong>選用正確高效的空氣清淨裝置<strong>+排放速度+煙囪的設計</strong>(高度、垂直排放與遠離進風口)</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="lev-職安衛法規重點" class="level1">
+<h1>LEV 職安衛法規重點</h1>
+<p><strong>1. 職業安全衛生設施規則</strong></p>
+<ul>
+<li><strong>濃度控制</strong>：當工作場所內發散有害氣體、蒸氣、粉塵時，雇主應視其危害性質，採取密閉設備、<strong>局部排氣裝置</strong>或整體換氣裝置等適當措施，強制要求作業環境空氣中之有害物濃度不得超過勞工作業場所容許暴露標準（PELs）,。</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>有機溶劑中毒預防規則</strong></li>
+</ol>
+<ul>
+<li><p><strong>依危害分級設置</strong>：對於毒性及危害性較高的「第一種有機溶劑」，法規強制要求於室內或儲槽作業時，必須設置密閉設備或局部排氣裝置。若為「第二種」或「第三種」有機溶劑，除局部排氣外，視作業環境條件可放寬允許使用整體換氣裝置。</p></li>
+<li><p><strong>氣罩與排氣口設計</strong>：局部排氣裝置之外裝型氣罩應儘量接近有機溶劑蒸氣發生源，並應儘量縮短導管長度、減少彎曲數目。排氣口必須直接向大氣開放，排出物不得回流至作業場所內,。</p></li>
+</ul>
+<p><strong>2. 特定化學物質危害預防標準</strong></p>
+<ul>
+<li><p><strong>高毒性物質之包圍型氣罩</strong>：在從事製造或處置乙類、丙類（第一種或第二種）特定化學物質時，若因計量、投入容器、裝袋等作業特性而無法完全密閉，法規要求應採用不致使勞工身體直接接觸之方法，並強制於作業場所設置「包圍型氣罩」之局部排氣裝置,。</p></li>
+<li><p><strong>排氣機位置限制</strong>：為防止高危害氣體或粉塵腐蝕設備或引發意外，局部排氣裝置若設有除塵或廢氣處理裝置，其排氣機必須設置於該除塵或廢氣處理裝置之「後方」（即負壓側）。</p></li>
+</ul>
+<p><strong>3. 粉塵危害預防標準</strong></p>
+<ul>
+<li><p><strong>特定粉塵發生源控制</strong>：針對礦物搗碎、粉碎、研磨、裁切等「特定粉塵發生源」，雇主必須依規定設置密閉設備或局部排氣裝置。</p></li>
+<li><p><strong>濕式作業之替代性</strong>：在部分粉塵作業中，若設備能以「連續注水或注油」操作，維持粉塵發生源的濕潤狀態，可依法免除設置局部排氣裝置之規定。</p></li>
+</ul>
+<section id="lev-職安衛法規重點-續" class="level2">
+<h2 class="anchored" data-anchor-id="lev-職安衛法規重點-續">LEV 職安衛法規重點 (續)</h2>
+<p><strong>三、 系統專業設計、測試與管理機制</strong> (有機/特化)</p>
+<p>局部排氣系統並非安裝即可，法規對於其設計資格與驗證留存有嚴格的專業要求：</p>
+<ul>
+<li><p><strong>專業人員設計制度</strong>：雇主設置局部排氣裝置時，必須由經中央主管機關訓練合格之「專業人員」進行妥善設計，並製作<strong>「局部排氣裝置設計報告書」</strong>。</p></li>
+<li><p><strong>原始性能測試與建檔</strong>：系統完工後，雇主必須實施「原始性能測試」，以驗證其控制風速或捕捉風速是否達到設計與法規標準，並製作原始性能測試報告書。相關文件與紀錄依法必須保存<strong>十年</strong>，以供後續稽核與追蹤。</p></li>
+</ul>
+<p><strong>四、 運轉維持與定期自動檢查</strong></p>
+<ul>
+<li><p><strong>嚴禁停機與阻礙</strong>：於有機溶劑、粉塵等有害作業時間內，局部排氣裝置依法「不得停止運轉」，且周圍不得有阻礙其排氣功能之物品，以確保污染物質能被連續且有效地排除。</p></li>
+<li><p><strong>定期實施自動檢查</strong>：為避免系統性能因導管破損、粉塵堆積或風扇皮帶鬆弛而衰退，局部排氣裝置、空氣清淨裝置依法<strong>每年</strong>應定期實施自動檢查 1 次。檢查項目包括氣罩與導管之磨耗及損壞、排氣機及馬達之運轉狀況、皮帶鬆弛度，以及最重要的吸氣與排氣能力量測。</p></li>
+</ul>
+</section>
+<section id="局部排氣之設計與應用考量" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣之設計與應用考量">局部排氣之設計與應用考量</h2>
+<p><strong>需妥善瞭解：</strong></p>
+<p>(1) 有害物雲圍如何自有害物發生源逸散出來；</p>
+<p>(2) 有害物雲圍規模、速率及方向；</p>
+<p>(3) 局部排氣引起的氣流，及其對有害物雲團和其他製程之效應；</p>
+<p>(4) 氣罩大小與形狀對捕集與圍堵有害物雲團之影零；</p>
+<p>(5) 工作場所氣流對局部排氣之效應；</p>
+<p>(6) 勞工（製程操作者）及含有害物之空氣流經呼吸區之位置。</p>
+</section>
+<section id="局部排氣系統設計-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣系統設計-hsg-258">局部排氣系統設計 (HSG 258)</h2>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>局部排氣系統之”工作”在於抽取來自氣罩的正確氣量，設計局部排氣系統之關鍵議題包括導管、排氣機、空氣清淨裝置，以及大氣排放口與循環空氣。</p>
+</div>
+</div>
+</div>
+<ul>
+<li><p>系統需達到其特定效能，且耐磨損。</p></li>
+<li><p>系統維件應容易且安全地檢點、檢視、清潔、測試及維修。</p></li>
+<li><p>局部排氣系統應清淨廢氣中之有害物，並予以排放。除了單一導管系統外， 都應該在設計過程中運用迭代演算法，設計者應該：</p>
+<ul>
+<li><p>(1) 初步設計：規劃空間配置；</p></li>
+<li><p>(2) 訂定每一氣罩所需排氣量；</p></li>
+<li><p>(3) 建立每一合管之排氣量與全壓；</p></li>
+<li><p>(4) 以標準尺寸之導管畫出設計圖；</p></li>
+<li><p>(5) 重新計算各氣罩與合管之排氣量；</p></li>
+<li><p>(6) 利用<strong>漸縮管或滑動閥</strong>調整流量到所需值；</p></li>
+<li><p>(7) 重新計算以產生<strong>系統阻抗曲線</strong>，以顯示已知排氣機全壓下，局部排氣系統之排氣量(在空氣輸送裝置的任一給定壓力下，系統能移動的空氣體積)。</p></li>
+<li><p>對設計者有用之計算數值，如：</p>
+<ul>
+<li>(1) 空氣密度－温度修正； (2) 由動壓換算成風速； (3) 圓形導管截面積； (4) 液體最大蒸氣濃度； (5) 蒸氣與氣體之Pa 、ppm 、及mg/m3 之單位換算。</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="接管工程-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="接管工程-hsg-258">接管工程 (HSG 258)</h2>
+<ul>
+<li><p>設計原則：</p>
+<ul>
+<li><p><strong>保持設計盡可能簡單</strong></p></li>
+<li><p>使用<strong>光滑內壁風管</strong>，內部無障礙物，以便抽取粒狀物</p></li>
+<li><p>風速需<strong>足夠高</strong>以維持顆粒懸浮於氣流中，同時<strong>足夠低</strong>以控制噪音在可接受範圍</p></li>
+<li><p>風管路徑規劃應<strong>最小化噪音困擾</strong></p></li>
+<li><p>盡可能保持建築物內<strong>風管壓力為負壓</strong></p></li>
+<li><p>阻力與幾何形狀</p>
+<ul>
+<li><p>採用<strong>最少數量的彎頭與接點</strong>，以最小化流動阻力</p></li>
+<li><p>必要改變方向時，應<strong>平滑過渡</strong>；接點與斷面變化處也應平滑<br>
+→ <strong>不宜使用 T 型三通</strong></p></li>
+<li><p>當風管斷面需要改變時，應採用<strong>漸縮／漸擴段（tapered sections）</strong></p></li>
+</ul></li>
+<li><p>維護、安全與特殊考量</p>
+<ul>
+<li><p>在 LEV 系統的任何<strong>低點</strong>設置<strong>排水點(</strong>針對氣膠、霧氣或可能冷凝、助燃的物質)</p></li>
+<li><p>適當設置<strong>檢修口（access points）</strong>，以便清潔與排除堵塞(些位置 需方便接近且易於打開)</p>
+<ul>
+<li><strong>提供測試孔</strong>，至少在導管中有個”靜壓接頭”可監測系統或診斷惡化或局部堵塞： (1) 在每個氣罩或包圍型氣罩之後； (2) 在導管系統中之關鍵點； (3) 在一些組件量測壓差，例如風扇及濾材前後。 (在導管上<strong>標記</strong>以顯示這些點的位置)</li>
+</ul></li>
+<li><p>對於顆粒輸送，<strong>盡量縮短水平管段長度</strong></p></li>
+<li><p>根據預期的溫度範圍，風管應能<strong>承受熱脹冷縮</strong></p></li>
+<li><p><strong>避免使用長段軟管</strong>（軟管流阻高、回彈性低，且易磨損、裂開、損壞）</p></li>
+<li><p><strong>避免急彎</strong>（會導致顆粒積聚並堵塞風管）</p></li>
+</ul></li>
+<li><p>防火要求</p>
+<ul>
+<li><strong>風管不得破壞建築物的防火區劃（fire compartments）</strong></li>
+</ul></li>
+<li><p>導管（運輸）速率</p>
+<ul>
+<li>參考表12 最低搬運風速之建議值</li>
+</ul></li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/工業通風/圖33 肘管、合管及連接導管.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img src="images/工業通風/圖33 肘管、合管及連接導管.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/Figure 34 A multi-branch LEV system.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35"><img src="images/工業通風/Figure 34 A multi-branch LEV system.png" class="img-fluid"></a></td>
+<td><a href="images/工業通風/表12 最低搬運風速之建議值.png" class="lightbox" data-gallery="quarto-lightbox-gallery-36"><img src="images/工業通風/表12 最低搬運風速之建議值.png" class="img-fluid"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="補氣make-up-air-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="補氣make-up-air-hsg-258">補氣（Make-up air）— HSG 258</h2>
+<ul>
+<li><p><strong>抽出的空氣需要有計畫地補充</strong>，否則會產生強烈氣流（ draughts），削弱 LEV 系統效能。</p></li>
+<li><p>若無足夠補充空氣，LEV 將無法按設計運轉。</p></li>
+<li><p><strong>補充空氣是 LEV 系統的組成部分</strong>，加熱補充空氣是重要的運轉成本。</p></li>
+<li><p>補充空氣量 <strong>必須等於</strong> 系統抽出的空氣量。</p></li>
+</ul>
+<section id="補氣的設計" class="level3">
+<h3 class="anchored" data-anchor-id="補氣的設計">補氣的設計</h3>
+<ul>
+<li><p>補充空氣 <strong>不得產生氣流（draughts）</strong> 或 <strong>干擾 LEV 氣罩的氣流</strong>。</p></li>
+<li><p>進氣口的尺寸應<strong>足夠大</strong>，以最小化氣流干擾。</p></li>
+<li><p>進氣口應<strong>設置在遠離氣罩的位置</strong>。</p></li>
+</ul>
+</section>
+</section>
+<section id="局排或整體換氣" class="level2">
+<h2 class="anchored" data-anchor-id="局排或整體換氣">局排或整體換氣？</h2>
+<p>局部排氣可能不是下列情境之最佳解決方案：</p>
+<p>(1) 太多遍布各處之有害物發生源；</p>
+<p>(2) 有害物發生源太大使局部排氣無法涵蓋整個有害物發生源；</p>
+<p>(3) 有害物發生源位置不固定；</p>
+<p>(4) 有害物發生源散發的有害物量太少；</p>
+<p>(5) 逸散之物質具厭惡性但無害。</p>
+<p>雇主與設計技師合作，可決定以局部排氣控制主要的有害物發生源，並用整體換氣來控制較小的有害物發生源或是由大型有害物發生源逸散之任何有害物。</p>
+<p>整體通風涉及以淨化或新鮮的空氣來取代工作場所含有害物之空氣。稀釋或混合通風和置換通風是整體換換氣的兩種形式。</p>
+</section>
+<section id="局部排氣系統其他事項-hsg-258" class="level2">
+<h2 class="anchored" data-anchor-id="局部排氣系統其他事項-hsg-258">局部排氣系統其他事項 (HSG 258)</h2>
+<ul>
+<li>設計原則</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">分類</th>
+<th style="text-align: left;">設計原則</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>位置</strong></td>
+<td style="text-align: left;">能在室內安靜地運作。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>導管</strong></td>
+<td style="text-align: left;">提供氣流顯示器，例如壓差計，設在氣罩導管及其他必要之處。<br>
+盡量減少肘管且接管平順。<br>
+在需要之處予以耐腐蝕處理。<br>
+要設置排水處以排掉由滴形成之液體。<br>
+可能導管都處於負壓狀態。<br>
+預期易磨耗處，並規劃易於更換。<br>
+要能方便接近以清除堵塞處。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>氣流</strong></td>
+<td style="text-align: left;">設計能安靜地運作。<br>
+讓氣流及微粒傳運順暢。<br>
+提供足夠的補充空氣。<br>
+排放到安全的地方。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>可用性</strong></td>
+<td style="text-align: left;">確保能安全、方便地接近系統中必需接近之組件。<br>
+將噪音、照明及熱舒適納入考量。<br>
+更換零件要維持一定量的庫存。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hsg-258-確認-lev-控制有效性的方法" class="level2">
+<h2 class="anchored" data-anchor-id="hsg-258-確認-lev-控制有效性的方法">HSG 258 確認 LEV 控制有效性的方法</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">類別</th>
+<th style="text-align: left;">方法</th>
+<th style="text-align: left;">說明 / 應用時機</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>定性</strong></td>
+<td style="text-align: left;">目視觀察</td>
+<td style="text-align: left;">檢查氣罩、風管、風機是否有可見損壞、腐蝕、堵塞；確認補充空氣是否足夠；必要時使用內視鏡檢查風管內部。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">發煙測試</td>
+<td style="text-align: left;">使用發煙管或煙霧產生器，觀察煙霧是否被順暢吸入氣罩、有無洩漏或渦流、是否進入操作者呼吸帶。測試前需關閉煙霧警報器。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">粉塵燈測試</td>
+<td style="text-align: left;">使用強力平行光束照射，觀察粉塵或霧滴的形狀、大小、密度與移動方向，評估氣罩控制效果。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">氣流指示器</td>
+<td style="text-align: left;">使用壓差計等簡單裝置，讓操作者即時確認氣罩氣流是否足夠。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>定量</strong></td>
+<td style="text-align: left;">面速度測量</td>
+<td style="text-align: left;">於氣罩開口面進行多點測量，計算平均面速度（如排煙櫃、局部氣罩）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">捕捉速度測量</td>
+<td style="text-align: left;">於污染源發生點測量風速，確認是否落在設計捕捉區內。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">風管內風速與流量測量</td>
+<td style="text-align: left;">在直管段使用皮托管或熱線式風速計測量風速，計算體積流量。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">靜壓測量</td>
+<td style="text-align: left;">在氣罩、風管、風機、過濾器兩側測量靜壓，與試車基準值比對。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">風機性能測試</td>
+<td style="text-align: left;">測量風機轉速、馬達電流、功率消耗，確認工作點是否在最佳效率區。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">過濾器效率測試</td>
+<td style="text-align: left;">測量過濾器上下游壓差；對HEPA過濾器需依標準進行現場洩漏測試。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">濕式洗滌器測試</td>
+<td style="text-align: left;">測量進出口靜壓及水質pH值（若影響洗滌效果）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>空氣採樣</strong></td>
+<td style="text-align: left;">人員個人採樣</td>
+<td style="text-align: left;">讓操作者佩戴採樣泵，測量呼吸帶空氣中污染物濃度，為控制有效性的最終證明。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">區域空氣採樣</td>
+<td style="text-align: left;">在工作場所特定位置（如氣罩附近、休息區）設置採樣器，測量污染物濃度。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">排放採樣</td>
+<td style="text-align: left;">於排放口測量污染物濃度，確認是否符合環保法規。</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hsg-258-局部排氣lev量測方法" class="level2">
+<h2 class="anchored" data-anchor-id="hsg-258-局部排氣lev量測方法">HSG 258 局部排氣（LEV）量測方法</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 27%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">目標對象</th>
+<th style="text-align: left;">量測方法</th>
+<th style="text-align: left;">說 明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>完全氣罩 (Full enclosure)</strong></td>
+<td style="text-align: left;">量測靜壓差</td>
+<td style="text-align: left;">測量氣罩內部與工作間的靜壓差，內部壓力必須 <strong>低於</strong> 工作間壓力。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>部分氣罩 (Partial enclosure)</strong><br>
+（排煙櫃、塗裝櫃）</td>
+<td style="text-align: left;">量測面速度 (Face velocity)</td>
+<td style="text-align: left;">於氣罩開口面進行 <strong>多點量測</strong>，讀值不得過度變異。應依英國或歐洲標準進一步測試。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>接收型氣罩 (Receiving hood)</strong><br>
+（含頂篷）</td>
+<td style="text-align: left;">量測面速度</td>
+<td style="text-align: left;">大型氣罩需於開口面 <strong>多點量測</strong>，讀值不得過度變異。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>捕集型氣罩 (Capturing hood)</strong></td>
+<td style="text-align: left;">量測面速度</td>
+<td style="text-align: left;">大型氣罩需於開口面 <strong>多點量測</strong>，讀值不得過度變異。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>捕集型氣罩 – 狹縫型 (Slot)</strong></td>
+<td style="text-align: left;">量測空氣速度</td>
+<td style="text-align: left;">沿狹縫 <strong>全長等距</strong> 測量多點風速，計算平均值，讀值不得過度變異。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>氣罩靜壓 (Hood static pressure)</strong></td>
+<td style="text-align: left;">量測靜壓</td>
+<td style="text-align: left;">若氣罩有安裝氣流監測器，應 <strong>核對讀值是否正確</strong>。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>靜壓箱 (Plenum)</strong></td>
+<td style="text-align: left;">量測靜壓</td>
+<td style="text-align: left;">除了氣罩導管測量外，也應測量靜壓箱（某些氣罩後方的壓力均衡室）的靜壓。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>風管 (Duct)</strong></td>
+<td style="text-align: left;">量測風管內風速</td>
+<td style="text-align: left;">在 <strong>每個氣罩的風管</strong>（若可行）進行測量。測點應位於 <strong>直管段</strong>，且 <strong>遠離彎頭與擾流源</strong>。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>風機／空氣輸送裝置 (Fan/air mover)</strong></td>
+<td style="text-align: left;">1. 量測風機入口靜壓<br>
+2. 量測體積流量<br>
+3. 量測風機轉速</td>
+<td style="text-align: left;">• 靜壓於風機入口測量。<br>
+• 體積流量於風機入口或出口的 <strong>直管段</strong> 測量，遠離彎頭與擾流。<br>
+• 皮帶驅動風機需使用 <strong>轉速計</strong> 測量風機軸轉速，並參照製造商說明。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>過濾器 (Filter)</strong></td>
+<td style="text-align: left;">量測過濾器 <strong>上下游靜壓差</strong></td>
+<td style="text-align: left;">• 若為袋式過濾器且有振打清潔裝置，應先 <strong>啟動振打後再測量</strong>。<br>
+• 若通過過濾器的空氣量與風機相同，則不需重複測流量。<br>
+• 檢查所有壓力錶的功能與準確度。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>特殊過濾器 (Special filter)</strong><br>
+（HEPA／絕對過濾器）</td>
+<td style="text-align: left;">依 <strong>英國、歐洲或ISO標準</strong> 進行 <strong>現場洩漏測試</strong></td>
+<td style="text-align: left;">適用於過濾「毒性」微粒，需高效能過濾器。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>濕式洗滌器 (Wet scrubber)</strong></td>
+<td style="text-align: left;">1. 量測入口與出口靜壓<br>
+2. 量測水質pH值</td>
+<td style="text-align: left;">pH值僅在 <strong>影響洗滌性能</strong> 時才需測量。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="images/工業通風/圖48 測試大型開口氣罩之表面風速.png" class="img-fluid"></p>
+</section>
+<section id="研究文獻" class="level2">
+
+
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">研究文獻</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-brown2013" class="csl-entry" role="listitem">
+Brown, James S., Terry Gordon, Owen Price, and Bahman Asgharian. 2013. <span>“Thoracic and respirable particle definitions for human health risk assessment.”</span> <em>Particle and Fibre Toxicology</em> 10 (April): 12. <a href="https://doi.org/10.1186/1743-8977-10-12">https://doi.org/10.1186/1743-8977-10-12</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>製作者：何明信老師2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

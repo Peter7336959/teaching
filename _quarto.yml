@@ -40,6 +40,9 @@ website:
         href: index.qmd
       - section: "甲業"
         contents:
+          - text: 職安衛基本概念(RA)
+            href: RA_Basic.qmd
+            target: _blank                
           - text: 職安衛風RA
             href: 職安衛整體風險評估概念.qmd
             target: _blank        
@@ -84,8 +87,15 @@ website:
             target: _blank
           - text: 問題是, 我大概會活很久(Somewhere Towards the End)
             href: https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html
+            target: _blank           
+          - text: 不對稱陷阱(Skin in the game)
+            href: reading1.qmd
+            target: _blank
+      - section: "職衛師"
+        contents:
+          - text: 局部排氣控制與設計
+            href: 局部排氣控制與設計.qmd
             target: _blank            
-            
 
 format:
   html:

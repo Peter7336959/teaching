@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
+
+  <meta name="author" content="Peter Ho">
+  <meta name="dcterms.date" content="2026-04-30">
+  <title>教學網站 - 何明信老師 – Reading 書籍閱讀整理 - 不對稱陷阱</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="style/custom.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Reading 書籍閱讀整理 - 不對稱陷阱</h1>
+  <p class="subtitle">Skin in the Game: Hidden Asymmetries in Daily Life</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Peter Ho 
+</div>
+</div>
+</div>
+
+  <p class="date">2026-04-30</p>
+</section>
+<section id="當別人的風險變成你的風險如何解決隱藏在生活中的不對等困境" class="slide level2">
+<h2><strong>當別人的風險變成你的風險，如何解決隱藏在生活中的不對等困境</strong></h2>
+<h3 id="不對稱陷阱-skin-in-the-game-hidden-asymmetries-in-daily-life">不對稱陷阱 <a href="https://www.books.com.tw/products/0010802345?gad_source=1&amp;gad_campaignid=16581787626&amp;gbraid=0AAAAAD4DKPziZNj2kZKYx-MYZPfBR3bx-&amp;gclid=CjwKCAjwgajSBhBEEiwASicJU3P5JOabrEeTG820-blhi_eunqYz5ucp8cbxB-TcQAF2Z2in7SIO5BoCYe0QAvD_BwE">Skin in the Game: Hidden Asymmetries in Daily Life</a></h3>
+<p>長期對風險模型提出批評的人，例如……塔雷伯……現在被讚為先知。―《經濟學人》（The Economist）</p>
+</section>
+<section id="有趣章節" class="slide level2">
+<h2>有趣章節</h2>
+<h3 id="第三部-最大的不對稱"><strong>第三部　最大的不對稱</strong></h3>
+<h4 id="最不能退讓者勝頑固的少數人主掌全局"><u>最不能退讓者勝：頑固的少數人主掌全局</u></h4>
+<h4 id="section">—</h4>
+<h3 id="第五部-要活著就需要承擔一定的風險"><strong>第五部　要活著，就需要承擔一定的風險</strong></h3>
+<h4 id="白痴知識分子"><u>白痴知識分子</u></h4>
+<h4 id="section-1">—</h4>
+<h3 id="第八部-風險與理性"><strong>第八部　風險與理性</strong></h3>
+<h4 id="如何對理性保持理性"><u>如何對理性保持理性</u></h4>
+<h4 id="承擔風險的邏輯"><u>承擔風險的邏輯</u></h4>
+</section>
+<section id="值得思考觀點" class="slide level2">
+<h2>值得思考觀點</h2>
+<ul>
+<li><p>「切膚之痛」（Skin in the Game）說的是，別管人們說什麼，只看他們做什麼，冒多大風險。</p></li>
+<li><p>談到社會公義時，重點放在對稱和風險分攤上；倫理規則不是放諸四海皆準。</p></li>
+<li><p>每個人都該具備的風險意識：任何事情，要玩真的，不能沒有切膚之痛。</p></li>
+<li><p>避免別人轉嫁風險，玩你的命，如果對方沒有切膚之痛，欠缺利益攸關，不擔風險，就別讓他做決定、掌握權力與影響力。</p></li>
+</ul>
+</section>
+<section id="對稱的風險承擔機制" class="slide level2">
+<h2>對稱的風險承擔機制</h2>
+<ul>
+<li><p><strong>任何參與決策或行動的人，都必須親身承擔其後果，無論好壞</strong>。</p>
+<ul>
+<li><p>塔雷伯認為，這是管理風險、建立公平社會和辨別真偽的最根本法則。</p></li>
+<li><p>如果建築師建造的房子倒塌壓死了屋主，建築師也必須被處死。</p></li>
+</ul></li>
+<li><p><strong>沒有承擔風險的人，不應該參與決策</strong>。</p></li>
+</ul>
+</section>
+<section id="書中的關鍵啟示" class="slide level2 scrollable">
+<h2>書中的關鍵啟示</h2>
+<ol type="1">
+<li><p><strong>用行動檢驗真理，而非言語</strong>：人們可以輕易地發表意見、鼓吹理念，但只有當他們必須為此「親身下注」時，我們才能看出他們真正的信念。</p></li>
+<li><p><strong>避開「白痴知識分子」</strong>：留意那些脫離現實、不承擔後果的知識分子、政客、銀行家和官僚。他們喜歡用複雜的理論去指導別人，卻從不必為自己的錯誤付出代價。</p></li>
+<li><p><strong>「頑固的少數」主導世界</strong>：當一個群體中有一個「頑固的少數」對某件事有強烈偏好時，最終會迫使整個群體遵循他們的規則。這是因為，不願妥協的少數人，其「切膚之痛」更深，因此更具主導力。</p></li>
+<li><p><strong>時間是終極的專家</strong>：真正的專家是那些經過時間和現實考驗而生存下來的人，而不是光說不練的理論家。</p></li>
+<li><p><strong>先求生存，再談其他</strong>：<strong>你必須先確保自己能活下去（避免爆倉或毀滅），否則就算長期來看策略是正確的，對你個人也沒有意義</strong>。巴菲特的投資原則—「要賺錢，你必須先活下去」—就是這個道理的最佳註解。</p></li>
+</ol>
+</section>
+<section id="如何運用這個原則" class="slide level2">
+<h2>如何運用這個原則</h2>
+<p>在生活中，用「切膚之痛」的標準來檢視周遭的人、事、物：</p>
+<ul>
+<li><p><strong>面對建議時</strong>：問問自己，如果事情搞砸了，提出建議的人會跟著倒楣嗎？如果不會，請審慎對待他的建議。</p></li>
+<li><p><strong>面對權威時</strong>：觀察那些制定規則或掌握權力的人，他們是否也遵守同樣的規則，並承擔同樣的後果？如果沒有，可能就存在不對稱的風險。</p></li>
+<li><p><strong>做出決策時</strong>：確保自己承擔了相應的責任和風險。這不僅是負責任的表現，也能讓你的決策更經得起考驗。</p></li>
+</ul>
+</section>
+<section id="第三部-最大的不對稱-1" class="slide level2 scrollable">
+<h2><strong>第三部　最大的不對稱</strong></h2>
+<h3 id="頑固的少數人主掌全局為什麼頑固的少數能贏"><u>頑固的少數人主掌全局：</u>為什麼「頑固的少數」能贏？</h3>
+<ul>
+<li><p>這個觀點顛覆了我們「少數服從多數」的民主直覺。塔雷伯指出，在現實世界的許多層面，<strong>主導規則的往往不是「沉默的多數」，而是「頑固的少數」</strong>。</p></li>
+<li><p>背後的機制是這樣的：</p>
+<ol type="1">
+<li><p><strong>不對稱的代價</strong>：對於「頑固的少數」來說，違背他們偏好所付出的代價極高（可能是心理上、文化上或實質上的痛苦）。但對於「靈活的多數」來說，順從少數的要求，<strong>通常只會帶來些許不便，代價相對很低</strong>。</p></li>
+<li><p><strong>少數主導（Minority Rule）</strong>：因為多數人覺得「沒必要為這點小事計較」，而少數人「打死不退」，最終，整個群體為了避免衝突或維持和諧，會傾向於<strong>採納那個最不願妥協的少數群體的規則</strong>。</p></li>
+</ol></li>
+</ul>
+<h4 id="請想想生活中的例子-少數的禁忌最終變成了全體的規則">請想想生活中的例子 …… （<strong>少數的禁忌，最終變成了全體的規則</strong>）</h4>
+</section>
+<section id="第五部-要活著就需要承擔一定的風險-1" class="slide level2 scrollable">
+<h2><strong>第五部　要活著，就需要承擔一定的風險</strong></h2>
+<h3 id="白痴知識分子-intellectual-yet-idiot簡稱-iyi-因為"><u>白痴知識分子</u> <strong>（Intellectual Yet Idiot，簡稱 IYI）？ 因為：</strong></h3>
+<ol type="1">
+<li><p><strong>脫離現實（缺乏「切膚之痛」）</strong>：他們從未親身參與過他們所討論的實際活動，也沒有為自己的理論或建議承擔過真實的風險與後果。</p></li>
+<li><p><strong>誤把「模型」當作「現實」</strong>：他們過度相信書本上的簡化理論和統計數據，忽略了現實世界的複雜性、不確定性和「雜訊」。</p></li>
+<li><p><strong>用華麗的理論指導實務</strong>：他們熱衷於用複雜的言詞和報告，去指導那些真正在第一線做事、有「切膚之痛」的實務工作者，造成災難性的後果。</p></li>
+</ol>
+<h4 id="塔雷伯強調真正的知識來自於實踐和風險承擔">塔雷伯強調，真正的知識來自於<strong>實踐和風險承擔</strong>。</h4>
+<h4 id="白痴知識分子之所以危險是因為他們創造了巨大的不對稱">「白痴知識分子」之所以危險，是因為他們創造了<strong>巨大的不對稱</strong>：</h4>
+<ul>
+<li><p>他們提出一個漂亮的理論或政策建議，如果成功，他們獲得名聲和獎勵。</p></li>
+<li><p>如果失敗，其<strong>災難性的後果（成本、損失、苦難）完全由不具備專業知識的普通人或前線工作者承擔</strong>。他們自己則毫髮無傷，甚至還能寫另一篇論文來解釋「為什麼預測會失準」。</p></li>
+</ul>
+<h4 id="請想想生活中的例子-光抱怨有效需要認知覺醒">請想想生活中的例子 …… 光抱怨有效？需要認知覺醒？</h4>
+</section>
+<section id="第八部-風險與理性-1" class="slide level2 scrollable">
+<h2><strong>第八部　風險與理性</strong></h2>
+<h4 id="如何對理性保持理性承擔風險的邏輯"><u>如何對理性保持理性，承擔風險的邏輯</u></h4>
+<ul>
+<li>要對「理性」保持理性，意味著我們必須：</li>
+</ul>
+<ol type="1">
+<li><p><strong>認知到理性的邊界</strong>：承認人類的認知能力有限，未來充滿不可預測的「黑天鵝」。試圖用完美的數學模型去計算所有風險，本身就是一種愚蠢的「白痴知識分子」行為。</p></li>
+<li><p><strong>區分「已知」與「未知」</strong>：真正的理性，不是去計算那些我們可以量化的微小風險（這些通常不重要），而是要去<strong>防範那些我們無法量化、但一旦發生就會毀滅我們的巨大風險</strong>。</p></li>
+<li><p><strong>採用「否定法」（Via Negativa）</strong>：比起努力去「做對的事」，更理性的策略是<strong>避免做「明顯錯誤的事」</strong>。移除毒藥比尋找仙丹更有效。例如，與其追求一個完美的投資策略，不如先避開會讓你破產的賭注。</p></li>
+</ol>
+</section>
+<section id="第八部-風險與理性-2" class="slide level2 scrollable">
+<h2><strong>第八部　風險與理性</strong></h2>
+<h3 id="承擔風險的邏輯拒絕免費的午餐">承擔風險的邏輯：拒絕「免費的午餐」</h3>
+<p>塔雷伯指出，在現實世界，<strong>「風險」和「報酬」之間必須存在對稱性</strong>。他提出了承擔風險的核心邏輯：</p>
+<ol type="1">
+<li><p><strong>你的風險，你來扛（Skin in the Game）</strong>：這是本書的基石。任何決策者都必須親身承擔其決策的潛在負面後果。如果你提出一個建議，而建議失敗時你會損失慘重，這個建議才值得被認真對待。沒有承擔風險的決策，本質上是作弊。</p></li>
+<li><p><strong>理性是「避免滅亡」的智慧</strong>：真正的理性，首要目標是<strong>生存</strong>（即前文提到的「遍歷性」）。一個策略在「理論上」有99%的機率會賺大錢，但有1%的機率會讓你徹底破產，那麼選擇這個策略就是<strong>極度不理性</strong>的。因為一旦破產，你就永遠退出了遊戲。理性的邏輯是：<strong>先確保自己能留在牌桌上，再考慮贏錢。</strong></p></li>
+<li><p><strong>用「槓鈴策略」應對不確定性</strong>：這是一種具體的理性行動指南。將你的資源（時間、金錢、精力）分成兩極：</p>
+<ul>
+<li><p><strong>極度保守的一端（90%）</strong>：投入在最安全、最穩健的地方，確保生存無虞。</p></li>
+<li><p><strong>極度冒險的一端（10%）</strong>：投入在高風險、高報酬的投機機會上，用來博取巨大的正向「黑天鵝」。</p></li>
+<li><p><strong>完全放棄中間地帶</strong>：放棄那些看似穩妥、但其實隱藏著毀滅性風險的「中庸」投資（例如許多複雜的金融商品）。</p></li>
+</ul></li>
+</ol>
+<h4 id="真正的專業不在於你能做出多完美的決策而在於你能聰明地避開那些會讓你全盤皆輸的愚蠢錯誤"><strong>真正的專業，不在於你能做出多完美的決策，而在於你能聰明地避開那些會讓你全盤皆輸的愚蠢錯誤。</strong></h4>
+</section>
+<section id="呼應---職業安全衛生風險評估與控制階層" class="slide level2 scrollable">
+<h2>呼應 - 職業安全衛生風險評估與控制階層</h2>
+<ul>
+<li><p>更理性的策略是：<strong>先系統性地清除那些「明顯錯誤」且可能致命的危害。</strong></p></li>
+<li><p><strong>真正的理性決策，體現在風險控制「優先順序」的選擇上。</strong></p></li>
+</ul>
+<ol type="1">
+<li><p><strong>不做「假性的理性」</strong>：傳統上，很多組織會急於先做「行政管理」（如訂定罰則、要求寫報告）或發放「個人防護裝備」（如口罩），因為這些措施<strong>看起來很快、成本很低、可量化</strong>。但這其實是塔雷伯所說的「白痴知識分子」行為——用表面的忙碌，來逃避面對最困難但最核心的問題。</p></li>
+<li><p><strong>真正的「理性」是逆流而上</strong>：根據「否定法」，我們應該先問：「<strong>什麼是絕對不該做的？什麼是明顯錯誤的？</strong>」這對應到控制層級的頂端——<strong>「消除」</strong>。例如，與其設計一個「如何安全地爬上天花板換燈泡」的詳細SOP（行政管理），更理性的作法是直接<strong>將燈泡設計為長效型，或從地面就能更換</strong>（消除高處作業危害）。</p></li>
+</ol>
+<h4 id="能消除就不要替代能隔離就不要戴護具"><strong>「能消除就不要替代，能隔離就不要戴護具。」</strong></h4>
+</section>
+<section id="呼應---職業安全衛生風險評估與控制階層-1" class="slide level2">
+<h2>呼應 - 職業安全衛生風險評估與控制階層</h2>
+<ul>
+<li><p>在職業安全衛生領域，<strong>「諮詢現場勞工」不僅僅是一個程序或一項法規要求，它就是「切膚之痛」原則最具體的實踐。</strong></p></li>
+<li><p><strong>諮詢現場勞工，就是將這種不對稱性重新拉回平衡</strong>。讓有「切膚之痛」的人參與決策，能確保策略不是紙上談兵，而是真正能降低他們實際面對的風險。</p></li>
+<li><p><strong>管理者或安全工程師</strong>（可能成為「白痴知識分子」的危險群）擁有的通常是「書本智慧」——他們知道法規、理論和統計數據。</p></li>
+<li><p><strong>現場勞工</strong>擁有的則是「經驗智慧」——他們知道哪個機器的安全開關其實常失靈、哪個化學桶的閥門在下午三點特別難轉、哪個SOP步驟因為太麻煩所以大家從來不照做。這些是<strong>無法被任何風險評估表量化，但卻最致命的細節</strong>。</p></li>
+<li><p>一個沒有「切膚之痛」的決策者，很容易設計出一個「理論上完美，但現場沒人用」的防護措施。</p></li>
+</ul>
+</section>
+<section id="總之" class="slide level2">
+<h2>總之</h2>
+<p>《不對稱陷阱》充滿挑釁和智慧。它鼓勵我們成為一個「躬身入局」的人，透過親身實踐和承擔風險來理解世界，並避開那些只會空談、將風險轉嫁給他人的「不對稱陷阱」。</p>
+<h3 id="我認為這本書給出職安衛專業人員日常生活與工作上的風險承擔的認知與思維">我認為：這本書給出職安衛專業人員日常生活與工作上的風險承擔的認知與思維。</h3>
+<h3 id="但另一本書提醒我們別製造虛假風險浪費時間金錢人力等寶貴資源">但，另一本書提醒我們別製造虛假風險，浪費時間、金錢、人力等寶貴資源。</h3>
+<h4 id="販賣恐懼脫軌的風險判斷">《販賣恐懼：脫軌的風險判斷》</h4>
+</section>
+<section id="販賣恐懼脫軌的風險判斷-1" class="slide level2">
+<h2>《販賣恐懼：脫軌的風險判斷》</h2>
+<h3 id="書中重要觀點">書中重要觀點：</h3>
+<ul>
+<li><p>我們正處於人類有史以來最健康、最長壽、最安全的時代，但社會卻瀰漫著一種「恐懼的文化」（Culture of Fear）。</p></li>
+<li><p><strong>根源一：大腦的「直覺」與「理性」系統失調。</strong></p></li>
+<li><p><strong>根源二：恐懼被「系統性地販賣」。</strong></p></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>這些會影響你的風險判斷</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="如何讓風險判斷重返正軌" class="slide level2">
+<h2>如何讓風險判斷「重返正軌」？</h2>
+<ul>
+<li><p><strong>認識自己的大腦</strong>：理解我們有兩套思考系統，而直覺的「恐懼反應」在現代社會常常不靠譜。在做重要決定時，練習啟動「理性系統」進行二次思考。</p></li>
+<li><p><strong>區分「恐懼」與「真正的風險」</strong>：學會辨識那些被故事、畫面或權威專家「包裝」過的恐懼。問問自己：這個威脅的真實統計數據是什麼？發生在我身上的機率有多高？</p></li>
+<li><p><strong>警惕「相對風險」的數字遊戲</strong>：書中指出，當聽到「某種物質使罹癌風險增加一倍」時，要先搞清楚「<strong>絕對風險</strong>」是多少。如果絕對風險是從百萬分之一增加到百萬分之二，那這個「增加一倍」的訊息，本質上是在製造恐慌。</p></li>
+</ul>
+</section>
+<section id="販賣恐懼的觀點應用---職安衛ra領域" class="slide level2">
+<h2>《販賣恐懼》的觀點應用 - 職安衛RA領域</h2>
+<h4 id="提醒職安衛人員最大的敵人有時不是現場的危害而是我們自己與社會對風險的非理性判斷">提醒：<strong>職安衛人員最大的敵人，有時不是現場的危害，而是我們自己（與社會）對風險的「非理性判斷」</strong>。</h4>
+<h3 id="思考如何校準理性介入">思考：<strong>如何校準（理性介入）</strong></h3>
+<ul>
+<li><p><strong>應用數據追蹤</strong>：不要只看「單一事故」的嚴重度，要看「總損失工時」或「長期健康影響」。用統計數據對抗直覺的畫面感。</p></li>
+<li><p><strong>建立「風險矩陣」並定期檢視</strong>：確保資源分配是基於「頻率×嚴重度」的綜合評分，而不是基於最近的新聞熱度。</p></li>
+<li><p><strong>引入「根本原因分析」</strong>：即使沒出事，也可以透過「虛驚事件」或「近失事故」來打破這種偏誤，讓大家看到「沒有出事只是運氣好，不代表沒有風險」。</p></li>
+<li><p><strong>理性的決策</strong>。必須基於「危害控制層級」的優先序（消除、替代、工程控制等）來評估，而不是被恐懼行銷綁架。</p></li>
+<li><p><strong>對抗「管理層」的過度反應</strong>：例如，高層因為某次工傷事故被媒體報導，為了安撫外界，要求推行一套「超級嚴格的SOP」或全面更換新設備，即使這不是最具成本效益的做法。</p></li>
+<li><p><strong>對抗「法規跟風」的壓力</strong>：政府新推出一個「五星級安全評比」標章，公司為了獲得標章，花大量人力寫文件，卻忽略了現場最實際的粉塵通風問題。</p>
+<ul>
+<li>確保合規是<strong>底線</strong>，但不是<strong>目標</strong>。真正的目標應該是「降低真實風險」。有時為了符合某個熱門規範（被販賣的恐懼）而投入大量資源，反而會排擠掉更關鍵的現場改善。</li>
+</ul></li>
+</ul>
+</section>
+<section id="金句解讀" class="slide level2">
+<h2>金句解讀？</h2>
+<h3 id="你有多相信一件事只能透過你願意為它冒什麼風險來證明"><strong>「你有多相信一件事，只能透過你願意為它冒什麼風險來證明。」</strong></h3>
+<h3 id="職業安全衛生領域信任建立在身體力行之上">職業安全衛生領域：信任建立在「身體力行」之上</h3>
+<ul>
+<li><p><strong>安全第一？ 願意為安全承受營運風險</strong>：當發現設備有潛在危害時，<strong>主動下令停機檢修</strong>，即使這意味著延遲出貨、損失訂單。他們用「影響公司獲利」這個真實風險，來證明「安全優先」不是口號。</p></li>
+<li><p><strong>願意為安全承受「麻煩」的風險</strong>：即使趕工壓力再大，也<strong>堅持完成每一個安全步驟</strong>（如配戴呼吸防護具、執行氣體監測）。他們願意冒著「被責罵進度慢」的風險，來證明自己真正相信安全規範。</p></li>
+<li><p>一個化學廠要進行反應槽內部清理。這是一項高風險作業。</p>
+<ul>
+<li><p><strong>不相信（或假裝相信）</strong>的主管會說：「你們要小心，快點清完。」然後站在遠處觀看，不進入現場。</p></li>
+<li><p><strong>真正相信</strong>的主管會說：「我跟你們一起進去，確認通風和防護裝備都到位，我再出來。」他<strong>願意冒著自己也可能吸入有害氣體的健康風險</strong>，來證明他對「安全程序」的信任是真實的。這個行動，比任何安全標語都更有說服力。</p></li>
+</ul></li>
+</ul>
+<h3 id="在情感領域信任體現在脆弱性的暴露之上">在情感領域：信任體現在「脆弱性的暴露」之上 ？</h3>
+<ul>
+<li><div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>以身作則</strong></p>
+<p>在情感中，風險不是身體上的，而是<strong>情感與心理上的「切膚之痛」</strong>。</p>
+</div>
+</div>
+</div></li>
+</ul>
+</section>
+<section id="殘酷但真實的檢驗標準" class="slide level2">
+<h2>殘酷但真實的檢驗標準？</h2>
+<blockquote>
+<p><strong>別聽一個人說了什麼，看他願意為此承受什麼後果。</strong></p>
+</blockquote>
+<ul>
+<li><p>在<strong>職安衛</strong>，這句話要求領導者「走入現場」；要求勞工「照步來」。</p></li>
+<li><p>在<strong>情感</strong>，這句話要求親密夥伴「交出脆弱」；要求彼此「共同承擔」。</p></li>
+</ul>
+<p><strong>真正的信任與信念，從來都不是一種「感覺」，而是一種「行動」— 一種明知有風險，依然選擇投入的勇氣。</strong></p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>希望這本書《不對稱陷阱》，能讓你對風險認知與評估有新的認識。</p>
+</div>
+</div>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo.jpg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>prepared by Peter Ho.</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'slow',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
