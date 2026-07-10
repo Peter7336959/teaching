@@ -96,6 +96,9 @@ website:
           - text: 局部排氣控制與設計
             href: 局部排氣控制與設計.qmd
             target: _blank            
+          - text: 工業毒物學概論
+            href: H_工業毒物學概論.qmd
+            target: _blank                        
 
 format:
   html:
