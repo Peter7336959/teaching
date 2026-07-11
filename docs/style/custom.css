@@ -3,28 +3,33 @@
 
 /* 基礎字體放大 */
 .reveal {
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size: 36px;          /* 從24px放大至42px */
-  line-height: 1.5;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 32px;          /* 從24px放大至42px */
+  line-height: 1em;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* 標題字體更大 */
-.reveal h2 {
-  font-size: 2.5em;
-  color: #1e3a8a;
-  margin-bottom: 0.5em;
+.reveal h1 {
+  color: darkblue;
+  padding-top: 30px;
 }
 
 .reveal h2 {
-  font-size: 1.8em;
-  color: #1e3a8a;
-  margin-top: 0.3em;
+  vertical-align: top;
+  text-decoration: underline black;
+  font-size: 2em;
+  color: black;
+  margin-top: 0em;
   margin-bottom: 0.5em;
 }
 
 .reveal h3 {
   font-size: 1.4em;
   color: #1e3a8a;
+  font-weight: bold;
 }
 
 /* 強調文字色彩 */
@@ -40,8 +45,8 @@
 
 /* 列表項目放大 */
 .reveal ul, .reveal ol {
-  margin-left: 1em;
-  line-height: 1.6;
+  margin-left: 0.5em;
+  line-height: 1.5;
 }
 
 .reveal li {
@@ -50,14 +55,24 @@
 
 /* 表格字體調整 */
 .reveal table {
-  font-size: 1em;
-  margin: 0.5em auto;
+  font-size: 1.2em;
+  margin: 0.2em auto;
   width: 95%;
+  border-collapse: collapse;
+  tbody tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+  thead {
+  border-bottom: 2px solid rgb(160 160 160);
+  background-color: #2c5e77;
+  color: white;
+}
 }
 
 .reveal th, .reveal td {
-  padding: 0.4em 0.8em;
+  padding: 0.6em 0.6em;
 }
+
 
 /* 引用區塊 */
 .reveal blockquote {
@@ -74,7 +89,7 @@
 
 /* 投影片內邊距，讓內容不貼邊 */
 .reveal .slides section {
-  padding: 1.5em;
+  padding: 1em;
 }
 
 /* 列印樣式：A4橫向 */
@@ -99,6 +114,13 @@
 /* 加入 table.css 中 */
 .table-wrapper {
     overflow-x: auto;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     border-radius: 12px;
 }
+
+.special {
+  color: purple;
+  font-weight: bold;
+  padding: 5px;
+}
+
