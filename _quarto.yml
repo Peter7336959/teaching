@@ -40,19 +40,19 @@ website:
         href: index.qmd
       - section: "甲業"
         contents:
-          - text: 職安衛基本概念(RA)
+          - text: RA 基本概念
             href: RA_Basic.qmd
             target: _blank                
-          - text: 職安衛風RA
-            href: 職安衛整體風險評估概念.qmd
+          - text: HSE RA
+            href: HSE職安衛整體風險評估概念.qmd
             target: _blank        
-          - text: 安全RA
+          - text: 甲業安全RA
             href: 甲業＿風險評估詳實版.qmd
             target: _blank            
-          - text: 施工安全RA
+          - text: 營甲_施工安全RA
             href: 營甲＿施工風險評估.qmd
             target: _blank    
-          - text: 營造RA經驗、文獻
+          - text: RA研究導讀
             href: RA研究導讀.qmd
             target: _blank                   
           - text: 職業衛生EA
