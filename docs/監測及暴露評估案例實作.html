@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.21">
+
+  <meta name="author" content="講師：何明信">
+  <title>教學網站 - 何明信老師 – 監測及暴露評估案例實作</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="style/custom.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">監測及暴露評估案例實作</h1>
+  <p class="subtitle">勞工作業環境監測及暴露評估訓練班</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+講師：何明信 
+</div>
+</div>
+</div>
+
+</section>
+<section id="講師簡介" class="slide level2">
+<h2>講師簡介</h2>
+<ul>
+<li><p>姓名：何明信</p></li>
+<li><p>學歷：成大環醫所 、職安衛技師</p></li>
+<li><p>經歷：檢查員30年 (製造、危機設、營造、化工職衛科、專委)</p></li>
+<li><p>現職：114年退休</p></li>
+<li><p>E-mail：msho7336959@gmail.com</p></li>
+</ul>
+</section>
+<section id="課程內容" class="slide level2 scrollable">
+<h2>課程內容</h2>
+<h4 id="案例分析及演練含作業環境監測計畫及監測結果報告撰寫實務">案例分析及演練(含作業環境監測計畫及監測結果報告撰寫實務)</h4>
+<ol type="1">
+<li><p>暴露評估概論與基本資料蒐集</p></li>
+<li><p>定性模式、半定量及定量暴露評估工具之應用</p></li>
+<li><p>暴露剖面及相似暴露族群建立</p></li>
+<li><p>監測數據分析及應用</p></li>
+<li><p>監測計畫及監測結果報告撰寫</p></li>
+</ol>
+</section>
+<section id="暴露評估概論與基本資料蒐集" class="slide level2">
+<h2>1. 暴露評估概論與基本資料蒐集</h2>
+<h3 id="暴露評估概論"><strong>暴露評估概論</strong></h3>
+<h4 id="一暴露評估-ea">一、暴露評估 EA ？</h4>
+<h4 id="二相似暴露族群seg">二、相似暴露族群（SEG）？</h4>
+<h4 id="三ea之結果分類與管理決策">三、EA之結果分類與管理決策</h4>
+<h4 id="四法規架構國內法規">四、法規架構（國內法規）</h4>
+<p>———————————————————–</p>
+<h3 id="基本資料蒐集"><strong>基本資料蒐集</strong></h3>
+<h4 id="一作業環境與製程情境資料">一、作業環境與製程情境資料</h4>
+<h4 id="二危害因子特性與基準資料">二、危害因子特性與基準資料</h4>
+<h4 id="三勞工作業與活動分析資料">三、勞工作業與活動分析資料</h4>
+<h4 id="四歷史數據與佐證資料">四、歷史數據與佐證資料</h4>
+<h4 id="五定量推估模式所需輸入參數">五、定量推估模式所需輸入參數</h4>
+</section>
+<section id="暴露評估概論-1" class="slide level2 scrollable">
+<h2>1. 暴露評估概論</h2>
+<h3 id="一暴露評估-ea-1">一、暴露評估 EA ？</h3>
+<ol type="1">
+<li><strong>由合規性（Compliance）–&gt; 全盤性（Comprehensive）?</strong></li>
+</ol>
+<ul>
+<li><p>傳統作業環境監測多著重於針對少數「最大暴露危險群（MEG）」進行合規性確認。 OK ？ (OSHA/NIOSH MSG ?)</p></li>
+<li><p>現代職業衛生EA策略（如 AIHA 倡議）強調<strong>全盤式暴露評估（Comprehensive Exposure Assessment, CEA）</strong>，旨在掌握工作場所中<strong>所有工作天、所有危害因子及所有作業人員</strong>的暴露實態（Exposure Profile）。</p></li>
+</ul>
+</section>
+<section id="暴露評估概論-續" class="slide level2">
+<h2>1. 暴露評估概論 (續)</h2>
+<h3 id="pdca-動態循環與-arecc-架構">PDCA 動態循環與 ARECC 架構</h3>
+<ul>
+<li><p>暴露評估並非一次性作業，而是一個持續改進的動態循環（Plan-Do-Check-Act）。</p></li>
+<li><p>AIHA 提出的決策架構將傳統的「預測（Anticipate）、辨識（Recognize）、評估（Evaluate）、控制（Control）」進一步擴充至包含「<strong>確認/驗證（Confirm）</strong>」，強調對防護措施與暴露評估結果的持續驗證。</p></li>
+</ul>
+</section>
+<section id="暴露評估概論-續-1" class="slide level2 scrollable">
+<h2>1. 暴露評估概論 (續)</h2>
+<h4 id="二相似暴露族群seg-1">二、相似暴露族群（SEG）？</h4>
+<ol type="1">
+<li><p><strong>母群體與資源分配最適化</strong></p>
+<ul>
+<li>由於無法對每位勞工進行每日全天候監測，因此將工作型態、使用物料及暴露狀況相似的勞工劃分為 <strong>SEGs</strong>。</li>
+<li>利用代表性採樣或推估方法，陳現SEG成員之暴露概況，達成成本效益與全面防護的平衡。</li>
+</ul></li>
+<li><p><strong>區分單日與個人變異 (WHY SEG ?)</strong></p>
+<ul>
+<li>未劃分 SEG 的監測數據常呈現高變異性，缺乏統計意義。</li>
+<li>建立 SEG 能使數據具 Log-normal 或常態分佈特性的母群體，藉由統計指標（如<span class="math inline">\(X_{95}\)</span>）推估極限暴露邊界。</li>
+</ul></li>
+</ol>
+</section>
+<section id="暴露評估概論續" class="slide level2 scrollable">
+<h2>1. 暴露評估概論(續)</h2>
+<h4 id="三ea結果分類與管理決策">三、EA結果分類與管理決策</h4>
+<h4 id="根據暴露實態與職業暴露限值oel之比較將各-seg-劃分為三種狀態並採取相對應措施">根據暴露實態與職業暴露限值（OEL）之比較，將各 SEG 劃分為三種狀態並採取相對應措施：</h4>
+<ol type="1">
+<li><p><strong>可接受之暴露（Acceptable）</strong></p>
+<ul>
+<li>暴露強度遠低於容許標準（如 <span class="math inline">\(X_{95} &lt; 0.1 \times \text{OEL}\)</span> 或 <span class="math inline">\(&lt; 0.5 \times \text{OEL}\)</span>）。</li>
+<li>無需頻繁重複監測，僅需執行週期性確認（監視採樣）與變更管理。 <strong>(?)</strong></li>
+</ul></li>
+<li><p><strong>不可接受之暴露（Unacceptable）</strong></p>
+<ul>
+<li>暴露強度可能或已超出容許標準（如 <span class="math inline">\(X_{95} \ge \text{OEL}\)</span>）。</li>
+<li>應停止無效益的重複採樣，優先實施工程控制、行政管理或提供適當個人防護具（PPE）降低風險。</li>
+</ul></li>
+<li><p><strong>不確定性高之暴露（Uncertain）</strong></p>
+<ul>
+<li>數據不足或變異性過大，無法明確歸類為可接受或不可接受者。</li>
+<li>寶貴的監測資源（如增加採樣點、提高頻率、運用模式推估或直讀式儀器）應集中投入於此類族群以降低不確定性。</li>
+</ul></li>
+</ol>
+</section>
+<section id="暴露評估概論續-1" class="slide level2 scrollable">
+<h2>1. 暴露評估概論(續)</h2>
+<h4 id="四法規架構國內法規-1">四、法規架構（國內法規）</h4>
+<ol type="1">
+<li><p><strong>職業安全衛生法</strong></p>
+<ul>
+<li><u>第 11 條（CCB）、第 12 條(監測計畫)</u></li>
+</ul></li>
+<li><p><strong>危害性化學品評估及分級管理辦法 &amp; 技術指引</strong></p>
+<ul>
+<li>定有容許標準之化學品得採用採樣分析、直讀式儀器或定量推估模式<strong>進行EA</strong>。</li>
+<li>以暴露實態之第 95 百分位值（<span class="math inline">\(X_{95}\)</span>）對照 PEL 實施<strong>三級或五級風險管理</strong>。</li>
+</ul></li>
+<li><p><strong>勞工作業環境監測實施辦法</strong>(115年)</p>
+<ul>
+<li><u>第 10 條與第 10-1 條</u>：監測前應訂定包含「危害辨識與資料收集、SEG 建立、採樣策略規劃、數據分析及暴露評估」之<strong>監測計畫</strong>。</li>
+<li><u>第 7 條</u>：臨時性、短暫性作業或儲存用途，經評估無超標之虞者得免定期監測，但須保留採樣、模式推估或直讀式評估紀錄備查 <strong>3 年</strong>。</li>
+<li><u>第 13條</u>：於採樣後完成正式之<strong>「暴露評估報告」保存 10 年</strong>（特定化學物質<strong>保存 30 年</strong>）。</li>
+</ul></li>
+</ol>
+</section>
+<section id="基本資料蒐集-1" class="slide level2">
+<h2>2. 基本資料蒐集</h2>
+<h3 id="一作業環境與製程情境資料-1">一、作業環境與製程情境資料</h3>
+<ul>
+<li><strong>場所配置與幾何參數</strong>：場所配置圖（Layout）、作業空間總體積（<span class="math inline">\(V\)</span>）、空間尺寸(長寬高)等。</li>
+<li><strong>製程與設備細節</strong>：製程流程圖（PFD）、單元操作說明、設備清單（如反應槽、過濾機、泵浦、分裝點）及物料輸送方式（管道、桶裝、飛濺式/浸沒式充填）等。</li>
+<li><strong>通風與控制設施</strong>：整體換氣換氣率（<span class="math inline">\(Q\)</span> 或 ACH）、機械排氣/補氣系統配置、局部排氣裝置（LEV）類型、氣流流速與控制效能參數。</li>
+</ul>
+</section>
+<section id="基本資料蒐集續" class="slide level2">
+<h2>2. 基本資料蒐集(續)</h2>
+<h4 id="二危害因子特性與基準資料-1">二、危害因子特性與基準資料</h4>
+<ul>
+<li><strong>危害物辨識與清冊</strong>：清查原料、中間產物、最終產品、副產物（如反應廢氣）、維護用溶劑、廢棄物及實體/生物因子等。</li>
+<li><strong>健康危害資訊收集</strong>：安全資料表（SDS）、GHS 危害分類、毒理學資料（如致癌性、器官毒性、刺激性、<span class="math inline">\(\text{LD}_{50}/\text{LC}_{50}\)</span>）。</li>
+<li><strong>職業暴露限值（OELs）</strong>：國內外相關<strong>容許濃度標準</strong>（如國內 PEL-TWA、STEL、Ceiling；ACGIH TLV、NIOSH REL；或內部 Provisional/Working OEL 與 Hazard Bands）等。</li>
+</ul>
+</section>
+<section id="基本資料蒐集續-1" class="slide level2">
+<h2>2. 基本資料蒐集(續)</h2>
+<h4 id="三勞工作業與活動分析資料-1">三、勞工作業與活動分析資料</h4>
+<ul>
+<li><strong>組織與人員編制</strong>：部門、職稱、分工、作業小組、輪班（白/夜班/…）及總作業人數。</li>
+<li><strong>作業內容與時間活動模式</strong>：工作描述、日常與非經常性任務、特定高暴露任務之持續時間與發生頻率（如每日幾次、每次幾分鐘）等。</li>
+<li><strong>暴露途徑與防護具（PPE）</strong>：評估吸入、皮膚接觸（如直接浸泡、飛濺、接觸污染表面）或誤食之可能性；現行 PPE 之類型、規格、佩戴順應性及實際維護狀況等。</li>
+</ul>
+</section>
+<section id="基本資料蒐集續-2" class="slide level2">
+<h2>2. 基本資料蒐集(續)</h2>
+<h4 id="四歷史數據與佐證資料-1">四、歷史數據與佐證資料</h4>
+<ul>
+<li><strong>歷年監測紀錄</strong>：彙整過往作業環境監測數據、DRI量測結果，並進行堪用性判定（確認過往 SEG 是否與現況相符）。</li>
+<li><strong>健康監測與反應</strong>：勞工一般及特殊體檢異常紀錄、勞工對異味或身體不適之抱怨、疑似職業病申訴案件。</li>
+<li><strong>其他安衛與環保紀錄</strong>：製程安全管理（PSM）、危害分析（PHA）資料、設備元件洩漏檢測紀錄、毒化物運作量申報資料。</li>
+</ul>
+</section>
+<section id="基本資料蒐集續-3" class="slide level2">
+<h2>2. 基本資料蒐集(續)</h2>
+<h4 id="五定量推估模式所需輸入參數-1">五、定量推估模式所需輸入參數</h4>
+<h4 id="若先期評估擬採用定量數學模式如-tier-iii-模式需特別精準蒐集以下參數">若先期評估擬採用定量數學模式（如 Tier I/II 模式），需特別精準蒐集以下參數：</h4>
+<ul>
+<li><p><strong>化學品物化參數</strong>：分子量（MW）、純物質或混合物之飽和蒸氣壓（VP）、液體密度、沸點、分子擴散係數等。</p></li>
+<li><p><strong>發生源逸散特性</strong>：污染物質量排放速率 (<span class="math inline">\(G\)</span>)、開放液面蒸發面積 (<span class="math inline">\(A\)</span>)、液面上方流速、高壓系統上游壓力與裂縫尺寸等。</p></li>
+<li><p><strong>空間與區域交互參數</strong>：近場體積（<span class="math inline">\(V_N\)</span>）、近場與遠場間空氣交換率（<span class="math inline">\(\beta\)</span>）、混合係數（<span class="math inline">\(m_f\)</span>）等。</p></li>
+</ul>
+</section>
+<section id="暴露評估概論與基本資料蒐集-續" class="slide level2">
+<h2>1. 暴露評估概論與基本資料蒐集 (續)</h2>
+<h3 id="小結">小結</h3>
+<ul>
+<li>執行作業環境監測與暴露評估時，應秉持「<strong>明確目的</strong> <span class="math inline">\(\rightarrow\)</span> 紮實基本資料蒐集 <span class="math inline">\(\rightarrow\)</span> 合理劃分與檢定 SEG <span class="math inline">\(\rightarrow\)</span> 運用先期評估與多元工具分級 <span class="math inline">\(\rightarrow\)</span> 擬定針對性採樣策略與控制措施」之整體架構。</li>
+<li>透過嚴謹的基本資料蒐集，職業衛生專業人員得以在資訊不符合或數據有限的情境下，結合專業判斷與定量工具，做出貼近實態且具保護性的風險管理決策。</li>
+</ul>
+</section>
+<section id="暴露評估概論與基本資料蒐集-續-1" class="slide level2">
+<h2>1. 暴露評估概論與基本資料蒐集 (續)</h2>
+<h3 id="案例分析與演練">案例分析與演練</h3>
+</section>
+<section id="定性半定量及定量ea工具應用" class="slide level2">
+<h2>2. 定性、半定量及定量EA工具應用</h2>
+<h4 id="ㄧea工具架構tiered-approach">ㄧ、EA工具架構（Tiered Approach）</h4>
+<h4 id="二定性評估工具">二、定性評估工具</h4>
+<h4 id="三半定量評估工具">三、半定量評估工具</h4>
+<h4 id="四定量評估工具">四、定量評估工具</h4>
+<h4 id="五暴露評估工具整合選用對照">五、暴露評估工具整合選用對照</h4>
+</section>
+<section id="定性半定量及定量ea工具應用-續" class="slide level2">
+<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
+<h3 id="一ea工具架構tiered-approach">一、EA工具架構(Tiered Approach）</h3>
+<p>在職業衛生暴露評估中，各種評估工具並非相互排斥，而是構成一個由簡入繁、逐步精細的<strong>多層次評估策略（Tiered Approach）</strong>：</p>
+<ul>
+<li><p><strong>評估精度與量化程度</strong>：<strong>定性</strong>(Qualitative) <span class="math inline">\(&lt;\)</span> <strong>半定量</strong>(Semi-Quantitative) <span class="math inline">\(&lt;\)</span> <strong>定量</strong>(Quantitative)。</p></li>
+<li><p><strong>目的</strong>：在投入高成本採樣監測前，先透過先期暴露風險評估（Preliminary EA）對SEGs進行風險篩選與排序，達成監測資源最適化配置。</p></li>
+</ul>
+</section>
+<section id="定性半定量及定量ea工具應用-續-1" class="slide level2 scrollable">
+<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
+<h3 id="二定性評估工具qualitative-assessment">二、定性評估工具（Qualitative Assessment）</h3>
+<ul>
+<li>定性評估為暴露評估策略之起點，仰賴<strong>職業衛生專家判斷（Professional Judgment）</strong>，結合現場勘查、人員訪談、SDS審閱及檢查表，在數據缺乏或不完整時，對暴露風險進行結構化判斷。</li>
+<li>為降低主觀判斷之偏誤，可運用具科學基礎之定性檢查表工具（如 AIHA Qualitative Exposure Assessment Checklist）：</li>
+</ul>
+<ol type="1">
+<li><strong>十倍法則（Rule of 10）</strong>：工程控制每提升一階（如從開放作業到局部排氣，再到完全密閉），最大潛在空氣濃度調降一個數量級（10 倍）。</li>
+<li><strong>蒸氣危害比（Vapor Hazard Ratio, VHR）</strong>：計算飽和蒸氣濃度（SVC）與OEL的比值，判定所需的控制等級。</li>
+<li><strong>粒狀物危害比（Particulate Hazard Ratio, PHR）</strong>：依 OEL 數值區間直接對照所需控制等級。</li>
+</ol>
+</section>
+<section id="定性半定量及定量ea工具應用-續-2" class="slide level2">
+<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
+<h3 id="二定性評估工具-續">二、定性評估工具 (續)</h3>
+<h4 id="應用與限制">應用與限制</h4>
+<ul>
+<li><strong>適用情境</strong>：新化學品/新製程導入初期的初步風險篩選、SEG 初步劃分、指引採樣優先順序。</li>
+<li><strong>優點</strong>：執行效率高、成本低、具高度靈活性。</li>
+<li><strong>限制與注意事項</strong>：
+<ul>
+<li><p>主觀性高，易受專家個人經驗背景影響。</p></li>
+<li><p><strong>研究顯示</strong>純主觀定性判斷常存在<strong>低估偏誤（Underestimation Bias）</strong>，易受認知偏誤（如可得性、錨定效應）干擾。</p></li>
+<li><p>產出為風險類別而非濃度，無法直接用於判斷是否符合法定容許暴露標準（PEL）。</p></li>
+</ul></li>
+</ul>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>prepared by Peter Ho. 2026</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'slow',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

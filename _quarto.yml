@@ -98,7 +98,13 @@ website:
             target: _blank            
           - text: 工業毒物學概論
             href: H_工業毒物學概論.qmd
-            target: _blank                        
+            target: _blank 
+          - text: 勞工作業環境監測及暴露評估訓練班
+            href: 監測及暴露評估案例實作.qmd
+            target: _blank            
+          - text: BDA
+            href: BDA.qmd
+            target: _blank            
 
 format:
   html:
