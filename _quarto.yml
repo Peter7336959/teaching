@@ -3,6 +3,8 @@ project:
   output-dir: docs
   
 website:
+  page-navigation: false
+  bread-crumbs: false
   back-to-top-navigation: true
   page-footer: 
     left: "製作者：何明信老師2026" 

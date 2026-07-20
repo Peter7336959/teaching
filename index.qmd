@@ -1,14 +1,21 @@
 ---
 title: "index"
 author: "peterHo"
-editor: visual
 
+website:
+
+# Hides the sidebar on this page
+  sidebar: false
+
+# Hides the navbar on this page
+  navbar: false
 
 format:
-  html: 
-    menu: false
-    progress: false
-search: false    
+  html:
+    theme: cosmo
+    css: style/style.css
+    toc: false
+         
 ---
 
 
