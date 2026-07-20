@@ -1,13 +1,10 @@
 ---
 title: "index"
----
-title: "專屬網頁標題"
+
 format:
   html:
     toc: false          # 關閉目錄
-    css: custom.css     # 套用專屬 CSS
-execute:
-  echo: false           # 隱藏程式碼區塊
+
 ---
          
 
