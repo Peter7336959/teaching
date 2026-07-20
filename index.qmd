@@ -1,22 +1,16 @@
 ---
 title: "index"
-author: "peterHo"
-
-website:
-
-# Hides the sidebar on this page
-  sidebar: false
-
-# Hides the navbar on this page
-  navbar: false
-
+---
+title: "專屬網頁標題"
 format:
   html:
-    theme: cosmo
-    css: style/style.css
-    toc: false
-         
+    toc: false          # 關閉目錄
+    css: custom.css     # 套用專屬 CSS
+execute:
+  echo: false           # 隱藏程式碼區塊
 ---
+         
+
 
 
 title: Page Not Found

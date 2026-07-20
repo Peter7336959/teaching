@@ -1,0 +1,4 @@
+format:
+  html:
+    theme: cerulean    # 使用不同主題
+    anchor-sections: true
