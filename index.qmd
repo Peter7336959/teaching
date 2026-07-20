@@ -2,8 +2,13 @@
 title: "index"
 author: "peterHo"
 editor: visual
-aliases:
-  - https://www.osha.gov.tw/index.html
+
+
+format:
+  html: 
+    menu: false
+    progress: false
+search: false    
 ---
 
 

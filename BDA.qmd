@@ -1,0 +1,6 @@
+---
+title: "BDA"
+author: "何明信"
+format: revealjs
+editor: visual
+---
