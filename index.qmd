@@ -1,5 +1,5 @@
 ---
-title: "index"
+title: "Page Not Found"
 
 format:
   html:
