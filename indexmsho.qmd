@@ -1,6 +1,11 @@
 ---
 title: "教學用網站"
 author: "Peter Ho 何明信"
+format:
+  html:
+    toc: true
+    sidebar: true
+    navbar: true
 ---
 
 本網站供教學用(何明信老師)，教材包含：
