@@ -1,0 +1,9 @@
+---
+title: "Extended Shift OEL Adjustment"
+author: "何明信"
+format: revealjs
+---
+
+## **Toxico-kinetic Extended Shift OEL Adjustment**
+
+Source: [AIHA](https://www.aiha.org/public-resources/healthierworkplaces/workplace-hazards/apps-and-tools-resource-center/aiha-risk-assessment-tools/toxico-kinetic-extended-shift-oel-adjustment)

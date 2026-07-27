@@ -6,8 +6,11 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.21">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="講師：何明信">
   <title>教學網站 - 何明信老師 – 監測及暴露評估案例實作</title>
@@ -29,7 +32,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
   <link rel="stylesheet" href="style/custom.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -161,6 +164,7 @@
 <li><p>暴露評估概論與基本資料蒐集</p></li>
 <li><p>定性模式、半定量及定量暴露評估工具之應用</p></li>
 <li><p>暴露剖面(實態)及相似暴露族群建立</p></li>
+<li><p>監測採樣策略設計 (增)</p></li>
 <li><p>監測數據分析及應用</p></li>
 <li><p>監測計畫及監測結果報告撰寫</p></li>
 </ol>
@@ -680,8 +684,8 @@
 <p>重點整理</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 70%">
+<col style="width: 18%">
+<col style="width: 81%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -715,8 +719,720 @@
 </tbody>
 </table>
 </section>
+<section id="暴露實態及相似暴露族群建立-續-8" class="slide level2">
+<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
+<h3 id="案例分析與演練-2">案例分析與演練</h3>
+</section>
+<section id="監測採樣策略設計-增" class="slide level2 scrollable">
+<h2>4、監測採樣策略設計 (增)</h2>
+<h4 id="文獻資料">文獻資料</h4>
+<ol type="1">
+<li><p>AIHA 《A Strategy for Assessing and Managing Occupational Exposures, 4th Edition》 Appendix X: Sampling Strategy Design, By Paul Hewett, PhD, CIH）</p></li>
+<li><p>《技術手冊：作業環境監測採樣策略擬定技術手冊》</p></li>
+</ol>
+</section>
+<section id="監測採樣策略設計-續" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h3 id="一ea假設檢定">一、EA假設檢定</h3>
+<ul>
+<li>職業衛生暴露評估<strong>旨在確保工作場所的暴露風險維持在極低水平。從統計學角度來看，蒐集暴露量測數據並對照職業暴露限值（OEL）的過程即為假設檢定</strong>。</li>
+<li><u><em>原則1</em></u>：預設工作環境合格，除非量測數據提供足夠強烈的證據證明其不合格。(<strong>基準/監視評估之假設</strong>)
+<ul>
+<li><span class="math inline">\(H_0\)</span>：SEG 暴露為<strong>可接受</strong>。 <span class="math inline">\(H_1\)</span>：SEG 暴露為<strong>不可接受</strong>。
+<ul>
+<li>α = P( 判定不可接受 | 真實暴露可接受 )</li>
+<li>β = P( 判定可接受 | 真實暴露不可接受 )</li>
+</ul></li>
+</ul></li>
+<li><u><em>原則2</em></u>：預設工作環境不合格，必須提出高度確信的數據證明改善對策有效，方能停用防護具或取消定期監測。
+<ul>
+<li><span class="math inline">\(H_0\)</span>：SEG 暴露為<strong>不可接受</strong>。 <span class="math inline">\(H_1\)</span>：SEG 暴露為<strong>可接受</strong>。</li>
+</ul></li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-1" class="slide level2 scrollable">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="二法規-vs.-效能導向策略">二、法規 vs.&nbsp;效能導向策略</h4>
+<ol type="1">
+<li><strong>法規導向策略</strong>
+<ul>
+<li>依據法規或指引設定常規採樣 1~2 個樣本並直接比對 OEL。</li>
+<li><strong>缺點</strong>：不具評估出高風險暴露（ Category 4）的能力。</li>
+</ul></li>
+<li><strong>效能導向策略</strong>
+<ul>
+<li>在設計採樣策略時，控制<strong>決策錯誤機率</strong>，確保策略具有足夠的統計考驗力（Power）來識別真實的不合格暴露。</li>
+</ul></li>
+</ol>
+<ul>
+<li>評估一個抽樣策略好不好，不能只看正確率（效能），還要看平均需要多少樣本（效率），並透過模擬軟體計算 α 與 β 風險，才能做出兼顧「保護勞工」與「節省成本」的最佳決策。</li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-2" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估">三、決策風險與採樣策略效能評估</h4>
+<ul>
+<li>在暴露評估中，採樣策略會面臨兩類決策風險：</li>
+</ul>
+<table class="caption-top" style="width:93%;">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">真實暴露 →<br>
+評估決策 ↓</th>
+<th style="text-align: left;">可接受</th>
+<th style="text-align: left;">不可接受</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>判為不可接受</strong></td>
+<td style="text-align: left;"><strong>雇主風險 (α)</strong><br>
+<sub>（假陽性／型1錯誤）</sub></td>
+<td style="text-align: left;"><strong>統計考力 (1-β)</strong><br>
+<sub>（正確識別）</sub></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>判為可接受</strong></td>
+<td style="text-align: left;"><strong>正確判定 (1-α)</strong></td>
+<td style="text-align: left;"><strong>勞工風險 (β)</strong><br>
+<sub>（假陰性／型2錯誤）</sub></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>α = P( 判定不可接受 | 真實暴露可接受 )</li>
+<li>β = P( 判定可接受 | 真實暴露不可接受 )</li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-3" class="slide level2 scrollable">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估-1">三、決策風險與採樣策略效能評估</h4>
+<h5 id="a.檢查員策略auditinspector-strategy">A.檢查員策略（Audit/Inspector Strategy）</h5>
+<ul>
+<li><p>如果只靠「把少數樣本值直接跟 OEL 比大小」來做決策，幾乎不可能發現高風險的作業環境。</p></li>
+<li><p>假設：(實際上也是？)</p>
+<ul>
+<li><strong>數據收集</strong>：每個 SEG 只採集 <strong>2 個樣本</strong>（n=2）。</li>
+<li><strong>數據解釋（決策規則）</strong>：
+<ul>
+<li><p><strong>判定為可接受</strong>：如果 2 個樣本<strong>都</strong> ≤ OEL。</p></li>
+<li><p><strong>判定為不可接受</strong>：如果<strong>任一個</strong>樣本 &gt; OEL。</p></li>
+</ul></li>
+<li><strong>抽樣頻率</strong>：每年訪視2次。</li>
+<li>H₀：暴露可接受：目標是將勞工風險（β）控制在 0.10（即 10%）以下。也就是說，當暴露真的不可接受時，誤判為可接受的機率不得超過 10%。</li>
+</ul></li>
+<li><p>計算此策略的效能</p>
+<ul>
+<li><strong>公式</strong>： <span class="math inline">\(P(判定為可接受)=(1−θ)^n\)</span>
+<ul>
+<li>θ（超限分率）：超過 OEL 的「機率」或「比例」。n：樣本數。</li>
+</ul></li>
+<li>要判定為「可接受」，必須「所有 n 個樣本都低於 OEL」。如果真實的超限分率是 θ，那麼每一個樣本低於 OEL 的機率是 (1−θ)，連續 n 個都低於 OEL 的機率就是 <span class="math inline">\((1−θ)^n\)</span>。</li>
+</ul></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/EA/Figure X4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/EA/Figure X4.png" style="width:100.0%"></a></td>
+<td><a href="images/EA/Figure X5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/EA/Figure X5.png"></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>判讀重點</strong>：</p>
+<ol type="1">
+<li><strong>當真實第 95 百分位 = 2.0 倍 OEL 時（已是嚴重的 Category 4）</strong>：
+<ul>
+<li>對照 n=2 的曲線，Y 軸讀數約為 <strong>0.66</strong>。</li>
+<li>這代表誤判為可接受的機率（β）高達 <strong>66%</strong>。</li>
+</ul></li>
+<li><strong>這個結果對應到平均運行長度 (ARL)</strong>：
+<ul>
+<li>文中計算出，對於 n=2、每一年訪視2次的策略，要偵測到這個真實第 95 百分位 = 2 倍 OEL 的高風險情境，<strong>平均需要 6 個採樣循環</strong>，所以<strong>平均需要 3 年才能發現這個問題</strong>。</li>
+</ul></li>
+<li><strong>對低暴露類別的誤判風險（α）很低</strong>：
+<ul>
+<li>圖中左側（Category 0, 1, 2）的曲線都很低，代表誤判為「不可接受」的雇主風險（α）很小。換句話說，這種策略不容易冤枉好人，但<strong>非常容易放過壞人</strong>。</li>
+</ul></li>
+</ol>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>依賴這種簡單檢查員策略的公司，在典型的樣本數下，經常無法發現真正的 Category 4 高風險暴露剖面。這將導致員工面臨過高的風險，同時也增加公司因未能提供適當照護而面臨的責任風險。」</p>
+</div>
+</div>
+</div>
+</section>
+<section id="監測採樣策略設計-續-4" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估-2">三、決策風險與採樣策略效能評估</h4>
+<h5 id="a.檢查員策略auditinspector-strategy-1">A.檢查員策略（Audit/Inspector Strategy）</h5>
+<p><strong>Q：在這個檢查員策略，加大樣本數，就可以降低勞工風險 β，不是嗎？</strong></p>
+<ul>
+<li><p>要將 β 從 56% 降到 10%，需要將樣本數從&nbsp;<strong>2 個增加到 8 個</strong>（增加 4 倍）。若想將 β 降到 1%，則需要&nbsp;<strong>16 個樣本</strong>。但…</p>
+<ul>
+<li>這涉及成本與資源限制</li>
+<li><strong>單純靠增加樣本數來改善檢查員策略，並不是最有效率的做法</strong>。</li>
+</ul></li>
+<li><p>與其用更多樣本來「賭」所有樣本都低於 OEL，不如<strong>改變遊戲規則</strong>，用統計方法（如 UCL - 樣本第 95 百分位的 95% 信賴上限）來確保在合理樣本數下，風險能被可靠地控制。</p></li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-5" class="slide level2 scrollable">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估-3">三、決策風險與採樣策略效能評估</h4>
+<h5 id="b.-aiha-基線baseline暴露評估策略">B.&nbsp;AIHA 基線（Baseline）暴露評估策略</h5>
+<ul>
+<li><p>AIHA建議的EA標準做法：</p>
+<ul>
+<li><strong>數據收集</strong>：針對一個 SEG，<strong>固定採集 6 至 10 個樣本</strong>。</li>
+<li><strong>數據分析</strong>：計算這 6 個樣本的「<strong>第 95 百分位數</strong>」（即樣本中有 95% 的數值低於此值）。</li>
+<li><strong>決策規則</strong>：
+<ul>
+<li>若樣本第 95 百分位數 <strong>≤ OEL</strong>，則判定為「可接受」。</li>
+<li>若樣本第 95 百分位數 <strong>&gt; OEL</strong>，則判定為「不可接受」，啟動調查與改善。</li>
+</ul></li>
+</ul></li>
+<li><p><strong>待檢驗的假設（H₀：暴露可接受）</strong>： β（勞工風險）≤ 0.10 為設計目標。</p></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><a href="images/EA/Figure X6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/EA/Figure X6.png"></a></td>
+<td><a href="images/EA/Figure X7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/EA/Figure X7.png"></a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>判讀：</p>
+<ul>
+<li><strong>在 1.5 OEL 時</strong>：
+<ul>
+<li>β ≈ <strong>0.29</strong>。即使真實暴露已明顯超標（Category 4），仍有 <strong>29% 的機率</strong> 會誤判為「可接受」。對應的檢定力（Power = 1-β）僅為 71%。</li>
+</ul></li>
+<li><strong>在 2.0 OEL 時</strong>：
+<ul>
+<li>β ≈ <strong>0.16</strong>。即使暴露已嚴重到兩倍 OEL，仍有 <strong>16% 的機率</strong> 會誤判為可接受，遠高於目標的 10%</li>
+</ul></li>
+<li>AIHA 建議的 n=6 基線策略，雖然比檢查員策略（n=2）嚴謹，但<strong>對於高風險剖面的偵測力仍然不足</strong>。</li>
+</ul></li>
+<li><p>加入敏感化規則 (微調，Sensitizing Rules）</p>
+<ol type="1">
+<li><strong>規則 1（快速判定可接受）</strong>：如果<strong>前 2 個樣本都 &lt; 10% OEL</strong>，則立即判定為「可接受」，提前結束採樣。</li>
+<li><strong>規則 2（快速判定不可接受）</strong>：如果<strong>任何一個樣本 &gt; OEL</strong>，則立即判定為「不可接受」，提前結束採樣並啟動調查。</li>
+</ol>
+<ul>
+<li>這兩種情境下，提前判定不會增加誤判的機率，但效率曲線大幅改善（節省大量資源）。</li>
+</ul></li>
+<li><p>啟示</p>
+<ul>
+<li>固定樣本數的基線策略並非萬能，因此不能僅靠一次基線調查就安心，必須搭配後續監測。</li>
+<li>在不改變效能（正確率）的前提下，敏感化規則能讓策略在極端情況下「提前結束」，節省可觀的樣本數與成本。</li>
+<li>策略設計應考慮「效率」與「效能」並重。</li>
+</ul></li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-6" class="slide level2 scrollable">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估-4">三、決策風險與採樣策略效能評估</h4>
+<h5 id="c.-aiha-持續監測surveillanceea策略">C.&nbsp;AIHA 持續監測（Surveillance）EA策略</h5>
+<ul>
+<li><p>在 AIHA 暴露管理模型中，持續<strong>監測（Surveillance）</strong> 的目的不是做一次性的判定，而是：</p>
+<ol type="1">
+<li><strong>驗證先前的暴露分級是否正確</strong>（避免先前誤判）。</li>
+<li><strong>及時發現暴露是否惡化</strong>（例如從 Category 2 移到 Category 3 或 4）。</li>
+<li><strong>確保高風險 SEG（Category 4）的防護設施仍足夠有效</strong>。</li>
+</ol></li>
+<li><p>美國 OSHA 單一物質標準中常見的「<strong>終止監測（Termination-Reduction）</strong>」規範</p>
+<ul>
+<li><strong>背景</strong>：原本暴露不可接受（Category 4），公司安裝了新的控制設備，希望證明暴露已改善，以便終止員工的呼吸防護或醫療監測。</li>
+<li><strong>決策規則（官方規定）</strong>：若「<strong>連續 2 個樣本都 &lt; 50% OEL</strong>」，則可判定暴露已獲控制，終止後續監測。但…<strong>誤判（假陰性）的機率可能異常地大</strong>，取決於 SEG 的潛在變異性。</li>
+<li>雇主最好設計一個更嚴謹的方法。</li>
+</ul></li>
+</ul>
+<p><a href="images/EA/Figure X9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/EA/Figure X9.png" style="width:50.0%"></a></p>
+</section>
+<section id="監測採樣策略設計-續-7" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="三決策風險與採樣策略效能評估-5">三、決策風險與採樣策略效能評估</h4>
+<h5 id="d.-design-of-a-performance-based-termination-reduction-strategy">D.&nbsp;Design of a Performance-based Termination-Reduction Strategy</h5>
+<ul>
+<li><strong>情境</strong>：
+<ul>
+<li>某 SEG 的勞工原本需要佩戴呼吸防護具（代表暴露不可接受，Category 4）。</li>
+<li>公司安裝了新的控制設備，並進行了前導研究（pilot study），結果顯示<strong>目前的真實第 95 百分位已降至 OEL 的 25% 以下</strong>。</li>
+<li>現在公司希望<strong>終止呼吸防護計畫</strong>，但必須確保這個決策是正確的。</li>
+</ul></li>
+<li>設計目標（雙重風險控制）：</li>
+</ul>
+<table class="caption-top" style="width:47%;">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">風險類型</th>
+<th style="text-align: left;">目標值</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>勞工風險 (β)</strong></td>
+<td style="text-align: left;"><strong>≤ 0.05</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>雇主風險 (α)</strong></td>
+<td style="text-align: left;"><strong>≤ 0.10</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>關鍵決策規則</strong>：採用「<strong>樣本第 95 百分位的 95% 上信賴限（95% UCL）</strong>」與 OEL 比較。</p>
+<ul>
+<li><p>若 UCL &lt; OEL，則判定為「已控制」（可終止防護）。</p></li>
+<li><p>這種方法會<strong>固定 β 在 5%</strong>（因為使用 95% 信心水準，在 OEL 邊界處誤判為已控制的機率就是 5%）。</p></li>
+</ul></li>
+</ul>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p>n=6</p>
+<p><a href="images/EA/Figures X10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/EA/Figures X10.png"></a></p></td>
+<td><p>n=16</p>
+<p><a href="images/EA/Figures X11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/EA/Figures X11.png"></a></p></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>判讀：
+<ul>
+<li>只採 6 個樣本時，有很高的機率會「冤枉」這個已改善的製程，要求公司繼續維持呼吸防護，造成不必要的成本與資源浪費。</li>
+<li>較大的樣本數n=16讓 UCL 的估計更精確，因此效能曲線在 OEL 附近變得「更陡峭」。
+<ul>
+<li>這代表策略能更明確地區分「已控制」與「未控制」的暴露剖面，減少灰色地帶。</li>
+</ul></li>
+</ul></li>
+<li>啟示
+<ul>
+<li>使用 UCL 作為決策規則時，效能曲線會在 OEL 處<strong>固定通過 β = 1 - 信心水準</strong>（此例為 0.05）。</li>
+<li>從 6 增加到 16，是為了將 α 從 60% 降至 10%。這說明了<strong>同時控制兩種風險的代價很高</strong>，尤其在目標控制水準（25% OEL）與 OEL 差距不大時。</li>
+<li>若將目標 α 從 0.10 放寬到 0.20（品質管制中常見的生產者風險），樣本數可從 16 降至 12，但代價是誤判為「仍不可接受」的機率提高一倍。</li>
+<li>即使成功採用此策略，仍應保持警覺。因為暴露的決定因子會隨時間改變，<strong>應持續進行監測</strong>，尤其是在初期增加監測頻率，以驗證製程的穩定性。</li>
+<li>UCL 方法是終止減量策略的黃金標準。</li>
+<li>樣本數是控制 α 的關鍵。</li>
+<li>設計完成後仍須持續監測。</li>
+</ul></li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-8" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="四公司的暴露評估監測採樣策略">四、公司的暴露評估監測採樣策略？</h4>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 30%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">主題</th>
+<th style="text-align: left;">核心問題</th>
+<th style="text-align: left;">解決方案／觀念</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>1. 批次抽樣 vs.&nbsp;序列抽樣</strong></td>
+<td style="text-align: left;">一次採完所有樣本 vs.&nbsp;隨著時間陸續採樣？</td>
+<td style="text-align: left;">序列抽樣可觀察趨勢、允許敏感化規則，通常提供更佳的暴露剖面評估。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>2. 敏感化規則</strong></td>
+<td style="text-align: left;">如何在不影響正確率的前提下節省成本？</td>
+<td style="text-align: left;">加入敏感化規則（如 Figure X.7 所示），在極端低或極端高暴露時提前決策。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>3. 整體監測策略與類別專屬抽樣計畫</strong></td>
+<td style="text-align: left;">如何針對不同暴露等級設計不同的監測頻率與樣本數？</td>
+<td style="text-align: left;">風險越高（Category 越高），抽樣越密集、樣本數越多（見 Table X.1）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>4. 非檢測值（Non-detects）</strong></td>
+<td style="text-align: left;">許多樣本低於檢測極限時，如何評估？</td>
+<td style="text-align: left;">可改用簡單比較策略（如稽核策略）；或使用貝氏決策分析（BDA）輔助判斷。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>5. 決策規則 vs.&nbsp;貝氏決策分析</strong></td>
+<td style="text-align: left;">傳統決策樹是否足夠？</td>
+<td style="text-align: left;">BDA 可作為輔助工具，協助在有限數據下選擇最適當的暴露類別。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>6. 預測效能 vs.&nbsp;實際效能</strong></td>
+<td style="text-align: left;">效能曲線的假設是否與現實相符？</td>
+<td style="text-align: left;">實際效能取決於策略是否被忠實執行、暴露分布是否符合對數常態等。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>7. 容忍較大的雇主風險 (α)</strong></td>
+<td style="text-align: left;">為何可以容忍較大的 α？</td>
+<td style="text-align: left;">誤判為「不可接受」通常只會啟動進一步調查，不會立即造成傷害或成本損失。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>監測採樣策略可以針對不同 AIHA 暴露類別（Category 0~4），分別訂定了不同的<strong>抽樣計畫</strong>？
+<ul>
+<li>「風險越高，監測越密集、樣本越多、分析方法越嚴謹，且抽樣覆蓋率必須達到 100%。」(<strong>集中用在風險最高的地方</strong>)。</li>
+<li>定期對低風險 SEG 進行少量抽樣，<strong>成本極低，但能提供關鍵的「驗證與文件記錄」功能</strong>，避免因長期未監測而錯失暴露惡化的警訊。</li>
+</ul></li>
+<li><strong>啟示</strong>：「風險分級監測」- 分級管理是核心，低風險不等於「不用管」，高風險必須嚴密監控，整體監測策略需制度化。</li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-9" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="五在給定風險目標下到底需要採集多少個樣本">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
+<h5 id="方法-1檢查員策略樣本數公式">方法 1：檢查員策略樣本數公式</h5>
+<p><span class="math inline">\(n= ln(β)​/ln(1−θ)\)</span></p>
+<ul>
+<li>例，β：目標勞工風險（10%）； θ：「不可接受」的超限分率（25% 的暴露超過 OEL）。 計算：n≈8，需要採集 <strong>8 個樣本</strong>，才能在使用 檢查員策略時，將 β 控制在 10% 以下。</li>
+<li><strong>其他用途</strong>（作者特別提及）：
+<ul>
+<li>可用於計算需要採集多少個「15 分鐘隨機區間」？</li>
+</ul></li>
+<li><strong>限制</strong>：若 SEG 人數少於 50 人，則需使用<strong>超幾何分布</strong>進行迭代計算，此時所需樣本數會略低於公式預測值。
+<ul>
+<li>&nbsp;NIOSH 1977 年《職業暴露抽樣策略手冊》(當 SEG 人數（N）<strong>有限</strong>時，樣本數應如何調整)</li>
+</ul></li>
+</ul>
+<p><a href="images/EA/Table X2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/EA/Table X2.png" style="width:50.0%"></a></p>
+<ul>
+<li>解讀：
+<ul>
+<li><p>當 N 很小（如 &lt;7）時，必須「全部採樣」才能保證抽到頂部 10% 的人。</p></li>
+<li><p>當 N 逐漸增大，所需樣本數趨近於一個「飽和值」：90% 信心需 22 個，95% 信心需 29 個。</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-10" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="五在給定風險目標下到底需要採集多少個樣本-1">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
+<h5 id="方法-2使用-ucl-比較-oel-的樣本數-略">方法 2：使用 UCL 比較 OEL 的樣本數 (略)</h5>
+<h5 id="方法-3同時控制-α-與-β-的樣本數">方法 3：同時控制 α 與 β 的樣本數</h5>
+<ul>
+<li>由 Odeh 與 Owen（1980）提出，能夠<strong>同時控制雇主風險（α）與勞工風險（β）</strong>。</li>
+<li><strong>結果</strong>：需要 <strong>33 個樣本</strong>，才能同時確保 β ≤ 0.05 且 α ≤ 0.10。</li>
+</ul>
+<p><a href="images/EA/Figure X13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/EA/Figure X13.png" style="width:50.0%"></a></p>
+<ul>
+<li>若前測顯示第 95 百分位為 <strong>25% OEL</strong>（對應超限分率約 0.0008，假設 GSD=2.5），代入公式後樣本數會降至約 <strong>16</strong>。</li>
+<li>若第 95 百分位更接近 OEL（例如 50% OEL），則所需樣本數會大幅增加。</li>
+<li><strong>啟示</strong>：樣本數不是「算完就結束」，所有公式都仰賴對 GSD 和 GM 的假設。作者建議在估算後<strong>額外增加 10%~25% 的樣本數</strong>，以應對樣本損失或低估誤差。</li>
+</ul>
+</section>
+<section id="監測採樣策略設計-續-11" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h4 id="總結性啟示">總結性啟示</h4>
+<table class="caption-top">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">觀念</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>監測是彌補單次調查不足的關鍵</strong></td>
+<td style="text-align: left;">單次基線調查的 β 風險往往很高，但透過短週期的監測計畫，可有效降低長期風險。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>寧可誤判為不可接受（α），也不要誤判為可接受（β）</strong></td>
+<td style="text-align: left;">容忍較大的 α 是合理的，因為它只會導致額外調查；但 β 的代價是勞工安全與公司責任。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Category 4 降級必須極其嚴謹</strong></td>
+<td style="text-align: left;">絕對不能只因為「最近數據合格」就降級，必須經過嚴謹的終止減量設計（UCL 方法）。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>敏感化規則是提升效率的關鍵</strong></td>
+<td style="text-align: left;">在不影響正確率的前提下，讓極端情況下的決策更快、更省成本。</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>效能曲線是預測，不是保證</strong></td>
+<td style="text-align: left;">實際績效取決於策略是否被確實執行、暴露分布是否符合假設。須持續驗證與調整。</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>將SEGs 控制在 Category 2 以下</strong></td>
+<td style="text-align: left;">Category 3 是警戒區，應投入更多資源精確評估，避免惡化為 Category 4。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>總結</strong>：<strong>效能曲線和樣本數公式只是設計的起點，真正的挑戰在於將這些理論轉化為一套可持續執行、定期檢討、且能適應現場變化的管理制度</strong>；而這個制度的終極目標，是將所有勞工的暴露風險控制在 Category 2 以下，同時在成本與安全之間取得最佳平衡。</p>
+</section>
+<section id="監測採樣策略設計-續-12" class="slide level2">
+<h2>4、監測採樣策略設計 (續)</h2>
+<h3 id="案例分析與演練-3">案例分析與演練</h3>
+</section>
 <section id="監測數據分析及應用" class="slide level2">
-<h2>4、監測數據分析及應用</h2>
+<h2>5、監測數據分析及應用</h2>
+<h5 id="本節參考資料1">本節參考資料1</h5>
+<div class="callout callout-note no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p>Mulhausen, J. R., &amp; Milz, S. A. (2015). Descriptive statistics, inferential statistics, and goodness of fit. In J. S. Ignacio &amp; W. H. Bullock (Eds.),&nbsp;Appendix IV: <em>A strategy for assessing and managing occupational exposures</em>&nbsp;(4th ed.). AIHA Press.</p>
+</div>
+</div>
+</div>
+<h4 id="一描述性統計">一、描述性統計</h4>
+<ul>
+<li>描述性統計是推論統計的基礎。
+<ul>
+<li>若所有數據都遠低於 OEL（如 &lt;10% OEL）或遠高於 OEL，描述性統計或許足夠；但<strong>若數據接近或涵蓋 OEL，則必須進一步計算推論統計</strong>（如第95百分位及其信賴區間）。</li>
+</ul></li>
+<li>超標百分比（% &gt; OEL）是重要非參數指標。-「超限分率 (θ)」
+<ul>
+<li>當樣本數很小時，參數統計的「檢定力（Power）」極低，計算出的第 95 百分位與 UCL 會非常不穩定（信賴區間極寬）。</li>
+<li>當數據無法擬合直線時，必須回歸使用非參數方法，而超標百分比就是最重要的非參數指標之一。</li>
+<li><strong>若參數模型算出預估超限分率為 30%，但實際超標百分比僅 6.7%</strong>，代表模型可能假設了過大的變異（GSD）或數據分布嚴重偏離假設，此時就該質疑模型，回歸採用非參數的超標百分比作為決策依據。</li>
+<li>小樣本時最穩健。</li>
+</ul></li>
+</ul>
+</section>
+<section id="監測數據分析及應用-續" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="一描述性統計-續">一、描述性統計 (續)</h4>
+<h5 id="描述性統計參數與公式">描述性統計參數與公式</h5>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">統計參數</th>
+<th style="text-align: left;">公式</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>對數轉換</strong></td>
+<td style="text-align: left;"><span class="math inline">\(y_i = \ln(x_i)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>對數平均數</strong></td>
+<td style="text-align: left;">​​<span class="math inline">\(\bar{y} = \frac{\sum_{i=1}^{n} y_i}{n}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>對數標準差</strong></td>
+<td style="text-align: left;"><span class="math inline">\(s_y = \sqrt{\frac{\sum_{i=1}^{n} (y_i - \bar{y})^2}{n - 1}}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>幾何平均數</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\text{GM} = e^{\bar{y}}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>幾何標準差</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\text{GSD} = e^{s_y}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="監測數據分析及應用-續-1" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="二推論統計">二、推論統計</h4>
+<ul>
+<li>估計暴露剖面的關鍵參數（如第 95 百分位），並量化其不確定性（信賴區間 / 容許限值）。
+<ul>
+<li>使用參數統計之前，必須先透過<strong>機率繪圖</strong>與<strong>W-test（Shapiro-Wilk 檢定）</strong>來確認數據是否符合對數常態或常態分布。若不符合，則應改用無母數方法。</li>
+<li>暴露評估最關注的是分布的高濃度尾端，因為它直接關係到合規判定。主要三種工具：<strong>上容許限值 (UTL)</strong>、<strong>超限分率 (Exceedance Fraction)</strong>&nbsp;與信賴區間。</li>
+</ul></li>
+<li>當職業衛生師必須證明暴露符合 OEL 時，理解暴露實態的上尾（upper tail）至關重要——無論是 8 小時 TWA、15 分鐘 STEL 或 Ceiling 上限值，都依賴於對分布最右端的掌握。
+<ul>
+<li><strong>上容許限值 (UTL)：</strong>第 95 百分位的<strong>上信賴界限。</strong></li>
+<li>假設計算 UTL95%,95%<sub>​</sub>&nbsp;= 204 ppm 遠高於 STEL OEL = 75 ppm，工業衛生師<strong>無法有 95% 信心</strong>認為真實第 95 百分位低於 STEL。此暴露剖面很可能會被評為『不可接受』。</li>
+</ul></li>
+</ul>
+<p><a href="images/EA/Figure IV5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="images/EA/Figure IV5.png" style="width:50.0%"></a></p>
+</section>
+<section id="監測數據分析及應用-續-2" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="二推論統計-續">二、推論統計 (續)</h4>
+<ul>
+<li>使用 UTL 檢定合規所需的樣本數
+<ul>
+<li>第 95 百分位越接近 OEL，<strong>GSD 越大</strong>，所需樣本數越大。</li>
+<li>它讓工業衛生師在設計採樣策略時，能預先知道需要多少樣本才能達到足夠的檢定力。</li>
+</ul></li>
+</ul>
+<p><a href="images/EA/Table IV8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="images/EA/Table IV8.png" style="width:50.0%"></a></p>
+<ul>
+<li>提醒：設計樣本數沒有「萬用公式」，必須先釐清決策情境（基線、監測等），定義清楚「可接受」與「不可接受」，再根據變異性（GSD）的估計，選擇對應的估算方法（簡單公式或軟體），最後以「同時控制 α 與 β」為目標來調整樣本數。</li>
+<li>UTL 與超限分率是互補工具。</li>
+<li>提醒：統計分析必須與專業判斷結合，若兩個 SEG 被評為「不可接受」，但最終決策仍需考慮製程變異、控制措施可行性、採樣策略設計等質性因素。</li>
+</ul>
+</section>
+<section id="監測數據分析及應用-續-3" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="三傳統統計-vs.-bda-決策">三、傳統統計 vs.&nbsp;BDA 決策</h4>
+<ul>
+<li><p>運用 BDA 來評估第 95 百分位及其不確定性，特別是在<strong>樣本數極小（如 n=1）</strong>&nbsp;的情況下，能提供有意義的決策輔助。</p></li>
+<li><p>推論統計（UTL、超限分率等）屬於<strong>頻率學派統計（Frequentist Statistics）</strong>，其有效運作需要滿足兩個前提：</p>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 36%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">前提</th>
+<th style="text-align: left;">說明</th>
+<th style="text-align: left;">實務上的挑戰</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>樣本數足夠</strong></td>
+<td style="text-align: left;">通常建議 n ≥ 6~10</td>
+<td style="text-align: left;">實務上許多 SEG 只有 1~3 個樣本</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>分布假設成立</strong></td>
+<td style="text-align: left;">數據須符合對數常態或常態分布</td>
+<td style="text-align: left;">小樣本下無法有效檢驗分布型態</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>比較</p></li>
+</ul>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 29%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">面向</th>
+<th style="text-align: left;">傳統頻率學派統計</th>
+<th style="text-align: left;">貝氏決策分析 (BDA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>分析起點</strong></td>
+<td style="text-align: left;">假設母體參數是「固定的未知常數」</td>
+<td style="text-align: left;">將母體參數視為「具有機率分布的隨機變數」</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>使用資訊</strong></td>
+<td style="text-align: left;">僅使用當前監測數據</td>
+<td style="text-align: left;">結合<strong>先驗資訊（prior）</strong> + 當前數據 → <strong>後驗機率（posterior）</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>輸出</strong></td>
+<td style="text-align: left;">點估計 + 信賴區間（如 UTL）</td>
+<td style="text-align: left;"><strong>每個暴露類別的機率分布</strong>（如 Category 4 的機率為 52.2%）</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>小樣本</strong></td>
+<td style="text-align: left;">信賴區間極寬，決策模糊</td>
+<td style="text-align: left;">仍能給出各類別的機率，輔助決策</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="監測數據分析及應用-續-4" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="三傳統統計-vs.-bda-決策-續">三、傳統統計 vs.&nbsp;BDA 決策 (續)</h4>
+<table class="caption-top" style="width:99%;">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 56%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">分析方法</th>
+<th style="text-align: left;">結果</th>
+<th style="text-align: left;">結論</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>UTL</strong></td>
+<td style="text-align: left;">UT<sub>95%,95%</sub>​ = 204 ppm &gt; 75 ppm</td>
+<td style="text-align: left;">不可接受</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>超限分率</strong></td>
+<td style="text-align: left;">UCL = 42%（遠高於可接受的 5~10%）</td>
+<td style="text-align: left;">不可接受</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>BDA</strong></td>
+<td style="text-align: left;">52.2% 機率為 Category 4，47.8% 機率為 Category 3</td>
+<td style="text-align: left;">不可接受（高機率）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>三者結論一致，但 BDA 提供了<strong>更細緻的風險量化</strong>——不是單純的「是／否」，而是「有多少機率屬於哪個類別」。</li>
+<li>提醒：BDA 不是取代傳統統計，而是互補，當樣本數足夠時，傳統統計（UTL、超限分率）與 BDA 結果應一致；當樣本數不足時，BDA 提供了一個可行的替代方案。</li>
+<li>小樣本不代表不能決策。</li>
+</ul>
+</section>
+<section id="監測數據分析及應用-續-5" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h4 id="四軟體使用-demo">四、軟體使用 (demo)</h4>
+</section>
+<section id="監測數據分析及應用-續-6" class="slide level2">
+<h2>5、監測數據分析及應用 (續)</h2>
+<h3 id="案例分析與演練-4">案例分析與演練</h3>
+</section>
+<section id="監測計畫及監測結果報告撰寫" class="slide level2 scrollable">
+<h2>6. 監測計畫及監測結果報告撰寫</h2>
+<h3 id="一-作業環境監測計畫撰寫重點">一、 作業環境監測計畫撰寫重點</h3>
+<ol type="1">
+<li>政策、目標與範圍</li>
+<li>組織分工與跨領域溝通</li>
+<li>基本資料蒐集與堪用性判定</li>
+<li>相似暴露族群（SEG）劃分與風險分級</li>
+<li>採樣策略擬定</li>
+<li>採樣、分析與數據處理規劃</li>
+</ol>
+</section>
+<section id="監測計畫及監測結果報告撰寫-1" class="slide level2 scrollable">
+<h2>6. 監測計畫及監測結果報告撰寫</h2>
+<h3 id="二-作業環境監測暴露評估報告">二、 作業環境監測暴露評估報告</h3>
+<ol type="1">
+<li>執行實態與紀錄驗收</li>
+<li>數據統計分析與 SEG 檢定</li>
+</ol>
 
 
 </section>
@@ -911,7 +1627,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -938,172 +1654,222 @@
       });
     </script>
     <script id="quarto-html-after-body" type="application/javascript">
-      window.document.addEventListener("DOMContentLoaded", function (event) {
-        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-        tabsets.forEach(function(tabset) {
-          const tabby = new Tabby('#' + tabset.id);
-        });
-        const isCodeAnnotation = (el) => {
-          for (const clz of el.classList) {
-            if (clz.startsWith('code-annotation-')) {                     
-              return true;
-            }
-          }
-          return false;
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
         }
-        const onCopySuccess = function(e) {
-          // button target
-          const button = e.trigger;
-          // don't keep focus
-          button.blur();
-          // flash "checked"
-          button.classList.add('code-copy-button-checked');
-          var currentTitle = button.getAttribute("title");
-          button.setAttribute("title", "Copied!");
-          let tooltip;
-          if (window.bootstrap) {
-            button.setAttribute("data-bs-toggle", "tooltip");
-            button.setAttribute("data-bs-placement", "left");
-            button.setAttribute("data-bs-title", "Copied!");
-            tooltip = new bootstrap.Tooltip(button, 
-              { trigger: "manual", 
-                customClass: "code-copy-button-tooltip",
-                offset: [0, -8]});
-            tooltip.show();    
-          }
-          setTimeout(function() {
-            if (tooltip) {
-              tooltip.hide();
-              button.removeAttribute("data-bs-title");
-              button.removeAttribute("data-bs-toggle");
-              button.removeAttribute("data-bs-placement");
-            }
-            button.setAttribute("title", currentTitle);
-            button.classList.remove('code-copy-button-checked');
-          }, 1000);
-          // clear code selection
-          e.clearSelection();
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
         }
-        const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
-            }
-            return codeEl.innerText;
-        }
-        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-          text: getTextToCopy
-        });
-        clipboard.on('success', onCopySuccess);
-        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-            text: getTextToCopy,
-            container: window.document.getElementById('quarto-embedded-source-code-modal')
-          });
-          clipboardModal.on('success', onCopySuccess);
-        }
-          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var mailtoRegex = new RegExp(/^mailto:/);
-            var filterRegex = new RegExp('/' + window.location.host + '/');
-          var isInternal = (href) => {
-              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-          }
-          // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-          for (var i=0; i<links.length; i++) {
-            const link = links[i];
-            if (!isInternal(link.href)) {
-              // undo the damage that might have been done by quarto-nav.js in the case of
-              // links that we want to consider external
-              if (link.dataset.originalHref !== undefined) {
-                link.href = link.dataset.originalHref;
-              }
-            }
-          }
-        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-          const config = {
-            allowHTML: true,
-            maxWidth: 500,
-            delay: 100,
-            arrow: false,
-            appendTo: function(el) {
-                return el.closest('section.slide') || el.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'light-border',
-            placement: 'bottom-start',
-          };
-          if (contentFn) {
-            config.content = contentFn;
-          }
-          if (onTriggerFn) {
-            config.onTrigger = onTriggerFn;
-          }
-          if (onUntriggerFn) {
-            config.onUntrigger = onUntriggerFn;
-          }
-            config['offset'] = [0,0];
-            config['maxWidth'] = 700;
-          window.tippy(el, config); 
-        }
-        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-        for (var i=0; i<noterefs.length; i++) {
-          const ref = noterefs[i];
-          tippyHover(ref, function() {
-            // use id or data attribute instead here
-            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-            try { href = new URL(href).hash; } catch {}
-            const id = href.replace(/^#\/?/, "");
-            const note = window.document.getElementById(id);
-            if (note) {
-              return note.innerHTML;
-            } else {
-              return "";
-            }
-          });
-        }
-        const findCites = (el) => {
-          const parentEl = el.parentElement;
-          if (parentEl) {
-            const cites = parentEl.dataset.cites;
-            if (cites) {
-              return {
-                el,
-                cites: cites.split(' ')
-              };
-            } else {
-              return findCites(el.parentElement)
-            }
-          } else {
-            return undefined;
-          }
-        };
-        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-        for (var i=0; i<bibliorefs.length; i++) {
-          const ref = bibliorefs[i];
-          const citeInfo = findCites(ref);
-          if (citeInfo) {
-            tippyHover(citeInfo.el, function() {
-              var popup = window.document.createElement('div');
-              citeInfo.cites.forEach(function(cite) {
-                var citeDiv = window.document.createElement('div');
-                citeDiv.classList.add('hanging-indent');
-                citeDiv.classList.add('csl-entry');
-                var biblioDiv = window.document.getElementById('ref-' + cite);
-                if (biblioDiv) {
-                  citeDiv.innerHTML = biblioDiv.innerHTML;
-                }
-                popup.appendChild(citeDiv);
-              });
-              return popup.innerHTML;
-            });
-          }
-        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
       });
-      </script>
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
