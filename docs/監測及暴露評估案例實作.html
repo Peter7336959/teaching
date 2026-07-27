@@ -1,154 +1,584 @@
 <!DOCTYPE html>
-<html lang="ZN"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.21">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="講師：何明信">
+
+<title>監測及暴露評估案例實作 – 教學網站 - 何明信老師</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-6b0cdad5c3a486cddbc9bf5f3442135d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
 
-  <meta name="author" content="講師：何明信">
-  <title>教學網站 - 何明信老師 – 監測及暴露評估案例實作</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-      vertical-align: middle;
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
     }
-  </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-2f366650f320edcfcf53d73c80250a32.css">
-  <link rel="stylesheet" href="style/custom.css">
-  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
-    .reveal div.sourceCode {
-      margin: 0;
-      overflow: auto;
-    }
-    .reveal div.hanging-indent {
-      margin-left: 1em;
-      text-indent: -1em;
-    }
-    .reveal .slide:not(.center) {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide.scrollable {
-      overflow-y: auto;
-    }
-    .reveal .footnotes {
-      height: 100%;
-      overflow-y: auto;
-    }
-    .reveal .slide .absolute {
-      position: absolute;
-      display: block;
-    }
-    .reveal .footnotes ol {
-      counter-reset: ol;
-      list-style-type: none; 
-      margin-left: 0;
-    }
-    .reveal .footnotes ol li:before {
-      counter-increment: ol;
-      content: counter(ol) ". "; 
-    }
-    .reveal .footnotes ol li > p:first-child {
-      display: inline-block;
-    }
-    .reveal .slide ul,
-    .reveal .slide ol {
-      margin-bottom: 0.5em;
-    }
-    .reveal .slide ul li,
-    .reveal .slide ol li {
-      margin-top: 0.4em;
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide ul[role="tablist"] li {
-      margin-bottom: 0;
-    }
-    .reveal .slide ul li > *:first-child,
-    .reveal .slide ol li > *:first-child {
-      margin-block-start: 0;
-    }
-    .reveal .slide ul li > *:last-child,
-    .reveal .slide ol li > *:last-child {
-      margin-block-end: 0;
-    }
-    .reveal .slide .columns:nth-child(3) {
-      margin-block-start: 0.8em;
-    }
-    .reveal blockquote {
-      box-shadow: none;
-    }
-    .reveal .tippy-content>* {
-      margin-top: 0.2em;
-      margin-bottom: 0.7em;
-    }
-    .reveal .tippy-content>*:last-child {
-      margin-bottom: 0.2em;
-    }
-    .reveal .slide > img.stretch.quarto-figure-center,
-    .reveal .slide > img.r-stretch.quarto-figure-center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-left,
-    .reveal .slide > img.r-stretch.quarto-figure-left  {
-      display: block;
-      margin-left: 0;
-      margin-right: auto; 
-    }
-    .reveal .slide > img.stretch.quarto-figure-right,
-    .reveal .slide > img.r-stretch.quarto-figure-right  {
-      display: block;
-      margin-left: auto;
-      margin-right: 0; 
-    }
-  </style>
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="style/style.css">
 </head>
-<body class="quarto-light">
-  <div class="reveal">
-    <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">監測及暴露評估案例實作</h1>
-  <p class="subtitle">勞工作業環境監測及暴露評估訓練班</p>
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-講師：何明信 
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">教學網站 - 何明信老師</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" target="_blank" aria-current="page"> 
+<span class="menu-text">首頁</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/HME/" target="_blank"> 
+<span class="menu-text">危險性機械及設備管理</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://peter7336959.github.io/EA/" target="_blank"> 
+<span class="menu-text">暴露評估</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.coapre.org.tw/tw/resources-download-content/f98F8f9006DF" target="_blank"> 
+<span class="menu-text">事故調查制度實務指南</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">其他(新增中)</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+          <h1 class="quarto-secondary-nav-title">監測及暴露評估案例實作</h1>
+        </a>     
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">介紹</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">甲業</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RA_Basic.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">RA 基本概念</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HSE職安衛整體風險評估概念.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">HSE RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./甲業＿風險評估詳實版.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">甲業安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./營甲＿施工風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">營甲_施工安全RA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./RA研究導讀.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">RA研究導讀</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./職業衛生暴露風險評估與實務.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">職業衛生EA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">職安衛人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./機械設備器具安全與風險評估.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">機械設備器具安全相關法規(含風險評估)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./具有危險性之機械及設備安全相關法規簡介.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">具有危險性之機械及設備安全相關法規簡介</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./危險性機械及設備管理.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">危險性機械及設備管理</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">學校種子人員</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/%E6%A0%A1%E5%9C%92%EF%BC%BF%E5%8C%96%E5%AD%B8%E6%9C%89%E5%AE%B3%E7%89%A9%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E7%AD%96%E7%95%A5.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">化學有害物危害預防策略</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./校園＿高溫接觸危害預防策略.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">高溫接觸危害預防策略</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">書籍簡讀</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_大腦解鎖.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">大腦解鎖(Limitless mind)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_反智.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">反智(The irrational age)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://peter7336959.github.io/teaching/books/B_問題是我大概會活很久.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">問題是, 我大概會活很久(Somewhere Towards the End)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reading1.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">不對稱陷阱(Skin in the game)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">職衛師</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./局部排氣控制與設計.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">局部排氣控制與設計</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./H_工業毒物學概論.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">工業毒物學概論</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./監測及暴露評估案例實作.html" class="sidebar-item-text sidebar-link active" target="_blank">
+ <span class="menu-text">勞工作業環境監測及暴露評估訓練班</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./BDA.html" class="sidebar-item-text sidebar-link" target="_blank">
+ <span class="menu-text">BDA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#講師簡介" id="toc-講師簡介" class="nav-link active" data-scroll-target="#講師簡介">講師簡介</a></li>
+  <li><a href="#課程內容" id="toc-課程內容" class="nav-link" data-scroll-target="#課程內容">課程內容</a></li>
+  <li><a href="#暴露評估概論與基本資料蒐集" id="toc-暴露評估概論與基本資料蒐集" class="nav-link" data-scroll-target="#暴露評估概論與基本資料蒐集">1. 暴露評估概論與基本資料蒐集</a>
+  <ul class="collapse">
+  <li><a href="#暴露評估概論" id="toc-暴露評估概論" class="nav-link" data-scroll-target="#暴露評估概論"><strong>1.1 暴露評估概論</strong></a></li>
+  <li><a href="#基本資料蒐集" id="toc-基本資料蒐集" class="nav-link" data-scroll-target="#基本資料蒐集"><strong>1.2 基本資料蒐集</strong></a></li>
+  </ul></li>
+  <li><a href="#暴露評估概論-1" id="toc-暴露評估概論-1" class="nav-link" data-scroll-target="#暴露評估概論-1">1.1 暴露評估概論</a>
+  <ul class="collapse">
+  <li><a href="#一暴露評估-ea-1" id="toc-一暴露評估-ea-1" class="nav-link" data-scroll-target="#一暴露評估-ea-1">一、暴露評估 EA ？</a></li>
+  </ul></li>
+  <li><a href="#暴露評估概論-續" id="toc-暴露評估概論-續" class="nav-link" data-scroll-target="#暴露評估概論-續">1.1 暴露評估概論 (續)</a>
+  <ul class="collapse">
+  <li><a href="#pdca-動態循環與-arecc-架構" id="toc-pdca-動態循環與-arecc-架構" class="nav-link" data-scroll-target="#pdca-動態循環與-arecc-架構">PDCA 動態循環與 ARECC 架構</a></li>
+  </ul></li>
+  <li><a href="#暴露評估概論-續-1" id="toc-暴露評估概論-續-1" class="nav-link" data-scroll-target="#暴露評估概論-續-1">1.1 暴露評估概論 (續)</a></li>
+  <li><a href="#暴露評估概論續" id="toc-暴露評估概論續" class="nav-link" data-scroll-target="#暴露評估概論續">1.1 暴露評估概論(續)</a></li>
+  <li><a href="#暴露評估概論續-1" id="toc-暴露評估概論續-1" class="nav-link" data-scroll-target="#暴露評估概論續-1">1.1 暴露評估概論(續)</a></li>
+  <li><a href="#基本資料蒐集-1" id="toc-基本資料蒐集-1" class="nav-link" data-scroll-target="#基本資料蒐集-1">1.2 基本資料蒐集</a>
+  <ul class="collapse">
+  <li><a href="#一作業環境與製程情境資料-1" id="toc-一作業環境與製程情境資料-1" class="nav-link" data-scroll-target="#一作業環境與製程情境資料-1">一、作業環境與製程情境資料</a></li>
+  </ul></li>
+  <li><a href="#基本資料蒐集續" id="toc-基本資料蒐集續" class="nav-link" data-scroll-target="#基本資料蒐集續">1.2 基本資料蒐集(續)</a></li>
+  <li><a href="#基本資料蒐集續-1" id="toc-基本資料蒐集續-1" class="nav-link" data-scroll-target="#基本資料蒐集續-1">1.2 基本資料蒐集(續)</a></li>
+  <li><a href="#基本資料蒐集續-2" id="toc-基本資料蒐集續-2" class="nav-link" data-scroll-target="#基本資料蒐集續-2">1.2 基本資料蒐集(續)</a></li>
+  <li><a href="#基本資料蒐集續-3" id="toc-基本資料蒐集續-3" class="nav-link" data-scroll-target="#基本資料蒐集續-3">1.2 基本資料蒐集(續)</a></li>
+  <li><a href="#暴露評估概論與基本資料蒐集-續" id="toc-暴露評估概論與基本資料蒐集-續" class="nav-link" data-scroll-target="#暴露評估概論與基本資料蒐集-續">1. 暴露評估概論與基本資料蒐集 (續)</a>
+  <ul class="collapse">
+  <li><a href="#小結" id="toc-小結" class="nav-link" data-scroll-target="#小結">小結</a></li>
+  </ul></li>
+  <li><a href="#暴露評估概論與基本資料蒐集-續-1" id="toc-暴露評估概論與基本資料蒐集-續-1" class="nav-link" data-scroll-target="#暴露評估概論與基本資料蒐集-續-1">1. 暴露評估概論與基本資料蒐集 (續)</a>
+  <ul class="collapse">
+  <li><a href="#案例分析與演練" id="toc-案例分析與演練" class="nav-link" data-scroll-target="#案例分析與演練">案例分析與演練</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用" id="toc-定性半定量及定量ea工具應用" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用">2. 定性、半定量及定量EA工具應用</a></li>
+  <li><a href="#定性半定量及定量ea工具應用-續" id="toc-定性半定量及定量ea工具應用-續" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#一ea工具架構tiered-approach" id="toc-一ea工具架構tiered-approach" class="nav-link" data-scroll-target="#一ea工具架構tiered-approach">一、EA工具架構(Tiered Approach）</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-1" id="toc-定性半定量及定量ea工具應用-續-1" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-1">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#二定性評估工具qualitative-assessment" id="toc-二定性評估工具qualitative-assessment" class="nav-link" data-scroll-target="#二定性評估工具qualitative-assessment">二、定性評估工具（Qualitative Assessment）</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-2" id="toc-定性半定量及定量ea工具應用-續-2" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-2">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#二定性評估工具-續" id="toc-二定性評估工具-續" class="nav-link" data-scroll-target="#二定性評估工具-續">二、定性評估工具 (續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-3" id="toc-定性半定量及定量ea工具應用-續-3" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-3">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#三半定量評估工具-1" id="toc-三半定量評估工具-1" class="nav-link" data-scroll-target="#三半定量評估工具-1">三、半定量評估工具</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-4" id="toc-定性半定量及定量ea工具應用-續-4" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-4">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#三半定量評估工具續" id="toc-三半定量評估工具續" class="nav-link" data-scroll-target="#三半定量評估工具續">三、半定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-5" id="toc-定性半定量及定量ea工具應用-續-5" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-5">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具-1" id="toc-四定量評估工具-1" class="nav-link" data-scroll-target="#四定量評估工具-1">四、定量評估工具</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-6" id="toc-定性半定量及定量ea工具應用-續-6" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-6">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續" id="toc-四定量評估工具續" class="nav-link" data-scroll-target="#四定量評估工具續">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-7" id="toc-定性半定量及定量ea工具應用-續-7" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-7">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-1" id="toc-四定量評估工具續-1" class="nav-link" data-scroll-target="#四定量評估工具續-1">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-8" id="toc-定性半定量及定量ea工具應用-續-8" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-8">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-2" id="toc-四定量評估工具續-2" class="nav-link" data-scroll-target="#四定量評估工具續-2">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-9" id="toc-定性半定量及定量ea工具應用-續-9" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-9">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-3" id="toc-四定量評估工具續-3" class="nav-link" data-scroll-target="#四定量評估工具續-3">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-10" id="toc-定性半定量及定量ea工具應用-續-10" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-10">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-4" id="toc-四定量評估工具續-4" class="nav-link" data-scroll-target="#四定量評估工具續-4">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-11" id="toc-定性半定量及定量ea工具應用-續-11" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-11">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-5" id="toc-四定量評估工具續-5" class="nav-link" data-scroll-target="#四定量評估工具續-5">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-12" id="toc-定性半定量及定量ea工具應用-續-12" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-12">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#四定量評估工具續-6" id="toc-四定量評估工具續-6" class="nav-link" data-scroll-target="#四定量評估工具續-6">四、定量評估工具(續)</a></li>
+  </ul></li>
+  <li><a href="#定性半定量及定量ea工具應用-續-13" id="toc-定性半定量及定量ea工具應用-續-13" class="nav-link" data-scroll-target="#定性半定量及定量ea工具應用-續-13">2. 定性、半定量及定量EA工具應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#案例分析與演練-1" id="toc-案例分析與演練-1" class="nav-link" data-scroll-target="#案例分析與演練-1">案例分析與演練</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立" id="toc-暴露實態及相似暴露族群建立" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立">3. 暴露實態及相似暴露族群建立</a></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續" id="toc-暴露實態及相似暴露族群建立-續" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續">3. 暴露實態及相似暴露族群建立 (續)</a></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-1" id="toc-暴露實態及相似暴露族群建立-續-1" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-1">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#二相似暴露族群-seg續" id="toc-二相似暴露族群-seg續" class="nav-link" data-scroll-target="#二相似暴露族群-seg續">二、相似暴露族群（ SEG）？(續)</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-2" id="toc-暴露實態及相似暴露族群建立-續-2" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-2">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#二相似暴露族群-seg續-1" id="toc-二相似暴露族群-seg續-1" class="nav-link" data-scroll-target="#二相似暴露族群-seg續-1">二、相似暴露族群（ SEG）？(續)</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-3" id="toc-暴露實態及相似暴露族群建立-續-3" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-3">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#二相似暴露族群-seg續-2" id="toc-二相似暴露族群-seg續-2" class="nav-link" data-scroll-target="#二相似暴露族群-seg續-2">二、相似暴露族群（ SEG）？(續)</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-4" id="toc-暴露實態及相似暴露族群建立-續-4" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-4">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#三採樣策略擬定" id="toc-三採樣策略擬定" class="nav-link" data-scroll-target="#三採樣策略擬定">三、採樣策略擬定</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-5" id="toc-暴露實態及相似暴露族群建立-續-5" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-5">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#三採樣策略擬定-續" id="toc-三採樣策略擬定-續" class="nav-link" data-scroll-target="#三採樣策略擬定-續">三、採樣策略擬定 (續)</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-6" id="toc-暴露實態及相似暴露族群建立-續-6" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-6">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#三採樣策略擬定-續-1" id="toc-三採樣策略擬定-續-1" class="nav-link" data-scroll-target="#三採樣策略擬定-續-1">三、採樣策略擬定 (續)</a></li>
+  </ul></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-7" id="toc-暴露實態及相似暴露族群建立-續-7" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-7">3. 暴露實態及相似暴露族群建立 (續)</a></li>
+  <li><a href="#暴露實態及相似暴露族群建立-續-8" id="toc-暴露實態及相似暴露族群建立-續-8" class="nav-link" data-scroll-target="#暴露實態及相似暴露族群建立-續-8">3. 暴露實態及相似暴露族群建立 (續)</a>
+  <ul class="collapse">
+  <li><a href="#案例分析與演練-2" id="toc-案例分析與演練-2" class="nav-link" data-scroll-target="#案例分析與演練-2">案例分析與演練</a></li>
+  </ul></li>
+  <li><a href="#監測採樣策略設計-增" id="toc-監測採樣策略設計-增" class="nav-link" data-scroll-target="#監測採樣策略設計-增">4、監測採樣策略設計 (增)</a></li>
+  <li><a href="#監測採樣策略設計-續" id="toc-監測採樣策略設計-續" class="nav-link" data-scroll-target="#監測採樣策略設計-續">4、監測採樣策略設計 (續)</a>
+  <ul class="collapse">
+  <li><a href="#一ea假設檢定" id="toc-一ea假設檢定" class="nav-link" data-scroll-target="#一ea假設檢定">一、EA假設檢定</a></li>
+  </ul></li>
+  <li><a href="#監測採樣策略設計-續-1" id="toc-監測採樣策略設計-續-1" class="nav-link" data-scroll-target="#監測採樣策略設計-續-1">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-2" id="toc-監測採樣策略設計-續-2" class="nav-link" data-scroll-target="#監測採樣策略設計-續-2">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-3" id="toc-監測採樣策略設計-續-3" class="nav-link" data-scroll-target="#監測採樣策略設計-續-3">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-4" id="toc-監測採樣策略設計-續-4" class="nav-link" data-scroll-target="#監測採樣策略設計-續-4">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-5" id="toc-監測採樣策略設計-續-5" class="nav-link" data-scroll-target="#監測採樣策略設計-續-5">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-6" id="toc-監測採樣策略設計-續-6" class="nav-link" data-scroll-target="#監測採樣策略設計-續-6">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-7" id="toc-監測採樣策略設計-續-7" class="nav-link" data-scroll-target="#監測採樣策略設計-續-7">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-8" id="toc-監測採樣策略設計-續-8" class="nav-link" data-scroll-target="#監測採樣策略設計-續-8">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-9" id="toc-監測採樣策略設計-續-9" class="nav-link" data-scroll-target="#監測採樣策略設計-續-9">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-10" id="toc-監測採樣策略設計-續-10" class="nav-link" data-scroll-target="#監測採樣策略設計-續-10">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-11" id="toc-監測採樣策略設計-續-11" class="nav-link" data-scroll-target="#監測採樣策略設計-續-11">4、監測採樣策略設計 (續)</a></li>
+  <li><a href="#監測採樣策略設計-續-12" id="toc-監測採樣策略設計-續-12" class="nav-link" data-scroll-target="#監測採樣策略設計-續-12">4、監測採樣策略設計 (續)</a>
+  <ul class="collapse">
+  <li><a href="#案例分析與演練-3" id="toc-案例分析與演練-3" class="nav-link" data-scroll-target="#案例分析與演練-3">案例分析與演練</a></li>
+  </ul></li>
+  <li><a href="#監測數據分析及應用" id="toc-監測數據分析及應用" class="nav-link" data-scroll-target="#監測數據分析及應用">5、監測數據分析及應用</a></li>
+  <li><a href="#監測數據分析及應用-續" id="toc-監測數據分析及應用-續" class="nav-link" data-scroll-target="#監測數據分析及應用-續">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-1" id="toc-監測數據分析及應用-續-1" class="nav-link" data-scroll-target="#監測數據分析及應用-續-1">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-2" id="toc-監測數據分析及應用-續-2" class="nav-link" data-scroll-target="#監測數據分析及應用-續-2">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-3" id="toc-監測數據分析及應用-續-3" class="nav-link" data-scroll-target="#監測數據分析及應用-續-3">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-4" id="toc-監測數據分析及應用-續-4" class="nav-link" data-scroll-target="#監測數據分析及應用-續-4">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-5" id="toc-監測數據分析及應用-續-5" class="nav-link" data-scroll-target="#監測數據分析及應用-續-5">5、監測數據分析及應用 (續)</a></li>
+  <li><a href="#監測數據分析及應用-續-6" id="toc-監測數據分析及應用-續-6" class="nav-link" data-scroll-target="#監測數據分析及應用-續-6">5、監測數據分析及應用 (續)</a>
+  <ul class="collapse">
+  <li><a href="#案例分析與演練-4" id="toc-案例分析與演練-4" class="nav-link" data-scroll-target="#案例分析與演練-4">案例分析與演練</a></li>
+  </ul></li>
+  <li><a href="#監測計畫及監測結果報告撰寫" id="toc-監測計畫及監測結果報告撰寫" class="nav-link" data-scroll-target="#監測計畫及監測結果報告撰寫">6. 監測計畫及監測結果報告撰寫</a>
+  <ul class="collapse">
+  <li><a href="#一-作業環境監測計畫撰寫重點" id="toc-一-作業環境監測計畫撰寫重點" class="nav-link" data-scroll-target="#一-作業環境監測計畫撰寫重點">一、 作業環境監測計畫撰寫重點</a></li>
+  </ul></li>
+  <li><a href="#監測計畫及監測結果報告撰寫-1" id="toc-監測計畫及監測結果報告撰寫-1" class="nav-link" data-scroll-target="#監測計畫及監測結果報告撰寫-1">6. 監測計畫及監測結果報告撰寫</a>
+  <ul class="collapse">
+  <li><a href="#二-作業環境監測暴露評估報告" id="toc-二-作業環境監測暴露評估報告" class="nav-link" data-scroll-target="#二-作業環境監測暴露評估報告">二、 作業環境監測暴露評估報告</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="監測及暴露評估案例實作.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">監測及暴露評估案例實作</h1>
+<p class="subtitle lead">勞工作業環境監測及暴露評估訓練班</p>
 </div>
 
-  <p class="date">2026年7月22日</p>
-</section>
-<section id="講師簡介" class="slide level2">
-<h2>講師簡介</h2>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>講師：何明信 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2026年7月22日</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2026年7月27日</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Hi</div>
+    各位好
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="講師簡介" class="level2">
+<h2 class="anchored" data-anchor-id="講師簡介">講師簡介</h2>
 <ul>
 <li><p>姓名：何明信</p></li>
 <li><p>學歷：成大環醫所 、職安衛技師</p></li>
@@ -157,9 +587,10 @@
 <li><p>E-mail：msho7336959@gmail.com</p></li>
 </ul>
 </section>
-<section id="課程內容" class="slide level2 scrollable">
-<h2>課程內容</h2>
-<h4 id="案例分析及演練含作業環境監測計畫及監測結果報告撰寫實務">案例分析及演練(含作業環境監測計畫及監測結果報告撰寫實務)</h4>
+<section id="課程內容" class="level2">
+<h2 class="anchored" data-anchor-id="課程內容">課程內容</h2>
+<section id="案例分析及演練含作業環境監測計畫及監測結果報告撰寫實務" class="level4">
+<h4 class="anchored" data-anchor-id="案例分析及演練含作業環境監測計畫及監測結果報告撰寫實務">案例分析及演練(含作業環境監測計畫及監測結果報告撰寫實務)</h4>
 <ol type="1">
 <li><p>暴露評估概論與基本資料蒐集</p></li>
 <li><p>定性模式、半定量及定量暴露評估工具之應用</p></li>
@@ -169,24 +600,48 @@
 <li><p>監測計畫及監測結果報告撰寫</p></li>
 </ol>
 </section>
-<section id="暴露評估概論與基本資料蒐集" class="slide level2">
-<h2>1. 暴露評估概論與基本資料蒐集</h2>
-<h3 id="暴露評估概論"><strong>1.1 暴露評估概論</strong></h3>
-<h4 id="一暴露評估-ea">一、暴露評估 EA ？</h4>
-<h4 id="二相似暴露族群seg">二、相似暴露族群（SEG）？</h4>
-<h4 id="三ea之結果分類與管理決策">三、EA之結果分類與管理決策</h4>
-<h4 id="四法規架構國內法規">四、法規架構（國內法規）</h4>
-<p>———————————————————–</p>
-<h3 id="基本資料蒐集"><strong>1.2 基本資料蒐集</strong></h3>
-<h4 id="一作業環境與製程情境資料">一、作業環境與製程情境資料</h4>
-<h4 id="二危害因子特性與基準資料">二、危害因子特性與基準資料</h4>
-<h4 id="三勞工作業與活動分析資料">三、勞工作業與活動分析資料</h4>
-<h4 id="四歷史數據與佐證資料">四、歷史數據與佐證資料</h4>
-<h4 id="五定量推估模式所需輸入參數">五、定量推估模式所需輸入參數</h4>
 </section>
-<section id="暴露評估概論-1" class="slide level2 scrollable">
-<h2>1.1 暴露評估概論</h2>
-<h3 id="一暴露評估-ea-1">一、暴露評估 EA ？</h3>
+<section id="暴露評估概論與基本資料蒐集" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論與基本資料蒐集">1. 暴露評估概論與基本資料蒐集</h2>
+<section id="暴露評估概論" class="level3">
+<h3 class="anchored" data-anchor-id="暴露評估概論"><strong>1.1 暴露評估概論</strong></h3>
+<section id="一暴露評估-ea" class="level4">
+<h4 class="anchored" data-anchor-id="一暴露評估-ea">一、暴露評估 EA ？</h4>
+</section>
+<section id="二相似暴露族群seg" class="level4">
+<h4 class="anchored" data-anchor-id="二相似暴露族群seg">二、相似暴露族群（SEG）？</h4>
+</section>
+<section id="三ea之結果分類與管理決策" class="level4">
+<h4 class="anchored" data-anchor-id="三ea之結果分類與管理決策">三、EA之結果分類與管理決策</h4>
+</section>
+<section id="四法規架構國內法規" class="level4">
+<h4 class="anchored" data-anchor-id="四法規架構國內法規">四、法規架構（國內法規）</h4>
+<p>———————————————————–</p>
+</section>
+</section>
+<section id="基本資料蒐集" class="level3">
+<h3 class="anchored" data-anchor-id="基本資料蒐集"><strong>1.2 基本資料蒐集</strong></h3>
+<section id="一作業環境與製程情境資料" class="level4">
+<h4 class="anchored" data-anchor-id="一作業環境與製程情境資料">一、作業環境與製程情境資料</h4>
+</section>
+<section id="二危害因子特性與基準資料" class="level4">
+<h4 class="anchored" data-anchor-id="二危害因子特性與基準資料">二、危害因子特性與基準資料</h4>
+</section>
+<section id="三勞工作業與活動分析資料" class="level4">
+<h4 class="anchored" data-anchor-id="三勞工作業與活動分析資料">三、勞工作業與活動分析資料</h4>
+</section>
+<section id="四歷史數據與佐證資料" class="level4">
+<h4 class="anchored" data-anchor-id="四歷史數據與佐證資料">四、歷史數據與佐證資料</h4>
+</section>
+<section id="五定量推估模式所需輸入參數" class="level4">
+<h4 class="anchored" data-anchor-id="五定量推估模式所需輸入參數">五、定量推估模式所需輸入參數</h4>
+</section>
+</section>
+</section>
+<section id="暴露評估概論-1" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論-1">1.1 暴露評估概論</h2>
+<section id="一暴露評估-ea-1" class="level3">
+<h3 class="anchored" data-anchor-id="一暴露評估-ea-1">一、暴露評估 EA ？</h3>
 <ol type="1">
 <li><strong>由合規性（Compliance）–&gt; 全盤性（Comprehensive）?</strong></li>
 </ol>
@@ -195,17 +650,21 @@
 <li><p>現代職業衛生EA策略（如 AIHA 倡議）強調<strong>全盤式暴露評估（Comprehensive Exposure Assessment, CEA）</strong>，旨在掌握工作場所中<strong>所有工作天、所有危害因子及所有作業人員</strong>的暴露實態（Exposure Profile）。</p></li>
 </ul>
 </section>
-<section id="暴露評估概論-續" class="slide level2">
-<h2>1.1 暴露評估概論 (續)</h2>
-<h3 id="pdca-動態循環與-arecc-架構">PDCA 動態循環與 ARECC 架構</h3>
+</section>
+<section id="暴露評估概論-續" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論-續">1.1 暴露評估概論 (續)</h2>
+<section id="pdca-動態循環與-arecc-架構" class="level3">
+<h3 class="anchored" data-anchor-id="pdca-動態循環與-arecc-架構">PDCA 動態循環與 ARECC 架構</h3>
 <ul>
 <li><p>暴露評估並非一次性作業，而是一個持續改進的動態循環（Plan-Do-Check-Act）。</p></li>
 <li><p>AIHA 提出的決策架構將傳統的「預測（Anticipate）、辨識（Recognize）、評估（Evaluate）、控制（Control）」進一步擴充至包含「<strong>確認/驗證（Confirm）</strong>」，強調對防護措施與暴露評估結果的持續驗證。</p></li>
 </ul>
 </section>
-<section id="暴露評估概論-續-1" class="slide level2 scrollable">
-<h2>1.1 暴露評估概論 (續)</h2>
-<h4 id="二相似暴露族群seg-1">二、相似暴露族群（SEG）？</h4>
+</section>
+<section id="暴露評估概論-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論-續-1">1.1 暴露評估概論 (續)</h2>
+<section id="二相似暴露族群seg-1" class="level4">
+<h4 class="anchored" data-anchor-id="二相似暴露族群seg-1">二、相似暴露族群（SEG）？</h4>
 <ol type="1">
 <li><p><strong>母群體與資源分配最適化</strong></p>
 <ul>
@@ -219,10 +678,14 @@
 </ul></li>
 </ol>
 </section>
-<section id="暴露評估概論續" class="slide level2 scrollable">
-<h2>1.1 暴露評估概論(續)</h2>
-<h4 id="三ea結果分類與管理決策">三、EA結果分類與管理決策</h4>
-<h4 id="根據暴露實態與職業暴露限值oel之比較將各-seg-劃分為三種狀態並採取相對應措施">根據暴露實態與職業暴露限值（OEL）之比較，將各 SEG 劃分為三種狀態並採取相對應措施：</h4>
+</section>
+<section id="暴露評估概論續" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論續">1.1 暴露評估概論(續)</h2>
+<section id="三ea結果分類與管理決策" class="level4">
+<h4 class="anchored" data-anchor-id="三ea結果分類與管理決策">三、EA結果分類與管理決策</h4>
+</section>
+<section id="根據暴露實態與職業暴露限值oel之比較將各-seg-劃分為三種狀態並採取相對應措施" class="level4">
+<h4 class="anchored" data-anchor-id="根據暴露實態與職業暴露限值oel之比較將各-seg-劃分為三種狀態並採取相對應措施">根據暴露實態與職業暴露限值（OEL）之比較，將各 SEG 劃分為三種狀態並採取相對應措施：</h4>
 <ol type="1">
 <li><p><strong>可接受之暴露（Acceptable）</strong></p>
 <ul>
@@ -241,9 +704,11 @@
 </ul></li>
 </ol>
 </section>
-<section id="暴露評估概論續-1" class="slide level2 scrollable">
-<h2>1.1 暴露評估概論(續)</h2>
-<h4 id="四法規架構國內法規-1">四、法規架構（國內法規）</h4>
+</section>
+<section id="暴露評估概論續-1" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論續-1">1.1 暴露評估概論(續)</h2>
+<section id="四法規架構國內法規-1" class="level4">
+<h4 class="anchored" data-anchor-id="四法規架構國內法規-1">四、法規架構（國內法規）</h4>
 <ol type="1">
 <li><p><strong>職業安全衛生法</strong></p>
 <ul>
@@ -262,84 +727,114 @@
 </ul></li>
 </ol>
 </section>
-<section id="基本資料蒐集-1" class="slide level2">
-<h2>1.2 基本資料蒐集</h2>
-<h3 id="一作業環境與製程情境資料-1">一、作業環境與製程情境資料</h3>
+</section>
+<section id="基本資料蒐集-1" class="level2">
+<h2 class="anchored" data-anchor-id="基本資料蒐集-1">1.2 基本資料蒐集</h2>
+<section id="一作業環境與製程情境資料-1" class="level3">
+<h3 class="anchored" data-anchor-id="一作業環境與製程情境資料-1">一、作業環境與製程情境資料</h3>
 <ul>
 <li><strong>場所配置與幾何參數</strong>：場所配置圖（Layout）、作業空間總體積（<span class="math inline">\(V\)</span>）、空間尺寸(長寬高)等。</li>
 <li><strong>製程與設備細節</strong>：製程流程圖（PFD）、單元操作說明、設備清單（如反應槽、過濾機、泵浦、分裝點）及物料輸送方式（管道、桶裝、飛濺式/浸沒式充填）等。</li>
 <li><strong>通風與控制設施</strong>：整體換氣換氣率（<span class="math inline">\(Q\)</span> 或 ACH）、機械排氣/補氣系統配置、局部排氣裝置（LEV）類型、氣流流速與控制效能參數。</li>
 </ul>
 </section>
-<section id="基本資料蒐集續" class="slide level2">
-<h2>1.2 基本資料蒐集(續)</h2>
-<h4 id="二危害因子特性與基準資料-1">二、危害因子特性與基準資料</h4>
+</section>
+<section id="基本資料蒐集續" class="level2">
+<h2 class="anchored" data-anchor-id="基本資料蒐集續">1.2 基本資料蒐集(續)</h2>
+<section id="二危害因子特性與基準資料-1" class="level4">
+<h4 class="anchored" data-anchor-id="二危害因子特性與基準資料-1">二、危害因子特性與基準資料</h4>
 <ul>
 <li><strong>危害物辨識與清冊</strong>：清查原料、中間產物、最終產品、副產物（如反應廢氣）、維護用溶劑、廢棄物及實體/生物因子等。</li>
 <li><strong>健康危害資訊收集</strong>：安全資料表（SDS）、GHS 危害分類、毒理學資料（如致癌性、器官毒性、刺激性、<span class="math inline">\(\text{LD}_{50}/\text{LC}_{50}\)</span>）。</li>
 <li><strong>職業暴露限值（OELs）</strong>：國內外相關<strong>容許濃度標準</strong>（如國內 PEL-TWA、STEL、Ceiling；ACGIH TLV、NIOSH REL；或內部 Provisional/Working OEL 與 Hazard Bands）等。</li>
 </ul>
 </section>
-<section id="基本資料蒐集續-1" class="slide level2">
-<h2>1.2 基本資料蒐集(續)</h2>
-<h4 id="三勞工作業與活動分析資料-1">三、勞工作業與活動分析資料</h4>
+</section>
+<section id="基本資料蒐集續-1" class="level2">
+<h2 class="anchored" data-anchor-id="基本資料蒐集續-1">1.2 基本資料蒐集(續)</h2>
+<section id="三勞工作業與活動分析資料-1" class="level4">
+<h4 class="anchored" data-anchor-id="三勞工作業與活動分析資料-1">三、勞工作業與活動分析資料</h4>
 <ul>
 <li><strong>組織與人員編制</strong>：部門、職稱、分工、作業小組、輪班（白/夜班/…）及總作業人數。</li>
 <li><strong>作業內容與時間活動模式</strong>：工作描述、日常與非經常性任務、特定高暴露任務之持續時間與發生頻率（如每日幾次、每次幾分鐘）等。</li>
 <li><strong>暴露途徑與防護具（PPE）</strong>：評估吸入、皮膚接觸（如直接浸泡、飛濺、接觸污染表面）或誤食之可能性；現行 PPE 之類型、規格、佩戴順應性及實際維護狀況等。</li>
 </ul>
 </section>
-<section id="基本資料蒐集續-2" class="slide level2">
-<h2>1.2 基本資料蒐集(續)</h2>
-<h4 id="四歷史數據與佐證資料-1">四、歷史數據與佐證資料</h4>
+</section>
+<section id="基本資料蒐集續-2" class="level2">
+<h2 class="anchored" data-anchor-id="基本資料蒐集續-2">1.2 基本資料蒐集(續)</h2>
+<section id="四歷史數據與佐證資料-1" class="level4">
+<h4 class="anchored" data-anchor-id="四歷史數據與佐證資料-1">四、歷史數據與佐證資料</h4>
 <ul>
 <li><strong>歷年監測紀錄</strong>：彙整過往作業環境監測數據、DRI量測結果，並進行堪用性判定（確認過往 SEG 是否與現況相符）。</li>
 <li><strong>健康監測與反應</strong>：勞工一般及特殊體檢異常紀錄、勞工對異味或身體不適之抱怨、疑似職業病申訴案件。</li>
 <li><strong>其他安衛與環保紀錄</strong>：製程安全管理（PSM）、危害分析（PHA）資料、設備元件洩漏檢測紀錄、毒化物運作量申報資料。</li>
 </ul>
 </section>
-<section id="基本資料蒐集續-3" class="slide level2">
-<h2>1.2 基本資料蒐集(續)</h2>
-<h4 id="五定量推估模式所需輸入參數-1">五、定量推估模式所需輸入參數</h4>
-<h4 id="若先期評估擬採用定量數學模式如-tier-iii-模式需特別精準蒐集以下參數">若先期評估擬採用定量數學模式（如 Tier I/II 模式），需特別精準蒐集以下參數：</h4>
+</section>
+<section id="基本資料蒐集續-3" class="level2">
+<h2 class="anchored" data-anchor-id="基本資料蒐集續-3">1.2 基本資料蒐集(續)</h2>
+<section id="五定量推估模式所需輸入參數-1" class="level4">
+<h4 class="anchored" data-anchor-id="五定量推估模式所需輸入參數-1">五、定量推估模式所需輸入參數</h4>
+</section>
+<section id="若先期評估擬採用定量數學模式如-tier-iii-模式需特別精準蒐集以下參數" class="level4">
+<h4 class="anchored" data-anchor-id="若先期評估擬採用定量數學模式如-tier-iii-模式需特別精準蒐集以下參數">若先期評估擬採用定量數學模式（如 Tier I/II 模式），需特別精準蒐集以下參數：</h4>
 <ul>
 <li><p><strong>化學品物化參數</strong>：分子量（MW）、純物質或混合物之飽和蒸氣壓（VP）、液體密度、沸點、分子擴散係數等。</p></li>
 <li><p><strong>發生源逸散特性</strong>：污染物質量排放速率 (<span class="math inline">\(G\)</span>)、開放液面蒸發面積 (<span class="math inline">\(A\)</span>)、液面上方流速、高壓系統上游壓力與裂縫尺寸等。</p></li>
 <li><p><strong>空間與區域交互參數</strong>：近場體積（<span class="math inline">\(V_N\)</span>）、近場與遠場間空氣交換率（<span class="math inline">\(\beta\)</span>）、混合係數（<span class="math inline">\(m_f\)</span>）等。</p></li>
 </ul>
 </section>
-<section id="暴露評估概論與基本資料蒐集-續" class="slide level2">
-<h2>1. 暴露評估概論與基本資料蒐集 (續)</h2>
-<h3 id="小結">小結</h3>
+</section>
+<section id="暴露評估概論與基本資料蒐集-續" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論與基本資料蒐集-續">1. 暴露評估概論與基本資料蒐集 (續)</h2>
+<section id="小結" class="level3">
+<h3 class="anchored" data-anchor-id="小結">小結</h3>
 <ul>
 <li>執行作業環境監測與暴露評估時，應秉持「<strong>明確目的</strong> <span class="math inline">\(\rightarrow\)</span> 紮實基本資料蒐集 <span class="math inline">\(\rightarrow\)</span> 合理劃分與檢定 SEG <span class="math inline">\(\rightarrow\)</span> 運用先期評估與多元工具分級 <span class="math inline">\(\rightarrow\)</span> 擬定針對性採樣策略與控制措施」之整體架構。</li>
 <li>透過嚴謹的基本資料蒐集，職業衛生專業人員得以在資訊不符合或數據有限的情境下，結合專業判斷與定量工具，做出貼近實態且具保護性的風險管理決策。</li>
 </ul>
 </section>
-<section id="暴露評估概論與基本資料蒐集-續-1" class="slide level2">
-<h2>1. 暴露評估概論與基本資料蒐集 (續)</h2>
-<h3 id="案例分析與演練">案例分析與演練</h3>
 </section>
-<section id="定性半定量及定量ea工具應用" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用</h2>
-<h4 id="ㄧea工具架構tiered-approach">ㄧ、EA工具架構（Tiered Approach）</h4>
-<h4 id="二定性評估工具">二、定性評估工具</h4>
-<h4 id="三半定量評估工具">三、半定量評估工具</h4>
-<h4 id="四定量評估工具">四、定量評估工具</h4>
-<h4 id="五暴露評估工具整合選用對照">五、暴露評估工具整合選用對照</h4>
+<section id="暴露評估概論與基本資料蒐集-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="暴露評估概論與基本資料蒐集-續-1">1. 暴露評估概論與基本資料蒐集 (續)</h2>
+<section id="案例分析與演練" class="level3">
+<h3 class="anchored" data-anchor-id="案例分析與演練">案例分析與演練</h3>
 </section>
-<section id="定性半定量及定量ea工具應用-續" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="一ea工具架構tiered-approach">一、EA工具架構(Tiered Approach）</h3>
+</section>
+<section id="定性半定量及定量ea工具應用" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用">2. 定性、半定量及定量EA工具應用</h2>
+<section id="ㄧea工具架構tiered-approach" class="level4">
+<h4 class="anchored" data-anchor-id="ㄧea工具架構tiered-approach">ㄧ、EA工具架構（Tiered Approach）</h4>
+</section>
+<section id="二定性評估工具" class="level4">
+<h4 class="anchored" data-anchor-id="二定性評估工具">二、定性評估工具</h4>
+</section>
+<section id="三半定量評估工具" class="level4">
+<h4 class="anchored" data-anchor-id="三半定量評估工具">三、半定量評估工具</h4>
+</section>
+<section id="四定量評估工具" class="level4">
+<h4 class="anchored" data-anchor-id="四定量評估工具">四、定量評估工具</h4>
+</section>
+<section id="五暴露評估工具整合選用對照" class="level4">
+<h4 class="anchored" data-anchor-id="五暴露評估工具整合選用對照">五、暴露評估工具整合選用對照</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="一ea工具架構tiered-approach" class="level3">
+<h3 class="anchored" data-anchor-id="一ea工具架構tiered-approach">一、EA工具架構(Tiered Approach）</h3>
 <p>在職業衛生暴露評估中，各種評估工具並非相互排斥，而是構成一個由簡入繁、逐步精細的<strong>多層次評估策略（Tiered Approach）</strong>：</p>
 <ul>
 <li><p><strong>評估精度與量化程度</strong>：<strong>定性</strong>(Qualitative) <span class="math inline">\(&lt;\)</span> <strong>半定量</strong>(Semi-Quantitative) <span class="math inline">\(&lt;\)</span> <strong>定量</strong>(Quantitative)。</p></li>
 <li><p><strong>目的</strong>：在投入高成本採樣監測前，先透過先期暴露風險評估（Preliminary EA）對SEGs進行風險篩選與排序，達成監測資源最適化配置。</p></li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-1" class="slide level2 scrollable">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="二定性評估工具qualitative-assessment">二、定性評估工具（Qualitative Assessment）</h3>
+</section>
+<section id="定性半定量及定量ea工具應用-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-1">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="二定性評估工具qualitative-assessment" class="level3">
+<h3 class="anchored" data-anchor-id="二定性評估工具qualitative-assessment">二、定性評估工具（Qualitative Assessment）</h3>
 <ul>
 <li>定性評估為暴露評估策略之起點，仰賴<strong>職業衛生專家判斷（Professional Judgment）</strong>，結合現場勘查、人員訪談、SDS審閱及檢查表，在數據缺乏或不完整時，對暴露風險進行結構化判斷。</li>
 <li>為降低主觀判斷之偏誤，可運用具科學基礎之定性檢查表工具（如 AIHA Qualitative Exposure Assessment Checklist）：</li>
@@ -350,10 +845,13 @@
 <li><strong>粒狀物危害比（Particulate Hazard Ratio, PHR）</strong>：依 OEL 數值區間直接對照所需控制等級。</li>
 </ol>
 </section>
-<section id="定性半定量及定量ea工具應用-續-2" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="二定性評估工具-續">二、定性評估工具 (續)</h3>
-<h4 id="應用與限制">應用與限制</h4>
+</section>
+<section id="定性半定量及定量ea工具應用-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-2">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="二定性評估工具-續" class="level3">
+<h3 class="anchored" data-anchor-id="二定性評估工具-續">二、定性評估工具 (續)</h3>
+<section id="應用與限制" class="level4">
+<h4 class="anchored" data-anchor-id="應用與限制">應用與限制</h4>
 <ul>
 <li><strong>適用情境</strong>：新化學品/新製程導入初期的初步風險篩選、SEG 初步劃分、指引採樣優先順序。</li>
 <li><strong>優點</strong>：執行效率高、成本低、具高度靈活性。</li>
@@ -365,9 +863,12 @@
 </ul></li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-3" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="三半定量評估工具-1">三、半定量評估工具</h3>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-3">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="三半定量評估工具-1" class="level3">
+<h3 class="anchored" data-anchor-id="三半定量評估工具-1">三、半定量評估工具</h3>
 <ul>
 <li>半定量評估於定性基礎上引入數值化或評量尺度（Matrix Approach），作為主觀判斷與精確定量分析之間的橋樑。典型代表為<strong>化學品分級管理（CCB）</strong>。</li>
 </ul>
@@ -378,10 +879,13 @@
 <li><strong>產出</strong>：矩陣對照得出風險等級，並連結至建議之控制分級。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-4" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="三半定量評估工具續">三、半定量評估工具(續)</h3>
-<h4 id="應用與限制-1">應用與限制</h4>
+</section>
+<section id="定性半定量及定量ea工具應用-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-4">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="三半定量評估工具續" class="level3">
+<h3 class="anchored" data-anchor-id="三半定量評估工具續">三、半定量評估工具(續)</h3>
+<section id="應用與限制-1" class="level4">
+<h4 class="anchored" data-anchor-id="應用與限制-1">應用與限制</h4>
 <ul>
 <li><strong>適用情境</strong>：尚未訂定 OEL 化學品，事業單位依《危害性化學品評估及分級管理辦法》執行化學品分級管理。</li>
 <li><strong>優點</strong>：簡單易用，適合快速建立全廠化學品風險清單與初階控制對策。</li>
@@ -392,13 +896,17 @@
 </ul></li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-5" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具-1">四、定量評估工具</h3>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-5">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具-1" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具-1">四、定量評估工具</h3>
 <ul>
 <li>定量評估具最高客觀性與法律效力，旨在產出具體之定量暴露濃度數值（如 <span class="math inline">\(\text{mg/m}^3\)</span> 或 <span class="math inline">\(\text{ppm}\)</span>），以直接與職業暴露限值（OELs，如 PEL-TWA、STEL、Ceiling）進行比較。</li>
 </ul>
-<h4 id="a.-作業環境監測正式標準方法特性">A. 作業環境監測（正式標準方法）特性</h4>
+<section id="a.-作業環境監測正式標準方法特性" class="level4">
+<h4 class="anchored" data-anchor-id="a.-作業環境監測正式標準方法特性">A. 作業環境監測（正式標準方法）特性</h4>
 <ul>
 <li>運用<strong>經過驗證的標準採樣與分析方法</strong>，對工作場所空氣中危害物進行系統性定量測量。</li>
 <li><strong>合規性與代表性</strong>：為法規判定是否符合容許暴露標準（PELs）的最終基準（Gold Standard）與法定依據。</li>
@@ -407,16 +915,22 @@
 <li>結果主要與<strong>採樣品質</strong>有關。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-6" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續">四、定量評估工具(續)</h3>
-<h4 id="應用">應用</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-6">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續">四、定量評估工具(續)</h3>
+<section id="應用" class="level4">
+<h4 class="anchored" data-anchor-id="應用">應用</h4>
 <ul>
 <li><strong>SEG 暴露實態與檢定</strong>：透過在同一 SEG 內進行隨機或代表性採樣，利用統計指標（如幾何平均值 <span class="math inline">\(GM\)</span>、幾何標準差 <span class="math inline">\(GSD\)</span> 及第 95 百分位值 <span class="math inline">\(X_{95}\)</span>）推估群體暴露分佈，驗證 SEG 分類之合理性。</li>
 <li><strong>定期合規性確認</strong>：依《勞工作業環境監測實施辦法》進行週期性監測，並建立長期的暴露歷史紀錄（保存 10 年或特定危害 30 年）。</li>
 <li><strong>驗證模式推估與工程控制效能</strong>：作為定性、半定量或定量數學模式結果之最後驗證工具，確認防護設施改善前後之實際減量效益。</li>
 </ul>
-<h4 id="限制與注意事項">限制與注意事項</h4>
+</section>
+<section id="限制與注意事項" class="level4">
+<h4 class="anchored" data-anchor-id="限制與注意事項">限制與注意事項</h4>
 <ul>
 <li><strong>滯後性（Time-Lag）</strong>：需經過採樣、封存、運送及實驗室分析，無法於現場立即提供回饋。</li>
 <li><strong>資源與成本高</strong>：採樣點數與分析費用昂貴，無法對所有勞工進行每日全天候監測，故必須結合 SEG 劃分與先期篩選以優化資源。</li>
@@ -424,11 +938,17 @@
 <li><strong>採樣代表性？</strong></li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-7" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-1">四、定量評估工具(續)</h3>
-<h4 id="b.-直讀式儀器或檢知管監測dris">B. 直讀式儀器或檢知管監測（DRIs）</h4>
-<h4 id="應用-1"><strong>應用</strong></h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-7" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-7">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-1" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-1">四、定量評估工具(續)</h3>
+<section id="b.-直讀式儀器或檢知管監測dris" class="level4">
+<h4 class="anchored" data-anchor-id="b.-直讀式儀器或檢知管監測dris">B. 直讀式儀器或檢知管監測（DRIs）</h4>
+</section>
+<section id="應用-1" class="level4">
+<h4 class="anchored" data-anchor-id="應用-1"><strong>應用</strong></h4>
 <ul>
 <li><strong>高時間解析度</strong>：描述工作中之濃度起伏，精準識別短時間高濃度峰值暴露（Peak/STEL）及特定高風險任務。</li>
 <li><strong>即時驗證與洩巡</strong>：評估工程控制措施之立即成效，或透過網格掃描快速定位逸散源與熱點。</li>
@@ -436,24 +956,36 @@
 <li><strong>限制</strong>：使用與數據詮釋，需透過嚴格儀器校正、教育訓練與管理、熟習偵測極限（LOD）及交叉敏感性（Cross-sensitivity）之干擾。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-8" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-2">四、定量評估工具(續)</h3>
-<h4 id="c.-定量數學推估模式">C. 定量數學推估模式</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-8" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-8">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-2" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-2">四、定量評估工具(續)</h3>
+<section id="c.-定量數學推估模式" class="level4">
+<h4 class="anchored" data-anchor-id="c.-定量數學推估模式">C. 定量數學推估模式</h4>
 <ul>
 <li>基於<strong>質量平衡原理（Mass Balance）</strong>，模擬空間中污染物的累積、生成與稀釋移除過程。依多層次評估架構分類如下：</li>
 </ul>
-<h4 id="a.-tier-i-模式第一層簡易篩選與最糟情境">a. Tier I 模式（第一層：簡易篩選與最糟情境）</h4>
+</section>
+<section id="a.-tier-i-模式第一層簡易篩選與最糟情境" class="level4">
+<h4 class="anchored" data-anchor-id="a.-tier-i-模式第一層簡易篩選與最糟情境">a. Tier I 模式（第一層：簡易篩選與最糟情境）</h4>
 <ul>
 <li><strong>作業場所無通風模式（Zero Ventilation Model）</strong>：計算極端洩漏（如容器破裂、翻倒）時之暴露濃度「絕對上限」，用於快速篩選出可忽略之低風險或需觸發緊急應變。</li>
 <li><strong>飽和蒸氣壓模式（Saturation Vapor Pressure Model）</strong>：計算揮發性液體在密閉容器或頂部空間能達到的最大理論飽和濃度，評估打開容器開口瞬間之最高暴露風險。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-9" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-3">四、定量評估工具(續)</h3>
-<h4 id="c.-定量數學推估模式續">C. 定量數學推估模式(續)</h4>
-<h4 id="b.tier-ii-模式第二層物理與通風動態模式">b.Tier II 模式（第二層：物理與通風動態模式）</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-9" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-9">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-3" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-3">四、定量評估工具(續)</h3>
+<section id="c.-定量數學推估模式續" class="level4">
+<h4 class="anchored" data-anchor-id="c.-定量數學推估模式續">C. 定量數學推估模式(續)</h4>
+</section>
+<section id="b.tier-ii-模式第二層物理與通風動態模式" class="level4">
+<h4 class="anchored" data-anchor-id="b.tier-ii-模式第二層物理與通風動態模式">b.Tier II 模式（第二層：物理與通風動態模式）</h4>
 <ul>
 <li><strong>完全混合模式 / 單箱體模式（Well-Mixed Room Model, WMR / One-Box Model）</strong>：假設污染物於空間內瞬間完全均勻混合，結合生成速率（<span class="math inline">\(G\)</span>）與通風換氣率（<span class="math inline">\(Q\)</span>）計算動態或穩態濃度，評估通風良好之室內平均暴露。</li>
 <li><strong>二暴露區模式 / 近場遠場模式（Two-Zone / Near-Field Far-Field Model, NF/FF）</strong>：將空間劃分為緊鄰污染源之「近場（NF）」與其餘空間之「遠場（FF）」，彌補單箱體低估源頭近距離作業暴露之缺點，適用於點源手動作業（如焊接、分裝）或存在具暴露濃度梯度之場所。</li>
@@ -461,21 +993,33 @@
 <li><strong>逸散率/生成率推估模式（Emission/Generation Rate Models）</strong>：計算質量排放速率（<span class="math inline">\(G\)</span> 值），作為 Tier II 空間模式之關鍵輸入參數。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-10" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-4">四、定量評估工具(續)</h3>
-<h4 id="c.-定量數學推估模式續-1">C. 定量數學推估模式(續)</h4>
-<h4 id="c.-tier-iii-模式第三層機率性與統計推估模式">c.&nbsp;Tier III 模式（第三層：機率性與統計推估模式）</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-10" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-10">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-4" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-4">四、定量評估工具(續)</h3>
+<section id="c.-定量數學推估模式續-1" class="level4">
+<h4 class="anchored" data-anchor-id="c.-定量數學推估模式續-1">C. 定量數學推估模式(續)</h4>
+</section>
+<section id="c.-tier-iii-模式第三層機率性與統計推估模式" class="level4">
+<h4 class="anchored" data-anchor-id="c.-tier-iii-模式第三層機率性與統計推估模式">c.&nbsp;Tier III 模式（第三層：機率性與統計推估模式）</h4>
 <ul>
 <li><strong>機率論模式分析（Probabilistic Models）</strong>：加入蒙地卡羅模擬（Monte Carlo Simulation），將輸入參數設定為機率分布，輸出暴露濃度的完整機率分布以量化不確定性。</li>
 <li><strong>統計推估模式（Statistical Models）</strong>：利用數據驅動（Data-driven）概念，運用多元線性迴歸、混合效應模式等，分析並量化各「暴露決定因子（Exposure Determinants）」對濃度的影響，用於預測新條件下的暴露或歷史暴露重建。</li>
 </ul>
 </section>
-<section id="定性半定量及定量ea工具應用-續-11" class="slide level2 scrollable">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-5">四、定量評估工具(續)</h3>
-<h4 id="c.-定量數學推估模式續-2">C. 定量數學推估模式(續)</h4>
-<h4 id="d.非例行性作業non-routine-operations">d.非例行性作業（Non-routine Operations）</h4>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-11" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-11">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-5" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-5">四、定量評估工具(續)</h3>
+<section id="c.-定量數學推估模式續-2" class="level4">
+<h4 class="anchored" data-anchor-id="c.-定量數學推估模式續-2">C. 定量數學推估模式(續)</h4>
+</section>
+<section id="d.非例行性作業non-routine-operations" class="level4">
+<h4 class="anchored" data-anchor-id="d.非例行性作業non-routine-operations">d.非例行性作業（Non-routine Operations）</h4>
 <ul>
 <li>非例行性作業（如保養、歲修、清除洩漏）具「時間短、變異大、無歷史數據」等特性，可綜合利用以下工具：</li>
 </ul>
@@ -485,11 +1029,14 @@
 <li><strong>特異性複核</strong>：必要時採取個人採樣（正式方法）進行事後定量複核與紀錄備查。</li>
 </ol>
 </section>
-<section id="定性半定量及定量ea工具應用-續-12" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="四定量評估工具續-6">四、定量評估工具(續)</h3>
+</section>
+</section>
+<section id="定性半定量及定量ea工具應用-續-12" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-12">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="四定量評估工具續-6" class="level3">
+<h3 class="anchored" data-anchor-id="四定量評估工具續-6">四、定量評估工具(續)</h3>
 <p>「定量工具」比較一覽表</p>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 9%">
 <col style="width: 28%">
@@ -527,13 +1074,17 @@
 </tbody>
 </table>
 </section>
-<section id="定性半定量及定量ea工具應用-續-13" class="slide level2">
-<h2>2. 定性、半定量及定量EA工具應用 (續)</h2>
-<h3 id="案例分析與演練-1">案例分析與演練</h3>
 </section>
-<section id="暴露實態及相似暴露族群建立" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立</h2>
-<h4 id="一暴露剖面exposure-profile">一、暴露剖面（Exposure Profile）？</h4>
+<section id="定性半定量及定量ea工具應用-續-13" class="level2">
+<h2 class="anchored" data-anchor-id="定性半定量及定量ea工具應用-續-13">2. 定性、半定量及定量EA工具應用 (續)</h2>
+<section id="案例分析與演練-1" class="level3">
+<h3 class="anchored" data-anchor-id="案例分析與演練-1">案例分析與演練</h3>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立">3. 暴露實態及相似暴露族群建立</h2>
+<section id="一暴露剖面exposure-profile" class="level4">
+<h4 class="anchored" data-anchor-id="一暴露剖面exposure-profile">一、暴露剖面（Exposure Profile）？</h4>
 <ul>
 <li>暴露實態係指某SEG，其危害因子暴露濃度的<strong>分佈(</strong>通常呈現<strong>對數常態分佈)</strong>。</li>
 <li><strong>關鍵統計指標</strong>：
@@ -544,22 +1095,27 @@
 </ul></li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h4 id="二相似暴露族群-seg">二、相似暴露族群（ SEG）？</h4>
+</section>
+<section id="暴露實態及相似暴露族群建立-續" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="二相似暴露族群-seg" class="level4">
+<h4 class="anchored" data-anchor-id="二相似暴露族群-seg">二、相似暴露族群（ SEG）？</h4>
 <ul>
 <li>由於人力與經費限制，無法對所有勞工進行每日全天候監測。SEG 係指將「工作任務、暴露因子、製程設備、使用物料及暴露環境狀況相似」的勞工歸類為同一個管理群體。</li>
 <li><strong>原則</strong>：利用對 SEG 內少數代表性勞工的抽樣，推估該群體內所有成員的整體暴露實態，以實現資源最適化與全面性周全防護。</li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-1" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="二相似暴露族群-seg續">二、相似暴露族群（ SEG）？(續)</h3>
-<h4 id="a.-相似暴露族群seg建立步驟與方法">A. 相似暴露族群（SEG）建立步驟與方法</h4>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-1">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="二相似暴露族群-seg續" class="level3">
+<h3 class="anchored" data-anchor-id="二相似暴露族群-seg續">二、相似暴露族群（ SEG）？(續)</h3>
+<section id="a.-相似暴露族群seg建立步驟與方法" class="level4">
+<h4 class="anchored" data-anchor-id="a.-相似暴露族群seg建立步驟與方法">A. 相似暴露族群（SEG）建立步驟與方法</h4>
 <ul>
 <li>建立 SEG 為撰寫「作業環境監測計畫」及執行暴露評估的首要核心作業，主要分為三大方法：</li>
 </ul>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 10%">
 <col style="width: 40%">
@@ -602,29 +1158,41 @@
 </tbody>
 </table>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-2" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="二相似暴露族群-seg續-1">二、相似暴露族群（ SEG）？(續)</h3>
-<h4 id="b.-seg-之統計檢定與驗證技術手冊2-核心">B. SEG 之統計檢定與驗證（技術手冊2 核心）</h4>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-2">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="二相似暴露族群-seg續-1" class="level3">
+<h3 class="anchored" data-anchor-id="二相似暴露族群-seg續-1">二、相似暴露族群（ SEG）？(續)</h3>
+<section id="b.-seg-之統計檢定與驗證技術手冊2-核心" class="level4">
+<h4 class="anchored" data-anchor-id="b.-seg-之統計檢定與驗證技術手冊2-核心">B. SEG 之統計檢定與驗證（技術手冊2 核心）</h4>
 <ul>
 <li>劃分完成之 SEG 僅為「假設」，必須透過統計學檢定確認該族群是否具備「高同質性（Homogeneity）」。</li>
 </ul>
-<h4 id="a.-資料分佈型態檢定對數常態檢定">a. 資料分佈型態檢定（對數常態檢定）</h4>
+</section>
+<section id="a.-資料分佈型態檢定對數常態檢定" class="level4">
+<h4 class="anchored" data-anchor-id="a.-資料分佈型態檢定對數常態檢定">a. 資料分佈型態檢定（對數常態檢定）</h4>
 <ul>
 <li>數據應先進行對數轉換（<span class="math inline">\(\ln X\)</span>），並運用 <strong>Shapiro-Wilk 檢定</strong> 或 <strong>W-test</strong> 檢定其是否符合對數常態分佈。</li>
 <li>若數據未通過對數常態檢定，可能代表該 SEG 內混雜了不同暴露的次分組（Sub-groups），需重新審視並拆分 SEG。</li>
 </ul>
-<h4 id="b.-同質性判定與評估">b. 同質性判定與評估</h4>
+</section>
+<section id="b.-同質性判定與評估" class="level4">
+<h4 class="anchored" data-anchor-id="b.-同質性判定與評估">b. 同質性判定與評估</h4>
 <ul>
 <li><span class="math inline">\(GSD &lt; 2.0\)</span>：代表該 SEG 具高度同質性，劃分OK。</li>
 <li><span class="math inline">\(2.0 \le GSD \le 3.0\)</span>：代表具中度變異，在職業衛生實務上可接受。</li>
 <li><span class="math inline">\(GSD &gt; 3.0\)</span>：代表該族群變異過大，<strong>同質性不足</strong>。原因可能是存在未辨識出的高暴露子群體、作業時間差異過大或採樣誤差，必須重新歸類或調整 SEG。</li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-3" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="二相似暴露族群-seg續-2">二、相似暴露族群（ SEG）？(續)</h3>
-<h4 id="c.-暴露統計指標與合規性推估">C. 暴露統計指標與合規性推估</h4>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-3">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="二相似暴露族群-seg續-2" class="level3">
+<h3 class="anchored" data-anchor-id="二相似暴露族群-seg續-2">二、相似暴露族群（ SEG）？(續)</h3>
+<section id="c.-暴露統計指標與合規性推估" class="level4">
+<h4 class="anchored" data-anchor-id="c.-暴露統計指標與合規性推估">C. 暴露統計指標與合規性推估</h4>
 <ul>
 <li>利用公式推估 SEG 的第 95 百分位值（<span class="math inline">\(X_{95}\)</span>）與信賴上限（UTL）：</li>
 </ul>
@@ -634,13 +1202,17 @@
 <li>將推估之 <span class="math inline">\(X_{95}\)</span> 與職業暴露限值（OELs/PELs）對照，判定該 SEG 屬 <strong>可接受（</strong><span class="math inline">\(&lt;0.1 \sim 0.5 \times \text{OEL}\)</span>）、<strong>不可接受（</strong><span class="math inline">\(\ge \text{OEL}\)</span>） 或 <strong>不確定性高</strong> 之風險等級。</li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-4" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="三採樣策略擬定">三、採樣策略擬定</h3>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-4">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="三採樣策略擬定" class="level3">
+<h3 class="anchored" data-anchor-id="三採樣策略擬定">三、採樣策略擬定</h3>
 <ul>
 <li>在確定 SEG 後，採樣策略的擬定決定了數據是否具代表性與法律效力。</li>
 </ul>
-<h4 id="a.-採樣對象之選擇策略">A. 採樣對象之選擇策略</h4>
+<section id="a.-採樣對象之選擇策略" class="level4">
+<h4 class="anchored" data-anchor-id="a.-採樣對象之選擇策略">A. 採樣對象之選擇策略</h4>
 <ul>
 <li><p><strong>最大暴露危險群（MEG）</strong></p>
 <ul>
@@ -654,10 +1226,14 @@
 </ul></li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-5" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="三採樣策略擬定-續">三、採樣策略擬定 (續)</h3>
-<h4 id="c.-採樣時間與數據代表性">C. 採樣時間與數據代表性</h4>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-5">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="三採樣策略擬定-續" class="level3">
+<h3 class="anchored" data-anchor-id="三採樣策略擬定-續">三、採樣策略擬定 (續)</h3>
+<section id="c.-採樣時間與數據代表性" class="level4">
+<h4 class="anchored" data-anchor-id="c.-採樣時間與數據代表性">C. 採樣時間與數據代表性</h4>
 <ul>
 <li><strong>全程個人採樣（Full-Shift）</strong>
 <ul>
@@ -670,22 +1246,28 @@
 </ul></li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-6" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="三採樣策略擬定-續-1">三、採樣策略擬定 (續)</h3>
-<h4 id="d.-採樣點數與頻率規劃">D. 採樣點數與頻率規劃</h4>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-6">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="三採樣策略擬定-續-1" class="level3">
+<h3 class="anchored" data-anchor-id="三採樣策略擬定-續-1">三、採樣策略擬定 (續)</h3>
+<section id="d.-採樣點數與頻率規劃" class="level4">
+<h4 class="anchored" data-anchor-id="d.-採樣點數與頻率規劃">D. 採樣點數與頻率規劃</h4>
 <ul>
 <li><strong>基線採樣（Baseline Sampling）</strong>：為建立初步 SEG 暴露剖面，建議每個 SEG 至少收集 <strong>6 至 10 個</strong> 有效採樣數據，以確保統計分析（如 <span class="math inline">\(X_{95}\)</span> 推估）具備足夠的統計檢定力（Statistical Power）。</li>
 <li><strong>週期性監視監測</strong>：依《勞工作業環境監測實施辦法》第 10 條與第 10-1 條，依據先期評估或前次監測結果之風險等級（如高、中、低風險），排定 6 個月、1 年或 3 年之定期採樣頻率。</li>
 </ul>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-7" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
+</section>
+</section>
+<section id="暴露實態及相似暴露族群建立-續-7" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-7">3. 暴露實態及相似暴露族群建立 (續)</h2>
 <p>重點整理</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -719,21 +1301,26 @@
 </tbody>
 </table>
 </section>
-<section id="暴露實態及相似暴露族群建立-續-8" class="slide level2">
-<h2>3. 暴露實態及相似暴露族群建立 (續)</h2>
-<h3 id="案例分析與演練-2">案例分析與演練</h3>
+<section id="暴露實態及相似暴露族群建立-續-8" class="level2">
+<h2 class="anchored" data-anchor-id="暴露實態及相似暴露族群建立-續-8">3. 暴露實態及相似暴露族群建立 (續)</h2>
+<section id="案例分析與演練-2" class="level3">
+<h3 class="anchored" data-anchor-id="案例分析與演練-2">案例分析與演練</h3>
 </section>
-<section id="監測採樣策略設計-增" class="slide level2 scrollable">
-<h2>4、監測採樣策略設計 (增)</h2>
-<h4 id="文獻資料">文獻資料</h4>
+</section>
+<section id="監測採樣策略設計-增" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-增">4、監測採樣策略設計 (增)</h2>
+<section id="文獻資料" class="level4">
+<h4 class="anchored" data-anchor-id="文獻資料">文獻資料</h4>
 <ol type="1">
 <li><p>AIHA 《A Strategy for Assessing and Managing Occupational Exposures, 4th Edition》 Appendix X: Sampling Strategy Design, By Paul Hewett, PhD, CIH）</p></li>
 <li><p>《技術手冊：作業環境監測採樣策略擬定技術手冊》</p></li>
 </ol>
 </section>
-<section id="監測採樣策略設計-續" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h3 id="一ea假設檢定">一、EA假設檢定</h3>
+</section>
+<section id="監測採樣策略設計-續" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續">4、監測採樣策略設計 (續)</h2>
+<section id="一ea假設檢定" class="level3">
+<h3 class="anchored" data-anchor-id="一ea假設檢定">一、EA假設檢定</h3>
 <ul>
 <li>職業衛生暴露評估<strong>旨在確保工作場所的暴露風險維持在極低水平。從統計學角度來看，蒐集暴露量測數據並對照職業暴露限值（OEL）的過程即為假設檢定</strong>。</li>
 <li><u><em>原則1</em></u>：預設工作環境合格，除非量測數據提供足夠強烈的證據證明其不合格。(<strong>基準/監視評估之假設</strong>)
@@ -750,9 +1337,11 @@
 </ul></li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-1" class="slide level2 scrollable">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="二法規-vs.-效能導向策略">二、法規 vs.&nbsp;效能導向策略</h4>
+</section>
+<section id="監測採樣策略設計-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-1">4、監測採樣策略設計 (續)</h2>
+<section id="二法規-vs.-效能導向策略" class="level4">
+<h4 class="anchored" data-anchor-id="二法規-vs.-效能導向策略">二、法規 vs.&nbsp;效能導向策略</h4>
 <ol type="1">
 <li><strong>法規導向策略</strong>
 <ul>
@@ -768,13 +1357,15 @@
 <li>評估一個抽樣策略好不好，不能只看正確率（效能），還要看平均需要多少樣本（效率），並透過模擬軟體計算 α 與 β 風險，才能做出兼顧「保護勞工」與「節省成本」的最佳決策。</li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-2" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估">三、決策風險與採樣策略效能評估</h4>
+</section>
+<section id="監測採樣策略設計-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-2">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估">三、決策風險與採樣策略效能評估</h4>
 <ul>
 <li>在暴露評估中，採樣策略會面臨兩類決策風險：</li>
 </ul>
-<table class="caption-top" style="width:93%;">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 26%">
 <col style="width: 33%">
@@ -809,10 +1400,13 @@
 <li>β = P( 判定可接受 | 真實暴露不可接受 )</li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-3" class="slide level2 scrollable">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估-1">三、決策風險與採樣策略效能評估</h4>
-<h5 id="a.檢查員策略auditinspector-strategy">A.檢查員策略（Audit/Inspector Strategy）</h5>
+</section>
+<section id="監測採樣策略設計-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-3">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估-1" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估-1">三、決策風險與採樣策略效能評估</h4>
+<section id="a.檢查員策略auditinspector-strategy" class="level5">
+<h5 class="anchored" data-anchor-id="a.檢查員策略auditinspector-strategy">A.檢查員策略（Audit/Inspector Strategy）</h5>
 <ul>
 <li><p>如果只靠「把少數樣本值直接跟 OEL 比大小」來做決策，幾乎不可能發現高風險的作業環境。</p></li>
 <li><p>假設：(實際上也是？)</p>
@@ -835,15 +1429,15 @@
 <li>要判定為「可接受」，必須「所有 n 個樣本都低於 OEL」。如果真實的超限分率是 θ，那麼每一個樣本低於 OEL 的機率是 (1−θ)，連續 n 個都低於 OEL 的機率就是 <span class="math inline">\((1−θ)^n\)</span>。</li>
 </ul></li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 56%">
-<col style="width: 43%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><a href="images/EA/Figure X4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/EA/Figure X4.png" style="width:100.0%"></a></td>
-<td><a href="images/EA/Figure X5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="images/EA/Figure X5.png"></a></td>
+<td><a href="images/EA/Figure X4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/EA/Figure X4.png" class="img-fluid" style="width:100.0%"></a></td>
+<td><a href="images/EA/Figure X5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/EA/Figure X5.png" class="img-fluid"></a></td>
 </tr>
 </tbody>
 </table>
@@ -863,24 +1457,28 @@
 <li>圖中左側（Category 0, 1, 2）的曲線都很低，代表誤判為「不可接受」的雇主風險（α）很小。換句話說，這種策略不容易冤枉好人，但<strong>非常容易放過壞人</strong>。</li>
 </ul></li>
 </ol>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Note</strong></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
-<div class="callout-content">
+</div>
+<div class="callout-body-container callout-body">
 <p>依賴這種簡單檢查員策略的公司，在典型的樣本數下，經常無法發現真正的 Category 4 高風險暴露剖面。這將導致員工面臨過高的風險，同時也增加公司因未能提供適當照護而面臨的責任風險。」</p>
 </div>
 </div>
-</div>
 </section>
-<section id="監測採樣策略設計-續-4" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估-2">三、決策風險與採樣策略效能評估</h4>
-<h5 id="a.檢查員策略auditinspector-strategy-1">A.檢查員策略（Audit/Inspector Strategy）</h5>
+</section>
+</section>
+<section id="監測採樣策略設計-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-4">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估-2" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估-2">三、決策風險與採樣策略效能評估</h4>
+<section id="a.檢查員策略auditinspector-strategy-1" class="level5">
+<h5 class="anchored" data-anchor-id="a.檢查員策略auditinspector-strategy-1">A.檢查員策略（Audit/Inspector Strategy）</h5>
 <p><strong>Q：在這個檢查員策略，加大樣本數，就可以降低勞工風險 β，不是嗎？</strong></p>
 <ul>
 <li><p>要將 β 從 56% 降到 10%，需要將樣本數從&nbsp;<strong>2 個增加到 8 個</strong>（增加 4 倍）。若想將 β 降到 1%，則需要&nbsp;<strong>16 個樣本</strong>。但…</p>
@@ -891,10 +1489,14 @@
 <li><p>與其用更多樣本來「賭」所有樣本都低於 OEL，不如<strong>改變遊戲規則</strong>，用統計方法（如 UCL - 樣本第 95 百分位的 95% 信賴上限）來確保在合理樣本數下，風險能被可靠地控制。</p></li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-5" class="slide level2 scrollable">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估-3">三、決策風險與採樣策略效能評估</h4>
-<h5 id="b.-aiha-基線baseline暴露評估策略">B.&nbsp;AIHA 基線（Baseline）暴露評估策略</h5>
+</section>
+</section>
+<section id="監測採樣策略設計-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-5">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估-3" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估-3">三、決策風險與採樣策略效能評估</h4>
+<section id="b.-aiha-基線baseline暴露評估策略" class="level5">
+<h5 class="anchored" data-anchor-id="b.-aiha-基線baseline暴露評估策略">B.&nbsp;AIHA 基線（Baseline）暴露評估策略</h5>
 <ul>
 <li><p>AIHA建議的EA標準做法：</p>
 <ul>
@@ -908,15 +1510,15 @@
 </ul></li>
 <li><p><strong>待檢驗的假設（H₀：暴露可接受）</strong>： β（勞工風險）≤ 0.10 為設計目標。</p></li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><a href="images/EA/Figure X6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="images/EA/Figure X6.png"></a></td>
-<td><a href="images/EA/Figure X7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="images/EA/Figure X7.png"></a></td>
+<td><a href="images/EA/Figure X6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/EA/Figure X6.png" class="img-fluid"></a></td>
+<td><a href="images/EA/Figure X7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/EA/Figure X7.png" class="img-fluid"></a></td>
 </tr>
 </tbody>
 </table>
@@ -949,10 +1551,14 @@
 </ul></li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-6" class="slide level2 scrollable">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估-4">三、決策風險與採樣策略效能評估</h4>
-<h5 id="c.-aiha-持續監測surveillanceea策略">C.&nbsp;AIHA 持續監測（Surveillance）EA策略</h5>
+</section>
+</section>
+<section id="監測採樣策略設計-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-6">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估-4" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估-4">三、決策風險與採樣策略效能評估</h4>
+<section id="c.-aiha-持續監測surveillanceea策略" class="level5">
+<h5 class="anchored" data-anchor-id="c.-aiha-持續監測surveillanceea策略">C.&nbsp;AIHA 持續監測（Surveillance）EA策略</h5>
 <ul>
 <li><p>在 AIHA 暴露管理模型中，持續<strong>監測（Surveillance）</strong> 的目的不是做一次性的判定，而是：</p>
 <ol type="1">
@@ -967,12 +1573,16 @@
 <li>雇主最好設計一個更嚴謹的方法。</li>
 </ul></li>
 </ul>
-<p><a href="images/EA/Figure X9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="images/EA/Figure X9.png" style="width:50.0%"></a></p>
+<p><a href="images/EA/Figure X9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/EA/Figure X9.png" class="img-fluid" style="width:50.0%"></a></p>
 </section>
-<section id="監測採樣策略設計-續-7" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="三決策風險與採樣策略效能評估-5">三、決策風險與採樣策略效能評估</h4>
-<h5 id="d.-design-of-a-performance-based-termination-reduction-strategy">D.&nbsp;Design of a Performance-based Termination-Reduction Strategy</h5>
+</section>
+</section>
+<section id="監測採樣策略設計-續-7" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-7">4、監測採樣策略設計 (續)</h2>
+<section id="三決策風險與採樣策略效能評估-5" class="level4">
+<h4 class="anchored" data-anchor-id="三決策風險與採樣策略效能評估-5">三、決策風險與採樣策略效能評估</h4>
+<section id="d.-design-of-a-performance-based-termination-reduction-strategy" class="level5">
+<h5 class="anchored" data-anchor-id="d.-design-of-a-performance-based-termination-reduction-strategy">D.&nbsp;Design of a Performance-based Termination-Reduction Strategy</h5>
 <ul>
 <li><strong>情境</strong>：
 <ul>
@@ -982,11 +1592,7 @@
 </ul></li>
 <li>設計目標（雙重風險控制）：</li>
 </ul>
-<table class="caption-top" style="width:47%;">
-<colgroup>
-<col style="width: 26%">
-<col style="width: 20%">
-</colgroup>
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: left;">風險類型</th>
@@ -1011,7 +1617,7 @@
 <li><p>這種方法會<strong>固定 β 在 5%</strong>（因為使用 95% 信心水準，在 OEL 邊界處誤判為已控制的機率就是 5%）。</p></li>
 </ul></li>
 </ul>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1019,9 +1625,9 @@
 <tbody>
 <tr class="odd">
 <td><p>n=6</p>
-<p><a href="images/EA/Figures X10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="images/EA/Figures X10.png"></a></p></td>
+<p><a href="images/EA/Figures X10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/EA/Figures X10.png" class="img-fluid"></a></p></td>
 <td><p>n=16</p>
-<p><a href="images/EA/Figures X11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="images/EA/Figures X11.png"></a></p></td>
+<p><a href="images/EA/Figures X11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/EA/Figures X11.png" class="img-fluid"></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -1046,14 +1652,17 @@
 </ul></li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-8" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="四公司的暴露評估監測採樣策略">四、公司的暴露評估監測採樣策略？</h4>
-<table class="caption-top" style="width:99%;">
+</section>
+</section>
+<section id="監測採樣策略設計-續-8" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-8">4、監測採樣策略設計 (續)</h2>
+<section id="四公司的暴露評估監測採樣策略" class="level4">
+<h4 class="anchored" data-anchor-id="四公司的暴露評估監測採樣策略">四、公司的暴露評估監測採樣策略？</h4>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 24%">
-<col style="width: 30%">
-<col style="width: 44%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1109,10 +1718,13 @@
 <li><strong>啟示</strong>：「風險分級監測」- 分級管理是核心，低風險不等於「不用管」，高風險必須嚴密監控，整體監測策略需制度化。</li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-9" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="五在給定風險目標下到底需要採集多少個樣本">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
-<h5 id="方法-1檢查員策略樣本數公式">方法 1：檢查員策略樣本數公式</h5>
+</section>
+<section id="監測採樣策略設計-續-9" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-9">4、監測採樣策略設計 (續)</h2>
+<section id="五在給定風險目標下到底需要採集多少個樣本" class="level4">
+<h4 class="anchored" data-anchor-id="五在給定風險目標下到底需要採集多少個樣本">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
+<section id="方法-1檢查員策略樣本數公式" class="level5">
+<h5 class="anchored" data-anchor-id="方法-1檢查員策略樣本數公式">方法 1：檢查員策略樣本數公式</h5>
 <p><span class="math inline">\(n= ln(β)​/ln(1−θ)\)</span></p>
 <ul>
 <li>例，β：目標勞工風險（10%）； θ：「不可接受」的超限分率（25% 的暴露超過 OEL）。 計算：n≈8，需要採集 <strong>8 個樣本</strong>，才能在使用 檢查員策略時，將 β 控制在 10% 以下。</li>
@@ -1125,7 +1737,7 @@
 <li>&nbsp;NIOSH 1977 年《職業暴露抽樣策略手冊》(當 SEG 人數（N）<strong>有限</strong>時，樣本數應如何調整)</li>
 </ul></li>
 </ul>
-<p><a href="images/EA/Table X2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="images/EA/Table X2.png" style="width:50.0%"></a></p>
+<p><a href="images/EA/Table X2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/EA/Table X2.png" class="img-fluid" style="width:50.0%"></a></p>
 <ul>
 <li>解讀：
 <ul>
@@ -1134,29 +1746,38 @@
 </ul></li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-10" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="五在給定風險目標下到底需要採集多少個樣本-1">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
-<h5 id="方法-2使用-ucl-比較-oel-的樣本數-略">方法 2：使用 UCL 比較 OEL 的樣本數 (略)</h5>
-<h5 id="方法-3同時控制-α-與-β-的樣本數">方法 3：同時控制 α 與 β 的樣本數</h5>
+</section>
+</section>
+<section id="監測採樣策略設計-續-10" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-10">4、監測採樣策略設計 (續)</h2>
+<section id="五在給定風險目標下到底需要採集多少個樣本-1" class="level4">
+<h4 class="anchored" data-anchor-id="五在給定風險目標下到底需要採集多少個樣本-1">五、在給定風險目標下，到底需要採集多少個樣本？</h4>
+<section id="方法-2使用-ucl-比較-oel-的樣本數-略" class="level5">
+<h5 class="anchored" data-anchor-id="方法-2使用-ucl-比較-oel-的樣本數-略">方法 2：使用 UCL 比較 OEL 的樣本數 (略)</h5>
+</section>
+<section id="方法-3同時控制-α-與-β-的樣本數" class="level5">
+<h5 class="anchored" data-anchor-id="方法-3同時控制-α-與-β-的樣本數">方法 3：同時控制 α 與 β 的樣本數</h5>
 <ul>
 <li>由 Odeh 與 Owen（1980）提出，能夠<strong>同時控制雇主風險（α）與勞工風險（β）</strong>。</li>
 <li><strong>結果</strong>：需要 <strong>33 個樣本</strong>，才能同時確保 β ≤ 0.05 且 α ≤ 0.10。</li>
 </ul>
-<p><a href="images/EA/Figure X13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="images/EA/Figure X13.png" style="width:50.0%"></a></p>
+<p><a href="images/EA/Figure X13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/EA/Figure X13.png" class="img-fluid" style="width:50.0%"></a></p>
 <ul>
 <li>若前測顯示第 95 百分位為 <strong>25% OEL</strong>（對應超限分率約 0.0008，假設 GSD=2.5），代入公式後樣本數會降至約 <strong>16</strong>。</li>
 <li>若第 95 百分位更接近 OEL（例如 50% OEL），則所需樣本數會大幅增加。</li>
 <li><strong>啟示</strong>：樣本數不是「算完就結束」，所有公式都仰賴對 GSD 和 GM 的假設。作者建議在估算後<strong>額外增加 10%~25% 的樣本數</strong>，以應對樣本損失或低估誤差。</li>
 </ul>
 </section>
-<section id="監測採樣策略設計-續-11" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h4 id="總結性啟示">總結性啟示</h4>
-<table class="caption-top">
+</section>
+</section>
+<section id="監測採樣策略設計-續-11" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-11">4、監測採樣策略設計 (續)</h2>
+<section id="總結性啟示" class="level4">
+<h4 class="anchored" data-anchor-id="總結性啟示">總結性啟示</h4>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 39%">
-<col style="width: 60%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1193,21 +1814,30 @@
 </table>
 <p><strong>總結</strong>：<strong>效能曲線和樣本數公式只是設計的起點，真正的挑戰在於將這些理論轉化為一套可持續執行、定期檢討、且能適應現場變化的管理制度</strong>；而這個制度的終極目標，是將所有勞工的暴露風險控制在 Category 2 以下，同時在成本與安全之間取得最佳平衡。</p>
 </section>
-<section id="監測採樣策略設計-續-12" class="slide level2">
-<h2>4、監測採樣策略設計 (續)</h2>
-<h3 id="案例分析與演練-3">案例分析與演練</h3>
 </section>
-<section id="監測數據分析及應用" class="slide level2">
-<h2>5、監測數據分析及應用</h2>
-<h5 id="本節參考資料1">本節參考資料1</h5>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
+<section id="監測採樣策略設計-續-12" class="level2">
+<h2 class="anchored" data-anchor-id="監測採樣策略設計-續-12">4、監測採樣策略設計 (續)</h2>
+<section id="案例分析與演練-3" class="level3">
+<h3 class="anchored" data-anchor-id="案例分析與演練-3">案例分析與演練</h3>
+</section>
+</section>
+<section id="監測數據分析及應用" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用">5、監測數據分析及應用</h2>
+<section id="本節參考資料1" class="level5">
+<h5 class="anchored" data-anchor-id="本節參考資料1">本節參考資料1</h5>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <p>Mulhausen, J. R., &amp; Milz, S. A. (2015). Descriptive statistics, inferential statistics, and goodness of fit. In J. S. Ignacio &amp; W. H. Bullock (Eds.),&nbsp;Appendix IV: <em>A strategy for assessing and managing occupational exposures</em>&nbsp;(4th ed.). AIHA Press.</p>
 </div>
 </div>
 </div>
-<h4 id="一描述性統計">一、描述性統計</h4>
+</section>
+<section id="一描述性統計" class="level4">
+<h4 class="anchored" data-anchor-id="一描述性統計">一、描述性統計</h4>
 <ul>
 <li>描述性統計是推論統計的基礎。
 <ul>
@@ -1222,14 +1852,17 @@
 </ul></li>
 </ul>
 </section>
-<section id="監測數據分析及應用-續" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="一描述性統計-續">一、描述性統計 (續)</h4>
-<h5 id="描述性統計參數與公式">描述性統計參數與公式</h5>
-<table class="caption-top">
+</section>
+<section id="監測數據分析及應用-續" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續">5、監測數據分析及應用 (續)</h2>
+<section id="一描述性統計-續" class="level4">
+<h4 class="anchored" data-anchor-id="一描述性統計-續">一、描述性統計 (續)</h4>
+<section id="描述性統計參數與公式" class="level5">
+<h5 class="anchored" data-anchor-id="描述性統計參數與公式">描述性統計參數與公式</h5>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 73%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1261,9 +1894,12 @@
 </tbody>
 </table>
 </section>
-<section id="監測數據分析及應用-續-1" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="二推論統計">二、推論統計</h4>
+</section>
+</section>
+<section id="監測數據分析及應用-續-1" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-1">5、監測數據分析及應用 (續)</h2>
+<section id="二推論統計" class="level4">
+<h4 class="anchored" data-anchor-id="二推論統計">二、推論統計</h4>
 <ul>
 <li>估計暴露剖面的關鍵參數（如第 95 百分位），並量化其不確定性（信賴區間 / 容許限值）。
 <ul>
@@ -1276,11 +1912,13 @@
 <li>假設計算 UTL95%,95%<sub>​</sub>&nbsp;= 204 ppm 遠高於 STEL OEL = 75 ppm，工業衛生師<strong>無法有 95% 信心</strong>認為真實第 95 百分位低於 STEL。此暴露剖面很可能會被評為『不可接受』。</li>
 </ul></li>
 </ul>
-<p><a href="images/EA/Figure IV5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img data-src="images/EA/Figure IV5.png" style="width:50.0%"></a></p>
+<p><a href="images/EA/Figure IV5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/EA/Figure IV5.png" class="img-fluid" style="width:50.0%"></a></p>
 </section>
-<section id="監測數據分析及應用-續-2" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="二推論統計-續">二、推論統計 (續)</h4>
+</section>
+<section id="監測數據分析及應用-續-2" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-2">5、監測數據分析及應用 (續)</h2>
+<section id="二推論統計-續" class="level4">
+<h4 class="anchored" data-anchor-id="二推論統計-續">二、推論統計 (續)</h4>
 <ul>
 <li>使用 UTL 檢定合規所需的樣本數
 <ul>
@@ -1288,24 +1926,26 @@
 <li>它讓工業衛生師在設計採樣策略時，能預先知道需要多少樣本才能達到足夠的檢定力。</li>
 </ul></li>
 </ul>
-<p><a href="images/EA/Table IV8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img data-src="images/EA/Table IV8.png" style="width:50.0%"></a></p>
+<p><a href="images/EA/Table IV8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/EA/Table IV8.png" class="img-fluid" style="width:50.0%"></a></p>
 <ul>
 <li>提醒：設計樣本數沒有「萬用公式」，必須先釐清決策情境（基線、監測等），定義清楚「可接受」與「不可接受」，再根據變異性（GSD）的估計，選擇對應的估算方法（簡單公式或軟體），最後以「同時控制 α 與 β」為目標來調整樣本數。</li>
 <li>UTL 與超限分率是互補工具。</li>
 <li>提醒：統計分析必須與專業判斷結合，若兩個 SEG 被評為「不可接受」，但最終決策仍需考慮製程變異、控制措施可行性、採樣策略設計等質性因素。</li>
 </ul>
 </section>
-<section id="監測數據分析及應用-續-3" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="三傳統統計-vs.-bda-決策">三、傳統統計 vs.&nbsp;BDA 決策</h4>
+</section>
+<section id="監測數據分析及應用-續-3" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-3">5、監測數據分析及應用 (續)</h2>
+<section id="三傳統統計-vs.-bda-決策" class="level4">
+<h4 class="anchored" data-anchor-id="三傳統統計-vs.-bda-決策">三、傳統統計 vs.&nbsp;BDA 決策</h4>
 <ul>
 <li><p>運用 BDA 來評估第 95 百分位及其不確定性，特別是在<strong>樣本數極小（如 n=1）</strong>&nbsp;的情況下，能提供有意義的決策輔助。</p></li>
 <li><p>推論統計（UTL、超限分率等）屬於<strong>頻率學派統計（Frequentist Statistics）</strong>，其有效運作需要滿足兩個前提：</p>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 36%">
-<col style="width: 40%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1329,11 +1969,11 @@
 </table></li>
 <li><p>比較</p></li>
 </ul>
-<table class="caption-top" style="width:99%;">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 29%">
-<col style="width: 56%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1366,14 +2006,16 @@
 </tbody>
 </table>
 </section>
-<section id="監測數據分析及應用-續-4" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="三傳統統計-vs.-bda-決策-續">三、傳統統計 vs.&nbsp;BDA 決策 (續)</h4>
-<table class="caption-top" style="width:99%;">
+</section>
+<section id="監測數據分析及應用-續-4" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-4">5、監測數據分析及應用 (續)</h2>
+<section id="三傳統統計-vs.-bda-決策-續" class="level4">
+<h4 class="anchored" data-anchor-id="三傳統統計-vs.-bda-決策-續">三、傳統統計 vs.&nbsp;BDA 決策 (續)</h4>
+<table class="caption-top table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 56%">
-<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1406,17 +2048,23 @@
 <li>小樣本不代表不能決策。</li>
 </ul>
 </section>
-<section id="監測數據分析及應用-續-5" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h4 id="四軟體使用-demo">四、軟體使用 (demo)</h4>
 </section>
-<section id="監測數據分析及應用-續-6" class="slide level2">
-<h2>5、監測數據分析及應用 (續)</h2>
-<h3 id="案例分析與演練-4">案例分析與演練</h3>
+<section id="監測數據分析及應用-續-5" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-5">5、監測數據分析及應用 (續)</h2>
+<section id="四軟體使用-demo" class="level4">
+<h4 class="anchored" data-anchor-id="四軟體使用-demo">四、軟體使用 (demo)</h4>
 </section>
-<section id="監測計畫及監測結果報告撰寫" class="slide level2 scrollable">
-<h2>6. 監測計畫及監測結果報告撰寫</h2>
-<h3 id="一-作業環境監測計畫撰寫重點">一、 作業環境監測計畫撰寫重點</h3>
+</section>
+<section id="監測數據分析及應用-續-6" class="level2">
+<h2 class="anchored" data-anchor-id="監測數據分析及應用-續-6">5、監測數據分析及應用 (續)</h2>
+<section id="案例分析與演練-4" class="level3">
+<h3 class="anchored" data-anchor-id="案例分析與演練-4">案例分析與演練</h3>
+</section>
+</section>
+<section id="監測計畫及監測結果報告撰寫" class="level2">
+<h2 class="anchored" data-anchor-id="監測計畫及監測結果報告撰寫">6. 監測計畫及監測結果報告撰寫</h2>
+<section id="一-作業環境監測計畫撰寫重點" class="level3">
+<h3 class="anchored" data-anchor-id="一-作業環境監測計畫撰寫重點">一、 作業環境監測計畫撰寫重點</h3>
 <ol type="1">
 <li>政策、目標與範圍</li>
 <li>組織分工與跨領域溝通</li>
@@ -1426,9 +2074,11 @@
 <li>採樣、分析與數據處理規劃</li>
 </ol>
 </section>
-<section id="監測計畫及監測結果報告撰寫-1" class="slide level2 scrollable">
-<h2>6. 監測計畫及監測結果報告撰寫</h2>
-<h3 id="二-作業環境監測暴露評估報告">二、 作業環境監測暴露評估報告</h3>
+</section>
+<section id="監測計畫及監測結果報告撰寫-1" class="level2">
+<h2 class="anchored" data-anchor-id="監測計畫及監測結果報告撰寫-1">6. 監測計畫及監測結果報告撰寫</h2>
+<section id="二-作業環境監測暴露評估報告" class="level3">
+<h3 class="anchored" data-anchor-id="二-作業環境監測暴露評估報告">二、 作業環境監測暴露評估報告</h3>
 <ol type="1">
 <li>執行實態與紀錄驗收</li>
 <li>數據統計分析與 SEG 檢定</li>
@@ -1436,440 +2086,456 @@
 
 
 </section>
-    </div>
-  <div class="quarto-auto-generated-content" style="display: none;">
-<div class="footer footer-default">
-<p>prepared by Peter Ho. 2026</p>
-</div>
-</div></div>
+</section>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
-
-      // Full list of configuration options available at:
-      // https://revealjs.com/config/
-      Reveal.initialize({
-'controlsAuto': true,
-'previewLinksAuto': false,
-'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
-'autoAnimateUnmatched': true,
-'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'chalkboard': {"buttons":true},
-'smaller': false,
- 
-        // Display controls in the bottom right corner
-        controls: false,
-
-        // Help the user learn the controls by providing hints, for example by
-        // bouncing the down arrow when they first encounter a vertical slide
-        controlsTutorial: false,
-
-        // Determines where controls appear, "edges" or "bottom-right"
-        controlsLayout: 'edges',
-
-        // Visibility rule for backwards navigation arrows; "faded", "hidden"
-        // or "visible"
-        controlsBackArrows: 'faded',
-
-        // Display a presentation progress bar
-        progress: true,
-
-        // Display the page number of the current slide
-        slideNumber: 'c/t',
-
-        // 'all', 'print', or 'speaker'
-        showSlideNumber: 'all',
-
-        // Add the current slide number to the URL hash so that reloading the
-        // page/copying the URL will return you to the same slide
-        hash: true,
-
-        // Start with 1 for the hash rather than 0
-        hashOneBasedIndex: false,
-
-        // Flags if we should monitor the hash and change slides accordingly
-        respondToHashChanges: true,
-
-        // Push each slide change to the browser history
-        history: true,
-
-        // Enable keyboard shortcuts for navigation
-        keyboard: true,
-
-        // Enable the slide overview mode
-        overview: true,
-
-        // Disables the default reveal.js slide layout (scaling and centering)
-        // so that you can use custom CSS layout
-        disableLayout: false,
-
-        // Vertical centering of slides
-        center: false,
-
-        // Enables touch navigation on devices with touch input
-        touch: true,
-
-        // Loop the presentation
-        loop: false,
-
-        // Change the presentation direction to be RTL
-        rtl: false,
-
-        // see https://revealjs.com/vertical-slides/#navigation-mode
-        navigationMode: 'linear',
-
-        // Randomizes the order of slides each time the presentation loads
-        shuffle: false,
-
-        // Turns fragments on and off globally
-        fragments: true,
-
-        // Flags whether to include the current fragment in the URL,
-        // so that reloading brings you to the same fragment position
-        fragmentInURL: false,
-
-        // Flags if the presentation is running in an embedded mode,
-        // i.e. contained within a limited portion of the screen
-        embedded: false,
-
-        // Flags if we should show a help overlay when the questionmark
-        // key is pressed
-        help: true,
-
-        // Flags if it should be possible to pause the presentation (blackout)
-        pause: true,
-
-        // Flags if speaker notes should be visible to all viewers
-        showNotes: false,
-
-        // Global override for autoplaying embedded media (null/true/false)
-        autoPlayMedia: null,
-
-        // Global override for preloading lazy-loaded iframes (null/true/false)
-        preloadIframes: null,
-
-        // Number of milliseconds between automatically proceeding to the
-        // next slide, disabled when set to 0, this value can be overwritten
-        // by using a data-autoslide attribute on your slides
-        autoSlide: 0,
-
-        // Stop auto-sliding after user input
-        autoSlideStoppable: true,
-
-        // Use this method for navigation when auto-sliding
-        autoSlideMethod: null,
-
-        // Specify the average time in seconds that you think you will spend
-        // presenting each slide. This is used to show a pacing timer in the
-        // speaker view
-        defaultTiming: null,
-
-        // Enable slide navigation via mouse wheel
-        mouseWheel: false,
-
-        // The display mode that will be used to show slides
-        display: 'block',
-
-        // Hide cursor if inactive
-        hideInactiveCursor: true,
-
-        // Time before the cursor is hidden (in ms)
-        hideCursorTime: 5000,
-
-        // Opens links in an iframe preview overlay
-        previewLinks: false,
-
-        // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
-
-        // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
-
-        // Transition style for full page slide backgrounds
-        // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
-
-        // Number of slides away from the current that are visible
-        viewDistance: 3,
-
-        // Number of slides away from the current that are visible on mobile
-        // devices. It is advisable to set this to a lower number than
-        // viewDistance in order to save resources.
-        mobileViewDistance: 2,
-
-        // The "normal" size of the presentation, aspect ratio will be preserved
-        // when the presentation is scaled to fit different resolutions. Can be
-        // specified using percentage units.
-        width: 1050,
-
-        height: 700,
-
-        // Factor of the display size that should remain empty around the content
-        margin: 0.1,
-
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
         },
-
-        // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
-
-          RevealMath,
-          RevealNotes,
-          RevealSearch,
-          RevealZoom
-        ]
-      });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-      const toggleBodyColorMode = (bsSheetEl) => {
-        const mode = bsSheetEl.getAttribute("data-mode");
-        const bodyEl = window.document.querySelector("body");
-        if (mode === "dark") {
-          bodyEl.classList.add("quarto-dark");
-          bodyEl.classList.remove("quarto-light");
-        } else {
-          bodyEl.classList.add("quarto-light");
-          bodyEl.classList.remove("quarto-dark");
-        }
-      }
-      const toggleBodyColorPrimary = () => {
-        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-        if (bsSheetEl) {
-          toggleBodyColorMode(bsSheetEl);
-        }
-      }
-      toggleBodyColorPrimary();  
-      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
-      tabsets.forEach(function(tabset) {
-        const tabby = new Tabby('#' + tabset.id);
-      });
-      const isCodeAnnotation = (el) => {
-        for (const clz of el.classList) {
-          if (clz.startsWith('code-annotation-')) {                     
-            return true;
-          }
-        }
-        return false;
-      }
-      const onCopySuccess = function(e) {
-        // button target
-        const button = e.trigger;
-        // don't keep focus
-        button.blur();
-        // flash "checked"
-        button.classList.add('code-copy-button-checked');
-        var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
-        let tooltip;
-        if (window.bootstrap) {
-          button.setAttribute("data-bs-toggle", "tooltip");
-          button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
-          tooltip = new bootstrap.Tooltip(button, 
-            { trigger: "manual", 
-              customClass: "code-copy-button-tooltip",
-              offset: [0, -8]});
-          tooltip.show();    
-        }
-        setTimeout(function() {
-          if (tooltip) {
-            tooltip.hide();
-            button.removeAttribute("data-bs-title");
-            button.removeAttribute("data-bs-toggle");
-            button.removeAttribute("data-bs-placement");
-          }
-          button.setAttribute("title", currentTitle);
-          button.classList.remove('code-copy-button-checked');
-        }, 1000);
-        // clear code selection
-        e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
-      });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-        const config = {
-          allowHTML: true,
-          maxWidth: 500,
-          delay: 100,
-          arrow: false,
-          appendTo: function(el) {
-              return el.closest('section.slide') || el.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'light-border',
-          placement: 'bottom-start',
-        };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
-          config['offset'] = [0,0];
-          config['maxWidth'] = 700;
-        window.tippy(el, config); 
-      }
-      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-      for (var i=0; i<noterefs.length; i++) {
-        const ref = noterefs[i];
-        tippyHover(ref, function() {
-          // use id or data attribute instead here
-          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-          try { href = new URL(href).hash; } catch {}
-          const id = href.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
-        });
-      }
-      const findCites = (el) => {
-        const parentEl = el.parentElement;
-        if (parentEl) {
-          const cites = parentEl.dataset.cites;
-          if (cites) {
-            return {
-              el,
-              cites: cites.split(' ')
-            };
-          } else {
-            return findCites(el.parentElement)
-          }
-        } else {
-          return undefined;
-        }
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
       };
-      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-      for (var i=0; i<bibliorefs.length; i++) {
-        const ref = bibliorefs[i];
-        const citeInfo = findCites(ref);
-        if (citeInfo) {
-          tippyHover(citeInfo.el, function() {
-            var popup = window.document.createElement('div');
-            citeInfo.cites.forEach(function(cite) {
-              var citeDiv = window.document.createElement('div');
-              citeDiv.classList.add('hanging-indent');
-              citeDiv.classList.add('csl-entry');
-              var biblioDiv = window.document.getElementById('ref-' + cite);
-              if (biblioDiv) {
-                citeDiv.innerHTML = biblioDiv.innerHTML;
-              }
-              popup.appendChild(citeDiv);
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
-            return popup.innerHTML;
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
           });
         }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>製作者：何明信老師2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
       }
     });
-    </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-    (function() {
-      let previousOnload = window.onload;
-      window.onload = () => {
-        if (previousOnload) {
-          previousOnload();
-        }
-        lightboxQuarto.on('slide_before_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          const href = trigger.getAttribute('href');
-          if (href !== null) {
-            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-            if (imgEl !== null) {
-              const srcAttr = imgEl.getAttribute("src");
-              if (srcAttr && srcAttr.startsWith("data:")) {
-                slideConfig.href = srcAttr;
-              }
-            }
-          } 
-        });
-      
-        lightboxQuarto.on('slide_after_load', (data) => {
-          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(slideNode);
-          }
-        });
-      
-      };
-      
-    })();
-              </script>
-    
+  
+  };
+  
+})();
+          </script>
+
+
+
 
 </body></html>

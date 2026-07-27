@@ -62,7 +62,7 @@ website:
             target: _blank                          
       - section: "職安衛人員"
         contents:
-          - text: 機械設備器具安全與風險評估
+          - text: 機械設備器具安全相關法規(含風險評估)
             href: 機械設備器具安全與風險評估.qmd
             target: _blank
           - text: 具有危險性之機械及設備安全相關法規簡介
