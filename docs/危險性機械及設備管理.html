@@ -6,7 +6,10 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.21">
 
   <meta name="author" content="講師：何明信">
@@ -219,9 +222,9 @@
 <section id="罰則重點" class="slide level2 center">
 <h2>罰則重點</h2>
 <ul>
-<li>危險性機械設備未檢查合格致勞工死亡：<strong>3年以下有期徒刑、拘役或新臺幣30萬元以下罰金</strong></li>
-<li>未檢查合格致3人以上罹災：<strong>1年以下有期徒刑、拘役或科或併科新臺幣18萬元以下罰金</strong></li>
-<li>違反其他規定：<strong>新臺幣3萬元以上30萬元以下罰鍰</strong></li>
+<li><p>危險性機械設備未檢查合格致勞工死亡：<strong>5年以下有期徒刑、拘役或新臺幣150萬元以下罰金(第40條)</strong></p></li>
+<li><p>未檢查合格致3人以上罹災：<strong>3年以下有期徒刑、拘役或科或併科新臺幣100萬元以下罰金</strong> <strong>(第41條)</strong></p></li>
+<li><p>違反其他規定：<strong>新臺幣5萬元以上300萬元以下罰鍰</strong> <strong>(第43條) 」</strong></p></li>
 </ul>
 </section>
 <section id="二職業安全衛生法施行細則" class="slide level2 center">
@@ -393,14 +396,12 @@
 </tr>
 </tbody>
 </table>
+<p><a href="https://www.osha.gov.tw/48110/48331/48359/51497/post">職安署資訊</a></p>
 </section>
-<section id="四檢查流程圖文字" class="slide level2 center">
-<h2>四、檢查流程圖（文字）</h2>
-<pre><code>型式檢查 → 製造/修改 → 竣工檢查/使用檢查 → 合格證 → 使用
-                ↓
-            定期檢查 ← 合格證有效期限屆滿前1個月
-                ↓
-            延長有效期</code></pre>
+<section id="四使用檢查流程圖" class="slide level2 center">
+<h2>四、使用檢查流程圖</h2>
+<p><a href="images/鍋壓/檢查流程.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/鍋壓/檢查流程.png"></a></p>
+<p>職安署資訊 - <a href="https://www.osha.gov.tw/48110/48331/48359/51508/post" title="危險性機械設備申請作業流程">危險性機械設備申請作業流程</a>， <a href="https://www.osha.gov.tw/48110/48331/48359/51505/post" title="危險性機械設備申請作業流程">危險性機械設備申請作業流程</a></p>
 </section>
 <section id="五危險性機械操作人員" class="slide level2 center">
 <h2>五、危險性機械操作人員</h2>
@@ -551,6 +552,7 @@
 <li><strong>重新檢查</strong>：進口、停用1年以上、提升壓力、變更內容物等</li>
 <li><strong>變更檢查</strong>：構造部分變更</li>
 </ol>
+<p><a href="https://www.osha.gov.tw/48110/48331/48359/51500/post">職安署提供資訊</a></p>
 <h3 id="合格證有效期限">合格證有效期限</h3>
 <ul>
 <li>鍋爐：最長1年（特定發電用最長2年）</li>
@@ -663,9 +665,9 @@
 </section>
 <section id="適用之危險性機械容量範圍" class="slide level2 center">
 <h2>適用之危險性機械（容量範圍）</h2>
-<table class="caption-top" style="width:69%;">
+<table class="caption-top" style="width:71%;">
 <colgroup>
-<col style="width: 20%">
+<col style="width: 22%">
 <col style="width: 48%">
 </colgroup>
 <thead>
@@ -1254,8 +1256,8 @@
 <h2>壓力容器安全閥及其他附屬品管理</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 77%">
+<col style="width: 20%">
+<col style="width: 80%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1464,8 +1466,8 @@
 <h2>高壓氣體的定義</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 76%">
+<col style="width: 22%">
+<col style="width: 77%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2659,6 +2661,38 @@
         }
       });
       </script>
+    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+    (function() {
+      let previousOnload = window.onload;
+      window.onload = () => {
+        if (previousOnload) {
+          previousOnload();
+        }
+        lightboxQuarto.on('slide_before_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          const href = trigger.getAttribute('href');
+          if (href !== null) {
+            const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+            if (imgEl !== null) {
+              const srcAttr = imgEl.getAttribute("src");
+              if (srcAttr && srcAttr.startsWith("data:")) {
+                slideConfig.href = srcAttr;
+              }
+            }
+          } 
+        });
+      
+        lightboxQuarto.on('slide_after_load', (data) => {
+          const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(slideNode);
+          }
+        });
+      
+      };
+      
+    })();
+              </script>
     
 
 </body></html>
