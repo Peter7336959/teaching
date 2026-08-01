@@ -9,11 +9,15 @@ format:
     theme: default
 #    smaller: true
     scrollable: true
-    transition: slide
+    navigation-mode: linear
+    controls: true
+    center-title-slide: false
+#    transition: slide
     transition-speed: slow
     slide-number: c/t
-    chalkboard: true
-    preview-links: auto
+#    chalkboard: true
+#    preview-links: auto
+    toc-title: "課程目錄"    
 #    footer: "prepared by Peter Ho."
     logo: "images/logo.jpg"
     toc: true
@@ -23,10 +27,10 @@ format:
     slide-level: 2
     code-link: true
     incremental: false
-    center: true
+#    center: true
     background-transition: fade
-    width: 1050
-    height: 1000
+    width: 100%
+    height: 800
     css: style/custom.css
 ---
 
