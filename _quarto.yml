@@ -70,6 +70,9 @@ website:
             target: _blank 
           - text: 危險性機械及設備管理
             href: 危險性機械及設備管理.qmd
+            target: _blank
+          - text: 個人防護具
+            href: PPE.qmd
             target: _blank            
       - section: "學校種子人員"
         contents:
