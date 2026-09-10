@@ -1,0 +1,391 @@
+---
+title: "HSG53 呼吸防護裝備（RPE）案例學習"
+subtitle: "附錄5：適當與適合的 RPE 選用實例"
+author: "職安衛專業人員教學用"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    code_folding: hide
+    css: "custom.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+<style>
+/* 自訂樣式：美化版面 */
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+h1 {
+  border-bottom: 3px solid #2980b9;
+  padding-bottom: 0.3em;
+  color: #1a5276;
+}
+
+h2 {
+  border-left: 6px solid #3498db;
+  padding-left: 0.6em;
+  background: #eaf4fb;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  color: #1a5276;
+}
+
+h3 {
+  color: #2874a6;
+}
+
+/* 案例卡片 */
+.case-box {
+  border: 1px solid #d6eaf8;
+  border-radius: 10px;
+  padding: 1.2em;
+  margin-bottom: 2em;
+  background: #fdfefe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 重點提示 */
+.alert {
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1em 0;
+  font-weight: 500;
+}
+.alert-info {
+  background: #e8f4fd;
+  border-left: 6px solid #3498db;
+  color: #1a5276;
+}
+.alert-warning {
+  background: #fef9e7;
+  border-left: 6px solid #f1c40f;
+  color: #7d6608;
+}
+.alert-success {
+  background: #eafaf1;
+  border-left: 6px solid #27ae60;
+  color: #145a32;
+}
+.alert-danger {
+  background: #fdedec;
+  border-left: 6px solid #e74c3c;
+  color: #78281f;
+}
+
+/* 表格美化 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+th {
+  background: #2980b9;
+  color: white;
+  padding: 0.6em;
+  text-align: left;
+}
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #d6eaf8;
+}
+tr:nth-child(even) {
+  background: #f4f9fd;
+}
+
+/* 流程圖樣式 */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+.flow-step {
+  flex: 1;
+  min-width: 120px;
+  background: #3498db;
+  color: white;
+  padding: 0.6em;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.85em;
+  position: relative;
+}
+.flow-step::after {
+  content: "➜";
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2980b9;
+  font-weight: bold;
+}
+.flow-step:last-child::after {
+  content: "";
+}
+</style>
+
+```{r}
+# 載入所需套件
+library(knitr)
+library(kableExtra)
+```
+
+# 前言
+
+本文件整理 **HSG53《工作中的呼吸防護裝備實用指南》附錄5** 的三個案例，供職安衛專業人員教學使用。
+
+每個案例均依照以下邏輯鋪陳：
+
+<div class="flow">
+  <div class="flow-step">作業背景</div>
+  <div class="flow-step">危害識別</div>
+  <div class="flow-step">可用資訊</div>
+  <div class="flow-step">適當性評估</div>
+  <div class="flow-step">密合度評估</div>
+  <div class="flow-step">決策</div>
+</div>
+
+<div class="alert alert-info">
+<strong>學習目標：</strong> 學員能從危害評估出發，計算所需防護係數（APF），並綜合考量佩戴者、任務與環境，選出適當且適合的 RPE。
+</div>
+
+---
+
+# 案例一：切割混凝土路緣石
+
+<div class="case-box">
+
+## 作業背景
+
+- 在某段 **300 公尺**長的道路上鋪設路緣石。
+- 設計中指定交通寧靜化措施，需在短距離內以不同角度鋪設，形成狹窄路段與優先通行區。
+- 標準路緣石運到工地後，需依尺寸裁切。
+- 使用**水抑制**降低粉塵，但現場無自來水，使用附泵浦的水瓶。
+- 裁切作業每次約 **5 分鐘**，屬於**間歇性作業**。
+
+## 危害識別
+
+- 裁切路緣石、鋪路石或磚塊會產生大量**石塵**。
+- 石塵中含有極細的**可呼吸性結晶型二氧化矽（RCS）**。
+- 暴露於 RCS 可能導致：
+  - 矽肺症
+  - 肺癌
+  - 慢性阻塞性肺病（COPD）
+
+<div class="alert alert-danger">
+<strong>危害重點：</strong> RCS 是造成塵肺症與肺癌的關鍵物質，即使短時間暴露也不可輕忽。
+</div>
+
+## 可用資訊
+
+- **沒有 SDS**。
+- 找到 COSHH 指引表 **CN6「使用旋轉切割機切割鋪路石與路緣石」**。
+- CN6 建議：
+  - RPE 的 **APF = 20**
+  - 需併用護目鏡與聽力防護
+
+## 適當性評估
+
+對本作業而言，**適當**的 RPE 包括：
+
+| RPE 類型 | 防護係數 |
+|----------|----------|
+| 一次性半面罩呼吸器 | 20 |
+| 可重複使用半面罩呼吸器（顆粒物濾材） | 20 |
+
+## 密合度評估
+
+- 面罩為**密合型**。
+- 兩名勞工：
+  - 乾淨剃鬚
+  - 無面部標記
+  - 不戴眼鏡
+- 需其他 PPE，**相容性**很重要：
+  - 安全帽附耳罩，不干擾 RPE 帶子
+  - 護目鏡不干擾鼻樑處
+- 作業間歇、戶外溫度正常 → 密合型面罩足夠。
+- **須做密合度測試**。
+
+## 決策
+
+<div class="alert alert-success">
+<strong>最終選擇：</strong> 一次性半面罩呼吸器（前提：兩名勞工都能取得足夠密合）。
+</div>
+
+## 重點
+
+- 沒有 SDS 時，可改用 **COSHH 指引表**取得 APF 建議。
+- 間歇、短時間、環境正常 → 密合型面罩即可。
+- **其他 PPE 的相容性**不可忽略。
+- 即使作業時間短，**密合型面罩仍須密合度測試**。
+
+</div>
+
+---
+
+# 案例二：印刷廠改用新膠黏劑
+
+<div class="case-box">
+
+## 作業背景
+
+- 工廠贏得高品質印刷新合約。
+- 改用新的**網版印刷膠黏劑**。
+- 一名操作員在印刷機上工作。
+- 已使用**局部排氣通風（LEV）**。
+- 操作員每小時進入 LEV 捕集區 **10 分鐘**。
+- 雖有 LEV，仍可能有**低濃度暴露**。
+
+## 危害識別
+
+膠黏劑成分：
+
+| 成分 | CAS No. | % by Wt |
+|------|---------|---------|
+| 醋酸乙烯酯與丙烯酸酯共聚物 | 商業機密 | 40–70 |
+| 水 | 7732-18-5 | 15–40 |
+| 異丙醇 | 67-63-0 | <0.3 |
+| 醋酸乙烯酯 | 108-05-4 | <0.2 |
+| 壬基酚聚氧乙烯醚乙醇 | 9016-45-9 | <0.1 |
+
+- **醋酸乙烯酯**：IARC 分類 **Grp 2B：可能人類致癌物**。
+- 游離醋酸乙烯酯單體是此作業的關鍵關注物質。
+
+<div class="alert alert-warning">
+<strong>危害重點：</strong> Grp 2B 致癌物，暴露應盡量降低，RPE 選擇須謹慎。
+</div>
+
+## 可用資訊
+
+- **SDS** 建議：
+  - 半面罩或全面罩過濾式呼吸器
+  - 搭配**有機蒸氣濾罐**
+
+## 適當性評估
+
+| RPE 類型 | 濾材 |
+|----------|------|
+| 可重複使用半面罩 | 氣體/蒸氣濾材 |
+| 全面罩 | 氣體/蒸氣濾材 |
+
+## 密合度評估
+
+- 面罩為**密合型**。
+- 勞工：
+  - 乾淨剃鬚
+  - 無面部標記
+  - 不戴眼鏡
+- 作業間歇、溫度正常 → 密合型面罩足夠。
+- **須做密合度測試**。
+
+## 決策
+
+<div class="alert alert-success">
+<strong>最終選擇：</strong> 可重複使用半面罩呼吸器 + <strong>A2 型氣體/蒸氣濾材</strong>（前提：勞工能取得足夠密合）。
+</div>
+
+## 重點
+
+- **SDS 是選擇 RPE 的重要起點**，會直接建議濾材類型。
+- 即使有 LEV，進入捕集區仍可能有殘留暴露。
+- 致癌物暴露應盡量降低。
+- 半面罩 + A2 濾材是常見組合，**仍須密合度測試**。
+
+</div>
+
+---
+
+# 案例三：小型黑色鑄造廠打磨作業
+
+<div class="case-box">
+
+## 作業背景
+
+- 小型鑄造廠按單生產金屬產品，原料為廢金屬。
+- 重要環節：**打磨粗邊（fettling）**。
+- 四名操作員使用研磨機處理成品。
+- 已使用 LEV，員工可能工作**長達 8 小時**。
+- 作業性質使**高濃度粉塵始終存在**。
+
+## 危害識別
+
+- 粉塵：**鐵質鑄造顆粒物**（二氧化矽 + 金屬氧化物）。
+- 廢金屬 → 粉塵可能含重金屬。
+- 工廠不接受塗漆金屬，降低鉛暴露。
+- EH40 WEL：
+  - 可吸入性粉塵：**10 mg/m³**
+  - 可呼吸性粉塵：**4 mg/m³**
+- 實測暴露值：**高達 45 mg/m³**
+
+## 計算所需防護係數
+
+\[
+\text{防護係數} = \frac{\text{實測空氣濃度}}{\text{WEL}} = \frac{45}{4} = 11.25
+\]
+
+<div class="alert alert-info">
+<strong>結論：</strong> 需要 APF > 11.25 → 應使用 <strong>APF 20</strong> 的 RPE。
+</div>
+
+## 適當性評估
+
+| RPE 類型 | 防護係數 |
+|----------|----------|
+| 一次性半面罩 | 20 |
+| 可重複使用半面罩（顆粒物濾材） | 20 |
+| 動力呼吸器 + 面罩（顆粒物濾材） | 20 |
+| 動力呼吸器 + 頭罩（顆粒物濾材） | 20 |
+
+> COSHH 指引 **FD8「大型鑄件打磨」** 建議 APF ≥ 40，但**實測暴露值顯示不需要這麼高**。
+
+## 密合度評估
+
+- 勞工：
+  - 乾淨剃鬚
+  - 無面部標記
+  - 不戴眼鏡
+  - → 可佩戴任何類型 RPE
+- 但：
+  - 作業 **> 1 小時**
+  - **重度手工作業**
+  - → **動力型呼吸器最適合**
+
+## 決策
+
+<div class="alert alert-success">
+<strong>最終選擇：</strong> 動力型呼吸器 + 頭罩 + 顆粒物濾材，<strong>APF 20</strong>。<br>
+可搭配適當面屏，同時提供<strong>眼睛防護</strong>。
+</div>
+
+## 重點
+
+- **實測暴露數據**是計算 APF 的關鍵，不能只憑指引表建議。
+- 指引表與實測結果不一致時，以**實測 + 風險評估**為準，並記錄理由。
+- **長時間、高工作速率** → 動力型或寬鬆型 RPE 的舒適性更重要。
+- 可考慮**整合式防護**（頭罩式呼吸器兼具眼睛防護）。
+
+</div>
+---
+
+# 結語
+
+<div class="alert alert-success">
+這三個案例分別展示了 <strong>「用 COSHH 指引」、「用 SDS」、「用實測暴露數據」</strong> 三種不同的資訊來源，以及 <strong>「短時間歇」、「中時間歇」、「長時重度」</strong> 三種不同的作業特性，涵蓋 RPE 選用最常見的情境。
+</div>

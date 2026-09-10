@@ -1,0 +1,579 @@
+---
+title: "個人防墜落裝備（PFPE）教學指南"
+subtitle: "WorkSafeBC《An Introduction to Personal Fall Protection Equipment》重點整理"
+author: "職安衛專業人員教學用"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    code_folding: hide
+    css: "custom.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+<style>
+/* ===== 基本版面 ===== */
+body {
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+  color: #2c3e50;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+h1 {
+  border-bottom: 3px solid #c0392b;
+  padding-bottom: 0.3em;
+  color: #922b21;
+}
+
+h2 {
+  border-left: 6px solid #e74c3c;
+  padding-left: 0.6em;
+  background: #fdedec;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  color: #922b21;
+}
+
+h3 {
+  color: #c0392b;
+}
+
+/* ===== 案例卡片 ===== */
+.case-box {
+  border: 1px solid #f5b7b1;
+  border-radius: 10px;
+  padding: 1.2em;
+  margin-bottom: 2em;
+  background: #fdfefe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* ===== 重點提示框 ===== */
+.alert {
+  padding: 1em;
+  border-radius: 8px;
+  margin: 1em 0;
+  font-weight: 500;
+}
+.alert-info {
+  background: #e8f4fd;
+  border-left: 6px solid #3498db;
+  color: #1a5276;
+}
+.alert-warning {
+  background: #fef9e7;
+  border-left: 6px solid #f1c40f;
+  color: #7d6608;
+}
+.alert-success {
+  background: #eafaf1;
+  border-left: 6px solid #27ae60;
+  color: #145a32;
+}
+.alert-danger {
+  background: #fdedec;
+  border-left: 6px solid #e74c3c;
+  color: #78281f;
+}
+
+/* ===== 表格美化 ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+th {
+  background: #c0392b;
+  color: white;
+  padding: 0.6em;
+  text-align: left;
+}
+td {
+  padding: 0.5em;
+  border-bottom: 1px solid #f5b7b1;
+}
+tr:nth-child(even) {
+  background: #fdf2f2;
+}
+
+/* ===== 流程圖 ===== */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+.flow-step {
+  flex: 1;
+  min-width: 110px;
+  background: #e74c3c;
+  color: white;
+  padding: 0.6em;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.85em;
+  position: relative;
+}
+.flow-step::after {
+  content: "➜";
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0392b;
+  font-weight: bold;
+}
+.flow-step:last-child::after {
+  content: "";
+}
+
+/* ===== 測驗按鈕 ===== */
+.quiz-btn {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 0.5em;
+}
+.quiz-btn:hover {
+  background: #922b21;
+}
+.quiz-feedback {
+  margin-top: 0.8em;
+  padding: 0.8em;
+  border-radius: 6px;
+  display: none;
+}
+.quiz-feedback.correct {
+  background: #eafaf1;
+  border-left: 6px solid #27ae60;
+  color: #145a32;
+  display: block;
+}
+.quiz-feedback.wrong {
+  background: #fdedec;
+  border-left: 6px solid #e74c3c;
+  color: #78281f;
+  display: block;
+}
+
+/* ===== 圖片樣式 ===== */
+.figure {
+  text-align: center;
+  margin: 1.5em 0;
+}
+.figure img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.figure .caption {
+  font-size: 0.85em;
+  color: #7f8c8d;
+  margin-top: 0.5em;
+}
+</style>
+
+```{r}
+library(knitr)
+library(kableExtra)
+```
+
+# 前言
+
+本文件整理 **WorkSafeBC《An Introduction to Personal Fall Protection Equipment》**（2005 年版）的重點，供職安衛專業人員教學使用。內容涵蓋：
+
+- 危害評估與系統選擇
+- 裝備選用、穿戴與檢查
+- 錨點與生命線
+- 墜落後處理
+- 與呼吸防護裝備（RPE）管理的對照
+
+<div class="alert alert-info">
+<strong>學習目標：</strong> 學員能從危害評估出發，分辨「防墜落限制」與「墜落制動」系統，選用適當且適合的裝備，並建立檢查、維護、救援與書面計畫的完整管理概念。
+</div>
+
+---
+
+# 一、核心原則
+
+## 法律門檻
+
+- 依《職業健康與安全法規》，凡有 **3 公尺（10 英尺）**以上墜落風險，或較低高度但可能造成嚴重傷害者，必須使用防墜落系統。
+
+## 優先順序
+
+<div class="flow">
+  <div class="flow-step">護欄／屏障</div>
+  <div class="flow-step">個人防墜落裝備</div>
+  <div class="flow-step">訓練與監督</div>
+  <div class="flow-step">救援計畫</div>
+</div>
+
+<div class="alert alert-danger">
+<strong>關鍵警示：</strong>
+<ul>
+<li>安全帶（safety belt）<strong>嚴禁</strong>用於墜落制動（fall arrest）。</li>
+<li>墜落制動必須使用<strong>全身式背帶（full body harness）</strong>。</li>
+<li>墜落後所有曾受力裝備<strong>立即停用</strong>，須經製造商或專業工程師檢查核准。</li>
+</ul>
+</div>
+
+---
+
+# 二、危害評估：防墜落限制 vs. 墜落制動
+
+## 系統類型比較
+
+| 系統類型 | 目的 | 範例 |
+|----------|------|------|
+| **防墜落限制系統（Fall restraint）** | 防止人員到達墜落邊緣 | 工作定位系統、旅遊限制系統、護欄 |
+| **墜落制動系統（Fall arrest）** | 墜落後在撞擊下方表面前停止 | 全身式背帶＋掛繩／生命線＋錨點、安全網 |
+
+## 選擇邏輯
+
+1. 先考慮**護欄或屏障**（工程控制）；
+2. 無法設置時，才選**個人防墜落裝備**；
+3. 若有可能墜落 → 用**全身式背帶＋墜落制動系統**；
+4. 若只是防止到達邊緣 → 可用**安全帶＋防墜落限制系統**。
+
+## 書面防墜落計畫
+
+<div class="alert alert-warning">
+<strong>時機：</strong> 潛在墜落危害 <strong>7.5 公尺（25 英尺）</strong>以上，必須有書面防墜落計畫。
+</div>
+
+書面計畫應包含：
+
+- 潛在墜落危害辨識
+- 將使用的防墜落系統類型
+- 勞工安全使用裝備的說明
+- **墜落後無法自行脫困的救援程序**
+
+---
+
+# 三、墜落速度與距離
+
+| 時間（秒） | 距離（公尺） | 距離（英尺） |
+|------------|--------------|--------------|
+| 0.5 | 1.2 | 4 |
+| 1.0 | 4.9 | 16 |
+| 1.5 | 11 | 36 |
+| 2.0 | 20 | 64 |
+| 2.5 | 31 | 100 |
+| 3.0 | 44 | 144 |
+| 4.0 | 78 | 256 |
+
+<div class="alert alert-info">
+墜落發生極快，<strong>幾乎沒有時間抓握或恢復平衡</strong>。正確穿戴與維護的裝備，連接穩固錨點，可救命。
+</div>
+
+---
+
+# 四、裝備選用與檢查
+
+## 1. 安全帶（Safety Belt）
+
+- **僅限防墜落限制系統**，不可用於墜落制動。
+- 檢查重點：
+
+| 部位 | 檢查項目 |
+|------|----------|
+| 扣具 | 舌片是否重叠、活動自如、無彎曲磨損；滾輪是否自由轉動 |
+| 織帶 | 是否磨損、裂開、割傷、燒傷 |
+| D 環 | 是否彎曲、裂開、缺口、刮傷 |
+| 標籤 | 製造商、腰圍、材質、製造日期、型號、「警告——不得用於墜落制動」 |
+
+## 2. 全身式背帶（Full Body Harness）
+
+- **有墜落風險時必須使用**。
+- 墜落時將衝擊力分散到身體較大面積，優於安全帶。
+- 墜落制動用背帶特徵：
+  - **後背 D 環**位於肩胛骨之間；
+  - 每條肩帶下方標有字母 **「A」**；
+  - 字母「A」上方有**箭頭指向 D 環**。
+
+### 背帶分類
+
+| 分類 | 用途 |
+|------|------|
+| Group A | 墜落制動 |
+| Group D | 控制下降 |
+| Group E | 密閉空間進出 |
+| Group L | 爬梯 |
+| Group P | 工作定位 |
+
+### 穿戴要點
+
+- 調整扣具與帶子至**貼身但不妨礙活動**；
+- 收好鬆散帶尾，避免纏繞或絆倒；
+- 掛接 **「A」標記的 D 環**。
+
+## 3. 掛繩（Lanyard）
+
+- 連接安全帶或背帶至生命線或錨點。
+- **越短越好**，自由落體距離**不超過 1.2 公尺（4 英尺）**。
+- 使用鋼絲繩掛繩於墜落制動時，必須搭配**個人減震器**。
+- 檢查重點：繩索或織帶、眼環編結、彈簧鉤、標籤。
+- 三股繩掛繩應小心扭開檢查內部纖維，**不可過度扭轉**。
+- 織帶掛繩若有切口、孔洞、磨損、負載縫線損壞 → 丟棄。
+
+## 4. 彈簧鉤（Snap Hooks）
+
+- CSA Z259.1 要求**自動上鎖**，防止意外滾出（roll-out）。
+- 滾出可能發生於小 D 環或附件使鉤門被推開。
+
+## 5. 個人減震器（Personal Shock Absorber）
+
+- 由「撕裂織帶」製成，墜落時特定縫線圖案吸收衝擊力並逐步撕裂。
+- **可能增加掛繩長度達 1.2 公尺（4 英尺）**，計算墜落距離時必須納入。
+- 符合 CSA Z259.11 者可接受。
+
+## 6. 連接環（Carabiner）
+
+- 符合 CSA Z259.12。
+- 閘門**自動關閉且自動上鎖**。
+- 斷裂強度**至少 22 kN（5,000 磅）**。
+- 清楚標示製造商與負載能力。
+- 每次使用前檢查損壞、變形、過度磨損。
+
+---
+
+# 五、錨點與生命線
+
+## 1. 錨點（Anchor）
+
+| 用途 | 最低強度要求 |
+|------|--------------|
+| 防墜落限制 | 至少 **3.5 kN（800 磅）**，或**勞工體重的 4 倍** |
+| 墜落制動 | 至少 **22 kN（5,000 磅）**，或**最大制動力的 2 倍** |
+
+<div class="alert alert-warning">
+上述數值<strong>不適用於水平生命線系統</strong>，因其錨點受力可能遠大於個人防墜落與制動系統。
+</div>
+
+## 2. 垂直生命線（Vertical Lifeline）
+
+- 繩索最低斷裂強度 **26.7 kN（6,000 磅）**。
+- 除終端點外**不得有結或編結**。
+- 每條生命線**獨立錨點**。
+- **僅限一名勞工**連接。
+- 延伸至地面或安全較低平台 **1.2 公尺（4 英尺）內**。
+- 懸掛長度超過 **91 公尺（300 英尺）**時，須考慮掛繩長度、風力、繩索構造與強度。
+
+## 3. 抓繩器（Rope Grab）
+
+| 類型 | 特性 | 適用 |
+|------|------|------|
+| 自動式 | 隨人員自由移動，墜落時自動鎖定；建議掛繩限 **0.6 公尺（2 英尺）** | 墜落制動 |
+| 手動式 | 始終鎖定，需手動重新定位 | 防墜落限制系統 |
+
+- 繩徑必須符合製造商規格。
+- 安裝方向**頂端朝錨點**。
+
+## 4. 擺盪墜落危害（Swing-Fall Hazard）
+
+<div class="alert alert-danger">
+繫接方式若會讓墜落後<strong>擺盪撞擊障礙物</strong>，同樣致命。錨點位置須避免擺盪路徑上有障礙。
+</div>
+
+## 5. 伸縮式生命線（Retractable Lifeline）
+
+- 類似汽車安全帶，持續張力、無鬆弛。
+- 墜落瞬間鎖定。
+- 有**墜落指示器**，顯示曾發生墜落則**不得使用**。
+- 墜落後須經製造商或授權代理人檢查核准。
+- **除非製造商特別允許，否則必須垂直使用**。
+
+## 6. 水平生命線（Horizontal Lifeline）
+
+- 永久安裝系統**必須由專業工程師認證**。
+- 臨時系統可接受條件：
+
+<div class="alert alert-info">
+<ol>
+<li>商業製造、依書面說明安裝使用；</li>
+<li>依專業工程師書面說明安裝使用；</li>
+<li>或符合以下全部：</li>
+</ol>
+</div>
+
+| 項目 | 要求 |
+|------|------|
+| 鋼絲繩 | 最小 **12 mm（1/2 英吋）**，斷裂強度至少 **89 kN（20,000 磅）** |
+| 編結 | 除終端外無編結 |
+| 連接硬體 | 極限負載 **至少 71 kN（16,000 磅）** |
+| 跨度 | **6 至 18 公尺（20 至 60 英尺）** |
+| 端錨 | 極限負載 **至少 71 kN（16,000 磅）** |
+| 垂度 | 約**跨度 ÷ 60** |
+| 高度 | 任一點高於工作面 **至少 1 公尺（39 英吋）** |
+| 自由落體 | 限 **1.2 公尺（4 英尺）** |
+| 淨空 | 工作面下方至少 **3.5 公尺（12 英尺）** |
+| 人數 | **最多 3 名勞工** |
+| 移動 | 不阻礙勞工安全移動 |
+
+---
+
+# 六、墜落後處理
+
+<div class="alert alert-danger">
+<strong>墜落後立即停用所有曾用於制動的裝備。</strong><br>
+未經製造商、授權代理人或專業工程師<strong>檢查核准</strong>，不得再次使用。
+</div>
+
+這與 RPE「曾受污染或受力後須檢查」的維護邏輯相同。
+
+---
+
+# 七、與 RPE 管理的對照
+
+```{r, echo=FALSE}
+library(kableExtra)
+
+df <- data.frame(
+  管理面向 = c("危害評估", "優先順序", "充足性", "適合性", "使用前檢查", "維護", "訓練", "救援", "記錄"),
+  防墜落裝備 = c("3 公尺以上或可能嚴重傷害", "護欄 → 個人防墜落裝備", "錨點強度、系統類型", "背帶尺寸、穿戴調整", "扣具、織帶、D 環、標籤", "清潔、儲存、墜落後停用", "安全使用與限制", "書面計畫須含救援程序", "檢查與維護紀錄"),
+  RPE = c("缺氧、粉塵、蒸氣、氣體", "工程控制 → RPE", "APF、濾材類型", "面型、密合度測試", "濾材、閥門、帶子、密合檢查", "清潔、儲存、濾材更換", "正確佩戴、檢查、維護", "緊急逃生／救援 RPE", "檢查、測試、維修紀錄（至少 5 年）")
+)
+
+kable(df, col.names = c("管理面向", "防墜落裝備（WorkSafeBC）", "呼吸防護裝備（HSG53）")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, background = "#fdf2f2") %>%
+  row_spec(0, background = "#c0392b", color = "white", bold = TRUE)
+```
+
+---
+
+# 八、實操流程（總結）
+
+<div class="flow">
+  <div class="flow-step">危害評估</div>
+  <div class="flow-step">決定系統</div>
+  <div class="flow-step">選擇裝備</div>
+  <div class="flow-step">選擇錨點</div>
+  <div class="flow-step">檢查裝備</div>
+  <div class="flow-step">正確穿戴</div>
+  <div class="flow-step">訓練監督</div>
+  <div class="flow-step">墜落後處理</div>
+  <div class="flow-step">書面計畫</div>
+</div>
+
+1. **危害評估**：辨識墜落風險、高度、作業型態。
+2. **決定系統**：防墜落限制 vs. 墜落制動。
+3. **選擇裝備**：安全帶或全身式背帶、掛繩、減震器、連接環。
+4. **選擇錨點與生命線**：確認強度、獨立性、擺盪危害。
+5. **檢查裝備**：每次使用前檢查扣具、織帶、D 環、標籤。
+6. **正確穿戴**：貼身、收好帶尾、掛接正確 D 環。
+7. **訓練與監督**：安全使用、限制、救援。
+8. **墜落後處理**：停用、檢查、核准後再用。
+9. **書面計畫**：7.5 公尺以上須有書面防墜落計畫與救援程序。
+
+---
+
+# 九、教學測驗
+
+## 測驗一
+
+<div class="quiz-container" id="quiz1">
+  <p><strong>Q1.</strong> 下列何者<strong>不可</strong>用於墜落制動？</p>
+  <label><input type="radio" name="q1" value="A"> A. 全身式背帶</label><br>
+  <label><input type="radio" name="q1" value="B"> B. 安全帶</label><br>
+  <label><input type="radio" name="q1" value="C"> C. 個人減震器</label><br>
+  <label><input type="radio" name="q1" value="D"> D. 連接環</label><br>
+  <button class="quiz-btn" onclick="checkQuiz('quiz1', 'B', '正解：B。安全帶僅限防墜落限制系統，若用於墜落制動，可能造成嚴重背部與腹部傷害。')">檢查答案</button>
+  <div class="quiz-feedback"></div>
+</div>
+
+## 測驗二
+
+<div class="quiz-container" id="quiz2">
+  <p><strong>Q2.</strong> 墜落制動用錨點的最低強度要求為何？</p>
+  <label><input type="radio" name="q2" value="A"> A. 3.5 kN（800 磅）</label><br>
+  <label><input type="radio" name="q2" value="B"> B. 22 kN（5,000 磅）</label><br>
+  <label><input type="radio" name="q2" value="C"> C. 12 kN（2,700 磅）</label><br>
+  <label><input type="radio" name="q2" value="D"> D. 5 kN（1,100 磅）</label><br>
+  <button class="quiz-btn" onclick="checkQuiz('quiz2', 'B', '正解：B。墜落制動錨點須至少 22 kN（5,000 磅），或最大制動力的 2 倍。')">檢查答案</button>
+  <div class="quiz-feedback"></div>
+</div>
+
+## 測驗三
+
+<div class="quiz-container" id="quiz3">
+  <p><strong>Q3.</strong> 書面防墜落計畫在何種情況下必須建立？</p>
+  <label><input type="radio" name="q3" value="A"> A. 任何高度作業</label><br>
+  <label><input type="radio" name="q3" value="B"> B. 潛在墜落危害 7.5 公尺（25 英尺）以上</label><br>
+  <label><input type="radio" name="q3" value="C"> C. 只要使用安全帶</label><br>
+  <label><input type="radio" name="q3" value="D"> D. 只要使用全身式背帶</label><br>
+  <button class="quiz-btn" onclick="checkQuiz('quiz3', 'B', '正解：B。潛在墜落危害 7.5 公尺（25 英尺）以上，必須有書面防墜落計畫，含救援程序。')">檢查答案</button>
+  <div class="quiz-feedback"></div>
+</div>
+
+## 測驗四
+
+<div class="quiz-container" id="quiz4">
+  <p><strong>Q4.</strong> 關於伸縮式生命線（Retractable Lifeline），下列敘述何者<strong>錯誤</strong>？</p>
+  <label><input type="radio" name="q4" value="A"> A. 墜落瞬間鎖定</label><br>
+  <label><input type="radio" name="q4" value="B"> B. 有墜落指示器</label><br>
+  <label><input type="radio" name="q4" value="C"> C. 墜落後可繼續使用，無須檢查</label><br>
+  <label><input type="radio" name="q4" value="D"> D. 除非製造商允許，否則必須垂直使用</label><br>
+  <button class="quiz-btn" onclick="checkQuiz('quiz4', 'C', '正解：C。墜落後須經製造商或授權代理人檢查核准，不得直接繼續使用。')">檢查答案</button>
+  <div class="quiz-feedback"></div>
+</div>
+
+## 測驗五
+
+<div class="quiz-container" id="quiz5">
+  <p><strong>Q5.</strong> 水平生命線的臨時系統，若採自行安裝，下列何者<strong>不</strong>是必要條件？</p>
+  <label><input type="radio" name="q5" value="A"> A. 鋼絲繩最小 12 mm，斷裂強度至少 89 kN</label><br>
+  <label><input type="radio" name="q5" value="B"> B. 最多 3 名勞工連接</label><br>
+  <label><input type="radio" name="q5" value="C"> C. 自由落體距離限 1.2 公尺</label><br>
+  <label><input type="radio" name="q5" value="D"> D. 必須由專業工程師簽證</label><br>
+  <button class="quiz-btn" onclick="checkQuiz('quiz5', 'D', '正解：D。臨時系統可依商業製造書面說明、專業工程師書面說明，或符合表列全部要求；並非所有臨時系統都必須由工程師簽證（永久系統才必須）。')">檢查答案</button>
+  <div class="quiz-feedback"></div>
+</div>
+
+---
+
+# 十、結語
+
+<div class="alert alert-success">
+這份 WorkSafeBC 資料的核心邏輯與 HSG53 高度一致：<strong>危害評估 → 選擇適當且適合的裝備 → 使用前檢查 → 正確穿戴 → 訓練監督 → 維護與墜落後處理 → 書面計畫與救援</strong>。職安衛專業人員可將兩者整合成一套「個人防護裝備管理」的通用教學框架。
+</div>
+
+<script>
+function checkQuiz(containerId, correctAnswer, feedbackText) {
+  var container = document.getElementById(containerId);
+  var selected = container.querySelector('input[type="radio"]:checked');
+  var feedback = container.querySelector('.quiz-feedback');
+
+  if (!selected) {
+    feedback.className = 'quiz-feedback wrong';
+    feedback.innerHTML = '請先選擇一個答案。';
+    return;
+  }
+
+  if (selected.value === correctAnswer) {
+    feedback.className = 'quiz-feedback correct';
+    feedback.innerHTML = '✅ ' + feedbackText;
+  } else {
+    feedback.className = 'quiz-feedback wrong';
+    feedback.innerHTML = '❌ 不正確。' + feedbackText;
+  }
+}
+</script>
